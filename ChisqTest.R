@@ -1,5 +1,6 @@
 rm(list = ls())
 cat("\014")
+library("pwr")
 #Cria a curva da densidade de chi quadrado
 dados <- c(13,19,11,8,5,4)
 n <- length(dados)
@@ -42,3 +43,26 @@ Resultado <- ifelse(ChisqCal>ChisqTab,
 text(x=end-9, y=0.1, Resultado)
 pvalue <- round(pvalor, digits = 3) 
 text(x=end-9, y=0.05, bquote("P-valor"==.(pvalue)))
+
+#############
+#Poder do Teste
+
+#chi squared test
+h <- function(mu, alpha, no, degree) {#calculate the power of a particular value for the chi squared test
+  p01 <- 1/6 # these constructs the effect size (which is a bit different for the chi squared)
+  p02 <- 5/6
+  
+  p11 <- mu
+  p12 <- 1-p11
+  
+  effect.size <- sqrt(((p01-p11)^2/p01)+((p02-p12)^2/p02)) # effect size
+  
+  pwr.chisq.test(N=no, df=degree, sig.level = alpha, w=effect.size)$power
+}
+curve(h(x, alpha = 0.05, no = 100, degree=1), 
+      from = .00, 
+      to = .75, 
+      col="red",
+      lwd=c(2.5,2.5),
+      main=expression("Função Poder para cada p"[i]))
+
