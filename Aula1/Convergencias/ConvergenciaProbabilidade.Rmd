@@ -1,0 +1,340 @@
+---
+title: "Convergência em Probabilidade com Diferentes Estimadores"
+output: learnr::tutorial
+runtime: shiny_prerendered
+---
+
+## Introdução
+  
+Neste tutorial, vamos explorar a convergência em probabilidade de cinco estimadores diferentes usando o R. Vamos visualizar como cada estimador converge para o valor verdadeiro da estimativa à medida que o tamanho da amostra aumenta.
+
+
+```{r setup, include=FALSE}
+library(learnr)
+library(tidyverse)
+library(shiny)
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Função para Gerar Estimadores
+
+Vamos criar uma função para gerar estimadores e plotar a convergência. O código contém duas funções principais: `generate_estimators` e `plot_convergence`. Essas funções são usadas para gerar estimadores de diferentes amostras e visualizar como esses estimadores convergem para o valor verdadeiro à medida que o tamanho da amostra aumenta.
+
+<!--
+### Função `generate_estimators`
+
+
+1. **Inicializa um vetor para armazenar os estimadores:**
+   - `estimators <- numeric(100)`: Cria um vetor de 100 elementos, inicializado com zeros. Esse vetor armazenará os valores dos estimadores gerados em cada iteração do loop.
+
+2. **Loop para gerar 100 estimadores:**
+   - `for (i in 1:100) {`: Itera 100 vezes para gerar 100 amostras e calcular seus estimadores.
+
+3. **Gera uma amostra de tamanho `n` com a função de distribuição especificada:**
+   - `sample_data <- do.call(dist, c(list(n = n), params))`: Usa `do.call` para chamar a função de distribuição (`dist`) com os parâmetros especificados (`params`) e o tamanho da amostra (`n`). Isso gera uma amostra de dados.
+
+4. **Calcula o estimador para a amostra e armazena no vetor:**
+   - `estimators[i] <- estimator_func(sample_data)`: Calcula o valor do estimador (como a média ou variância) para a amostra `sample_data` usando a função `estimator_func` e armazena o resultado no vetor `estimators`.
+
+5. **Retorna o vetor com todos os estimadores:**
+   - `return(estimators)`: Após o loop, retorna o vetor que contém todos os estimadores calculados.
+
+### Função `plot_convergence`
+
+1. **Cria um dataframe com os índices e valores dos estimadores:**
+   - `df <- data.frame(Index = 1:length(estimators), Estimator = estimators)`: Constrói um dataframe onde a coluna `Index` representa os índices dos estimadores (de 1 a 100) e a coluna `Estimator` contém os valores dos estimadores gerados.
+
+2. **Cria um gráfico com `ggplot`:**
+   - `ggplot(df, aes(x = Index, y = Estimator)) +`: Inicia a criação do gráfico usando `ggplot2`, definindo `Index` como o eixo x e `Estimator` como o eixo y.
+
+3. **Adiciona uma linha ao gráfico para os estimadores:**
+   - `geom_line() +`: Plota os estimadores como uma linha contínua.
+
+4. **Adiciona uma linha horizontal para o valor verdadeiro:**
+   - `geom_hline(yintercept = true_value, color = "red", linetype = "dashed") +`: Adiciona uma linha horizontal vermelha e tracejada ao gráfico, representando o valor verdadeiro do parâmetro estimado.
+
+5. **Adiciona um título ao gráfico:**
+   - `labs(title = paste("Convergência do", estimator_name), x = "Índice da Amostra", y = "Valor do Estimador") +`: Define o título do gráfico e os rótulos dos eixos x e y.
+
+6. **Adiciona um rótulo ao eixo x:**
+   - `x = "Índice da Amostra"`: Define o texto do rótulo para o eixo x.
+
+7. **Adiciona um rótulo ao eixo y:**
+   - `y = "Valor do Estimador"`: Define o texto do rótulo para o eixo y.
+
+8. **Usa um tema minimalista para o gráfico:**
+   - `theme_minimal()`: Aplica um tema visual minimalista ao gráfico para uma aparência limpa.
+
+Essas funções ajudam a visualizar a convergência dos estimadores para o valor verdadeiro à medida que se gera mais amostras, proporcionando insights sobre o comportamento dos estimadores em diferentes distribuições.
+-->
+```{r plot, exercise=TRUE}
+generate_estimators <- function(n, dist, params, estimator_func, true_value) {
+  estimators <- numeric(100)  # 1. Inicializa um vetor para armazenar os estimadores
+  for (i in 1:100) {  # 2. Loop para gerar 100 estimadores
+    sample_data <- do.call(dist, c(list(n = n), params))  # 3. Gera uma amostra de tamanho n com a função de distribuição especificada
+    estimators[i] <- estimator_func(sample_data)  # 4. Calcula o estimador para a amostra e armazena no vetor
+  }
+  return(estimators)  # 5. Retorna o vetor com todos os estimadores
+}
+
+plot_convergence <- function(estimators, true_value, estimator_name) {
+  df <- data.frame(
+    Index = 1:length(estimators),
+    Estimator = estimators
+  )  # 1. Cria um dataframe com os índices e valores dos estimadores
+
+  ggplot(df, aes(x = Index, y = Estimator)) +  # 2. Cria um gráfico com ggplot
+    geom_line() +  # 3. Adiciona uma linha ao gráfico para os estimadores
+    geom_hline(yintercept = true_value, color = "red", linetype = "dashed") +  # 4. Adiciona uma linha horizontal para o valor verdadeiro
+    labs(title = paste("Convergência do", estimator_name),  # 5. Adiciona um título ao gráfico
+         x = "Índice da Amostra",  # 6. Adiciona um rótulo ao eixo x
+         y = "Valor do Estimador") +  # 7. Adiciona um rótulo ao eixo y
+    theme_minimal()  # 8. Usa um tema minimalista para o gráfico
+}
+```
+
+## 1. Média da Amostra
+
+A média amostral é um estimador da média populacional e é dada por:
+
+$$
+\hat{\mu} = \frac{1}{n} \sum_{i=1}^{n} X_i
+$$
+
+onde \( X_i \) são as observações da amostra e \( n \) é o tamanho da amostra.
+
+Para uma distribuição uniforme contínua \( U(a, b) \), a média verdadeira é:
+
+
+$$
+\mu = \frac{a + b}{2}
+$$
+
+Neste exemplo, estamos considerando uma distribuição uniforme com \( a = 0 \) e \( b = 10 \), então a média verdadeira é:
+
+$$
+\mu = \frac{0 + 10}{2} = 5
+$$
+
+Vamos observar como o estimador da média da amostra converge para a média verdadeira.
+
+```{r mean_convergence, exercise=TRUE, exercise.setup = "plot"}
+true_mean <- 5
+params <- list(min = 0, max = 10)
+estimators_mean <- generate_estimators(30, "runif", params, mean, true_mean)
+plot_convergence(estimators_mean, true_mean, "Média da Amostra")
+```
+
+O gráfico resultante mostra como o estimador da média da amostra (em azul) se aproxima do valor verdadeiro da média (linha vermelha) à medida que geramos mais amostras. Como esperado, o estimador da média converge para o valor verdadeiro à medida que o número de amostras aumenta.
+
+## 2. Variância da Amostra
+
+A variância amostral é um estimador da variância populacional e é dada por:
+  
+$$
+  \hat{\sigma}^2 = \frac{1}{n-1} \sum_{i=1}^{n} (X_i - \bar{X})^2
+$$
+  
+  onde \( \bar{X} \) é a média amostral e \( n \) é o tamanho da amostra.
+
+Para uma distribuição uniforme contínua \( U(a, b) \), a variância verdadeira é:
+  
+$$
+  \sigma^2 = \frac{(b - a)^2}{12}
+$$
+  
+Neste exemplo, estamos considerando uma distribuição uniforme com \( a = 0 \) e \( b = 10 \), então a variância verdadeira é:
+  
+$$
+  \sigma^2 = \frac{(10 - 0)^2}{12} = \frac{100}{12} \approx 8.33
+$$
+  
+Vamos observar como o estimador da variância da amostra converge para a variância verdadeira.
+
+
+```{r var_convergence, exercise=TRUE, exercise.setup = "plot"}
+true_variance <- (10 - 0)^2 / 12
+params <- list(min = 0, max = 10)
+estimators_var <- generate_estimators(30, "runif", params, function(x) var(x) * (length(x) - 1) / length(x), true_variance)
+plot_convergence(estimators_var, true_variance, "Variância da Amostra")
+```
+
+O gráfico resultante mostra como o estimador da variância da amostra (em azul) se aproxima do valor verdadeiro da variância (linha vermelha) à medida que geramos mais amostras. O estimador da variância converge para o valor verdadeiro, como esperado, à medida que o número de amostras aumenta.
+
+Ambos os estimadores, a média e a variância da amostra, mostram convergência para seus respectivos valores verdadeiros à medida que o número de amostras aumenta. Esses gráficos ilustram visualmente a propriedade de consistência dos estimadores, que é uma característica importante na teoria da estimativa.
+
+## 3. Estimador MLE para Normal
+
+Vamos observar a convergência do estimador MLE para a média e variância de uma distribuição normal.
+
+```{r mle_normal_convergence, exercise=TRUE, exercise.setup = "plot"}
+true_mean_normal <- 0
+true_sd_normal <- 1
+params <- list(mean = true_mean_normal, sd = true_sd_normal)
+estimators_mle_mean <- generate_estimators(30, "rnorm", params, mean, true_mean_normal)
+estimators_mle_sd <- generate_estimators(30, "rnorm", params, sd, true_sd_normal)
+plot_convergence(estimators_mle_mean, true_mean_normal, "MLE da Média Normal")
+plot_convergence(estimators_mle_sd, true_sd_normal, "MLE do Desvio Padrão Normal")
+```
+
+## 4. Estimador MLE para Poisson
+
+Vamos observar a convergência do estimador MLE para a média de uma distribuição Poisson.
+
+```{r mle_poisson_convergence, exercise=TRUE, exercise.setup = "plot"}
+true_lambda_poisson <- 5
+params <- list(lambda = true_lambda_poisson)
+estimators_mle_poisson <- generate_estimators(30, "rpois", params, mean, true_lambda_poisson)
+plot_convergence(estimators_mle_poisson, true_lambda_poisson, "MLE da Média Poisson")
+```
+
+## 5. Estimador MLE para Exponencial
+
+Vamos observar a convergência do estimador MLE para a taxa de uma distribuição exponencial.
+
+```{r mle_exponential_convergence, exercise=TRUE, exercise.setup = "plot"}
+true_lambda_exp <- 1
+params <- list(rate = true_lambda_exp)
+estimators_mle_exp <- generate_estimators(30, "rexp", params, function(x) 1 / mean(x), 1 / true_lambda_exp)
+plot_convergence(estimators_mle_exp, 1 / true_lambda_exp, "MLE da Taxa Exponencial")
+```
+
+## Conclusão
+
+Observamos como diferentes estimadores convergem para o valor verdadeiro à medida que o tamanho da amostra aumenta. A convergência em probabilidade é um conceito fundamental na estatística e na teoria dos estimadores.
+
+## Lei Fraca dos Grandes Números
+
+```{r function, exercise=TRUE}
+generate_means <- function(n_max, step, dist_func, dist_params) {
+  sample_sizes <- seq(from = step, to = n_max, by = step)
+  means <- numeric(length(sample_sizes))
+  
+  for (i in seq_along(sample_sizes)) {
+    n <- sample_sizes[i]
+    sample_data <- dist_func(n, dist_params)
+    means[i] <- mean(sample_data)
+  }
+  
+  data.frame(SampleSize = sample_sizes, Mean = means)
+}
+
+```
+
+
+```{r fraca, exercise=TRUE, exercise.setup = "function"}
+n_max <- 1000
+step <- 10
+dist_func <- function(n, params) rnorm(n, mean = params$mean, sd = params$sd)
+dist_params <- list(mean = 0, sd = 1)
+
+data_means <- generate_means(n_max, step, dist_func, dist_params)
+
+ggplot(data_means, aes(x = SampleSize, y = Mean)) +
+  geom_line(color = "blue") +
+  geom_hline(yintercept = dist_params$mean, color = "red", linetype = "dashed") +
+  labs(title = "Lei Fraca dos Grandes Números",
+       x = "Tamanho da Amostra",
+       y = "Média Amostral") +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(hjust = 0.5),
+    axis.title = element_text(size = 12),
+    axis.text = element_text(size = 10)
+  )
+
+```
+
+O gráfico mostra a média amostral calculada para diferentes tamanhos de amostra. A linha azul representa a média amostral à medida que o tamanho da amostra aumenta, e a linha vermelha horizontal representa a média verdadeira da população (0). Como esperado, à medida que o tamanho da amostra aumenta, a média amostral converge para a média verdadeira, ilustrando a Lei Fraca dos Grandes Números.
+
+## Consistência do Estimador da Variância
+
+O gráfico mostra a variância amostral calculada para diferentes tamanhos de amostra. A linha azul representa a variância amostral, e a linha vermelha horizontal representa a variância verdadeira da população. Como esperado, à medida que o tamanho da amostra aumenta, a variância amostral converge para a variância verdadeira, ilustrando a consistência do estimador $S^{2}$.
+
+```{r consistencia, exercise=TRUE}
+generate_variances <- function(n_max, step, dist_func, dist_params) {
+  sample_sizes <- seq(from = step, to = n_max, by = step)
+  variances <- numeric(length(sample_sizes))
+  
+  for (i in seq_along(sample_sizes)) {
+    n <- sample_sizes[i]
+    sample_data <- dist_func(n, dist_params)
+    variances[i] <- var(sample_data) * (n - 1) / n  # Corrige o viés da variância amostral
+  }
+  
+  data.frame(SampleSize = sample_sizes, Variance = variances)
+}
+
+n_max <- 1000
+step <- 10
+true_variance <- 4
+dist_func <- function(n, params) rnorm(n, sd = sqrt(params$variance))
+dist_params <- list(variance = true_variance)
+
+data_variances <- generate_variances(n_max, step, dist_func, dist_params)
+
+ggplot(data_variances, aes(x = SampleSize, y = Variance)) +
+  geom_line(color = "blue") +
+  geom_hline(yintercept = true_variance, color = "red", linetype = "dashed") +
+  labs(title = "Consistência do Estimador da Variância",
+       x = "Tamanho da Amostra",
+       y = "Variância Amostral") +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(hjust = 0.5),
+    axis.title = element_text(size = 12),
+    axis.text = element_text(size = 10)
+  )
+
+```
+
+## Convergência em Distribuição
+
+O gráfico mostra a distribuição das médias amostrais para três tamanhos de amostra diferentes. As linhas coloridas representam a distribuição das médias amostrais para os tamanhos de amostra de 10, 50 e 100, enquanto a linha preta tracejada representa a distribuição normal com a mesma média e desvio padrão esperado.
+
+Como podemos observar, à medida que o tamanho da amostra aumenta, a distribuição das médias amostrais se aproxima da distribuição normal, ilustrando a convergência em distribuição conforme previsto pelo Teorema Central do Limite.
+
+```{r convergenciaDistribution, exercise = TRUE, warning=FALSE}
+generate_sample_means <- function(sample_size, n_samples, dist_func, dist_params) {
+  means <- numeric(n_samples)
+  for (i in 1:n_samples) {
+    sample_data <- dist_func(sample_size, dist_params)
+    means[i] <- mean(sample_data)
+  }
+  means
+}
+
+#set.seed(123)  # Para reprodutibilidade
+n_samples <- 1000
+sample_sizes <- c(10, 50, 100)
+true_mean <- 0
+true_sd <- 1
+
+# Gerar as médias amostrais
+data_means <- lapply(sample_sizes, function(size) {
+  means <- generate_sample_means(size, n_samples, function(n, params) rnorm(n, mean = params$mean, sd = params$sd), list(mean = true_mean, sd = true_sd))
+  data.frame(SampleSize = size, Mean = means)
+})
+
+# Criar um dataframe para a linha normal teórica
+normal_theoretical <- data.frame(
+  SampleSize = rep(sample_sizes, each = 10000),
+  Mean = unlist(lapply(sample_sizes, function(size) rnorm(10000, mean = true_mean, sd = true_sd / sqrt(size))))
+)
+
+# Plotar as distribuições das médias amostrais e a normal teórica
+ggplot() +
+  geom_density(data = data_means[[1]], aes(x = Mean, color = "Amostra 10"), size = 1) +
+  geom_density(data = data_means[[2]], aes(x = Mean, color = "Amostra 50"), size = 1) +
+  geom_density(data = data_means[[3]], aes(x = Mean, color = "Amostra 100"), size = 1) +
+  geom_density(data = normal_theoretical, aes(x = Mean, color = "Distribuição Normal Teórica"), linetype = "dashed") +
+  labs(title = "Distribuição das Médias Amostrais para Diferentes Tamanhos de Amostra",
+       x = "Média Amostral",
+       y = "Densidade") +
+  scale_color_manual(name = "Legenda", 
+                     values = c("Amostra 10" = "blue", "Amostra 50" = "green", "Amostra 100" = "red", "Distribuição Normal Teórica" = "black"),
+                     labels = c("Amostra 10", "Amostra 50", "Amostra 100", "Distribuição Normal Teórica")) +
+  theme_minimal()
+
+```
+

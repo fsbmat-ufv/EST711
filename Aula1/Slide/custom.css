@@ -1,0 +1,103 @@
+/* Estilo personalizado para apresentação slidy */
+  
+  /* Fundo azul claro para todo o corpo e slides */
+  body, .slide {
+    background-color: #ADD8E6; /* Cor azul clara */
+      color: #000000; /* Cor do texto (preto) */
+  }
+
+/* Definir um layout com colunas usando 'float' */
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+  }
+
+.column {
+  padding: 0 15px;
+}
+
+/* Colunas com diferentes larguras */
+  .column:nth-child(1) {
+    flex: 60%; /* Primeira coluna com 60% de largura */
+  }
+
+.column:nth-child(2) {
+  flex: 30%; /* Segunda coluna com 30% de largura */
+}
+
+/* Estilização da imagem */
+  .column img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+/* Ajustes de margem e padding nos slides */
+  .slide-content {
+    padding: 20px;
+  }
+  
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.column {
+  padding: 10px;
+}
+
+.column img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Define o layout flexível */
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-item {
+  width: 50%;
+  padding: 0 10px;
+}
+
+.flex-item img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Ajuste a largura das imagens no Slidy */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* custom.css */
+
+/* Define a cor de fundo dos slides */
+body {
+  background-color: #f0f8ff; /* Azul claro */
+}
+
+/* Estilos para o efeito de transição entre slides */
+.fade {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.slidy_slides .slide {
+  transition: opacity 0.5s ease-in-out;
+}
+
+.slidy_slides .slide.active {
+  opacity: 1;
+}
+
+.slidy_slides .slide:not(.active) {
+  opacity: 0;
+}
+

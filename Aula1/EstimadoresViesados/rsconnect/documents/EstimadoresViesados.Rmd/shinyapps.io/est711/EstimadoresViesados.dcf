@@ -1,0 +1,12 @@
+name: EstimadoresViesados
+title: EstimadoresViesados
+username: est711
+account: est711
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 12634736
+bundleId: 9072528
+url: https://est711.shinyapps.io/EstimadoresViesados/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
