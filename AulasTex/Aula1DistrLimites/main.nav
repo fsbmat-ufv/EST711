@@ -53,7 +53,7 @@
 \headcommand {\beamer@framepages {35}{37}}
 \headcommand {\beamer@sectionpages {25}{37}}
 \headcommand {\beamer@subsectionpages {25}{37}}
-\headcommand {\sectionentry {4}{Consistência e Distribuições Limites}{38}{Consistência e Distribuições Limites}{0}}
+\headcommand {\sectionentry {4}{Distribuições Limites}{38}{Distribuições Limites}{0}}
 \headcommand {\beamer@subsectionpages {38}{37}}
 \headcommand {\beamer@subsectionentry {0}{4}{1}{38}{Convergência em Probabilidade}}
 \headcommand {\slideentry {4}{1}{1}{38/40}{Convergência em Probabilidade}{0}}
@@ -86,55 +86,13 @@
 \headcommand {\beamer@framepages {54}{54}}
 \headcommand {\slideentry {4}{4}{5}{55/55}{Propriedades de Convergência em Probabilidades}{0}}
 \headcommand {\beamer@framepages {55}{55}}
+\headcommand {\beamer@sectionpages {38}{55}}
 \headcommand {\beamer@subsectionpages {51}{55}}
-\headcommand {\beamer@subsectionentry {0}{4}{5}{56}{Consistência}}
-\headcommand {\slideentry {4}{5}{1}{56/56}{Consistência}{0}}
+\headcommand {\sectionentry {5}{Refer\^encias}{56}{Refer\^encias}{0}}
+\headcommand {\slideentry {5}{0}{0}{56/56}{Propriedades de Convergência em Probabilidades}{0}}
 \headcommand {\beamer@framepages {56}{56}}
-\headcommand {\slideentry {4}{5}{2}{57/57}{Consistência}{0}}
-\headcommand {\beamer@framepages {57}{57}}
-\headcommand {\slideentry {4}{5}{3}{58/58}{Consistência}{0}}
-\headcommand {\beamer@framepages {58}{58}}
-\headcommand {\slideentry {4}{5}{4}{59/59}{Consistência}{0}}
-\headcommand {\beamer@framepages {59}{59}}
-\headcommand {\slideentry {4}{5}{5}{60/62}{Consistência}{0}}
-\headcommand {\beamer@framepages {60}{62}}
-\headcommand {\slideentry {4}{5}{6}{63/63}{Consistência}{0}}
-\headcommand {\beamer@framepages {63}{63}}
-\headcommand {\beamer@subsectionpages {56}{63}}
-\headcommand {\beamer@subsectionentry {0}{4}{6}{64}{Convergência em Distribuição}}
-\headcommand {\slideentry {4}{6}{1}{64/65}{Convergência em Distribuição}{0}}
-\headcommand {\beamer@framepages {64}{65}}
-\headcommand {\slideentry {4}{6}{2}{66/66}{Convergência em Distribuição}{0}}
-\headcommand {\beamer@framepages {66}{66}}
-\headcommand {\slideentry {4}{6}{3}{67/68}{Convergência em Distribuição}{0}}
-\headcommand {\beamer@framepages {67}{68}}
-\headcommand {\slideentry {4}{6}{4}{69/70}{Convergência em Distribuição}{0}}
-\headcommand {\beamer@framepages {69}{70}}
-\headcommand {\slideentry {4}{6}{5}{71/71}{Convergência em Distribuição}{0}}
-\headcommand {\beamer@framepages {71}{71}}
-\headcommand {\slideentry {4}{6}{6}{72/73}{Convergência em Distribuição}{0}}
-\headcommand {\beamer@framepages {72}{73}}
-\headcommand {\slideentry {4}{6}{7}{74/75}{Convergência em Distribuição}{0}}
-\headcommand {\beamer@framepages {74}{75}}
-\headcommand {\slideentry {4}{6}{8}{76/76}{Convergência em Distribuição}{0}}
-\headcommand {\beamer@framepages {76}{76}}
-\headcommand {\slideentry {4}{6}{9}{77/77}{Convergência em Distribuição}{0}}
-\headcommand {\beamer@framepages {77}{77}}
-\headcommand {\slideentry {4}{6}{10}{78/78}{Convergência em Distribuição}{0}}
-\headcommand {\beamer@framepages {78}{78}}
-\headcommand {\slideentry {4}{6}{11}{79/79}{Convergência em Distribuição}{0}}
-\headcommand {\beamer@framepages {79}{79}}
-\headcommand {\slideentry {4}{6}{12}{80/80}{Convergência em Distribuição}{0}}
-\headcommand {\beamer@framepages {80}{80}}
-\headcommand {\slideentry {4}{6}{13}{81/81}{Convergência em Distribuição}{0}}
-\headcommand {\beamer@framepages {81}{81}}
-\headcommand {\beamer@sectionpages {38}{81}}
-\headcommand {\beamer@subsectionpages {64}{81}}
-\headcommand {\sectionentry {5}{Refer\^encias}{82}{Refer\^encias}{0}}
-\headcommand {\slideentry {5}{0}{0}{82/82}{Convergência em Distribuição}{0}}
-\headcommand {\beamer@framepages {82}{82}}
-\headcommand {\beamer@partpages {1}{82}}
-\headcommand {\beamer@subsectionpages {64}{82}}
-\headcommand {\beamer@sectionpages {38}{82}}
-\headcommand {\beamer@documentpages {82}}
-\headcommand {\gdef \inserttotalframenumber {53}}
+\headcommand {\beamer@partpages {1}{56}}
+\headcommand {\beamer@subsectionpages {51}{56}}
+\headcommand {\beamer@sectionpages {38}{56}}
+\headcommand {\beamer@documentpages {56}}
+\headcommand {\gdef \inserttotalframenumber {34}}

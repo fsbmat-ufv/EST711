@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.5)  10 SEP 2024 14:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.5)  10 SEP 2024 15:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2023,7 +2023,7 @@ logo.png>] (main.toc)
 [5
 
 ]
-<figs/Fisher.jpg, id=164, 903.375pt x 474.27188pt>
+<figs/Fisher.jpg, id=160, 903.375pt x 474.27188pt>
 File: figs/Fisher.jpg Graphic file (type jpg)
 <use figs/Fisher.jpg>
 Package pdftex.def Info: figs/Fisher.jpg  used on input line 62.
@@ -2033,7 +2033,7 @@ Package pdftex.def Info: figs/Fisher.jpg  used on input line 62.
 [6
 
  <./figs/Fisher.jpg>]
-<figs/KarlPearson.jpg, id=185, 688.5725pt x 803.0pt>
+<figs/KarlPearson.jpg, id=181, 688.5725pt x 803.0pt>
 File: figs/KarlPearson.jpg Graphic file (type jpg)
 <use figs/KarlPearson.jpg>
 Package pdftex.def Info: figs/KarlPearson.jpg  used on input line 81.
@@ -2043,7 +2043,7 @@ Package pdftex.def Info: figs/KarlPearson.jpg  used on input line 81.
 [7
 
  <./figs/KarlPearson.jpg>]
-<figs/Pearson.jpeg, id=207, 247.92625pt x 327.2225pt>
+<figs/Pearson.jpeg, id=203, 247.92625pt x 327.2225pt>
 File: figs/Pearson.jpeg Graphic file (type jpg)
 <use figs/Pearson.jpeg>
 Package pdftex.def Info: figs/Pearson.jpeg  used on input line 100.
@@ -2053,7 +2053,7 @@ Package pdftex.def Info: figs/Pearson.jpeg  used on input line 100.
 [8
 
  <./figs/Pearson.jpeg>]
-<figs/Neyman.jpg, id=228, 228.855pt x 301.125pt>
+<figs/Neyman.jpg, id=224, 228.855pt x 301.125pt>
 File: figs/Neyman.jpg Graphic file (type jpg)
 <use figs/Neyman.jpg>
 Package pdftex.def Info: figs/Neyman.jpg  used on input line 119.
@@ -2063,7 +2063,7 @@ Package pdftex.def Info: figs/Neyman.jpg  used on input line 119.
 [9
 
  <./figs/Neyman.jpg>]
-<figs/Gosset.png, id=249, 656.4525pt x 803.0pt>
+<figs/Gosset.png, id=245, 656.4525pt x 803.0pt>
 File: figs/Gosset.png Graphic file (type png)
 <use figs/Gosset.png>
 Package pdftex.def Info: figs/Gosset.png  used on input line 138.
@@ -2073,7 +2073,7 @@ Package pdftex.def Info: figs/Gosset.png  used on input line 138.
 [10
 
  <./figs/Gosset.png>]
-<figs/Hotelling.jpg, id=270, 250.9375pt x 250.9375pt>
+<figs/Hotelling.jpg, id=266, 250.9375pt x 250.9375pt>
 File: figs/Hotelling.jpg Graphic file (type jpg)
 <use figs/Hotelling.jpg>
 Package pdftex.def Info: figs/Hotelling.jpg  used on input line 157.
@@ -2187,7 +2187,7 @@ Package pdftex.def Info: figs/Hotelling.jpg  used on input line 157.
 [37
 
 ]
-Overfull \vbox (3.5226pt too high) detected at line 410
+Overfull \vbox (3.5226pt too high) detected at line 411
  []
 
 
@@ -2195,7 +2195,7 @@ Overfull \vbox (3.5226pt too high) detected at line 410
 [38
 
 ]
-Overfull \vbox (3.5226pt too high) detected at line 410
+Overfull \vbox (3.5226pt too high) detected at line 411
  []
 
 
@@ -2203,7 +2203,7 @@ Overfull \vbox (3.5226pt too high) detected at line 410
 [39
 
 ]
-Overfull \vbox (3.5226pt too high) detected at line 410
+Overfull \vbox (3.5226pt too high) detected at line 411
  []
 
 
@@ -2223,7 +2223,7 @@ Overfull \vbox (3.5226pt too high) detected at line 410
 [43
 
 ]
-Overfull \vbox (5.14124pt too high) detected at line 473
+Overfull \vbox (5.14124pt too high) detected at line 474
  []
 
 
@@ -2231,7 +2231,7 @@ Overfull \vbox (5.14124pt too high) detected at line 473
 [44
 
 ]
-Overfull \vbox (5.14124pt too high) detected at line 473
+Overfull \vbox (5.14124pt too high) detected at line 474
  []
 
 
@@ -2239,7 +2239,7 @@ Overfull \vbox (5.14124pt too high) detected at line 473
 [45
 
 ]
-Overfull \vbox (5.14124pt too high) detected at line 473
+Overfull \vbox (5.14124pt too high) detected at line 474
  []
 
 
@@ -2247,7 +2247,7 @@ Overfull \vbox (5.14124pt too high) detected at line 473
 [46
 
 ]
-Overfull \vbox (17.68271pt too high) detected at line 489
+Overfull \vbox (17.68271pt too high) detected at line 490
  []
 
 
@@ -2255,7 +2255,7 @@ Overfull \vbox (17.68271pt too high) detected at line 489
 [47
 
 ]
-Overfull \vbox (17.68271pt too high) detected at line 489
+Overfull \vbox (17.68271pt too high) detected at line 490
  []
 
 
@@ -2263,7 +2263,7 @@ Overfull \vbox (17.68271pt too high) detected at line 489
 [48
 
 ]
-Overfull \vbox (17.68271pt too high) detected at line 489
+Overfull \vbox (17.68271pt too high) detected at line 490
  []
 
 
@@ -2272,7 +2272,7 @@ Overfull \vbox (17.68271pt too high) detected at line 489
 
 ]
 LaTeX Font Info:    Trying to load font information for U+fontawesometwo on inp
-ut line 502.
+ut line 503.
  (C:\Program Files\MiKTeX\tex/latex/fontawesome\ufontawesometwo.fd
 File: ufontawesometwo.fd 2016/05/22 Font definitions for U/fontawesometwo.
 )
@@ -2303,115 +2303,6 @@ File: ufontawesometwo.fd 2016/05/22 Font definitions for U/fontawesometwo.
 
 [56
 
-]
-
-[57
-
-]
-
-[58
-
-]
-
-[59
-
-]
-
-[60
-
-]
-
-[61
-
-]
-
-[62
-
-]
-
-[63
-
-]
-
-[64
-
-]
-
-[65
-
-]
-Overfull \hbox (4.58257pt too wide) detected at line 708
-[]
- []
-
-
-
-[66
-
-]
-
-[67
-
-]
-
-[68
-
-]
-
-[69
-
-]
-
-[70
-
-]
-
-[71
-
-]
-
-[72
-
-]
-
-[73
-
-]
-
-[74
-
-]
-
-[75
-
-]
-
-[76
-
-]
-
-[77
-
-]
-
-[78
-
-]
-
-[79
-
-]
-
-[80
-
-]
-
-[81
-
-]
-
-[82
-
  <C:/Program Files/MiKTeX/tex/latex/beamer/beamericonarticle.pdf>]
 \tf@nav=\write7
 \openout7 = `main.nav'.
@@ -2432,58 +2323,44 @@ L3 programming layer <2020/03/25>
 LaTeX Warning: There were undefined references.
 
 
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                main
-(biblatex)                and rerun LaTeX afterwards.
+Package biblatex Warning: Please rerun LaTeX.
+(biblatex)                Page breaks have changed.
 
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 56562 strings out of 473899
- 1229648 string characters out of 5736307
- 2318916 words of memory out of 5000000
- 78198 multiletter control sequences out of 15000+600000
- 603038 words of font info for 150 fonts, out of 8000000 for 9000
+ 56101 strings out of 473899
+ 1218273 string characters out of 5736307
+ 2303802 words of memory out of 5000000
+ 77814 multiletter control sequences out of 15000+600000
+ 582308 words of font info for 104 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,36n,123p,3279b,4319s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,29n,123p,3279b,4319s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Fernando\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\e
-css0500.pk> <C:\Users\Fernando\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
-/dpi600\ecss1095.pk> <C:\Users\Fernando\AppData\Local\MiKTeX\fonts/pk/ljfour/jk
-nappen/ec/dpi600\ecsx1095.pk> <C:\Users\Fernando\AppData\Local\MiKTeX\fonts/pk/
-ljfour/jknappen/ec/dpi600\ecss1000.pk> <C:\Users\Fernando\AppData\Local\MiKTeX\
-fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1000.pk> <C:\Users\Fernando\AppData\Loca
-l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\Fernando\App
-Data\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1200.pk> <C:\Users\Fer
-nando\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsi1200.pk> <C:\
-Users\Fernando\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1440
-.pk> <C:\Users\Fernando\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600
-\ecsx1728.pk> <C:\Users\Fernando\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/
-ec/dpi450\ectt0800.pk> <C:\Users\Fernando\AppData\Local\MiKTeX\fonts/pk/ljfour/
-jknappen/ec/dpi600\ecss0600.pk> <C:\Users\Fernando\AppData\Local\MiKTeX\fonts/p
-k/ljfour/jknappen/ec/dpi600\ecss0800.pk> <C:\Users\Fernando\AppData\Local\MiKTe
-X\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1200.pk> <C:\Users\Fernando\AppData\Lo
-cal\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1728.pk><C:/Program Files/MiK
-TeX/fonts/type1/public/fontawesome/FontAwesome.pfb><C:/Program Files/MiKTeX/fon
-ts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/pub
-lic/amsfonts/cmextra/cmex8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsf
-onts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi
-12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Pr
-ogram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Program Files/
-MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Program Files/MiKTeX/fonts
-/type1/public/amsfonts/cm/cmss8.pfb><C:/Program Files/MiKTeX/fonts/type1/public
-/amsfonts/cm/cmssi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/c
-m/cmssi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi8.pf
-b><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Progra
-m Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files/MiKTe
-X/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX/fonts/type1
-/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfo
-nts/latxfont/line10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/sy
-mbols/msbm10.pfb>
-Output written on main.pdf (82 pages, 1619825 bytes).
+csx1200.pk> <C:\Users\Fernando\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
+/dpi600\ecsi1200.pk> <C:\Users\Fernando\AppData\Local\MiKTeX\fonts/pk/ljfour/jk
+nappen/ec/dpi600\ecss1440.pk> <C:\Users\Fernando\AppData\Local\MiKTeX\fonts/pk/
+ljfour/jknappen/ec/dpi600\ecsx1728.pk> <C:\Users\Fernando\AppData\Local\MiKTeX\
+fonts/pk/ljfour/jknappen/ec/dpi450\ectt0800.pk> <C:\Users\Fernando\AppData\Loca
+l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss0600.pk> <C:\Users\Fernando\App
+Data\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss0800.pk> <C:\Users\Fer
+nando\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1200.pk> <C:\
+Users\Fernando\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1728
+.pk><C:/Program Files/MiKTeX/fonts/type1/public/fontawesome/FontAwesome.pfb><C:
+/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Fil
+es/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fo
+nts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/pub
+lic/amsfonts/cm/cmss12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts
+/cm/cmss8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi12.p
+fb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi8.pfb><C:/Progr
+am Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiK
+TeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/typ
+e1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (56 pages, 1353231 bytes).
 PDF statistics:
- 2669 PDF objects out of 2984 (max. 8388607)
- 183 named destinations out of 1000 (max. 500000)
- 4332 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1876 PDF objects out of 2073 (max. 8388607)
+ 128 named destinations out of 1000 (max. 500000)
+ 2876 words of extra memory for PDF output out of 10000 (max. 10000000)
 
