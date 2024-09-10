@@ -19,7 +19,7 @@ Neste tutorial, exploraremos estimadores viesados e não viesados para várias d
 
 Primeiro, definiremos as funções necessárias para gerar amostras, calcular estimadores e criar gráficos.
 
-```{r plot, include=FALSE}
+```{r plot, exercise=TRUE}
 # Função para plotar histogramas
 plot_histogram <- function(data, true_value, estimator_name) {
   ggplot(data, aes(x = value)) +
@@ -33,7 +33,30 @@ plot_histogram <- function(data, true_value, estimator_name) {
 
 # Função para gerar estimadores
 generate_estimators <- function(n, dist_name, params, estimator_func, true_value) {
-  estimators <- replicate(1000, {
+  estimators <- replicate(100, {
+    sample_data <- do.call(dist_name, params)
+    estimator_func(sample_data)
+  })
+  
+  data.frame(value = estimators)
+}
+```
+
+```{r plot1, exercise=TRUE}
+# Função para plotar histogramas
+plot_histogram <- function(data, true_value, estimator_name) {
+  ggplot(data, aes(x = value)) +
+    geom_histogram(binwidth = 0.5, fill = 'darkgray', alpha = 0.7) +
+    geom_vline(aes(xintercept = true_value), color = 'red', linetype = 'dashed') +
+    geom_vline(aes(xintercept = mean(value)), color = 'black', linetype = 'dotted') +
+    labs(title = paste("Distribuição dos Estimadores -", estimator_name),
+         x = "Valor", y = "Frequência") +
+    theme_minimal()
+}
+
+# Função para gerar estimadores
+generate_estimators <- function(n, dist_name, params, estimator_func, true_value) {
+  estimators <- replicate(10, {
     sample_data <- do.call(dist_name, params)
     estimator_func(sample_data)
   })
@@ -48,7 +71,19 @@ A média de uma amostra de uma distribuição normal é um estimador não viesad
 
 \[ \hat{\mu} = \frac{1}{n} \sum_{i=1}^{n} X_i \]
 
+O código abaixo considera 1000 amostras de tamanho $n$.
+
 ```{r param, exercise=TRUE, exercise.setup = "plot"}
+# 1. Média de uma amostra normal
+true_mean <- 10
+params_normal <- list(n = 30, mean = true_mean, sd = 5)
+estimators_mean <- generate_estimators(30, "rnorm", params_normal, mean, true_mean)
+plot_histogram(estimators_mean, true_mean, "Média Normal")
+```
+
+O código abaixo considera 10 amostras de tamanho $n,$ em que $n$ pode ser definido abaixo.
+
+```{r param1, exercise=TRUE, exercise.setup = "plot1"}
 # 1. Média de uma amostra normal
 true_mean <- 10
 params_normal <- list(n = 30, mean = true_mean, sd = 5)
