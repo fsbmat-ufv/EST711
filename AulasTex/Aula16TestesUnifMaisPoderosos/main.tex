@@ -1,0 +1,195 @@
+\documentclass[12pt]{beamer}
+
+\input{Configuracoes/layout}
+
+\title{Inferência Estatística II}
+\author{Prof. Fernando de Souza Bastos\texorpdfstring{\\ fernando.bastos@ufv.br}{}}
+\institute{Departamento de Estatística\texorpdfstring{\\ Programa de Pós-Graduação em Estatística Aplicada e Biometria}\texorpdfstring{\\ Universidade Federal de Viçosa}{}\texorpdfstring{\\ Campus UFV - Viçosa}{}}
+\date{}
+\newcommand\mytext{Aula 16}
+\newcommand\mytextt{Fernando de Souza Bastos}
+\newcommand\mytexttt{\url{https://est711.github.io/}}
+
+
+\begin{document}
+%\SweaveOpts{concordance=TRUE}
+
+\frame{\titlepage}
+
+\begin{frame}{}
+\frametitle{\bf Sumário}
+\tableofcontents
+\end{frame}
+
+\section{Testes Uniformemente Mais Poderosos}
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Considere a função densidade de probabilidade (pdf)
+\begin{align*}
+f(x; \theta) = \begin{cases}
+\frac{1}{\theta} e^{-x/\theta}, & 0 < x < \infty \\
+0, & \text{Caso Contrário}
+\end{cases}
+\end{align*}
+dos Exercícios 8.1.2 e 8.1.3. Deseja-se testar a hipótese simples $H_0: \theta = 2$ contra a hipótese alternativa composta $H_1: \theta > 2$. Assim, $\Omega = \{\theta: \theta \geq 2\}$. Uma amostra aleatória, $X_1, X_2$, de tamanho $n = 2$ é utilizada e a região crítica é $C = \{(x_1, x_2): 9.5 \leq x_1 + x_2 < \infty\}$. Foi mostrado nos exercícios citados que o nível de significância do teste é aproximadamente $0.05$ e o poder do teste quando $\theta = 4$ é aproximadamente $0.31$. A função poder $\gamma(\theta)$ do teste para todos os $\theta \geq 2$ é:
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+\begin{align*}
+\gamma(\theta) &= 1 - \int_0^{9.5} \int_0^{9.5-x_2} \frac{1}{\theta^2} e^{-\frac{x_1+x_2}{\theta}} dx_1dx_2 \\
+&= \left(\dfrac{\theta+9.5}{\theta}\right)e^{-9.5/\theta}, \quad 2 \leq \theta.
+\end{align*}
+Por exemplo, $\gamma(2) = 0.05$, $\gamma(4) = 0.31$ e $\gamma(9.5) = \frac{2}{e} \approx 0.74$. É mostrado (Exercício 8.1.3) que o conjunto $C = \{(x_1, x_2): 9.5 \leq x_1 + x_2 < \infty\}$ é uma melhor região crítica de tamanho $0.05$ para testar a hipótese simples $H_0: \theta = 2$ contra cada hipótese simples na hipótese composta $H_1: \theta > 2$.
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+O exemplo anterior ilustra um teste de uma hipótese simples $H_0$ que é o melhor teste de $H_0$ contra todas as hipóteses simples na hipótese alternativa composta $H_1$. Agora definimos uma região crítica, quando ela existe, que é a melhor região crítica para testar uma hipótese simples $H_0$ contra uma hipótese alternativa composta $H_1$. Parece desejável que essa região crítica seja a melhor região crítica para testar $H_0$ contra cada hipótese simples em $H_1$. Ou seja, a função poder do teste que corresponde a essa região crítica deve ser pelo menos tão grande quanto a função poder de qualquer outro teste com o mesmo nível de significância para cada hipótese simples em $H_1$.
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{definicao}
+\justifying
+A região crítica $C$ é uma região crítica uniformemente mais poderosa (UMP) de tamanho $\alpha$ para testar a hipótese simples $H_0$ contra uma hipótese alternativa composta $H_1$ se o conjunto $C$ é a melhor região crítica de tamanho $\alpha$ para testar $H_0$ contra cada hipótese simples em $H_1$. Um teste definido por essa região crítica $C$ é chamado de teste uniformemente mais poderoso (UMP), com nível de significância $\alpha$, para testar a hipótese simples $H_0$ contra a hipótese alternativa composta $H_1$.
+\end{definicao}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Como será visto posteriormente, testes uniformemente mais poderosos nem sempre existem. No entanto, quando existem, o teorema de Neyman-Pearson fornece uma técnica para encontrá-los. Alguns exemplos ilustrativos são dados aqui.
+\end{block}
+\end{frame}
+
+\section{Exemplo 1}
+\begin{frame}{Exemplo}
+\begin{block}{}
+\justifying
+Seja $X_1, X_2, \ldots, X_n$ uma amostra aleatória de uma distribuição normal $N(0, \theta)$, onde a variância $\theta$ é um número positivo desconhecido. Será demonstrado que existe um teste uniformemente mais poderoso com nível de significância $\alpha$ para testar a hipótese simples $H_0: \theta = \theta_0$, onde $\theta_0$ é um número positivo fixo, em oposição à hipótese alternativa composta $H_1: \theta > \theta_0$. Assim, $\Omega = \{\theta : \theta \geq \theta_0\}$.
+
+A função de densidade conjunta de $X_1, X_2, \ldots, X_n$ é dada por
+\begin{equation}
+L(\theta; x_1, x_2, \ldots, x_n) = \frac{1}{(2\pi\theta)^{n/2}} \exp\left(-\frac{1}{2\theta}\sum_{i=1}^{n}x_i^2\right).
+\end{equation}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Seja $\theta_1$ representando um número maior que $\theta_0$, e $k$ denote um número positivo. Seja $C$ o conjunto de pontos onde
+\begin{equation}
+\frac{L(\theta_0; x_1, x_2, \ldots, x_n)}{L(\theta_1; x_1, x_2, \ldots, x_n)} \leq k,
+\end{equation}
+isto é, o conjunto de pontos onde
+\begin{equation}
+\frac{\exp\left(-\frac{1}{2\theta_0}\sum_{i=1}^{n}x_i^2\right)}{\exp\left(-\frac{1}{2\theta_1}\sum_{i=1}^{n}x_i^2\right)} \leq k,
+\end{equation}
+ou equivalentemente,
+\begin{align*}
+\sum_{i=1}^{n}x_i^2 \geq \dfrac{2\theta_1\theta_0}{\theta_1-\theta_0}\left(\dfrac{n}{2}\log{\left(\dfrac{\theta_1}{\theta_0}\right)}-\log{k}\right)=c
+\end{align*}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+O conjunto $C = \{(x_1, x_2, \ldots, x_n) : \sum_{i=1}^{n}x_i^2 \geq c\}$ é então uma melhor região crítica para testar a hipótese simples $H_0: \theta = \theta_0$ em oposição à hipótese simples $\theta = \theta_1$. Resta determinar $c$ de forma que esta região crítica tenha o tamanho desejado $\alpha$. Se $H_0$ for verdadeira, a variável aleatória
+\begin{equation}
+\frac{\sum_{i=1}^{n}X_i^2}{\theta_0}
+\end{equation}
+tem uma distribuição qui-quadrado com $n$ graus de liberdade. Uma vez que $\alpha = P_{\theta_0} \left(\frac{\sum_{i=1}^{n}X_i^2}{\theta_0} \geq \frac{c}{\theta_0}\right)$, $c/\theta_0$ pode ser calculado, por exemplo, usando o código R 
+
+\begin{align*}
+    {\texttt qchisq(1 - \alpha, n)}.
+\end{align*}
+
+Então, $C = \{(x_1, x_2, \ldots, x_n) : \sum_{i=1}^{n}x_i^2 \geq c\}$ é uma melhor região crítica de tamanho $\alpha$ para testar $H_0: \theta = \theta_0$ em oposição à hipótese $\theta = \theta_1$.
+
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Além disso, para cada número $\theta_1$ maior que $\theta_0$, o argumento anterior se mantém. Ou seja, $C = \{(x_1, \ldots, x_n) : \sum_{i=1}^{n}x_i^2 \geq c\}$ é uma região crítica uniformemente mais poderosa de tamanho $\alpha$ para testar $H_0: \theta = \theta_0$ em oposição a $H_1: \theta > \theta_0$. Se $x_1, x_2, \ldots, x_n$ denotam os valores experimentais de $X_1, X_2, \ldots, X_n$, então $H_0: \theta = \theta_0$ é rejeitada ao nível de significância $\alpha$, e $H_1: \theta > \theta_0$ é aceita se $\sum_{i=1}^{n}x_i^2 \geq c$; caso contrário, $H_0: \theta = \theta_0$ é aceita.
+
+Se, na discussão anterior, tomarmos $n = 15$, $\alpha = 0,05$ e $\theta_0 = 3$, então as duas hipóteses são $H_0: \theta = 3$ e $H_1: \theta > 3$. Usando R, $c/3$ é calculado por \texttt{qchisq(0.95, 15)} $= 24,996$. Portanto, $c = 74,988$.
+
+\end{block}
+\end{frame}
+
+\section{Exemplo 2}
+\begin{frame}{Exemplo 2}
+\begin{block}{}
+\justifying
+Seja $X_1, X_2, \ldots, X_n$ uma amostra aleatória de uma distribuição normal $N(\theta, 1)$, onde $\theta$ é desconhecido. Será demonstrado que não existe um teste uniformemente mais poderoso para a hipótese simples $H_0 : \theta = \theta_0$, onde $\theta_0$ é um número fixo, em oposição à hipótese alternativa composta $H_1 : \theta \neq \theta_0$. Assim, $\Omega = \{\theta : -\infty < \theta < \infty\}$.
+
+Seja $\theta_1$ um número diferente de $\theta_0$. Seja $k$ um número positivo e considere
+\[
+\frac{1}{(2\pi)^{n/2}} \exp\left(-\frac{1}{2}\sum_{i=1}^{n}(x_i - \theta)^2\right) \frac{1}{(2\pi)^{n/2}} \exp\left(-\frac{1}{2}\sum_{i=1}^{n}(x_i - \theta_1)^2\right) \leq k.
+\]
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\vspace{-0.2cm}
+\begin{block}{}
+\justifying
+A desigualdade anterior pode ser escrita como
+\[
+\exp\left(-( \theta - \theta_1)\sum_{i=1}^{n}x_i + \frac{n}{2}((\theta_1)^2 - (\theta)^2)\right) \leq k,
+\]
+ou
+\[
+(\theta - \theta_1)\sum_{i=1}^{n}x_i \geq \frac{n}{2}((\theta_1)^2 - (\theta)^2) - \log k.
+\]
+
+Essa última desigualdade é equivalente a
+\[
+\sum_{i=1}^{n}x_i \geq \frac{n}{2}(\theta_1 + \theta) - \frac{\log k}{\theta - \theta_1},
+\]
+desde que $\theta > \theta_1$, e,  se $\theta_1 < \theta,$ é equivalente a
+\[
+\sum_{i=1}^{n}x_i \leq \frac{n}{2}(\theta_1 + \theta) - \frac{\log k}{\theta - \theta_1}.
+\] 
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+A primeira dessas duas expressões define uma melhor região crítica para testar $H_0 : \theta = \theta_0$ contra a hipótese $\theta = \theta_1$, desde que $\theta_1 > \theta$, enquanto a segunda expressão define uma melhor região crítica para testar $H_0 : \theta = \theta_0$ contra a hipótese $\theta = \theta_1$, desde que $\theta_1 < \theta$. Ou seja, uma melhor região crítica para testar a hipótese simples contra uma hipótese simples alternativa, digamos $\theta = \theta_0 + 1$, não serve como uma melhor região crítica para testar $H_0 : \theta = \theta_0$ contra a hipótese simples alternativa $\theta = \theta_0 - 1$. Por definição, então, não existe um teste uniformemente mais poderoso no caso em consideração.
+
+Deve-se notar que se a hipótese alternativa composta fosse unidirecional, seja $H_1 : \theta > \theta_0$ ou $H_1 : \theta < \theta_0$, um teste uniformemente mais poderoso existiria em cada instância.
+\end{block}
+\end{frame}
+
+\begin{frame}{\Home}
+\begin{block}{}
+\justifying
+
+\begin{itemize}
+    \item \textbf{Exercícios da seção 8.2:} 1,3,5,6,11,13.
+\end{itemize}
+\end{block}
+\nocite{hogg}
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+\frametitle{\bf Referências}
+\printbibliography
+\end{frame}
+
+
+\end{document}
+

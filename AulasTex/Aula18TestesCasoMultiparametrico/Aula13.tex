@@ -1,0 +1,227 @@
+\documentclass[12pt]{beamer}
+
+\input{Configuracoes/layout}
+
+\title{Inferência Estatística II}
+\author{Prof. Fernando de Souza Bastos\texorpdfstring{\\ fernando.bastos@ufv.br}{}}
+\institute{Departamento de Estatística\texorpdfstring{\\ Programa de Pós-Graduação em Estatística Aplicada e Biometria}\texorpdfstring{\\ Universidade Federal de Viçosa}{}\texorpdfstring{\\ Campus UFV - Viçosa}{}}
+\date{}
+\newcommand\mytext{Aula 13}
+\newcommand\mytextt{Fernando de Souza Bastos}
+\newcommand\mytexttt{\url{https://est711.github.io/}}
+
+
+\begin{document}
+%\SweaveOpts{concordance=TRUE}
+
+\frame{\titlepage}
+
+\begin{frame}{}
+\frametitle{\bf Sumário}
+\tableofcontents
+\end{frame}
+
+\section{Testes de Hipóteses - Caso Multiparamétrico}
+\begin{frame}{}
+\begin{block}{}
+\justifying
+\seqX~variáveis aleatórias iid com densidade $f(x,\theta), \theta\in \Omega\subset \R^{p}.$ Assumiremos todas as condições de regularidade. As hipóteses de interesse são: 
+$H_{0}:\theta\in W$ contra $H_{1}:\theta\in \Omega\cap W^{c},$ em que $W\subset\Omega.$
+\end{block}
+\pause 
+\begin{block}{}
+\justifying
+Assim, um teste intuitivo (baseado no teorema 6.1.1 do livro texto \citet{hogg}) é baseado na estatística de teste dada pela razão de verossimilhança,
+\begin{align*}
+    \Lambda=\dfrac{{\displaystyle \max_{\theta\in W}L(\theta)}}{{\displaystyle \max_{\theta\in \Omega}L(\theta)}}.
+\end{align*}
+Valores grandes de $\Lambda,$ ou seja, próximos de 1, sugerem que $H_{0}$ é verdadeira, enquanto que valores pequenos sugerem que $H_{1}$ é verdadeira.
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Para um nível de significância $\alpha\in(0,1)$ especificado, isto sugere a seguinte regra de decisão:
+\begin{itemize}
+    \item Rejeite $H_{0}$ em favor de $H_{1}$ se $\Lambda\leq c,$ em que $c$ é tal que ${\displaystyle \max_{\theta\in W}P_{\theta}(\Lambda\leq c)=\alpha}$
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Exemplo}
+\vspace{-0.2cm}
+\begin{block}{}
+\justifying
+Sejam \seqX$\Sim N(\mu,\sigma^{2}).$
+\begin{align*}
+H_{0}&:\mu=\mu_{0}\\
+H_{1}&:\mu\neq\mu_{0},
+\end{align*}
+$$\theta=(\mu,\sigma^{2})^{\top},~W=\{(\mu_{0},\sigma^{2});\sigma^{2}>0\}$$
+$$\Omega=\{(\mu,\sigma^{2});\mu\in\R~\text{e}~\sigma^{2}>0\}$$
+\end{block}
+\pause
+\vspace{-0.1cm}
+\begin{block}{}
+\justifying
+\begin{itemize}
+    \item Para $\theta\in\Omega,$ já vimos que $\hat{\mu}=\Bar{X}$ e $\hat{\sigma}^{2}=\dfrac{1}{n}\Sumi (X_{i}-\Bar{X})^{2}$ são os EMV de $\mu$ e $\sigma^{2},$ respectivamente. Neste caso, 
+\end{itemize}
+\begin{align*}
+    {\displaystyle \max_{\theta\in\Omega}L(\theta)=\dfrac{1}{(2\pi)^{\frac{n}{2}}}\dfrac{1}{(\hat{\sigma}^{2})^{\frac{n}{2}}}\exp{(-\frac{n}{2})}}
+\end{align*}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+\begin{itemize}
+    \item Para $\theta\in W,$ temos 
+    $\hat{\sigma}_{0}^{2}=\dfrac{1}{n}\Sumi (X_{i}-\mu_{0})^{2}.$ Neste caso, 
+\end{itemize}
+\begin{align*}
+    {\displaystyle \max_{\theta\in W}L(\theta)=\dfrac{1}{(2\pi)^{\frac{n}{2}}}\dfrac{1}{(\hat{\sigma}_{0}^{2})^{\frac{n}{2}}}\exp{(-\frac{n}{2})}}
+\end{align*}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Daí,
+\begin{align*}
+    \Lambda=\left(\dfrac{\hat{\sigma}^{2}}{\hat{\sigma}_{0}^{2}}\right)^{\frac{n}{2}}=\left(\dfrac{\Sumi (X_{i}-\Bar{X})^{2}}{\Sumi (X_{i}-\mu_{0})^{2}}\right)^{\frac{n}{2}}
+\end{align*}
+\end{block}
+\pause
+\begin{block}{}
+\justifying
+$\Lambda\leq c$ é equivalente a
+\begin{align*}
+    \dfrac{\Sumi (X_{i}-\mu_{0})^{2}}{\Sumi (X_{i}-\Bar{X})^{2}}\geq c^{'}\qquad (\star)
+\end{align*}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Além disso. considerem a identidade
+\begin{align*}
+    \Sumi (X_{i}-\mu_{0})^{2}=\Sumi (X_{i}-\Bar{X})^{2}+n(\Bar{X}-\mu_{0})^{2}\qquad (\star\star)
+\end{align*}
+\end{block}
+\pause
+\begin{block}{}
+\justifying
+Substituindo $(\star\star)$ em $(\star),$ segue que 
+\begin{align*}
+    1+\dfrac{n(\Bar{X}-\mu_{0})^{2}}{\Sumi (X_{i}-\Bar{X})^{2}}\geq c^{'}&\SeSe 
+    \left(\underbrace{\dfrac{\sqrt{n}(\Bar{X}-\mu_{0})}{\sqrt{\dfrac{(X_{i}-\Bar{X})^{2}}{n-1}}}}_{T\sim t_{n-1}(\text{sob}~H_{0})}\right)^{2}\geq c^{*}\\
+    &\SeSe |T|\geq c^{''}
+\end{align*}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Podemos tomar $c^{''}=t_{1-\frac{\alpha}{2}}(n-1).$
+\begin{itemize}
+    \item Rejeite $H_{0}$ em favor de $H_{1}$ se $|T|\geq t_{1-\frac{\alpha}{2}}(n-1)$
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{Teorema}
+\justifying
+Sejam \seqX variáveis aleatórias iid com densidade $f(x,\theta),\theta\in\Omega\subset\R^{p}.$ Assuma que as condições de regularidade valem. Seja $\hat{\theta}_{n}$ uma sequência de soluções consistentes da equação de verossimilhança sob $\theta\in \Omega$ (dimensão $p$). Seja $\hat{\theta}_{0n}$ uma sequência de soluções consistentes da equação de verossimilhança sob $\theta\in W$ (dimensão $q<p$). Sob $H_{0},$
+\begin{align*}
+    -2\log{\Lambda}\ConvD \chi^{2}(q)
+\end{align*}
+\end{Teorema}
+\end{frame}
+
+\begin{frame}{\Home}
+\begin{block}{}
+\justifying
+
+\begin{itemize}
+    \item \textbf{Exercícios da seção 6.5:} 2 ao 5, 7 e 9 ao 11.
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+\frametitle{\bf Referências}
+\printbibliography
+\end{frame}
+
+
+\end{document}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}

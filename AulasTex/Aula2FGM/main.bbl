@@ -1,0 +1,104 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global/global}
+    \entry{casella2021statistical}{book}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=c7abc90e14f2761d9325ee092fda0de7}{%
+           family={Casella},
+           familyi={C\bibinitperiod},
+           given={George},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=819beb5f4220e56c3afce0e6c63847a1}{%
+           family={Berger},
+           familyi={B\bibinitperiod},
+           given={Roger\bibnamedelima L},
+           giveni={R\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Cengage Learning}%
+      }
+      \strng{namehash}{c6df33453b0c6fbb42492656a87f4723}
+      \strng{fullhash}{c6df33453b0c6fbb42492656a87f4723}
+      \strng{fullhashraw}{c6df33453b0c6fbb42492656a87f4723}
+      \strng{bibnamehash}{c6df33453b0c6fbb42492656a87f4723}
+      \strng{authorbibnamehash}{c6df33453b0c6fbb42492656a87f4723}
+      \strng{authornamehash}{c6df33453b0c6fbb42492656a87f4723}
+      \strng{authorfullhash}{c6df33453b0c6fbb42492656a87f4723}
+      \strng{authorfullhashraw}{c6df33453b0c6fbb42492656a87f4723}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Statistical inference}
+      \field{year}{2021}
+      \true{nocite}
+    \endentry
+    \entry{hogg}{misc}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=d8ba961f8caf5732c1b9e9c76430f929}{%
+           family={Hogg},
+           familyi={H\bibinitperiod},
+           given={RV},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=587740f83ad521a0b4168ec4cc015f5a}{%
+           family={McKean},
+           familyi={M\bibinitperiod},
+           given={J},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=007f909fcca53be72c8499a6c53ec4ea}{%
+           family={Craig},
+           familyi={C\bibinitperiod},
+           given={AT},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Pearson}%
+      }
+      \strng{namehash}{6877fad25c33be89b4fde82777b98712}
+      \strng{fullhash}{1d03324c2b0683f9727a0d7b6ec79d89}
+      \strng{fullhashraw}{1d03324c2b0683f9727a0d7b6ec79d89}
+      \strng{bibnamehash}{1d03324c2b0683f9727a0d7b6ec79d89}
+      \strng{authorbibnamehash}{1d03324c2b0683f9727a0d7b6ec79d89}
+      \strng{authornamehash}{6877fad25c33be89b4fde82777b98712}
+      \strng{authorfullhash}{1d03324c2b0683f9727a0d7b6ec79d89}
+      \strng{authorfullhashraw}{1d03324c2b0683f9727a0d7b6ec79d89}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{Eighth Edition}
+      \field{title}{Introduction to Mathematical Statistics}
+      \field{year}{2019}
+      \true{nocite}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

@@ -245,3 +245,51 @@ estimators_pois_var_nao_viesado <- generate_estimators(30, "rpois", params_pois_
 plot_histogram(estimators_pois_var_nao_viesado, true_pois_variance, "Variância Poisson (Estimador Não Viesado)")
 ```
 
+
+
+
+## Aproximação de M_X_n(t) para Poisson
+
+Este tutorial interativo permite explorar a aproximação de \( M_X_n(t) \) para uma distribuição Poisson com diferentes valores de \( n \) e \( p \).
+
+```{r setup20, include=FALSE}
+# Função para calcular M_X_n(t)
+M_X_n <- function(t, n, p) {
+  (1 + (p / n) * (exp(t) - 1))^n
+}
+# Sequência de valores para t
+t_values <- seq(-2, 2, length.out = 100)
+```
+
+### Explore a Aproximação
+
+Escolha os valores de **n** e **p** para visualizar a aproximação.
+
+```{r fgm, exercise=TRUE, exercise.setup="setup20"}
+# Exercício interativo no formato learnR
+# Escolha valores de p e n
+
+n <- 10  # Você pode modificar este valor
+p <- 0.5  # Você pode modificar este valor
+
+# Cálculo de M_X_n(t)
+M_values <- sapply(t_values, M_X_n, n = n, p = p)
+
+# Gerar gráfico
+df <- data.frame(t = t_values, M_X_n = M_values)
+ggplot(df, aes(x = t, y = M_X_n)) +
+  geom_line(color = "blue", size = 1) +
+  ggtitle(expression(paste("Função M_X_n(t) para diferentes valores de t"))) +
+  xlab("t") +
+  ylab(expression(M_X_n(t))) +
+  theme_minimal()
+```
+
+### Fórmula
+
+```{r formula_display, echo=FALSE}
+# Exibe a fórmula de acordo com os valores de n e p escolhidos
+#paste0("Fórmula: M_X_n(t) = (1 + (", round(p, 2), " / ", n, ") * (exp(t) - 1))^", n)
+```
+
+

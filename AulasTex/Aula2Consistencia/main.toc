@@ -1,0 +1,3 @@
+\babel@toc {brazil}{}\relax 
+\beamer@sectionintoc {1}{Consistência}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Convergência em Distribuição}{11}{0}{1}

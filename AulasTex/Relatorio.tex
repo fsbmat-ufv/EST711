@@ -1,0 +1,183 @@
+\documentclass[12pt]{report}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{animate}
+\usepackage{amsbsy}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage[toc,page,title,titletoc]{appendix}
+\usepackage{dsfont}
+\usepackage{esvect}
+\usepackage[labelfont=bf]{caption}
+%\usepackage{subcaption}
+\usepackage{float}
+\usepackage[Glenn]{fncychap}%Sonny %Conny %Lenny %Glenn %Renje %Bjarne %Bjornstrup
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{indentfirst}%Para indentar os paragrafos automáticamente
+\usepackage{lipsum}
+\usepackage{longtable}
+\usepackage{mathtools}
+\usepackage{listings}%Inserir codigo do R no latex
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{csquotes}
+\usepackage[citestyle=authoryear,maxcitenames=2,terseinits=true,natbib=true, style=abnt, maxbibnames=99]{biblatex}
+\addbibresource{Referencias/Referencias.bib}
+\usepackage[figuresright]{rotating}
+\usepackage{spalign}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\usepackage{tikz}
+\usepackage{fontawesome}
+\usepackage{color, colortbl}
+\usepackage{url}
+\usepackage{cancel}
+\usepackage{accents}
+
+\usepackage{ragged2e}%para justificar o texto dentro de algum ambiente
+\definecolor{Gray}{gray}{0.9}
+\definecolor{LightCyan}{rgb}{0.88,1,1}
+
+
+\usepackage[all]{xy}
+\usepackage{hyperref,bookmark}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=red,
+  filecolor=blue,
+  urlcolor=blue,
+}
+\newcommand{\N}{\rm I\!N}
+\newcommand{\I}{\rm I\!I}
+\newcommand{\R}{\rm I\!R}
+\newcommand{\Sim}{\overset{\text{iid}}{\sim}}
+\newcommand{\Lim}{{\displaystyle \lim_{n\to\infty}}}
+\newcommand{\LimInf}{{\displaystyle \liminf_{n\to\infty}}}
+\newcommand{\rightLim}{\xrightarrow[n\rightarrow\infty]{}}
+\newcommand{\Sumi}{{\displaystyle \sum_{i=1}^{n}}}
+\newcommand{\Int}{{\displaystyle \int_{-\infty}^{+\infty}}}
+\newcommand{\ConvD}{\overset{D}{\rightarrow}}
+\newcommand{\ConvP}{\overset{P}{\rightarrow}}
+\newcommand{\Prodi}{{\displaystyle \prod_{i=1}^{n}}}
+\newcommand{\SetaUP}[2]{\underset{\mathclap{\substack{\xuparrow[30pt] \\ #1}}}{#2}}
+%\newcommand{\SetaInclinada}[2]{\underset{\mathclap{\substack{\rotatebox{135}{\xuparrow[30pt] \\ #1}}}}{#2}}
+\newcommand{\Home}{\begin{tikzpicture}
+\node[scale=2] at (3,4) {\text{Para}~\faHome};
+\end{tikzpicture}}
+\newcommand{\vecX}{\boldsymbol{X}}
+\newcommand{\Implica}[1]{\xRightarrow{#1}}
+\newcommand{\SeSe}{\iff}
+\newcommand{\EscoreA}{\dfrac{\partial}{\partial\theta}\log{f(x,\theta)}}
+\newcommand{\EscoreB}{\dfrac{\partial^{2}}{\partial\theta^{2}}\log{f(x,\theta)}}
+\newcommand{\cqd}{\text{cqd}~\blacksquare}
+\newcommand{\seqX}{$X_{1},\ldots,X_{n}$}
+\newcommand{\seqY}{$Y_{1},\ldots,Y_{n}$}
+
+\begin{document}
+
+O Lema de Neyman-Pearson mostra que, ao comparar hipóteses pontuais \(H_0\) e \(H_1\), um teste baseado na razão de verossimilhança \(f_X(x|H_0)/f_X(x|H_1)\) fornece o teste mais poderoso (maior \(\gamma = P(X \in C|H_1)\)) com uma dada significância \(\alpha = P(X \in C|H_0)\).
+
+Frequentemente, desejamos comparar hipóteses compostas, em que \(H_1\) e/ou \(H_0\) podem corresponder a famílias parametrizadas de distribuições. Em particular, se \(X\) é uma amostra retirada de uma distribuição \(f(x; \theta)\), podemos ter as hipóteses \(H_0 : \theta \in \omega\) e \(H_1 : \theta \in \Omega\).
+
+Se considerarmos inicialmente o caso em que \(H_0\) é uma hipótese pontual \(\theta = \theta_0\) e \(H_1\) é uma hipótese composta parametrizada por \(\theta\), o poder de um teste dado dependerá de \(\theta\):
+\[
+\gamma(\theta) = P(X \in C; \theta) = \int_{C} f_X(x; \theta) \, dx \quad (1.18)
+\]
+
+Se o mesmo teste for o mais poderoso para um dado \(\alpha\) para cada escolha de \(\theta\), dizemos que é uniformemente mais poderoso (UMP). Por exemplo, lembrando o exemplo da última aula, onde \(X\) é uma amostra de tamanho \(n\) de uma distribuição \(\text{Gamma}(5, \theta)\) e \(H_0\) é \(\theta = \theta_0 = 1\). Agora, deixe \(H_1\) ser a hipótese composta \(\theta > 1\). Sabemos do Lema de Neyman-Pearson que, para cada \(\theta\), o teste mais poderoso será aquele dado pela razão de verossimilhança:
+\[
+C : \Lambda(x; \theta) = \frac{L(\theta_0; x)}{L(\theta; x)} \leq k(\theta) \quad (1.19)
+\]
+onde a constante \(k(\theta)\) é definida por
+\[
+P\left(\Lambda(X; \theta) \leq k(\theta) | H_0\right) = \alpha
+\]
+
+Vimos da última vez que
+\[
+L(\theta; x) = \prod_{i=1}^{n} x_i^{4} \theta^{5n} e^{-y/\theta} \quad (1.21)
+\]
+onde \(y\) é a estatística suficiente \(y = \sum_{i=1}^{n} x_i\), e \(Y\) é uma variável aleatória Gamma(\(5n, \theta\)). A razão de verossimilhança é
+\[
+\Lambda(\theta; x) = \frac{L(\theta_0; x)}{L(\theta; x)} = \left(\frac{\theta}{\theta_0}\right)^{5n} \exp\left[-\frac{(\theta - 1)y}{\theta}\right] \quad (1.22)
+\]
+Desde que \(\theta > 1\), esta é uma função decrescente de \(y\), então um teste que rejeita \(H_0\) se \(\Lambda \leq k(\theta)\) será equivalente a um que o faz se \(Y \geq a\) para algum \(a\) correspondente. Isso pode ser definido de modo que a região crítica tenha tamanho \(\alpha\):
+\[
+\alpha = P(Y \geq a|H_0) = \gamma(\theta_0) = \int_{a}^{\infty} y^{5n-1} \frac{\Gamma(5n)}{\theta^{5n}} e^{-y/\theta_0} \, dy = \frac{\Gamma(5n, a)}{\Gamma(5)} \quad (1.23)
+\]
+onde
+\[
+\Gamma(s, x) = \int_{x}^{\infty} t^{s-1} e^{-t} \, dt \quad (1.24)
+\]
+é a função gama incompleta superior. Em qualquer caso, o valor de \(a\) não depende de \(\theta\), desde que \(\theta > 1\), então \(Y \geq a\) é o teste UMP de \(H_0\) à luz da hipótese composta \(H_1\).
+
+\subsection{Exemplo 2}
+
+Note que nem sempre existe um teste UMP. Suponha, em vez disso, que a hipótese \(H_1\) seja \(\theta \neq \theta_0 = 1\). Para \(\theta > 1\), o teste mais poderoso é rejeitar \(H_0\) se \(Y \geq a\), conforme definido anteriormente. Para \(0 < \theta < 1\), a razão de verossimilhança
+\[
+\Lambda(\theta; x) = \frac{\theta^{5n} \exp\left[1 - \frac{\theta - 1}{\theta}y\right]}{(1.25)}
+\]
+é uma função monotonamente crescente de \(y\), então \(\Lambda \leq k(\theta)\) é equivalente a \(Y \leq b\), onde \(b\) é definido por
+\[
+\alpha = P(Y \leq b|H_0) = \gamma(\theta_0) = \int_{-\infty}^{b} y^{5n-1} \frac{\Gamma(5n)\theta^{5n}}{e^{y/\theta_0}} \, dy = \frac{\Gamma(5n) - \Gamma(5n, b)}{\Gamma(5n)} \quad (1.26)
+\]
+onde
+\[
+\Gamma(s) - \Gamma(s, x) = \int_{-\infty}^{x} t^{s-1} e^{-t} \, dt \quad (1.27)
+\]
+é a função gama incompleta inferior. Assim, o teste mais poderoso depende do valor de \(\theta\): rejeitar \(H_0\) quando \(Y \geq a\) é mais poderoso se \(\theta > \theta_0\), enquanto rejeitar \(H_1\) quando \(Y \leq b\) é mais poderoso se \(\theta < \theta_0\).
+
+Para ilustrar, vamos plotar a função de poder para os dois testes assumindo \(\alpha = 0,10\) e \(n = 4\). Vamos obter os percentis e probabilidades de cauda para a distribuição Gamma usando o pacote de estatísticas SciPy. Para qualquer distribuição, o método \texttt{sf()} é a função de sobrevivência (um menos a função de distribuição cumulativa), \texttt{cdf()} é a função de distribuição cumulativa, e \texttt{isf()} e \texttt{ppf()} são os inversos dessas funções.
+
+PLOT AQUI
+
+Observe que eles se intersectam em $\gamma(1) = 0,1$, o que faz sentido, já que qualquer teste com significância $\alpha$ satisfará $\gamma(\theta_0) = \alpha$. E como podemos ver, o poder do teste $Y \geq a$ (linha azul contínua) é maior para $\theta > 1$, enquanto o poder do teste $Y \leq b$ (linha vermelha tracejada) é alto.
+
+\section{Inferência e Teste de Hipóteses}
+
+Outros exemplos são fornecidos nos exercícios. Nestes exemplos, os testes da razão de verossimilhança simplificam-se e podemos obter o teste em uma forma fechada. No entanto, muitas vezes, isso é impossível. Em tais casos, de maneira semelhante ao Exemplo 6.2.7, podemos obter o estimador de máxima verossimilhança por meio de rotinas iterativas e, portanto, também a estatística de teste $\Lambda$. No Exemplo, $-2 \log \Lambda$ tinha uma distribuição nula exata de $\chi^2(1)$. Embora isso não seja verdade em geral, como o teorema a seguir mostra, sob condições de regularidade, a distribuição nula assintótica de $-2 \log \Lambda$ é uma $\chi^2$ com um grau de liberdade. Portanto, em todos os casos, um teste assintótico pode ser construído.
+
+Além do teste da razão de verossimilhança, na prática, são empregados outros dois testes relacionados à verossimilhança. Uma estatística de teste natural é baseada na distribuição assintótica de $\hat{\theta}$. Considere a estatística
+\[
+\chi^2_W = \left\{\sqrt{n}I(\hat{\theta})(\hat{\theta} - \theta_0)\right\}^2. (6.3.13)
+\]
+
+Porque $I(\theta)$ é uma função contínua, $I(\hat{\theta}) \underset{P}{\rightarrow} I(\theta_0)$ sob a hipótese nula, (6.3.1). Portanto, sob $H0, \chi^2_W$ possui uma distribuição assintótica $\chi^2$ com um grau de liberdade. Isso sugere a regra de decisão
+\[
+\text{Rejeitar } H0 \text{ em favor de } H1 \text{ se } \chi^2_W \geq \chi^2_\alpha(1). (6.3.14)
+\]
+
+Assim como o teste baseado em $\chi^2_L$, este teste possui nível assintótico $\alpha$. Na verdade, a relação entre as duas estatísticas de teste é forte, porque, como a equação (6.3.11) mostra, sob H0,
+\[
+\chi^2_W - \chi^2_L \underset{P}{\rightarrow} 0. (6.3.15)
+\]
+
+O teste (6.3.14) é frequentemente referido como um teste do tipo Wald, em homenagem a Abraham Wald, que foi um estatístico proeminente do século XX.
+
+O terceiro teste é chamado de teste do tipo escores, frequentemente referido como o teste de escores de Rao, em homenagem a outro estatístico proeminente, C. R. Rao. Os escores são os componentes do vetor
+\[
+S(\theta) = \left\{\frac{\partial \log f(X_1; \theta)}{\partial \theta}, \ldots, \frac{\partial \log f(X_n; \theta)}{\partial \theta}\right\}. (6.3.16)
+\]
+
+Em nossa notação, temos
+\[
+\sqrt{\frac{1}{n}}l'(\theta_0) = \sqrt{\frac{1}{n}}\sum_{i=1}^{n} \frac{\partial \log f(X_i; \theta_0)}{\partial \theta}. (6.3.17)
+\]
+
+Defina a estatística
+\[
+\chi^2_R = \left\{\frac{l'(\theta_0)}{\sqrt{n}I(\theta_0)}\right\}^2. (6.3.18)
+\]
+
+Sob H0, segue-se da expressão (6.3.10) que
+\[
+\chi^2_R = \chi^2_W + R_0n, (6.3.19)
+\]
+onde $R_0n$ converge para $0$ em probabilidade. Portanto, a regra de decisão a seguir define um teste
+
+\end{document}

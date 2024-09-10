@@ -1,0 +1,50 @@
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Considere que $X|_{\Theta=\theta}\sim f(x|\theta)$ (densidade condicional de $X$ dado $\Theta=\theta$) e $\Theta\sim h(\theta).$ Assuma que \seqX é uma a.a. da distribuição condicional de $X|_{\Theta=\theta}.$
+\begin{align*}
+\undertilde{X}&=(X_{1},\ldots,X_{n})^{\top},\qquad \undertilde{x}=(x_{1},\ldots,x_{n})^{\top}\\
+L(\undertilde{x},\theta)&=f(x_{1}|\theta)\cdots f(x_{n}|\theta).
+\end{align*}
+Em que $L(\undertilde{x},\theta)$ é a função de densidade conjunta de $\undertilde{X}$ dado $\Theta=\theta$ ou a verossimilhança condicional de $\undertilde{X}$ dado $\Theta=\theta.$
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+A densidade conjunta de $\undertilde{X}$ e $\Theta$ fica dada por 
+\begin{align*}
+    g(\undertilde{x},\theta)=L(\undertilde{x}|\theta)h(\theta)
+\end{align*}
+Daí, se $\Theta$ é uma v.a.c, a densidade de $\undertilde{X}$ fica dada por,
+\begin{align*}
+    g_{1}(\undertilde{x})=\int_{-\infty}^{\infty}g(\undertilde{x},\theta)d\theta
+\end{align*}
+\textbf{Obs:} No caso discreto, basta substituir a integral pela soma.
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+A densidade condicional de $\Theta$ dado $\undertilde{X}=\undertilde{x}$ fica dada por,
+\begin{align*}
+    k(\theta|\undertilde{x})=\dfrac{g(\undertilde{x},\theta)}{g_{1}(\undertilde{x})}=\dfrac{L(\undertilde{x}|\theta)h(\theta)}{g_{1}(\undertilde{x})},
+\end{align*}
+$k(\theta|\undertilde{x})$ é conhecida como fdp ou fp a posteriori. Ou seja, 
+$$k(\theta|\undertilde{x})\propto L(\undertilde{x}|\theta)h(\theta)$$
+A distribuição a priori ($h(\theta)$) reflete a crença sobre $\theta$ antes da amostra observada, enquanto que a distribuição a posteriori é a distribuição condicional de $\theta$ depois da amostra ser observada.
+\end{block}
+\end{frame}
+
+\begin{frame}{Exemplo}
+\begin{block}{}
+\justifying
+$X_{i}|_{\Theta=\theta}\sim$Poisson($\theta$) e $\Theta\sim \gamma(\alpha,\beta),~\alpha$ e $\beta$ conhecidos.
+\begin{align*}
+    L(\undertilde{x}|\theta)=\Prodi \dfrac{e^{-\theta}\theta^{x_{i}}}{x_{i}!}=\dfrac{e^{-n\theta}\theta^{\sum x_{i}}}{\Prodi x_{i}!}
+\end{align*}
+Consideremos (inicialmente) hipóteses simples, isto é, $H_{0}:\theta=\theta^{'}$ contra $H_{1}:\theta=\theta^{''},$ em que, $\theta^{'}$ e $\theta^{''}$ são valores distintos. Neste caso, $\Omega=\{\theta^{'},\theta^{''}\}.$
+\end{block}
+\end{frame}

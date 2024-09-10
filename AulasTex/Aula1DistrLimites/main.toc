@@ -1,0 +1,12 @@
+\babel@toc {brazil}{}\relax 
+\beamer@sectionintoc {1}{Preliminares}{3}{0}{1}
+\beamer@sectionintoc {2}{Revisão Sobre Estimação Pontual}{12}{0}{2}
+\beamer@sectionintoc {3}{Estimadores Pontuais}{25}{0}{3}
+\beamer@subsectionintoc {3}{1}{Estimadores Não Viesados}{25}{0}{3}
+\beamer@sectionintoc {4}{Consistência e Distribuições Limites}{38}{0}{4}
+\beamer@subsectionintoc {4}{1}{Convergência em Probabilidade}{38}{0}{4}
+\beamer@subsectionintoc {4}{2}{Desigualdades de Markov e Tchebychev}{44}{0}{4}
+\beamer@subsectionintoc {4}{3}{Lei Fraca dos Grandes Números}{47}{0}{4}
+\beamer@subsectionintoc {4}{4}{Propriedades de Convergência em Probabilidades}{51}{0}{4}
+\beamer@subsectionintoc {4}{5}{Consistência}{56}{0}{4}
+\beamer@subsectionintoc {4}{6}{Convergência em Distribuição}{64}{0}{4}

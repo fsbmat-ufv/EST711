@@ -1,0 +1,460 @@
+\documentclass[12pt]{beamer}
+
+\input{Configuracoes/layout}
+
+
+\title{Inferência Estatística II}
+\author{Prof. Fernando de Souza Bastos\texorpdfstring{\\ fernando.bastos@ufv.br}{}}
+\institute{Departamento de Estatística\texorpdfstring{\\ Programa de Pós-Graduação em Estatística Aplicada e Biometria}\texorpdfstring{\\ Universidade Federal de Viçosa}{}\texorpdfstring{\\ Campus UFV - Viçosa}{}}
+\date{}
+\newcommand\mytext{Aula 7}
+\newcommand\mytextt{Fernando de Souza Bastos}
+\newcommand\mytexttt{\url{https://est711.github.io/}}
+
+
+\begin{document}
+%\SweaveOpts{concordance=TRUE}
+
+\frame{\titlepage}
+
+\begin{frame}{}
+\frametitle{\bf Sumário}
+\tableofcontents
+\end{frame}
+
+\section{Família Exponencial}
+\begin{frame}{Família Exponencial}
+\begin{block}{}
+\justifying
+Considere a família $\{f(x,\theta);\theta\in\Omega=(\gamma,\delta)\}$ de densidades ou fdp's, em que:
+\begin{align*}
+    f(x,\theta)=\exp{\{p(\theta)k(x)+s(x)+q(\theta)\}},~x\in \mathcal{S}.
+\end{align*}
+$\mathcal{S}$ é o suporte de uma variável aleatória $X$ com densidade ou fdp $f(x,\theta).$
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{Observação:}
+\justifying
+Seja $X$ uma vac. Considere a transformação $K(X).$ Seja $h(X)$ a densidade de $K(X)$ e a fgm de $K(X)$ dada por $g(\theta)=E(e^{\theta K(X)}).$ Notem que se $h(X)$ é densidade, então para uma função qualquer $m(X,\theta)>0$ a função $h^{*}(X,\theta)=\dfrac{m(X,\theta)h(X)}{\phi(\theta)}$ também é densidade, em que, 
+\begin{align*}
+\phi(\theta)=\Int m(X,\theta)h(x)dx. 
+\end{align*}
+Defina, $m(X,\theta)=e^{\theta K(X)},$ assim,
+\begin{align*}
+h^{*}(x,\theta)&=\dfrac{e^{\theta K(X)}h(x)}{\phi(\theta)}\\
+&=\exp{\{\theta k(x)+\log{h(x)}-\log{\phi(\theta)}\}}\\
+&=\exp{\{\theta k(x)+s(x)+q(\theta)\}}
+\end{align*}
+\end{block}
+\end{frame}
+
+\begin{frame}{Família Exponencial Regular}
+\begin{definicao}
+\justifying
+Uma densidade ou função de probabilidade da forma 
+\begin{align*}
+    f(x,\theta)=\exp{\{p(\theta)k(x)+s(x)+q(\theta)\}},~x\in \mathcal{S}.
+\end{align*}
+é considerada um membro da classe exponencial regular se:
+
+\begin{enumerate}
+\item $\mathcal{S}$, o suporte de $X$, não depender de $\theta$.
+\item $p(\theta)$ é uma função contínua e não trivial de $\theta \in \Omega$.
+\item Por fim,
+\begin{enumerate}[(a)]
+\item Se $X$ é uma variável aleatória contínua, então $K^{'}(x) \not \equiv 0$ e $s(x)$ são funções contínuas de $x \in \mathcal{S}$.
+\item Se $X$ é uma variável aleatória discreta, então $K(x)$ é uma função não trivial de $x \in \mathcal{S}.$
+\end{enumerate}
+\end{enumerate}
+\end{definicao}
+\end{frame}
+
+\begin{frame}{Exemplo 1}
+\begin{block}{}
+\justifying
+$N(0,\theta)$ pertence a família exponencial regular. 
+\begin{align*}
+f(x; \theta) &= \sqrt{\frac{1}{2\pi\theta}} e^{-\frac{x^2}{2\theta}}\\ 
+&= \exp\left(-\frac{x^2}{2\theta} - \dfrac{1}{2}\log{(2\pi)}-\dfrac{1}{2}\log{\theta}\right), \quad -\infty < x < \infty.
+\end{align*}
+\end{block}
+\pause
+\begin{block}{}
+\justifying
+\begin{align*}
+p(\theta)=-\frac{1}{2\theta},~s(x)=-\dfrac{1}{2}\log{(2\pi)},~k(x)=x^{2},~\text{e}~q(\theta)=-\dfrac{1}{2}\log{\theta}.
+\end{align*}
+\end{block}
+\end{frame}
+
+\begin{frame}{Exemplo 2}
+\begin{block}{}
+\justifying
+Considere a função de densidade uniforme reescrita como:
+
+\begin{align*}
+f(x; \theta) =
+\begin{cases}
+\exp\left(-\log\theta\right), & \text{se } x \in (0, \theta), \\
+0, & \text{caso contrário}.
+\end{cases}
+\end{align*}
+
+Notem que, ela pode ser escrita na forma 
+\begin{align*}
+    f(x,\theta)=\exp{\{p(\theta)k(x)+s(x)+q(\theta)\}},~x\in \mathcal{S}=(0,\theta).
+\end{align*}
+mas o suporte é o intervalo $(0, \theta)$, que depende de $\theta$. Portanto, a família uniforme não é uma família exponencial regular.
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Seja $X_1, X_2, \ldots, X_n$ uma amostra aleatória com distribuição pertencendo a família exponencial regular. A densidade ou fp conjunta de $X_1, X_2, \ldots, X_n$ é:
+
+\begin{align*}
+f(\underaccent{\tilde}{x},\theta)&=f(x_{1},\theta)\ldots f(x_{n},\theta),~\underaccent{\tilde}{x}=(x_1, x_2, \ldots, x_n)\\
+&=\Prodi \exp\left[p(\theta)K(x_i) + s(x_i) + q(\theta)\right]\\
+&=\exp\left[p(\theta)\sum_{i=1}^{n}K(x_i) + \sum_{i=1}^{n}s(x_i) + nq(\theta)\right]\\
+&=\exp\left[p(\theta)\sum_{i=1}^{n}K(x_i) + nq(\theta)\right]\exp{\left(\sum_{i=1}^{n}s(x_i)\right)}\\
+&=k_{1}\left(\sum_{i=1}^{n}K(x_i),\theta\right)k_{2}(x_1, x_2, \ldots, x_n)
+\end{align*}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+\begin{align*}
+f(\underaccent{\tilde}{x},\theta)&=k_{1}\left(\sum_{i=1}^{n}K(x_i),\theta\right)k_{2}(x_1, x_2, \ldots, x_n)
+\end{align*}
+$k_{1}(y,\theta)=\exp{[p(\theta)y+nq(\theta)]}$ e $k_{2}(x_1, x_2, \ldots, x_n)=\exp{\left(\Sumi s(x_i)\right)}.$ Pelo critério de fatoração, $Y=\Sumi K(x_i)$ é uma estatística suficiente para $\theta.$
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{Teorema}\label{Teorema1}
+\justifying
+Seja $X_{1},\ldots,X_{n}$ uma amostra aleatória com distribuição pertencente a família exponencial regula com densidade
+\begin{align*}
+    f(x,\theta)=\exp{\{p(\theta)k(x)+s(x)+q(\theta)\}},~x\in \mathcal{S}.
+\end{align*}
+Considere a estatística $Y_{1}=\Sumi K(x_i).$ Então:
+\begin{enumerate}
+    \item A densidade ou função de probabilidade de $Y_{1}$ tem a forma $f_{Y_{1}}(y_{1},\theta)=R(y_{1})\exp{\{p(\theta)y_{1}+nq(\theta)\}},$ para $y_{1}\in\mathcal{S}_{Y_{1}}$ e para alguma função $R(\cdot).$
+    \item $E(Y_{1})=-n\dfrac{q^{'}(\theta)}{p^{'}(\theta)}$
+    \item $Var(Y_{1})=\dfrac{n}{[p^{'}(\theta)]^{3}}\{p^{''}(\theta)q^{'}(\theta)-q^{''}(\theta)p^{'}(\theta)\}$
+\end{enumerate}
+\end{Teorema}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{\Home}
+\justifying
+Demonstre o Teorema \ref{Teorema1}. Dica para encontrar $E(Y_{1}),$ use que $E(\ell^{'}(\theta))=0$ e para encontrar a $Var(Y_{1})$ use que $E[(\ell^{'}(\theta))^{2}]=-E(\ell^{''}(\theta)).$
+\end{block}
+\end{frame}
+
+\begin{frame}{Exemplo}
+\begin{block}{}
+\justifying
+Seja $X\sim$Poisson$(\theta),~\mathcal{S}=(0,1,\ldots),~\theta\in \Omega=(0,+\infty).$ 
+
+\begin{align*}
+f(x, \theta) &= e^{-\theta} \frac{\theta^x}{x!}\\ 
+&= \exp\left\{-\theta + x\log{\theta} - \log{x!} \right\}
+\end{align*}
+\begin{align*}
+k(x)=x,~p(\theta)=\log{\theta},~s(x)= -\log{x!}~\text{e}~q(\theta)=-\theta
+\end{align*}
+Portanto, a distribuição de Poisson é um membro da classe exponencial regular. Portanto, se $X_1, X_2, ..., X_n$ denotam uma amostra aleatória de $X\sim$Poisson$(\theta)$, então a estatística $Y_1 = \Sumi X_i$ é suficiente para $\theta$. 
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Uma vez que, no exemplo anterior, $p'(\theta) = \frac{1}{\theta}$ e $q'(\theta) = -1$, o Teorema \ref{Teorema1} garante que a média de $Y_1$ é $n\theta$. É fácil verificar que a variância de $Y_1$ também é $n\theta$. Podemos mostrar, ainda, que a função $R(y_1)$ do Teorema \ref{Teorema1} é dada por $R(y_1) = ny_1\left(\frac{1}{y_1!}\right)$.
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{Teorema}
+\justifying
+Seja $f(x; \theta)$, $\gamma < \theta < \delta$, uma função de densidade de probabilidade ou função massa de probabilidade de uma variável aleatória $X$ cuja distribuição pertence a família exponencial regular. Seja $X_1,X_2, \ldots,X_n$ uma amostra aleatória da distribuição de $X.$ Então, a estatística $Y_1 = \Sumi K(X_i)$ é uma estatística suficiente para $\theta$ e a família ${f_{Y_1}(y_1; \theta) : \gamma < \theta < \delta}$ de funções de densidade de probabilidade de $Y_1$ é completa. Ou seja, $Y_1$ é uma estatística suficiente e completa para $\theta$.
+\end{Teorema}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Já vimos que $Y_1$ é uma estatística suficiente. Vamos mostrar que $Y_{1}$ é completa. Seja $u(\cdot)$ tal que $E[u(Y_1)] = 0, \forall \theta\in (\gamma, \delta)=\Omega.$ Considere o caso contínuo. Segue que, 
+
+\begin{align*}
+0=E[u(Y_1)]&\SetaUP{\text{Teorema anterior}}{=}
+\int_{S_{Y_1}} u(y_1)\underbrace{R(y_1) \exp\{p(\theta)y_1 + nq(\theta)\}}_{f_{Y_{1}}(y_{1},\theta)} dy_1\\
+&=\underbrace{\int_{S_{Y_1}} u(y_1)R(y_1) \exp(p(\theta)y_1) dy_1}_{\text{Transformada de Laplace de}~u(y_{1})R(y_{1})}\\
+\Rightarrow u(y_{1})R(y_{1})&=0,~\forall y_{1}\in \mathcal{S}_{Y_{1}}
+\end{align*}
+Portanto, $u(y_1) = 0, \forall y_{1}\in \mathcal{S}_{Y_{1}},$ pois $R(y_{1})\neq 0, \forall y_{1}\in \mathcal{S}_{Y_{1}}$. Portanto, $Y_1$ é uma estatística suficiente e completa para $\theta$.
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{\Home}
+\justifying
+\begin{itemize}
+    \item \textbf{Exercícios da seção 7.5:} 1,2,3,5,6,8,10 e 11
+    \item \textbf{Exercícios da seção 7.6:} 1,2,4,7,8,9
+\end{itemize}
+\nocite{hogg, casella2021statistical, bolfarine}
+\end{block}
+\end{frame}
+
+\section{Suficiência Minimal}
+\begin{frame}{Suficiência Minimal}
+\begin{block}{}
+\justifying
+No estudo de estatísticas, é evidente que queremos reduzir ao máximo os dados contidos na amostra inteira sem perder informações relevantes sobre as características importantes da distribuição subjacente. Ou seja, uma grande coleção de números na amostra não é tão significativa quanto algumas boas estatísticas resumidas desses dados. 
+\end{block}
+\pause
+\begin{block}{}
+\justifying
+Estatísticas suficientes, se existirem, são valiosas porque sabemos que os estatísticos com essas medidas resumidas têm tanta informação quanto o estatístico com a amostra inteira. No entanto, às vezes existem vários conjuntos de estatísticas conjuntamente suficientes, e assim gostaríamos de encontrar o mais simples desses conjuntos.
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+
+\begin{block}{Exemplo 1}
+\justifying
+Por exemplo, as observações $X_1, X_2, ..., X_n,~n > 2$, de uma amostra aleatória $N(\theta_1, \theta_2)$ poderiam ser consideradas como estatísticas conjuntamente suficientes para $\theta_1$ e $\theta_2$. No entanto, sabemos que podemos usar $\Bar{X}$ e $S^2$ como estatísticas conjuntamente suficientes para esses parâmetros, o que é uma grande simplificação em relação ao uso de $X_1, X_2, ..., X_n$, especialmente se $n$ for grande.
+\end{block}
+\pause
+\begin{block}{}
+\justifying
+Agora, de um conjunto de estatística suficientes, gostaríamos de reduzir o número de estatísticas para o menor possível sem perda de suficiência? Sim, em alguns casos!
+\end{block}
+\pause
+\begin{block}{Exemplo 2}
+\justifying
+Será que $\Sumi X_{i}$ e $\Sumi X_{i}^{2}$ são estatísticas suficientes para $\Bar{X}$ e $S^2$? {\pause A resposta é sim!}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Assim, se existem $k$ parâmetros, queremos encontrar $k$ estatísticas suficientes que são minimais. Mas nem sempre isso é possível!
+\end{block}
+\pause
+\begin{block}{}
+\justifying
+$X_1, X_2, ..., X_n$ uma a.a. de $X\sim U(\theta - 1, \theta + 1), \theta\in\R$, 
+\begin{align*}
+    f_{X_{i}}(x)=\Big(\frac{1}{2}\Big)I_{(\theta - 1, \theta + 1)}(x),~-\infty<\theta<\infty
+\end{align*}
+em que, $I_{(\theta - 1, \theta + 1)}(x)$ é uma função indicadora. A densidade conjunta de $X_1, X_2, ..., X_n$ é igual ao produto de $\left(\frac{1}{2}\right)^n$ e certas funções indicadoras, ou seja,
+
+\begin{align*}
+f(x_1, x_2, ..., x_n; \theta) &= \left(\frac{1}{2}\right)^n \prod_{i=1}^{n} I_{(\theta - 1, \theta + 1)}(x_{i}) \\
+&= \left(\frac{1}{2}\right)^n I_{(\theta - 1, \theta + 1)}\left(\min(x_i)\right) I_{(\theta - 1, \theta + 1)}\left(\max(x_i)\right)
+\end{align*}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+pois $\theta - 1 < \min(x_i) \leq x_j \leq \max(x_i) < \theta + 1$ para $j = 1, 2, ..., n$. Portanto, pelo critério da fatoração, as estatísticas de ordem $Y_1 = \min(X_i)$ e $Y_n = \max(X_i)$ são estatísticas suficientes para $\theta$. Essas duas estatísticas são, na verdade, minimais para este único parâmetro, pois não podemos reduzir o número delas para menos de duas e ainda assim obter suficiência.
+\end{block}
+\pause
+\begin{block}{Observação:}
+\justifying
+Uma observação que ajuda a saber se um conjunto de estatísticas são minimais é saber se o EMV depende de todas elas. Se o EMV for único, então, taís estatísticas são suficientes minimais.
+\end{block}
+\end{frame}
+
+\begin{frame}{Exemplos}
+\begin{block}{}
+\begin{enumerate}
+\justifying
+    \item $X_{i}\Sim N(\theta_{1},\theta_{2}).$ Os estimadores de $\hat{\theta}_{1}=\Bar{X}$ e $\hat{\theta}_{2}=\sqrt{S^{2}}.$ Então $\Bar{X}$ e $\sqrt{S^{2}}$ são suficientes minimais.
+    
+    \item O estimador de máxima verossimilhança $\hat{\theta} = \Bar{X}$ de $\theta$ em uma distribuição de Poisson com média $\theta$ é uma estatística suficiente minimal para $\theta$.
+
+    \item O estimador de máxima verossimilhança $\hat{\theta} = Y_n = \max(X_i)$ de $\theta$ na distribuição uniforme sobre $(0, \theta)$ é uma estatística suficiente minimal para $\theta$.
+
+    \item Os estimadores de máxima verossimilhança $\hat{\theta}_1 = \Bar{X}$ e $\hat{\theta}_2 = \left(\frac{n-1}{n}\right)S^2$ de $\theta_1$ e $\theta_2$ na distribuição normal $N(\theta_1, \theta_2)$ são estatísticas suficientes minimais conjuntas para $\theta_1$ e $\theta_2$.
+\end{enumerate}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Considere novamente que $X_1, X_2, ..., X_n$ é uma a.a. de $X\sim U(\theta - 1, \theta + 1), \theta\in\R.$
+\begin{align*}
+    L(\theta,X)=\left(\frac{1}{2}\right)^n I_{(\theta - 1, \theta + 1)}\left(X_{(1)}\right) I_{(\theta - 1, \theta + 1)}\left(X_{(n)}\right).
+\end{align*}
+Notem que,
+\begin{align*}
+X_{(n)}<\theta+1&\Rightarrow \theta>X_{(n)}-1\\
+X_{(1)}>\theta-1&\Rightarrow \theta<X_{(1)}+1\\
+\Rightarrow X_{(n)}-1&<\theta<X_{(1)}+1
+\end{align*}
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]{}
+\begin{block}{}
+\begin{figure}[H]
+\begin{minipage}[t]{0.5\linewidth}
+\centering
+\begin{tikzpicture}
+\fill[blue!5] (-2,-1) rectangle (3.5,3);
+%\draw[help lines] (-1,-1) grid (5,5);
+%plano cartesiano
+\draw[->] (-2,0) -- (3,0) node[right]{$\theta$};
+\draw[->] (0,-.5) -- (0,2) node[above]{$L(\theta)$};
+%Função
+%\draw[line width=1pt,domain=-1.5:1] plot (\x,{(\x)^2});
+\draw[line width=1pt,domain=1:2.5] plot (\x,1);
+%Índices
+\draw[dashed] (0,1)--(1,1);
+\draw[dashed] (1,0) node[below,scale=.7] {$x_{(n)}-1$} -- (1,1) -- (2.5,1) -- (2.5,0) node[below,scale=.7] {$x_{(n)}+1$};
+\node[above,scale=.7] at (-0.3,0.8) {$\left(\frac{1}{2}\right)^n$};
+\end{tikzpicture}
+\end{minipage}%
+\begin{minipage}[t]{0.5\linewidth}
+O EMV de $\theta$ é qualquer no intervalo $(X_{(n)}-1,X_{(1)}+1).$ Tome, portanto, $\hat{\theta}=\dfrac{X_{(1)}+X_{(n)}}{2}$ e note que $\hat{\theta}$ não é estatística suficiente e portanto não é suficiente minimal.
+\end{minipage}
+\end{figure}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Existe uma relação entre estatística suficiente minimal e completude. Para os casos em que consideramos, estatísticas suficientes e completas são estatísticas suficientes minimais. A recíproca não é verdadeira. Por exemplo, no último exemplo.
+\begin{align*}
+    E\left(\dfrac{X_{(n)}-X_{(1)}}{2}-\dfrac{n-1}{n+1}\right)=0, \forall \theta\in\R
+\end{align*}
+Porém, $u(x,y)=\dfrac{x-y}{2}-\dfrac{n-1}{n+1}\neq 0.$ Logo, $X_{(1)}$ e $X_{(n)}$ são suficientes minimais, mas não são completas.
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{Observação:}
+\justifying
+\begin{align*}
+    X\sim U(\theta-1,\theta+1)\Rightarrow X=\theta+w, w\sim U(-1,1)
+\end{align*}
+Assim, 
+\begin{align*}
+    max(\{X_{1},\ldots,X_{n}\})&=max(\{\theta+w_{1},\ldots,\theta+w_{n}\})\\
+    &=\theta+max(\{w_{1},\ldots,w_{n}\})
+\end{align*}
+\end{block}
+\end{frame}
+
+\section{Estatística Ancilar}
+\begin{frame}{Estatística Ancilar}
+\begin{block}{}
+\justifying
+Uma Estatística é \textbf{Ancilar} para um parâmetro $\theta,$ se sua distribuição não depende de $\theta.$ Por exemplo, $X_{i}\Sim N(\theta,1).$ Neste caso, $S^{2}$ tem distribuição que não depende de $\theta.$ Então, $S^{2}$ é ancilar para $\theta.$
+\end{block}
+\end{frame}
+
+\begin{frame}{Exemplos (Estatísticas Invariantes por Locação e Escala)}
+\begin{block}{}
+\justifying
+Considere $X_{i}=\theta_{1}+\theta_{2}W_{i},i=1,\ldots,n,~$em que $\theta_{1}\in \R,~\theta_{2}>0$ e $w_{1},\ldots,w_{n}$ são variáveis aleatórias iid com densidade $f.$
+\end{block}
+\pause
+\begin{block}{}
+\justifying
+Segue que $W_{i}=\dfrac{X_{i}-\theta_{1}}{\theta_{2}}$ e $dw=\dfrac{1}{\theta_{2}}dx,$ logo,
+$$f_{X_{i}}(x)=\dfrac{1}{\theta_{2}}f(\dfrac{x-\theta_{1}}{\theta_{2}}),~\text{Com}~f~\text{não dependendo de}~\theta_{1}~\text{e}~\theta_{2}.$$
+\end{block}
+\end{frame}
+
+\begin{frame}{Exemplos (Estatísticas Invariantes por Locação e Escala)}
+\begin{block}{}
+\justifying
+Seja $Z=u(X_{1},\ldots,X_{n})$ uma estatística tal que,
+$$u(cx_{1}+d,\ldots,cx_{n}+d)=u(x_{1},\ldots,x_{n}),~\forall c,d\in \R^{*}.$$
+Segue que, 
+$$Z=u(\theta_{1}+\theta_{2}W_{1},\ldots,\theta_{1}+\theta_{2}W_{n})=u(W_{1},\ldots,W_{n})$$ é uma função de $W_{1},\ldots,W_{n}$ somente, e não de $\theta.$ Portanto, $Z$ tem uma distribuição que não depende de $\theta.$ Isto é, $Z=u(X_{1},\ldots,X_{n})$ é uma estatística invariante por locação e escala. Além disso, $Z$ é ancilar para $\theta_{1}$ e $\theta_{2}.$
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{\Home}
+\justifying
+\begin{itemize}
+    \item \textbf{Exercícios da seção 7.8:} 1 à 4
+\end{itemize}
+\end{block}
+\end{frame}
+
+\section{Teorema de Basu}
+\begin{frame}{Teorema de Basu}
+\begin{Teorema}
+\justifying
+Sejam $X_{1},\ldots,X_{n}$ uma amostra aleatória com distribuição dependendo de $\theta\in\Omega,$ em que $\Omega$ é um intervalo. Suponha que $Y_{1}$ é suficiente e completa para $\theta.$ Seja $Z$ outra estatística ancilar para $\theta.$ Então, $Y_{1}$ e $Z$ são independentes.
+\end{Teorema}
+\end{frame}
+
+\begin{frame}{Demonstração}
+\vspace{-0.2cm}
+\begin{block}{Caso Contínuo!}
+\justifying
+Seja $g_{1}(y_{1},\theta)$ a densidade marginal de $Y_{1}$ e $h(z|Y_{1})$ a densidade condicional de $Z$ dado $Y_{1}.$ Assim, a densidade conjunta de $Y_{1}$ e $Z$ é $$g_{Y_{1},Z}(y_{1},z)=h(z|Y_{1})g_{1}(y_{1},\theta).$$
+A densidade marginal de $Z,$ digamos $g_{2}(z)$ é dada por
+\begin{align*}
+    g_{2}(z)&=\Int g_{Y_{1},Z}(y_{1},z)dy_{1}=\Int h(z|y_{1})g_{1}(y_{1},\theta)dy_{1}
+\end{align*}
+\pause
+\vspace{-0.4cm}
+\begin{align*}
+\Rightarrow \Int h(z|y_{1})g_{1}(y_{1},\theta)dy_{1}-g_{2}(z)&=0\\ 
+\SeSe \Int \Big[g_{2}(z)-h(z|y_{1})\Big]g_{1}(y_{1})dy_{1}&=0,\forall \theta.
+\end{align*}
+\end{block}
+\end{frame}
+
+\begin{frame}{Demonstração}
+\begin{block}{}
+\justifying
+Como $Y_{1}$ é completa $g_{2}(z)=h(z|Y_{1})$ e, portanto, $Z$ é independente de $Y_{1}.$ Notem que, para este argumento ser válido $g_{2}(z)-h(z|y_{1})$ não pode depender de $\theta,$ o que é fato, pois $g_{2}(z)$ é ancilar e $h(z|y_{1})$ não depende de $\theta$ pois $Y_{1}$ é suficiente para $\theta.$
+\end{block}
+\end{frame}
+
+\begin{frame}{Exemplo}
+\begin{block}{}
+\justifying
+$\Bar{X}$ e $S^{2}$ são independentes. Notem que $\Bar{X}$ é suficiente e completa para $\mu$ e $S^{2}$ é ancilar para $\mu,$ se $\sigma^{2}$ é conhecido. Logo, pelo teorema de Basu, segue o resultado!
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+\begin{itemize}
+    \item \textbf{Exercícios da seção 7.9:} 2,3,4,6,7,9,11,13
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+\frametitle{\bf Referências}
+\printbibliography
+\end{frame}
+
+
+\end{document}

@@ -1,0 +1,155 @@
+\documentclass[12pt]{beamer}
+
+\input{Configuracoes/layout}
+
+
+\title{Inferência Estatística II}
+\author{Prof. Fernando de Souza Bastos\texorpdfstring{\\ fernando.bastos@ufv.br}{}}
+\institute{Departamento de Estatística\texorpdfstring{\\ Programa de Pós-Graduação em Estatística Aplicada e Biometria}\texorpdfstring{\\ Universidade Federal de Viçosa}{}\texorpdfstring{\\ Campus UFV - Viçosa}{}}
+\date{}
+\newcommand\mytext{Aula 9}
+\newcommand\mytextt{Fernando de Souza Bastos}
+\newcommand\mytexttt{\url{https://est711.github.io/}}
+
+
+\begin{document}
+%\SweaveOpts{concordance=TRUE}
+
+\frame{\titlepage}
+
+\begin{frame}{}
+\frametitle{\bf Sumário}
+\tableofcontents
+\end{frame}
+
+\section{Caso Multiparamétrico}
+\begin{frame}{}
+\begin{definicao}
+\justifying
+Seja $X_{1},\ldots, X_{n}$ variáveis aleatórias iid com densidade ou fdp $f(x,\theta),~\theta \in \Omega\subset \R^{p}.$ Seja $\mathcal{S}$ o suporte de $X$ e $Y=(Y_{1},\ldots,Y_{m})^{\top}$ um vetor de estatísticas m-dimensional, isto é, $Y_{i}=u_{i}(X_{1},\ldots, X_{n}), i=1,\ldots,m.$ Denote a densidade conjunta ou fdp conjunta por $f_{Y}(y;\theta), y\in\R^{m}.$ O vetor de estatísticas $Y$ é conjuntamente suficiente para $\theta$ se 
+\begin{align*}
+    \dfrac{\Prodi f(x_{i},\theta)}{f_{Y}(y,\theta)}=H(x_{1},\ldots,x_{n}),\forall\theta\in \Omega, \forall x_{i}\in \mathcal{S}
+\end{align*}
+não depende de $\theta.$
+\end{definicao}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+O critério da fatoração pode ser estendido para o caso multiparamétrico. Ou seja, $Y$ é conjuntamente suficiente para $\theta,$ se existem duas funções não negativas $k_{1}$ e $k_{2}$ tais que 
+\begin{align*}
+    \Prodi f(x_{i},\theta)=k_{1}(y,\theta)k_{2}(x_{1},\ldots,x_{n}), y=(y_{1},\ldots,y_{m}).
+\end{align*}
+O conceito de uma família completa de densidades ou fdp's é generalizado como segue nos próximos slides.
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Seja $\{f(v_{1},\ldots,v_{k},\theta);\theta\in\Omega\}$ uma família de densidades ou fdp's conjuntas de $k$ variáveis aleatórias $v_{1},\ldots,v_{k}.$ Seja $u(v_{1},\ldots,v_{k})$ uma função tal que $E(u(v_{1},\ldots,v_{k}))=0, \forall \theta\in\Omega,$ implica que $u(v_{1},\ldots,v_{k})=0$ exceto em um conjunto de probabilidade zero. Neste caso, dizemos que a familia $f$ é completa.
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Os teoremas de Rao-Blackwell e Lehman-Scheffé podem ser generalizados para este caso. Suponha que $\delta=g(\theta)$ é o vetor de parâmetros de interesse. Suponha que $Y$ é conjuntamente suficiente e completa para $\theta.$ Seja $T=T(Y)$ uma função de $Y$ tal que $E(T)=\delta.$ Então, $T$ é o ENVVUM de $\delta,$ pelo teorema de Lehman-Scheffé. $T$ também é suficiente e completa para $\delta.$ Daqui, em diante, suponha que o número de estatísticas suficientes $m$ seja igual a dimensão de $\theta$ (ou seja, $m=p$).
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{definicao}
+\justifying
+Sejam $X_{1},\ldots,X_{m}$ uma amostra aleatória de uma distribuição com densidade ou fp $f(X,\theta),\theta \in \Omega^{p},$ dada por 
+\begin{align*}
+    f(x,\theta)=\exp{{\displaystyle \sum_{j=1}^{m}p_{j}(\theta)k_{j}(x)+S(x)+q(\theta_{1},\ldots,\theta_{m})}},x\in\mathcal{S}
+\end{align*}
+Se $X$ for contínua, assuma que $\mathcal{S}=(a,b),~a$ e $b$ podendo ser $-\infty$ e $\infty,$ respectivamente. Se $X$ for discreta, assuma $\mathcal{S}=\{a_{1},\ldots,a_{n},\ldots\}.$ Então dizemos que esta densidade ou função de probabilidade pertence a família exponencial. 
+\end{definicao}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Adicionalmente, dizemos que a família definida no slide anterior pertence a família exponencial regular se,
+\begin{enumerate}
+    \item O suporte $\mathcal{S}$ não depende do vetor de parâmetros $\theta.$
+    \item $\Omega$ contém um retângulo m-dimensional aberto, não vazio.
+    \item $P_{j}(\theta),j=1,\ldots,m$ são funções não triviais, independentes e contínuas.
+    \item 
+    \begin{enumerate}
+        \item[a)] Se $X$ é uma variável aleatória contínua para $x\in(a,b)$ e nenhuma das funções $k_{j}$ é função linear das outras e $S(X)$ é uma função contínua para $x\in (a,b).$
+        \item[b)] Se $X$ é v.a.d, $k_{j}(x),j=1,\ldots,m$ são funções não triviais de $x$ e nenhuma é combinação linear das outras.
+    \end{enumerate}
+\end{enumerate}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Seja $X_{1},\ldots,X_{n}$ uma amostra aleatória de uma variável aleatória $X$ com distribuição pertencente a família exponencial regular. $f(\cdot,\theta)$ é a densidade ou f.p. de $X.$ Assim, 
+\begin{align*}
+    \Prodi f(x,\theta)&=\Prodi \exp{\Big\{{\displaystyle \sum_{j=1}^{m}p_{j}(\theta)k_{j}(x_{i})+S(x_{i})+q(\theta_{1},\ldots,\theta_{m})}\Big\}}\\
+    &=\exp{\Big\{{\displaystyle \sum_{j=1}^{m}p_{j}(\theta)\sum_{i=1}^{n}k_{j}(x_{i}) + \sum_{i=1}^{n}S(x_{i}) + nq(\theta_{1},\ldots,\theta_{m})}\Big\}}\\
+    &=\exp{\Big\{\sum_{i=1}^{n}S(x_{i})\Big\}}\exp{\Big\{{\displaystyle \sum_{j=1}^{m}p_{j}(\theta)y_{j} + nq(\theta_{1}, \ldots, \theta_{m})} \Big\}},    
+\end{align*}
+em que $y_{j}=\Sumi k_{j}(x_{i}),j=1,\ldots,m.$ Pelo critério da fatoração, $(y_{1},\ldots,y_{m})^{\top}=y$ é conjuntamente suficiente para $\theta.$
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Podemos verificar que a densidade ou fdp conjunta de $Y$ pode ser escrita como
+\begin{align*}
+    R(y)\exp{\Big\{{\displaystyle \sum_{j=1}^{m}p_{j}(\theta)y_{j}+nq(\theta_{1}, \ldots, \theta_{m})}\Big\}}
+\end{align*}
+e obter que $Y_{1},\ldots,Y_{m}$ é um vetor de estatísticas conjuntamente suficiente e completa para $\theta,$ quando $n>m.$
+\end{block}
+\end{frame}
+
+\begin{frame}{Exemplo}
+\vspace{-0.2cm}
+\begin{block}{}
+\justifying
+$X_{1},\ldots,X_{n}\Sim N(\theta_{1},\theta_{2}),\theta_{1}\in \R$ e $\theta_{2}>0.$
+\begin{align*}
+    f(x_{i},\theta_{1},\theta_{2})&=\dfrac{1}{\sqrt{2\pi\theta_{2}}}\exp{-\dfrac{(x_{i}-\theta_{1})^{2})}{2\theta_{2}}}\\
+    &=\exp{\Big\{-\frac{x_{i}^{2}}{2\theta_{2}}+\frac{x_{i}\theta_{1}}{\theta_{2}}-\frac{\theta_{1}^{2}}{2\theta_{2}}-\log{\sqrt{2\pi\theta_{2}}}\Big\}}
+\end{align*}
+\pause
+%\vspace{-0.8cm}
+\begin{align*}
+k_{1}(x)=x^{2},~p_{1}(\theta)=-\frac{1}{2\theta_{2}},~k_{2}(x)=x~\text{e}~p_{2}(\theta)=\frac{\theta_{1}}{\theta_{2}}
+\end{align*}
+A distribuição normal $N(\theta_{1},\theta_{2})$ pertence a família exponencial regular, assim, $Y_{1}=\Sumi x_{i}^{2}$ e $Y_{2}=\Sumi x_{i}$ são estatísticas conjuntamente suficientes para $\theta=(\theta_{1},\theta_{2})$
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Assim, se definirmos $Z_{1}=\dfrac{Y_{2}}{n}=\Bar{X}$ e $Z_{2}=\dfrac{Y_{1}-\frac{Y_{2}^{2}}{n}}{n-1}=\dfrac{\sum (x_{i}-\Bar{x})}{n-1}$ com $E(Z_{1})=\theta_{1}$ e $E(Z_{2})=\theta_{2}^{2},~Z_{1}$ e $Z_{2}$ são, pelo teorema de Lehmann-Scheffé os ENVVUM para $\theta_{1}$ e $\theta_{2}^{2},$ respectivamente.
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{\Home}
+\justifying
+\begin{itemize}
+    \item \textbf{Exercícios da seção 7.7:} 2,3,5,6,7,10,11,12 e 13.
+\end{itemize}
+\nocite{hogg, casella2021statistical, bolfarine}
+\end{block}
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+\frametitle{\bf Referências}
+\printbibliography
+\end{frame}
+
+
+\end{document}

@@ -1,0 +1,229 @@
+\documentclass[12pt]{beamer}
+
+\input{Configuracoes/layout}
+
+
+\title{Inferência Estatística II}
+\author{Prof. Fernando de Souza Bastos\texorpdfstring{\\ fernando.bastos@ufv.br}{}}
+\institute{Departamento de Estatística\texorpdfstring{\\ Programa de Pós-Graduação em Estatística Aplicada e Biometria}\texorpdfstring{\\ Universidade Federal de Viçosa}{}\texorpdfstring{\\ Campus UFV - Viçosa}{}}
+\date{}
+\newcommand\mytext{Aula 8}
+\newcommand\mytextt{Fernando de Souza Bastos}
+\newcommand\mytexttt{\url{https://est711.github.io/}}
+
+
+\begin{document}
+%\SweaveOpts{concordance=TRUE}
+
+\frame{\titlepage}
+
+\begin{frame}{}
+\frametitle{\bf Sumário}
+\tableofcontents
+\end{frame}
+
+\section{Caso Multiparamétrico: Estimação}
+\begin{frame}{Caso Multiparamétrico: Estimação}
+\begin{block}{}
+\justifying
+Considere $\theta$ um vetor de $p$ parâmetros. Sejam $X_{1},\ldots,X_{n}$ variáveis aleatórias iid com densidade $f(x,\theta),~\theta\in\Omega\subset\R^{p}.$ A função log-verossimilhança é dada por
+\begin{align*}
+    \ell(\theta)=\log{L(\theta)}=\Sumi \log{f(x_{i},\theta)}
+\end{align*}
+A teoria para o caso multiparamétrico requer condições de regularidade adicionais. Considere o apêndice do livro texto \citet{hogg}, página 687.
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{Observação:}
+\justifying
+A prova do teorema abaixo não depende se $\theta$ é um escalar ou um vetor. Portanto, o resultado é válido também para o caso multiparamétrico.
+
+\end{block}
+\begin{Teorema}\label{Teo1}
+\justifying
+Seja $\theta_{0}$ o valor verdadeiro de $\theta.$ Sob $(R0)$ e $(R1),$ temos que
+\begin{align*}
+    \Lim P_{\theta_{0}}(L(\theta_{0},X)>L(\theta,X))=1,~\text{para}~\theta\neq \theta_{0},
+\end{align*}
+ou seja, $\theta_{0}$ é o ponto de máximo de $L(\theta,X).$
+\end{Teorema}
+
+%Seja X uma variável aleatória com função densidade de probabilidade $f(x; \theta)$, onde $\theta \in \Omega \subset \R^p$. Sob essas suposições, $X$ pode ser uma variável aleatória escalar ou um vetor aleatório em $\R^k$. Seja $I(\theta) = [I_{jk}]$ a matriz de informação $p \times p$ dada pela expressão (6.4.4). Além disso, vamos denotar o parâmetro verdadeiro por $\theta_0$.
+
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Com isso, usaremos como estimador de $\theta$ aquele valor que maximiza $L(\theta),$ ou equivalentemente, o valor que resolve o sistema de equações $\dfrac{\partial\ell(\theta)}{\partial \theta}=0.$ Se esse valor existir, será chamado de estimador de máxima verossimilhança (EMV).
+\end{block}
+\pause
+\begin{block}{}
+\justifying
+Se o interesse for estimar uma função de $\theta,$ digamos $\eta=g(\theta)$ e se $\hat{\theta}$ é um EMV para $\theta,$ então $\hat{\eta}=g(\hat{\theta})$ é um estimador de máxima verossimilhança para $\eta.$
+\end{block}
+\end{frame}
+
+\begin{frame}{Exemplo}
+\begin{block}{}
+\justifying
+$X_{1},\ldots,X_{n}\Sim N(\mu,\sigma^{2}).$ Neste caso, $\theta=(\mu, \sigma).$
+\begin{align*}
+    f(x;\mu,\sigma)=\dfrac{1}{\sqrt{2\pi\sigma^{2}}}e^{-\dfrac{(x-\mu)^{2}}{2\sigma^{2}}}, \theta\in\Omega=\R\times(0,+\infty)~\text{e}~ x\in\R.
+\end{align*}
+\end{block}
+\pause
+\begin{block}{}
+\justifying
+A função de verossimilhança nesse caso é:
+\begin{align*}
+L(\theta)=\Big(\dfrac{1}{\sqrt{2\pi}\sigma}\Big)^{n}e^{-\dfrac{\Sumi(x_{i}-\mu)^{2}}{2\sigma^{2}}}
+\end{align*}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+\begin{align*}
+ \ell(\theta)=\log{L(\theta)}=-\frac{n}{2}\log{2\pi}-n\log{\sigma}-\frac{1}{2\sigma^{2}}\Sumi(x_{i}-\mu)^{2}
+\end{align*}
+fazendo $\dfrac{\partial\ell(\theta)}{\partial\mu}=0$ e $\dfrac{\partial\ell(\theta)}{\partial\sigma}=0,$ pode - se obter:
+\begin{align*}
+    \hat{\mu}=\Bar{X}~\text{e}~\hat{\sigma}=\sqrt{\dfrac{1}{n-1}\Sumi(x_{i}-\Bar{x})^{2}}.
+\end{align*}
+Analisando a matriz de segundas derivadas de $\ell,$ pode-se ver que $(\hat{\mu},\hat{\sigma})$ é o ponto de máximo global de $\ell(\mu,\sigma).$ Ou seja, $(\hat{\mu},\hat{\sigma})$ é o EMV de $(\mu,\sigma).$
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+No caso univariado, a informação de Fisher é a variância da v.a. $\dfrac{\partial\log{f(x,\theta)}}{\partial\theta}.$ No caso multiparamétrico, a informação de Fisher é definida como a matriz de variância e covariância do vetor aleatório
+\begin{align*}
+\bigtriangledown\log{f(\Vec{X},\theta)}=\Big(\dfrac{\partial\log{f(x,\theta)}}{\partial\theta_{1}},\ldots,\dfrac{\partial\log{f(x,\theta)}}{\partial\theta_{n}}\Big)^\top
+\end{align*}
+A informação de Fisher é $I(\theta)=Cov(\bigtriangledown\log{f(\Vec{X},\theta)}),$ em que 
+\vspace{1cm}
+
+{\small
+\begin{align*}
+Cov(Z_{1},Z_{2})=\begin{bmatrix}
+       Cov(Z_{1},Z_{1}) & Cov(Z_{1},Z_{2})\\[0.3em]
+       Cov(Z_{2},Z_{1}) & Cov(Z_{2},Z_{2})
+\end{bmatrix}=\begin{bmatrix}
+       Var(Z_{1})      & Cov(Z_{1},Z_{2})\\[0.3em]
+       Cov(Z_{2},Z_{1})& Var(Z_{2})
+\end{bmatrix}
+\end{align*}
+}
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+O elemento $(j,k)$ de $I(\theta)$ é dado por 
+\begin{align*}
+    I_{jk}(\theta)=Cov\Big(\dfrac{\partial\log{f(x,\theta)}}{\partial\theta_{j}},\dfrac{\partial\log{f(x,\theta)}}{\partial\theta_{k}}\Big)
+\end{align*}
+\end{block}
+\pause
+\begin{block}{}
+\justifying
+Sob as condições de regularidade, temos que
+\begin{align*}
+    1&=\Int f(x,\theta)dx\Rightarrow 0=\dfrac{\partial}{\partial\theta}\Int f(x,\theta)dx\\
+    \Rightarrow 0&=\Int\dfrac{\partial f(x,\theta)}{\partial\theta} dx=\Int\dfrac{\partial \log{f(x,\theta)}}{\partial\theta}f(x,\theta)dx\\
+    &=E\Big[\dfrac{\partial \log{f(x,\theta)}}{\partial\theta}\Big]=E\Big[\bigtriangledown\log{f(x,\theta)}\Big]
+\end{align*}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Tomando mais uma derivada com relação a $\theta,$ obtemos:
+{\small
+\begin{align*}
+    0_{1\times p}^{\top}&=\dfrac{\partial}{\partial\theta^{\top}}\Int\dfrac{\partial \log{f(x,\theta)}}{\partial\theta}f(x,\theta)dx\\
+    \\
+    &=\int \dfrac{\partial^{2}\log{f(x,\theta)}}{\partial\theta\partial\theta^{\top}}f(x,\theta)dx+\int \dfrac{\partial \log{f(x,\theta)}}{\partial\theta}\dfrac{\partial \log{f(x,\theta)}}{\partial\theta^{\top}}f(x,\theta)dx\\
+    \\
+    \Rightarrow &- \int \dfrac{\partial^{2}\log{f(x,\theta)}}{\partial\theta\partial\theta^{\top}}f(x,\theta)dx=\int \dfrac{\partial \log{f(x,\theta)}}{\partial\theta}\dfrac{\partial \log{f(x,\theta)}}{\partial\theta^{\top}}f(x,\theta)dx\\
+    \\
+    \Rightarrow &\phantom{=} E\Big(\dfrac{\partial \log{f(x,\theta)}}{\partial\theta}\dfrac{\partial \log{f(x,\theta)}}{\partial\theta^{\top}} \Big)   =-E\Big(\dfrac{\partial^{2}\log{f(x,\theta)}}{\partial\theta\partial\theta^{\top}}\Big)
+\end{align*}
+}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Daí, $$I(\theta)=-E\Big(\dfrac{\partial^{2}\log{f(x,\theta)}}{\partial\theta\partial\theta^{\top}}\Big).$$
+\end{block}
+\end{frame}
+
+\begin{frame}{Exemplo}
+\begin{block}{}
+\justifying
+$X\sim N(\mu,\sigma),~\theta=(\mu,\sigma).$
+\begin{align*}
+    \dfrac{\partial\log{f}}{\partial\mu}&=\frac{1}{\sigma^{2}}(x-\mu);~\dfrac{\partial^{2}\log{f}}{\partial\mu^{2}}=-\frac{1}{\sigma^{2}};~\dfrac{\partial\log{f}}{\partial\sigma}=-\frac{1}{\sigma}+\frac{1}{\sigma^{3}}(x-\mu)^{2}\\
+    \dfrac{\partial^{2}\log{f}}{\partial\sigma^{2}}&=\frac{1}{\sigma^{2}}-\frac{3}{\sigma^{4}}(x-\mu)^{2};~\dfrac{\partial^{2}\log{f}}{\partial\mu\partial\sigma}=-\frac{2}{\sigma^{3}}(x-\mu)
+\end{align*}
+Logo,
+{\small
+\begin{align*}
+I(\theta)=I(\mu,\sigma)=\begin{bmatrix}
+       \frac{1}{\sigma^{2}} & 0\\[0.3em]
+       0 & \frac{2}{\sigma^{2}}
+\end{bmatrix}=\begin{bmatrix}
+       -E\Big(\dfrac{\partial^{2}\log{f(x,\theta)}}{\partial\mu^{2}}\Big)      & -E\Big(\dfrac{\partial^{2}\log{f(x,\theta)}}{\partial\sigma\partial\mu}\Big)\\[0.3em]
+       E\Big(\dfrac{\partial^{2}\log{f(x,\theta)}}{\partial\mu\partial\sigma}\Big)& -E\Big(\dfrac{\partial^{2}\log{f(x,\theta)}}{\partial\sigma^{2}}\Big)
+\end{bmatrix}
+\end{align*}
+}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{Teorema}{}
+\justifying
+Sejam $X_{1},\ldots,X_{n}$ variáveis aleatórias iid com densidade $f(x,\theta),\theta\in\Omega\subset\R^{P}.$ Assuma que valem as condições de regularidade. Então,
+\begin{enumerate}
+    \item O sistema de equações $\dfrac{\partial\ell(\theta)}{\partial\theta}=0$ tem uma solução $\hat{\theta}_{n}$ tal que $\hat{\theta}_{n}\ConvP \theta_{0}$ ($\theta_{0}$ verdadeiro valor de $\theta$).
+    \item Para qualquer sequência satisfazendo 1, temos $$\sqrt{n}(\hat{\theta}_{n}-\theta_{0})\ConvD N_{p}(0,I^{-1}(\theta)).$$
+\end{enumerate}
+\end{Teorema}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{Corolário:}
+\justifying
+Sob as condições do teorema anterior, temos que $$\sqrt{n}(\hat{\theta}_{in}-\theta_{i0})\ConvD N_{p}(0,I_{ii}^{-1}(\theta)).$$
+Seja $g(\theta)=(g_{1}(\theta),\ldots,g_{k}(\theta))^{\top},1\leq k\leq p$ tal que a matriz de derivadas parciais $B=\Big(\dfrac{\partial g_{i}}{\partial \theta_{j}}\Big)_{ij}, i=1,\ldots,k$ e $j=1,\ldots,p$ possuam elementos contínuos e que não se anulem numa vizinhança de $\theta_{0}.$ Seja $\hat{\eta}=g(\hat{\theta}).$ Então, $\hat{\eta}$ é o EMV de $\eta$ e $$\sqrt{n}(\hat{\eta}-\eta_{0})\ConvD N_{k}(0,BI^{-1}(\theta)B^{\top}).$$
+\end{block}
+\end{frame}
+
+
+\begin{frame}{}
+\begin{block}{\Home}
+\justifying
+\begin{itemize}
+    \item \textbf{Exercícios da seção 6.4:} Todos, exceto o 5 e o 8.
+\end{itemize}
+\nocite{hogg, casella2021statistical, bolfarine}
+\end{block}
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+\frametitle{\bf Referências}
+\printbibliography
+\end{frame}
+
+
+\end{document}

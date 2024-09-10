@@ -1,0 +1,335 @@
+\documentclass[12pt]{beamer}
+
+\input{Configuracoes/layout}
+
+\title{Inferência Estatística II}
+\author{Prof. Fernando de Souza Bastos\texorpdfstring{\\ fernando.bastos@ufv.br}{}}
+\institute{Departamento de Estatística\texorpdfstring{\\ Programa de Pós-Graduação em Estatística Aplicada e Biometria}\texorpdfstring{\\ Universidade Federal de Viçosa}{}\texorpdfstring{\\ Campus UFV - Viçosa}{}}
+\date{}
+\newcommand\mytext{Aula 15}
+\newcommand\mytextt{Fernando de Souza Bastos}
+\newcommand\mytexttt{\url{https://est711.github.io/}}
+
+
+\begin{document}
+%\SweaveOpts{concordance=TRUE}
+
+\frame{\titlepage}
+
+\begin{frame}{}
+\frametitle{\bf Sumário}
+\tableofcontents
+\end{frame}
+
+\section{Testes Mais Poderosos}
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Sejam \seqX~ variáveis aleatórias iid de uma distribuição dependendo de um vetor de parâmetros $\theta \in \Omega.$ Assuma que $\theta\in W_{0}$ ou $\theta\in W_{1},$ com $W_{0}\cap W_{1}=\emptyset$ e $W_{0}\cup W_{1}=\Omega.$ Com isso, definimos as hipóteses:
+\begin{align*}
+    H_{0}:\theta\in W_{0}~\text{contra}~H_{1}:\theta\in W_{1}.
+\end{align*}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+O teste de $H_{0}$ contra $H_{1}$ é baseado na amostra \seqX, considere um subconjunto (dependendo da amostra) $\mathcal{C}$ de $\mathcal{S},$ em que $\mathcal{S}$ é o suporte da amostra aleatória. Essa região $\mathcal{C}$ é conhecida como região crítica e sua correspondente regra de decisão é:
+\begin{itemize}
+    \item Rejeite $H_{0}$ (Aceite $H_{1}$) se (\seqX)$\in\mathcal{C}.$
+    \item Aceita $H_{0}$ (Rejeite $H_{1}$) se (\seqX)$\notin\mathcal{C}~(\in \mathcal{C}^{c}).$
+\end{itemize}
+\end{block}
+\pause
+\begin{block}{}
+\justifying
+O erro tipo I ocorre se $H_{0}$ é rejeitada quando ela é verdadeira, enquanto o erro tipo II ocorre se $H_{0}$ é aceita quando $H_{1}$ é verdadeira. Nível de significância é o erro do tipo I, isto é, 
+\begin{align*}
+    \alpha=\max_{\theta\in W_{0}}P_{\theta}[(X_{1},\ldots,X_{n})\in\mathcal{C}].
+\end{align*}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Restrito a testes de tamanho $\alpha,$ queremos selecionar testes que minimizam o erro do tipo II, que é equivalente a maximizar a função poder. A função poder é definida por,
+\begin{align*}
+    \gamma_{\mathcal{C}}(\theta)=P_{\theta}[(X_{1},\ldots,X_{n})\in\mathcal{C}],~\theta\in W_{1}
+\end{align*}
+\end{block}
+%\begin{block}{}
+%\justifying
+%Acrescentar os gráficos da função poder aqui!
+%\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{definicao}
+\justifying
+Seja $\mathcal{C}$ um subconjunto do suporte de (\seqX). Dizemos que $\mathcal{C}$ é a melhor região critica de tamanho $\alpha$ se,
+\begin{enumerate}
+    \item[a)~] $\alpha=\max_{\theta\in W_{0}}P((X_{1},\ldots,X_{n})\in \mathcal{C})$
+    \item[b)~] Para qualquer outra região $A$ com $\alpha=P_{\theta\in W_{0}}((X_{1},\ldots,X_{n})\in A),$
+\begin{align*}
+    P_{\theta}((X_{1},\ldots,X_{n})\in \mathcal{C})\geq P_{\theta}((X_{1},\ldots,X_{n})\in A)~\text{quando}~\theta\in W_{1}
+\end{align*}
+\end{enumerate}
+\end{definicao}
+\end{frame}
+
+\section{Exemplos}
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Considere $X\Sim$Binomial$(5,\theta).$ Seja $f(x;\theta)$ a função de probabilidade de $X$ e considere $H_{0}:\theta=\dfrac{1}{2}$ e $H_{1}:\theta=\dfrac{3}{4}.$ Além disso, considere:
+\end{block}
+\pause
+\begin{block}{}
+\justifying
+\begin{table}[h]
+    \centering
+    \begin{tabular}{c|c|c|c|c|c|c}
+         x& 0&1&2&3&4&5 \\
+         \hline
+                  & &&&&& \\
+         $f(x;\frac{1}{2})$&$\frac{1}{32}$&$\frac{5}{32}$&$\frac{10}{32}$&$\frac{10}{32}$&$\frac{5}{32}$&$\frac{1}{32}$\\
+                  & &&&&& \\
+         \hline
+         & &&&&& \\
+         $f(x;\frac{3}{4})$&$\frac{1}{1024}$&$\frac{15}{1024}$&$\frac{90}{1024}$&$\frac{270}{1024}$&$\frac{405}{1024}$&$\frac{243}{1024}$\\
+         & &&&&& \\
+         \hline
+         & &&&&& \\
+         $\dfrac{f(x;\frac{1}{2})}{f(x;\frac{3}{4})}$&$32$&$\frac{32}{3}$&$\frac{32}{9}$&$\frac{32}{27}$&$\frac{32}{81}$&$\frac{32}{243}$\\
+                 & &&&&& \\
+         \hline
+    \end{tabular}
+\end{table}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Considere o nível de significância do teste como \(\alpha = \frac{1}{32}\). Buscamos uma melhor região crítica de tamanho \(\alpha = \frac{1}{32}\). Se \(A_1 = \{x : x = 0\}\) ou \(A_2 = \{x : x = 5\}\), então \(P_{\{\theta=\frac{1}{2}\}}(X \in A_1) = P_{\{\theta=\frac{1}{2}\}}(X \in A_2) = \frac{1}{32}\) e não há outro subconjunto \(A_3\) do espaço \(\{x : x = 0, 1, 2, 3, 4, 5\}\) tal que \(P_{\{\theta=\frac{1}{2}\}}(X \in A_3) = \frac{1}{32}\). Portanto, ou \(A_1\) ou \(A_2\) é a melhor região crítica \(C\) de tamanho \(\alpha = \frac{1}{32}\) para testar \(H_0\) contra \(H_1\). 
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Observamos que \(P_{\{\theta=\frac{1}{2}\}}(X \in A_1) = \frac{1}{32}\) e \(P_{\{\theta=\frac{3}{4}\}}(X \in A_1) = \frac{1}{1024}\). Assim, se o conjunto \(A_1\) for usado como região crítica de tamanho \(\alpha = \frac{1}{32}\), temos a situação inaceitável de que a probabilidade de rejeitar \(H_0\) quando \(H_1\) é verdadeira (\(H_0\) é falsa) é muito menor do que a probabilidade de rejeitar \(H_0\) quando \(H_0\) é verdadeira.
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Por outro lado, se o conjunto \(A_2\) for usado como região crítica, então \(P_{\{\theta=\frac{1}{2}\}}(X \in A_2) = \frac{1}{32}\) e \(P_{\{\theta=\frac{3}{4}\}}(X \in A_2) = \frac{243}{1024}\). Ou seja, a probabilidade de rejeitar \(H_0\) quando \(H_1\) é verdadeira é muito maior do que a probabilidade de rejeitar \(H_0\) quando \(H_0\) é verdadeira. Certamente, esta é uma situação mais desejável, e na verdade, \(A_2\) é a melhor região crítica de tamanho \(\alpha = \frac{1}{32}\). Esta última afirmação decorre do fato de que quando \(H_0\) é verdadeira, existem apenas dois subconjuntos, \(A_1\) e \(A_2\), do espaço amostral, cada um com medida de probabilidade igual a \(\frac{1}{32}\), e do fato de que \(\frac{243}{1024} = P_{\{\theta=\frac{3}{4}\}}(X \in A_2) > P_{\{\theta=\frac{3}{4}\}}(X \in A_1) = \frac{1}{1024}\).
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Deve ser observado neste problema que a melhor região crítica \(C = A_2\) de tamanho \(\alpha = \frac{1}{32}\) é encontrada incluindo em \(C\) o ponto (ou pontos) em que \(\frac{f(x;\frac{1}{2})}{f(x;\frac{3}{4})}\) é pequeno em comparação com \(\frac{f(x;\frac{1}{2})}{f(x;\frac{3}{4})}\). Isso é observado ser verdadeiro uma vez que a razão \(\frac{f(x;\frac{1}{2})}{f(x;\frac{3}{4})}\) é mínima em \(x = 5\). Assim, a razão \(\frac{f(x;\frac{1}{2})}{f(x;\frac{3}{4})}\), que é dada na última linha da tabulação acima, nos fornece uma ferramenta precisa para encontrar uma melhor região crítica \(C\) para determinados valores dados de \(\alpha\). Para ilustrar isso, suponha \(\alpha = \frac{6}{32}\). Quando \(H_0\) é verdadeira, cada um dos subconjuntos \(\{x : x = 0, 1\}\), \(\{x : x = 0, 4\}\), \(\{x : x = 1, 5\}\), \(\{x : x = 4, 5\}\) tem medida de probabilidade \(\frac{6}{32}\). Por cálculo direto, é encontrado que a melhor região crítica desse tamanho é \(\{x : x = 4, 5\}\). Isso reflete o fato de que a razão \(\frac{f(x;\frac{1}{2})}{f(x;\frac{3}{4})}\) tem seus dois valores mínimos em \(x = 4\) e \(x = 5\). O poder deste teste, que tem \(\alpha = \frac{6}{32}\), é \(P_{\{\theta=\frac{3}{4}\}}(X = 4, 5) = \frac{405}{1024} + \frac{243}{1024} = \frac{648}{1024}\).
+\end{block}
+\end{frame}
+
+\section{Teorema de Neyman-Pearson}
+\begin{frame}{Teorema de Neyman-Pearson}
+\vspace{-0.5cm}
+\begin{Teorema}
+\justifying
+Sejam \seqX~ uma amostra aleatória de uma distribuição dependendo de um vetor de parâmetros $\theta.$ Denote,
+$L(\theta,X)=\Prodi f(x_{i},\theta)$ a função de verossimilhança e $\undertilde{x}=(x_{1},\ldots,x_{n})^{\top}.$ Sejam $\theta^{'}$ e $\theta^{''}$ dois valores distintos de $\theta,~\Omega=\{\theta^{'},\theta^{''}\},$ e $k$ um número positivo, Seja $\mathcal{C}$ tal que,
+\begin{enumerate}
+    \item[a)~]$\dfrac{L(\theta^{'},\undertilde{x})}{L(\theta^{''},\undertilde{x})}\leq k,$ para cada $\undertilde{x}\in\mathcal{C},~\undertilde{X}=(X_{1},\ldots,X_{n})^{\top}$
+    \item[b)~]$\dfrac{L(\theta^{'},\undertilde{x})}{L(\theta^{''},\undertilde{x})}\geq k,$ para cada $\undertilde{x}\in\mathcal{C}^{c}$
+    \item[c)~]$\alpha=P_{\theta^{'}}(\undertilde{X}\in\mathcal{C}).$
+\end{enumerate}
+Então, $\mathcal{C}$ é a melhor região crítica de tamanho $\alpha$ para testar as hipóteses $H_{0}:\theta=\theta^{'}$ contra $H_{1}:\theta=\theta^{''}.$
+\end{Teorema}
+\end{frame}
+
+\begin{frame}{Demonstração}
+\begin{block}{}
+\justifying
+Consideramos o caso em que \seqX~ são variáveis continuas (o caso discreto é análogo).
+
+\textbf{Notação Simplificada:} $\int_{\R}\cdots\int_{\R}L(\theta,\undertilde{X})d\undertilde{X}\equiv \int L(\theta)$
+\end{block}
+\pause
+\begin{block}{}
+\justifying
+Queremos mostrar que,
+\begin{align*}
+    \int_{\mathcal{C}}L(\theta^{''})-\int_{A}L(\theta^{''})>0,~\text{em que}~A~\text{tem tamanho}~\alpha.
+\end{align*}
+Note que $\mathcal{C}=(\mathcal{C}\cap A)\cup (\mathcal{C}\cap A^{c})$ e $A=(\mathcal{C}\cap A)\cup (\mathcal{C}^{c}\cap A).$
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Logo,
+{\footnotesize
+\begin{align*}
+\int_{\mathcal{C}}L(\theta^{''})-\int_{A}L(\theta^{''})&= \int_{\mathcal{C}\cap A}L(\theta^{''}) + \int_{\mathcal{C}\cap A^{c}}L(\theta^{''}) - \int_{\mathcal{C}\cap A}L(\theta^{''})-\int_{\mathcal{C}^{c}\cap A}L(\theta^{''})\\
+&= \int_{\mathcal{C}\cap A^{c}}L(\theta^{''}) - \int_{\mathcal{C}^{c}\cap A}L(\theta^{''})
+\end{align*}
+}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Segue que,
+{\footnotesize
+\begin{align*}
+\int_{\mathcal{C}\cap A^{c}}L(\theta^{''}) -\int_{\mathcal{C}^{c}\cap A}L(\theta^{''})&\SetaUP{\text{Usando a parte a e b do teorema}}{\geq} \int_{\mathcal{C}\cap A^{c}}\dfrac{1}{k}L(\theta^{'})-\int_{\mathcal{C}^{c}\cap A}\dfrac{1}{k}L(\theta^{'})\\
+&=\dfrac{1}{k}\left(\int_{\mathcal{C}\cap A^{c}}L(\theta^{'})-\int_{\mathcal{C}^{c}\cap A}L(\theta^{'})\right)\\
+&=\dfrac{1}{k}\left(\int_{\mathcal{C}\cap A^{c}}L(\theta^{'})+\int_{\mathcal{C}\cap A}L(\theta^{'}) - \right.\\
+&\left.-\int_{\mathcal{C}\cap A}L(\theta^{'})-\int_{\mathcal{C}^{c}\cap A}L(\theta^{'})\right)\\
+&=\dfrac{1}{k}\left(\int_{\mathcal{C}}L(\theta^{'})-\int_{A}L(\theta^{'})\right)\Rightarrow \text{Sob}~H_{0}\\
+&=\dfrac{1}{k}\left(\alpha-\alpha\right)=0
+\end{align*}
+}
+\end{block}
+\end{frame}
+
+%\begin{frame}{}
+%\begin{block}{Corolário}
+%\justifying
+%Sob as condições do teorema anterior, $\alpha\leq \gamma_{\mathcal{C}}(\theta),\forall \theta.$
+%\end{block}
+%\pause
+%\begin{block}{Demonstração:}
+%\justifying
+%Tome um ensaio Bernoulli com probabilidade $\alpha$ de sucesso. Se acontecer sucesso, rejeite $H_{0}.$ Neste teste o nível de significância e a função poder são iguais a $\alpha.$ Pelo teorema anterior, $\alpha\leq \gamma_{\mathcal{C}}(\theta),\forall \theta.$
+%\end{block}
+%\end{frame}
+
+\begin{frame}{Exemplo}
+\begin{block}{}
+\justifying
+\seqX$\Sim N(\theta,1)$
+\begin{align*}
+    H_{0}:\theta&=\theta^{'}=0\\
+    H_{1}:\theta&=\theta^{''}=1,\quad \quad L(\theta,\undertilde{X})=\left(\dfrac{1}{\sqrt{2\pi}}\right)^{n}\exp{\left\{-\frac{1}{2}\sum(X_{i}-\theta)^{2}\right\}}
+\end{align*}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+$\dfrac{L(\theta^{'},\undertilde{x})}{L(\theta^{''},\undertilde{x})}\leq k,$
+\begin{align*}
+\dfrac{L(\theta^{'},\undertilde{x})}{L(\theta^{''},\undertilde{x})}&=\exp{\left\{-\Sumi x_{i}+\frac{n}{2}\right\}}\leq k\\
+&\Rightarrow -\sum x_{i}+\frac{n}{2}\leq k^{'}=\log{k}\\
+&\Rightarrow \underbrace{\sum x_{i}\geq k^{''}}_{\text{Região Crítica}}
+\end{align*}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Portanto, a melhor região crítica $C$ é o conjunto de todas as amostras $(x_1, x_2, \ldots, x_n)$ para as quais a soma dos $x_i$ é maior ou igual a $k^{''}$. O valor de $k^{''}$ pode ser determinado de modo que o tamanho da região crítica seja igual ao nível de significância desejado $\alpha$. Essa região crítica é dada por:
+
+\[
+C = \{(x_1, x_2, \ldots, x_n) : \sum_{i=1}^n x_i \geq k^{''}\}.
+\]
+
+O teste pode ser baseado na estatística $\Bar{X}$, pois $\sum_{i=1}^n x_i \geq k^{''}$ é equivalente a $\Bar{X}\geq c_{1}.$ Se $H_0$ for verdadeira, ou seja, $\theta = \theta_0 = 0$, então $\Bar{X}$ segue uma distribuição $N(0, 1/n)$. Dado um nível de significância $\alpha$, podemos calcular $c_{1}$ em R como $c_{1} = qnorm(1-\alpha, 0, 1/\sqrt{n})$.
+
+
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Portanto, se os valores experimentais de $X_1, X_2, \ldots, X_n$ forem, respectivamente, $x_1, x_2, \ldots, x_n$, podemos calcular $\Bar{x} = \frac{1}{n} \sum_{i=1}^n x_i$. Se $\Bar{x} \geq c_{1}$, a hipótese simples $H_0 : \theta = \theta_0 = 0$ será rejeitada no nível de significância $\alpha$; caso contrário, a hipótese $H_0$ será aceita. A probabilidade de rejeitar $H_0$ quando $H_0$ é verdadeira é igual a $\alpha$, o nível de significância. A probabilidade de rejeitar $H_0$ quando $H_0$ é falsa, ou seja, o valor de poder do teste quando $\theta = \theta_1 = 1$, pode ser calculada como indicado na equação fornecida.
+\end{block}
+\begin{block}{}
+\justifying
+\begin{align*}
+    P_{H1}(\Bar{X} \geq c_1) = \int_{c_1}^{\infty} \frac{1}{\sqrt{2\pi}} \frac{1}{\sqrt{1/n}} \exp\left(-\frac{(\Bar{x} - 1)^2}{2(1/n)}\right) \, d\Bar{x}.
+\end{align*}
+\end{block}
+\pause
+\begin{block}{}
+\justifying
+Por exemplo, se $n = 25$ e $\alpha$ for $0.05$, então $c_1 = \text{qnorm}(0.95, 0, 1/5) = 0.329$, usando R. Portanto, o poder do teste para detectar $\theta = 1$, é calculado por $1 - \text{pnorm}(0.329, 1, 1/5) = 0.9996$.
+\end{block}
+\end{frame}
+
+
+\begin{frame}{}
+\begin{block}{Exercício 8.1.2}
+\justifying
+Vamos considerar o problema de testar a hipótese simples $H_0: \theta = \theta_0 = 2$ contra a hipótese alternativa simples $H_1: \theta = \theta_1 = 4$ para a variável aleatória $X$, que possui a função de densidade de probabilidade (pdf) dada por $f(x; \theta) = \frac{1}{\theta} e^{-\frac{x}{\theta}}$, onde $0 < x < \infty$ e zero caso contrário. Seja $X_1$ e $X_2$ representam uma amostra aleatória de tamanho 2 desta distribuição. Mostre que o melhor teste de $H_0$ contra $H_1$ é usando a estatística $X_1 + X_2$!
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+A razão de verossimilhança é dada por:
+
+\begin{align*}
+    \frac{L(\theta_0; X_1, X_2)}{L(\theta_1; X_1, X_2)} &= \frac{\frac{1}{\theta_0} e^{-\frac{X_1}{\theta_0}} \frac{1}{\theta_0} e^{-\frac{X_2}{\theta_0}}}{\frac{1}{\theta_1} e^{-\frac{X_1}{\theta_1}} \frac{1}{\theta_1} e^{-\frac{X_2}{\theta_1}}}\\ 
+&= 4e^{-\left(\dfrac{X_1+X_2}{4}\right)},
+\end{align*}
+em que utilizamos as hipóteses $H_0: \theta = 2$ e $H_1: \theta = 4.$ Agora, queremos encontrar a melhor região crítica $C$ de tamanho $\alpha$ para testar $H_0$ contra $H_1$. Neste caso, $\alpha$ representa o nível de significância do teste.
+\end{block}
+\end{frame}
+
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Usando a razão de verossimilhança, temos que:
+
+\[
+\frac{L(\theta_0; X_1, X_2)}{L(\theta_1; X_1, X_2)} \leq k \quad \text{se, e somente se,} \quad 4e^{-\left(\dfrac{X_1+X_2}{4}\right)} \leq k,
+\]
+
+ou seja, $X_1 + X_2 \geq k_{3}$. Portanto, a região crítica $C$ pode ser definida como:
+
+\[
+C = \{(X_1, X_2) : X_1 + X_2 \geq k_{3}\},
+\]
+
+em que $k$ é escolhido de forma a controlar o nível de significância $\alpha$. O teste de hipóteses consiste em verificar se a amostra cai dentro ou fora da região crítica $C$. Portanto, o melhor teste usa a estatística $X_1 + X_2$ e a melhor região crítica $C$ é definida por $C=\{(x_{1},x_{2})/x_{1}+x_{2}\leq k\}$.
+\end{block}
+\end{frame}
+
+\begin{frame}{\Home}
+\begin{block}{}
+\justifying
+
+\begin{itemize}
+    \item \textbf{Exercícios da seção 8.1:} 2, 3, 5, 6, 8, 9, 10.
+    %\item \textbf{Exercícios da seção 8.2:} 1,3,5,6,11,13.
+    %\item \textbf{Exercícios da seção 8.3:} 4,6,8,11,12,13.
+\end{itemize}
+\end{block}
+\nocite{hogg}
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+\frametitle{\bf Referências}
+\printbibliography
+\end{frame}
+
+
+\end{document}
+

@@ -1,0 +1,270 @@
+\documentclass[12pt]{beamer}
+
+\input{../Configuracoes/layout}
+
+
+\title{Inferência Estatística II}
+\author{Prof. Fernando de Souza Bastos\texorpdfstring{\\ fernando.bastos@ufv.br}{}}
+\institute{Departamento de Estatística\texorpdfstring{\\ Programa de Pós-Graduação em Estatística Aplicada e Biometria}\texorpdfstring{\\ Universidade Federal de Viçosa}{}\texorpdfstring{\\ Campus UFV - Viçosa}{}}
+\date{}
+\newcommand\mytext{Aula 2}
+\newcommand\mytextt{Fernando de Souza Bastos}
+\newcommand\mytexttt{\url{https://est711.github.io/}}
+
+
+\begin{document}
+%\SweaveOpts{concordance=TRUE}
+
+\frame{\titlepage}
+
+\begin{frame}{}
+\frametitle{\bf Sumário}
+\tableofcontents
+\end{frame}
+
+\section{Função Geradora de Momentos}
+\begin{frame}{Função Geradora de Momentos}
+\begin{definicao}
+\justifying
+A função geradora de momentos de uma variável aleatória $X$ é definida por $M_{X}(t)=E(e^{tX}),~t\in \R$
+\end{definicao}
+\end{frame}
+
+\begin{frame}{}
+\begin{Teorema}
+\justifying
+Seja $\{X_{n}\}_{n\geq 1}$ uma sequência de variáveis aleatórias com fgm $M_{X_n}(t)$ que existe para $|t|<h$ para todo $n$. Seja $X$ uma variável aleatória com fgm $M_{X}(t)$, que existe para $|t| \leq h_1 \leq h$. Se $\lim_{n \to \infty} M_{X_n}(t) = M_{X}(t)$ para $|t| \leq h_1$, então $X_{n} \overset{D}{\rightarrow} X.$
+\end{Teorema}
+\pause
+\begin{block}{Observação importante na resolução de exercícios:}
+\justifying
+Se ${\displaystyle \lim_{n \to \infty} \left(1 + \frac{b}{n} + \frac{\psi(n)}{n}\right)^{cn}}$, em que $b$ e $c$ não dependem de $n$ e, em que, ${\displaystyle\lim_{n \to \infty} \psi(n) = 0}$. Então,
+${\displaystyle \lim_{n \to \infty} \left(1 + \frac{b}{n} + \frac{\psi(n)}{cn}\right) = \lim_{n \to \infty} \left(1 + \frac{b}{n}\right)^{cn} = e^{bc}}.$
+\end{block}
+\end{frame}
+
+\begin{frame}{Exemplo 1}
+\begin{block}{}
+\justifying
+
+${\displaystyle \lim_{{n \to \infty}} \left(1 - \frac{{t^2}}{{n}} + \frac{{t^2}}{{n^{3/2}}}\right)^{-n/2}} = {\displaystyle \lim_{{n \to \infty}} \left(1 - \frac{{t^2}}{{n}} + \frac{{t^2}/\sqrt{n}}{{n}}\right)^{-n/2}}$.
+
+Aqui, $b = -t^2$, $c = -\frac{1}{2}$ e $\psi(n) = \frac{{t^2}}{{\sqrt{n}}}$. Consequentemente, para cada valor fixo de $t$, o limite é $e^{t^2/2}$.
+\end{block}
+\end{frame}
+
+\begin{frame}{Exemplo 2}
+	\vspace{-0.5cm}
+\begin{block}{}
+\justifying
+Considere $X_{n}\sim Binomial(n,p_{n})$ e suponha ${\displaystyle \Lim np_{n}=\lambda>0}$ (por exemplo, $p_{n}=\dfrac{1}{n+1},~\Lim np_{n}=1$). Então, $X_{n} \overset{D}{\rightarrow} X,$ em que $X\sim$Poisson($\lambda$).
+\end{block}
+\pause
+	\vspace{-0.3cm}
+\begin{block}{Demonstração}
+\justifying
+Temos que,
+\begin{align*}
+    M_{X_{n}}(t)&=E(e^{tX_{n}})={\displaystyle \sum_{k=0}^{n}e^{tk}\binom{n}{k}p_{n}^{k}(1-p_{n})^{n-k}}\\
+    &=\Big(1-p_{n}+p_{n}e^{t}\Big)^{n}=\Big(1+\dfrac{np_{n}}{n}(e^{t}-1)\Big)^{n}\\
+\text{(para n grande)}    &=\Big(1+\dfrac{\lambda}{n}(e^{t}-1)\Big)^{n}\rightLim \exp{\{\lambda(e^{t}-1)\}}
+\end{align*}
+Logo, $X_{n} \overset{D}{\rightarrow} X\sim$Poisson($\lambda$).
+\end{block}
+\end{frame}
+
+\begin{frame}
+	\begin{block}{}
+		\justifying
+Quando a quantidade \( np_n \) se estabiliza em um valor \( \lambda > 0 \), estamos essencialmente controlando a média da binomial. À medida que \( n \to \infty \) e \( p_n \) diminui de forma controlada, mantemos \( np_n \) constante, aproximando o comportamento da binomial ao de uma distribuição Poisson com parâmetro \( \lambda \). A essência é que estamos explorando o comportamento assintótico da binomial, com \( p_n \) diminuindo à medida que \( n \) cresce, mas de modo que \( np_n \) permaneça fixo e igual a \( \lambda \). Isso faz com que a média e variância da binomial ``convirjam'' para os parâmetros de uma Poisson.
+%\textbf{Transformação da expressão}
+%Quando reescrevemos o momento gerador:
+%\[
+%\left(1 - p_n + p_n e^t\right)^n = \left(1 + \frac{np_n}{n}(e^t - 1)\right)^n
+%\]
+%fazemos isso porque \( np_n \) tende a \( \lambda \). Ou seja, estamos preparando a fórmula para o limite \( n \to \infty \).
+
+%No limite:
+%\[
+%np_n \approx \lambda \quad \text{para grandes } n
+%\]
+%Assim, substituímos \( \frac{np_n}{n} \) por \( \frac{\lambda}{n} \) e fazemos \( n \to \infty \). Isso nos leva ao limite exponencial:
+%\[
+%\left(1 + \frac{\lambda}{n}(e^t - 1)\right)^n \to \exp\left(\lambda (e^t - 1)\right)
+%\]
+%Essa é a razão pela qual manipulamos a expressão de modo a colocar \( np_n \) em evidência.
+
+	\end{block}
+\end{frame}
+
+\section{Teorema Central do Limite}
+\begin{frame}{Teorema Central do Limite}
+\begin{block}{}
+\justifying
+Seja $\{X_{n}\}_{n\geq 1}$ uma sequência de variáveis aleatórias iid com média $\mu$ e variância $\sigma^{2}<\infty.$ Então,
+\begin{align*}
+   \dfrac{\Sumi X_{i}-n\mu}{\sqrt{n}\sigma}=\dfrac{\sqrt{n}(\Bar{X}_{n}-\mu)}{\sigma} \ConvD N(0,1)
+\end{align*}
+\end{block}
+\end{frame}
+
+\begin{frame}{Demonstração}
+\begin{block}{}
+\justifying
+Assuma, sem perda de generalidade, $\mu=0$ e $\sigma^{2}=1.$
+\begin{align*}
+    M_{\frac{\sum X_{i}-n\mu}{\sqrt{n}\sigma}}(t)&=M_{\frac{\sum X_{i}}{\sqrt{n}}}(t)
+    =E\Big(e^{\frac{t\sum X_{i}}{\sqrt{n}}}\Big)=E\Big(\Prodi e^{\frac{tX_{i}}{\sqrt{n}}}\Big)\\
+    &=\Prodi E\Big(e^{\frac{tX_{i}}{\sqrt{n}}}\Big)=\Prodi M_{X_{i}}\big(\frac{t}{\sqrt{n}}\big)=\Big(M_{X_{i}}(\dfrac{t}{\sqrt{n}})\Big)^{n}\\
+\end{align*}
+Ou seja, $\ln{M_{\frac{\sum X_{i}}{\sqrt{n}}}(t)}=n\ln{M_{X_{i}}(\frac{t}{\sqrt{n}})}=\dfrac{\ln{M_{X_{i}}(\frac{t}{\sqrt{n}})}}{\frac{1}{n}},$ aplicando L'Hôpital, temos:
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+\begin{align*}
+    \Lim \frac{\ln{M_{X_{i}}(\frac{t}{\sqrt{n}})}}{\frac{1}{n}}&=\Lim \dfrac{\frac{M_{X_{i}}^{'}(\frac{t}{\sqrt{n}})}{M_{X_{i}}(\frac{t}{\sqrt{n}})}t(-\frac{1}{2})n^{-\frac{3}{2}}}{-\frac{1}{n^{2}}}\\
+    &=\dfrac{t}{2}\Lim \sqrt{n}M_{X_{i}}^{'}(\frac{t}{\sqrt{n}})\\
+    &=\dfrac{t}{2}\Lim \dfrac{M_{X_{i}}^{'}(\frac{t}{\sqrt{n}})}{\frac{1}{\sqrt{n}}}\\
+    &=\dfrac{t}{2}\Lim \dfrac{M_{X_{i}}^{''}(\frac{t}{\sqrt{n}})t(-1/2)n^{-3/2}}{-\frac{1}{2}n^{-3/2}}\\
+    &=\dfrac{t^{2}}{2}\Lim M_{X_{i}}^{''}(\frac{t}{\sqrt{n}})=\dfrac{t^{2}}{2}
+\end{align*}
+Logo, $\dfrac{\sum X_{i}}{\sqrt{n}}\ConvD X\sim N(0,1)$
+\end{block}
+\end{frame}
+
+\section{Método Delta}
+\begin{frame}{Método Delta}
+\begin{block}{}
+\justifying
+Suponha que conhecemos a distribuição de uma variável aleatória, mas que queremos determinar a distribuição de uma função dela. Isso também é verdade na teoria assintótica, o teorema de Slutsky's e o teorema visto em aula, imediatamente anterior a ele, são ilustrações disso. Outro resultado desse tipo é chamado de método delta. Vejamos o próximo slide!
+\end{block}
+\end{frame}
+
+%\begin{frame}{}
+%\begin{Teorema}
+%\justifying   
+%Suponha que g(x) seja diferenciável em x. Então podemos escrever
+%$$g(y) = g(x) + g'(x)(y - x) + o(|y - x|).$$ Em que, a notação $o$ significa que $a = o(b)$ se e somente se $\frac{a}{b} \rightarrow 0$, conforme $b \rightarrow 0$.
+%\end{Teorema}
+%\end{frame}
+
+\begin{frame}{Método Delta}
+\begin{Teorema}
+\justifying
+Seja $\{X_{n}\}_{n\geq 1}$ uma sequência de variáveis aleatórias satisfazendo a seguinte convergência em distribuição:
+$$\sqrt{n}(X_{n}-\theta)\ConvD N(0,\sigma^{2}).$$ Se $g$ é uma função diferenciável em $\theta$ e $g'(\theta)\neq 0,$ então $$\sqrt{n}(g(X_{n})-g(\theta))\ConvD N(0, [g'(\theta)]^{2}\sigma^{2}).$$
+\end{Teorema}
+\end{frame}
+
+\begin{frame}{Demonstração}
+\begin{block}{}
+\justifying
+Vamos mostrar primeiro que $X_{n}\ConvP \theta.$ Seja $\varepsilon>0$ e $m>0$ inteiro ($m\in \N^{*}$) fixado. 
+\begin{align*}
+    P(|X_{n}-\theta|<\varepsilon)&=P(|\sqrt{n}(X_{n}-\theta)|<\varepsilon\sqrt{n})\\
+    &\SetaUP{\text{para}~n\geq \Big(\dfrac{m}{\varepsilon}\Big)^{2}}{\geq} P(|\sqrt{n}(X_{n}-\theta)|<m)
+\end{align*}
+\end{block}
+\end{frame}
+
+\begin{frame}{Continuação da Demonstração}
+\vspace{-0.2cm}
+\begin{block}{}
+\justifying
+Segue que, 
+\begin{align*}
+    \LimInf P(|X_{n}-\theta|<\varepsilon)&\geq \LimInf P(|\sqrt{n}(X_{n}-\theta)|<m)\\
+    &=\Lim P(|\sqrt{n}(X_{n}-\theta)|<m)\\
+    &\SetaUP{\text{Usando o fato de que}\\ \sqrt{n}(X_{n}-\theta)\ConvD N(0,\sigma^{2})}{=}P(|Z|<\sigma m),~Z\sim N(0,1)
+\end{align*}
+\end{block}
+\pause
+\vspace{-0.2cm}
+\begin{block}{}
+\justifying
+Assim,
+\begin{align*}
+    \LimInf P(|X_{n}-\theta|<\varepsilon)&\geq P(|Z|<\sigma m)=\Phi(\sigma m)-\Phi(-\sigma m)\\
+    &=2\Phi(\sigma m)-1
+\end{align*}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Em resumo,
+\begin{align*}
+    \LimInf P(|X_{n}-\theta|<\varepsilon)&\geq 2\Phi(\sigma m)-1,~\forall m\in \mathbb{Z}^{*}\\  
+    \LimInf P(|X_{n}-\theta|<\varepsilon)&\geq \lim_{m\rightarrow +\infty} \Big[2\Phi(\sigma m)-1\Big]\\
+    &=1
+\end{align*}
+\end{block}
+\pause
+\begin{block}{}
+\justifying
+Como $\limsup\geq \liminf,$ temos que
+\begin{align}\label{num1}
+    \limsup P(|X_{n}-\theta|<\varepsilon)=1\Rightarrow \Lim P(|X_{n}-\theta|<\varepsilon)
+\end{align}
+\end{block}
+\pause
+\begin{block}{}
+\justifying
+Expandindo $g$ em série de Taylor até a primeira ordem em torno de $\theta,$ temos que $$g(x)=g(\theta)+g'(\theta)(x-\theta)(x-\theta)+\mathcal{C}(x)(x-\theta),$$ em que ${\displaystyle \lim_{x\rightarrow \theta} \mathcal{C}(x)=0}.$
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Segue que, 
+\begin{align*}
+g(x)-g(\theta)&=g'(\theta)(x-\theta)(x-\theta)+\mathcal{C}(x)(x-\theta)\\
+\sqrt{n}\big(g(X_{n})-g(\theta)\big)&=\sqrt{n}(X_{n}-\theta)\big(g'(\theta)-\mathcal{C}(X_{n}\big).
+\end{align*}
+Para mostrar o resultado desejado, devemos mostrar que $\mathcal{C}(X_{n})\ConvP 0.$ Com isso, utilizando o teorema de Slutsky, o resultado é obtido. Como ${\displaystyle \lim_{x\rightarrow \theta} \mathcal{C}(x)=0},~\text{para}~\varepsilon>0, \exists~\delta>0$ tal que $|x-\theta|<\delta\Rightarrow~|\mathcal{C}(x)|<\varepsilon.$
+\end{block}
+\pause
+\begin{block}{}
+\justifying
+Daí,
+\begin{align*}
+    \{|X_{n}-\theta|<\delta\}&\subset \{|\mathcal{C}(X_{n})|<\varepsilon\}\Rightarrow P(|X_{n}-\theta|<\delta)\leq P(|\mathcal{C}(X_{n})|<\varepsilon)
+\end{align*}
+Esse resultado, juntamente com $(\ref{num1})$ implica que,
+\begin{align*}
+    \Lim P(|\mathcal{C}(X_{n})|<\varepsilon)=1,~\text{ou seja},~\mathcal{C}(X_{n})\ConvP 0.
+\end{align*}
+\end{block}
+\end{frame}
+
+\begin{frame}{Exercício}
+\begin{block}{\Home}
+\justifying
+Seja $X_{n}\sim Binomial(n,p).$ Mostre que 
+\begin{align*}
+    \sqrt{n}\big(\arcsin{\sqrt{\dfrac{X_{n}}{n}}}-\arcsin{\sqrt{p}}\big)\ConvD N\big(0,\dfrac{1}{4}\big)
+\end{align*}
+\end{block}
+\nocite{casella2021statistical} \nocite{hogg}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{\Home}
+\justifying
+Exercícios 5.3.1 à 5.3.8, 5.3.11, 5.3.12
+\end{block}
+\end{frame}
+
+
+\begin{frame}[allowframebreaks]
+\frametitle{\bf Referências}
+\printbibliography
+\end{frame}
+
+
+\end{document}
