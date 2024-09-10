@@ -6,7 +6,7 @@
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
   <meta name="date" content="2024-09-08" />
-  <title>Untitled</title>
+  <title>Inferência Estatística II</title>
   <style type="text/css">
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -390,11 +390,11 @@ list-style-type: none;
   });
 })()
 </script>
-  <link href="data:text/css,body%2C%20%2Eslide%20%7Bbackground%2Dcolor%3A%20%23ADD8E6%3B%20color%3A%20%23000000%3B%20%7D%2Erow%20%7Bdisplay%3A%20flex%3Bflex%2Dwrap%3A%20wrap%3Bmargin%3A%200%20%2D15px%3B%7D%2Ecolumn%20%7Bpadding%3A%200%2015px%3B%7D%2Ecolumn%3Anth%2Dchild%281%29%20%7Bflex%3A%2060%25%3B%20%7D%2Ecolumn%3Anth%2Dchild%282%29%20%7Bflex%3A%2030%25%3B%20%7D%2Ecolumn%20img%20%7Bmax%2Dwidth%3A%20100%25%3Bheight%3A%20auto%3Bdisplay%3A%20block%3Bmargin%2Dleft%3A%20auto%3Bmargin%2Dright%3A%20auto%3B%7D%2Eslide%2Dcontent%20%7Bpadding%3A%2020px%3B%7D%2Erow%20%7Bdisplay%3A%20flex%3Bjustify%2Dcontent%3A%20space%2Dbetween%3B%7D%2Ecolumn%20%7Bpadding%3A%2010px%3B%7D%2Ecolumn%20img%20%7Bmax%2Dwidth%3A%20100%25%3Bheight%3A%20auto%3B%7D%2Eflex%2Dcontainer%20%7Bdisplay%3A%20flex%3Bjustify%2Dcontent%3A%20space%2Dbetween%3B%7D%2Eflex%2Ditem%20%7Bwidth%3A%2050%25%3Bpadding%3A%200%2010px%3B%7D%2Eflex%2Ditem%20img%20%7Bmax%2Dwidth%3A%20100%25%3Bheight%3A%20auto%3B%7Dimg%20%7Bmax%2Dwidth%3A%20100%25%3Bheight%3A%20auto%3B%7Dbody%20%7Bbackground%2Dcolor%3A%20%23f0f8ff%3B%20%7D%2Efade%20%7Bopacity%3A%201%3Btransition%3A%20opacity%200%2E5s%20ease%2Din%2Dout%3B%7D%2Eslidy%5Fslides%20%2Eslide%20%7Btransition%3A%20opacity%200%2E5s%20ease%2Din%2Dout%3B%7D%2Eslidy%5Fslides%20%2Eslide%2Eactive%20%7Bopacity%3A%201%3B%7D%2Eslidy%5Fslides%20%2Eslide%3Anot%28%2Eactive%29%20%7Bopacity%3A%200%3B%7Dbody%20%7Bbackground%3A%20white%3Bbackground%2Dcolor%3A%20white%3B%20%7D%2Ereveal%20%7Bfont%2Dfamily%3A%20%22Lato%22%2C%20sans%2Dserif%3Bfont%2Dsize%3A%2036px%3Bfont%2Dweight%3A%20200%3Bletter%2Dspacing%3A%20%2D0%2E02em%3Bcolor%3A%20black%3B%20%7D%3A%3Aselection%20%7Bcolor%3A%20white%3Bbackground%3A%20rgba%280%2C%200%2C%200%2C%200%2E99%29%3Btext%2Dshadow%3A%20none%3B%20%7D%2Ereveal%20h1%2C%2Ereveal%20h2%2C%2Ereveal%20h3%2C%2Ereveal%20h4%2C%2Ereveal%20h5%2C%2Ereveal%20h6%20%7Bmargin%3A%200%200%2020px%200%3Bcolor%3A%20black%3Bfont%2Dfamily%3A%20%22News%20Cycle%22%2C%20Impact%2C%20sans%2Dserif%3Bline%2Dheight%3A%200%2E9em%3Bletter%2Dspacing%3A%200%2E02em%3Btext%2Dtransform%3A%20none%3Btext%2Dshadow%3A%20none%3B%20%7D%2Ereveal%20h1%20%7Btext%2Dshadow%3A%200px%200px%206px%20rgba%280%2C%200%2C%200%2C%200%2E2%29%3B%20%7D%2Ereveal%20a%3Anot%28%2Eimage%29%20%7Bcolor%3A%20darkblue%3Btext%2Ddecoration%3A%20none%3B%2Dwebkit%2Dtransition%3A%20color%20%2E15s%20ease%3B%2Dmoz%2Dtransition%3A%20color%20%2E15s%20ease%3B%2Dms%2Dtransition%3A%20color%20%2E15s%20ease%3B%2Do%2Dtransition%3A%20color%20%2E15s%20ease%3Btransition%3A%20color%20%2E15s%20ease%3B%20%7D%2Ereveal%20a%3Anot%28%2Eimage%29%3Ahover%20%7Bcolor%3A%20%230000f1%3Btext%2Dshadow%3A%20none%3Bborder%3A%20none%3B%20%7D%2Ereveal%20%2Eroll%20span%3Aafter%20%7Bcolor%3A%20%23fff%3Bbackground%3A%20%2300003f%3B%20%7D%2Ereveal%20section%20img%20%7Bmargin%3A%2015px%200px%3Bbackground%3A%20rgba%28255%2C%20255%2C%20255%2C%200%2E12%29%3Bborder%3A%204px%20solid%20black%3Bbox%2Dshadow%3A%200%200%2010px%20rgba%280%2C%200%2C%200%2C%200%2E15%29%3B%2Dwebkit%2Dtransition%3A%20all%20%2E2s%20linear%3B%2Dmoz%2Dtransition%3A%20all%20%2E2s%20linear%3B%2Dms%2Dtransition%3A%20all%20%2E2s%20linear%3B%2Do%2Dtransition%3A%20all%20%2E2s%20linear%3Btransition%3A%20all%20%2E2s%20linear%3B%20%7D%2Ereveal%20a%3Ahover%20img%20%7Bbackground%3A%20rgba%28255%2C%20255%2C%20255%2C%200%2E2%29%3Bborder%2Dcolor%3A%20darkblue%3Bbox%2Dshadow%3A%200%200%2020px%20rgba%280%2C%200%2C%200%2C%200%2E55%29%3B%20%7D%2Ereveal%20%2Econtrols%20div%2Enavigate%2Dleft%2C%2Ereveal%20%2Econtrols%20div%2Enavigate%2Dleft%2Eenabled%20%7Bborder%2Dright%2Dcolor%3A%20darkblue%3B%20%7D%2Ereveal%20%2Econtrols%20div%2Enavigate%2Dright%2C%2Ereveal%20%2Econtrols%20div%2Enavigate%2Dright%2Eenabled%20%7Bborder%2Dleft%2Dcolor%3A%20darkblue%3B%20%7D%2Ereveal%20%2Econtrols%20div%2Enavigate%2Dup%2C%2Ereveal%20%2Econtrols%20div%2Enavigate%2Dup%2Eenabled%20%7Bborder%2Dbottom%2Dcolor%3A%20darkblue%3B%20%7D%2Ereveal%20%2Econtrols%20div%2Enavigate%2Ddown%2C%2Ereveal%20%2Econtrols%20div%2Enavigate%2Ddown%2Eenabled%20%7Bborder%2Dtop%2Dcolor%3A%20darkblue%3B%20%7D%2Ereveal%20%2Econtrols%20div%2Enavigate%2Dleft%2Eenabled%3Ahover%20%7Bborder%2Dright%2Dcolor%3A%20%230000f1%3B%20%7D%2Ereveal%20%2Econtrols%20div%2Enavigate%2Dright%2Eenabled%3Ahover%20%7Bborder%2Dleft%2Dcolor%3A%20%230000f1%3B%20%7D%2Ereveal%20%2Econtrols%20div%2Enavigate%2Dup%2Eenabled%3Ahover%20%7Bborder%2Dbottom%2Dcolor%3A%20%230000f1%3B%20%7D%2Ereveal%20%2Econtrols%20div%2Enavigate%2Ddown%2Eenabled%3Ahover%20%7Bborder%2Dtop%2Dcolor%3A%20%230000f1%3B%20%7D%2Ereveal%20%2Eprogress%20%7Bbackground%3A%20rgba%280%2C%200%2C%200%2C%200%2E2%29%3B%20%7D%2Ereveal%20%2Eprogress%20span%20%7Bbackground%3A%20darkblue%3B%2Dwebkit%2Dtransition%3A%20width%20800ms%20cubic%2Dbezier%280%2E26%2C%200%2E86%2C%200%2E44%2C%200%2E985%29%3B%2Dmoz%2Dtransition%3A%20width%20800ms%20cubic%2Dbezier%280%2E26%2C%200%2E86%2C%200%2E44%2C%200%2E985%29%3B%2Dms%2Dtransition%3A%20width%20800ms%20cubic%2Dbezier%280%2E26%2C%200%2E86%2C%200%2E44%2C%200%2E985%29%3B%2Do%2Dtransition%3A%20width%20800ms%20cubic%2Dbezier%280%2E26%2C%200%2E86%2C%200%2E44%2C%200%2E985%29%3Btransition%3A%20width%20800ms%20cubic%2Dbezier%280%2E26%2C%200%2E86%2C%200%2E44%2C%200%2E985%29%3B%20%7D%3C%2Fstyle%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%2Ereveal%20h1%20%7B%20font%2Dsize%3A%202%2E5em%3B%20%7D%2Ereveal%20h1%2C%2Ereveal%20h2%2C%2Ereveal%20h3%2C%2Ereveal%20h4%2C%2Ereveal%20h5%2C%2Ereveal%20h6%20%7B%20margin%2Dbottom%3A%20%2E6em%3B%20%7D%2Ereveal%20p%2C%2Ereveal%20table%20%7Bmargin%2Dbottom%3A%201em%3B%20%7D%2Ereveal%20li%20%7Bmargin%2Dbottom%3A%20%2E4em%3B%7D%2Ereveal%20ul%20ul%2C%2Ereveal%20ul%20ol%2C%2Ereveal%20ol%20ol%2C%2Ereveal%20ol%20ul%20%7Bmargin%2Dtop%3A%20%2E4em%3B%7D%2Ereveal%20%2Eslides%20%7Btext%2Dalign%3A%20left%3B%7D%2Ereveal%20small%20%7Bfont%2Dsize%3A%200%2E85em%3B%7D%2Ereveal%20pre%20%7B%20margin%2Dtop%3A%200%3Bmax%2Dwidth%3A%2095%25%3Bborder%3A%201px%20solid%20%23ccc%3Bwhite%2Dspace%3A%20pre%2Dwrap%3Bmargin%2Dbottom%3A%201em%3B%20%7D%2Ereveal%20pre%20code%20%7Bdisplay%3A%20block%3B%20padding%3A%200%2E5em%3Bfont%2Dsize%3A%201%2E6em%3Bline%2Dheight%3A%201%2E1em%3Bbackground%2Dcolor%3A%20white%3Boverflow%3A%20visible%3Bmax%2Dheight%3A%20none%3Bword%2Dwrap%3A%20normal%3B%7D%2Ereveal%20code%20%7Boverflow%3A%20visible%3Bmax%2Dheight%3A%20none%3B%7D%2Ereveal%20code%2Er%20%7Bbackground%2Dcolor%3A%20%23F8F8F8%3B%7D%2Ereveal%20code%2Ecpp%20%7Bbackground%2Dcolor%3A%20%23F8F8F8%3B%7D%2Ereveal%20section%20del%20%7Btext%2Ddecoration%3A%20none%3Bcolor%3A%20%23AAB1BA%3B%7D%2Ereveal%20section%20img%20%7Bborder%3A%20none%3B%7D%2Ereveal%20section%20%2EfieldError%20%7Bmargin%2Dbottom%3A%2025px%3B%7D%2Ereveal%20section%20%2EfieldError%20span%20%7Bcolor%3A%20red%3B%7D%2Eprompt%20%2Ereveal%20%2Estate%2Dbackground%20%7Bbackground%3A%20%23C6D7DC%3B%7D%2Equiz%2Dmultichoice%20%2Ereveal%20%2Estate%2Dbackground%20%7Bbackground%3A%20rgba%28254%2C220%2C179%2C1%29%3B%7D%2Equiz%2Dmultichoice%20%2Ereveal%20ul%20%7Blist%2Dstyle%2Dtype%3A%20none%3Bmargin%2Dbottom%3A%2030px%3B%7D%2Equiz%2Dmultichoice%20%2Ereveal%20li%20%7Bmargin%2Dtop%3A%2015px%3B%7D%2Equiz%2Dmultichoice%20%2Ereveal%20%2EquizFeedback%20%7Bmargin%2Dbottom%3A%2030px%3B%7D%2Equiz%2Dmultichoice%20%2Ereveal%20%2EquizFeedback%20img%20%7Bborder%3A%20none%3Bbox%2Dshadow%3A%20none%3Bbackground%3A%20transparent%3Bfloat%3A%20left%3Bmargin%2Dtop%3A%20%2D15px%3B%7D%2Equiz%2Dmultichoice%20%2Ereveal%20%2EquizFeedback%20span%20%7Bfont%2Dsize%3A%201%2E4em%3B%20margin%2Dleft%3A%2012px%3B%7D%2Esection%20%2Ereveal%20%2Estate%2Dbackground%20%7Bbackground%3A%20%2396A2B6%3B%7D%2Esection%20%2Ereveal%20h1%2C%2Esection%20%2Ereveal%20h2%2C%2Esection%20%2Ereveal%20p%20%7Bcolor%3A%20white%3Bmargin%2Dtop%3A%2050px%3B%7D%2Esub%2Dsection%20%2Ereveal%20%2Estate%2Dbackground%20%7Bbackground%3A%20%23E7E8EA%7D%2Esub%2Dsection%20%2Ereveal%20h2%2C%2Esub%2Dsection%20%2Ereveal%20p%20%7Bcolor%3A%20%2363717B%3Bmargin%2Dtop%3A%2050px%3B%7D%2Ereveal%20strong%20%7Bcolor%3A%20%2325679E%3B%7D%2Ereveal%20%2Econtrols%20%7Bright%3A%20%2D20px%3Bbottom%3A%205px%3B%7D%2Ereveal%20%2Econtrols%20div%2Enavigate%2Dleft%20%7Btop%3A%2075px%3B%7D%2Ereveal%20%2Econtrols%20div%2Enavigate%2Dright%20%7Bleft%3A%2054px%3Btop%3A%2075px%3B%7D%2Ereveal%20%2Econtrols%20div%2Enavigate%2Dup%20%7Bdisplay%3A%20none%3B%7D%2Ereveal%20%2Econtrols%20div%2Enavigate%2Ddown%20%7Bdisplay%3A%20none%3B%7D%2Ereveal%20%2Econtrols%20div%2Enavigate%2Dleft%2C%2Ereveal%20%2Econtrols%20div%2Enavigate%2Dleft%2Eenabled%20%7Bborder%2Dright%2Dcolor%3A%20%2325679E%3B%7D%2Ereveal%20%2Econtrols%20div%2Enavigate%2Dright%2C%2Ereveal%20%2Econtrols%20div%2Enavigate%2Dright%2Eenabled%20%7Bborder%2Dleft%2Dcolor%3A%20%2325679E%3B%7D%2Ereveal%20%2Econtrols%20div%2Enavigate%2Dup%2C%2Ereveal%20%2Econtrols%20div%2Enavigate%2Dup%2Eenabled%20%7Bborder%2Dbottom%2Dcolor%3A%20%2325679E%3B%7D%2Ereveal%20%2Econtrols%20div%2Enavigate%2Ddown%2C%2Ereveal%20%2Econtrols%20div%2Enavigate%2Ddown%2Eenabled%20%7Bborder%2Dtop%2Dcolor%3A%20%2325679E%3B%7D%2Ereveal%20%2Econtrols%20div%2Enavigate%2Dleft%2Eenabled%3Ahover%20%7Bborder%2Dright%2Dcolor%3A%20%23267EC8%3B%7D%2Ereveal%20%2Econtrols%20div%2Enavigate%2Dright%2Eenabled%3Ahover%20%7Bborder%2Dleft%2Dcolor%3A%20%23267EC8%3B%7D%2Ereveal%20%2Econtrols%20div%2Enavigate%2Dup%2Eenabled%3Ahover%20%7Bborder%2Dbottom%2Dcolor%3A%20%23267EC8%3B%7D%2Ereveal%20%2Econtrols%20div%2Enavigate%2Ddown%2Eenabled%3Ahover%20%7Bborder%2Dtop%2Dcolor%3A%20%23267EC8%3B%7D%2Ereveal%20%2Eprogress%20span%20%7Bbackground%3A%20%2325679E%3B%7D%2Ereveal%20%2Eslides%3Esection%2C%2Ereveal%20%2Eslides%3Esection%3Esection%20%7Bpadding%3A%200px%200px%3B%7D%2Ereveal%20table%20%7Bborder%2Dwidth%3A%201px%3Bborder%2Dspacing%3A%202px%3Bborder%2Dstyle%3A%20dotted%3Bborder%2Dcolor%3A%20gray%3Bborder%2Dcollapse%3A%20collapse%3Bfont%2Dsize%3A%200%2E7em%3B%7D%2Ereveal%20table%20th%20%7Bborder%2Dwidth%3A%201px%3Bpadding%2Dleft%3A%2010px%3Bpadding%2Dright%3A%2025px%3Bfont%2Dweight%3A%20bold%3Bborder%2Dstyle%3A%20dotted%3Bborder%2Dcolor%3A%20gray%3B%7D%2Ereveal%20table%20td%20%7Bborder%2Dwidth%3A%201px%3Bpadding%2Dleft%3A%2010px%3Bpadding%2Dright%3A%2025px%3Bborder%2Dstyle%3A%20dotted%3Bborder%2Dcolor%3A%20gray%3B%7D%2Ereveal%20blockquote%20%7Bdisplay%3A%20block%3Bposition%3A%20relative%3Bwidth%3A%2090%25%3Bmargin%3A%205px%20auto%3Bpadding%3A%205px%3Bfont%2Dstyle%3A%20normal%3Bbackground%3A%20%23C6D7DC%3Bborder%3A%201px%20solid%20%23C6D7DC%3Bbox%2Dshadow%3A%20none%3B%7D%2Ereveal%20blockquote%20p%3Afirst%2Dchild%2C%2Ereveal%20blockquote%20p%3Alast%2Dchild%20%7Bdisplay%3A%20block%3B%7D%2Ereveal%20blockquote%3Abefore%20%7Bcontent%3A%20%27%27%3B%7D%2Ereveal%20blockquote%3Aafter%20%7Bcontent%3A%20%27%27%3B%7D%2Ereveal%20ol%2C%2Ereveal%20ul%20%7Bmargin%3A%200%200%20%2E5em%201%2E2em%3B%7D%2Ereveal%20%2Eslides%20section%20%7Bheight%3A%20100%25%3B%7D%2Ereveal%20%2Eslides%20section%20%2EslideContent%20h2%20%7Bfont%2Dsize%3A%201%2E3em%3Bfont%2Dweight%3A%20bold%3B%7D%2Ereveal%20%2Eslides%20section%20%2EslideContent%20h3%20%7Bfont%2Dsize%3A%201%2E1em%3Bfont%2Dweight%3A%20bold%3B%7D%2Ereveal%20%2Eslides%20section%20%2Ecolumn%20%7Bposition%3A%20fixed%3Bwidth%3A%2048%25%3Btop%3A%202%2E5em%3Bbottom%3A%200%3B%7D%2Ereveal%20%2Eslides%20section%20%2Ecolumn1%20%7Bleft%3A%200%3B%7D%2Ereveal%20%2Eslides%20section%20%2Ecolumn2%20%7Bright%3A%200%3B%7D%2Ereveal%20%2Eslides%20section%20%2Ecolumn%20img%20%7Bmax%2Dwidth%3A%2095%25%3Bmax%2Dheight%3A%2095%25%3Bheight%3A%20auto%3B%7D%2Ereveal%20%2Eslides%20section%20%2EmediaOnly%20%7Bposition%3A%20absolute%3Bwidth%3A%20100%25%3Btop%3A%202%2E5em%3Bbottom%3A%200%3B%7D%2Ereveal%20%2Eslides%20section%20%2EmediaOnly%20img%20%7Bmax%2Dwidth%3A%2090%25%3Bmax%2Dheight%3A%2090%25%3Bheight%3A%20auto%3B%7D%2Ereveal%20%2Eslides%20section%20%2EmediaInline%20img%20%7Bmax%2Dwidth%3A%2090%25%3Bmax%2Dheight%3A%2050%25%3Bwidth%3A%20auto%3B%7D%2Ereveal%20%2Eslides%20section%20%2EmediaOnly%20video%20%7Bheight%3A%2090%25%3Bwidth%3A%2090%25%3B%7D%2Ereveal%20%2Eslides%20section%20%2EmediaInline%20video%20%7Bheight%3A%2050%25%3Bwidth%3A%2090%25%3B%7D%2Ereveal%20%2Eslides%20section%20%2EnoTitle%20%7Btop%3A%200%3B%7D%2Ereveal%20%7Bfont%2Dfamily%3A%20%22Lato%22%2C%20sans%2Dserif%3B%7D%2Ereveal%20h1%2C%2Ereveal%20h2%2C%2Ereveal%20h3%2C%2Ereveal%20h4%2C%2Ereveal%20h5%2C%2Ereveal%20h6%20%7Bfont%2Dfamily%3A%20%22News%20Cycle%22%2C%20Impact%2C%20sans%2Dserif%3B%7D%3C%2Fstyle%3E%3C%21%2D%2D%20reveal%20print%20css%20%2D%2D%3E%3Cstyle%20type%3D%22text%2Fcss%22%20media%3D%22print%22%20%3E%2A%20%7B%2Dwebkit%2Dprint%2Dcolor%2Dadjust%3A%20exact%3B%7Dbody%20%7Bfont%2Dsize%3A%2018pt%3Bwidth%3A%20auto%3Bheight%3A%20auto%3Bborder%3A%200%3Bpadding%3A%200%3Bfloat%3A%20none%20%21important%3Boverflow%3A%20visible%3B%7Dhtml%20%7Bwidth%3A%20100%25%3Bheight%3A%20100%25%3Boverflow%3A%20visible%3B%7D%40page%20%7Bsize%3A%20letter%20landscape%3Bmargin%3A%200%3B%7D%2Enestedarrow%2C%2Econtrols%2C%2Ereveal%20%2Eprogress%2C%2Ereveal%2Eoverview%2C%2Efork%2Dreveal%2C%2Eshare%2Dreveal%2C%2Estate%2Dbackground%20%7Bdisplay%3A%20none%20%21important%3B%7Dbody%2C%20p%2C%20td%2C%20li%2C%20div%20%7Bfont%2Dsize%3A%2018pt%3B%7Dh1%2Ch2%2Ch3%2Ch4%2Ch5%2Ch6%20%7Btext%2Dshadow%3A%200%200%200%20%23000%20%21important%3B%7Da%3Alink%2Ca%3Avisited%20%7Bfont%2Dweight%3A%20bold%3Btext%2Ddecoration%3A%20underline%3B%7Dul%2C%20ol%2C%20div%2C%20p%20%7Bvisibility%3A%20visible%3Bposition%3A%20static%3Bwidth%3A%20auto%3Bheight%3A%20auto%3Bdisplay%3A%20block%3Boverflow%3A%20visible%3Bmargin%3A%20auto%3B%7D%2Ereveal%20%2Eslides%20%7Bposition%3A%20static%3Bwidth%3A%20100%25%3Bheight%3A%20auto%3Bleft%3A%20auto%3Btop%3A%20auto%3Bmargin%2Dleft%3A%20auto%3Bmargin%2Dright%3A%20auto%3Bmargin%2Dtop%3A%20auto%3Bpadding%3A%20auto%3Boverflow%3A%20visible%3Bdisplay%3A%20block%3Btext%2Dalign%3A%20center%3B%2Dwebkit%2Dperspective%3A%20none%3B%2Dmoz%2Dperspective%3A%20none%3B%2Dms%2Dperspective%3A%20none%3Bperspective%3A%20none%3B%2Dwebkit%2Dperspective%2Dorigin%3A%2050%25%2050%25%3B%20%2Dmoz%2Dperspective%2Dorigin%3A%2050%25%2050%25%3B%2Dms%2Dperspective%2Dorigin%3A%2050%25%2050%25%3Bperspective%2Dorigin%3A%2050%25%2050%25%3B%7D%2Ereveal%20%2Eslides%20section%20%7Bpage%2Dbreak%2Dafter%3A%20always%20%21important%3Bvisibility%3A%20visible%20%21important%3Bposition%3A%20static%20%21important%3Bwidth%3A%20100%25%20%21important%3Bheight%3A%20auto%20%21important%3Bmin%2Dheight%3A%20initial%20%21important%3Bdisplay%3A%20block%20%21important%3Boverflow%3A%20visible%20%21important%3Bleft%3A%200%20%21important%3Btop%3A%200%20%21important%3Bmargin%2Dleft%3A%200px%20%21important%3Bmargin%2Dtop%3A%2050px%20%21important%3Bpadding%3A%2020px%200px%20%21important%3Bopacity%3A%201%20%21important%3B%2Dwebkit%2Dtransform%2Dstyle%3A%20flat%20%21important%3B%2Dmoz%2Dtransform%2Dstyle%3A%20flat%20%21important%3B%2Dms%2Dtransform%2Dstyle%3A%20flat%20%21important%3Btransform%2Dstyle%3A%20flat%20%21important%3B%2Dwebkit%2Dtransform%3A%20none%20%21important%3B%2Dmoz%2Dtransform%3A%20none%20%21important%3B%2Dms%2Dtransform%3A%20none%20%21important%3Btransform%3A%20none%20%21important%3B%7D%2Ereveal%20section%2Estack%20%7Bmargin%3A%200px%20%21important%3Bpadding%3A%200px%20%21important%3Bpage%2Dbreak%2Dafter%3A%20avoid%20%21important%3B%7D%2Ereveal%20section%20%2Efragment%20%7Bopacity%3A%201%20%21important%3Bvisibility%3A%20visible%20%21important%3B%2Dwebkit%2Dtransform%3A%20none%20%21important%3B%2Dmoz%2Dtransform%3A%20none%20%21important%3B%2Dms%2Dtransform%3A%20none%20%21important%3Btransform%3A%20none%20%21important%3B%7D%2Ereveal%20img%20%7Bbox%2Dshadow%3A%20none%3B%7D%2Ereveal%20%2Eroll%20%7Boverflow%3A%20visible%3Bline%2Dheight%3A%201em%3B%7D%2Ereveal%20small%20a%20%7Bfont%2Dsize%3A%2016pt%20%21important%3B%7D%3C%2Fstyle%3E%3C%21%2D%2D%20Styles%20for%20R%20syntax%20highlighter%20%2D%2D%3E%3Cstyle%20type%3D%22text%2Fcss%22%3Epre%20%2Eoperator%2Cpre%20%2Eparen%20%7Bcolor%3A%20rgb%28104%2C%20118%2C%20135%29%7Dpre%20%2Eliteral%20%7Bcolor%3A%20rgb%2888%2C%2072%2C%20246%29%7Dpre%20%2Enumber%20%7Bcolor%3A%20rgb%280%2C%200%2C%20205%29%3B%7Dpre%20%2Ecomment%20%7Bcolor%3A%20rgb%2876%2C%20136%2C%20107%29%3B%7Dpre%20%2Ekeyword%20%7Bcolor%3A%20rgb%280%2C%200%2C%20255%29%3B%7Dpre%20%2Eidentifier%20%7Bcolor%3A%20rgb%280%2C%200%2C%200%29%3B%7Dpre%20%2Estring%20%7Bcolor%3A%20rgb%283%2C%20106%2C%207%29%3B%7D%3C%2Fstyle%3E" rel="stylesheet" type="text/css" media="screen, projection, print" />
+  <link href="data:text/css,body%2C%20%2Eslide%20%7Bbackground%2Dcolor%3A%20%23ADD8E6%3B%20color%3A%20%23000000%3B%20%7D%2Erow%20%7Bdisplay%3A%20flex%3Bflex%2Dwrap%3A%20wrap%3Bmargin%3A%200%20%2D15px%3B%7D%2Ecolumn%20%7Bpadding%3A%200%2015px%3B%7D%2Ecolumn%3Anth%2Dchild%281%29%20%7Bflex%3A%2060%25%3B%20%7D%2Ecolumn%3Anth%2Dchild%282%29%20%7Bflex%3A%2030%25%3B%20%7D%2Ecolumn%20img%20%7Bmax%2Dwidth%3A%20100%25%3Bheight%3A%20auto%3Bdisplay%3A%20block%3Bmargin%2Dleft%3A%20auto%3Bmargin%2Dright%3A%20auto%3B%7D%2Eslide%2Dcontent%20%7Bpadding%3A%2020px%3B%7D%2Erow%20%7Bdisplay%3A%20flex%3Bjustify%2Dcontent%3A%20space%2Dbetween%3B%7D%2Ecolumn%20%7Bpadding%3A%2010px%3B%7D%2Ecolumn%20img%20%7Bmax%2Dwidth%3A%20100%25%3Bheight%3A%20auto%3B%7D%2Eflex%2Dcontainer%20%7Bdisplay%3A%20flex%3Bjustify%2Dcontent%3A%20space%2Dbetween%3B%7D%2Eflex%2Ditem%20%7Bwidth%3A%2050%25%3Bpadding%3A%200%2010px%3B%7D%2Eflex%2Ditem%20img%20%7Bmax%2Dwidth%3A%20100%25%3Bheight%3A%20auto%3B%7Dimg%20%7Bmax%2Dwidth%3A%20100%25%3Bheight%3A%20auto%3B%7Dbody%20%7Bbackground%2Dcolor%3A%20%23f0f8ff%3B%20%7D%2Efade%20%7Bopacity%3A%201%3Btransition%3A%20opacity%200%2E5s%20ease%2Din%2Dout%3B%7D%2Eslidy%5Fslides%20%2Eslide%20%7Btransition%3A%20opacity%200%2E5s%20ease%2Din%2Dout%3B%7D%2Eslidy%5Fslides%20%2Eslide%2Eactive%20%7Bopacity%3A%201%3B%7D%2Eslidy%5Fslides%20%2Eslide%3Anot%28%2Eactive%29%20%7Bopacity%3A%200%3B%7D" rel="stylesheet" type="text/css" media="screen, projection, print" />
 </head>
 <body>
 <div class="slide titlepage">
-  <h1 class="title">Untitled</h1>
+  <h1 class="title">Inferência Estatística II</h1>
   <p class="author">
 
   </p>
@@ -614,11 +614,11 @@ fundamentadas.
 </div>
 <div id="revisão-sobre-estimação-pontual" class="slide section level2">
 <h1>Revisão Sobre Estimação Pontual</h1>
-<h3 id="definição">Definição</h3>
 <p>Em um problema estatístico típico, temos uma variável aleatória <span class="math inline">\(X\)</span>, mas sua função de densidade ou massa
 de probabilidade não é conhecida. A ignorância pode ser classificada em
-duas formas: 1. <span class="math inline">\(f(x)\)</span> ou <span class="math inline">\(p(x)\)</span> é completamente desconhecida. 2. A
-forma de <span class="math inline">\(f(x)\)</span> ou <span class="math inline">\(p(x)\)</span> é conhecida, mas um parâmetro <span class="math inline">\(\theta\)</span> é desconhecido.</p>
+duas formas:</p>
+<p>1 - <span class="math inline">\(f(x)\)</span> ou <span class="math inline">\(p(x)\)</span> é completamente desconhecida.</p>
+<p>2 - A forma de <span class="math inline">\(f(x)\)</span> ou <span class="math inline">\(p(x)\)</span> é conhecida, mas um parâmetro <span class="math inline">\(\theta\)</span> é desconhecido.</p>
 <p>Vamos focar na segunda classificação.</p>
 <p style="text-align: justify;">
 Alguns exemplos são os seguintes:
@@ -660,15 +660,14 @@ se <span class="math inline">\(\Omega = \{\theta \mid \theta &gt;
 0\}\)</span>, então <span class="math inline">\(\theta\)</span> é um
 parâmetro positivo da distribuição. Queremos estimar <span class="math inline">\(\theta\)</span> com base em uma amostra.
 </p>
+<!--
 <p style="text-align: justify;">
-Considere uma variável <span class="math inline">\(X\)</span> com
-distribuição Exponencial: <span class="math inline">\(f(x; \lambda) =
-\lambda e^{-\lambda x}\)</span>, onde <span class="math inline">\(\lambda &gt; 0\)</span> é o parâmetro
-desconhecido.
+Considere uma variável $X$ com distribuição Exponencial: $f(x; \lambda) = \lambda e^{-\lambda x}$, onde $\lambda > 0$ é o parâmetro desconhecido.
 </p>
-</div>
-<div id="observações-da-amostra" class="slide section level2">
-<h1>Observações da Amostra</h1>
+
+---
+-->
+<h3 id="observações-da-amostra">Observações da Amostra</h3>
 <p style="text-align: justify;">
 As observações da amostra têm a mesma distribuição que <span class="math inline">\(X\)</span> e as denotamos como as variáveis
 aleatórias <span class="math inline">\(X_1, X_2, \cdots, X_{n}\)</span>,
@@ -683,13 +682,14 @@ aleatória.
 <div id="definições-de-amostra-e-estatística" class="slide section level2">
 <h1>Definições de Amostra e Estatística</h1>
 <p style="text-align: justify;">
-Se as variáveis aleatórias <span class="math inline">\(X_1, X_2, \dots,
-X_{n}\)</span> são independentes e identicamente distribuídas (iid),
-então essas variáveis constituem uma amostra aleatória de tamanho <span class="math inline">\(n\)</span> da distribuição comum.
+<strong>Definição 1:</strong> Se as variáveis aleatórias <span class="math inline">\(X_1, X_2, \dots, X_{n}\)</span> são independentes
+e identicamente distribuídas (iid), então essas variáveis constituem uma
+amostra aleatória de tamanho <span class="math inline">\(n\)</span> da
+distribuição comum.
 </p>
 <p style="text-align: justify;">
-Seja <span class="math inline">\(X_1, X_2, \dots, X_{n}\)</span> uma
-amostra de uma variável aleatória <span class="math inline">\(X\)</span>. Seja <span class="math inline">\(T =
+<strong>Definição 2:</strong> Seja <span class="math inline">\(X_1, X_2,
+\dots, X_{n}\)</span> uma amostra de uma variável aleatória <span class="math inline">\(X\)</span>. Seja <span class="math inline">\(T =
 T(X_1, X_2, \dots, X_{n})\)</span> uma função da amostra. Então <span class="math inline">\(T\)</span> é chamado de Estatística. Uma vez que a
 amostra é retirada, então <span class="math inline">\(t\)</span> é
 chamado de realização de <span class="math inline">\(T\)</span>, onde
@@ -697,9 +697,7 @@ chamado de realização de <span class="math inline">\(T\)</span>, onde
 <span class="math inline">\(x_1, x_2, \dots, x_{n}\)</span> são as
 realizações da amostra.
 </p>
-</div>
-<div id="exemplos" class="slide section level2">
-<h1>Exemplos</h1>
+<h3 id="exemplos">Exemplos</h3>
 <p style="text-align: justify;">
 Alguns exemplos são os seguintes:
 </p>
@@ -733,9 +731,7 @@ dos estimadores pontuais que discutiremos e algumas técnicas úteis que
 ajudam a encontrar os melhores candidatos, tais como Viés, Consistência,
 Eficiência, entre outras.
 </p>
-</div>
-<div id="observações" class="slide section level2">
-<h1>Observações</h1>
+<h3 id="observações">Observações</h3>
 <p style="text-align: justify;">
 <ul>
 <li>
@@ -749,9 +745,7 @@ viesado para <span class="math inline">\(\theta\)</span>.
 </li>
 </ul>
 </p>
-</div>
-<div id="exemplos-1" class="slide section level2">
-<h1>Exemplos</h1>
+<h3 id="exemplos-1">Exemplos</h3>
 <p style="text-align: justify;">
 Considere uma amostra aleatória de uma distribuição com média <span class="math inline">\(\mu\)</span> e variância <span class="math inline">\(\sigma^{2}&lt;\infty.\)</span>
 <ul>
@@ -840,6 +834,43 @@ Vejam alguns exemplos,
 <a href="https://est711.shinyapps.io/ConvergenciaProbabilidade/">Clique
 aqui!</a>.
 </p>
+<h3 id="exemplo">Exemplo</h3>
+<p>Suponha que <span class="math inline">\(X_n\)</span> seja a média
+amostral de uma sequência de <span class="math inline">\(n\)</span>
+lançamentos de uma moeda com probabilidade <span class="math inline">\(p\)</span> de sair cara. Ou seja, para cada <span class="math inline">\(n\)</span>, <span class="math inline">\(X_n\)</span> é a fração de caras obtidas após
+<span class="math inline">\(n\)</span> lançamentos.</p>
+<p>Por exemplo:</p>
+<ul class="incremental">
+<li><p>Para <span class="math inline">\(n = 1\)</span>, <span class="math inline">\(X_1\)</span> será <span class="math inline">\(1\)</span> se o primeiro lançamento for cara, ou
+<span class="math inline">\(0\)</span> se for coroa.</p></li>
+<li><p>Para <span class="math inline">\(n = 10\)</span>, <span class="math inline">\(X_{10}\)</span> será a fração de caras obtidas em
+<span class="math inline">\(10\)</span> lançamentos.</p></li>
+<li><p>Para <span class="math inline">\(n = 100\)</span>, <span class="math inline">\(X_{100}\)</span> será a fração de caras obtidas em
+<span class="math inline">\(100\)</span> lançamentos, e assim por
+diante.</p></li>
+</ul>
+<p>Agora, suponha que a moeda seja justa, ou seja, <span class="math inline">\(p = 0.5\)</span>. À medida que <span class="math inline">\(n\)</span> aumenta, esperamos que a média <span class="math inline">\(X_n\)</span> dos resultados dos lançamentos
+(fração de caras) se aproxime de <span class="math inline">\(p =
+0.5\)</span>, que é o valor esperado da proporção de caras.</p>
+<p>Neste caso:</p>
+<ul class="incremental">
+<li><p><span class="math inline">\(X_n\)</span> é a fração de caras nos
+<span class="math inline">\(n\)</span> lançamentos (a variável aleatória
+dependente de <span class="math inline">\(n\)</span>).</p></li>
+<li><p><span class="math inline">\(X\)</span> é o valor esperado <span class="math inline">\(p = 0.5\)</span>, que é o valor ao qual <span class="math inline">\(X_n\)</span> converge.</p></li>
+</ul>
+<p>Conforme aumentamos o número de lançamentos <span class="math inline">\(n\)</span>, a probabilidade de que a média <span class="math inline">\(X_n\)</span> esteja muito distante de <span class="math inline">\(0.5\)</span> (ou seja, <span class="math inline">\(|X_n - 0.5| \geq \varepsilon\)</span> para um
+<span class="math inline">\(\varepsilon &gt; 0\)</span>) diminui. Isso
+exemplifica que <span class="math inline">\(X_n\)</span> converge em
+probabilidade para <span class="math inline">\(X = 0.5\)</span>.</p>
+<p>Ou seja:</p>
+<p><span class="math display">\[
+X_n \xrightarrow{P} 0.5 \quad \text{quando} \quad n \to \infty.
+\]</span></p>
+<p>Neste exemplo, <span class="math inline">\(X_n\)</span> representa a
+fração de caras nos <span class="math inline">\(n\)</span> lançamentos e
+<span class="math inline">\(X\)</span> é o valor fixo <span class="math inline">\(0.5\)</span>, que é o valor esperado a longo
+prazo.</p>
 </div>
 <div id="desigualdades-de-markov-e-tchebychev" class="slide section level2">
 <h1>Desigualdades de Markov e Tchebychev</h1>
@@ -1009,7 +1040,7 @@ X_{n}Y_{n} &amp;= \frac{1}{2}X^{2}_{n} + \frac{1}{2}Y^{2}_{n} -
 </div>
 <div id="consistência" class="slide section level2">
 <h1>Consistência</h1>
-<h3 id="definição-1">Definição</h3>
+<h3 id="definição">Definição</h3>
 <p style="text-align: justify;">
 Seja <span class="math inline">\(X\)</span> uma variável aleatória com
 função de distribuição acumulada <span class="math inline">\(F(x,
@@ -1022,7 +1053,7 @@ consistente para <span class="math inline">\(\theta\)</span> se <span class="mat
 </div>
 <div class="slide section level2">
 
-<h3 id="exemplo">Exemplo</h3>
+<h3 id="exemplo-1">Exemplo</h3>
 <p style="text-align: justify;">
 Sejam <span class="math inline">\(X_{1}, \ldots, X_{n}, \ldots\)</span>
 uma sequência de variáveis aleatórias iid de uma distribuição com média
@@ -1034,7 +1065,7 @@ Fraca dos Grandes Números, temos que, <span class="math inline">\(\bar{X}_{n}=\
 </div>
 <div class="slide section level2">
 
-<h3 id="exemplo-1">Exemplo</h3>
+<h3 id="exemplo-2">Exemplo</h3>
 <p style="text-align: justify;">
 Sejam <span class="math inline">\(X_1, \ldots, X_{n}\)</span> uma
 amostra aleatória de uma distribuição com média <span class="math inline">\(\mu\)</span> e variância <span class="math inline">\(\sigma^{2}&lt;+\infty\)</span>. Suponha que <span class="math inline">\(E[X^{4}_{1}] &lt; +\infty\)</span>, de tal forma
@@ -1063,7 +1094,7 @@ aqui!</a>.
 </div>
 <div class="slide section level2">
 
-<h3 id="exemplo-2">Exemplo</h3>
+<h3 id="exemplo-3">Exemplo</h3>
 <p style="text-align: justify;">
 Considere <span class="math inline">\(X_{i} \overset{\text{iid}}{\sim}
 U(0,\theta),~i=1,2,\ldots,n\)</span>, e <span class="math inline">\(Y_{n} = \max\{X_{1}, \ldots, X_{n}\}\)</span>.
@@ -1098,7 +1129,7 @@ estimador consistente para <span class="math inline">\(\theta\)</span>.
 </div>
 <div id="distribuições-limites" class="slide section level2">
 <h1>Distribuições Limites</h1>
-<h3 id="definição-2">Definição</h3>
+<h3 id="definição-1">Definição</h3>
 <p style="text-align: justify;">
 A distribuição limite é uma distribuição de probabilidade que descreve o
 comportamento assintótico de uma sequência de variáveis aleatórias
@@ -1166,7 +1197,7 @@ P(2|X| \geq \varepsilon), &amp; \text{se } n \text{ é ímpar}
 \end{cases}\)</span>
 </p>
 </div>
-<div id="exemplo-3" class="slide section level2">
+<div id="exemplo-3-1" class="slide section level2">
 <h1>Exemplo 3</h1>
 <p style="text-align: justify;">
 Seja <span class="math inline">\(T_{n}\)</span> uma variável aleatória

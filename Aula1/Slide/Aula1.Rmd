@@ -1,5 +1,5 @@
 ---
-title: "Untitled"
+title: "Inferência Estatística II"
 output: 
   slidy_presentation:
     css: custom.css
@@ -135,11 +135,11 @@ Compreender esses métodos é essencial para aplicar a Estatística de maneira e
 
 ## Revisão Sobre Estimação Pontual
 
-### Definição
-
 Em um problema estatístico típico, temos uma variável aleatória \( X \), mas sua função de densidade ou massa de probabilidade não é conhecida. A ignorância pode ser classificada em duas formas:
-1. \( f(x) \) ou \( p(x) \) é completamente desconhecida.
-2. A forma de \( f(x) \) ou \( p(x) \) é conhecida, mas um parâmetro \( \theta \) é desconhecido.
+
+1 - \( f(x) \) ou \( p(x) \) é completamente desconhecida.
+
+2 - A forma de \( f(x) \) ou \( p(x) \) é conhecida, mas um parâmetro \( \theta \) é desconhecido.
 
 Vamos focar na segunda classificação.
 
@@ -163,13 +163,14 @@ Alguns exemplos são os seguintes:
 Muitas vezes denotamos este problema dizendo que a variável aleatória $X$ tem uma função de densidade ou massa da forma $f(x; \theta)$ ou $p(x; \theta)$, onde $\theta \in \Omega$ para um conjunto especificado $\Omega$. Por exemplo, se $\Omega = \{\theta \mid \theta > 0\}$, então $\theta$ é um parâmetro positivo da distribuição. Queremos estimar $\theta$ com base em uma amostra.
 </p>
 
+<!--
 <p style="text-align: justify;">
 Considere uma variável $X$ com distribuição Exponencial: $f(x; \lambda) = \lambda e^{-\lambda x}$, onde $\lambda > 0$ é o parâmetro desconhecido.
 </p>
 
 ---
-
-## Observações da Amostra
+-->
+### Observações da Amostra
 
 <p style="text-align: justify;">
 As observações da amostra têm a mesma distribuição que $X$ e as denotamos como as variáveis aleatórias $X_1, X_2, \cdots, X_{n}$, onde $n$ denota o tamanho da amostra. Quando a amostra é realmente retirada, usamos letras minúsculas $x_1, x_2, ..., x_{n}$ como os valores ou realizações da amostra. Muitas vezes, assumimos que as observações da amostra $X_1, X_2, ..., X_{n}$ também são mutuamente independentes, caso em que chamamos a amostra de amostra aleatória.
@@ -180,14 +181,14 @@ As observações da amostra têm a mesma distribuição que $X$ e as denotamos c
 ## Definições de Amostra e Estatística
 
 <p style="text-align: justify;">
-Se as variáveis aleatórias $X_1, X_2, \dots, X_{n}$ são independentes e identicamente distribuídas (iid), então essas variáveis constituem uma amostra aleatória de tamanho $n$ da distribuição comum.
+**Definição 1:** Se as variáveis aleatórias $X_1, X_2, \dots, X_{n}$ são independentes e identicamente distribuídas (iid), então essas variáveis constituem uma amostra aleatória de tamanho $n$ da distribuição comum.
 </p>
 
 <p style="text-align: justify;">
-Seja $X_1, X_2, \dots, X_{n}$ uma amostra de uma variável aleatória $X$. Seja $T = T(X_1, X_2, \dots, X_{n})$ uma função da amostra. Então $T$ é chamado de Estatística. Uma vez que a amostra é retirada, então $t$ é chamado de realização de $T$, onde $t = T(x_1, x_2, \dots, x_{n})$ e $x_1, x_2, \dots, x_{n}$ são as realizações da amostra.
+**Definição 2:** Seja $X_1, X_2, \dots, X_{n}$ uma amostra de uma variável aleatória $X$. Seja $T = T(X_1, X_2, \dots, X_{n})$ uma função da amostra. Então $T$ é chamado de Estatística. Uma vez que a amostra é retirada, então $t$ é chamado de realização de $T$, onde $t = T(x_1, x_2, \dots, x_{n})$ e $x_1, x_2, \dots, x_{n}$ são as realizações da amostra.
 </p>
 
-## Exemplos
+### Exemplos
 
 <p style="text-align: justify;">
 Alguns exemplos são os seguintes:
@@ -212,9 +213,7 @@ Sejam $X_{1},X_{2},...,X_{n}$ uma amostra aleatória de uma variável aleatória
 Observem que para ser um estimador pontual basta ser uma Estatística. Não fazemos nenhuma menção a qualquer correspondência entre o estimador e o parâmetro a ser estimado. No entanto, existem várias propriedades dos estimadores pontuais que discutiremos e algumas técnicas úteis que ajudam a encontrar os melhores candidatos, tais como Viés, Consistência, Eficiência, entre outras.
 </p>
 
----
-
-## Observações
+### Observações
 
 <p style="text-align: justify;">
 <ul>
@@ -223,9 +222,7 @@ Observem que para ser um estimador pontual basta ser uma Estatística. Não faze
 </ul>
 </p>
 
----
-
-## Exemplos
+### Exemplos
 
 <p style="text-align: justify;">
 Considere uma amostra aleatória de uma distribuição com média $\mu$ e variância $\sigma^{2}<\infty.$
@@ -303,10 +300,42 @@ Se isso ocorrer, escrevemos $X_{n} \xrightarrow{P} X$.
 Em muitas situações, $X$ é uma v.a. degenerada, ou seja, $X$ é igual a uma constante com probabilidade $1.$ Vejam alguns exemplos, <a href="https://est711.shinyapps.io/ConvergenciaProbabilidade/">Clique aqui!</a>.
 </p>
 
+
+### Exemplo
+
+Suponha que \( X_n \) seja a média amostral de uma sequência de \( n \) lançamentos de uma moeda com probabilidade \( p \) de sair cara. Ou seja, para cada \( n \), \( X_n \) é a fração de caras obtidas após \( n \) lançamentos.
+
+Por exemplo:
+
+- Para \( n = 1 \), \( X_1 \) será \( 1 \) se o primeiro lançamento for cara, ou \( 0 \) se for coroa.
+
+- Para \( n = 10 \), \( X_{10} \) será a fração de caras obtidas em \( 10 \) lançamentos.
+
+- Para \( n = 100 \), \( X_{100} \) será a fração de caras obtidas em \( 100 \) lançamentos, e assim por diante.
+
+Agora, suponha que a moeda seja justa, ou seja, \( p = 0.5 \). À medida que \( n \) aumenta, esperamos que a média \( X_n \) dos resultados dos lançamentos (fração de caras) se aproxime de \( p = 0.5 \), que é o valor esperado da proporção de caras.
+
+Neste caso:
+
+- \( X_n \) é a fração de caras nos \( n \) lançamentos (a variável aleatória dependente de \( n \)).
+
+- \( X \) é o valor esperado \( p = 0.5 \), que é o valor ao qual \( X_n \) converge.
+
+Conforme aumentamos o número de lançamentos \( n \), a probabilidade de que a média \( X_n \) esteja muito distante de \( 0.5 \) (ou seja, \( |X_n - 0.5| \geq \varepsilon \) para um \( \varepsilon > 0 \)) diminui. Isso exemplifica que \( X_n \) converge em probabilidade para \( X = 0.5 \).
+
+Ou seja:
+
+$$
+X_n \xrightarrow{P} 0.5 \quad \text{quando} \quad n \to \infty.
+$$
+
+Neste exemplo, \( X_n \) representa a fração de caras nos \( n \) lançamentos e \( X \) é o valor fixo \( 0.5 \), que é o valor esperado a longo prazo.
+
+
 ## Desigualdades de Markov e Tchebychev
 
 <p style="text-align: justify;">
-A Desigualdade de Markov afirma que, para uma variável aleatória não negativa $Y$ e um valor positivo $a$, temos:
+**Desigualdade de Markov:** A Desigualdade de Markov afirma que, para uma variável aleatória não negativa $Y$ e um valor positivo $a$, temos:
 </p>
 
 $$
@@ -314,7 +343,7 @@ P(Y \geq a) \leq \frac{\mathbb{E}[Y]}{a}.
 $$
 
 <p style="text-align: justify;">
-Seja $X$ uma v.a. com média $\mu$ e variância $\sigma^{2}.$ Então,
+**Desigualdade de Tchebychev:** Seja $X$ uma v.a. com média $\mu$ e variância $\sigma^{2}.$ Então,
 </p>
 
 $$
