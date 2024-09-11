@@ -1,0 +1,135 @@
+---
+title: "Inferência Estatística II"
+author: "Fernando de Souza Bastos"
+date: "2024-09-11"
+output: 
+ ioslides_presentation:
+    css: custom.css
+    self_contained: yes
+    incremental: true
+    fig_caption: yes
+    force_captions: yes
+    theme: cosmo
+    highlight: tango
+    toc: yes
+    #Sumário flutuante
+    toc_float: true
+    #numerar seções
+    number_sections: true
+    #Mostrar ou esconder os códigos (show ou hide)
+    code_folding: hide
+    #Diversos modelos de documentos ver outros em http://bootswatch.com/
+    header-includes:
+       \usepackage{array}
+       \usepackage{multirow}
+       \usepackage{geometry}
+bibliography: Referencias.bib  
+includes:
+     keep_tex: yes
+fontsize: 12pt
+geometry: margin=2cm
+graphics: yes
+Institute: Departamento de Estatística
+#  pdf_document:
+#    fig_caption: yes
+#    keep_tex: yes
+#    number_sections: yes
+comments: yes
+tags: [Distribuição Normal, otimização, R]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# Aula 3
+
+## Sumário
+
+1. Função Geradora de Momentos
+2. Teorema Central do Limite
+3. Método Delta
+
+---
+
+## Função Geradora de Momentos
+
+**Definição**  
+A função geradora de momentos de uma variável aleatória \( X \) é definida por:  
+\[
+M_{X}(t) = E(e^{tX}),~t \in \mathbb{R}
+\]
+
+
+### Teorema
+
+Seja \(\{X_{n}\}_{n \geq 1}\) uma sequência de variáveis aleatórias com fgm \( M_{X_n}(t) \), que existe para \(|t| < h\) para todo \(n\). Seja \( X \) uma variável aleatória com fgm \( M_{X}(t) \), que existe para \(|t| \leq h_1 \leq h\). Se  
+\[
+\lim_{n \to \infty} M_{X_n}(t) = M_{X}(t)
+\]
+para \(|t| \leq h_1\), então \( X_{n} \overset{D}{\rightarrow} X \).
+
+---
+
+## Observação importante na resolução de exercícios
+
+Se \(\lim_{n \to \infty} \left(1 + \frac{b}{n} + \frac{\psi(n)}{n}\right)^{cn}\), onde \(b\) e \(c\) não dependem de \(n\), e  
+\[
+\lim_{n \to \infty} \psi(n) = 0
+\]
+então,  
+\[
+\lim_{n \to \infty} \left(1 + \frac{b}{n} + \frac{\psi(n)}{cn}\right) = e^{bc}
+\]
+
+---
+
+* Exemplo 1
+
+\[
+\lim_{{n \to \infty}} \left(1 - \frac{{t^2}}{{n}} + \frac{{t^2}}{{n^{3/2}}}\right)^{-n/2} = e^{t^2/2}
+\]
+
+Aqui, \( b = -t^2 \), \( c = -\frac{1}{2} \) e \( \psi(n) = \frac{{t^2}}{{\sqrt{n}}} \).
+
+
+* Exemplo 2
+
+Considere \( X_{n} \sim Binomial(n, p_{n}) \) e suponha  
+\[
+\lim np_{n} = \lambda > 0
+\]
+Então, \( X_{n} \overset{D}{\rightarrow} X \sim Poisson(\lambda) \).
+
+**Demonstração**:  
+\[
+M_{X_{n}}(t) = E(e^{tX_{n}}) = \left(1 + \frac{\lambda}{n}(e^{t} - 1)\right)^{n} \Rightarrow \exp{\{\lambda(e^{t} - 1)\}}
+\]
+
+---
+
+## Teorema Central do Limite
+
+Seja \(\{X_{n}\}_{n \geq 1}\) uma sequência de variáveis aleatórias iid com média \(\mu\) e variância \(\sigma^{2} < \infty\). Então,  
+\[
+\frac{\sum X_{i} - n\mu}{\sqrt{n}\sigma} = \frac{\sqrt{n}(\bar{X}_{n} - \mu)}{\sigma} \overset{D}{\rightarrow} N(0,1)
+\]
+
+---
+
+## Método Delta
+
+Suponha que \( \{X_{n}\}_{n \geq 1} \) seja uma sequência de variáveis aleatórias que satisfaz:  
+\[
+\sqrt{n}(X_{n} - \theta) \overset{D}{\rightarrow} N(0, \sigma^{2})
+\]
+Se \( g \) é uma função diferenciável em \( \theta \) e \( g'(\theta) \neq 0 \), então  
+\[
+\sqrt{n}(g(X_{n}) - g(\theta)) \overset{D}{\rightarrow} N(0, [g'(\theta)]^{2} \sigma^{2})
+\]
+
+---
+
+## Conclusão
+
+O Método Delta é uma ferramenta útil para obter distribuições assintóticas para funções de variáveis aleatórias, aproveitando a linearização local fornecida pela derivada de \( g \) em \( \theta \).

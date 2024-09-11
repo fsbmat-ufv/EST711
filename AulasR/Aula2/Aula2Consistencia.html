@@ -726,6 +726,145 @@ Se <span class="math inline">\(X_{n} \overset{P}{\rightarrow}
 X\)</span>, então <span class="math inline">\(X_{n}
 \overset{D}{\rightarrow} X\)</span>.
 </p>
+<p><strong>Demonstração</strong> Seja <span class="math inline">\(x\)</span> um ponto de continuidade de <span class="math inline">\(F_X(x)\)</span>, a função de distribuição
+acumulada (FDA) de <span class="math inline">\(X\)</span>. Queremos
+mostrar que <span class="math inline">\(F_{X_n}(x) \to F_X(x)\)</span> à
+medida que <span class="math inline">\(n \to \infty\)</span>, onde <span class="math inline">\(F_{X_n}(x)\)</span> é a FDA de <span class="math inline">\(X_n\)</span>.</p>
+<p>Para isso, partimos da definição de <span class="math inline">\(F_{X_n}(x) = P(X_n \leq x)\)</span>. Usaremos uma
+técnica dividindo a probabilidade em dois pedaços.</p>
+<h3 id="passo-1-estimativa-superior">1.4.1 Passo 1: Estimativa
+superior</h3>
+<p>Dividimos o evento <span class="math inline">\(\{X_n \leq
+x\}\)</span> em dois subconjuntos: um onde <span class="math inline">\(|X_n - X| &lt; \varepsilon\)</span> e outro onde
+<span class="math inline">\(|X_n - X| \geq \varepsilon\)</span>. Assim,
+podemos reescrever:</p>
+<p><span class="math display">\[\begin{align}
+F_{X_n}(x) &amp;= P(X_n \leq x) = P(\{X_n \leq x\} \cap \{|X_n - X| &lt;
+\varepsilon\}) + P(\{X_n \leq x\} \cap \{|X_n - X| \geq \varepsilon\})\\
+&amp;\leq P(X \leq x + \varepsilon) + P(|X_n - X| \geq \varepsilon)
+\end{align}\]</span></p>
+<p>Essa é uma decomposição da probabilidade em duas partes: uma onde
+<span class="math inline">\(X_n\)</span> está “perto” de <span class="math inline">\(X\)</span> (a diferença é menor que <span class="math inline">\(\varepsilon\)</span>) e outra onde <span class="math inline">\(X_n\)</span> está “longe” de <span class="math inline">\(X\)</span> (a diferença é maior ou igual a <span class="math inline">\(\varepsilon\)</span>).</p>
+<ul>
+<li>Estimando o primeiro termo:</li>
+</ul>
+<p>A probabilidade <span class="math inline">\(P(\{X_n \leq x\} \cap
+\{|X_n - X| &lt; \varepsilon\})\)</span> pode ser estimada por <span class="math inline">\(P(X \leq x + \varepsilon)\)</span>.</p>
+<p><span class="math display">\[
+P(\{X_n \leq x\} \cap \{|X_n - X| &lt; \varepsilon\}) \leq P(X \leq x +
+\varepsilon)
+\]</span></p>
+<p>Isso porque, quando <span class="math inline">\(|X_n - X| &lt;
+\varepsilon\)</span>, sabemos que <span class="math inline">\(X_n\)</span> está perto de <span class="math inline">\(X\)</span>, então <span class="math inline">\(X_n
+\leq x\)</span> implica que <span class="math inline">\(X \leq x +
+\varepsilon\)</span>.</p>
+<ul>
+<li>Estimando o segundo termo:</li>
+</ul>
+<p>O segundo termo, <span class="math inline">\(P(\{X_n \leq x\} \cap
+\{|X_n - X| \geq \varepsilon\})\)</span>, é menor ou igual a <span class="math inline">\(P(|X_n - X| \geq \varepsilon)\)</span>, que é
+simplesmente a probabilidade de <span class="math inline">\(X_{n}\)</span> estar longe de <span class="math inline">\(X.\)</span> Essa probabilidade tende a 0 quando
+<span class="math inline">\(X_n \to X\)</span> em probabilidade, mas por
+enquanto, deixamos essa expressão como está:</p>
+<p><span class="math display">\[
+P(\{X_n \leq x\} \cap \{|X_n - X| \geq \varepsilon\}) \leq P(|X_n - X|
+\geq \varepsilon)
+\]</span></p>
+<ul>
+<li>Conclusão da desigualdade:</li>
+</ul>
+<p>Juntando as duas estimativas, temos:</p>
+<p><span class="math display">\[
+F_{X_n}(x) \leq P(X \leq x + \varepsilon) + P(|X_n - X| \geq
+\varepsilon)
+\]</span></p>
+<p>Esta é a estimativa superior para <span class="math inline">\(F_{X_n}(x)\)</span>.</p>
+<ul>
+<li>O primeiro termo, <span class="math inline">\(P(X \leq x +
+\varepsilon)\)</span>, representa o evento de que <span class="math inline">\(X\)</span> está um pouco acima de <span class="math inline">\(x\)</span>. Isso é um “ajuste”, pois estamos
+lidando com <span class="math inline">\(X_n\)</span> próximo de <span class="math inline">\(X\)</span>.</li>
+<li>O segundo termo, <span class="math inline">\(P(|X_n - X| \geq
+\varepsilon)\)</span>, é a probabilidade de que <span class="math inline">\(X_n\)</span> esteja muito distante de <span class="math inline">\(X\)</span>, ou seja, mais de <span class="math inline">\(\varepsilon\)</span> de diferença.</li>
+</ul>
+<p>Quando <span class="math inline">\(X_n \to X\)</span> em
+probabilidade, sabemos que <span class="math inline">\(P(|X_n - X| \geq
+\varepsilon) \to 0\)</span> conforme <span class="math inline">\(n \to
+\infty\)</span>. Portanto, com base nessa desigualdade, podemos
+concluir:</p>
+<p><span class="math display">\[
+\lim_{n \to \infty} F_{X_n}(x) \leq F_X(x + \varepsilon)
+\]</span></p>
+<p>Isso nos dá a estimativa superior (upper bound) da função de
+distribuição acumulada de <span class="math inline">\(X_n\)</span>.</p>
+<h3 id="passo-2-estimativa-inferior">1.4.2 Passo 2: Estimativa
+inferior</h3>
+<p>Agora, para obter a <strong>estimativa inferior</strong>, começamos
+reescrevendo <span class="math inline">\(P(X_n \leq x)\)</span>
+utilizando o complemento:</p>
+<p><span class="math display">\[
+P(X_n \leq x) = 1 - P(X_n &gt; x)
+\]</span></p>
+<p>Dividimos a probabilidade <span class="math inline">\(P(X_n &gt;
+x)\)</span> em dois pedaços:</p>
+<p><span class="math display">\[
+P(X_n &gt; x) = P(\{X_n &gt; x\} \cap \{|X_n - X| &lt; \varepsilon\}) +
+P(\{X_n &gt; x\} \cap \{|X_n - X| \geq \varepsilon\})
+\]</span></p>
+<ul>
+<li><p>A primeira parte <span class="math inline">\(P(\{X_n &gt; x\}
+\cap \{|X_n - X| &lt; \varepsilon\})\)</span> considera os casos em que
+<span class="math inline">\(X_n\)</span> está próximo de <span class="math inline">\(X\)</span> (a diferença é menor que <span class="math inline">\(\varepsilon\)</span>) e, ao mesmo tempo, <span class="math inline">\(X_n &gt; x\)</span>.</p></li>
+<li><p>A segunda parte <span class="math inline">\(P(\{X_n &gt; x\} \cap
+\{|X_n - X| \geq \varepsilon\})\)</span> considera os casos em que <span class="math inline">\(X_n\)</span> e <span class="math inline">\(X\)</span> estão distantes mais de <span class="math inline">\(\varepsilon\)</span>.</p></li>
+</ul>
+<p>Como <span class="math inline">\(P(\{X_n &gt; x\} \cap \{|X_n - X|
+&lt; \varepsilon\})\)</span> é menor que <span class="math inline">\(P(X
+&gt; x - \varepsilon)\)</span>, podemos usar a seguinte
+desigualdade:</p>
+<p><span class="math display">\[
+P(X_n &gt; x) \leq P(X \geq x - \varepsilon) + P(|X_n - X| \geq
+\varepsilon)
+\]</span></p>
+<ul>
+<li>O primeiro termo, <span class="math inline">\(P(X \geq x -
+\varepsilon)\)</span>, é a probabilidade de <span class="math inline">\(X\)</span> ser maior ou igual a <span class="math inline">\(x - \varepsilon\)</span>. Isso é uma aproximação
+para lidar com o fato de que <span class="math inline">\(X_n\)</span>
+está próximo de <span class="math inline">\(X\)</span>.</li>
+<li>O segundo termo, <span class="math inline">\(P(|X_n - X| \geq
+\varepsilon)\)</span>, representa a probabilidade de <span class="math inline">\(X_n\)</span> estar distante de <span class="math inline">\(X\)</span> (mais de <span class="math inline">\(\varepsilon\)</span>).</li>
+</ul>
+<p>Agora, podemos expressar <span class="math inline">\(P(X_n \leq
+x)\)</span> como:</p>
+<p><span class="math display">\[
+P(X_n \leq x) = 1 - P(X_n &gt; x)
+\]</span></p>
+<p>Substituímos o limite que encontramos para <span class="math inline">\(P(X_n &gt; x)\)</span>:</p>
+<p><span class="math display">\[
+P(X_n \leq x) \geq 1 - P(X \geq x - \varepsilon) - P(|X_n - X| \geq
+\varepsilon)
+\]</span></p>
+<p>Ou, de forma mais compacta:</p>
+<p><span class="math display">\[
+F_{X_n}(x) \geq F_X(x - \varepsilon) - P(|X_n - X| \geq \varepsilon)
+\]</span></p>
+<p>Sabemos que, como <span class="math inline">\(X_n \to X\)</span> em
+probabilidade, temos <span class="math inline">\(P(|X_n - X| \geq
+\varepsilon) \to 0\)</span> conforme <span class="math inline">\(n \to
+\infty\)</span>. Assim, no limite:</p>
+<p><span class="math display">\[
+\lim_{n \to \infty} F_{X_n}(x) \geq F_X(x - \varepsilon)
+\]</span></p>
+<p>Agora, combinamos as duas estimativas (superior e inferior) que
+obtivemos:</p>
+<p><span class="math display">\[
+F_X(x - \varepsilon) \leq \lim_{n \to \infty} F_{X_n}(x) \leq F_X(x +
+\varepsilon)
+\]</span></p>
+<p>Finalmente, fazendo <span class="math inline">\(\varepsilon \to
+0\)</span>, chegamos à conclusão desejada:</p>
+<p><span class="math display">\[
+\lim_{n \to \infty} F_{X_n}(x) = F_X(x)
+\]</span></p>
 </div>
 <div class="slide section level1">
 
