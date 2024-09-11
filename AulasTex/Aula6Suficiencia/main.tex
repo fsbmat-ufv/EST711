@@ -1,0 +1,432 @@
+\documentclass[12pt]{beamer}
+
+\input{../Configuracoes/layout}
+
+
+\title{Inferência Estatística II}
+\author{Prof. Fernando de Souza Bastos\texorpdfstring{\\ fernando.bastos@ufv.br}{}}
+\institute{Departamento de Estatística\texorpdfstring{\\ Programa de Pós-Graduação em Estatística Aplicada e Biometria}\texorpdfstring{\\ Universidade Federal de Viçosa}{}\texorpdfstring{\\ Campus UFV - Viçosa}{}}
+\date{}
+\newcommand\mytext{Aula 6}
+\newcommand\mytextt{Fernando de Souza Bastos}
+\newcommand\mytexttt{\url{https://est711.github.io/}}
+
+
+\begin{document}
+%\SweaveOpts{concordance=TRUE}
+
+\frame{\titlepage}
+
+\begin{frame}{}
+\frametitle{\bf Sumário}
+\tableofcontents
+\end{frame}
+\section{Medidas da Qualidade de um Estimador}
+\subsection{Estimador ENVVUM}
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Suponha que $f(x; \theta),$ $\theta \in \Omega,$ seja uma função densidade ou função de probabilidade. Considere $Y_n = u(X_1, \ldots, X_n)$ baseado em uma amostra aleatória $X_1, \ldots, X_n,$ com densidade ou função de probabilidade $f(x; \theta).$
+\end{block}
+\pause
+\begin{block}{Definição:}
+\justifying
+Para um dado inteiro positivo $n$, $Y = u(X_1,X_2, \ldots, X_n)$ é um estimador não viesado de variância uniformemente mínima(ENVVUM) para $\theta$ se $Y$ for não viesado, ou seja, $\mathbb{E}(Y) = \theta$, e se a variância de $Y$ for menor ou igual à variância de qualquer outro estimador não viesado de $\theta$.
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{Observação Importante:}
+\justifying
+Vamos agora discutir o problema da estimação pontual de um parâmetro a partir de uma perspectiva ligeiramente diferente.
+\end{block}
+\end{frame}
+
+\subsection{Função de Decisão}
+\begin{frame}{Função de Decisão}
+\begin{block}{}
+\justifying
+Seja $Y = u(X_1,X_2, \ldots, X_n)$ uma estatística com valor observado $y = u(x_1,x_2, \ldots, x_n)$. Seja $\delta(y)$ uma função da estatística observada $y,$ uma estimativa pontual para $\theta$. Assim, a função $\delta(y)$ decide o valor de $\theta.$  $\delta$ é chamada de função de decisão ou regra de decisão.
+\end{block}
+\pause
+\begin{block}{}
+\justifying
+Um valor da função de decisão, digamos $\delta(y)$, é chamado de decisão. Assim, uma estimativa pontual numericamente determinada de um parâmetro $\theta$ é uma decisão. uma decisão pode estar correta ou pode estar errada. Seria útil ter uma medida da diferença, se houver, entre o valor verdadeiro de $\theta$ e a estimativa pontual $\delta(y)$.
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Associamos a cada par $(\theta, \delta(y))$, $\theta \in \Omega$, um número não negativo $L(\theta, \delta(y))$ que reflete o quanto $\delta(y)$ está afastado de $\theta.$ 
+\begin{itemize}
+    \item Chamamos a função $L$ de função perda. 
+\end{itemize}
+\end{block}
+\pause
+\begin{block}{}
+Para a variável aleatória contínua $Y,$ podemos calcular:
+\begin{itemize}
+    \item $\mathbb{E}\Big({L(\theta, \delta(y))}\Big) = \int_{-\infty}^{\infty} L(\theta, \delta(y)) \cdot f_Y(y)dy$
+    \item $R(\theta, \delta) =\mathbb{E}\Big({L(\theta, \delta(y))}\Big)$ é chamada de função de risco.
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Exemplo}
+\begin{block}{}
+\justifying
+$X_1, X_2, \ldots, X_{25}\overset{\text{iid}}{\sim} N(\theta, 1), ~ \theta \in \R$. Seja $Y = \bar{X}\overset{\text{iid}}{\sim} N(\theta, \dfrac{1}{25}).$ Considere, $\delta_1(y) = y, ~\delta_2(y) = 0$ e tome $L(\theta, \delta(y)) = (\theta - \delta(y))^2.$ As funções de risco correspondentes são:
+\begin{itemize}
+    \item $R(\theta, \delta_1) = E[(\theta - Y)^2] = Var(Y) = \frac{1}{25};$
+    \item $R(\theta, \delta_2) = E[(\theta - 0)^2] = \theta^2$.
+\end{itemize}
+\end{block}
+\pause
+\begin{block}{}
+\justifying
+Se nosso critério for selecionar o estimador com menor risco, temos:
+$R(\theta, \delta_2)\leq R(\theta, \delta_1) \iff \theta^2\leq \dfrac{1}{25}\iff -\dfrac{1}{5}\leq \theta \leq \dfrac{1}{5}.$
+\end{block}
+\pause
+\begin{block}{}
+\justifying
+Neste caso, se $-\dfrac{1}{5}\leq \theta \leq \dfrac{1}{5}$ o estimador $\delta_{2}$ será melhor que o estimador $\delta_{1}.$ Caso contrário, ou seja, para $\theta \not \in [-\dfrac{1}{5},\dfrac{1}{5}],~\delta_{1} $ será melhor que $\delta_{2}.$
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Agora, vamos nos restringir a classe de estimadores não viesados $(\mathbb{E}[\delta(Y)] = \theta).$ Utilizando a perda quadrática $L(\theta, \delta(y))=(\theta-\delta(y)^{2}),$ escolher um estimador não viesado para $\theta$ que tem o menor risco dentre todos os estimadores não viesados para $\theta.$ Nos deparamos com o problema de encontrar o ENVVUM (estimador não tendencioso de variância uniformemente mínima).
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Poderíamos também adotar outro critério. Em vez de nos restringir a classe dos estimadores não viesados, poderíamos escolher o estimador que minimiza o máximo risco $(\max_\theta R(\theta, \delta)),$ conhecido como estimador Minimax. Com esse critério, nosso exemplo, $\max_\theta R(\theta, \delta_1) = \max_\theta \left(\frac{1}{25}\right) = \frac{1}{25}$ e $\max_\theta R(\theta, \delta_2) = +\infty$ e, portanto, o melhor estimador seria o estimador $\delta_{1}.$
+\end{block}
+\pause
+\begin{block}{As funções perda mais utilizadas:}
+\justifying
+\begin{itemize}
+    \item $L(\theta, \delta(y))=(\theta-\delta(y))^{2},$ conhecida como perda quadrática.
+    \item $L(\theta, \delta(y))=|\theta-\delta(y)|,$ conhecida como erro absoluto.
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{Neste exemplo, ilustramos o seguinte:}
+\justifying
+\begin{enumerate}
+    \item Sem alguma restrição sob a função de decisão, é difícil encontrar uma função de decisão que tem risco uniformemente menor que outras funções de decisão.\pause
+    \item Um princípio de seleção da melhor função de decisão é chamado de \textbf{princípio minimax}. Esse princípio diz que: 
+\end{enumerate}
+\end{block}
+
+\begin{block}{}
+\justifying
+Se a função de decisão dada por $\delta_{0}(y)$ é tal que, para todo $\theta \in \Omega$,
+$\max_\theta R[\theta, \delta_0(y)] \leq \max_\theta R[\theta, \delta(y)]$
+para qualquer outra função de decisão $\delta(y)$, então $\delta_0(y)$ é chamada de função de decisão minimax.
+\end{block}
+\end{frame}
+
+\begin{frame}{Exercícios}
+\begin{block}{\Home}
+\justifying
+Exercícios 7.1: 1,2,4 ao 9
+\end{block}
+\end{frame}
+
+\section{Estatística Suficiente para um Parâmetro}
+\begin{frame}{Estatística Suficiente para um Parâmetro}
+\begin{definicao}\label{def1}
+\justifying
+    Sejam $X_{1},X_{2}, \ldots , X_{n}$ uma amostra aleatória com densidade ou função de probabilidade $f(x; \theta)$, $\theta \in \Omega$. Seja $Y_{1} = u_{1}(X_{1},X_{2}, \ldots , X_{n})$ uma estatística cuja função de densidade ou função de probabilidade é $f_{Y_1}(y_1; \theta)$. Então, $Y_1$ é uma estatística suficiente para $\theta$ se, e somente se,
+\begin{equation}
+\dfrac{{f(x_1; \theta)f(x_2; \theta) \cdots f(x_n; \theta)}}{{f_{Y_1}(y_{1}; \theta)}} = H(x_1, x_2, \ldots , x_n),
+\end{equation}
+
+em que $H(x_1, x_2, \ldots , x_n)$ não depende de $\theta \in \Omega$.
+\end{definicao}
+\end{frame}
+
+\begin{frame}{Exemplo}
+\begin{block}{}
+\justifying
+$X_1,X_2, \ldots,X_n\Sim \Gamma(2,\theta),~\theta>0.$ Seja $y={\displaystyle \sum_{i=1}^{n}X_{i}}.$ Mostre que $Y\Sim \Gamma(2n,\theta)$ usando função geradora de momentos.
+\end{block}
+\pause
+\begin{block}{}
+\justifying
+Como a função geradora de momentos associada a essa distribuição é dada por $M(t) = (1 - \theta t)^{-2}, t < \frac{1}{\theta}$, a função geradora de momentos de $Y= X_1 + X_2 + \ldots + X_n$ é:
+\begin{align*}
+E[e^{t(X_1+X_2+\ldots+X_n)}] &= E[e^{tX_1}e^{tX_2} \ldots e^{tX_n}] \\
+&= [(1-\theta t)^{-2}]^n \\
+&= (1 - \theta t)^{-2n}.
+\end{align*}
+
+Logo, $Y\Sim \Gamma(2n,\theta).$ 
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Notem que, as funções de densidade $f_{X_{1}}(x_{1};\theta), f_{Y}(y;\theta)$ são definidas como:
+
+\begin{align*}
+f_{X_{1}}(x_{1};\theta) &= 
+\frac{1}{\Gamma(2)\theta^{2}}x_1^{2-1}e^{-\frac{x}{\theta}},~x_{1}>0.\\
+f_{Y}(y;\theta) &= 
+\frac{1}{\Gamma(2n)\theta^{2n}}y^{2n-1}e^{-\frac{y}{\theta}}, ~y={\displaystyle \sum_{i=1}^{n}X_{i}}.
+\end{align*}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Segue que,
+\begin{equation*}
+\dfrac{\frac{x_1^{2-1}e^{-x_1/\theta}}{\Gamma(2)\theta^2} \cdot \frac{x_2^{2-1}e^{-x_2/\theta}}{\Gamma(2)\theta^2} \cdot \ldots \cdot \frac{x_n^{2-1}e^{-x_n/\theta}}{\Gamma(2)\theta^2}}{\frac{(x_1 + x_2 + \ldots + x_n)^{2n-1}e^{-(x_1+x_2+\ldots+x_n)/\theta}}{\Gamma(2n)\theta^{2n}}}=\frac{\Gamma(2n)}{(\Gamma(2))^n} \cdot \frac{x_1x_2\cdot\ldots\cdot x_n}{(x_1 + x_2 + \ldots + x_n)^{2n-1}},
+\end{equation*}
+Como, a expressão final, não depende de $\theta,~Y$ é uma estatística suficiente para $\theta.$ 
+\end{block}
+\end{frame}
+
+\subsection{Teorema de Neyman (Critério de Fatoração)}
+\begin{frame}{Teorema de Neyman (Critério de Fatoração)}
+\begin{block}{}
+\begin{Teorema}
+\justifying
+    Seja $X_1, X_2, \ldots, X_n$ uma amostra aleatória com densidade de probabilidade ou função de probabilidade $f(x; \theta), ~\theta \in \Omega$. A estatística $Y_1 = u(X_1, \ldots, X_n)$ é uma estatística suficiente para $\theta$ se, e somente se, existir duas funções não negativas, $k_1$ e $k_2$, tais que
+
+\begin{equation*}
+f(x_1; \theta)f(x_2; \theta) \ldots f(x_n; \theta) = k_1[u_1(x_1, x_2, \ldots, x_n); \theta]k_2(x_1, x_2, \ldots, x_n)
+\end{equation*}
+
+em que $k_2(x_1, x_2, \ldots, x_n)$ não depende de $\theta$.
+\end{Teorema}
+\end{block}
+\end{frame}
+
+\begin{frame}{Demonstração}
+\begin{block}{Considere o caso contínuo!}
+\justifying
+Faremos a ``volta'' do teorema primeiro $(\Leftarrow{})$. Consideremos também as transformações 1 a 1. Considere $y_1 = u_1(x_1, x_2, \ldots, x_n), y_2 = u_2(x_1, x_2, \ldots, x_n), \ldots, y_n = u_n(x_1, x_2, \ldots, x_n)$ tendo as funções inversas $x_1 = w_1(y_1, y_2, \ldots, y_n), x_2 = w_2(y_1, y_2, \ldots, y_n), \ldots, x_n = w_n(y_1, y_2, \ldots, y_n)$ com Jacobiano $J$; Sabemos que, 
+\begin{align*}
+    f_{X_{1}, X_{2}, \ldots, X_{n}}(x_{1}, x_{2}, \ldots, x_{n})&=f_{X_{1}}(x_{1})f_{X_{2}}(x_{2})\ldots f_{X_{n}}(x_{n}).
+\end{align*}
+Para simplificar a notação considere $w_{i}=w_{i}(y_1, y_2, \ldots, y_n),\forall i=1,2,\cdots,n.$ Com isso, 
+\begin{align*}
+    f_{Y_{1}, Y_{2}, \ldots, Y_{n}}(y_{1}, y_{2}, \ldots, y_{n})&=f_{X_{1}}(w_{1})f_{X_{2}}(w_{2})\ldots f_{X_{n}}(w_{n})|J|.
+\end{align*}
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Logo, por hipótese, existem duas funções não negativas, $k_1$ e $k_2$, tais que
+\begin{align*}
+    f_{Y_{1}, Y_{2}, \ldots, Y_{n}}(y_{1}, y_{2}, \ldots, y_{n})&=f_{X_{1}}(w_{1})f_{X_{2}}(w_{2})\ldots f_{X_{n}}(w_{n})|J|\\
+    &=|J|k_1[y_{1}; \theta]k_2(w_1, w_2, \ldots, w_n)
+\end{align*}
+Daí,
+\begin{align*}
+    f_{Y_{1}}(y_{1})&=\int_{-\infty}^{\infty}\cdots \int_{-\infty}^{\infty} k_1[y_{1}; \theta]k_2(w_1, w_2, \ldots, w_n)|J|dy_{2}dy_{3}\cdots dy_{n}\\
+    &=k_{1}(y_{1},\theta)\underbrace{\int_{-\infty}^{\infty}\cdots \int_{-\infty}^{\infty} k_2(w_1, w_2, \ldots, w_n)|J|dy_{2}dy_{3}\cdots dy_{n}}_{\text{Não depende de $\theta$, somente de $y_{1}$(=$m(y_{1})$)}}
+\end{align*}
+\end{block}
+\pause
+\begin{block}{}
+\justifying
+Então, $f_{Y_{1}}(y_{1})=k_{1}(y_{1},\theta)m(y_{1})$
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Com isso, 
+\begin{align*}
+    \dfrac{f(x_{1}; \theta) \cdot f(x_{2}; \theta) \ldots f(x_{n}; \theta)}{f_{Y_{1}}(y_{1},\theta)}&=\dfrac{\cancel{k_{1}(y_{1},\theta)}k_{2}(x_1, x_2, \ldots, x_n)}{\cancel{k_{1}(y_{1},\theta)}m(y_{1})}
+\end{align*}
+que não depende de $\theta,$ portanto, $Y$ é suficiente para $\theta.~\blacksquare$
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{$(\Leftarrow{})$}
+\justifying
+Por suposição,
+\begin{align*}
+    f(x_{1}; \theta) \cdot f(x_{2}; \theta) \ldots f(x_{n}; \theta)=\underbrace{H(x_{1},\ldots, x_{n})}_{k_{2}}\underbrace{f_{Y_{1}}(y_{1},\theta)}_{k_{1}}.~\blacksquare
+\end{align*}
+\end{block}
+\end{frame}
+
+\begin{frame}{Exemplo}
+\begin{block}{}
+\justifying
+Seja $X_1, X_2, \ldots, X_n$ amostra aleatória com densidade 
+$f(x; \theta) =\theta x^{\theta-1},~x\in (0,1)$ e $\theta>0.$
+
+\begin{align*}
+f(x_{1}; \theta) f(x_{2}; \theta) \ldots f(x_{n}; \theta)&=\theta^{n}x_{1}^{\theta-1} \ldots x_{n}^{\theta-1}\\
+&=\theta^{n}\left(\displaystyle{\prod_{i=1}^{n}} x_i\right)^{\theta}\dfrac{1}{\displaystyle{\prod_{i=1}^{n}} x_i}\\
+&=k_{1}(\theta,\displaystyle{\prod_{i=1}^{n}} x_i)k_{2}(x_{1},\ldots, x_{n})
+\end{align*}
+
+Uma vez que $k_2(x_1, x_2, \ldots, x_n)$ não depende de $\theta$, o produto $\prod_{i=1}^n X_i,$ pelo critério da fatoração, é uma estatística suficiente para $\theta$.
+\end{block}
+\end{frame}
+
+\begin{frame}{Exercícios}
+\begin{block}{\Home}
+\justifying
+Exercícios 7.2: 1,2,4 ao 8
+\nocite{hogg, casella2021statistical, bolfarine}
+\end{block}
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+\frametitle{\bf Referências}
+\printbibliography
+\end{frame}
+
+
+\end{document}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\section{Estatística Suficiente e Minimal}
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\section{Familia Exponencial}
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}

@@ -1,4 +1,0 @@
-\babel@toc {brazil}{}\relax 
-\beamer@sectionintoc {1}{Função Geradora de Momentos}{3}{0}{1}
-\beamer@sectionintoc {2}{Teorema Central do Limite}{10}{0}{2}
-\beamer@sectionintoc {3}{Método Delta}{13}{0}{3}

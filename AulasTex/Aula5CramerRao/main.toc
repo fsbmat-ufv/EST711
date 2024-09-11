@@ -1,0 +1,5 @@
+\babel@toc {brazil}{}\relax 
+\beamer@sectionintoc {1}{Limite Inferior de Cramér - Rao e Eficiência}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Informação de Fisher}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{Função Escore}{14}{0}{1}
+\beamer@subsectionintoc {1}{3}{Limite Inferior de Cramér - Rao}{21}{0}{1}

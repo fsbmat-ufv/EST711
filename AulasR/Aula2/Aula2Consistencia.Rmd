@@ -1,0 +1,287 @@
+---
+title: "Inferência Estatística II"
+output: 
+  slidy_presentation:
+    css: custom.css
+    self_contained: yes
+    incremental: true
+    fig_caption: yes
+    force_captions: yes
+    highlight: pygments
+    toc: yes
+    #Sumário flutuante
+    toc_float: true
+    #numerar seções
+    number_sections: true
+    #Mostrar ou esconder os códigos (show ou hide)
+    code_folding: hide
+    #Diversos modelos de documentos ver outros em http://bootswatch.com/
+    theme: united
+    header-includes:
+       \usepackage{array}
+       \usepackage{multirow}
+       \usepackage{geometry}
+bibliography: Referencias.bib  
+includes:
+     keep_tex: yes
+fontsize: 12pt
+geometry: margin=2cm
+graphics: yes
+#  pdf_document:
+#    fig_caption: yes
+#    keep_tex: yes
+#    number_sections: yes
+comments: yes
+tags: [Distribuição Normal, otimização, R]
+date: "2024-09-08"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      Macros: {
+        arcsin: ["\\text{arcsen}", 0],
+        sin: ["\\text{sen}", 0],
+        N: ["\\mathbb{N}", 0],
+        I: ["\\mathbb{I}", 0],
+        R: ["\\mathbb{R}", 0],
+        Sim: ["\\overset{\\text{iid}}{\\sim}", 0],
+        Lim: ["\\displaystyle \\lim_{n\\to\\infty}", 0],
+        LimInf: ["\\displaystyle \\liminf_{n\\to\\infty}", 0],
+        rightLim: ["\\xrightarrow[n\\rightarrow\\infty]{}", 0],
+        Sumi: ["\\displaystyle \\sum_{i=1}^{n}", 0],
+        Int: ["\\displaystyle \\int_{-\\infty}^{+\\infty}", 0],
+        ConvD: ["\\overset{D}{\\rightarrow}", 0],
+        ConvP: ["\\overset{P}{\\rightarrow}", 0],
+        Prodi: ["\\displaystyle \\prod_{i=1}^{n}", 0],
+        SetaUP: ["\\underset{\\mathclap{\\substack{\\xuparrow[30pt] \\\\ #1}}}{#2}", 2],
+        Home: ["\\begin{tikzpicture} \\node[scale=2] at (3,4) {\\text{Para}~\\faHome}; \\end{tikzpicture}", 0],
+        vecX: ["\\boldsymbol{X}", 0],
+        Implica: ["\\xRightarrow{#1}", 1],
+        SeSe: ["\\iff", 0],
+        EscoreA: ["\\dfrac{\\partial}{\\partial\\theta}\\log{f(x,\\theta)}", 0],
+        EscoreB: ["\\dfrac{\\partial^{2}}{\\partial\\theta^{2}}\\log{f(x,\\theta)}", 0],
+        cqd: ["\\text{cqd}~\\blacksquare", 0],
+        seqX: ["X_{1},\\ldots,X_{n}", 0],
+        seqY: ["Y_{1},\\ldots,Y_{n}", 0],
+        tend: ["\\hbox{\\oalign{$\\bm{#1}$\\crcr\\hidewidth$\\scriptscriptstyle\\bm{\\sim}$\\hidewidth}}", 1],
+        bx: ["\\bar{x}", 0],
+        Ho: ["H_{0}", 0],
+        Hi: ["H_{1}", 0],
+        at: ["#1|_{#2}", 2],
+        xuparrow: ["\\uparrow", 0]  // Alternativa simples
+      }
+    }
+  });
+</script>
+
+# Consistência
+
+**Definição:** <p style="text-align: justify;">Seja \( X \) uma variável aleatória com função de distribuição acumulada \( F(x, \theta) \), \( \theta \in \mathcal{A}\subseteq \Omega \). Seja \( X_1, \ldots, X_{n} \) uma amostra da distribuição de \( X \) e seja \( T_{n} \) uma estatística \( (T_{n}=T(X_1, \ldots, X_{n})) \). Dizemos que \( T_{n} \) é um estimador consistente para \( \theta \) se \( T_{n} \xrightarrow{P} \theta \).</p>
+
+### Exemplo
+
+<p style="text-align: justify;">Sejam \( X_{1}, \ldots, X_{n}, \ldots \) uma sequência de variáveis aleatórias iid de uma distribuição com média finita \( \mu \) e variância \( \sigma^{2}<+\infty \), então, pela Lei Fraca dos Grandes Números, temos que, \( \bar{X}_{n}=\dfrac{\Sumi X_{i}}{n} \ConvP \mu \). Ou seja, \( \bar{X}_{n} \) é um estimador consistente de \( \mu \).</p>
+
+---
+
+### Exemplo
+
+<p style="text-align: justify;">Sejam \( X_1, \ldots, X_{n} \) uma amostra aleatória de uma distribuição com média \( \mu \) e variância \( \sigma^{2}<+\infty \). Suponha que \( E[X^{4}_{1}] < +\infty \), de tal forma que \( Var(S^{2}) < +\infty \).</p>
+
+
+\begin{align*}
+S^2_{n} &= \frac{1}{n-1} \sum_{i=1}^n (X_i - \overline{X}_{n})^2\\
+&= \frac{1}{n-1} \left(\sum_{i=1}^n X_{i}^{2} - n\overline{X}_{n}^{2}\right)\\ 
+&= \frac{n}{n-1} \left(\frac{1}{n}\sum_{i=1}^n X^2_i - \overline{X}^{2}_{n}\right) \xrightarrow{P} 1 \cdot [E(X^2_1) - \mu^2] = \sigma^2
+\end{align*}
+
+
+---
+
+<p style="text-align: justify;">Portanto, a variância da amostra é um estimador consistente de \( \sigma^2 \). A partir da discussão acima, temos imediatamente que \( S_{n} \xrightarrow{P} \sigma \); ou seja, o desvio padrão da amostra é um estimador consistente do desvio padrão populacional. Vejam estes exemplos anteriores na prática, <a href="https://est711.shinyapps.io/ConvergenciaProbabilidade/">Clique aqui!</a>.</p>
+
+---
+
+### Exemplo
+
+<p style="text-align: justify;">Considere \( X_{i} \overset{\text{iid}}{\sim} U(0,\theta),~i=1,2,\ldots,n \), e \( Y_{n} = \max\{X_{1}, \ldots, X_{n}\} \). Seja \( \varepsilon > 0 \), segue que:</p>
+
+
+$P(|Y_{n}-\theta|\geq \varepsilon) = P(\theta - Y_{n} \geq \varepsilon) = P(Y_{n} \leq \theta - \varepsilon)$
+
+
+---
+
+<p style="text-align: justify;">Se \( \theta - \varepsilon \leq 0 \), então \( P(Y_{n} \leq \theta - \varepsilon) = 0 \), pois \( 0 \leq Y_{n} \leq \theta \), com \( P(0 \leq Y_{n} \leq \theta) = 1 \).</p>
+
+
+<p style="text-align: justify;">Se \( 0 < \varepsilon < \theta \) então:</p>
+
+
+$P(|Y_{n} - \theta| \geq \varepsilon) = P(Y_{n} \leq \theta - \varepsilon) = F_{Y_{n}}(\theta - \varepsilon) = \left(1 - \frac{\theta - \varepsilon}{\theta}\right)^n = \left(\frac{\varepsilon}{\theta}\right)^n \to 0 \text{ à medida que } n \to \infty$
+
+
+<p style="text-align: justify;">Portanto, o máximo \( Y_{n} \) é um estimador consistente para \( \theta \).</p>
+
+---
+
+## Distribuições Limites
+
+### Definição
+<p style="text-align: justify;">A distribuição limite é uma distribuição de probabilidade que descreve o comportamento assintótico de uma sequência de variáveis aleatórias conforme o tamanho da amostra cresce para infinito. As distribuições limites mais comuns incluem a Normal, Poisson e Exponencial.</p>
+
+---
+
+### Lei dos Grandes Números
+
+<p style="text-align: justify;">A Lei dos Grandes Números afirma que a média amostral de uma sequência de variáveis aleatórias independentes e identicamente distribuídas converge em probabilidade para a média populacional conforme o tamanho da amostra tende ao infinito. Ou seja, para uma sequência de variáveis aleatórias \( X_1, X_2, \ldots \) com média \( \mu \) e variância \( \sigma^2 \), a média amostral \( \bar{X}_n \) converge para \( \mu \) conforme \( n \to \infty \).</p>
+
+---
+
+### Teorema Central do Limite
+
+<p style="text-align: justify;">O Teorema Central do Limite afirma que, sob certas condições, a soma de variáveis aleatórias independentes e identicamente distribuídas tende a uma distribuição normal conforme o tamanho da amostra aumenta. Especificamente, se \( X_1, X_2, \ldots, X_n \) são variáveis aleatórias independentes com média \( \mu \) e variância \( \sigma^2 \), então</p>
+
+
+\frac{\overline{X}_n - \mu}{\sigma / \sqrt{n}} \xrightarrow{D} \mathcal{N}(0, 1)
+
+
+<p style="text-align: justify;">ou seja, a distribuição da média amostral normaliza e converge para a distribuição normal padrão.</p>
+
+---
+
+## Exemplo 2 (Convergência em Distribuição não Implica Convergência em Probabilidade)
+
+<p style="text-align: justify;">Seja \(X\) uma variável aleatória contínua simétrica em torno do zero (ou seja, se \(f\) denota sua densidade, então \(f(x) = f(-x), \forall x\in \R\). Neste caso, \(X\) e \(-X\) têm a mesma distribuição (Verifiquem!). Defina a sequência de variáveis aleatórias \(X_{n}\) como:</p>
+<p style="text-align: justify;">\(X_{n} = \begin{cases} 
+X, & \text{se } n \text{ é par} \\ 
+-X, & \text{se } n \text{ é ímpar} 
+\end{cases}\)</p>
+
+---
+
+<p style="text-align: justify;">É fácil ver que \(F_{X_{n}}(x) = F_{X}(x)\). Logo, \(X_{n} \overset{D}{\rightarrow} X\). Porém, \(X_{n} \overset{P}{\cancel{\rightarrow}} X\), pois:</p>
+<p style="text-align: justify;">\(P(|X_{n}-X| \geq \varepsilon) = \begin{cases} 
+0, & \text{se } n \text{ é par} \\ 
+P(2|X| \geq \varepsilon), & \text{se } n \text{ é ímpar}
+\end{cases}\)</p>
+
+---
+
+## Exemplo 3
+
+<p style="text-align: justify;">Seja \(T_{n}\) uma variável aleatória com distribuição t-Student com \(n\) graus de liberdade, ou seja, a densidade de \(T_{n}\) é dada por:</p>
+<p style="text-align: justify;">
+\[
+f_{T_{n}}(y) = \dfrac{\Gamma\Big(\dfrac{n+1}{2}\Big)}{\sqrt{n\pi}\Gamma\Big(\dfrac{n}{2}\Big)} \dfrac{1}{\Big(1+\dfrac{y^{2}}{n}\Big)^{\frac{n+1}{2}}}, \quad y \in \R
+\]
+</p>
+
+---
+
+<p style="text-align: justify;">Temos que:</p>
+<p style="text-align: justify;">
+\[
+\lim_{n\rightarrow+\infty}F_{T_{n}}(t) = \lim_{n\rightarrow+\infty}\int_{-\infty}^{t}\dfrac{\Gamma\Big(\dfrac{n+1}{2}\Big)}{\sqrt{n\pi}\Gamma\Big(\dfrac{n}{2}\Big)} \dfrac{1}{\Big(1+\dfrac{y^{2}}{n}\Big)^{\frac{n+1}{2}}}dy
+\]
+</p>
+
+---
+
+<p style="text-align: justify;">Considere a seguinte aproximação de Stirling (Conhecida como fórmula de Stirling):</p>
+<p style="text-align: justify;">
+\[
+\Gamma(t+1) \approx \sqrt{2\pi t}\Big(\dfrac{t}{e}\Big)^{t}
+\]
+Ou seja, 
+\[
+\lim_{t\rightarrow+\infty} \dfrac{\Gamma(t+1)}{\sqrt{2t\pi}\Big(\dfrac{t}{e}\Big)^{t}} = 1
+\]
+</p>
+
+---
+
+<p style="text-align: justify;">Logo:</p>
+<p style="text-align: justify;">
+\[
+\lim_{n\rightarrow+\infty}\dfrac{\Gamma\Big(\dfrac{n+1}{2}\Big)}{\sqrt{n\pi}\Gamma\Big(\dfrac{n}{2}\Big)} \dfrac{1}{\Big(1+\dfrac{y^{2}}{n}\Big)^{\frac{n+1}{2}}}
+\]
+\begin{scriptsize}
+\[
+= \lim_{n\rightarrow+\infty}
+\dfrac{\sqrt{2\pi}\Big(\frac{n-1}{2}\Big)^{\frac{n-1}{2}+\frac{1}{2}}e^{-(\frac{n-1}{2})}}{\sqrt{n}\sqrt{2\pi}\Big(\dfrac{n-2}{2}\Big)^{\frac{n-2}{2}+\frac{1}{2}}e^{-(\frac{n-2}{2})}}\dfrac{1}{\Big(1+\dfrac{y^{2}}{n}\Big)^{\frac{n+1}{2}}}
+= \star \quad (\text{t da fórmula de Stirling será}~\frac{n-1}{2})
+\]
+</p>
+
+---
+
+<p style="text-align: justify;">Portanto, substituindo em \(\star\star\), temos:</p>
+<p style="text-align: justify;">
+\[
+\lim_{n\rightarrow+\infty}F_{T_{n}}(t) = \int_{-\infty}^{t}\dfrac{e^{-\frac{y^{2}}{2}}}{\sqrt{2\pi}}dy
+\]
+Logo, \(T_{n} \overset{D}{\rightarrow} N(0,1)\).
+</p>
+
+---
+
+## Teorema
+
+<p style="text-align: justify;">Se \(X_{n} \overset{P}{\rightarrow} X\), então \(X_{n} \overset{D}{\rightarrow} X\).</p>
+
+---
+
+## Teorema
+
+<p style="text-align: justify;">Se \(X_{n} \overset{D}{\rightarrow} a\), então \(X_{n} \overset{P}{\rightarrow} a\), onde \(a\) é uma constante.</p>
+
+---
+
+## Teorema
+
+<p style="text-align: justify;">Se \(X_{n} \overset{D}{\rightarrow} X\) e \(Y_{n} \overset{P}{\rightarrow} 0\), então \(X_{n}+Y_{n} \overset{D}{\rightarrow} X\).</p>
+
+---
+
+## Teorema
+
+<p style="text-align: justify;">Se \(X_{n} \overset{D}{\rightarrow} X\) e \(g\) é uma função contínua no suporte de \(X\), então:</p>
+<p style="text-align: justify;">
+\[
+g(X_{n}) \overset{D}{\rightarrow} g(X)
+\]
+</p>
+
+---
+
+## Teorema de Slutsky
+
+<p style="text-align: justify;">Sejam \(X_{n}\), \(A_{n}\) e \(B_{n}\) variáveis aleatórias com \(X_{n} \overset{D}{\rightarrow} X\), \(A_{n} \overset{P}{\rightarrow} a\) e \(B_{n} \overset{P}{\rightarrow} b\), onde \(a\) e \(b\) são constantes reais. Então:</p>
+<p style="text-align: justify;">
+\[
+A_{n}X_{n} + B_{n} \overset{D}{\rightarrow} aX + b
+\]
+</p>
+
+---
+
+## Exercícios
+
+<p style="text-align: justify;">Exercícios 5.2.2, 5.2.3, 5.2.6, 5.2.12, 5.2.15, 5.2.17, 5.2.19 e 5.2.20</p>
+
+---
+
+## Referências
+
+<p style="text-align: justify;">
+\printbibliography
+</p>
+
+
+

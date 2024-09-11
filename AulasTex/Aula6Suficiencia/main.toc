@@ -1,0 +1,6 @@
+\babel@toc {brazil}{}\relax 
+\beamer@sectionintoc {1}{Medidas da Qualidade de um Estimador}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Estimador ENVVUM}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{Função de Decisão}{6}{0}{1}
+\beamer@sectionintoc {2}{Estatística Suficiente para um Parâmetro}{19}{0}{2}
+\beamer@subsectionintoc {2}{1}{Teorema de Neyman (Critério de Fatoração)}{24}{0}{2}
