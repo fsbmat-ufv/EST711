@@ -1,0 +1,313 @@
+
+\documentclass[12pt]{beamer}
+
+%\input{C:/Users/Fernando/Documents/Ensino/DET/PosGraduacao/EST711/Configuracoes/layout}
+\input{../Configuracoes/layout}
+
+\title{Inferência Estatística II}
+\author{Prof. Fernando de Souza Bastos\texorpdfstring{\\ fernando.bastos@ufv.br}{}}
+\institute{Departamento de Estatística\texorpdfstring{\\ Programa de Pós-Graduação em Estatística Aplicada e Biometria}\texorpdfstring{\\ Universidade Federal de Viçosa}{}\texorpdfstring{\\ Campus UFV - Viçosa}{}}
+\date{}
+\newcommand\mytext{Aula 3}
+\newcommand\mytextt{Fernando de Souza Bastos}
+\newcommand\mytexttt{\url{https://est711.github.io/}}
+
+
+\begin{document}
+%\SweaveOpts{concordance=TRUE}
+
+\frame{\titlepage}
+
+\begin{frame}{}
+\frametitle{\bf Sumário}
+\tableofcontents
+\end{frame}
+
+\section{Teoremas Sobre Convergência}
+\begin{frame}{}
+\begin{Teorema}
+\justifying
+Se $X_{n} \overset{P}{\rightarrow} X,~\text{então}~X_{n} \overset{D}{\rightarrow} X.$
+\end{Teorema}
+\pause
+\begin{block}{Demonstração do Teorema 1}
+	Seja \( x \) um ponto de continuidade de \( F_X(x) \), a função de distribuição acumulada (FDA) de \( X \). Queremos mostrar que \( F_{X_n}(x) \to F_X(x) \) à medida que \( n \to \infty \), onde \( F_{X_n}(x) \) é a FDA de \( X_n \).
+	
+	Para isso, partimos da definição de \( F_{X_n}(x) = P(X_n \leq x) \). Usaremos uma técnica dividindo a probabilidade em dois pedaços.
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+	\begin{block}{Demonstração do Teorema 1}
+	Dividimos o evento \( \{X_n \leq x\} \) em dois subconjuntos: um onde \( |X_n - X| < \varepsilon \) e outro onde \( |X_n - X| \geq \varepsilon \). Assim, podemos reescrever:
+	
+	\begin{align*}
+		F_{X_n}(x) &= P(X_n \leq x)\\ 
+		&= P(\{X_n \leq x\} \cap \{|X_n - X| < \varepsilon\})\\ 
+		&+ P(\{X_n \leq x\} \cap \{|X_n - X| \geq \varepsilon\})\\
+		&\leq P(X \leq x + \varepsilon) + P(|X_n - X| \geq \varepsilon)
+	\end{align*}
+	
+	Essa é uma decomposição da probabilidade em duas partes: uma onde \( X_n \) está "perto" de \( X \) (a diferença é menor que \( \varepsilon \)) e outra onde \( X_n \) está "longe" de \( X \) (a diferença é maior ou igual a \( \varepsilon \)).	
+	\end{block}
+\end{frame}
+
+
+\begin{frame}{}
+	\begin{block}{Demonstração do Teorema 1}
+	A probabilidade \( P(\{X_n \leq x\} \cap \{|X_n - X| < \varepsilon\}) \) pode ser estimada por \( P(X \leq x + \varepsilon) \).
+	
+	\[
+	P(\{X_n \leq x\} \cap \{|X_n - X| < \varepsilon\}) \leq P(X \leq x + \varepsilon)
+	\]
+	
+	Isso porque, quando \( |X_n - X| < \varepsilon \), sabemos que \( X_n \) está perto de \( X \), então \( X_n \leq x \) implica que \( X \leq x + \varepsilon \).	
+	\end{block}
+\end{frame}
+
+
+\begin{frame}{}
+	\begin{block}{Demonstração do Teorema 1}
+	O segundo termo, \( P(\{X_n \leq x\} \cap \{|X_n - X| \geq \varepsilon\}) \), é menor ou igual a \( P(|X_n - X| \geq \varepsilon) \), que é simplesmente a probabilidade de $X_{n}$ estar longe de $X.$ Essa probabilidade tende a 0 quando \( X_n \to X \) em probabilidade, mas por enquanto, deixamos essa expressão como está:
+	
+	\[
+	P(\{X_n \leq x\} \cap \{|X_n - X| \geq \varepsilon\}) \leq P(|X_n - X| \geq \varepsilon)
+	\]	
+	\end{block}
+\end{frame}
+
+\begin{frame}{}
+	\begin{block}{Demonstração do Teorema 1}
+	Juntando as duas estimativas, temos:
+	
+	\[
+	F_{X_n}(x) \leq P(X \leq x + \varepsilon) + P(|X_n - X| \geq \varepsilon)
+	\]
+	
+	Esta é a estimativa superior para \( F_{X_n}(x) \).
+	
+	
+	\begin{itemize}
+		\item O primeiro termo, \( P(X \leq x + \varepsilon) \), representa o evento de que \( X \) está um pouco acima de \( x \). Isso é um "ajuste", pois estamos lidando com \( X_n \) próximo de \( X \).\pause
+		\item O segundo termo, \( P(|X_n - X| \geq \varepsilon) \), é a probabilidade de que \( X_n \) esteja muito distante de \( X \), ou seja, mais de \( \varepsilon \) de diferença.	
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}{}
+	\begin{block}{Demonstração do Teorema 1}
+		Quando \( X_n \to X \) em probabilidade, sabemos que \( P(|X_n - X| \geq \varepsilon) \to 0 \) conforme \( n \to \infty \). Portanto, com base nessa desigualdade, podemos concluir:
+		
+		\[
+		\lim_{n \to \infty} F_{X_n}(x) \leq F_X(x + \varepsilon)
+		\]
+		
+		Isso nos dá a estimativa superior (upper bound) da função de distribuição acumulada de \( X_n \).
+	\end{block}
+\end{frame}
+
+
+\begin{frame}{}
+	\begin{block}{Demonstração do Teorema 1}
+	Agora, para obter a **estimativa inferior**, começamos reescrevendo \( P(X_n \leq x) \) utilizando o complemento:
+	
+	\[
+	P(X_n \leq x) = 1 - P(X_n > x)
+	\]
+	
+	Dividimos a probabilidade \( P(X_n > x) \) em dois pedaços:
+	
+	\[
+	P(X_n > x) = P(\{X_n > x\} \cap \{|X_n - X| < \varepsilon\}) + P(\{X_n > x\} \cap \{|X_n - X| \geq \varepsilon\})
+	\]	
+	\end{block}
+\end{frame}
+
+
+\begin{frame}{}
+	\begin{block}{Demonstração do Teorema 1}
+	\begin{itemize}
+		\item A primeira parte \( P(\{X_n > x\} \cap \{|X_n - X| < \varepsilon\}) \) considera os casos em que \( X_n \) está próximo de \( X \) (a diferença é menor que \( \varepsilon \)) e, ao mesmo tempo, \( X_n > x \).
+		\pause
+		\item A segunda parte \( P(\{X_n > x\} \cap \{|X_n - X| \geq \varepsilon\}) \) considera os casos em que \( X_n \) e \( X \) estão distantes mais de \( \varepsilon \).
+	\end{itemize}	
+	\end{block}
+\end{frame}
+
+\begin{frame}{}
+	\begin{block}{Demonstração do Teorema 1}
+	Como \( P(\{X_n > x\} \cap \{|X_n - X| < \varepsilon\}) \) é menor que \( P(X > x - \varepsilon) \), podemos usar a seguinte desigualdade:
+	
+	\[
+	P(X_n > x) \leq P(X \geq x - \varepsilon) + P(|X_n - X| \geq \varepsilon)
+	\]
+	
+	- O primeiro termo, \( P(X \geq x - \varepsilon) \), é a probabilidade de \( X \) ser maior ou igual a \( x - \varepsilon \). Isso é uma aproximação para lidar com o fato de que \( X_n \) está próximo de \( X \).
+	- O segundo termo, \( P(|X_n - X| \geq \varepsilon) \), representa a probabilidade de \( X_n \) estar distante de \( X \) (mais de \( \varepsilon \)).	
+	\end{block}
+\end{frame}
+
+\begin{frame}{}
+	\begin{block}{Demonstração do Teorema 1}
+	Assim, podemos expressar \( P(X_n \leq x) \) como:
+	
+	\[
+	P(X_n \leq x) = 1 - P(X_n > x)
+	\]
+	
+	Substituímos o limite que encontramos para \( P(X_n > x) \):
+	
+	\[
+	P(X_n \leq x) \geq 1 - P(X \geq x - \varepsilon) - P(|X_n - X| \geq \varepsilon)
+	\]
+	
+	Ou, de forma mais compacta:
+	
+	\[
+	F_{X_n}(x) \geq F_X(x - \varepsilon) - P(|X_n - X| \geq \varepsilon)
+	\]	
+	\end{block}
+\end{frame}
+
+\begin{frame}{}
+	\begin{block}{Demonstração do Teorema 1}
+	Sabemos que, como \( X_n \to X \) em probabilidade, temos \( P(|X_n - X| \geq \varepsilon) \to 0 \) conforme \( n \to \infty \). Assim, no limite:
+	
+	\[
+	\lim_{n \to \infty} F_{X_n}(x) \geq F_X(x - \varepsilon)
+	\]
+	
+	
+	Agora, combinamos as duas estimativas (superior e inferior) que obtivemos:
+	
+	\[
+	F_X(x - \varepsilon) \leq \lim_{n \to \infty} F_{X_n}(x) \leq F_X(x + \varepsilon)
+	\]
+	
+	Finalmente, fazendo \( \varepsilon \to 0 \), chegamos à conclusão desejada:
+	
+	\[
+	\lim_{n \to \infty} F_{X_n}(x) = F_X(x)
+	\]	
+	\end{block}
+\end{frame}
+
+
+\begin{frame}{}
+\begin{Teorema}
+\justifying
+Se $X_{n} \overset{D}{\rightarrow} a,~\text{então}~X_{n} \overset{P}{\rightarrow} a,~a$ constante.
+\end{Teorema}
+\end{frame}
+
+\begin{frame}{}
+\begin{Teorema}
+\justifying
+Se $X_{n} \overset{D}{\rightarrow} X~\text{e}~Y_{n} \overset{P}{\rightarrow} 0~\text{então}~X_{n}+Y_{n} \overset{D}{\rightarrow} X.$
+\end{Teorema}
+\end{frame}
+
+\begin{frame}{}
+\begin{Teorema}
+\justifying
+Se $X_{n} \overset{D}{\rightarrow} X~\text{e}~g~\text{é uma função contínua no suporte de}~X,~\text{então}~$ $$g(X_{n}) \overset{D}{\rightarrow} g(X).$$
+\end{Teorema}
+\end{frame}
+
+\begin{frame}{Teorema de Slutsky}
+\begin{Teorema}
+\justifying
+Sejam $X_{n},~A_{n}$ e $B_{n},$ variáveis aleatórias com $X_{n} \overset{D}{\rightarrow} X,~A_{n} \overset{P}{\rightarrow} a~\text{e}~B_{n} \overset{P}{\rightarrow} b,~a,b$~constantes reais. Então, $$A_{n}X_{n}+B_{n} \overset{D}{\rightarrow} aX+b.$$
+\end{Teorema}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{\Home}
+	\nocite{hogg}
+\justifying
+Exercícios 5.2.2, 5.2.3, 5.2.6, 5.2.12, 5.2.15, 5.2.17, 5.2.19 e 5.2.20
+\end{block}
+\end{frame}
+
+\section{Função Geradora de Momentos}
+\begin{frame}{Função Geradora de Momentos}
+	\begin{definicao}
+		\justifying
+		A função geradora de momentos de uma variável aleatória $X$ é definida por $M_{X}(t)=E(e^{tX}),~t\in \R$
+	\end{definicao}
+\end{frame}
+
+\begin{frame}{}
+	\begin{Teorema}
+		\justifying
+		Seja $\{X_{n}\}_{n\geq 1}$ uma sequência de variáveis aleatórias com fgm $M_{X_n}(t)$ que existe para $|t|<h$ para todo $n$. Seja $X$ uma variável aleatória com fgm $M_{X}(t)$, que existe para $|t| \leq h_1 \leq h$. Se $\lim_{n \to \infty} M_{X_n}(t) = M_{X}(t)$ para $|t| \leq h_1$, então $X_{n} \overset{D}{\rightarrow} X.$
+	\end{Teorema}
+	\pause
+	\begin{block}{Observação importante na resolução de exercícios:}
+		\justifying
+		Se ${\displaystyle \lim_{n \to \infty} \left(1 + \frac{b}{n} + \frac{\psi(n)}{n}\right)^{cn}}$, em que $b$ e $c$ não dependem de $n$ e, em que, ${\displaystyle\lim_{n \to \infty} \psi(n) = 0}$. Então,
+		${\displaystyle \lim_{n \to \infty} \left(1 + \frac{b}{n} + \frac{\psi(n)}{cn}\right) = \lim_{n \to \infty} \left(1 + \frac{b}{n}\right)^{cn} = e^{bc}}.$
+	\end{block}
+\end{frame}
+
+\begin{frame}{Exemplo 1}
+	\begin{block}{}
+		\justifying
+		
+		${\displaystyle \lim_{{n \to \infty}} \left(1 - \frac{{t^2}}{{n}} + \frac{{t^2}}{{n^{3/2}}}\right)^{-n/2}} = {\displaystyle \lim_{{n \to \infty}} \left(1 - \frac{{t^2}}{{n}} + \frac{{t^2}/\sqrt{n}}{{n}}\right)^{-n/2}}$.
+		
+		Aqui, $b = -t^2$, $c = -\frac{1}{2}$ e $\psi(n) = \frac{{t^2}}{{\sqrt{n}}}$. Consequentemente, para cada valor fixo de $t$, o limite é $e^{t^2/2}$.
+	\end{block}
+\end{frame}
+
+\begin{frame}{Exemplo 2}
+	\vspace{-0.5cm}
+	\begin{block}{}
+		\justifying
+		Considere $X_{n}\sim Binomial(n,p_{n})$ e suponha ${\displaystyle \Lim np_{n}=\lambda>0}$ (por exemplo, $p_{n}=\dfrac{1}{n+1},~\Lim np_{n}=1$). Então, $X_{n} \overset{D}{\rightarrow} X,$ em que $X\sim$Poisson($\lambda$).
+	\end{block}
+	\pause
+	\vspace{-0.3cm}
+	\begin{block}{Demonstração}
+		\justifying
+		Temos que,
+		\begin{align*}
+			M_{X_{n}}(t)&=E(e^{tX_{n}})={\displaystyle \sum_{k=0}^{n}e^{tk}\binom{n}{k}p_{n}^{k}(1-p_{n})^{n-k}}\\
+			&=\Big(1-p_{n}+p_{n}e^{t}\Big)^{n}=\Big(1+\dfrac{np_{n}}{n}(e^{t}-1)\Big)^{n}\\
+			\text{(para n grande)}    &=\Big(1+\dfrac{\lambda}{n}(e^{t}-1)\Big)^{n}\rightLim \exp{\{\lambda(e^{t}-1)\}}
+		\end{align*}
+		Logo, $X_{n} \overset{D}{\rightarrow} X\sim$Poisson($\lambda$).
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\begin{block}{}
+		\justifying
+		Quando a quantidade \( np_n \) se estabiliza em um valor \( \lambda > 0 \), estamos essencialmente controlando a média da binomial. À medida que \( n \to \infty \) e \( p_n \) diminui de forma controlada, mantemos \( np_n \) constante, aproximando o comportamento da binomial ao de uma distribuição Poisson com parâmetro \( \lambda \). A essência é que estamos explorando o comportamento assintótico da binomial, com \( p_n \) diminuindo à medida que \( n \) cresce, mas de modo que \( np_n \) permaneça fixo e igual a \( \lambda \). Isso faz com que a média e variância da binomial ``convirjam'' para os parâmetros de uma Poisson.
+		%\textbf{Transformação da expressão}
+		%Quando reescrevemos o momento gerador:
+		%\[
+		%\left(1 - p_n + p_n e^t\right)^n = \left(1 + \frac{np_n}{n}(e^t - 1)\right)^n
+		%\]
+		%fazemos isso porque \( np_n \) tende a \( \lambda \). Ou seja, estamos preparando a fórmula para o limite \( n \to \infty \).
+		
+		%No limite:
+		%\[
+		%np_n \approx \lambda \quad \text{para grandes } n
+		%\]
+		%Assim, substituímos \( \frac{np_n}{n} \) por \( \frac{\lambda}{n} \) e fazemos \( n \to \infty \). Isso nos leva ao limite exponencial:
+		%\[
+		%\left(1 + \frac{\lambda}{n}(e^t - 1)\right)^n \to \exp\left(\lambda (e^t - 1)\right)
+		%\]
+		%Essa é a razão pela qual manipulamos a expressão de modo a colocar \( np_n \) em evidência.
+		
+	\end{block}
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+\frametitle{\bf Referências}
+\printbibliography
+\end{frame}
+
+
+\end{document}
