@@ -36,11 +36,16 @@ tags: [Distribuição Normal, otimização, R]
 date: "2024-09-08"
 ---
 
+<style>
+h2 {
+  margin-top: 100px;  /* Ajuste a distância conforme necessário */
+}
+</style>
 
 
-# Aula 3
+# Aula 3 {.aumenteTopMarginText}
 
-## Sumário
+## Sumário {.aumenteTopMarginText}
 
 1. Função Geradora de Momentos
 2. Teorema Central do Limite
@@ -48,7 +53,7 @@ date: "2024-09-08"
 
 ---
 
-## Função Geradora de Momentos
+## Função Geradora de Momentos {.aumenteTopMarginText}
 
 **Definição**  
 A função geradora de momentos de uma variável aleatória \( X \) é definida por:  
@@ -113,7 +118,7 @@ Seja \(\{X_{n}\}_{n \geq 1}\) uma sequência de variáveis aleatórias iid com m
 
 ---
 
-## Método Delta
+## Método Delta 
 
 Suponha que \( \{X_{n}\}_{n \geq 1} \) seja uma sequência de variáveis aleatórias que satisfaz:  
 \[

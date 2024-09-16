@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.9)  12 SEP 2024 10:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.9)  16 SEP 2024 13:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2043,20 +2043,6 @@ o.png>] (main.toc)
 [10
 
 ]
-Overfull \hbox (25.40244pt too wide) detected at line 124
-\OT1/mathkerncmss/m/sl/12 P\OT1/cmss/m/n/12 (\OT1/mathkerncmss/m/sl/12 X[] \OML
-/cmm/m/it/12 > \OT1/mathkerncmss/m/sl/12 x\OT1/cmss/m/n/12 ) = \OT1/mathkerncms
-s/m/sl/12 P\OT1/cmss/m/n/12 (\OMS/cmsy/m/n/12 f\OT1/mathkerncmss/m/sl/12 X[] \O
-ML/cmm/m/it/12 > \OT1/mathkerncmss/m/sl/12 x\OMS/cmsy/m/n/12 g \ fj\OT1/mathker
-ncmss/m/sl/12 X[] \OMS/cmsy/m/n/12 ^^@ \OT1/mathkerncmss/m/sl/12 X\OMS/cmsy/m/n
-/12 j \OML/cmm/m/it/12 < "\OMS/cmsy/m/n/12 g\OT1/cmss/m/n/12 ) + \OT1/mathkernc
-mss/m/sl/12 P\OT1/cmss/m/n/12 (\OMS/cmsy/m/n/12 f\OT1/mathkerncmss/m/sl/12 X[] 
-\OML/cmm/m/it/12 > \OT1/mathkerncmss/m/sl/12 x\OMS/cmsy/m/n/12 g \ fj\OT1/mathk
-erncmss/m/sl/12 X[] \OMS/cmsy/m/n/12 ^^@ \OT1/mathkerncmss/m/sl/12 X\OMS/cmsy/m
-/n/12 j ^^U \OML/cmm/m/it/12 "\OMS/cmsy/m/n/12 g\OT1/cmss/m/n/12 )
- []
-
-
 
 [11
 
@@ -2085,56 +2071,60 @@ erncmss/m/sl/12 X[] \OMS/cmsy/m/n/12 ^^@ \OT1/mathkerncmss/m/sl/12 X\OMS/cmsy/m
 [17
 
 ]
-
-[18
-
-]
-
-[19
-
-]
-
-[20
-
-]
 LaTeX Font Info:    Trying to load font information for U+fontawesometwo on inp
-ut line 230.
+ut line 237.
  (C:\Program Files\MiKTeX\tex/latex/fontawesome\ufontawesometwo.fd
 File: ufontawesometwo.fd 2016/05/22 Font definitions for U/fontawesometwo.
 )
 
-[21
+[18
 
 {C:/Program Files/MiKTeX/fonts/enc/dvips/fontawesome/fontawesometwo.enc}]
+
+[19
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 258--258
+[]\T1/cmss/m/n/12 Se $[]$, em que $\OT1/mathkerncmss/m/sl/12 b$ \T1/cmss/m/n/12
+ e $\OT1/mathkerncmss/m/sl/12 c$ \T1/cmss/m/n/12 não de-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 258--258
+\T1/cmss/m/n/12 pen-dem de $\OT1/mathkerncmss/m/sl/12 n$ \T1/cmss/m/n/12 e, em 
+que, $[]$. En-tão,
+ []
+
+
+
+[20
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 258--258
+[]\T1/cmss/m/n/12 Se $[]$, em que $\OT1/mathkerncmss/m/sl/12 b$ \T1/cmss/m/n/12
+ e $\OT1/mathkerncmss/m/sl/12 c$ \T1/cmss/m/n/12 não de-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 258--258
+\T1/cmss/m/n/12 pen-dem de $\OT1/mathkerncmss/m/sl/12 n$ \T1/cmss/m/n/12 e, em 
+que, $[]$. En-tão,
+ []
+
+
+
+[21
+
+]
 
 [22
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 251--251
-[]\T1/cmss/m/n/12 Se $[]$, em que $\OT1/mathkerncmss/m/sl/12 b$ \T1/cmss/m/n/12
- e $\OT1/mathkerncmss/m/sl/12 c$ \T1/cmss/m/n/12 não de-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 251--251
-\T1/cmss/m/n/12 pen-dem de $\OT1/mathkerncmss/m/sl/12 n$ \T1/cmss/m/n/12 e, em 
-que, $[]$. En-tão,
- []
-
-
 
 [23
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 251--251
-[]\T1/cmss/m/n/12 Se $[]$, em que $\OT1/mathkerncmss/m/sl/12 b$ \T1/cmss/m/n/12
- e $\OT1/mathkerncmss/m/sl/12 c$ \T1/cmss/m/n/12 não de-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 251--251
-\T1/cmss/m/n/12 pen-dem de $\OT1/mathkerncmss/m/sl/12 n$ \T1/cmss/m/n/12 e, em 
-que, $[]$. En-tão,
+Overfull \vbox (3.01668pt too high) detected at line 294
  []
 
 
@@ -2142,32 +2132,20 @@ que, $[]$. En-tão,
 [24
 
 ]
+Overfull \vbox (3.01668pt too high) detected at line 294
+ []
+
+
 
 [25
 
 ]
-Overfull \vbox (3.01668pt too high) detected at line 281
- []
-
-
 
 [26
 
 ]
-Overfull \vbox (3.01668pt too high) detected at line 281
- []
-
-
 
 [27
-
-]
-
-[28
-
-]
-
-[29
 
  <C:/Program Files/MiKTeX/tex/latex/beamer/beamericonarticle.pdf>]
 \tf@nav=\write7
@@ -2189,10 +2167,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 55779 strings out of 473898
- 1209322 string characters out of 5736295
- 2286697 words of memory out of 5000000
- 77552 multiletter control sequences out of 15000+600000
+ 55741 strings out of 473898
+ 1208312 string characters out of 5736295
+ 2287697 words of memory out of 5000000
+ 77518 multiletter control sequences out of 15000+600000
  587009 words of font info for 110 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,22n,123p,3279b,4319s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2216,9 +2194,9 @@ gram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi12.pfb><C:/Program Files/
 MiKTeX/fonts/type1/public/amsfonts/cm/cmssi8.pfb><C:/Program Files/MiKTeX/fonts
 /type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/publi
 c/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (29 pages, 389019 bytes).
+Output written on main.pdf (27 pages, 376097 bytes).
 PDF statistics:
- 1042 PDF objects out of 1200 (max. 8388607)
- 63 named destinations out of 1000 (max. 500000)
- 1230 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 995 PDF objects out of 1000 (max. 8388607)
+ 59 named destinations out of 1000 (max. 500000)
+ 1152 words of extra memory for PDF output out of 10000 (max. 10000000)
 

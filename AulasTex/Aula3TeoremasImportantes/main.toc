@@ -1,3 +1,3 @@
 \babel@toc {brazil}{}\relax 
 \beamer@sectionintoc {1}{Teoremas Sobre Convergência}{3}{0}{1}
-\beamer@sectionintoc {2}{Função Geradora de Momentos}{22}{0}{2}
+\beamer@sectionintoc {2}{Função Geradora de Momentos}{19}{0}{2}
