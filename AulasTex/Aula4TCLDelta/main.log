@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.9)  12 SEP 2024 10:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.9)  18 SEP 2024 14:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2015,34 +2015,10 @@ o.png>] (main.toc)
 [3
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 44--44
-[]\T1/cmss/m/n/12 Se $[]$, em que $\OT1/mathkerncmss/m/sl/12 b$ \T1/cmss/m/n/12
- e $\OT1/mathkerncmss/m/sl/12 c$ \T1/cmss/m/n/12 não de-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 44--44
-\T1/cmss/m/n/12 pen-dem de $\OT1/mathkerncmss/m/sl/12 n$ \T1/cmss/m/n/12 e, em 
-que, $[]$. En-tão,
- []
-
-
 
 [4
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 44--44
-[]\T1/cmss/m/n/12 Se $[]$, em que $\OT1/mathkerncmss/m/sl/12 b$ \T1/cmss/m/n/12
- e $\OT1/mathkerncmss/m/sl/12 c$ \T1/cmss/m/n/12 não de-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 44--44
-\T1/cmss/m/n/12 pen-dem de $\OT1/mathkerncmss/m/sl/12 n$ \T1/cmss/m/n/12 e, em 
-que, $[]$. En-tão,
- []
-
-
 
 [5
 
@@ -2051,15 +2027,18 @@ que, $[]$. En-tão,
 [6
 
 ]
-Overfull \vbox (3.01668pt too high) detected at line 74
- []
-
-
 
 [7
 
 ]
-Overfull \vbox (3.01668pt too high) detected at line 74
+Overfull \hbox (1.62471pt too wide) detected at line 82
+\OT1/mathkerncmss/m/sl/12 M[]\OT1/cmss/m/n/12 (\T1/cmss/m/n/12 0\OT1/cmss/m/n/1
+2 ) = \OT1/mathkerncmss/m/sl/12 E\OT1/cmss/m/n/12 (\OT1/mathkerncmss/m/sl/12 X[
+]\OT1/cmss/m/n/12 ) = \OML/cmm/m/it/12 ^^V \OT1/cmss/m/n/12 = \T1/cmss/m/n/12 0
+ [] \OT1/mathkerncmss/m/sl/12 M[]\OT1/cmss/m/n/12 (\T1/cmss/m/n/12 0\OT1/cmss/m
+/n/12 ) = \OT1/mathkerncmss/m/sl/12 E\OT1/cmss/m/n/12 (\OT1/mathkerncmss/m/sl/1
+2 X[]\OT1/cmss/m/n/12 ) = \OML/cmm/m/it/12 ^^[[] \OT1/cmss/m/n/12 = \T1/cmss/m/
+n/12 1 \OT1/cmss/m/n/12 ([])
  []
 
 
@@ -2095,79 +2074,75 @@ Overfull \vbox (3.01668pt too high) detected at line 74
 [15
 
 ]
-Overfull \vbox (0.73395pt too high) detected at line 194
- []
-
-
 
 [16
 
 ]
-Overfull \vbox (0.73395pt too high) detected at line 194
- []
-
-
 
 [17
 
 ]
-Overfull \vbox (10.61687pt too high) detected at line 219
- []
-
-
 
 [18
 
 ]
-Overfull \vbox (10.61687pt too high) detected at line 219
- []
-
-
 
 [19
 
 ]
-Overfull \vbox (10.61687pt too high) detected at line 219
- []
-
-
 
 [20
 
 ]
-Overfull \hbox (5.78062pt too wide) detected at line 243
-[]
- []
-
-
 
 [21
 
 ]
-Overfull \hbox (5.78062pt too wide) detected at line 243
+
+[22
+
+]
+
+[23
+
+]
+
+[24
+
+]
+Overfull \hbox (5.78062pt too wide) detected at line 265
 []
  []
 
 
 
-[22
+[25
+
+]
+Overfull \hbox (5.78062pt too wide) detected at line 265
+[]
+ []
+
+
+
+[26
 
 ]
 LaTeX Font Info:    Trying to load font information for U+fontawesometwo on inp
-ut line 254.
+ut line 276.
  (C:\Program Files\MiKTeX\tex/latex/fontawesome\ufontawesometwo.fd
 File: ufontawesometwo.fd 2016/05/22 Font definitions for U/fontawesometwo.
 )
 
-[23
+[27
 
 {C:/Program Files/MiKTeX/fonts/enc/dvips/fontawesome/fontawesometwo.enc}]
 
-[24
+[28
 
 ]
 
-[25
+[29
 
  <C:/Program Files/MiKTeX/tex/latex/beamer/beamericonarticle.pdf>]
 \tf@nav=\write7
@@ -2189,10 +2164,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 55717 strings out of 473898
- 1207863 string characters out of 5736295
+ 55785 strings out of 473898
+ 1210051 string characters out of 5736295
  2287819 words of memory out of 5000000
- 77497 multiletter control sequences out of 15000+600000
+ 77558 multiletter control sequences out of 15000+600000
  585368 words of font info for 108 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,36n,123p,3279b,4319s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2218,10 +2193,11 @@ ts/type1/public/amsfonts/cm/cmssi12.pfb><C:/Program Files/MiKTeX/fonts/type1/pu
 blic/amsfonts/cm/cmssi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfont
 s/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.p
 fb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Progra
-m Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (25 pages, 430631 bytes).
+m Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files
+/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (29 pages, 461162 bytes).
 PDF statistics:
- 1080 PDF objects out of 1200 (max. 8388607)
- 58 named destinations out of 1000 (max. 500000)
- 1346 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1167 PDF objects out of 1200 (max. 8388607)
+ 65 named destinations out of 1000 (max. 500000)
+ 1608 words of extra memory for PDF output out of 10000 (max. 10000000)
 

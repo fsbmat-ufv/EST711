@@ -23,6 +23,20 @@
 \end{frame}
 
 \section{Teorema Central do Limite}
+\begin{frame}{Introdução}
+	\begin{block}{}
+		\justifying
+O Teorema Central do Limite (TCL) é um pilar fundamental na Estatística, Probabilidade e Ciência de Dados, pois estabelece que a soma de um grande número de variáveis aleatórias independentes e identicamente distribuídas tende a se aproximar de uma distribuição normal, independentemente da forma original da distribuição dessas variáveis. Este teorema não apenas justifica a aplicação de métodos estatísticos que assumem normalidade, mas também permite a utilização de técnicas analíticas e inferenciais robustas para uma ampla gama de problemas práticos. 		
+	\end{block}
+\end{frame}
+
+\begin{frame}{Introdução}
+	\begin{block}{}
+		\justifying
+Em Estatística, o TCL fundamenta a construção de intervalos de confiança e a realização de testes de hipóteses, possibilitando a generalização de resultados e a tomada de decisões com base em amostras. Na Ciência de Dados, ele é crucial para a modelagem e previsão, facilitando a análise de grandes volumes de dados e a implementação de algoritmos que dependem de pressupostos normais. Em suma, o Teorema Central do Limite não só proporciona uma base teórica sólida, mas também une teoria e prática, permitindo a solução eficaz de problemas complexos e a interpretação confiável de resultados em diversas disciplinas.		
+	\end{block}
+\end{frame}
+
 \begin{frame}{Teorema Central do Limite}
 \begin{block}{}
 \justifying
@@ -40,23 +54,64 @@ Assuma, sem perda de generalidade, $\mu=0$ e $\sigma^{2}=1.$
 \begin{align*}
     M_{\frac{\sum X_{i}-n\mu}{\sqrt{n}\sigma}}(t)&=M_{\frac{\sum X_{i}}{\sqrt{n}}}(t)
     =E\Big(e^{\frac{t\sum X_{i}}{\sqrt{n}}}\Big)=E\Big(\Prodi e^{\frac{tX_{i}}{\sqrt{n}}}\Big)\\
-    &=\Prodi E\Big(e^{\frac{tX_{i}}{\sqrt{n}}}\Big)=\Prodi M_{X_{i}}\big(\frac{t}{\sqrt{n}}\big)=\Big(M_{X_{i}}(\dfrac{t}{\sqrt{n}})\Big)^{n}\\
+    &=\Prodi E\Big(e^{\frac{tX_{i}}{\sqrt{n}}}\Big)=\Prodi M_{X_{i}}\big(\frac{t}{\sqrt{n}}\big)=\Big(M_{X_{i}}(\dfrac{t}{\sqrt{n}})\Big)^{n}
 \end{align*}
-Ou seja, $\ln{M_{\frac{\sum X_{i}}{\sqrt{n}}}(t)}=n\ln{M_{X_{i}}(\frac{t}{\sqrt{n}})}=\dfrac{\ln{M_{X_{i}}(\frac{t}{\sqrt{n}})}}{\frac{1}{n}},$ aplicando L'Hôpital, temos:
+\end{block}
+\pause
+\begin{block}{}
+Notemos que, $\ln{M_{\frac{\sum X_{i}}{\sqrt{n}}}(t)}=n\ln{M_{X_{i}}(\frac{t}{\sqrt{n}})}=\dfrac{\ln{M_{X_{i}}(\frac{t}{\sqrt{n}})}}{\frac{1}{n}}.$ Além disso, sabemos que $\Lim \ln{[f(n)]}=\ln{\Lim f(n)},$ sempre que $\Lim f(n)>0$ e que para $n$ grande $\frac{t}{\sqrt{n}}\approx 0~\text{e}~M_{X_{i}}(0)=1.$
 \end{block}
 \end{frame}
 
 \begin{frame}{}
 \begin{block}{}
 \justifying
+Aplicando L'Hôpital, temos:
 \begin{align*}
     \Lim \frac{\ln{M_{X_{i}}(\frac{t}{\sqrt{n}})}}{\frac{1}{n}}&=\Lim \dfrac{\frac{M_{X_{i}}^{'}(\frac{t}{\sqrt{n}})}{M_{X_{i}}(\frac{t}{\sqrt{n}})}t(-\frac{1}{2})n^{-\frac{3}{2}}}{-\frac{1}{n^{2}}}\\
-    &=\dfrac{t}{2}\Lim \sqrt{n}M_{X_{i}}^{'}(\frac{t}{\sqrt{n}})\\
-    &=\dfrac{t}{2}\Lim \dfrac{M_{X_{i}}^{'}(\frac{t}{\sqrt{n}})}{\frac{1}{\sqrt{n}}}\\
-    &=\dfrac{t}{2}\Lim \dfrac{M_{X_{i}}^{''}(\frac{t}{\sqrt{n}})t(-1/2)n^{-3/2}}{-\frac{1}{2}n^{-3/2}}\\
-    &=\dfrac{t^{2}}{2}\Lim M_{X_{i}}^{''}(\frac{t}{\sqrt{n}})=\dfrac{t^{2}}{2}
+    &=\dfrac{t}{2}\Lim \sqrt{n}\dfrac{M_{X_{i}}^{'}(\frac{t}{\sqrt{n}})}{M_{X_{i}}(\frac{t}{\sqrt{n}})}\\
+    &=\star
+    %&=\dfrac{t}{2}\Lim \dfrac{M_{X_{i}}^{'}(\frac{t}{\sqrt{n}})}{\frac{1}{\sqrt{n}}}\\
+    %&=\dfrac{t}{2}\Lim \dfrac{M_{X_{i}}^{''}(\frac{t}{\sqrt{n}})t(-1/2)n^{-3/2}}{-\frac{1}{2}n^{-3/2}}\\
+    %&=\dfrac{t^{2}}{2}\Lim M_{X_{i}}^{''}(\frac{t}{\sqrt{n}})=\dfrac{t^{2}}{2}
 \end{align*}
-Logo, $\dfrac{\sum X_{i}}{\sqrt{n}}\ConvD X\sim N(0,1)$
+Sabe-se que o $k$-ésimo momento de $X_{i}$ é dado por $M_{X_{i}}^{(k)}(0)=E(X_{i}^{k}),$ ou seja,
+$$M_{X_{i}}^{(')}(0)=E(X_{i})=\mu=0~\text{e}~M_{X_{i}}^{('')}(0)=E(X_{i}^{2})=\sigma^{2}=1~(\text{por hipótese}) $$
+%
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+	\begin{block}{}
+		\justifying
+		Logo,
+		\begin{align*}
+		\star&=\dfrac{t}{2}\Lim \sqrt{n}\dfrac{M_{X_{i}}^{'}(\frac{t}{\sqrt{n}})}{M_{X_{i}}(\frac{t}{\sqrt{n}})}\\
+		&= \dfrac{t}{2}\Lim \dfrac{\dfrac{M_{X_{i}}^{'}(\frac{t}{\sqrt{n}})}{M_{X_{i}}(\frac{t}{\sqrt{n}})}}{\dfrac{1}{\sqrt{n}}}
+		\end{align*}
+	\end{block}
+	\pause
+	\begin{block}{}
+		\justifying
+		aplicando L'Hôpital novamente, temos:
+		\begin{align*}
+ \star&=\dfrac{t}{2}\Lim
+ \dfrac{\dfrac{M_{X_{i}}(\frac{t}{\sqrt{n}})M_{X_{i}}^{''}(\frac{t}{\sqrt{n}})(-\frac{1}{2}tn^{-\frac{3}{2}})-(M_{X_{i}}^{'}(\frac{t}{\sqrt{n}}))^{2}(\frac{1}{2}tn^{-\frac{3}{2}})}{\left(M_{X_{i}}(\frac{t}{\sqrt{n}})\right)^{2}}}{-(\frac{1}{2})n^{-\frac{3}{2}}}
+		\end{align*} 
+	\end{block}
+\end{frame}
+
+\begin{frame}{}
+	\begin{block}{}
+		\justifying
+		Simplificando os termos $-(\frac{1}{2})n^{-\frac{3}{2}}$ e observando que para $n$ suficientemente grande, $\dfrac{t}{\sqrt{n}}\approx 0~\Rightarrow ~ M_{X_{i}}(0)=1,  M_{X_{i}}^{(')}(0)=0$ e $M_{X_{i}}^{('')}(0)=1,$ temos: 
+		\begin{align*}
+		\dfrac{t}{2}\Lim	\dfrac{\dfrac{M_{X_{i}}(\frac{t}{\sqrt{n}})M_{X_{i}}^{''}(\frac{t}{\sqrt{n}})(-\frac{1}{2}tn^{-\frac{3}{2}})-(M_{X_{i}}^{'}(\frac{t}{\sqrt{n}}))^{2}(\frac{1}{2}tn^{-\frac{3}{2}})}{\left(M_{X_{i}}(\frac{t}{\sqrt{n}})\right)^{2}}}{-(\frac{1}{2})n^{-\frac{3}{2}}}&=\dfrac{t^{2}}{2}
+		\end{align*}
+	\end{block}
+\pause
+\begin{block}{}
+Portanto, $\Lim M_{\frac{\sum X_{i}}{\sqrt{n}}}(t)=\exp{\Lim\ln{M_{\frac{\sum X_{i}}{\sqrt{n}}}(t)}}=\exp{\left(\frac{t^{2}}{2}\right)},$ ou seja, $\dfrac{\sum X_{i}}{\sqrt{n}}\ConvD X\sim N(0,1).$
 \end{block}
 \end{frame}
 
@@ -95,7 +150,7 @@ Vamos mostrar primeiro que $X_{n}\ConvP \theta.$ Seja $\varepsilon>0$ e $m>0$ in
 \end{block}
 \end{frame}
 
-\begin{frame}{Continuação da Demonstração}
+\begin{frame}{}
 \vspace{-0.2cm}
 \begin{block}{}
 \justifying
@@ -103,7 +158,7 @@ Segue que,
 \begin{align*}
     \LimInf P(|X_{n}-\theta|<\varepsilon)&\geq \LimInf P(|\sqrt{n}(X_{n}-\theta)|<m)\\
     &=\Lim P(|\sqrt{n}(X_{n}-\theta)|<m)\\
-    &\SetaUP{\text{Usando o fato de que}\\ \sqrt{n}(X_{n}-\theta)\ConvD N(0,\sigma^{2})}{=}P(|Z|<\sigma m),~Z\sim N(0,1)
+    &\SetaUP{\text{Usando o fato de que}\\ \sqrt{n}(X_{n}-\theta)\ConvD N(0,\sigma^{2})}{=}P\left(|Z|<\frac{m}{\sigma}\right),~Z\sim N(0,1)
 \end{align*}
 \end{block}
 \pause
@@ -112,8 +167,8 @@ Segue que,
 \justifying
 Assim,
 \begin{align*}
-    \LimInf P(|X_{n}-\theta|<\varepsilon)&\geq P(|Z|<\sigma m)=\Phi(\sigma m)-\Phi(-\sigma m)\\
-    &=2\Phi(\sigma m)-1
+    \LimInf P(|X_{n}-\theta|<\varepsilon)&\geq P\left(|Z|<\frac{m}{\sigma}\right)=\Phi\left(\frac{m}{\sigma}\right)-\Phi\left(-\frac{m}{\sigma}\right)\\
+    &=2\Phi\left(\frac{m}{\sigma}\right)-1
 \end{align*}
 \end{block}
 \end{frame}
@@ -123,8 +178,8 @@ Assim,
 \justifying
 Em resumo,
 \begin{align*}
-    \LimInf P(|X_{n}-\theta|<\varepsilon)&\geq 2\Phi(\sigma m)-1,~\forall m\in \mathbb{Z}^{*}\\  
-    \LimInf P(|X_{n}-\theta|<\varepsilon)&\geq \lim_{m\rightarrow +\infty} \Big[2\Phi(\sigma m)-1\Big]\\
+    \LimInf P(|X_{n}-\theta|<\varepsilon)&\geq 2\Phi\left(\frac{m}{\sigma}\right)-1,~\forall m\in \mathbb{Z}^{*}\\  
+    \LimInf P(|X_{n}-\theta|<\varepsilon)&\geq \lim_{m\rightarrow +\infty} \Big[2\Phi\left(\frac{m}{\sigma}\right)-1\Big]\\
     &=1
 \end{align*}
 \end{block}
@@ -133,14 +188,30 @@ Em resumo,
 \justifying
 Como $\limsup\geq \liminf,$ temos que
 \begin{align}\label{num1}
-    \limsup P(|X_{n}-\theta|<\varepsilon)=1\Rightarrow \Lim P(|X_{n}-\theta|<\varepsilon)
+    \limsup P(|X_{n}-\theta|<\varepsilon)=1\Rightarrow \Lim P(|X_{n}-\theta|<\varepsilon)=1
 \end{align}
 \end{block}
 \pause
 \begin{block}{}
 \justifying
-Expandindo $g$ em série de Taylor até a primeira ordem em torno de $\theta,$ temos que $$g(x)=g(\theta)+g'(\theta)(x-\theta)(x-\theta)+\mathcal{C}(x)(x-\theta),$$ em que ${\displaystyle \lim_{x\rightarrow \theta} \mathcal{C}(x)=0}.$
+Ou seja, $X_{n}\ConvP \theta. \cqd$
 \end{block}
+\end{frame}
+
+\begin{frame}{}
+	\begin{block}{Série de Taylor}
+		\justifying
+		Agora, lembre-se que uma série de Taylor é a série de funções da forma:
+		\begin{align*}
+			f(x)=\displaystyle{\sum_{n=0}^{\infty}\dfrac{f^{(n)}(a)}{n!}},
+		\end{align*}
+Neste caso, a série acima é dita ser a série de Taylor de $f(x)$ em torno do ponto $x=a$.
+	\end{block}
+	\pause
+	\begin{block}{}
+		\justifying
+		Expandindo $g$ em série de Taylor até a primeira ordem em torno de $\theta,$ temos que $$g(x)=g(\theta)+g'(\theta)(x-\theta)+\mathcal{C}(x)(x-\theta),$$ em que ${\displaystyle \lim_{x\rightarrow \theta} \mathcal{C}(x)=0}.$
+	\end{block}
 \end{frame}
 
 \begin{frame}{}
@@ -148,31 +219,57 @@ Expandindo $g$ em série de Taylor até a primeira ordem em torno de $\theta,$ t
 \justifying
 Segue que, 
 \begin{align*}
-g(x)-g(\theta)&=g'(\theta)(x-\theta)(x-\theta)+\mathcal{C}(x)(x-\theta)\\
-\sqrt{n}\big(g(X_{n})-g(\theta)\big)&=\sqrt{n}(X_{n}-\theta)\big(g'(\theta)-\mathcal{C}(X_{n}\big).
+g(x)-g(\theta)&=g'(\theta)(x-\theta)+\mathcal{C}(x)(x-\theta)\\
+\sqrt{n}\big(g(X_{n})-g(\theta)\big)&=\sqrt{n}(X_{n}-\theta)\big(g'(\theta)+\mathcal{C}(X_{n})\big).
 \end{align*}
 Para mostrar o resultado desejado, devemos mostrar que $\mathcal{C}(X_{n})\ConvP 0.$ Com isso, utilizando o teorema de Slutsky, o resultado é obtido. Como ${\displaystyle \lim_{x\rightarrow \theta} \mathcal{C}(x)=0},~\text{para}~\varepsilon>0, \exists~\delta>0$ tal que $|x-\theta|<\delta\Rightarrow~|\mathcal{C}(x)|<\varepsilon.$
 \end{block}
-\pause
-\begin{block}{}
-\justifying
-Daí,
-\begin{align*}
-    \{|X_{n}-\theta|<\delta\}&\subset \{|\mathcal{C}(X_{n})|<\varepsilon\}\Rightarrow P(|X_{n}-\theta|<\delta)\leq P(|\mathcal{C}(X_{n})|<\varepsilon)
-\end{align*}
-Esse resultado, juntamente com $(\ref{num1})$ implica que,
-\begin{align*}
-    \Lim P(|\mathcal{C}(X_{n})|<\varepsilon)=1,~\text{ou seja},~\mathcal{C}(X_{n})\ConvP 0.
-\end{align*}
-\end{block}
+\end{frame}
+
+\begin{frame}{}
+	\begin{block}{}
+		\justifying
+Ora, 
+
+\begin{itemize}
+	\item $\{|X_{n} - \theta| < \delta\}$: Este evento ocorre quando a variável aleatória $X_{n}$ está suficientemente próxima de $\theta$, ou seja, dentro de uma faixa de tamanho $\delta$ ao redor de $\theta$.
+	
+	\item $\{|\mathcal{C}(X_{n})| < \varepsilon\}$: Este evento ocorre quando o valor absoluto de $\mathcal{C}(X_{n})$ está dentro de uma faixa de tamanho $\varepsilon$.
+\end{itemize}
+Como a função $\mathcal{C}(x)$ tende a $0$ quando $x$ tende a $\theta$ ($\lim_{x \to \theta} \mathcal{C}(x) = 0$), para qualquer $\varepsilon > 0$, existe um $\delta > 0$ tal que, se $x$ estiver suficientemente próximo de $\theta$ (ou seja, se $|x - \theta| < \delta$), então $|\mathcal{C}(x)| < \varepsilon$.
+
+Dessa forma, se $x$ pertence ao conjunto $\{|x - \theta| < \delta\}$, isso implica que $x$ também pertence ao conjunto $\{|\mathcal{C}(x)| < \varepsilon\}$, ou seja:
+\[
+\{|X_n - \theta| < \delta\} \subseteq \{|\mathcal{C}(X_n)| < \varepsilon\}
+\]
+	\end{block}
+\end{frame}
+
+\begin{frame}{}
+	\begin{block}{}
+		\justifying
+		Daí,
+		\begin{align*}
+			\{|X_{n}-\theta|<\delta\}&\subset \{|\mathcal{C}(X_{n})|<\varepsilon\}\Rightarrow P(|X_{n}-\theta|<\delta)\leq P(|\mathcal{C}(X_{n})|<\varepsilon)
+		\end{align*}
+		Esse resultado, juntamente com $(\ref{num1})$ implica que,
+		\begin{align*}
+			\Lim P(|\mathcal{C}(X_{n})|<\varepsilon)=1,~\text{ou seja},~\mathcal{C}(X_{n})\ConvP 0.
+		\end{align*}
+	\end{block}
+	\pause
+	\begin{block}{}
+	Portanto, como por hipótese, $\sqrt{n}(X_{n}-\theta)\ConvD N(0,\sigma^{2}),$ temos que 
+	$$\sqrt{n}\big(g(X_{n})-g(\theta)\big)=\sqrt{n}(X_{n}-\theta)g'(\theta)\ConvD N(0,[g'(\theta)]^{2}\sigma^{2})$$
+	\end{block}
 \end{frame}
 
 \begin{frame}{Exercício}
 \begin{block}{\Home}
 \justifying
-Seja $X_{n}\sim Binomial(n,p).$ Mostre que 
+Seja $X_{i}\Sim Binomial(1,p),~ i=1,\cdots,n.$ Mostre que 
 \begin{align*}
-    \sqrt{n}\big(\arcsin{\sqrt{\dfrac{X_{n}}{n}}}-\arcsin{\sqrt{p}}\big)\ConvD N\big(0,\dfrac{1}{4}\big)
+    \sqrt{n}\big(\arcsin{\sqrt{\bar{X}}}-\arcsin{\sqrt{p}}\big)\ConvD N\big(0,\dfrac{1}{4}\big), \text{em que}~\bar{X}=\displaystyle{\sum_{i=0}^{n}\dfrac{X_{i}}{n}}
 \end{align*}
 \end{block}
 \nocite{casella2021statistical} \nocite{hogg}
