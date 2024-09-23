@@ -6,7 +6,7 @@
 \author{Prof. Fernando de Souza Bastos\texorpdfstring{\\ fernando.bastos@ufv.br}{}}
 \institute{Departamento de Estatística\texorpdfstring{\\ Programa de Pós-Graduação em Estatística Aplicada e Biometria}\texorpdfstring{\\ Universidade Federal de Viçosa}{}\texorpdfstring{\\ Campus UFV - Viçosa}{}}
 \date{}
-\newcommand\mytext{Aula 4}
+\newcommand\mytext{Aula 5}
 \newcommand\mytextt{Fernando de Souza Bastos}
 \newcommand\mytexttt{\url{https://est711.github.io/}}
 
@@ -25,7 +25,7 @@
 \begin{frame}{Introdução ao Método dos Momentos}
     \begin{block}{}
     \justifying
-O método dos momentos é uma técnica desenvolvida pelo matemático e estatístico Karl Pearson no final do século XIX. O método consiste em igualar os momentos amostrais de uma distribuição teórica com os momentos correspondentes da distribuição amostral, e estimar os parâmetros da distribuição teórica a partir desses momentos.
+O método dos momentos é uma técnica desenvolvida pelo matemático e estatístico Karl Pearson no final do século XIX.
 \end{block}
 \pause
 \begin{block}{}
@@ -34,97 +34,11 @@ O método dos momentos é uma técnica desenvolvida pelo matemático e estatíst
 \end{block}
 \end{frame}
 
-\begin{frame}{Momentos}
-    \begin{block}{}
-    \justifying
-Antes de defini-lo formalmente vamos recordar o que são Momentos de Variáveis Aleatórias. 
-\end{block}
-\pause
-\begin{definicao}\label{def4}
-\justifying
-    Para $k=1,2,\dots,$ o momento de ordem $k$ da variável $X$ é definido por $E(X^{k}),$ desde que essa quantidade exista. Se $E(X)=\mu<\infty$, definimos o momento central de ordem $k$ por $E[(X-\mu)^{k}],$ sempre que essa quantidade exista. De modo similar, o momento absoluto de ordem $k$ da variável aleatória $X$ é definido por $E(|X|^{k}).$
-\end{definicao}
-\end{frame}
-
-\begin{frame}{Exemplo 1}
-\begin{block}{}
-\justifying
-Considerando \( X \sim \Gamma(\alpha, \beta) \), calcule seus momentos.
-
-\begin{align*}
-E(X^k) &= \int_{0}^{\infty} x^k \cdot \frac{\beta^{\alpha}x^{\alpha-1} \cdot e^{-\beta x}}{\Gamma(\alpha)} \, dx \\
-&=\frac{\beta^{\alpha}}{\Gamma(\alpha)} \int_{0}^{\infty} x^{\alpha + k - 1} \cdot e^{-\beta x} \, dx
-\end{align*}
-Sabe-se que
-
-\[ \int_{0}^{\infty} x^{p-1} \cdot e^{-qx} \, dx = \Gamma(p) \cdot q^{-p} \]
-
-\end{block}
-\end{frame}
-
-\begin{frame}{Exemplo 1}
-\begin{block}{}
-\justifying
-Aplicando essa propriedade à integral, obtemos:
-
-\[ \int_{0}^{\infty} x^{\alpha + k - 1} \cdot e^{-\beta x} \, dx = \Gamma(\alpha + k) \cdot (\beta)^{-(\alpha + k)} \]
-
-Substituindo na expressão original:
-
-\[E(X^k) = \frac{\beta^{\alpha}}{\Gamma(\alpha)} \cdot \Gamma(\alpha + k) \cdot (\beta)^{-(\alpha + k)} \]
-
-\[E(X^k) = \frac{\Gamma(\alpha + k)}{\Gamma(\alpha)} \cdot \beta^{-k} = \dfrac{\alpha(\alpha+1)\cdots(\alpha+k-1)}{\beta^{k}}\]
-
-Esse é o valor esperado \(E(X^k)\) em termos das funções Gama e do parâmetro \(\beta\).
-
-\end{block}
-\end{frame}
-
-\begin{frame}{Exemplo 1}
-\begin{block}{}
-\justifying
-Observe que se $\alpha=1,~X$ tem distribuição exponencial de parâmetro $\beta>0$ e, assim, 
-\begin{align*}
- E(X^k) = \dfrac{k!}{\beta^{k}}   
-\end{align*}
-Se fizermos $k=1,$ obtemos a média desta variável que é $\dfrac{1}{\beta}.$
-\end{block}
-\end{frame}
-
-\begin{frame}{Exemplo 2}
-\begin{block}{}
-\justifying
-Sabendo que $X\Sim B(n,p).$ Encontre o momento central de ordem 1 e 2 desta variável.
-\begin{align*}
-    E(X^{2})&={\displaystyle \sum_{i=0}^{n}i^{2}\binom{n}{i}p^{i}(1-p)^{n-i}}\\
-    &={\displaystyle \sum_{i=0}^{n}[i(i-1)+i]\binom{n}{i}p^{i}(1-p)^{n-i}}\\
-    &={\displaystyle \sum_{i=2}^{n}i(i-1)\binom{n}{i}p^{i}(1-p)^{n-i}}+E(X)\\
-    &={\displaystyle n(n-1)\sum_{i=2}^{n}\binom{n-2}{i-2}p^{i}(1-p)^{n-i}}+E(X)
-\end{align*}
-\end{block}
-\end{frame}
-
-\begin{frame}{Exemplo 2}
-\begin{block}{}
-\justifying
-\begin{align*}
-    E(X^{2})&={\displaystyle n(n-1)p^{2}\sum_{j=0}^{n-2}\binom{n-2}{j}p^{j}(1-p)^{(n-2)-j}}+E(X)\\
-    &=n(n-1)p^{2}[p+(1-p)]^{(n-2)}+np\\
-    &=n^{2}p^{2}+np(1-p)
-\end{align*}
-\end{block}
-\pause
-\begin{block}{}
-\justifying
-Assim, $Var(X)=E{(X-E(X))^{2}}=E(X^{2})-(E(X))^{2}=np(1-p)$
-\end{block}
-\end{frame}
-
 \begin{frame}{Método dos Momentos}
 \vspace{-0.1cm}
 \begin{block}{}
 \justifying
-Como já falado, o método dos momentos consiste em igualar os momentos amostrais de uma distribuição teórica com os momentos correspondentes da distribuição amostral, e estimar os parâmetros da distribuição teórica a partir desses momentos.
+O método dos momentos consiste em igualar os momentos amostrais de uma distribuição teórica com os momentos correspondentes da distribuição amostral, e estimar os parâmetros da distribuição teórica a partir desses momentos.
 \end{block}
 \pause
 \vspace{-0.1cm}

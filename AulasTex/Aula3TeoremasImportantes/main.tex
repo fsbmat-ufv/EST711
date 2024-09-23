@@ -200,27 +200,24 @@ Se $X_{n} \overset{P}{\rightarrow} X,~\text{então}~X_{n} \overset{D}{\rightarro
 \end{frame}
 
 
-\begin{frame}{}
+\begin{frame}{Outros Teoremas Importantes:}
 \begin{Teorema}
 \justifying
 Se $X_{n} \overset{D}{\rightarrow} a,~\text{então}~X_{n} \overset{P}{\rightarrow} a,~a$ constante.
 \end{Teorema}
-\end{frame}
-
-\begin{frame}{}
+\pause
 \begin{Teorema}
 \justifying
 Se $X_{n} \overset{D}{\rightarrow} X~\text{e}~Y_{n} \overset{P}{\rightarrow} 0~\text{então}~X_{n}+Y_{n} \overset{D}{\rightarrow} X.$
 \end{Teorema}
-\end{frame}
-
-\begin{frame}{}
+\pause
 \begin{Teorema}
 \justifying
 Se $X_{n} \overset{D}{\rightarrow} X~\text{e}~g~\text{é uma função contínua no suporte de}~X,~\text{então}~$ $$g(X_{n}) \overset{D}{\rightarrow} g(X).$$
 \end{Teorema}
 \end{frame}
 
+\subsection{Teorema de Slutsky}
 \begin{frame}{Teorema de Slutsky}
 \begin{Teorema}
 \justifying
@@ -236,12 +233,103 @@ Exercícios 5.2.2, 5.2.3, 5.2.6, 5.2.12, 5.2.15, 5.2.17, 5.2.19 e 5.2.20
 \end{block}
 \end{frame}
 
+\section{Momentos de Uma Variável Aleatória}
+\begin{frame}{Momentos de Ordem $k$}
+	\begin{definicao}\label{def4}
+		\justifying
+		Para $k=1,2,\dots,$ o momento de ordem $k$ da variável $X$ é definido por $E(X^{k}),$ desde que essa quantidade exista. Se $E(X)=\mu<\infty$, definimos o momento central de ordem $k$ por $E[(X-\mu)^{k}],$ sempre que essa quantidade exista. De modo similar, o momento absoluto de ordem $k$ da variável aleatória $X$ é definido por $E(|X|^{k}).$
+	\end{definicao}
+\end{frame}
+
+\begin{frame}{Exemplo 1}
+	\begin{block}{}
+		\justifying
+		Considerando \( X \sim \Gamma(\alpha, \beta) \), calcule seus momentos.
+		
+		\begin{align*}
+			E(X^k) &= \int_{0}^{\infty} x^k \cdot \frac{\beta^{\alpha}x^{\alpha-1} \cdot e^{-\beta x}}{\Gamma(\alpha)} \, dx \\
+			&=\frac{\beta^{\alpha}}{\Gamma(\alpha)} \int_{0}^{\infty} x^{\alpha + k - 1} \cdot e^{-\beta x} \, dx
+		\end{align*}
+		Sabe-se que
+		
+		\[ \int_{0}^{\infty} x^{p-1} \cdot e^{-qx} \, dx = \Gamma(p) \cdot q^{-p} \]
+		
+	\end{block}
+\end{frame}
+
+\begin{frame}{Exemplo 1}
+	\begin{block}{}
+		\justifying
+		Aplicando essa propriedade à integral, obtemos:
+		
+		\[ \int_{0}^{\infty} x^{\alpha + k - 1} \cdot e^{-\beta x} \, dx = \Gamma(\alpha + k) \cdot (\beta)^{-(\alpha + k)} \]
+		
+		Substituindo na expressão original:
+		
+		\[E(X^k) = \frac{\beta^{\alpha}}{\Gamma(\alpha)} \cdot \Gamma(\alpha + k) \cdot (\beta)^{-(\alpha + k)} \]
+		
+		\[E(X^k) = \frac{\Gamma(\alpha + k)}{\Gamma(\alpha)} \cdot \beta^{-k} = \dfrac{\alpha(\alpha+1)\cdots(\alpha+k-1)}{\beta^{k}}\]
+		
+		Esse é o valor esperado \(E(X^k)\) em termos das funções Gama e do parâmetro \(\beta\).
+		
+	\end{block}
+\end{frame}
+
+\begin{frame}{Exemplo 1}
+	\begin{block}{}
+		\justifying
+		Observe que se $\alpha=1,~X$ tem distribuição exponencial de parâmetro $\beta>0$ e, assim, 
+		\begin{align*}
+			E(X^k) = \dfrac{k!}{\beta^{k}}   
+		\end{align*}
+		Se fizermos $k=1,$ obtemos a média desta variável que é $\dfrac{1}{\beta}.$
+	\end{block}
+\end{frame}
+
+\begin{frame}{Exemplo 2}
+	\begin{block}{}
+		\justifying
+		Sabendo que $X\Sim B(n,p).$ Encontre o momento central de ordem 1 e 2 desta variável.
+		\begin{align*}
+			E(X^{2})&={\displaystyle \sum_{i=0}^{n}i^{2}\binom{n}{i}p^{i}(1-p)^{n-i}}\\
+			&={\displaystyle \sum_{i=0}^{n}[i(i-1)+i]\binom{n}{i}p^{i}(1-p)^{n-i}}\\
+			&={\displaystyle \sum_{i=2}^{n}i(i-1)\binom{n}{i}p^{i}(1-p)^{n-i}}+E(X)\\
+			&={\displaystyle n(n-1)\sum_{i=2}^{n}\binom{n-2}{i-2}p^{i}(1-p)^{n-i}}+E(X)
+		\end{align*}
+	\end{block}
+\end{frame}
+
+\begin{frame}{Exemplo 2}
+	\begin{block}{}
+		\justifying
+		\begin{align*}
+			E(X^{2})&={\displaystyle n(n-1)p^{2}\sum_{j=0}^{n-2}\binom{n-2}{j}p^{j}(1-p)^{(n-2)-j}}+E(X)\\
+			&=n(n-1)p^{2}[p+(1-p)]^{(n-2)}+np\\
+			&=n^{2}p^{2}+np(1-p)
+		\end{align*}
+	\end{block}
+	\pause
+	\begin{block}{}
+		\justifying
+		Assim, $Var(X)=E{(X-E(X))^{2}}=E(X^{2})-(E(X))^{2}=np(1-p)$
+	\end{block}
+\end{frame}
+
 \section{Função Geradora de Momentos}
 \begin{frame}{Função Geradora de Momentos}
 	\begin{definicao}
 		\justifying
 		A função geradora de momentos de uma variável aleatória $X$ é definida por $M_{X}(t)=E(e^{tX}),~t\in \R$
 	\end{definicao}
+	\pause
+	\begin{block}{Observação Importante:}
+		\justifying
+		O momento de ordem \( k \) de uma variável aleatória \( X \) pode ser encontrado utilizando a função geradora de momentos. Para encontrar o momento de ordem \( k \), derivamos \( k \) vezes em relação a \( t \) a função geradora de momentos \( M_X(t) \) e então avaliamos em \( t = 0 \):
+		
+		\[
+		\mathbb{E}[X^k] = \frac{d^k}{dt^k} M_X(t) \bigg|_{t=0}
+		\]
+	\end{block}
 \end{frame}
 
 \begin{frame}{}

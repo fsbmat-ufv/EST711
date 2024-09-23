@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.9)  10 SEP 2024 07:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.9)  23 SEP 2024 14:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2019,10 +2019,18 @@ o.png>] (main.toc)
 [4
 
 ]
+Overfull \vbox (8.4922pt too high) detected at line 56
+ []
+
+
 
 [5
 
 ]
+Overfull \vbox (8.4922pt too high) detected at line 56
+ []
+
+
 
 [6
 
@@ -2051,18 +2059,10 @@ o.png>] (main.toc)
 [12
 
 ]
-Overfull \vbox (8.4922pt too high) detected at line 142
- []
-
-
 
 [13
 
 ]
-Overfull \vbox (8.4922pt too high) detected at line 142
- []
-
-
 
 [14
 
@@ -2079,6 +2079,10 @@ Overfull \vbox (8.4922pt too high) detected at line 142
 [17
 
 ]
+Overfull \vbox (7.44196pt too high) detected at line 191
+ []
+
+
 
 [18
 
@@ -2111,18 +2115,27 @@ Overfull \vbox (8.4922pt too high) detected at line 142
 [25
 
 ]
-Overfull \vbox (7.44196pt too high) detected at line 277
- []
-
-
 
 [26
 
 ]
+LaTeX Font Info:    Trying to load font information for U+fontawesometwo on inp
+ut line 299.
+ (C:\Program Files\MiKTeX\tex/latex/fontawesome\ufontawesometwo.fd
+File: ufontawesometwo.fd 2016/05/22 Font definitions for U/fontawesometwo.
+)
+Overfull \vbox (4.18005pt too high) detected at line 299
+ []
+
+
 
 [27
 
-]
+{C:/Program Files/MiKTeX/fonts/enc/dvips/fontawesome/fontawesometwo.enc}]
+Overfull \vbox (4.18005pt too high) detected at line 299
+ []
+
+
 
 [28
 
@@ -2151,20 +2164,11 @@ Overfull \vbox (7.44196pt too high) detected at line 277
 [34
 
 ]
-LaTeX Font Info:    Trying to load font information for U+fontawesometwo on inp
-ut line 385.
- (C:\Program Files\MiKTeX\tex/latex/fontawesome\ufontawesometwo.fd
-File: ufontawesometwo.fd 2016/05/22 Font definitions for U/fontawesometwo.
-)
-Overfull \vbox (4.18005pt too high) detected at line 385
- []
-
-
 
 [35
 
-{C:/Program Files/MiKTeX/fonts/enc/dvips/fontawesome/fontawesometwo.enc}]
-Overfull \vbox (4.18005pt too high) detected at line 385
+]
+Overfull \vbox (10.54576pt too high) detected at line 384
  []
 
 
@@ -2176,10 +2180,18 @@ Overfull \vbox (4.18005pt too high) detected at line 385
 [37
 
 ]
+Overfull \vbox (1.17032pt too high) detected at line 414
+ []
+
+
 
 [38
 
 ]
+Overfull \vbox (1.17032pt too high) detected at line 414
+ []
+
+
 
 [39
 
@@ -2200,10 +2212,6 @@ Overfull \vbox (4.18005pt too high) detected at line 385
 [43
 
 ]
-Overfull \vbox (10.54576pt too high) detected at line 470
- []
-
-
 
 [44
 
@@ -2212,15 +2220,11 @@ Overfull \vbox (10.54576pt too high) detected at line 470
 [45
 
 ]
-Overfull \vbox (1.17032pt too high) detected at line 500
- []
-
-
 
 [46
 
 ]
-Overfull \vbox (1.17032pt too high) detected at line 500
+Overfull \vbox (1.93504pt too high) detected at line 492
  []
 
 
@@ -2238,42 +2242,6 @@ Overfull \vbox (1.17032pt too high) detected at line 500
 ]
 
 [50
-
-]
-
-[51
-
-]
-
-[52
-
-]
-
-[53
-
-]
-
-[54
-
-]
-Overfull \vbox (1.93504pt too high) detected at line 578
- []
-
-
-
-[55
-
-]
-
-[56
-
-]
-
-[57
-
-]
-
-[58
 
  <C:/Program Files/MiKTeX/tex/latex/beamer/beamericonarticle.pdf>]
 \tf@nav=\write7
@@ -2295,10 +2263,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 56088 strings out of 473898
- 1218438 string characters out of 5736295
- 2297066 words of memory out of 5000000
- 77791 multiletter control sequences out of 15000+600000
+ 56010 strings out of 473898
+ 1216143 string characters out of 5736295
+ 2294044 words of memory out of 5000000
+ 77730 multiletter control sequences out of 15000+600000
  588129 words of font info for 112 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,36n,123p,3279b,4319s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2325,9 +2293,9 @@ eX/fonts/type1/public/amsfonts/cm/cmssi12.pfb><C:/Program Files/MiKTeX/fonts/ty
 pe1/public/amsfonts/cm/cmssi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/a
 msfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/c
 msy6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (58 pages, 634010 bytes).
+Output written on main.pdf (50 pages, 577501 bytes).
 PDF statistics:
- 1832 PDF objects out of 2073 (max. 8388607)
- 131 named destinations out of 1000 (max. 500000)
- 2712 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1631 PDF objects out of 1728 (max. 8388607)
+ 114 named destinations out of 1000 (max. 500000)
+ 2304 words of extra memory for PDF output out of 10000 (max. 10000000)
 
