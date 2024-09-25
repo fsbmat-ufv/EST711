@@ -1,0 +1,12 @@
+name: Verossimilhanca
+title: Verossimilhanca
+username: est711
+account: est711
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 12828344
+bundleId: 9145585
+url: https://est711.shinyapps.io/Verossimilhanca/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE

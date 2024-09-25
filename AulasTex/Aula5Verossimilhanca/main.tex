@@ -172,6 +172,10 @@ A função de verossimilhança é dada por:
     L(\theta)={\displaystyle \Prodi P(X_{i}=x_{i})=\Prodi \theta^{x_{i}}(1-\theta)^{1-x_{i}}}=\theta^{\sum x_{i}}(1-\theta)^{n-\sum x_{i}}.
 \end{align*}
 \end{block}
+\pause
+\begin{block}{}
+	Veja o gráfico de verossimilhança,  \href{https://est711.shinyapps.io/Verossimilhanca/}{cliquem aqui!} 
+\end{block}
 \end{frame}
 
 \begin{frame}{}
@@ -188,6 +192,7 @@ Para achar o ponto crítico, igualamos a derivada a zero, ou seja:
 \end{align*}
 é o estimador de máxima verossimilhança de $\theta.$
 \end{block}
+
 \end{frame}
 
 \begin{frame}{Condições de Regularidade}
@@ -438,7 +443,8 @@ Seja $X_1, X_2, ..., X_n$ uma a.a. de uma distribuição com densidade $f(\bolds
 \begin{frame}{Princípio da Invariância dos EMV}
 \begin{block}{}
 \justifying
-Em outras palavras, se estamos interessados em estimar alguma quantidade de interesse (\(\eta\)) que pode ser expressa como uma função dos parâmetros (\(\theta\)) da distribuição, podemos aplicar o EMV aos parâmetros e, em seguida, aplicar a função \(g\) aos resultados para obter o estimador do parâmetro \(\eta\). Isso é válido sob certas condições, e é uma propriedade muito útil da Estimativa de Máxima Verossimilhança, pois nos permite estimar uma ampla variedade de quantidades de interesse de maneira eficaz.
+Em outras palavras, se estamos interessados em estimar alguma quantidade de interesse (\(\eta\)) que pode ser expressa como uma função dos parâmetros (\(\theta\)) da distribuição, pode ser, por exemplo, uma transformação do parâmetro $\theta$, como o quadrado, o logaritmo, ou qualquer outra função. Basta, simplesmente, aplicar essa função ao EMV do parâmetro. Isso é válido sob certas condições, e é uma propriedade muito útil da Estimativa de Máxima Verossimilhança, pois nos permite estimar uma ampla variedade de quantidades de interesse de maneira eficaz.
+%Podemos aplicar o EMV aos parâmetros e, em seguida, aplicar a função \(g\) aos resultados para obter o estimador do parâmetro \(\eta\). 
 \end{block}
 \pause
 \begin{block}{}
@@ -477,7 +483,7 @@ tem uma solução $\hat{\theta}_{n}$ tal que $\hat{\theta}_{n}\ConvP \theta_{0}.
 \justifying
 Como $\theta_{0}$ é um ponto interior de $\Theta,$ existe $a>0$ tal que $(\theta_{0}-a,\theta_{0}+a)\subset\Theta.$ Defina, 
 \begin{align*}
-    S_{n}=\{L(\theta_{0},\vecX)>L(\theta_{0}+a,\vecX)\}\cap \{L(\theta_{0},\vecX)>L(\theta_{\theta_{0}}-a,\vecX)\}
+    S_{n}=\{L(\theta_{0},\vecX)>L(\theta_{0}+a,\vecX)\}\cap \{L(\theta_{0},\vecX)>L(\theta_{0}-a,\vecX)\}
 \end{align*}
 Provamos (Ver Teorema (\ref{Teo1})) que $\Lim P(S_{n})=1.$
 \end{block}
@@ -488,6 +494,8 @@ Em $S_{n}$ temos a existência de um máximo local, digamos $\hat{\theta}_{n},$ 
     S_{n}&\subset \{|\hat{\theta}_{n}-\theta_{0}|<a\}\cap\Big\{\dfrac{\partial \ell(\theta)}{\partial\theta}=0\Big\}\\
     \Rightarrow P(S_{n})&\leq P\Big(\{|\hat{\theta}_{n}-\theta_{0}|<a\}\cap\Big\{\dfrac{\partial \ell(\theta)}{\partial\theta}=0\Big\}\Big)
 \end{align*}
+Observação: Essa etapa é importante porque estamos garantindo que o EMV existe e está próximo de 
+$\hat{\theta}_{n}$ com alta probabilidade.
 \end{block}
 \end{frame}
 
