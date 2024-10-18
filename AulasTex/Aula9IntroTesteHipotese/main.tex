@@ -1,0 +1,572 @@
+\documentclass[12pt]{beamer}
+
+\input{../Configuracoes/layout}
+
+\title{Inferência Estatística II}
+\author{Prof. Fernando de Souza Bastos\texorpdfstring{\\ fernando.bastos@ufv.br}{}}
+\institute{Departamento de Estatística\texorpdfstring{\\ Programa de Pós-Graduação em Estatística Aplicada e Biometria}\texorpdfstring{\\ Universidade Federal de Viçosa}{}\texorpdfstring{\\ Campus UFV - Viçosa}{}}
+\date{}
+\newcommand\mytext{Aula 9}
+\newcommand\mytextt{Fernando de Souza Bastos}
+\newcommand\mytexttt{\url{https://est711.github.io/}}
+
+
+\begin{document}
+%\SweaveOpts{concordance=TRUE}
+
+\frame{\titlepage}
+
+\begin{frame}{}
+\frametitle{\bf Sumário}
+\tableofcontents
+\end{frame}
+
+\section{Introdução a Testes de Hipóteses}
+\begin{frame}{}
+\begin{definicao}
+\justifying
+    Chamamos de hipótese estatística qualquer afirmação sobre a distribuição de probabilidade de uma ou mais variáveis aleatórias.
+\end{definicao}
+\pause
+\begin{block}{}
+\justifying
+Denominamos por \(H_0\) (hipótese nula) a hipótese de interesse. Se a variável aleatória \(X\) é distribuída de acordo com a função de densidade (ou de probabilidade) \(f(x|\theta)\), com \(\theta \in \Theta\), dizemos que a distribuição de \(X\) está completamente especificada quando conhecemos \(f(x|\theta)\) e \(\theta\). A distribuição de \(X\) é considerada parcialmente especificada quando conhecemos a função de densidade (ou de probabilidade) \(f(x|\theta)\), mas não conhecemos o valor de \(\theta\). 
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Seja \seqX~ uma amostra aleatória de uma distribuição indexada por um parâmetro $\theta\in \Theta.$ Considere as seguintes hipóteses $H_{0}:\theta\in \Theta_{0}$ e $H_{1}:\theta\in \Theta-\Theta_{0}.$ 
+\begin{itemize}
+    \item $H_{0}$ é chamada de hipótese nula.
+    \item $H_{1}$ é chamada de hipótese alternativa.
+\end{itemize}
+Uma regra de decisão para aceitar $H_{0}$ ou $H_{1}$ é baseada na amostra \seqX.
+\end{block}
+\pause
+\begin{block}{}
+\justifying
+Podemos também escrever de outra forma: Seja $(\Omega, \mathcal{A}, \mathcal{P})$ um modelo estatístico paramétrico em que $\mathcal{P}=\{{\rm I\!P_{\theta}}:\theta\in \Theta \},$ em que $\Theta\subset \R^{p}, p\in\N.$ Considere as seguintes hipóteses $H_{0}:{\rm I\!P_{\theta}}\in \mathcal{P}_{0}$ (A medida que gera os dados do estudo pertence a $\mathcal{P}_{0}$) e $H_{1}:{\rm I\!P_{\theta}}\in \mathcal{P}-\mathcal{P}_{0}.$ Da mesma forma, Uma regra de decisão para aceitar $H_{0}$ ou $H_{1}$ será baseada na amostra \seqX.
+\end{block}
+\end{frame}
+
+%\begin{frame}{}
+%\begin{block}{}
+%\justifying
+%A diferença entre $H_{0}: \theta \in \Theta_{0}$ e $H_{0}: P_{\theta} \in \mathcal{P}_{0}$ está relacionada à natureza da hipótese nula e à maneira como ela é formulada em diferentes contextos estatísticos.
+%\end{block}
+%\pause
+%\begin{block}{}
+%\justifying
+%\begin{itemize}
+%    \item $H_{0}: \theta \in \Theta_{0}$:
+%\end{itemize}
+%\end{block}
+%\pause
+%\begin{block}{}
+%\justifying
+%Neste caso, $\theta$ representa um parâmetro específico ou um conjunto de parâmetros em uma população. A hipótese nula afirma que o valor do parâmetro $\theta$ pertence a um conjunto específico de valores $\Theta_{0}$. Em outras palavras, $\Theta_{0}$ é um subconjunto dos possíveis valores que o parâmetro $\theta$ pode assumir. Isso é comumente usado em testes de hipóteses quando o objetivo é testar uma afirmação específica sobre um parâmetro populacional, como uma média, uma proporção ou uma variância.
+%\end{block}
+%\end{frame}
+%
+%\begin{frame}{}
+%\begin{block}{}
+%\justifying
+%$H_{0}: P_{\theta} \in \mathcal{P}_{0}$:
+%\end{block}
+%\pause
+%\begin{block}{}
+%\justifying
+%Neste caso, $P_{\theta}$ representa uma distribuição de probabilidade que depende de um ou mais parâmetros $\theta$. A hipótese nula afirma que a distribuição de probabilidade $P_{\theta}$ pertence a um conjunto específico de distribuições $\mathcal{P}_{0}$. $\mathcal{P}_{0}$ é o espaço de hipóteses nula, que é o conjunto de todas as possíveis distribuições sob a suposição de que a hipótese nula seja verdadeira.
+%\end{block}
+%\pause
+%\begin{block}{}
+%\justifying
+%Isso é usado em testes de hipóteses quando o objetivo é testar uma afirmação sobre a forma da distribuição subjacente de uma variável aleatória, em vez de apenas um valor específico do parâmetro populacional. Pode ser relevante, por exemplo, em testes de aderência a uma distribuição específica, como a distribuição normal.
+%\end{block}
+%\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Em resumo, a diferença essencial é que $H_{0}: \theta \in \Theta_{0}$ lida com afirmações sobre parâmetros populacionais específicos, enquanto $H_{0}: P_{\theta} \in \mathcal{P}_{0}$ lida com afirmações sobre a distribuição de probabilidade que modela os dados. Ambas as formas são usadas em testes de hipóteses, dependendo do contexto e da pergunta que se deseja responder.
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\vspace{-0.2cm}
+\begin{block}{}
+\justifying
+Exemplo 1 - Hipótese $H_{0}: \theta \in \Theta_{0}$:
+\end{block}
+\pause
+\begin{block}{}
+\justifying
+Suponha que você esteja conduzindo um teste de hipóteses para determinar se a média de altura da população adulta em uma determinada cidade é igual a 170 centímetros. Aqui estão os elementos da hipótese:
+\pause
+\begin{block}{}
+\justifying
+$H_{0}$: Esta é a hipótese nula. Neste caso, $H_{0}$ afirma que a média da altura populacional, representada por $\theta$, pertence a um conjunto específico de valores $\Theta_{0}$. Por exemplo, $H_{0}$ pode ser $H_{0}: \theta = 170$.
+\end{block}
+\pause
+\begin{block}{}
+\justifying
+$\Theta_{0}$: É o conjunto de valores possíveis que o parâmetro $\theta$ pode assumir sob a hipótese nula. Neste caso, $\Theta_{0}$ pode ser $\{170\}$, indicando que a média populacional sob $H_{0}$ é fixa em 170 centímetros. Se, após coletar uma amostra representativa da população e realizar o teste de hipóteses, você obtiver evidências estatísticas suficientes para rejeitar $H_{0}$, isso indicaria que há razões para acreditar que a média populacional é diferente de 170 centímetros.
+\end{block}
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Exemplo 2 - Hipótese $H_{0}: P_{\theta} \in \mathcal{P}_{0}$:
+\end{block}
+\pause
+\begin{block}{}
+\justifying
+Agora, considere um cenário diferente, em que você está testando se os dados de vendas diárias de um produto seguem uma distribuição de probabilidade normal. Neste caso, os elementos da hipótese seriam:
+
+\begin{block}{}
+\justifying
+$H_{0}$: Esta é a hipótese nula. Neste caso, $H_{0}$ afirma que a distribuição de probabilidade dos dados de vendas diárias, representada por $P_{\theta}$, pertence a um conjunto específico de distribuições $\mathcal{P}_{0}$. Por exemplo, $H_{0}$ pode ser $H_{0}: P_{\theta} \in \mathcal{P}_{0}$, onde $\mathcal{P}_{0}$ representa o conjunto de todas as possíveis distribuições normais.
+\end{block}
+\pause
+\begin{block}{}
+\justifying
+$\mathcal{P}_{0}$: É o espaço de hipóteses nula. Neste caso, $\mathcal{P}_{0}$ é o conjunto de todas as distribuições normais possíveis. Sob a hipótese nula, você está testando se os dados seguem uma distribuição normal, mas não especifica um valor fixo para um parâmetro específico.
+\end{block}
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Se, após coletar os dados de vendas diárias e realizar o teste de hipóteses, você obtiver evidências estatísticas suficientes para rejeitar $H_{0}$, isso indicaria que os dados não seguem uma distribuição normal, mas não fornece informações sobre um valor específico do parâmetro. Em resumo, a diferença fundamental entre os dois exemplos está na natureza da afirmação sob teste. O primeiro exemplo ($H_{0}: \theta \in \Theta_{0}$) testa uma afirmação sobre um parâmetro populacional específico, enquanto o segundo exemplo ($H_{0}: P_{\theta} \in \mathcal{P}_{0}$) testa uma afirmação sobre a forma da distribuição subjacente dos dados.
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Vamos considerar aqui que $\Theta_{1}=\Theta-\Theta_{0}.$ Nesse contexto, dada \seqX~ uma amostra aleatória de uma distribuição indexada por um parâmetro $\theta\in \Theta.$ Considere as seguintes hipóteses $H_{0}:\theta\in \Theta_{0}$ e $H_{1}:\theta\in \Theta_{1},$ em que $\Theta_{0}\cap\Theta_{1}=\emptyset$ e $\Theta_{0}\cup\Theta_{1}=\Theta.$
+Ou seja, dessa forma, $H_{1}$ será a negação de $H_{0}$ e, vice-versa. Uma regra de decisão para não rejeitar $H_{0}$ ou $H_{1}$ é baseada na amostra \seqX.
+\end{block}
+\end{frame}
+
+\subsection{Função de Decisão}
+\begin{frame}{}
+\begin{definicao}
+    \justifying
+    Chamamos de teste de uma hipótese estatística a função de decisão ou função teste $d : \mathcal{X} \to \{a_0, a_1\}$, em que $a_0$ corresponde à ação de considerar a hipótese \(H_0\) como verdadeira e $a_1$ corresponde à ação de considerar a hipótese \(H_1\) como verdadeira.
+
+\end{definicao}
+\begin{block}{}
+\justifying
+$\mathcal{X}$ denota o espaço amostral associado à amostra \(X_1, \ldots ,X_n\). A função de decisão \(d\) divide o espaço amostral $\mathcal{X}$ em dois conjuntos
+\begin{align*}
+A_0 &= \{(x_1, \ldots , x_n) \in \mathcal{X}; d(x_1, \ldots , x_n) = a_0\} \\
+A_1 &= \{(x_1, \ldots , x_n) \in \mathcal{X}; d(x_1, \ldots , x_n) = a_1\},
+\end{align*}
+em que \(A_0 \cup A_1 = \mathcal{X}\) e \(A_0 \cap A_1 = \emptyset\). Uma vez que em \(A_0\) temos os pontos amostrais
+\(x = (x_1, \ldots , x_n)\) que levam à aceitação de \(H_0\), vamos chamar \(A_0\) de região de aceitação e, por analogia, \(A_1\) de região de rejeição de \(H_0\), também chamada de região crítica.
+
+\end{block}
+\end{frame}
+
+\begin{frame}{Exemplo}
+\begin{block}{}
+\justifying
+Uma caixa contém duas moedas. Uma delas apresenta cara com probabilidade \(p = 0,5\) (equilibrada) e a outra apresenta cara com probabilidade \(p = 0,6\). Uma moeda é escolhida aleatoriamente e lançada três vezes. Suponhamos que as hipóteses de interesse são \(H_0 : p = 0,5\) e \(H_1 : p = 0,6\). Seja \(X_i\) a variável de Bernoulli que assume o valor 1 se ocorre cara no i-ésimo lançamento e 0 caso contrário, \(i = 1, 2, 3\). Nesse caso,
+{\footnotesize
+\[
+\mathcal{X} = \{(0, 0, 0), (1, 0, 0), (0, 1, 0), (0, 0, 1), (0, 1, 1), (1, 0, 1), (1, 1, 0), (1, 1, 1)\}.
+\]}
+
+Podemos considerar, por exemplo, a região crítica
+\[
+A_1 = \{(x_1, x_2, x_3); x_1 + x_2 + x_3 \geq 2\},
+\]
+de modo que
+\[
+A_0 = \{(x_1, x_2, x_3); x_1 + x_2 + x_3 < 2\}.
+\]
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Note que \(A_0 \cup A_1 = \mathcal{X}\) e \(A_0 \cap A_1 = \emptyset\). No caso em que \(H_0 : \theta = \theta_0\) (simples) e \(H_1 : \theta = \theta_1\) (simples), considerando a função de perda \(L(\theta, d) = 0\) ou \(1\), se a decisão correta ou incorreta, respectivamente, é tomada, a função de risco é, então, dada por
+\begin{align*}
+R(\theta_0, d) &= E[L(\theta_0, d)] \\
+&= 0 \cdot P[\vec{X} \in A_0|\theta_0] + 1 \cdot P[\vec{X} \in A_1|\theta_0] \\
+&= P[\vec{X} \in A_1|\theta_0] = \alpha = P_{H_{0}}(\text{ Rejeitar}~ H_0) \\
+\\
+R(\theta_1, d) &= E[L(\theta_1, d)] \\
+&= 0 \cdot P[\vec{X} \in A_1|\theta_1] + 1 \cdot P[\vec{X} \in A_0|\theta_1] \\
+&= P[\vec{X} \in A_0|\theta_1] = \beta = P_{H_{1}}(\text{ Não Rejeitar}~ H_0).
+\end{align*}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Os riscos \(\alpha\) e \(\beta\) são conhecidos na literatura como as probabilidades de erro do Tipo I e do Tipo II, respectivamente. Mais precisamente, o erro do Tipo I ocorre quando rejeitamos \(H_0\) sendo que \(H_0\) é verdadeira, enquanto que o erro do Tipo II ocorre quando aceitamos \(H_0\) sendo que \(H_0\) é falsa. A situação descrita acima está ilustrada na Tabela do próximo slide.
+\end{block}
+\end{frame}
+
+\subsection{Tipos de Erros}
+\begin{frame}{}
+\begin{block}{}
+\begin{center}
+\begin{table}[]
+\begin{tabular}{c|c|c}
+&&\\
+                          \textbf{Decisão}                   &\textbf{$H_{0}\,$ é verdadeira}                         &\textbf{$H_{0}$ é falsa}\\ \hline
+ \multirow{2}{*}{\textbf{Não rejeita $H_{0}$}}&Correta                                                               &Erro Tipo II\\
+                                                                        &\textbf{Probabilidade $=\left(1-\alpha \right)$} &\textbf{Probabilidade $=\beta$}\\ \hline
+\multirow{2}{*}{\textbf{Rejeita $H_{0}$}}       &Erro Tipo I                                                          &  Correta\\
+                                                                        &\textbf{Nível de significância $\alpha$}            &\textbf{Poder $=\left( 1-\beta\right)$}\\ \hline
+\end{tabular}
+\end{table}
+\end{center}
+\end{block}
+\end{frame}
+
+\begin{frame}{Outras Exemplos de Funções Teste}
+\begin{block}{}
+\justifying
+    Defina $d_{1}:\R^{3}\rightarrow \{0,1\}$ tal que 
+    \[
+d_{1}(X_{1},X_{2},X_{3}) = 
+  \begin{cases}
+      0, & x_{1}x_{2}x_{3}<1 \\
+      1, & x_{1}x_{2}x_{3} \geq 1 
+  \end{cases}
+\]
+\end{block}
+\end{frame}
+
+\begin{frame}{Outras Exemplos de Funções Teste}
+\begin{block}{}
+\justifying
+    Defina $d_{2}:\R^{3}\rightarrow \{0,1\}$ tal que 
+    \[
+d_{2}(X_{1},X_{2},X_{3}) = 
+  \begin{cases}
+      0, & x_{1}+x_{2}+x_{3}<1 \\
+      1, & x_{1}+x_{2}+x_{3} \geq 1 
+  \end{cases}
+\]
+\end{block}
+\end{frame}
+
+\begin{frame}{Outras Exemplos de Funções Teste}
+\begin{block}{}
+\justifying
+    Defina $d_{3}:\R^{3}\rightarrow \{0,1\}$ tal que 
+    \[
+d_{3}(X_{1},X_{2},X_{3}) = 1,~\forall ~(X_{1},X_{2},X_{3})\in \R^{3}
+\]
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{Observações:}
+\justifying
+\begin{enumerate}
+\item Daqui em diante, $a_{0}=0$ e $a_{1}=1;$
+\pause
+    \item $$\alpha=P_{\theta_{0}}(d(\vec{X})=1)$$
+\pause
+\begin{block}{}
+Ou seja, sob $H_{0},$ a medida que gera os dados do nosso estudo é $P_{\theta_{0}}.$ Na prática, escolhemos a medida que foi especificada em $H_{0}$ e a utilizamos para calcular a probabilidade de rejeitar $H_{0},$ o valor encontrado é a probabilidade do erro tipo 1.    
+\end{block}
+\pause
+\item \begin{align*}
+    P(\text{erro tipo II})=\beta=P_{\theta_{1}}(d(\vec{X})=0)
+\end{align*}
+\pause
+\vspace{-0.5cm}
+\begin{block}{}
+\justifying
+Notem que, nesse caso, estamos considerando que $H_{1}$ é a negação de $H_{0}.$
+\end{block}
+\end{enumerate}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+De todas as regiões de tamanho $\alpha,$ queremos encontrar aquela que tem o menor erro do tipo II. Ou, de forma equivalente, maximizar a probabilidade de rejeitar $H_{0},$ quando $H_{1}$ é verdadeira. Ou seja, para $\theta\in\Theta,$ queremos maximizar 
+\begin{align*}
+    1-P(\text{erro tipo II})=\underbrace{P_{\theta}(d(\vec{X})=1)}_{\text{Poder do Teste para}~\theta}
+\end{align*}
+\end{block}
+\end{frame}
+
+\section{Função Poder}
+\begin{frame}{}
+\begin{definicao}
+\justifying
+Considerando que $\Theta_{0}\cup\Theta_{1}=\Theta,~\Theta_{0}\cap\Theta_{1}=\emptyset,$ podemos definir a função poder usando a função teste, da seguinte forma,  
+\begin{align*}
+    \gamma_{d}:\Theta\rightarrow [0,1]
+\end{align*}
+tal que $\gamma_{d}(\theta)=P_{\theta}(d(\vec{X})=1)$
+\end{definicao}
+\pause
+\begin{block}{}
+\justifying
+    Notem que, se $\Theta=\{\theta_{0},\theta_{1}\},~\Theta_{0}=\{\theta_{0}\}$ e $\Theta_{1}=\{\theta_{1}\},$ então,
+\begin{enumerate}
+    \item $\gamma_{d}(\theta_{0})=P_{\theta_{0}}(d(\vec{X})=1)=\alpha;$ é a probabilidade de cometer o erro tipo I.
+    \item $\gamma_{d}(\theta_{1})=P_{\theta_{1}}(d(\vec{X})=1)=1-P_{\theta_{1}}(d(\vec{X})=0)=1-\beta;$ é a probabilidade complementar de cometer o erro tipo II, isto é, o poder do teste.
+\end{enumerate}
+\end{block}
+\end{frame}
+
+\subsection{Tamanho do Teste}
+\begin{frame}{}
+\begin{definicao}
+\justifying 
+O tamanho do teste $d$ é definida por 
+$$\alpha_{d}=\max_{\theta\in \Theta_{0}}\gamma_{d}(\theta).$$
+\end{definicao}
+\pause
+\begin{block}{}
+\justifying
+Isto é, o tamanho do teste é a probabilidade máxima de cometer o erro Tipo I.
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+%\begin{definicao}
+%\justifying 
+%O nível de significância para um teste $d$ é um valor $\alpha\in [0,1]$ tal que $\alpha\geq \alpha_{d}(\theta)~\forall~\theta\in\Theta_{0}$
+%\end{definicao}
+%\pause
+\begin{block}{}
+\justifying
+À medida que estudamos mais estatísticas, descobrimos que frequentemente são utilizados outros nomes para o tamanho, $\alpha$, da região crítica. Frequentemente, $\alpha$ também é chamado de nível de significância do teste associado a essa região crítica. Além disso, às vezes, $\alpha$ é chamado de ``máxima probabilidade de cometer um erro do Tipo I'' e o ``máximo do poder do teste quando H0 é verdadeira''.     
+\end{block}
+%\begin{block}{}
+%\justifying
+%Qualquer valor maior ou igual ao tamanho do teste será considerado nível de significância.
+%\end{block}
+\end{frame}
+
+\begin{frame}{De outra forma:}
+\begin{block}{}
+\justifying
+    Seja $\mathcal{D}$ o espaço da amostra (\seqX). Um teste para $H_{0}$ contra $H_{1}$ é baseado em um subconjunto de $\mathcal{D},~(\mathcal{D}~\text{espaço}~\{X_{1},\ldots,X_{n}\}),$ digamos $\mathcal{C}.$ Tal conjunto $\mathcal{C}$ é chamado de região crítica e a regra de decisão associada é
+    \begin{itemize}
+    \item Rejeite $H_{0}$ (Aceita $H_{1}$), se (\seqX)$\in \mathcal{C};$.
+    \item Aceita $H_{0}$ (Rejeite $H_{1}$), se (\seqX)$\notin \mathcal{C};$.
+\end{itemize}
+\end{block}
+\pause
+\begin{block}{}
+    Notem que $\mathcal{C}=A_{1}$ do exemplo anterior!
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{definicao}
+\justifying
+Dizemos que uma região crítica $\mathcal{C}$ tem tamanho $\alpha$ se $$\alpha=\max_{\theta\in \Theta_{0}} P_{\theta}[(X_{1},\ldots,X_{n})\in\mathcal{C}]$$
+\end{definicao}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+De todas as regiões de tamanho $\alpha,$ queremos encontrar aquela que tem o menor erro do tipo II. Ou, de forma equivalente, maximizar a probabilidade de rejeitar $H_{0},$ quando $H_{1}$ é verdadeira. Ou seja, para $\theta\in\Theta_{1},$ queremos maximizar 
+\begin{align*}
+    1-P(\text{erro tipo II})=\underbrace{P_{\theta}[(X_{1},\ldots,X_{n})\in\mathcal{C}]}_{\text{Poder do Teste em}~\theta}
+\end{align*}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{definicao}
+\justifying
+A função poder de uma região crítica $\mathcal{C}$ é 
+\begin{align*}
+    \gamma_{\mathcal{C}}(\theta)=P_{\theta}[(X_{1},\ldots,X_{n})\in\mathcal{C}],~\theta\in \Theta_{1}
+\end{align*}
+\end{definicao}
+\pause
+\begin{block}{Observação:}
+\justifying
+Se duas regiões críticas $\mathcal{C}_{1}$ e $\mathcal{C}_{2}$ tem o mesmo tamanho $\alpha,$ dizemos que $\mathcal{C}_{1}$ é melhor do que $\mathcal{C}_{2}$ se $\gamma_{\mathcal{C}_{1}}\geq \gamma_{\mathcal{C}_{2}}, \forall \theta\in\Theta_{1}.$
+\end{block}
+\end{frame}
+
+\begin{frame}{Exemplo 1}
+\begin{block}{}
+\justifying
+Sejam \(X_1, \ldots , X_n\) uma amostra aleatória de tamanho \(n\) da distribuição da variável aleatória \(X \sim N(\mu, 1)\). Consideremos as hipóteses \(H_0 : \mu = 0\) e \(H_1 : \mu = 1\). Consideremos o teste com região crítica \(A_1 = \{x; \Bar{x} \geq c\}\).
+\end{block}
+\end{frame}
+
+\begin{frame}{Exemplo 1}
+\begin{block}{}
+\justifying
+Suponhamos que \(n = 16\) e que estamos interessados em fixar \(\alpha = 0,05\). Então, para determinar \(c\), temos que resolver a equação \(\alpha = P(H_0 [\Bar{X} \geq c])\), ou seja,
+\[
+0,05 = P(H_0 [\Bar{X}\geq c]) = P(Z \geq c\sqrt{n}),
+\]
+onde \(Z = \Bar{X}\sqrt{n} \sim N(0, 1)\). Portanto, \(c\sqrt{n} = 1,64\), pois na distribuição \(N(0,1)\), o valor \(1,64\) é o percentil 95\%. Logo, \(c = 0,41\), de modo que \(A_1 = \{x; \Bar{x} \geq 0,41\}\).
+
+\end{block}
+\end{frame}
+
+\section{Teste para Média Baseado em Grandes Amostras}
+\begin{frame}{Exemplo 2 - Teste para média baseado em grandes amostras}
+\begin{block}{}
+\justifying
+Seja $X$ uma variável aleatória com média $\mu$ e variância $\sigma^{2}.$ Estamos interessados em testar $H_{0}:\mu=\mu_{0}$ contra $H_{1}:\mu>\mu_{0}~(\mu_{0}~\text{especificado}).$ Seja \seqX~ uma amostra aleatória de $X$ e denote por $\Bar{X}$ e $S^{2}$ a média e a variância amostral, respectivamente.
+\end{block}
+\pause
+\begin{block}{}
+\justifying
+De forma intuitiva, adotamos a seguinte regra de decisão:
+\begin{itemize}
+    \item Rejeitamos $H_{0}$ en favor de $H_{1},$ se $\Bar{X}$ é muito maior que $\mu_{0}.$
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Do TCL e usando o fato que $S^{2}\ConvP \sigma^{2},$ temos que, sob $H_{0},$ \[\dfrac{\Bar{X}-\mu_{0}}{\frac{S}{\sqrt{n}}}\ConvD N(0,1)\]
+\end{block}
+\pause
+\begin{block}{}
+\justifying
+Com isso, podemos propor um teste com tamanho $\alpha,$ aproximadamente. Queremos encontrar $c$ tal que $P_{\mu_{0}}(\Bar{X}>c)\approx\alpha.$ Temos que,
+\begin{align*}
+    P(\Bar{X}>c)&=P\left(\dfrac{\Bar{X}-\mu_{0}}{\frac{S}{\sqrt{n}}}>\dfrac{c-\mu_{0}}{\frac{S}{\sqrt{n}}}\right)\\
+    &=1-\Phi\left(\frac{c-\mu_{0}}{\frac{S}{\sqrt{n}}}\right)\\
+    &=\Phi\left(\frac{\mu_{0}-c}{\frac{S}{\sqrt{n}}}\right)=\alpha
+\end{align*}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Logo, $\dfrac{\mu_{0}-c}{\frac{S}{\sqrt{n}}}=z_{\alpha}\Rightarrow c=\mu_{0}-z_{\alpha}\frac{S}{\sqrt{n}}\Rightarrow c=\mu_{0}+z_{(1-\alpha)}\frac{S}{\sqrt{n}}$
+\end{block}
+\pause
+\begin{block}{}
+\justifying
+O teste de tamanho, aproximadamente, $\alpha$ fica dado por $\Bar{X}>z_{(1-\alpha)}\frac{S}{\sqrt{n}}+\mu_{0}$
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\vspace{-0.2cm}
+\begin{block}{}
+\justifying
+Suponha de outra forma $H_{0}:\mu\leq \mu_{0}$ contra $H_{1}:\mu>\mu_{0}.$
+\end{block}
+\pause
+\begin{block}{}
+\justifying
+A função poder fica dada por (aproximadamente):
+\begin{align*}
+    \gamma(\mu)&\approx P_{\mu}(\Bar{X}>z_{(1-\alpha)}\frac{S}{\sqrt{n}}+\mu_{0})\\
+    &=P_{\mu}\left(\dfrac{\Bar{X}-\mu}{\frac{S}{\sqrt{n}}}>z_{(1-\alpha)}+\dfrac{\mu_{0}-\mu}{\frac{S}{\sqrt{n}}}\right)\\
+    &=1-\Phi\left(z_{(1-\alpha)}+\dfrac{\mu_{0}-\mu}{\frac{S}{\sqrt{n}}}\right)\\
+    &=\Phi\left(-z_{(1-\alpha)}-\dfrac{\mu_{0}-\mu}{\frac{S}{\sqrt{n}}}\right)
+\end{align*}
+Nesse caso, é possível ver que, \({\displaystyle \max_{\mu\leq\mu_{0}}\gamma(\mu)\approx\alpha}\)(Exercício 4.5.1).
+\end{block}
+\end{frame}
+
+\section{Teste para Média sob Normalidade}
+\begin{frame}{Exemplo - Teste para média sob normalidade}
+\begin{block}{}
+\justifying
+Considere $X\sim N(\mu,\sigma^{2})$ e \seqX~ a.a de $X.$ Sob as condições do exemplo anterior,
+\[H_{0}:\mu= \mu_{0}~\text{contra}~H_{1}:\mu>\mu_{0}.\]
+Temos que $\dfrac{\Bar{X}-\mu_{0}}{\frac{S}{\sqrt{n}}}\sim t_{n-1}.$ Então, um teste exato de tamanho $\alpha$ fica dado por
+\begin{align*}
+    \dfrac{\Bar{X}-\mu_{0}}{\frac{S}{\sqrt{n}}}>t_{(1-\alpha)}(n-1),~\text{em que}
+\end{align*}
+\begin{align*}
+    P(T>t_{(1-\alpha)}(n-1))=\alpha,~T\sim t_{(n-1)}
+\end{align*}
+\end{block}
+\end{frame}
+
+\section{Teste Bilateral para a Média Baseado em Grandes Amostras}
+\begin{frame}{Exemplo - Teste bilateral para a média baseado em grandes amostras}
+\begin{block}{}
+\justifying
+Seja $X$ uma v.a. com média $\mu$ e variância $\sigma^{2}$ e \seqX~ uma amostra aleatória de $X.$ Aqui estamos interessados em testar as hipóteses 
+\[H_{0}:\mu= \mu_{0}~\text{contra}~H_{1}:\mu\neq\mu_{0}.\]
+Então, uma regra de decisão intuitiva é,
+\begin{itemize}
+    \item Rejeitamos $H_{0}$ em favor de $H_{1}$ se $\Bar{X}\leq h$ ou $\Bar{X}\geq k,~ h<k$ e $h$ e $k$ tais que,
+\end{itemize}
+\begin{align*}
+    \alpha=P_{\mu_{0}}(\{\Bar{X}\leq h\}\cup\{\Bar{X}\geq k\})=P_{\mu_{0}}(\{\Bar{X}\leq h\})+P_{\mu_{0}}(\{\Bar{X}\geq k\})
+\end{align*}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Como $\Bar{X}$ tem aproximadamente distribuição simétrica em torno de $\mu=\mu_{0},$ sob $H_{0},$ escolhemos $h$ e $k,$ tais que,
+\begin{align*}
+    P_{\mu_{0}}(\Bar{X}\leq h)=\frac{\alpha}{2}~\text{e}~P_{\mu_{0}}(\Bar{X}\geq k)=\frac{\alpha}{2}
+\end{align*}
+Com isso, um teste de tamanho aproximadamente $\alpha$ fica dado por,
+\begin{align*}
+    \left|\dfrac{\Bar{X}-\mu_{0}}{\frac{S}{\sqrt{n}}}\right|\geq z_{(1-\frac{\alpha}{2})}
+\end{align*}
+\end{block}
+\end{frame}
+
+\section{Exercícios da Seção 4.5}
+\begin{frame}{\Home}
+\begin{block}{}
+\justifying
+
+\begin{itemize}
+    \item \textbf{Exercícios da seção 4.5:} 1, 4, 5, 8, 9, 11.
+\end{itemize}
+\nocite{hogg}
+\end{block}
+\end{frame}
+
+\section{Exercícios da Seção 4.6}
+\begin{frame}{\Home}
+\begin{block}{}
+\justifying
+
+\begin{itemize}
+    \item \textbf{Exercícios da seção 4.6:} 2,3,4,6,8,9 e 10.
+\end{itemize}
+\nocite{hogg}
+\end{block}
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+\frametitle{\bf Referências}
+\printbibliography[heading=none]
+\end{frame}
+
+
+\end{document}

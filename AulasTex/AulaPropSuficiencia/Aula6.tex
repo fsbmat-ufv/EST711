@@ -1,0 +1,297 @@
+\documentclass[12pt]{beamer}
+
+\input{../Configuracoes/layout}
+
+
+\title{Inferência Estatística II}
+\author{Prof. Fernando de Souza Bastos\texorpdfstring{\\ fernando.bastos@ufv.br}{}}
+\institute{Departamento de Estatística\texorpdfstring{\\ Programa de Pós-Graduação em Estatística Aplicada e Biometria}\texorpdfstring{\\ Universidade Federal de Viçosa}{}\texorpdfstring{\\ Campus UFV - Viçosa}{}}
+\date{}
+\newcommand\mytext{Aula 7}
+\newcommand\mytextt{Fernando de Souza Bastos}
+\newcommand\mytexttt{\url{https://est711.github.io/}}
+
+
+\begin{document}
+%\SweaveOpts{concordance=TRUE}
+
+\frame{\titlepage}
+
+\begin{frame}{}
+\frametitle{\bf Sumário}
+\tableofcontents
+\end{frame}
+
+\section{Propriedades de Uma Estatística Suficiente}
+\begin{frame}{Propriedades de Uma Estatística Suficiente}
+\frametitle{}
+\begin{block}{}
+\justifying
+Seja que $X_1, X_2, \ldots, X_n$ seja uma amostra aleatória de uma variável aleatória com função de densidade ou função de massa de probabilidade $f(x; \theta),~\theta \in \Omega$. \textbf{Observemos que uma estatística suficiente não é única}. Seja $Y_1 = u_1(X_1, X_2, \ldots, X_n)$ uma estatística suficiente para $\theta.$ Denote por $f_{Y_{1}}(y,\theta)$ a fdp de $Y_{1}.$ Seja $Y_2 = g(Y_1)$ uma estatística, em que $g$ é uma função bijetora, então pela definição de Estatística Suficiente temos,
+
+\begin{align*}
+ \dfrac{f(x_1; \theta)f(x_2; \theta) \ldots f(x_n; \theta)}{f_{Y_{1}}(y,\theta)} &= H(x_1, x_2, \ldots, x_n)\\
+ \Rightarrow f(x_1; \theta)f(x_2; \theta) \ldots f(x_n; \theta) &= f_{Y_{1}}(y,\theta)H(x_1, x_2, \ldots, x_n)\\
+\end{align*}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\frametitle{}
+\begin{block}{}
+\justifying
+Pelo teorema de Neyman (Critério da fatoração), 
+\begin{align*}
+f(x_1; \theta)f(x_2; \theta) \ldots f(x_n; \theta) &= k_{1}(y_{1},\theta)k_{2}(x_1, x_2, \ldots, x_n)\\
+&=k_{1}(g^{-1}(y_{2}),\theta)k_{2}(x_1, x_2, \ldots, x_n)\\
+&=k_{1}^{*}(y_{2},\theta)k_{2}(x_1, x_2, \ldots, x_n),
+\end{align*}
+logo $Y_2$ também é uma estatística suficiente para $\theta$.
+\end{block}
+\end{frame}
+
+\begin{frame}{Propriedades Básicas}
+\frametitle{}
+\begin{block}{}
+\justifying
+Das propriedades básicas de Esperança Condicional, segue que, se $X_1$ e $X_2$ são variáveis aleatórias tais que a variância de $X_2$ existe, então
+
+\begin{align*}
+E[X_2] &= E[E(X_2|X_1)] \\
+\text{Var}(X_2) &= \text{Var}[E(X_2|X_1)]+\underbrace{E[\text{Var}(X_2|X_1)]}_{\geq 0}\\
+\Rightarrow \text{Var}(X_2) &\geq \text{Var}[E(X_2|X_1)].
+\end{align*}
+\end{block}
+\end{frame}
+
+\begin{frame}{Propriedades Básicas}
+\frametitle{}
+\begin{block}{}
+\justifying
+vamos considerar a estatística suficiente $Y_1$ como $X_1$ e $Y_2$, uma estatística não-viesada de $\theta$, como $X_2$. Assim, $X_2$ é um estimador não viesado de $\theta$ e $X_1$ uma estatística suficiente para $\theta$. Defina, $\xi(y_{1})=E(Y_2|Y_1=y_1).$ Logo, podemos escrever $\xi(Y_{1})=E(Y_2|Y_1)$ e,
+\begin{align*}
+ E[\xi(Y_1)]&= E(E(Y_2|Y_1))=E(Y_2) = \theta \\
+\text{Var}[\xi(Y_1)]&=\text{Var}(E(Y_2|Y_1)) \leq \text{Var}(Y_2).
+\end{align*}
+
+Esses resultados podem ser enunciados como um teorema.
+\end{block}
+\end{frame}
+
+\section{Teorema de Rao-Blackwell}
+\begin{frame}{Teorema de Rao-Blackwell}
+\frametitle{}
+\begin{Teorema}
+\justifying
+Seja $X_1, X_2, \ldots, X_n$, uma amostra aleatória de uma distribuição (contínua ou discreta) com função de densidade ou função de massa de probabilidade $f(x; \theta),~\theta \in \Omega$. Seja $Y_1 = u_1(X_1, X_2, \ldots, X_n)$ uma estatística suficiente para $\theta$ e $Y_2 = u_2(X_1, X_2, \ldots, X_n)$ um estimador não-viesado de $\theta$. Considere, ainda, $E(Y_2|y_1) = \xi(y_1).$ Então $\xi(Y_1)$ é um estimador não-viesado de $\theta$ e sua variância é menor ou igual à de $Y_2$.
+\end{Teorema}
+\pause
+\begin{block}{Demonstração}
+\justifying
+Ver slide anterior de propriedades básicas!
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\frametitle{}
+\begin{block}{}
+\justifying
+Este teorema nos diz que, na busca por um EMVU (Estimador de Mínima Variância Não-viesado) de um parâmetro, podemos restringir essa busca a funções da estatística suficiente. Se começarmos com um estimador não-viesado $Y_2$, podemos sempre melhorá-lo calculando $E(Y_2|y_1) = \xi(y_1)$, de modo que $\xi(Y_1)$ seja um estimador não-viesado com uma variância menor que a de $Y_2$.
+
+%Após o Teorema 7.3.1, muitos estudantes acreditam que é necessário encontrar primeiro algum estimador não-viesado $Y_2$ na busca por $\xi(Y_1)$, um estimador não-viesado de $\theta$ baseado na estatística suficiente $Y_1$. Isso não é o caso, e o Teorema 7.3.1 simplesmente nos convence de que podemos restringir nossa busca por um melhor estimador a funções de $Y_1$. Além disso, existe uma conexão entre estatísticas suficientes e estimadores de máxima verossimilhança, conforme mostrado no seguinte teorema:
+\end{block}
+\end{frame}
+
+\begin{frame}{Teorema}
+\frametitle{}
+\begin{Teorema}
+\justifying
+Sejam  $X_1, X_2, \ldots, X_n$  uma amostra aleatória de uma distribuição com função de densidade ou função de massa de probabilidade  $f(x; \theta), \theta \in \Omega.$  Se uma estatística suficiente  $Y_1 = u_1(X_1, X_2, \ldots, X_n)$  para  $\theta$  existe e se um estimador de máxima verossimilhança  $\hat{\theta}$  para  $\theta$  também existe de forma única, então  $\hat{\theta}$  é uma função da estatística suficiente $Y_1 = u_1(X_1, X_2, \ldots, X_n).$
+\end{Teorema}
+\end{frame}
+
+\begin{frame}{Demonstração}
+\frametitle{}
+\begin{block}{}
+\justifying
+Seja $f_{Y_1}(y_1; \theta)$ a função de densidade ou função de massa de probabilidade de $Y_1$. Então, pela definição de suficiência (teorema de Neyman), a função de verossimilhança
+\begin{align*}
+L(\theta) &= f(x_1; \theta)f(x_2; \theta) \ldots f(x_n; \theta)\\ 
+&= f_{Y_1}[u_1(x_1, x_2, \ldots, x_n); \theta]H(x_1, x_2, \ldots, x_n)\\
+&=k_{1}(y_{1},\theta)k_{2}(x_1, x_2, \ldots, x_n)
+\end{align*}
+Assim, $L$ e $k_{1}(y_{1},\theta)$, como funções de $\theta$, são maximizadas simultaneamente. Por hipótese, o EMV $\hat{\theta}$ existe e é único, logo, há apenas um valor de $\theta$ que maximiza $L$ e, portanto, $k_{1}[u_1(x_1, x_2, \ldots, x_n); \theta]$, esse valor de $\theta$ deve ser uma função de $u_1(x_1, x_2, \ldots, x_n)$. Portanto, o EMV $\hat{\theta}$ é uma função da estatística suficiente $Y_1 = u_1(X_1, X_2, \ldots, X_n)$.
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\frametitle{}
+\begin{block}{}
+\justifying
+Sabemos, de aulas anteriores, que, em geral, os EMVs são estimadores assintoticamente não-viesados de $\theta$. Portanto, uma maneira de proceder é encontrar uma estatística suficiente e, em seguida, encontrar o EMV. Com base nisso, muitas vezes podemos obter um estimador não-viesado que é uma função da estatística suficiente. Esse processo é ilustrado no exemplo a seguir.
+\end{block}
+\end{frame}
+
+\begin{frame}{Exemplo}
+\frametitle{}
+\begin{block}{}
+\justifying
+Sejam $X_1, \ldots, X_n\Sim exp(\theta).$
+
+Suponha que desejamos um EMVU (Estimador de Variância Mínima Não-viesado) para $\theta$. 
+\begin{equation}
+\ell(\theta) = n \log \theta - \theta \sum_{i=1}^n x_i
+\end{equation}
+$\hat{\theta}=\dfrac{1}{\Bar{X}}$ é o EMV de $\theta.$ Também podemos verificar que $\Bar{X}$ é uma estatística suficiente para $\theta.$ 
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\frametitle{}
+\begin{block}{}
+\justifying
+Note que $\hat{\theta} = \frac{n}{Y_1}$ é uma função da estatística suficiente $Y_1$. Além disso, como $\hat{\theta}$ é o EMV de $\theta$, ele é assintoticamente não-viesado. Portanto, como um primeiro passo, vamos determinar sua esperança. Neste problema, $X_i$ são variáveis aleatórias independentes e identicamente distribuídas com distribuição Gama $\Gamma(1, 1/\theta)$; portanto, $Y_1 = \sum_{i=1}^n X_i$ segue uma distribuição $\Gamma(n, 1/\theta)$. Assim,
+
+\begin{align*}
+E(\hat{\theta}) &= E\left(\frac{n}{Y_1}\right)= n E\left(\frac{1}{\Sumi X_{i}}\right) 
+\end{align*}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\frametitle{}
+\begin{block}{}
+\justifying
+\begin{align*}
+n E\left(\frac{1}{\Sumi X_{i}}\right) &= n \int_0^{\infty} \frac{(\frac{1}{\theta})^n}{\Gamma(n)} t^{-1}t^{n-1} e^{-\frac{t}{\theta}} dt\\
+&= n \int_0^{\infty} \frac{(\frac{1}{\theta})^n}{\Gamma(n)} t^{(n-1)-1} e^{-\frac{t}{\theta}} dt\\
+&= \dfrac{n}{\theta^{n}\Gamma(n)} \int_0^{\infty} \underbrace{t^{(n-1)-1} e^{-\frac{t}{\theta}}}_{\text{Núcleo da densidade de uma}~\Gamma(n-1,\theta)} dt\\
+&= \dfrac{n}{\theta^{n}\Gamma(n)} \int_0^{\infty}\frac{(\frac{1}{\theta})^{(n-1)}}{\Gamma(n-1)} t^{(n-1)-1} e^{-\frac{t}{\theta}}\frac{\Gamma(n-1)}{(\frac{1}{\theta})^{(n-1)}} dt\\
+&=\dfrac{n\Gamma(n-1)}{\dfrac{\theta^{n}}{\theta^{(n-1)}}\Gamma(n)}=\theta\dfrac{n}{n-1}
+\end{align*}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\frametitle{}
+\begin{block}{}
+\justifying
+Portanto, o estimador $\Tilde{\theta}=\hat{\theta}\frac{(n-1)}{n}$ é um estimador não viesado de variância mínima para $\theta$.
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\frametitle{}
+\begin{block}{}
+\justifying
+\textbf{Observação:} Como o estimador não-viesado $\xi(Y_1)$, em que $\xi(Y_1) = E(\hat{\theta}|y_1)$, possui uma variância menor do que o estimador não-viesado $Y_2$ de $\theta$, às vezes, raciocinamos da seguinte maneira. Seja a função $\Upsilon(y_3) = E[\xi(Y_1)|Y_3 = y_3]$, onde $Y_3$ é uma estatística que não é suficiente para $\theta$. Pelo teorema de Rao-Blackwell, temos $E[\Upsilon(Y_3)] = \theta$ e $\Upsilon(Y_3)$ possui uma variância menor do que $\xi(Y_1)$. Consequentemente, $\Upsilon(Y_3)$ deve ser melhor do que $\xi(Y_1)$ como um estimador não-viesado de $\theta$. No entanto, isso não é verdade, porque $Y_3$ não é suficiente; assim, $\theta$ está presente na distribuição condicional de $Y_1$, dado $Y_3 = y_3$, e na média condicional $\Upsilon(y_3)$. Embora de fato $E[\Upsilon(Y_3)] = \theta$, $\Upsilon(Y_3)$ nem sequer é uma estatística, pois envolve o parâmetro desconhecido $\theta$ e, portanto, não pode ser usado como uma estimativa.
+\end{block}
+\end{frame}
+
+\section{Completude e Unicidade}
+\begin{frame}{}
+\frametitle{Completude}
+\begin{definicao}
+\justifying
+Seja a variável aleatória $Z$ do tipo contínuo ou discreto, com função de densidade ou massa de probabilidade que pertence à família $\{h(z; \theta), \theta \in \Omega\}$. Se a condição $E[u(Z)] = 0$, para todo $\theta \in \Omega$, implica que $u(z)$ seja igual a zero, exceto em um conjunto de pontos com probabilidade zero, então para cada $h(z; \theta)$, $\theta \in \Omega$, a família $\{h(z; \theta) : \theta \in \Omega\}$ é chamada de família completa de funções de densidade ou massa de probabilidade.
+\end{definicao}
+\end{frame}
+
+\begin{frame}{Exemplo 1}
+\begin{block}{}
+\justifying
+$X_{1},\ldots,X_{n}\Sim$Poisson($\theta$). Sabemos que $\Sumi X_{i}$ é uma estatística suficiente para $\theta$ e $Z=\Sumi X_{i}\sim$Poisson$(n\theta),~\Omega=(0,+\infty).$ Seja $u(\cdot)$ tal que $E(u(Z))=0,~\forall\theta>0.$
+\begin{align*}
+0=E(u(Z))&={\displaystyle \sum_{z=0}^{+\infty}u(z)\dfrac{(n\theta)^{z}}{z!}e^{-n\theta}}\\
+\Rightarrow 0&={\displaystyle \sum_{z=0}^{+\infty}u(z)\dfrac{n^{z}}{z!}\theta^{z}}, \forall \theta>0\\
+\Rightarrow \dfrac{u(z)n^{z}}{z!}&=0,~\forall z\in\{0,1,\ldots\} \Rightarrow u(z)=0,\forall z\in\{0,1,\ldots\}
+\end{align*}
+
+\end{block}
+\end{frame}
+
+\begin{frame}{Exemplo 2}
+\begin{block}{}
+\justifying
+Considere a família $\{h(z,\theta); \theta>0\}$ dada por $$h(z;\theta)=\dfrac{1}{\theta}e^{-\big(\dfrac{z}{\theta}\big)},~\theta>0,~\text{ou seja,}~Z\sim\exp{(\theta)}.$$
+\end{block}
+\pause
+\begin{block}{}
+\justifying
+\begin{align*}
+    E(u(Z))=0,\forall \theta>0&\Rightarrow \int_{0}^{+\infty}u(z)\dfrac{1}{\theta}e^{-\Big(\dfrac{z}{\theta}\Big)}dz=0,\forall \theta>0\\
+    &\Rightarrow \int_{0}^{+\infty}u(z)e^{-\Big(\dfrac{z}{\theta}\Big)}dz=0,\forall \theta>0
+\end{align*}
+Notem que $\ell(\theta)=\int_{0}^{+\infty}u(z)e^{-\Big(\frac{z}{\theta}\Big)}dz=0$ é a transformada de Laplace de $u(\cdot).$ Assim, $\ell(\theta)=0\Rightarrow u(z)=0,\forall z>0.$
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Seja $Y1 = u_{1}(X_1,X_2, . . .,X_n)$ uma estatística suficiente para $\theta.$ Tome $\xi(Y_{1})$ tal que $E(\xi(Y_{1}))=\theta.$ Seja $\psi(Y_1)$ outra função de $Y_1$ de forma que, também tenhamos $E[\psi(Y_1)] = \theta$ para todos os valores de $\theta$, $\theta \in \Omega$. Portanto,
+$E[\xi(Y_1) - \psi(Y_1)] = 0$, $\theta \in \Omega$. Se a família de $Y_{1}$ é completa, $\xi(Y_1) - \psi(Y_1)=0,$ ou seja, $\xi(Y_1) = \psi(Y_1).$ Assim, $\xi(Y_{1})$ é a única (com prob=1) função de $Y_{1}$ que é um estimador não viesado para $\theta.$
+\end{block}
+\pause
+\begin{block}{}
+\justifying
+A conclusão anterior juntamente com o Teorema de Rao-Blackwel garantem que $\xi(Y_{1})$ é o ENVVUM de $\theta,$ conforme próximo teorema. 
+\end{block}
+\end{frame}
+
+\section{Teorema de Lehmann-Scheffé}
+\begin{frame}{}
+\begin{Teorema}
+\justifying
+Seja $Y_{1}$ uma estatística suficiente para $\theta$ e assuma que a família de $Y_{1}$ é completa. Se existe uma função $\xi(\cdot)$ tal que $E(\xi(Y_{1}))=\theta,~\forall \theta\in \Omega,$ então, $\xi(Y_{1})$ é o ENVVUM de $\theta.$
+\end{Teorema}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{\Home}
+\justifying
+\begin{itemize}
+    \item \textbf{Exercícios da seção 7.3:} 1,3,4,5,6
+    \item \textbf{Exercícios da seção 7.4:} 1,2,3,4,5,7,8,9
+\end{itemize}
+\nocite{hogg, casella2021statistical, bolfarine}
+\end{block}
+\end{frame}
+
+
+\begin{frame}[allowframebreaks]
+\frametitle{\bf Referências}
+\printbibliography
+\end{frame}
+
+
+\end{document}
+
+Foi observado que se existe algum estimador não enviesado $Y_{2}$ (que não é uma função apenas de $Y_1$) de $\theta$, então existe pelo menos uma função de $Y_1$ que é um estimador não enviesado de $\theta$, e nossa busca pelo melhor estimador de $\theta$ pode ser restrita a funções de $Y_1$.
+
+Suponha que tenha sido verificado que uma certa função $\xi(Y_1)$, que não é uma função de $\theta$, satisfaça $E[\xi(Y_1)] = \theta$ para todos os valores de $\theta$, $\theta \in \Omega$. Seja $\psi(Y_1)$ outra função da estatística suficiente $Y_1$ isoladamente, de forma que também tenhamos $E[\psi(Y_1)] = \theta$ para todos os valores de $\theta$, $\theta \in \Omega$. Portanto,
+$E[\xi(Y_1) - \psi(Y_1)] = 0$, $\theta \in \Omega$.
+
+\subsection{Consistência}
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Consistência está ligada ao conceito de convergência em probabilidade.
+
+Sejam $X_1, \ldots, X_n$ uma amostra aleatória da distribuição da variável aleatória $X$ que depende do parâmetro $\theta$. Dizemos que o estimador $\hat{\theta} = \hat{\theta}(X_1, \ldots, X_n)$ é consistente para o parâmetro $\theta,$ se,
+\begin{align*}
+    \lim_{n\rightarrow \infty} P(|\hat{\theta}-\theta|>\epsilon)=0
+\end{align*}
+\end{block}
+\end{frame}
+
+\begin{frame}{Exemplo}
+\begin{block}{}
+\justifying
+Sejam $X_1, \ldots, X_n$ uma amostra aleatória de tamanho $n$ da distribuição da variável aleatória $X$ com média $\theta$ e variância $\sigma^2$. Temos, usando a desigualdade de Chebyshev, que, $$P(|\Bar{X}-\theta|>\epsilon)\leq \dfrac{\sigma^{2}}{n\epsilon^{2}},$$ 
+de modo que,
+$$\lim_{n\rightarrow \infty} P(|\Bar{X}-\theta|>\epsilon)=0,$$
+e portanto $\Bar{X}$ é consistente para $\theta$.
+\end{block}
+\nocite{hogg}\nocite{casella2021statistical} \nocite{bolfarine}
+\end{frame}

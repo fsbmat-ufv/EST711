@@ -1,0 +1,5 @@
+\babel@toc {brazil}{}\relax 
+\beamer@sectionintoc {1}{Propriedades de Uma Estatística Suficiente}{3}{0}{1}
+\beamer@sectionintoc {2}{Teorema de Rao-Blackwell}{7}{0}{2}
+\beamer@sectionintoc {3}{Completude e Unicidade}{18}{0}{3}
+\beamer@sectionintoc {4}{Teorema de Lehmann-Scheffé}{24}{0}{4}

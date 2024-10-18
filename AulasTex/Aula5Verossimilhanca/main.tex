@@ -399,44 +399,45 @@ e que ${\displaystyle \lim_{\theta\to\pm\infty}}L(\theta|\boldsymbol{x})=0.$ Log
 \end{block}
 \end{frame}
 
-\begin{frame}{Exemplo 2}
-\begin{block}{EMV de Bernoulli}
-\justifying
-Sejam \seqX~ Bernoulli$(p)$ iid. Então, a função de verossimilhança é,
-\begin{align*}
-    L(p|\boldsymbol{x})=\Prodi p^{x_{i}}(1-p)^{1-x_{i}}=p^{y}(1-p)^{n-y},~\text{em que},~y=\Sumi x_{i}.
-\end{align*}
-Considere o log de verossimilhança dado por,
-\begin{align*}
-    \ell(p|\boldsymbol{x})=\log{L(p|\boldsymbol{x})}=y\log{p}+(n-y)\log{(1-p)}.
-\end{align*}
-\end{block}
-\pause
-\begin{block}{EMV de Bernoulli}
-\justifying
-Se $0<y<n,$ diferenciar $\log{L(p|\boldsymbol{x})}$ e igualar o resultado a zero fornece a solução $\hat{p}=\dfrac{y}{n}.$ 
-\end{block}
-\end{frame}
+%\begin{frame}{Exemplo 2}
+%\begin{block}{EMV de Bernoulli}
+%\justifying
+%Sejam \seqX~ Bernoulli$(p)$ iid. Então, a função de verossimilhança é,
+%\begin{align*}
+%    L(p|\boldsymbol{x})=\Prodi p^{x_{i}}(1-p)^{1-x_{i}}=p^{y}(1-p)^{n-y},~\text{em que},~y=\Sumi x_{i}.
+%\end{align*}
+%Considere o log de verossimilhança dado por,
+%\begin{align*}
+%    \ell(p|\boldsymbol{x})=\log{L(p|\boldsymbol{x})}=y\log{p}+(n-y)\log{(1-p)}.
+%\end{align*}
+%\end{block}
+%\pause
+%\begin{block}{EMV de Bernoulli}
+%\justifying
+%Se $0<y<n,$ diferenciar $\log{L(p|\boldsymbol{x})}$ e igualar o resultado a zero fornece a solução $\hat{p}=\dfrac{y}{n}.$ 
+%\end{block}
+%\end{frame}
+%
+%\begin{frame}{Exemplo 2}
+%\begin{block}{EMV de Bernoulli}
+%\justifying
+%É fácil verificar que $\hat{p}=\dfrac{y}{n}$ é máximo global, pois se $y=0$ ou $y=n,$ temos
+%\begin{align*}
+%\log{L(p|\boldsymbol{x})}=
+%\begin{cases}
+%      n\log{(1-p)},&\text{se}~y=0\\
+%      n\log{p},&\text{se}~y=n
+%    \end{cases}\,.
+%\end{align*}
+%Em qualquer um dos casos temos $\log{L(p|\boldsymbol{x})}$ é uma função monótona de $p$ e, portanto, $\hat{p}=\dfrac{y}{n}$ é ponto de máximo. Assim, $\hat{p}=\dfrac{y}{n}$ é o EMV de $p.$
+%\end{block}
+%\end{frame}
 
-\begin{frame}{Exemplo 2}
-\begin{block}{EMV de Bernoulli}
-\justifying
-É fácil verificar que $\hat{p}=\dfrac{y}{n}$ é máximo global, pois se $y=0$ ou $y=n,$ temos
-\begin{align*}
-\log{L(p|\boldsymbol{x})}=
-\begin{cases}
-      n\log{(1-p)},&\text{se}~y=0\\
-      n\log{p},&\text{se}~y=n
-    \end{cases}\,.
-\end{align*}
-Em qualquer um dos casos temos $\log{L(p|\boldsymbol{x})}$ é uma função monótona de $p$ e, portanto, $\hat{p}=\dfrac{y}{n}$ é ponto de máximo. Assim, $\hat{p}=\dfrac{y}{n}$ é o EMV de $p.$
-\end{block}
-\end{frame}
-
+\subsection{Princípio da Invariância dos EMV}
 \begin{frame}{Princípio da Invariância dos EMV}
 \begin{Teorema}\label{Teo2}
 \justifying
-Seja $X_1, X_2, ..., X_n$ uma a.a. de uma distribuição com densidade $f(\boldsymbol{x};\theta), \theta \in \Theta.$ Seja $g$ uma função especificada e $\eta=g(\theta).$ Suponha $\hat{\theta}$ o EMV de $\theta$, então $\hat{\eta}=g(\hat{\theta})$ é o EMV de $\eta.$
+Seja $X_1, X_2, ..., X_n$ uma a.a. de uma distribuição com densidade $f(\boldsymbol{x};\theta),~\theta \in \Theta$ e $g: \Theta\rightarrow \tau$ uma função sobrejetora, denote $\eta=g(\theta).$ Suponha $\hat{\theta}$ o EMV de $\theta$, então $\hat{\eta}=g(\hat{\theta})$ é o EMV de $\eta.$
 \end{Teorema}
 \end{frame}
 
@@ -454,18 +455,217 @@ Em resumo, o Princípio da Invariância dos Estimadores de Verossimilhança esta
 \end{frame}
 
 \begin{frame}{Demonstração}
-\begin{block}{}
-\justifying
-Suponha $g$ invertível. A verossimilhança de interesse é $L(g^{-1}(\eta)).$ Esta função é maximizada quando $g^{-1}(\eta)=\hat{\theta},$ isto é, tome $\hat{\eta}=g(\hat{\theta}).$
-\end{block}
+	\begin{block}{}
+		\justifying
+		\textbf{Função} \( g \): Seja \( g: \Theta \rightarrow \tau \) uma função sobrejetora que mapeia \( \theta \in \Theta \) em \( \eta = g(\theta) \in \tau \). A função de verossimilhança de \( \eta \) é a mesma que a função de verossimilhança de \( \theta \), uma vez que \( \eta \) é uma função de \( \theta \):
+		\[
+		L(\eta \mid \boldsymbol{X}_{n}) = L(\theta \mid \boldsymbol{X}_{n}).
+		\]
+		Queremos mostrar que como \( \eta = g(\theta) \), maximizar \( L(\eta \mid \boldsymbol{X}_{n}) \) em \( \eta \) é equivalente a maximizar \( L(\theta \mid \boldsymbol{X}_{n}) \) em \( \theta \), e então aplicar \( g \) ao valor \( \hat{\theta} \).
+		
+	\end{block}
 \end{frame}
 
 \begin{frame}{Demonstração}
+	\begin{block}{}
+		\justifying
+Considere a função de verossimilhança de $\theta$ para a amostra dada, $$L(\theta,X_{1},\cdots, X_{n})=L(\theta,\vec{X}_{n})=\displaystyle \Prodi f(\theta,\vec{X}_{n}).$$
+
+Queremos maximizar $L(\eta,\vec{X}_{n})=L(g(\theta),\vec{X}_{n})=L_{\vec{X}_{n}}^{g}(\eta),$ função de verossimilhança induzida pela função $g$ dada a amostra $X_{1},\cdots, X_{n}$ sob o conjunto $\tau.$ Na verdade, queremos mostrar que $L_{\vec{X}_{n}}^{g}(\hat{\eta})=L_{\vec{X}_{n}}(\hat{\theta}).$
+	\end{block}
+	\pause
+		\begin{block}{}
+		\justifying
+		Notemos que o EMV para $\eta=g(\theta)$ é $$L_{\vec{X}_{n}}^{g}(\eta)={\displaystyle \max_{\theta \in A(\eta)}} L_{\vec{X}_{n}}(\theta), \eta\in \tau,$$ em que $A(\eta)=\{\theta\in\Theta;g(\theta)=\eta\}=g^{-1}(\{\eta\}).$
+	\end{block}
+\end{frame}
+
+\begin{frame}{Justificativa da Igualdade anterior:}
+	\begin{block}{}
+		\begin{itemize}
+			\justifying
+			\item Temos uma amostra \( X_1, X_2, \dots, X_n \) gerada a partir de uma distribuição parametrizada por \( \theta \in \Theta \), e a função de verossimilhança é \( L_{\vec{X}_n}(\theta) \).
+			\item Agora estamos interessados em um novo parâmetro \( \eta \), que é uma função de \( \theta \), ou seja, \( \eta = g(\theta) \), onde \( g: \Theta \rightarrow \tau \).
+			\item O objetivo é encontrar o estimador de máxima verossimilhança (EMV) de \( \eta \).
+		\end{itemize}
+	\end{block}
+	\pause
+	\begin{block}{Questão Central?}
+		Por que maximizar \( L(\theta) \) em \( \theta \in \Theta \) nos dá o EMV de \( \eta \in \tau \), dado que \( \eta \) e \( \theta \) pertencem a espaços diferentes?
+	\end{block}
+\end{frame}
+
+\begin{frame}{Explicação simplificada:}
+	\begin{block}{Ligação entre \( \eta \) e \( \theta \)}
+		\begin{itemize}
+			\justifying
+			\item O parâmetro \( \eta \) é uma função de \( \theta \), ou seja, todo valor de \( \eta \) corresponde a algum valor de \( \theta \).
+			\item A relação entre \( \eta \) e \( \theta \) é determinística, dada pela função \( g \). Isso significa que, se você souber \( \theta \), você automaticamente sabe o valor de \( \eta \), pois \( \eta = g(\theta) \).
+			
+		\end{itemize}
+	\end{block}
+	\pause
+	\begin{block}{Maximização em \( \eta \)}
+		\begin{itemize}
+			\justifying
+			\item Para encontrar o EMV de \( \eta \), você precisa maximizar a função de verossimilhança em termos de \( \eta \).
+			\item Como \( \eta = g(\theta) \), maximizar a verossimilhança em \( \eta \) é equivalente a maximizar em \( \theta \), pois toda maximização sobre \( \eta \) pode ser traduzida em uma maximização sobre os \( \theta \)'s que produzem esse \( \eta \).
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}{Explicação simplificada:}
+
+	\begin{block}{Conjunto \( A(\eta) \)}
+		\begin{itemize}
+			\justifying
+			\item Para cada \( \eta \), o conjunto \( A(\eta) = \{\theta \in \Theta; g(\theta) = \eta\} \) é o conjunto de todos os valores de \( \theta \) que produzem esse valor de \( \eta \).
+			%\item Assim, ao maximizar a função de verossimilhança \( L(\theta) \) com relação a \( \eta \), estamos maximizando \( L(\theta) \) sobre o conjunto de \( \theta \)'s que produzem um dado \( \eta \) (o conjunto \( A(\eta) \)).
+%		\end{itemize}
+%	\end{block}
+%	\pause
+%	\begin{block}{Por que isso funciona:}
+%		\begin{itemize}
+%			\justifying
+			\item Maximizar \( L(\theta) \) sobre \( \theta \in A(\eta) \) encontra o valor de \( \theta \) dentro do conjunto \( A(\eta) \) que maximiza a verossimilhança.
+			\item Como \( A(\eta) \) contém todos os \( \theta \)'s que produzem um dado \( \eta \), a maximização sobre \( A(\eta) \) nos dá o maior valor possível de verossimilhança para aquele \( \eta \).
+			\item Isso significa que a função de verossimilhança para \( \eta \), \( L_{\vec{X}_n}^{g}(\eta) \), é definida como o valor máximo de \( L(\theta) \) sobre \( A(\eta) \).
+			
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}{Explicação simplificada:}
+	\begin{block}{Conclusão}
+		\justifying
+	Embora \( \eta \in \tau \) e \( \theta \in \Theta \) sejam de espaços diferentes, a maximização da verossimilhança sobre \( \eta \) pode ser reduzida a uma maximização sobre \( \theta \), pois \( \eta \) é uma função de \( \theta \). Maximizar \( L(\theta) \) sobre o conjunto de \( \theta \)'s que correspondem a um dado \( \eta \) nos dá a verossimilhança para \( \eta \). Isso justifica a expressão:
+	
+	\[
+	L_{\vec{X}_n}^{g}(\eta) = \max_{\theta \in A(\eta)} L_{\vec{X}_n}(\theta),
+	\]
+	
+	onde \( A(\eta) \) é o conjunto de pré-imagens de \( \eta \) sob \( g \).
+	\end{block}
+\end{frame}
+
+\begin{frame}{Continuando a Demonstração$\ldots$}
+	\begin{block}{}
+		\justifying
+	É claro que $L(\hat{\theta},\vec{X}_{n})\geq L(\theta,\vec{X}_{n}), \forall \theta\in \Theta$ e que ${\displaystyle U_{\eta\in \tau}}A(\eta)=\Theta.$ Também é fato, já que $g$ é sobrejetora, que existe pelo menos um $\tilde{\eta}$ tal que $\tilde{\eta}=g(\hat{\theta}),$ assim, $\hat{\theta}\in A(\tilde{\eta}).$ Vamos denotar $\tilde{\eta}$ por $\hat{\eta}.$ Logo, $$L_{\vec{X}_{n}}^{g}(\hat{\eta})=\max_{\theta\in A(\hat{\eta})}L(\theta)\geq L(\hat{\theta},\vec{X}_{n})=L_{\vec{X}_{n}}(\hat{\theta}),$$ pois $\hat{\theta}\in A(\hat{\eta}).$ Aqui, estou restrito a $A(\hat{\eta}).$
+	\end{block}
+\end{frame}
+
+\begin{frame}{Por que não podemos assumir diretamente que \( L_{\vec{X}_n}^{g}(\hat{\eta}) = L_{\vec{X}_n}(\hat{\theta}) \)?}
+	\begin{block}{}
+		\justifying
+		Como \( \hat{\theta} \) é o EMV de \( \theta \), o valor correspondente de \( \eta \) é \( \hat{\eta} = g(\hat{\theta}) \). Isso significa que \( \hat{\theta} \in A(\hat{\eta}) \), já que \( A(\hat{\eta}) \) contém todos os \( \theta \)'s que produzem \( \hat{\eta} \). Já sabemos que:
+		
+		\[
+		L_{\vec{X}_n}^{g}(\eta) = \max_{\theta \in A(\eta)} L_{\vec{X}_n}(\theta).
+		\]
+		
+		Quando \( \eta = \hat{\eta} \), a função de verossimilhança para \( \hat{\eta} \) é:
+		
+		\[
+		L_{\vec{X}_n}^{g}(\hat{\eta}) = \max_{\theta \in A(\hat{\eta})} L_{\vec{X}_n}(\theta).
+		\]
+		
+		Aqui estamos \textbf{maximizando a verossimilhança sobre um subconjunto de \( \Theta \)}, ou seja, estamos maximizando apenas sobre os \( \theta \)'s que produzem o valor \( \hat{\eta} \).
+		
+	\end{block}
+\end{frame}
+
+\begin{frame}{Por que não podemos assumir diretamente que \( L_{\vec{X}_n}^{g}(\hat{\eta}) = L_{\vec{X}_n}(\hat{\theta}) \)?}
+	\begin{block}{}
+		\justifying
+		Aqui está o ponto crucial: embora \( \hat{\theta} \in A(\hat{\eta}) \), pode haver outros \( \theta' \in A(\hat{\eta}) \) que produzem o mesmo valor de \( \hat{\eta} \), e esses \( \theta' \) podem ter um valor de verossimilhança \( L(\theta') \) maior ou igual a \( L(\hat{\theta}) \). Isso ocorre porque a função \( g(\theta) \) \textbf{pode ser não injetora}, ou seja, pode haver \textbf{vários} \( \theta \)'s \textbf{diferentes} que correspondem ao mesmo valor de \( \eta \). Se houver algum \( \theta' \in A(\hat{\eta}) \) com \( L(\theta') > L(\hat{\theta}) \), então:
+		
+		\[
+		L_{\vec{X}_n}^{g}(\hat{\eta}) = \max_{\theta \in A(\hat{\eta})} L_{\vec{X}_n}(\theta) \geq L_{\vec{X}_n}(\hat{\theta}),
+		\]
+		
+		porque a maximização sobre o conjunto \( A(\hat{\eta}) \) pode resultar em um valor de verossimilhança maior do que \( L(\hat{\theta}) \), que foi obtido ao maximizar sobre todo o espaço \( \Theta \), e não apenas sobre \( A(\hat{\eta}) \).
+		
+	\end{block}
+\end{frame}
+
+\begin{frame}{Continuando a Demonstração$\ldots$}
+	\begin{block}{}
+		\justifying
+		Por outro lado, para $\eta\in g(\Theta)=\tau,$
+		\begin{align*}
+			L_{\vec{X}_{n}}^{g}(\eta)&\leq {\displaystyle \max_{\eta\in \tau}L_{\vec{X}_{n}}^{g}(\eta)}\leq \max_{\eta\in\tau}\max_{\theta\in A(\eta)}L_{\vec{X}_{n}}(\theta)\\
+			&\leq \max_{\theta\in \Theta}L_{\vec{X}_{n}}(\theta)=L_{\vec{X}_{n}}(\hat{\theta})\\
+			&\Rightarrow L_{\vec{X}_{n}}(\eta)\leq L_{\vec{X}_{n}}(\hat{\theta}), \forall \eta\in\tau.
+		\end{align*}
+	\end{block}
+	\pause
+	\begin{block}{Porquê ${\displaystyle \max_{\eta\in \tau}L_{\vec{X}_{n}}^{g}(\eta)}\leq \max_{\eta\in\tau}\max_{\theta\in A(\eta)}L_{\vec{X}_{n}}(\theta)$?}
+		\begin{itemize}
+			\justifying
+			\item \( L_{\vec{X}_{n}}^{g}(\eta) \) é uma função que é definida como o máximo de \( L_{\vec{X}_{n}}(\theta) \) sobre os \( \theta \) que geram um dado \( \eta \).\pause
+			\item O máximo de \( L_{\vec{X}_{n}}^{g}(\eta) \) ao longo de todos os \( \eta \in \tau \) não pode exceder o máximo de \( L_{\vec{X}_{n}}(\theta) \) para todos os \( \theta \) que satisfazem qualquer valor de \( A(\eta) \).
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}{Demonstração}
+	\begin{block}{}
+		\justifying
+		Logo, $$L_{\vec{X}_{n}}^{g}(\hat{\eta})=L_{\vec{X}_{n}}(\hat{\theta})\Rightarrow \hat{\eta}=g(\hat{\theta}).$$
+	\end{block}
+\end{frame}
+
+\begin{frame}{Exemplo}
 \begin{block}{}
 \justifying
-Suponha $g$ não invertível. Para cada valor de \(\eta\) dentro do alcance da função \(g\), definimos o conjunto (pré-imagem) \(g^{-1}(\eta) = \{\theta : g(\theta) = \eta\}\). O valor máximo de \(L\) ocorre em \(\hat{\theta}\), e o domínio de \(g\) é \(\Omega\), abrangendo \(\hat{\theta}\). Portanto, \(\hat{\theta}\) pertence a um destes conjuntos de pré-imagem, e na verdade, ele pode pertencer apenas a uma única pré-imagem. Para maximizar a função \(L(\eta)\), devemos selecionar \(\hat{\eta}\) de tal forma que \(g^{-1}(\hat{\eta})\) corresponda a essa pré-imagem única contendo \(\hat{\theta}\). Isso leva à equação \(\hat{\eta} = g(\hat{\theta})\).
+Considere \seqX~ amostra aleatória de $X\sim $Poisson($\mu$), $\mu\geq 0.$ Encontre o EMV para $\sqrt{\mu}.$
+\end{block}
+\pause
+\begin{block}{}
+	\justifying
+	Sabemos que $L(\mu,\vec{X}_{n})=\dfrac{\mu^{{\displaystyle \sum_{i=1}^{n}X_{i}}}e^{-n\mu}}{{\displaystyle \prod_{i=1}^{n}X_{i}!}}$ e que $\hat{\mu}=\bar{X}.$ Pelo principio da invariância se $\eta=\sqrt{\mu}\Rightarrow \hat{\eta}=\sqrt{\hat{\mu}}=\sqrt{\bar{X}}$
 \end{block}
 \end{frame}
+
+\begin{frame}{Exemplo}
+	\begin{block}{}
+		\justifying
+		Considere \seqX~ amostra aleatória de $X\sim $Poisson($\theta$), $\theta\geq 0.$ Encontre o EMV para $P_{\theta}(X=k),k\in\mathbb{N}.$
+	\end{block}
+	\pause
+	\begin{block}{}
+		\justifying
+		Sabemos que $\hat{\mu}=\bar{X}.$ Pelo principio da invariância se $\eta=P_{\theta}(X=k)=\dfrac{e^{-\theta}\theta^{k}}{k!},$ então $$\hat{\eta}=g(\bar{X})=\dfrac{e^{-\bar{X}}\bar{X}^{k}}{k!}$$
+	\end{block}
+\end{frame}
+
+\begin{frame}{Exemplo}
+	\begin{block}{}
+		\justifying
+		Considere \seqX~ amostra aleatória de $X\sim~$N($\mu,\sigma^{2}$), $\theta=(\mu,\sigma^{2})\in \mathbb{R}\times\mathbb{R}_{+}.$ Encontre o EMV para $CV_{\theta}(X)=\dfrac{\sqrt{\sigma^{2}}}{\mu},\mu\neq 0.$
+	\end{block}
+	\pause
+	\begin{block}{}
+		\justifying
+		Sabemos que $\hat{\theta}=\left(\bar{X},\dfrac{1}{n}\Sumi (X_{i}-\bar{X})^{2}\right).$ Pela invariância do EMV, temos que:
+		$$g(\hat{\theta})=CV_{\hat{\theta}}(X)=\dfrac{\sqrt{\dfrac{1}{n}\Sumi (X_{i}-\bar{X})^{2}}}{\bar{X}}$$ é o EMV de $CV_{\theta}(X)=\dfrac{\sqrt{\sigma^{2}}}{\mu},\mu\neq 0.$
+	\end{block}
+\end{frame}
+
+%\begin{frame}{Demonstração}
+%\begin{block}{}
+%\justifying
+%Suponha $g$ invertível. A verossimilhança de interesse é $L(g^{-1}(\eta)).$ Esta função é maximizada quando $g^{-1}(\eta)=\hat{\theta},$ isto é, tome $\hat{\eta}=g(\hat{\theta}).$
+%\end{block}
+%\end{frame}
+
+%\begin{frame}{Demonstração}
+%\begin{block}{}
+%\justifying
+%Suponha $g$ não invertível. Para cada valor de \(\eta\) dentro do alcance da função \(g\), definimos o conjunto (pré-imagem) \(g^{-1}(\eta) = \{\theta : g(\theta) = \eta\}\). O valor máximo de \(L\) ocorre em \(\hat{\theta}\), e o domínio de \(g\) é \(\Omega\), abrangendo \(\hat{\theta}\). Portanto, \(\hat{\theta}\) pertence a um destes conjuntos de pré-imagem, e na verdade, ele pode pertencer apenas a uma única pré-imagem. Para maximizar a função \(L(\eta)\), devemos selecionar \(\hat{\eta}\) de tal forma que \(g^{-1}(\hat{\eta})\) corresponda a essa pré-imagem única contendo \(\hat{\theta}\). Isso leva à equação \(\hat{\eta} = g(\hat{\theta})\).
+%\end{block}
+%\end{frame}
 
 \begin{frame}{Teorema}
 \begin{Teorema}\label{Teo3}

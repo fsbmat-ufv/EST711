@@ -51,7 +51,7 @@ Seja $Y = u(X_1,X_2, \ldots, X_n)$ uma estatística com valor observado $y = u(x
 \pause
 \begin{block}{}
 \justifying
-Um valor da função de decisão, digamos $\delta(y)$, é chamado de decisão. Assim, uma estimativa pontual numericamente determinada de um parâmetro $\theta$ é uma decisão. uma decisão pode estar correta ou pode estar errada. Seria útil ter uma medida da diferença, se houver, entre o valor verdadeiro de $\theta$ e a estimativa pontual $\delta(y)$.
+Um valor da função de decisão, digamos $\delta(y)$, é chamado de decisão. Assim, uma estimativa pontual numericamente determinada de um parâmetro $\theta$ é uma decisão. Uma decisão pode estar correta ou pode estar errada. Seria útil ter uma medida da diferença, se houver, entre o valor verdadeiro de $\theta$ e a estimativa pontual $\delta(y)$.
 \end{block}
 \end{frame}
 
@@ -65,10 +65,11 @@ Associamos a cada par $(\theta, \delta(y))$, $\theta \in \Omega$, um número nã
 \end{block}
 \pause
 \begin{block}{}
-Para a variável aleatória contínua $Y,$ podemos calcular:
+Para a variável aleatória contínua $Y,$ podemos calcular a função Risco:
+$$R(\theta, \delta) =\mathbb{E}\Big({L(\theta, \delta(y))}\Big),$$ 
+em que,
 \begin{itemize}
     \item $\mathbb{E}\Big({L(\theta, \delta(y))}\Big) = \int_{-\infty}^{\infty} L(\theta, \delta(y)) \cdot f_Y(y)dy$
-    \item $R(\theta, \delta) =\mathbb{E}\Big({L(\theta, \delta(y))}\Big)$ é chamada de função de risco.
 \end{itemize}
 \end{block}
 \end{frame}
@@ -214,17 +215,81 @@ em que $k_2(x_1, x_2, \ldots, x_n)$ não depende de $\theta$.
 \end{block}
 \end{frame}
 
+\begin{frame}{Observação (Jacobiano):}
+	\begin{block}{}
+		\justifying
+Seja $(X_{1},X_{2})$ um par aleatório absolutamente contínuo com densidade de probabilidade conjunta $f_{X_{1},X_{2}}(x_{1},x_{2})$. Seja também $U: \mathbb{R}^2 \rightarrow \mathbb{R}^2$ uma função injetiva (portanto com inversa) com dois componentes $U(x_{1},x_{2}) = (y_{1},y_{2})$. Cada um destes componentes é função de duas variáveis reais, tal que:
+
+\[
+\begin{cases}
+	y_{1} = u_1(x_{1},x_{2}) \\
+	y_{2} = u_2(x_{1},x_{2})
+\end{cases}
+\]
+
+sendo que $u_1$ e $u_2$ possuem derivadas parciais em relação a $x_{1}$ e $x_{2}$.
+
+Portanto, podemos definir o par aleatório $(Y_{1},Y_{2}) = U(X_{1},X_{2})$. Como determinar a densidade de probabilidade conjunta do par $(Y_{1},Y_{2})$ a partir da densidade conjunta de $(X_{1},X_{2})$?
+	\end{block}
+\end{frame}
+
+\begin{frame}{Observação (Jacobiano):}
+	\begin{block}{}
+		\justifying
+		Como $U$ tem inversa, podemos escrever:
+		
+		\[
+		\begin{cases}
+			x_{1} = w_1(y_{1},y_{2}) \\
+			x_{2} = w_2(y_{1},y_{2})
+		\end{cases}
+		\]
+A densidade conjunta de $(Y_{1},Y_{2})$ será:
+
+\[
+f_{Y_{1},Y_{2}}(y_{1},y_{2}) = \left| J \right| f_{X_{1},X_{2}}\left(w_1(y_{1},y_{2}), w_2(y_{1},y_{2})\right)
+\]
+
+em que $\left| J \right|$ representa o módulo do determinante jacobiano, isto é, o módulo de:
+
+\[
+\left| 
+\begin{vmatrix}
+	\frac{\partial w_1(y_{1},y_{2})}{\partial y_{1}} & \frac{\partial w_1(y_{1},y_{2})}{\partial y_{2}} \\
+	\frac{\partial w_2(y_{1},y_{2})}{\partial y_{1}} & \frac{\partial w_2(y_{1},y_{2})}{\partial y_{2}}
+\end{vmatrix}
+\right|.
+\]		
+	\end{block}
+\end{frame}
+
+\begin{frame}{Demonstração}
+	\begin{block}{Considere o caso contínuo!}
+		\justifying
+		Faremos a ``volta'' do teorema primeiro $(\Leftarrow{})$. Por hipótese, existem duas funções não negativas, $k_1$ e $k_2$, tais que
+		
+		\begin{equation*}
+			f(x_1; \theta)f(x_2; \theta) \ldots f(x_n; \theta) = k_1[u_1(x_1, x_2, \ldots, x_n); \theta]k_2(x_1, x_2, \ldots, x_n),
+		\end{equation*}
+		ou seja, 
+		\begin{align*}
+			\dfrac{f(x_1; \theta)f(x_2; \theta) \ldots f(x_n; \theta)}{f_{Y_{1}}(y_{1},\theta)}=\dfrac{k_1[u_1(x_1, x_2, \ldots, x_n); \theta]k_2(x_1, x_2, \ldots, x_n)}{f_{Y_{1}}(y_{1},\theta)}
+		\end{align*}
+	\end{block}
+	\pause
+	\begin{block}{}
+		Precisamos encontrar $f_{Y_{1}}(y_{1},\theta).$
+	\end{block}
+\end{frame}
+
 \begin{frame}{Demonstração}
 \begin{block}{Considere o caso contínuo!}
 \justifying
-Faremos a ``volta'' do teorema primeiro $(\Leftarrow{})$. Consideremos também as transformações 1 a 1. Considere $y_1 = u_1(x_1, x_2, \ldots, x_n), y_2 = u_2(x_1, x_2, \ldots, x_n), \ldots, y_n = u_n(x_1, x_2, \ldots, x_n)$ tendo as funções inversas $x_1 = w_1(y_1, y_2, \ldots, y_n), x_2 = w_2(y_1, y_2, \ldots, y_n), \ldots, x_n = w_n(y_1, y_2, \ldots, y_n)$ com Jacobiano $J$; Sabemos que, 
+Considere $$y_1 = u_1(x_1, x_2, \ldots, x_n), \ldots, y_n = u_n(x_1, x_2, \ldots, x_n)$$ tendo as funções inversas, $$x_1 = w_1(y_1, y_2, \ldots, y_n), \ldots, x_n = w_n(y_1, y_2, \ldots, y_n)$$ com Jacobiano $J$; Sabemos que, 
 \begin{align*}
     f_{X_{1}, X_{2}, \ldots, X_{n}}(x_{1}, x_{2}, \ldots, x_{n})&=f_{X_{1}}(x_{1})f_{X_{2}}(x_{2})\ldots f_{X_{n}}(x_{n}).
 \end{align*}
-Para simplificar a notação considere $w_{i}=w_{i}(y_1, y_2, \ldots, y_n),\forall i=1,2,\cdots,n.$ Com isso, 
-\begin{align*}
-    f_{Y_{1}, Y_{2}, \ldots, Y_{n}}(y_{1}, y_{2}, \ldots, y_{n})&=f_{X_{1}}(w_{1})f_{X_{2}}(w_{2})\ldots f_{X_{n}}(w_{n})|J|.
-\end{align*}
+Para simplificar a notação considere $w_{i}=w_{i}(y_1, y_2, \ldots, y_n),\forall i=1,2,\cdots,n.$ 
 
 \end{block}
 \end{frame}
@@ -232,10 +297,13 @@ Para simplificar a notação considere $w_{i}=w_{i}(y_1, y_2, \ldots, y_n),\fora
 \begin{frame}{}
 \begin{block}{}
 \justifying
+Com isso, 
+\begin{align*}
+	f_{Y_{1}, Y_{2}, \ldots, Y_{n}}(y_{1}, y_{2}, \ldots, y_{n})&=f_{X_{1}}(w_{1})f_{X_{2}}(w_{2})\ldots f_{X_{n}}(w_{n})|J|.
+\end{align*}
 Logo, por hipótese, existem duas funções não negativas, $k_1$ e $k_2$, tais que
 \begin{align*}
-    f_{Y_{1}, Y_{2}, \ldots, Y_{n}}(y_{1}, y_{2}, \ldots, y_{n})&=f_{X_{1}}(w_{1})f_{X_{2}}(w_{2})\ldots f_{X_{n}}(w_{n})|J|\\
-    &=|J|k_1[y_{1}; \theta]k_2(w_1, w_2, \ldots, w_n)
+    f_{Y_{1}, Y_{2}, \ldots, Y_{n}}(y_{1}, y_{2}, \ldots, y_{n})&=|J|k_1[y_{1}; \theta]k_2(w_1, w_2, \ldots, w_n)
 \end{align*}
 Daí,
 \begin{align*}
@@ -262,7 +330,7 @@ que não depende de $\theta,$ portanto, $Y$ é suficiente para $\theta.~\blacksq
 \end{frame}
 
 \begin{frame}{}
-\begin{block}{$(\Leftarrow{})$}
+\begin{block}{$(\Rightarrow{})$}
 \justifying
 Por suposição,
 \begin{align*}
@@ -285,6 +353,19 @@ f(x_{1}; \theta) f(x_{2}; \theta) \ldots f(x_{n}; \theta)&=\theta^{n}x_{1}^{\the
 
 Uma vez que $k_2(x_1, x_2, \ldots, x_n)$ não depende de $\theta$, o produto $\prod_{i=1}^n X_i,$ pelo critério da fatoração, é uma estatística suficiente para $\theta$.
 \end{block}
+\end{frame}
+
+\begin{frame}{Vantagens de uma Estatística Suficiente}
+	\begin{block}{Saber que uma estatística é suficiente oferece as seguintes vantagens:}
+		\justifying
+	\begin{itemize}
+		\item Reduz a quantidade de dados que precisamos manipular, sem perda de informação.\pause
+		\item Melhora a eficiência dos estimadores, ajudando a encontrar estimadores de menor variância.\pause
+		\item Facilita a fatoração da função de verossimilhança, simplificando cálculos.\pause
+		\item Auxilia na construção de testes e intervalos de confiança ótimos.\pause
+		\item Garante a melhor inferência possível em termos de uso da informação dos dados.
+	\end{itemize}
+	\end{block}
 \end{frame}
 
 \begin{frame}{Exercícios}

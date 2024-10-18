@@ -1,0 +1,984 @@
+\documentclass[12pt]{beamer}
+
+\input{../Configuracoes/layout}
+
+\title{Inferência Estatística II}
+\author{Prof. Fernando de Souza Bastos\texorpdfstring{\\ fernando.bastos@ufv.br}{}}
+\institute{Departamento de Estatística\texorpdfstring{\\ Programa de Pós-Graduação em Estatística Aplicada e Biometria}\texorpdfstring{\\ Universidade Federal de Viçosa}{}\texorpdfstring{\\ Campus UFV - Viçosa}{}}
+\date{}
+\newcommand\mytext{Aula 14}
+\newcommand\mytextt{Fernando de Souza Bastos}
+\newcommand\mytexttt{\url{https://est711.github.io/}}
+
+
+\begin{document}
+%\SweaveOpts{concordance=TRUE}
+
+\frame{\titlepage}
+
+\begin{frame}{}
+\frametitle{\bf Sumário}
+\tableofcontents
+\end{frame}
+
+\section{Introdução}
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Considere $X_1, \ldots, X_n$ variáveis aleatórias independentes e identicamente distribuídas com função de densidade de probabilidade $f(x; \theta)$ para $\theta \in \Omega$. Considere, ainda, as hipóteses bilaterais:
+
+\[
+H_0: \theta = \theta_0 \quad \text{versus} \quad H_1: \theta \neq \theta_0
+\]
+
+em que $\theta_0$ é um valor especificado. Lembre-se de que a função de verossimilhança e seu logaritmo são dados por:
+
+\begin{align*}
+L(\theta) = \prod_{i=1} f(X_i; \theta)~\text{e}~ \ell(\theta) = \sum_{i=1} \log f(X_i; \theta)
+\end{align*}
+
+Com $\hat{\theta}$ sendo a estimativa de máxima verossimilhança de $\theta$.
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Sabemos, que se $\theta_0$ é o valor verdadeiro de $\theta$, então, assintoticamente, $L(\theta_0)$ é o valor máximo de $L(\theta)$. Considere a razão de duas funções de verossimilhança, a saber,
+
+\begin{align}\label{razao1}
+    \Lambda = \frac{L(\theta_0)}{L(\hat{\theta})},~\hat{\theta}\in\Theta.
+\end{align}
+\end{block}
+\pause 
+\begin{block}{}
+\justifying
+Observe que $\Lambda \leq 1,$ pois $L(\theta_{0})$ é uma verossimilhança restrita a $\Theta_{0}$ e $L(\hat{\theta})$ é uma verossimilhança irrestrita a $\Theta.$ Assim, se $\theta_{0}$ é o verdadeiro valor do parâmetro, $L(\hat{\theta})$ atingirá $L(\theta_{0})$ e $\Lambda=1,$ caso contrário, $L(\theta_{0})<L(\hat{\theta})$ e $\Lambda < 1.$
+\end{block}
+\end{frame}
+
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Para um nível de significância especificado $\alpha$, isso leva à regra de decisão intuitiva:
+
+\begin{center}
+Rejeitar $H_0$ em favor de $H_1$ se $\Lambda \leq c,$
+\end{center}
+
+em que $c$ é tal que $\alpha = P_{\theta_0}(\Lambda \leq c)$. Chamamos isso de teste da razão de verossimilhança (TRV).
+\end{block}
+\end{frame}
+
+\section{Teste da Razão de Verossimilhança para a Distribuição Exponencial}
+\begin{frame}{Teste da Razão de Verossimilhança para a Distribuição Exponencial}
+\begin{block}{}
+\justifying
+Suponha que $X_1, \ldots, X_n$ são variáveis i.i.d com densidade de probabilidade
+
+\[
+f(x; \theta) = \theta^{-1} e^{-x/\theta}, \quad \text{para} \quad x, \theta > 0
+\]
+
+As hipóteses são dadas por 
+\[
+H_0: \theta = \theta_0 \quad \text{versus} \quad H_1: \theta \neq \theta_0.
+\]
+
+A função de verossimilhança pode ser escrita como:
+
+\[
+L(\theta) = \theta^{-n} e^{-n\Bar{X}/\theta}
+\]
+
+É fácil ver que a estimativa de máxima verossimilhança de $\theta$ é $\Bar{X}.$
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Após alguma simplificação, a estatística do teste da razão de verossimilhança pode ser escrita como:
+
+\[
+\Lambda = e^n\left(\dfrac{\Bar{X}}{\theta_0}\right)^{n}e^{-n\Bar{X}/\theta_{0}}.
+\]
+
+Além da constante $e^n$, a estatística do teste tem a forma:
+
+\[
+g(t) = t^n e^{-nt}, \quad t > 0
+\]
+
+em que $t = \Bar{X}/\theta_0$.
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Como mostra a Figura abaixo, $g(t) \leq c$ se, e somente se, $t \leq c_1$ ou $t \geq c_2$. Isso leva a:
+
+$\Lambda \leq c$ se e somente se $\Bar{X}/\theta_0 \leq c_1$ ou $\Bar{X}/\theta_0 \geq c_2$.
+\end{block}
+\begin{block}{}
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.6]{figs/TRVGt.png}
+    %\caption{Caption}
+    \label{fig:enter-label}
+\end{figure}
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Notem que $M_{X_{i}}(t)=(1-t\theta)^{-1},$ é a função geradora de momentos de $X_{i},~i=1,2,\ldots,n.$ Assim, a função geradora de momentos de $Y=2\Sumi X_{i}/\theta_0$ é dada por $M_{Y}(t)=(1-2t)^{-2n/2},$ que é a função geradora de momentos de uma variável $\chi^{2}(2n).$
+\end{block}
+\pause
+\begin{block}{}
+\justifying
+Ou seja, $\Bar{X}/\theta_0 \leq c_1\SeSe Y=2\Sumi X_{i}/\theta_0\leq k_{1}=2nc_{1}$ ou 
+\end{block}
+\pause
+\begin{block}{}
+\justifying
+$\Bar{X}/\theta_0 \geq c_2\SeSe Y=2\Sumi X_{i}/\theta_0\geq k_{2}=2nc_{2}$.
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Baseado nas observações anteriores, podemos utilizar a seguinte regra de decisão para o teste de nível $\alpha$:
+\end{block}
+\pause
+\begin{block}{}
+\justifying
+Rejeitar $H_0$ se $(2/\theta_0) \sum_{i=1} X_i \leq \chi^2_{1-\alpha/2}(2n)$ ou $(2/\theta_0) \sum_{i=1} X_i \geq \chi^2_{\alpha/2}(2n),$
+\end{block}
+\begin{block}{}
+\justifying
+em que $\chi^2_{1-\alpha/2}(2n)$ é o quantil inferior $\alpha/2$ de uma distribuição $\chi^2$ com $2n$ graus de liberdade e $\chi^2_{\alpha/2}(2n)$ é o quantil superior $\alpha/2$ de uma distribuição $\chi^2$ com $2n$ graus de liberdade.
+\end{block}
+\end{frame}
+
+\section{Exemplo 2 - Distribuição Normal}
+\begin{frame}{Exemplo 2 - Distribuição Normal}
+\begin{block}{}
+\justifying
+Considere uma amostra aleatória $X_1, X_2, \ldots, X_n$ de uma distribuição $N(\theta, \sigma^2)$, em que $-\infty < \theta < \infty$ e $\sigma^2 > 0$ são conhecidos. Vamos considerar as hipóteses:
+
+\[ H_0 : \theta = \theta_0 \quad \text{versus} \quad H_1 : \theta \neq \theta_0, \]
+
+em que $\theta_0$ é especificado. A função de verossimilhança é dada por:
+
+\[
+\begin{aligned}
+L(\theta) &= \left(\frac{1}{2\pi\sigma^2}\right)^{n/2} \exp\left\{ -\frac{1}{2\sigma^2} \sum_{i=1}^{n}(x_i - \theta)^2 \right\} \\
+&= \left(\frac{1}{2\pi\sigma^2}\right)^{n/2} \exp\left\{ -\frac{1}{2\sigma^2} \sum_{i=1}^{n}(x_i - \bar{x})^2 \right\} \exp\left\{ -\frac{1}{2\sigma^2}n(\bar{x} - \theta)^2 \right\},
+\end{aligned}
+\]
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Em $\Omega = \{\theta : -\infty < \theta < \infty\}$, o estimador de máxima verossimilhança é $\hat{\theta} = \bar{x}$, e, portanto, a razão de verossimilhança é:
+
+\[
+\begin{aligned}
+\Lambda &= \frac{L(\theta_0)}{L(\hat{\theta})} \\
+&= \exp\left\{ -\frac{1}{2\sigma^2}n(\bar{X} - \theta_0)^2 \right\}.
+\end{aligned}
+\]
+\end{block}
+\pause
+\begin{block}{}
+\justifying
+Logo, $\Lambda \leq c$ é equivalente a $-2 \log \Lambda \geq -2 \log c$. No entanto, 
+\[
+-2 \log \Lambda = \left(\frac{\Bar{X} - \theta_0}{\sigma/\sqrt{n}}\right)^{2},
+\]
+que segue uma distribuição $\chi^2(1)$ sob $H_0$. 
+\end{block}
+\end{frame}
+
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Portanto, o teste da razão de verossimilhança com nível de significância $\alpha$ afirma que rejeitamos $H_0$ e aceitamos $H_1$ quando
+\[
+\left(\frac{\Bar{X} - \theta_0}{\sigma/\sqrt{n}}\right)^{2} \geq \chi^2_\alpha(1).
+\]
+
+%Observe que este teste é o mesmo que o teste $z$ para uma média normal discutido anteriormente, com $s$ substituído por $\sigma$. Portanto, a função poder para este teste é dada na expressão:
+%\begin{align*}
+%\gamma(\mu) &= P\left(\Bar{X} \leq \mu_0 - \frac{z_{\alpha/2}\sigma}{\sqrt{n}}\right) + P\left(\Bar{X} \geq \mu_0 + \frac{z_{\alpha/2}\sigma}{\sqrt{n}}\right)\\ 
+%&= \Phi\left(\frac{\sqrt{n}(\mu_0 - \mu)}{\sigma} - z_{\alpha/2}\right) + 1 - \Phi\left(\frac{\sqrt{n}(\mu_0 - \mu)}{\sigma} + z_{\alpha/2}\right)
+%\end{align*}
+\end{block}
+\end{frame}
+
+\section{Teorema do Teste da Razão de Verossimilhança}
+\begin{frame}{Teorema do Teste da Razão de Verossimilhança}
+\begin{Teorema}
+\justifying
+Suponha que as condições de regularidade R0 a R5 são satisfeitas. Sob a hipótese nula, $H0: \theta = \theta_0,$ temos que $\{-2 \log \Lambda\} \ConvD \chi^2(1).$
+\end{Teorema}
+\pause
+\begin{block}{Demonstração:}
+\justifying
+\textbf{Prova:} Expanda a função $\ell(\theta)$ em uma série de Taylor em torno de $\theta_0$ de ordem 1 e avalie-a no estimador de máxima verossimilhança, $\hat{\theta}$. Isso resulta em
+\begin{align}\label{6.3.8}
+    \ell(\hat{\theta}) = \ell(\theta_{0}) + (\hat{\theta} - \theta_0)\ell'(\hat{\theta}_{0}) + \frac{1}{2}(\hat{\theta} - \theta_0)^2 \ell''(\theta^{*}_{n}),
+\end{align}
+em que $\theta^*_n$ está entre $\hat{\theta}$ e $\theta_0.$
+\end{block}
+\end{frame}
+
+
+\begin{frame}{}
+\begin{block}{Demonstração:}
+\justifying
+Como $\hat{\theta} \ConvP \theta_0,$ segue que $\theta^*_n \ConvP \theta_0.$ Isso, além do fato de que a função $l'(\theta)$ é contínua e a equação (6.2.22) do Teorema 6.2.2 do livro texto (Hogg $8^{\circ}$ edição) implicam que
+\begin{align}\label{6.3.9}
+    -\frac{1}{n}\ell''(\theta^{*}_{n}) \ConvP I(\theta_0).
+\end{align}
+
+Pelo Corolário 6.2.3, do livro texto,
+
+\begin{align}\label{6.3.10}
+   \frac{1}{\sqrt{n}}\ell'(\hat{\theta}_{0}) = \sqrt{n}(\hat{\theta} - \theta_0)I(\theta_0) + R_n, 
+\end{align}
+
+em que $R_n \ConvP 0.$ 
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Se substituirmos (\ref{6.3.9}) e (\ref{6.3.10}) na expressão (\ref{6.3.8}) e fizermos algumas simplificações, obtemos
+
+\begin{align*}
+    -2 \log \Lambda = 2(\ell(\hat{\theta}) - \ell(\theta_{0})) = \left[\sqrt{nI(\theta_0)}(\hat{\theta} - \theta_0)\right]^2 + R^*_n,
+\end{align*}
+em que $R^*_n \ConvP 0.$ Pelo Teorema 5.2.4 e pelo Teorema 6.2.2, o primeiro termo no lado direito da equação acima converge em distribuição para uma distribuição $\chi^2$ com um grau de liberdade. $\cqd$
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Logo, defina a estatística de teste $\chi^2_L = -2 \log \Lambda.$ Para as hipóteses, 
+\[ H_0 : \theta = \theta_0 \quad \text{versus} \quad H_1 : \theta \neq \theta_0, \]
+
+este teorema sugere a regra de decisão:
+\[
+\text{Rejeitar } H0 \text{ em favor de } H1 \text{ se } \chi^2_L \geq \chi^2_\alpha(1).
+\]
+
+Pelo último teorema, este teste possui nível assintótico $\alpha.$ Se não conseguirmos obter a estatística de teste ou sua distribuição em uma forma fechada, podemos usar este teste assintótico.
+\end{block}
+\end{frame}
+
+\section{Teste do Tipo Wald}
+\begin{frame}{Teste do Tipo Wald}
+\begin{block}{}
+\justifying
+Além do teste da razão de verossimilhança, na prática, são empregados outros dois testes relacionados à verossimilhança. Uma estatística de teste natural é baseada na distribuição assintótica de $\hat{\theta}$. Considere a estatística
+\begin{align*}
+    \chi^2_W = \left\{\sqrt{nI(\hat{\theta})}(\hat{\theta} - \theta_0)\right\}^2.
+\end{align*}
+
+como $I(\theta)$ é uma função contínua, $I(\hat{\theta}) \ConvP I(\theta_0)$ sob a hipótese nula. Portanto, sob $H0, \chi^2_W$ possui uma distribuição assintótica $\chi^2$ com um grau de liberdade. 
+\end{block}
+\pause
+\begin{block}{}
+\justifying
+Isso sugere a regra de decisão
+\begin{align}\label{6.3.14}
+    \text{Rejeitar } H0 \text{ em favor de } H1 \text{ se } \chi^2_W \geq \chi^2_\alpha(1).
+\end{align}
+
+Este teste também possui nível assintótico $\alpha.$
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\begin{tabular}{cl}  
+         \begin{tabular}{c}
+           \includegraphics[height=5cm, width=3.5cm]{figs/Abraham_Wald.jpg}
+           \end{tabular}
+           & \begin{tabular}{l}
+             \parbox{0.5\linewidth}{O teste (\ref{6.3.14}) é frequentemente referido como um teste do tipo Wald, em homenagem a \textbf{Abraham Wald} (nasceu em 31 de outubro de 1902, morreu em 1950 de acidente de avião), que foi um estatístico do século XX. Após sua morte, Wald foi criticado por Sir Ronald A. Fisher. O trabalho de Wald foi defendido, posteriormente, por Jerzy Neyman e outros acadêmicos proeminentes.   
+    }
+         \end{tabular}  \\
+\end{tabular}
+
+\end{block}
+\end{frame}
+
+\section{Teste do Tipo Escore}
+\begin{frame}{Teste do Tipo Escore}
+\begin{block}{}
+\begin{tabular}{rl}  
+\begin{tabular}{r}
+\parbox{0.5\linewidth}{O terceiro teste é chamado de teste de escores de Rao, em homenagem a \textbf{Calyampudi Radhakrishna Rao}(10 de setembro de 1920 - 22 de agosto de 2023). A American Statistical Association o descreveu como ``uma lenda viva cujo trabalho influenciou não apenas as estatísticas, mas teve implicações de longo alcance para diversos outros campos.'' O Times of India listou Rao como um dos 10 maiores cientistas indianos de todos os tempos.   
+    }
+\end{tabular}
+&   
+\begin{tabular}{l}
+\includegraphics[height=5cm, width=3.5cm]{figs/CRRao.JPG}
+\end{tabular}\\           
+\end{tabular}
+ 
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Os escores são os componentes do vetor
+\[
+S(\theta) = \left\{\frac{\partial \log f(X_1; \theta)}{\partial \theta}, \ldots, \frac{\partial \log f(X_n; \theta)}{\partial \theta}\right\}.
+\]
+
+Em nossa notação, temos
+\[
+\frac{1}{\sqrt{n}}\ell'(\hat{\theta}_{0}) = \frac{1}{\sqrt{n}}\Sumi \frac{\partial \log f(X_i; \theta_0)}{\partial \theta}.
+\]
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Defina a estatística
+\[
+\chi^2_R = \left\{\frac{\ell'(\theta_{0})}{\sqrt{nI(\theta_0)}}\right\}^2. 
+\]
+
+Sob H0, segue da expressão (\ref{6.3.10}) que
+\[
+\chi^2_R = \chi^2_W + R_{0n},
+\]
+em que $R_{0n}$ converge para $0$ em probabilidade. Portanto, a próxima regra de decisão define um teste.
+\end{block}
+\pause
+\begin{block}{}
+\justifying
+\begin{align}\label{6.3.20}
+    \text{Rejeite } H0 \text{ em favor de } H1 \text{ se } \chi^2_R \geq \chi^2_\alpha(1).
+\end{align}
+\end{block}
+\end{frame}
+
+\section{Exemplos TRV, Wald e Escore}
+\begin{frame}{Exemplos TRV, Wald e Escore}
+\begin{block}{}
+\justifying
+Seja \(X_1, \ldots, X_n\) uma amostra aleatória com uma distribuição beta(\(\theta, 1\)). Considere as hipóteses: 
+
+$$H_0: \theta = 1~ \text{versus}~ H_1: \theta \neq 1$$
+\end{block}
+\pause
+\begin{block}{}
+\justifying
+Sob \(H_0\), \(f(x; \theta)~\) Uniforme\((0, 1)\). Lembre-se de que \(\hat{\theta} = -\frac{n}{\Sumi \log X_i}\) é o estimador de máxima verossimilhança de \(\theta\). Após alguma simplificação, o valor da função de verossimilhança no estimador de máxima verossimilhança é dado por:
+
+\[L(\hat{\theta}) = \left(- \sum_{i=1}^n \log X_i\right)^{-n}\exp\left\{n(\log n - 1) - \sum_{i=1}^n \log X_i\right\}.\] 
+\end{block}
+\end{frame}
+
+\begin{frame}{Exemplos TRV, Wald e Escore}
+\begin{block}{}
+\justifying
+Além disso, \(L(1) = 1\), portanto, a estatística do teste da razão de verossimilhança é \(\Lambda = \frac{1}{L(\hat{\theta})}\), de modo que:
+
+{\small
+\[\chi^2_L = -2 \log \Lambda = 2\left(- \sum_{i=1}^n \log X_i - n \log\left(-\sum_{i=1}^n \log X_i\right) - n + n \log n\right)\]
+}
+
+Lembre-se de que a informação para esta distribuição é \(I(\theta) = \theta^{-2}\). 
+\end{block}
+\end{frame}
+
+\begin{frame}{Exemplos TRV, Wald e Escore}
+\begin{block}{}
+\justifying
+Para o teste do tipo Wald, podemos estimar isso consistentemente como \(\hat{\theta}^{-2}\). O teste do tipo Wald simplifica-se para:
+
+\[\chi^2_W = \sqrt{\dfrac{n}{\hat{\theta}^{2}}}(\hat{\theta}-1)=n\left(1 - \frac{1}{\hat{\theta}}\right)^2\]
+\end{block}
+\end{frame}
+
+
+\begin{frame}{Exemplos TRV, Wald e Escore}
+\begin{block}{}
+\justifying
+Por fim, para o teste do tipo escores, \(\ell'(1)\) é dado por:
+
+\[\ell'(1) = \sum_{i=1}^n \log X_i + n\]
+
+Portanto, a estatística do teste do tipo escores é:
+
+\[\chi^2_R = \left\{\dfrac{\left(\Sumi \log X_i + n\right)}{\sqrt{n}}\right\}^{2}.\]
+\end{block}
+\end{frame}
+
+\begin{frame}{\Home}
+\begin{block}{}
+\justifying
+\begin{itemize}
+    \item \textbf{Exercícios da seção 6.3:} 6, 9, 10, 11, 12, 13, 16, 18, 19.
+\end{itemize}
+\end{block}
+\nocite{hogg}
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+\frametitle{\bf Referências}
+\printbibliography
+\end{frame}
+
+
+\end{document}
+
+
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+
+
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+\justifying
+
+\end{block}
+\end{frame}
