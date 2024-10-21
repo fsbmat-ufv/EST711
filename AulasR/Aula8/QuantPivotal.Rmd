@@ -1,0 +1,99 @@
+---
+title: "Quantidade Pivotal"
+output: learnr::tutorial
+runtime: shiny_prerendered
+---
+
+## Descrição do Código
+
+Neste exemplo, vamos ilustrar a importância das \textbf{quantidades pivotais} no cálculo de intervalos de confiança utilizando o software R. A ideia é calcular o intervalo de confiança da média \( \mu \) de uma amostra de uma distribuição normal \( N(\mu, \sigma^2) \), tanto com a variância conhecida quanto com a variância desconhecida. 
+
+O código realiza as seguintes etapas:
+
+- Primeiro, geramos uma amostra de dados da distribuição normal \( N(\mu, \sigma^2) \) com valores de \(\mu = 5\) e \(\sigma = 2\).
+- Em seguida, calculamos o intervalo de confiança da média \( \mu \) usando a quantidade pivotal \( Z \) (quando a variância \( \sigma^2 \) é conhecida) e a quantidade pivotal \( T \) (quando a variância \( \sigma^2 \) é desconhecida).
+- Comparamos os dois intervalos de confiança obtidos, demonstrando como o uso de quantidades pivotais facilita a inferência estatística.
+
+
+### Explicação do Código
+
+O código em R está organizado da seguinte maneira:
+
+- \textbf{Parâmetros:} Definimos os valores de entrada, como o tamanho da amostra \( n \), a média verdadeira \( \mu \), o desvio padrão \( \sigma \), e o nível de confiança (\( 1 - \alpha \)).
+- \textbf{Geração da amostra:} A amostra é gerada utilizando a função \texttt{rnorm()} que cria uma amostra de \( n \) observações da distribuição normal \( N(\mu, \sigma^2) \).
+- \textbf{Intervalo de Confiança com variância conhecida:} Utilizamos a quantidade pivotal \( Z \), que segue a distribuição normal padrão \( N(0,1) \), para calcular o intervalo de confiança para a média \( \mu \) quando a variância \( \sigma^2 \) é conhecida. O erro padrão é dado por \( \frac{\sigma}{\sqrt{n}} \), e o intervalo de confiança é calculado como:
+    \[
+    \left[ \bar{X} - z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}}, \bar{X} + z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}} \right].
+    \]
+- \textbf{Intervalo de Confiança com variância desconhecida:} Utilizamos a quantidade pivotal \( T \), que segue a distribuição \( t \) de Student com \( n-1 \) graus de liberdade, para calcular o intervalo de confiança para a média \( \mu \) quando a variância \( \sigma^2 \) é desconhecida. O erro padrão é dado por \( \frac{S}{\sqrt{n}} \), onde \( S \) é o desvio padrão amostral, e o intervalo de confiança é calculado como:
+    \[
+    \left[ \bar{X} - t_{\alpha/2, n-1} \cdot \frac{S}{\sqrt{n}}, \bar{X} + t_{\alpha/2, n-1} \cdot \frac{S}{\sqrt{n}} \right].
+    \]
+- \textbf{Comparação dos Resultados:} Por fim, comparamos os dois intervalos de confiança para destacar a diferença que surge ao utilizar uma variância conhecida ou uma estimativa amostral da variância.
+
+
+### Resultado Esperado
+
+Ao executar o código, espera-se obter dois intervalos de confiança:
+
+- \textbf{Intervalo de Confiança com variância conhecida:} Este intervalo é calculado usando a quantidade pivotal \( Z \), que segue a distribuição normal padrão \( N(0,1) \). Como a variância \( \sigma^2 \) é conhecida, o erro padrão será menor, resultando em um intervalo de confiança mais estreito.
+- \textbf{Intervalo de Confiança com variância desconhecida:} Este intervalo é calculado usando a quantidade pivotal \( T \), que segue a distribuição \( t \) de Student com \( n-1 \) graus de liberdade. Como a variância \( \sigma^2 \) é estimada a partir da amostra, o erro padrão tende a ser maior, resultando em um intervalo de confiança mais largo.
+
+
+A comparação entre os dois intervalos destaca a importância das quantidades pivotais no cálculo de intervalos de confiança, especialmente quando a variância populacional é desconhecida.
+
+
+```{r setup, include=FALSE}
+library(learnr)
+library(tidyverse)
+library(shiny)
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+```{r IC1, exercise=TRUE}
+# Definindo parâmetros
+set.seed(123)  # Para garantir reprodutibilidade
+n <- 30        # Tamanho da amostra
+mu <- 5        # Média verdadeira da população
+sigma <- 2     # Desvio padrão verdadeiro da população
+alpha <- 0.05  # Nível de significância (95% de confiança)
+
+# Gerando uma amostra aleatória da distribuição normal N(mu, sigma^2)
+amostra <- rnorm(n, mean = mu, sd = sigma)
+
+# Estimativas da amostra
+media_amostral <- mean(amostra)
+desvio_padrao_amostral <- sd(amostra)
+
+# Intervalo de Confiança com variância conhecida (usando distribuição Z)
+# Quantidade pivotal: Z = (X̄ - µ) / (σ / sqrt(n)) ~ N(0, 1)
+z_alpha_2 <- qnorm(1 - alpha/2)  # Quantil da normal padrão
+erro_padrao <- sigma / sqrt(n)   # Erro padrão com variância conhecida
+
+limite_inferior_z <- media_amostral - z_alpha_2 * erro_padrao
+limite_superior_z <- media_amostral + z_alpha_2 * erro_padrao
+
+cat("Intervalo de Confiança (variância conhecida):\n")
+cat("[", limite_inferior_z, ",", limite_superior_z, "]\n\n")
+
+# Intervalo de Confiança com variância desconhecida (usando distribuição T)
+# Quantidade pivotal: T = (X̄ - µ) / (S / sqrt(n)) ~ t_{n-1}
+t_alpha_2 <- qt(1 - alpha/2, df = n-1)  # Quantil da t de Student
+erro_padrao_t <- desvio_padrao_amostral / sqrt(n)  # Erro padrão com variância amostral
+
+limite_inferior_t <- media_amostral - t_alpha_2 * erro_padrao_t
+limite_superior_t <- media_amostral + t_alpha_2 * erro_padrao_t
+
+cat("Intervalo de Confiança (variância desconhecida):\n")
+cat("[", limite_inferior_t, ",", limite_superior_t, "]\n\n")
+
+# Comparando os resultados
+cat("Conclusão:\n")
+cat("- Quando a variância é conhecida, usamos a quantidade pivotal Z (Normal Padrão).\n")
+cat("- Quando a variância é desconhecida, usamos a quantidade pivotal T (distribuição t de Student).\n")
+
+```
+
+
+

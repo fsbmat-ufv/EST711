@@ -6,7 +6,7 @@
 \author{Prof. Fernando de Souza Bastos\texorpdfstring{\\ fernando.bastos@ufv.br}{}}
 \institute{Departamento de Estatística\texorpdfstring{\\ Programa de Pós-Graduação em Estatística Aplicada e Biometria}\texorpdfstring{\\ Universidade Federal de Viçosa}{}\texorpdfstring{\\ Campus UFV - Viçosa}{}}
 \date{}
-\newcommand\mytext{Aula 12}
+\newcommand\mytext{Aula 10}
 \newcommand\mytextt{Fernando de Souza Bastos}
 \newcommand\mytexttt{\url{https://est711.github.io/}}
 
@@ -64,7 +64,7 @@ P_{H_0} [\bar{X} \leq h] = \frac{\alpha}{2} \quad \text{e} \quad P_{H_0} [\bar{X
 Sabemos que, para amostras grandes, $(\bar{X} - \mu_0) / (S / \sqrt{n})$ é aproximadamente $N(0, 1)$. Isso e (\ref{t3}) levam à regra de decisão aproximada
 
 \begin{align}\label{t4}
-\text{Rejeitar } H_0 \text{ em favor de } H_1 \text{ se } \frac{\bar{X} - \mu_0}{S / \sqrt{n}} \geq z_{\alpha/2}.
+\text{Rejeitar } H_0 \text{ em favor de } H_1 \text{ se } \left|\frac{\bar{X} - \mu_0}{S / \sqrt{n}}\right| \geq z_{1-\alpha/2}.
 \end{align}
 \end{block}
 \end{frame}
@@ -72,16 +72,16 @@ Sabemos que, para amostras grandes, $(\bar{X} - \mu_0) / (S / \sqrt{n})$ é apro
 \begin{frame}{}
 \begin{block}{}
 \justifying
-Substituindo $S$ por $\sigma$, segue facilmente que a função poder aproximada é
+Substituindo $S$ por $\sigma$ e dado que $Z_{1-\alpha/2}=-Z_{\alpha/2}$, segue facilmente que a função poder aproximada é
 \begin{align*}\label{t5}
-\gamma(\mu) &= P_{\mu}(\bar{X} \leq \mu_0 - z_{\alpha/2} \sigma / \sqrt{n}) + P_{\mu}(\bar{X} \geq \mu_0 + z_{\alpha/2} \sigma / \sqrt{n})\\
-&= \Phi\left(\dfrac{\sqrt{n}(\mu_0 - \mu)}{\sigma} - z_{\alpha/2}\right) + 1 - \Phi\left(\dfrac{\sqrt{n}(\mu_0 - \mu)}{\sigma} + z_{\alpha/2}\right), 
+\gamma(\mu) &= P_{\mu}(\bar{X} \leq \mu_0 - |z_{\alpha/2}| \sigma / \sqrt{n}) + P_{\mu}(\bar{X} \geq \mu_0 + |z_{\alpha/2}| \sigma / \sqrt{n})\\
+&= \Phi\left(\dfrac{\sqrt{n}(\mu_0 - \mu)}{\sigma} - |z_{\alpha/2}|\right) + 1 - \Phi\left(\dfrac{\sqrt{n}(\mu_0 - \mu)}{\sigma} + |z_{\alpha/2}|\right), 
 \end{align*}
 
 em que $\Phi(z)$ é a função de distribuição acumulada de uma variável aleatória normal padrão. Observe que a derivada da função poder é
 
 \begin{align*}
-\gamma'(\mu) = \dfrac{\sqrt{n}}{\sigma} \left(\phi\left(\dfrac{\sqrt{n}(\mu_0 - \mu)}{\sigma} + z_{\alpha/2}\right) - \phi\left(\dfrac{\sqrt{n}(\mu_0 - \mu)}{\sigma} - z_{\alpha/2}\right)\right),
+\gamma'(\mu) = \dfrac{\sqrt{n}}{\sigma} \left(\phi\left(\dfrac{\sqrt{n}(\mu_0 - \mu)}{\sigma} + |z_{\alpha/2}|\right) - \phi\left(\dfrac{\sqrt{n}(\mu_0 - \mu)}{\sigma} - |z_{\alpha/2}|\right)\right),
 \end{align*}
 
 em que $\phi(z)$ é a função de densidade de probabilidade de uma variável aleatória normal padrão. 
@@ -104,7 +104,7 @@ Considere $a=\dfrac{\sqrt{n}(\mu_0 - \mu)}{\sigma}$ e notem que,
 \justifying
 Podemos reescrever então a derivada da função poder como
 \begin{align*}
-\gamma'(\mu) = \dfrac{\sqrt{n}}{\sigma} \left(\phi\left( z_{\alpha/2}+a\right) - \phi\left(z_{\alpha/2}-a\right)\right),
+\gamma'(\mu) = \dfrac{\sqrt{n}}{\sigma} \left(\phi\left( |z_{\alpha/2}|+a\right) - \phi\left(|z_{\alpha/2}|-a\right)\right),
 \end{align*}
 uma vez que $\phi(x)=\phi(-x).$ 
 \end{block}
@@ -115,9 +115,9 @@ uma vez que $\phi(x)=\phi(-x).$
 \justifying
 Nesse caso, 
 \begin{align*}
-    z_{\alpha/2}+a>z_{\alpha/2}-a&\Rightarrow -\dfrac{(z_{\alpha/2}+a)^{2}}{2}<-\dfrac{(z_{\alpha/2}-a)^{2}}{2}\\
-    &\Rightarrow e^{-\dfrac{(z_{\alpha/2}+a)^{2}}{2}} < e^{-\dfrac{(z_{\alpha/2}-a)^{2}}{2}}\\
-    &\Rightarrow \dfrac{\sqrt{n}}{\sigma\sqrt{2\pi}}\left[e^{-\dfrac{(z_{\alpha/2}+a)^{2}}{2}}-e^{-\dfrac{(z_{\alpha/2}-a)^{2}}{2}}\right]<0\\
+    |z_{\alpha/2}|+a>|z_{\alpha/2}|-a&\Rightarrow -\dfrac{(|z_{\alpha/2}|+a)^{2}}{2}<-\dfrac{(|z_{\alpha/2}|-a)^{2}}{2}\\
+    &\Rightarrow e^{-\dfrac{(|z_{\alpha/2}|+a)^{2}}{2}} < e^{-\dfrac{(|z_{\alpha/2}|-a)^{2}}{2}}\\
+    &\Rightarrow \dfrac{\sqrt{n}}{\sigma\sqrt{2\pi}}\left[e^{-\dfrac{(|z_{\alpha/2}|+a)^{2}}{2}}-e^{-\dfrac{(|z_{\alpha/2}|-a)^{2}}{2}}\right]<0\\
     &\Rightarrow \gamma'(\mu)<0
 \end{align*}
 \end{block}
@@ -129,9 +129,9 @@ Nesse caso,
 \justifying
 Nesse caso, 
 \begin{align*}
-    z_{\alpha/2}+a<z_{\alpha/2}-a&\Rightarrow -\dfrac{(z_{\alpha/2}+a)^{2}}{2}>-\dfrac{(z_{\alpha/2}-a)^{2}}{2}\\
-    &\Rightarrow e^{-\dfrac{(z_{\alpha/2}+a)^{2}}{2}} > e^{-\dfrac{(z_{\alpha/2}-a)^{2}}{2}}\\
-    &\Rightarrow \dfrac{\sqrt{n}}{\sigma\sqrt{2\pi}}\left[e^{-\dfrac{(z_{\alpha/2}+a)^{2}}{2}}-e^{-\dfrac{(z_{\alpha/2}-a)^{2}}{2}}\right]>0\\
+    |z_{\alpha/2}|+a<|z_{\alpha/2}|-a&\Rightarrow -\dfrac{(|z_{\alpha/2}|+a)^{2}}{2}>-\dfrac{(|z_{\alpha/2}|-a)^{2}}{2}\\
+    &\Rightarrow e^{-\dfrac{(|z_{\alpha/2}|+a)^{2}}{2}} > e^{-\dfrac{(|z_{\alpha/2}|-a)^{2}}{2}}\\
+    &\Rightarrow \dfrac{\sqrt{n}}{\sigma\sqrt{2\pi}}\left[e^{-\dfrac{(|z_{\alpha/2}|+a)^{2}}{2}}-e^{-\dfrac{(|z_{\alpha/2}|-a)^{2}}{2}}\right]>0\\
     &\Rightarrow \gamma'(\mu)>0
 \end{align*}
 \end{block}
@@ -149,10 +149,10 @@ H_0 : \mu = 30,000 \text{ versus } H_1 : \mu \neq 30,000.
 Suponha que $n = 20$ e $\alpha = 0.01$. Então, a regra de rejeição se torna
 
 \begin{align}
-\text{Rejeitar } H_0 \text{ em favor de } H_1 \text{ se } \frac{\Bar{X} - 30,000}{S/\sqrt{20}} \geq z_{\frac{0.01}{2}}.
+\text{Rejeitar } H_0 \text{ em favor de } H_1 \text{ se } \frac{\Bar{X} - 30,000}{S/\sqrt{20}} \geq |z_{\frac{0.01}{2}}|.
 \end{align}
 
-A próxima Figura exibe a curva da função poder para este teste quando $S$ é substituído por $\sigma = 5000$. Para comparação, a curva da função poder para o teste com nível $\alpha = 0.05$ também é apresentada. 
+A próxima Figura exibe a curva da função poder para este teste quando $S$ é substituído por $\sigma = 5000$. Para comparação, a curva da função poder para o teste com nível $\alpha = 0.05$ também é apresentada. Veja também \href{https://est711.shinyapps.io/FuncaoPoder/}{shiny da função poder!}
 \end{block}
 \end{frame}
 
@@ -212,11 +212,11 @@ Para $\alpha = 0,05$, $Z_{0,05} \approx 1,645.$
 Agora, substituindo os valores:
 \begin{align*}
     \text{Poder} &= P(Z > 1,645 - \frac{105 - 100}{15/\sqrt{30}})\\
-    &= P(Z > 1,645 - 2,738)\\
-    &= P(Z > -1,093)
+    &= P(Z > 1,645 - 1,826)\\
+    &= P(Z > -0,181)
 \end{align*}
 
-A probabilidade de $Z$ ser maior que $-1,093$ é aproximadamente $0,8628$. Portanto, o poder do teste é de aproximadamente $0,8628$.
+A probabilidade de $Z$ ser maior que $-0,181$ é aproximadamente $0,5718$. Portanto, o poder do teste é de aproximadamente $0,572$.
 \end{block}
 \end{frame}
 
@@ -224,28 +224,59 @@ A probabilidade de $Z$ ser maior que $-1,093$ é aproximadamente $0,8628$. Porta
 \begin{block}{Distribuição Binomial}
 \justifying
 \begin{itemize}
-\item \textbf{Hipótese Nula (H0):} A proporção de sucesso em um experimento binomial é de 0,4.
+\item \textbf{Hipótese Nula (H0):} A proporção de sucesso em um experimento binomial é de $p_{0}=0,4$.
 \item \textbf{Hipótese Alternativa (H1):} A proporção de sucesso em um experimento binomial é maior que 0,4.
 \item \textbf{Tamanho da amostra:} 100
 \item \textbf{Nível de significância:} 0,01
 \item \textbf{Proporção real sob H1 (Suposição):} 0,55
 \end{itemize}
 
-\[ \text{Poder} = 1 - P(X \leq x) \]
-
-Onde $x$ é o valor crítico que corresponde ao nível de significância $\alpha$. Para $\alpha = 0,01$, $x$ é aproximadamente 52.
+Para testar uma hipótese sobre uma proporção \( p \) em um experimento binomial, usamos a estatística \( Z \) normalizada sob a hipótese nula:
+\[
+Z = \frac{\hat{p} - p}{\sqrt{\frac{p_0(1 - p_0)}{n}}}
+\]
+onde \( \hat{p} \) é a proporção amostral.
 \end{block}
 \end{frame}
 
 \begin{frame}{}
 \begin{block}{}
 \justifying
-Agora, substituindo os valores:
-
-\[ \text{Poder} = 1 - P(X \leq 52) \]
-
-Usando uma calculadora ou software estatístico, encontramos $P(X \leq 52) \approx 0,307$. Portanto, o poder do teste é aproximadamente $1 - 0,307 = 0,693$.
+Como \( H_1 \) é unilateral (\( p > 0.4 \)), rejeitamos \( H_0 \) se \( Z \) for maior que o valor crítico \( z_\alpha \). Para \( \alpha = 0.01 \), o valor crítico \( z_\alpha \) é obtido da tabela normal padrão:
+\[
+z_{0.01} = 2.33
+\]
+Isso significa que rejeitamos \( H_0 \) se a estatística \( Z \) for maior que 2.33.
 \end{block}
+\pause
+\begin{block}{}
+	\justifying
+Podemos agora converter o valor crítico de \( Z \) para um valor crítico para a proporção amostral \( \hat{p} \):
+\[
+\hat{p}_{crit} = p_0 + z_{0.01} \times \sqrt{\frac{p_0(1 - p_0)}{n}}
+\]
+Substituindo os valores:
+\[
+\hat{p}_{crit} = 0.4 + 2.33 \times \sqrt{\frac{0.4(1 - 0.4)}{100}}\approx 0.5141
+\]
+Portanto, rejeitamos \( H_0 \) se \( \hat{p} \geq 0.5141 \).
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+	\begin{block}{}
+		\justifying
+A função poder é a probabilidade de rejeitar \( H_0 \) quando a proporção real \( p_1 = 0.55 \). Podemos calcular essa probabilidade usando a mesma estatística \( Z \), mas agora considerando \( p_1 \) como a proporção verdadeira:
+\[
+Z = \frac{\hat{p}_{crit} - p_1}{\sqrt{\frac{p_1(1 - p_1)}{n}}}= \frac{0.5141 - 0.55}{\sqrt{\frac{0.55(1 - 0.55)}{100}}}\approx -0.722
+\]
+Usando a tabela da distribuição normal padrão, encontramos:
+\[
+P(Z > -0.722) = 1 - P(Z \leq -0.722) \approx 1 - 0.2358 = 0.7642
+\]
+Portanto, o \textbf{poder do teste} é aproximadamente \( 0.764 \), ou seja, existe uma probabilidade de cerca de 76,4\% de rejeitar a hipótese nula se a verdadeira proporção for \( 0.55 \).
+		
+	\end{block}
 \end{frame}
 
 \begin{frame}{}
@@ -356,37 +387,36 @@ Por exemplo, se um nível de significância de aproximadamente $\alpha = 0.05$ f
 \end{block}
 \end{frame}
 
-\begin{frame}{}
-\begin{block}{}
-\justifying
-No entanto, um nível de significância de $\alpha = 0.05$ pode ser alcançado da seguinte maneira. Seja $W$ uma variável aleatória com distribuição de Bernoulli com probabilidade de sucesso igual a
-
-\begin{align*}
-P(W = 1) = \frac{\alpha-0.019}{0.08-0.019}=\frac{0.050 - 0.019}{0.080 - 0.019} = \frac{31}{61}.
-\end{align*}
-
-Suponha que $W$ seja selecionado independentemente da amostra. Considere a regra de rejeição: rejeitar $H_0$ se $\sum_{i=1}^{10} X_i \geq 4$ ou se $\sum_{i=1}^{10} X_i = 3$ e $W = 1$. O nível de significância dessa regra é
-{\small 
-\begin{align*}
-P_{H_0}(Y \geq 4) + P_{H_0}(\{Y = 3\} \cap \{W = 1\})&= P_{H_0}(Y \geq 4)\\ + P_{H_0}(Y = 3)P(W = 1)\\ &= 0.019 + 0.061 \times \frac{31}{61}\\ &= 0.05.
-\end{align*}}
-\end{block}
-\end{frame}
-
-\begin{frame}{}
-\begin{block}{}
-\justifying
-Portanto, a regra de decisão tem exatamente um nível de 0.05. O processo de realizar o experimento auxiliar para decidir se rejeita ou não quando $Y = 3$ é às vezes referido como um teste randomizado.
-\end{block}
-\end{frame}
+%\begin{frame}{}
+%\begin{block}{}
+%\justifying
+%No entanto, um nível de significância de $\alpha = 0.05$ pode ser alcançado da seguinte maneira. Seja $W$ uma variável aleatória com distribuição de Bernoulli com probabilidade de sucesso igual a
+%
+%\begin{align*}
+%P(W = 1) = \frac{\alpha-0.019}{0.08-0.019}=\frac{0.050 - 0.019}{0.080 - 0.019} = \frac{31}{61}.
+%\end{align*}
+%
+%Suponha que $W$ seja selecionado independentemente da amostra. Considere a regra de rejeição: rejeitar $H_0$ se $\sum_{i=1}^{10} X_i \geq 4$ ou se $\sum_{i=1}^{10} X_i = 3$ e $W = 1$. O nível de significância dessa regra é
+%{\small 
+%\begin{align*}
+%P_{H_0}(Y \geq 4) + P_{H_0}(\{Y = 3\} \cap \{W = 1\})&= P_{H_0}(Y \geq 4)\\ + P_{H_0}(Y = 3)P(W = 1)\\ &= 0.019 + 0.061 \times \frac{31}{61}\\ &= 0.05.
+%\end{align*}}
+%\end{block}
+%\end{frame}
+%
+%\begin{frame}{}
+%\begin{block}{}
+%\justifying
+%Portanto, a regra de decisão tem exatamente um nível de 0.05. O processo de realizar o experimento auxiliar para decidir se rejeita ou não quando $Y = 3$ é às vezes referido como um teste randomizado.
+%\end{block}
+%\end{frame}
 
 \section{Nível de Significância Observado (p-valor)}
 \begin{frame}{Nível de Significância Observado (p-valor)}
 \begin{block}{}
 \justifying
-Muitos estatísticos não gostam de testes randomizados na prática, pois o uso deles implica que dois estatísticos podem fazer as mesmas suposições, observar os mesmos dados, aplicar o mesmo teste e, no entanto, tomar decisões diferentes. Portanto, eles costumam ajustar seu nível de significância para evitar a aleatoriedade. Na verdade, muitos estatísticos relatam o que são comumente chamados de níveis de significância observados ou valores-p (para valores de probabilidade).
-
-Um exemplo geral é suficiente para explicar os níveis de significância observados.  
+Muitos estatísticos não gostam de testes randomizados na prática. %pois o uso deles implica que dois estatísticos podem fazer as mesmas suposições, observar os mesmos dados, aplicar o mesmo teste e, no entanto, tomar decisões diferentes (Pois a decisão final pode depender de um sorteio). Portanto, eles costumam ajustar seu nível de significância para evitar a aleatoriedade. 
+Na verdade, muitos estatísticos relatam o que são comumente chamados de níveis de significância observados ou valores-p (para valores de probabilidade). Um exemplo geral é suficiente para explicar os níveis de significância observados.  
 \end{block}
 \end{frame}
 
@@ -492,22 +522,22 @@ Nessa discussão sobre valores-p, lembre-se de que a boa ciência dita que as hi
 \end{frame}
 
 
-\begin{frame}{}
-\begin{block}{Explicação Detalhada:}
-\justifying
-O valor-p é uma medida estatística que ajuda a avaliar a força das evidências contra uma hipótese nula em um teste de hipóteses. Ele é calculado com base nos dados observados e na distribuição da estatística de teste sob a suposição de que a hipótese nula é verdadeira. 
-\end{block}
-\pause
-\begin{block}{}
-\justifying
-Ele não é estritamente uma probabilidade no sentido tradicional. Embora seja comumente interpretado como uma probabilidade, é uma medida de evidência estatística em vez de uma probabilidade direta de um evento.
-\end{block}
-\pause
-\begin{block}{}
-\justifying
-O valor-p é, portanto, uma medida de quão consistentes os dados observados são com a hipótese nula. É a probabilidade de obter resultados tão extremos quanto os observados, assumindo que a hipótese nula seja verdadeira.
-\end{block}
-\end{frame}
+%\begin{frame}{}
+%\begin{block}{Explicação Detalhada:}
+%\justifying
+%O valor-p é uma medida estatística que ajuda a avaliar a força das evidências contra uma hipótese nula em um teste de hipóteses. Ele é calculado com base nos dados observados e na distribuição da estatística de teste sob a suposição de que a hipótese nula é verdadeira. 
+%\end{block}
+%\pause
+%\begin{block}{}
+%\justifying
+%Ele não é estritamente uma probabilidade no sentido tradicional. Embora seja comumente interpretado como uma probabilidade, é uma medida de evidência estatística em vez de uma probabilidade direta de um evento.
+%\end{block}
+%\pause
+%\begin{block}{}
+%\justifying
+%O valor-p é, portanto, uma medida de quão consistentes os dados observados são com a hipótese nula. É a probabilidade de obter resultados tão extremos quanto os observados, assumindo que a hipótese nula seja verdadeira.
+%\end{block}
+%\end{frame}
 
 \begin{frame}{}
 \begin{block}{Aqui estão as etapas para entender o valor-p:}

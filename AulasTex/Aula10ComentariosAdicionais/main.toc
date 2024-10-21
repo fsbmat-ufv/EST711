@@ -3,10 +3,10 @@
 \beamer@sectionintoc {2}{Exemplo 2: Exercício 4.6.2}{7}{0}{2}
 \beamer@sectionintoc {3}{Exemplo 3}{12}{0}{3}
 \beamer@sectionintoc {4}{Outros Exemplos de Cálculo da função poder}{15}{0}{4}
-\beamer@sectionintoc {5}{Relação entre Testes de Hipóteses e IC}{20}{0}{5}
-\beamer@sectionintoc {6}{Exemplo 3}{23}{0}{6}
-\beamer@sectionintoc {7}{Exemplo 4 - Distribuição Binomial}{24}{0}{7}
-\beamer@sectionintoc {8}{Exemplo 5 - Distribuição Poisson}{26}{0}{8}
+\beamer@sectionintoc {5}{Relação entre Testes de Hipóteses e IC}{22}{0}{5}
+\beamer@sectionintoc {6}{Exemplo 3}{25}{0}{6}
+\beamer@sectionintoc {7}{Exemplo 4 - Distribuição Binomial}{26}{0}{7}
+\beamer@sectionintoc {8}{Exemplo 5 - Distribuição Poisson}{28}{0}{8}
 \beamer@sectionintoc {9}{Nível de Significância Observado (p-valor)}{30}{0}{9}
 \beamer@sectionintoc {10}{Exemplo 6 (Valor - p)}{35}{0}{10}
-\beamer@sectionintoc {11}{Exemplo 7 sobre Valor-p}{48}{0}{11}
+\beamer@sectionintoc {11}{Exemplo 7 sobre Valor-p}{45}{0}{11}
