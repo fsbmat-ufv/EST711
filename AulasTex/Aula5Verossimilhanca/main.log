@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.9)  25 SEP 2024 15:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.9)  9 OCT 2024 10:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1106,7 +1106,7 @@ Package biblatex Info: ... file 'blx-dm.def' found.
 File: blx-dm.def 2024/03/21 v3.20 biblatex datamodel (PK/MW)
 )
 Package biblatex Info: Trying to load biblatex style data model...
-Package biblatex Info: ... file 'abnt.dbx' not found.
+Package biblatex Info: ... file 'authoryear.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
 \c@afterword=\count457
@@ -1224,18 +1224,11 @@ File: blx-natbib.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
 Package biblatex Info: Delimiter 'nameyeardelim' in context '' already defined,
  overwriting.
 )
-Package biblatex Info: Trying to load bibliography style 'abnt'...
-Package biblatex Info: ... file 'abnt.bbx' found.
+Package biblatex Info: Trying to load bibliography style 'authoryear'...
+Package biblatex Info: ... file 'authoryear.bbx' found.
 
-(C:\Program Files\MiKTeX\tex/latex/biblatex-abnt/bbx\abnt.bbx
-File: abnt.bbx 2018-11-17 v3.4 ABNT BibLaTeX citation style
-
-(C:\Program Files\MiKTeX\tex/latex/l3packages/xparse\xparse.sty
-Package: xparse 2024-08-16 L3 Experimental document command parser
-)
-(C:\Program Files\MiKTeX\tex/latex/xpatch\xpatch.sty
-Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
-)
+(C:\Program Files\MiKTeX\tex/latex/biblatex/bbx\authoryear.bbx
+File: authoryear.bbx 2024/03/21 v3.20 biblatex bibliography style (PK/MW)
 Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
 
@@ -1244,16 +1237,11 @@ File: standard.bbx 2024/03/21 v3.20 biblatex bibliography style (PK/MW)
 \c@bbx:relatedcount=\count534
 \c@bbx:relatedtotal=\count535
 ))
-Package biblatex Info: Trying to load citation style 'abnt'...
-Package biblatex Info: ... file 'abnt.cbx' found.
+Package biblatex Info: Trying to load citation style 'authoryear'...
+Package biblatex Info: ... file 'authoryear.cbx' found.
 
-(C:\Program Files\MiKTeX\tex/latex/biblatex-abnt/cbx\abnt.cbx
-File: abnt.cbx 2018-11-17 v3.4 ABNT BibLaTeX citation style
-Package biblatex Info: Trying to load citation style 'authoryear-comp'...
-Package biblatex Info: ... file 'authoryear-comp.cbx' found.
-
-(C:\Program Files\MiKTeX\tex/latex/biblatex/cbx\authoryear-comp.cbx
-File: authoryear-comp.cbx 2024/03/21 v3.20 biblatex citation style (PK/MW)
+(C:\Program Files\MiKTeX\tex/latex/biblatex/cbx\authoryear.cbx
+File: authoryear.cbx 2024/03/21 v3.20 biblatex citation style (PK/MW)
 Package biblatex Info: Redefining '\cite'.
 Package biblatex Info: Redefining '\parencite'.
 Package biblatex Info: Redefining '\footcite'.
@@ -1261,20 +1249,6 @@ Package biblatex Info: Redefining '\footcitetext'.
 Package biblatex Info: Redefining '\smartcite'.
 Package biblatex Info: Redefining '\textcite'.
 Package biblatex Info: Redefining '\textcites'.
-Package biblatex Info: Redefining '\cites'.
-Package biblatex Info: Redefining '\parencites'.
-Package biblatex Info: Redefining '\footcites'.
-Package biblatex Info: Redefining '\footcitetexts'.
-Package biblatex Info: Redefining '\smartcites'.
-)
-Package biblatex Info: Redefining '\cite'.
-Package biblatex Info: Redefining '\cites'.
-Package biblatex Info: Redefining '\footcite'.
-Package biblatex Info: Redefining '\footcites'.
-Package biblatex Info: Redefining '\citetitle'.
-Package biblatex Info: Redefining '\smartcite'.
-Package biblatex Info: Redefining '\citeauthor'.
-Package biblatex Info: Redefining '\citeyear'.
 )
 Package biblatex Info: Trying to load configuration file...
 Package biblatex Info: ... file 'biblatex.cfg' found.
@@ -1290,6 +1264,9 @@ Package biblatex Info: ... and expl3
 (biblatex)             setting 'casechanger=expl3'.
 
 (C:\Program Files\MiKTeX\tex/latex/biblatex\blx-case-expl3.sty
+(C:\Program Files\MiKTeX\tex/latex/l3packages/xparse\xparse.sty
+Package: xparse 2024-08-16 L3 Experimental document command parser
+)
 Package: blx-case-expl3 2024/03/21 v3.20 expl3 case changing code for biblatex
 ))
 (C:\Program Files\MiKTeX\tex/latex/graphics\rotating.sty
@@ -1868,89 +1845,23 @@ Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 Package caption Info: rotating package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count582
-Package biblatex Info: Trying to load language 'brazil' -> 'brazil-abnt'...
-Package biblatex Info: ... file 'brazil-abnt.lbx' found.
+Package biblatex Info: Trying to load language 'brazil'...
+Package biblatex Info: ... file 'brazil.lbx' found.
 
-(C:\Program Files\MiKTeX\tex/latex/biblatex-abnt/lbx\brazil-abnt.lbx
-File: brazil-abnt.lbx 2018-11-17 v3.4 ABNT BibLaTeX citation style
-
-
-Package biblatex Warning: File 'brazilian-abnt-abnt.lbx' not found!
-(biblatex)                Ignoring mapping 'brazilian-abnt' -> 'brazilian-abnt-
-abnt'.
-
-Package biblatex Info: Trying to load language 'brazilian-abnt'...
-Package biblatex Info: ... file 'brazilian-abnt.lbx' found.
-(C:\Program Files\MiKTeX\tex/latex/biblatex-abnt/lbx\brazilian-abnt.lbx
-File: brazilian-abnt.lbx 2018-11-17 v3.4 ABNT BibLaTeX citation style
-Package biblatex Info: Trying to load language 'brazilian' -> 'brazilian-abnt'.
-..
-Package biblatex Info: ... file 'brazilian-abnt.lbx' found.
-
-(C:\Program Files\MiKTeX\tex/latex/biblatex-abnt/lbx\brazilian-abnt.lbx
-File: brazilian-abnt.lbx 2018-11-17 v3.4 ABNT BibLaTeX citation style
-Package biblatex Info: Trying to load language 'brazilian'...
-Package biblatex Info: ... file 'brazilian.lbx' found.
-
-(C:\Program Files\MiKTeX\tex/latex/biblatex/lbx\brazilian.lbx
-File: brazilian.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
-)))
-Package biblatex Info: Trying to load language 'brazilian-abnt'...
-Package biblatex Info: ... file 'brazilian-abnt.lbx' found.
-
-(C:\Program Files\MiKTeX\tex/latex/biblatex-abnt/lbx\brazilian-abnt.lbx
-File: brazilian-abnt.lbx 2018-11-17 v3.4 ABNT BibLaTeX citation style
-Package biblatex Info: Trying to load language 'brazilian' -> 'brazilian-abnt'.
-..
-Package biblatex Info: ... file 'brazilian-abnt.lbx' found.
-
-(C:\Program Files\MiKTeX\tex/latex/biblatex-abnt/lbx\brazilian-abnt.lbx
-File: brazilian-abnt.lbx 2018-11-17 v3.4 ABNT BibLaTeX citation style
+(C:\Program Files\MiKTeX\tex/latex/biblatex/lbx\brazil.lbx
+File: brazil.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
 Package biblatex Info: Trying to load language 'brazilian'...
 Package biblatex Info: ... file 'brazilian.lbx' found.
 
 (C:\Program Files\MiKTeX\tex/latex/biblatex/lbx\brazilian.lbx
 File: brazilian.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
 )
-Package biblatex Info: Trying to load language 'brazil'...
-Package biblatex Info: ... file 'brazil.lbx' found.
-
-(C:\Program Files\MiKTeX\tex/latex/biblatex/lbx\brazil.lbx
-File: brazil.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
 Package biblatex Info: Trying to load language 'brazilian'...
 Package biblatex Info: ... file 'brazilian.lbx' found.
 
 (C:\Program Files\MiKTeX\tex/latex/biblatex/lbx\brazilian.lbx
 File: brazilian.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
-)))
-Package biblatex Info: Trying to load language 'brazil'...
-Package biblatex Info: ... file 'brazil.lbx' found.
-
-(C:\Program Files\MiKTeX\tex/latex/biblatex/lbx\brazil.lbx
-File: brazil.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
-Package biblatex Info: Trying to load language 'brazilian' -> 'brazilian-abnt'.
-..
-Package biblatex Info: ... file 'brazilian-abnt.lbx' found.
-
-(C:\Program Files\MiKTeX\tex/latex/biblatex-abnt/lbx\brazilian-abnt.lbx
-File: brazilian-abnt.lbx 2018-11-17 v3.4 ABNT BibLaTeX citation style
-Package biblatex Info: Trying to load language 'brazilian'...
-Package biblatex Info: ... file 'brazilian.lbx' found.
-
-(C:\Program Files\MiKTeX\tex/latex/biblatex/lbx\brazilian.lbx
-File: brazilian.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
-)
-Package biblatex Info: Trying to load language 'brazil'...
-Package biblatex Info: ... file 'brazil.lbx' found.
-
-(C:\Program Files\MiKTeX\tex/latex/biblatex/lbx\brazil.lbx
-File: brazil.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
-Package biblatex Info: Trying to load language 'brazilian'...
-Package biblatex Info: ... file 'brazilian.lbx' found.
-
-(C:\Program Files\MiKTeX\tex/latex/biblatex/lbx\brazilian.lbx
-File: brazilian.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
-))))))
+))
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
@@ -2184,18 +2095,10 @@ Overfull \vbox (10.54576pt too high) detected at line 389
 [38
 
 ]
-Overfull \vbox (1.17032pt too high) detected at line 419
- []
-
-
 
 [39
 
 ]
-Overfull \vbox (1.17032pt too high) detected at line 419
- []
-
-
 
 [40
 
@@ -2208,10 +2111,33 @@ Overfull \vbox (1.17032pt too high) detected at line 419
 [42
 
 ]
+LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <12> not available
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 481.
+
+LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <8> not available
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 481.
+
+LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <6> not available
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 481.
+
+
+
+LaTeX Font Warning: Font shape `T1/cmss/b/n' undefined
+(Font)              using `T1/cmss/m/n' instead on input line 481.
+
+
+Overfull \vbox (1.44945pt too high) detected at line 481
+ []
+
+
 
 [43
 
 ]
+Overfull \vbox (1.44945pt too high) detected at line 481
+ []
+
+
 
 [44
 
@@ -2228,10 +2154,6 @@ Overfull \vbox (1.17032pt too high) detected at line 419
 [47
 
 ]
-Overfull \vbox (40.51567pt too high) detected at line 500
- []
-
-
 
 [48
 
@@ -2247,6 +2169,108 @@ Overfull \vbox (40.51567pt too high) detected at line 500
 
 [51
 
+]
+LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <17.28> not available
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 576.
+
+LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <10> not available
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 576.
+
+
+Overfull \vbox (3.93199pt too high) detected at line 576
+ []
+
+
+
+[52
+
+]
+
+[53
+
+]
+LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <14.4> not available
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 610.
+
+LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <7> not available
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 610.
+
+
+Overfull \vbox (6.7366pt too high) detected at line 610
+ []
+
+
+
+[54
+
+]
+Overfull \vbox (6.7366pt too high) detected at line 610
+ []
+
+
+
+[55
+
+]
+Overfull \vbox (6.7366pt too high) detected at line 610
+ []
+
+
+
+[56
+
+]
+
+[57
+
+]
+
+[58
+
+]
+
+[59
+
+]
+
+[60
+
+]
+
+[61
+
+]
+
+[62
+
+]
+
+[63
+
+]
+
+[64
+
+]
+Overfull \vbox (40.51567pt too high) detected at line 700
+ []
+
+
+
+[65
+
+]
+
+[66
+
+]
+
+[67
+
+]
+
+[68
+
  <C:/Program Files/MiKTeX/tex/latex/beamer/beamericonarticle.pdf>]
 \tf@nav=\write7
 \openout7 = `main.nav'.
@@ -2260,46 +2284,58 @@ Overfull \vbox (40.51567pt too high) detected at line 500
  (main.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
-L3 programming layer <2020/03/25>
+L3 programming layer <2024-08-16>
  ***********
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 56018 strings out of 473898
- 1216424 string characters out of 5736295
- 2297044 words of memory out of 5000000
- 77736 multiletter control sequences out of 15000+600000
- 588129 words of font info for 112 fonts, out of 8000000 for 9000
+ 55762 strings out of 473898
+ 1211277 string characters out of 5736295
+ 2255176 words of memory out of 5000000
+ 77460 multiletter control sequences out of 15000+600000
+ 609413 words of font info for 169 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,36n,123p,3279b,4319s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx
+ 128i,36n,123p,3279b,2230s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi720\ecso
 1200.pk> <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
-0\ecso1200.pk> <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
-/dpi600\ecrm0800.pk> <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
-pen/ec/dpi600\ecsi1200.pk> <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour
-/jknappen/ec/dpi600\ecss1440.pk> <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/
-ljfour/jknappen/ec/dpi600\ecsx1728.pk> <C:\Users\Admin\AppData\Local\MiKTeX\fon
-ts/pk/ljfour/jknappen/ec/dpi450\ectt0800.pk> <C:\Users\Admin\AppData\Local\MiKT
-eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss0600.pk> <C:\Users\Admin\AppData\Loca
-l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss0800.pk> <C:\Users\Admin\AppDat
-a\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1200.pk> <C:\Users\Admin\
-AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1728.pk><C:/Program
- Files/MiKTeX/fonts/type1/public/fontawesome/FontAwesome.pfb><C:/Program Files/
-MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts
-/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Program Files/MiKTeX/fonts/type1/p
+0\ecso1728.pk> <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
+/dpi600\ecsx1200.pk> <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
+pen/ec/dpi600\ecso1200.pk> <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour
+/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/
+ljfour/jknappen/ec/dpi600\ecsi1200.pk> <C:\Users\Admin\AppData\Local\MiKTeX\fon
+ts/pk/ljfour/jknappen/ec/dpi600\ecss1440.pk> <C:\Users\Admin\AppData\Local\MiKT
+eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1728.pk> <C:\Users\Admin\AppData\Loca
+l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi450\ectt0800.pk> <C:\Users\Admin\AppDat
+a\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss0600.pk> <C:\Users\Admin\
+AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss0800.pk> <C:\Users\
+Admin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1200.pk> <C:\
+Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1728.pk
+><C:/Program Files/MiKTeX/fonts/type1/public/fontawesome/FontAwesome.pfb><C:/Pr
+ogram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/
+MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Program Files/MiKTeX/f
+onts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/p
 ublic/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfon
 ts/cm/cmmi6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.p
-fb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Progr
-am Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Program Files/MiKT
-eX/fonts/type1/public/amsfonts/cm/cmssi12.pfb><C:/Program Files/MiKTeX/fonts/ty
-pe1/public/amsfonts/cm/cmssi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/a
-msfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/c
-msy6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (51 pages, 592903 bytes).
+fb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Progr
+am Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Program Files/MiK
+TeX/fonts/type1/public/amsfonts/cm/cmss17.pfb><C:/Program Files/MiKTeX/fonts/ty
+pe1/public/amsfonts/cm/cmss8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/am
+sfonts/cm/cmssi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/c
+mssi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi17.pfb>
+<C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi8.pfb><C:/Program 
+Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX
+/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX/fonts/type1/
+public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfon
+ts/symbols/msbm10.pfb>
+Output written on main.pdf (68 pages, 782419 bytes).
 PDF statistics:
- 1691 PDF objects out of 1728 (max. 8388607)
- 116 named destinations out of 1000 (max. 500000)
- 2460 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2210 PDF objects out of 2487 (max. 8388607)
+ 151 named destinations out of 1000 (max. 500000)
+ 3470 words of extra memory for PDF output out of 10000 (max. 10000000)
 

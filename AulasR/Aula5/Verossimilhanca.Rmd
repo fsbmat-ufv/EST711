@@ -1,0 +1,429 @@
+---
+title: "Verossimilhanças"
+output: learnr::tutorial
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+library(tidyverse)
+library(shiny)
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Estimador de Máxima Verossimilhança para \( X_i \sim \text{Bernoulli}(\theta) \)
+
+Dada uma amostra \( X_1, X_2, \dots, X_n \), em que \( X_i \sim \text{Bernoulli}(\theta) \), a função de verossimilhança é definida como:
+
+\[
+L(\theta) = \prod_{i=1}^{n} P(X_i = x_i) = \prod_{i=1}^{n} \theta^{x_i} (1 - \theta)^{1 - x_i}.
+\]
+
+Simplificando a expressão, temos:
+
+\[
+L(\theta) = \theta^{\sum_{i=1}^{n} x_i} (1 - \theta)^{n - \sum_{i=1}^{n} x_i}.
+\]
+
+Aqui, \( \sum_{i=1}^{n} x_i \) é a soma dos sucessos (ou seja, a soma das observações em que \( X_i = 1 \)).
+
+### Log-verossimilhança
+
+Para facilitar o cálculo do estimador de máxima verossimilhança, tomamos o logaritmo natural da função de verossimilhança, o que nos dá a log-verossimilhança:
+
+\[
+\ell(\theta) = \log L(\theta) = \left( \sum_{i=1}^{n} x_i \right) \log(\theta) + \left( n - \sum_{i=1}^{n} x_i \right) \log(1 - \theta).
+\]
+
+### Maximização da Log-verossimilhança
+
+Para encontrar o estimador de máxima verossimilhança, derivamos a log-verossimilhança em relação a \( \theta \) e igualamos a zero:
+
+\[
+\frac{d\ell(\theta)}{d\theta} = \frac{\sum_{i=1}^{n} x_i}{\theta} - \frac{n - \sum_{i=1}^{n} x_i}{1 - \theta} = 0.
+\]
+
+Multiplicando ambos os lados por \( \theta (1 - \theta) \), obtemos:
+
+\[
+\sum_{i=1}^{n} x_i (1 - \theta) = (n - \sum_{i=1}^{n} x_i) \theta.
+\]
+
+Agora, expandimos e reagrupamos os termos para isolar \( \theta \):
+
+\[
+\sum_{i=1}^{n} x_i = n \theta.
+\]
+
+Finalmente, resolvemos para \( \theta \):
+
+\[
+\hat{\theta} = \frac{\sum_{i=1}^{n} x_i}{n}.
+\]
+
+Portanto, o estimador de máxima verossimilhança para \( \theta \) é a média amostral:
+
+\[
+\hat{\theta} = \frac{\sum_{i=1}^{n} x_i}{n}.
+\]
+
+É fácil verificar que $\hat{p}=\dfrac{y}{n},$ em que $y=\sum_{i=1}^{n} x_i$ é máximo global, pois se $y=0$ ou $y=n,$ temos
+\begin{align*}
+\log{L(p|\boldsymbol{x})}=
+\begin{cases}
+      n\log{(1-p)},&\text{se}~y=0\\
+      n\log{p},&\text{se}~y=n
+    \end{cases}\,.
+\end{align*}
+Em qualquer um dos casos temos $\log{L(p|\boldsymbol{x})}$ é uma função monótona de $p$ e, portanto, $\hat{p}=\dfrac{y}{n}$ é ponto de máximo. Assim, $\hat{p}=\dfrac{y}{n}$ é o EMV de $p.$
+
+
+```{r Bernoulli, exercise=TRUE}
+# Função de verossimilhança para dados binários (Bernoulli)
+verossimilhanca <- function(theta, x) {
+  n <- length(x)                  # Número de observações
+  soma_x <- sum(x)                # Soma dos sucessos (x_i = 1)
+  return(theta^soma_x * (1 - theta)^(n - soma_x))
+}
+
+# Dados de exemplo: uma amostra binária com 1s e 0s
+numeros <- c(0,1)
+x <- sample(numeros, 10, replace = TRUE) # Exemplo de uma amostra
+
+# Calculando o estimador de máxima verossimilhança (EMV)
+EMV <- mean(x)  # Média amostral é o EMV para Bernoulli
+
+# Definindo o intervalo de theta
+theta_vals <- seq(0, 1, length.out = 100)
+
+# Calculando a verossimilhança para cada valor de theta
+L_theta <- sapply(theta_vals, verossimilhanca, x = x)
+
+# Criando o dataframe para o ggplot
+df <- data.frame(theta = theta_vals, L_theta = L_theta)
+
+# Criando o gráfico com a linha do EMV
+ggplot(df, aes(x = theta, y = L_theta)) +
+  geom_line(color = "blue", size = 1.2) +  # Linha da verossimilhança
+  geom_vline(xintercept = EMV, linetype = "dashed", color = "red", size = 1) +  # Linha vertical no EMV
+  labs(
+    title = "Função de Verossimilhança Bernoulli com EMV",
+    x = expression(theta),
+    y = expression(L(theta))
+  ) +
+  ylim(0,0.005)+
+  annotate("text", x = EMV, y = max(L_theta), label = paste("EMV =", round(EMV, 2)), 
+           vjust = -1, color = "red", size = 5) +  # Texto anotando o valor do EMV
+  theme_minimal() +
+  theme(
+    plot.title = element_text(hjust = 0.5, size = 14, face = "bold"),
+    axis.title.x = element_text(size = 12),
+    axis.title.y = element_text(size = 12)
+  )
+
+```
+
+```{r Bernoulli2, exercise=TRUE}
+# Carregar bibliotecas
+library(ggplot2)
+
+# Definir número de amostras
+n <- 10  # você pode ajustar para um valor maior
+p_vals <- seq(0, 1, length.out = 100)  # valores de p de 0 a 1
+
+# Verossimilhança para o caso y = n (todos os x_i = 1)
+y_n <- n  # y = n
+log_likelihood_y_n <- n * log(p_vals)  # função de log-verossimilhança para y = n
+
+# Verossimilhança para o caso y = 0 (todos os x_i = 0)
+y_0 <- 0  # y = 0
+log_likelihood_y_0 <- n * log(1 - p_vals)  # função de log-verossimilhança para y = 0
+
+# Criar gráfico para y = n
+plot_y_n <- ggplot(data.frame(p_vals, log_likelihood_y_n), aes(x = p_vals, y = log_likelihood_y_n)) +
+  geom_line(color = "blue", size = 1) +
+  labs(title = expression(paste("Log-Verossimilhança para ", y == n)),
+       x = expression(p),
+       y = "Log-Verossimilhança") +
+  theme_minimal() +
+  geom_vline(xintercept = 1, linetype = "dashed", color = "red") + # Estimador de máxima verossimilhança p = 1
+  annotate("text", x = 1, y = max(log_likelihood_y_n), label = "p = 1", vjust = -1, color = "red")
+
+# Criar gráfico para y = 0
+plot_y_0 <- ggplot(data.frame(p_vals, log_likelihood_y_0), aes(x = p_vals, y = log_likelihood_y_0)) +
+  geom_line(color = "blue", size = 1) +
+  labs(title = expression(paste("Log-Verossimilhança para ", y == 0)),
+       x = expression(p),
+       y = "Log-Verossimilhança") +
+  theme_minimal() +
+  geom_vline(xintercept = 0, linetype = "dashed", color = "red") + # Estimador de máxima verossimilhança p = 0
+  annotate("text", x = 0, y = max(log_likelihood_y_0), label = "p = 0", vjust = -1, color = "red")
+
+# Mostrar os gráficos
+plot_y_n
+plot_y_0
+
+```
+
+- **Gráfico 1:** Para \( y = n \) (todos \( x_i = 1 \)), a log-verossimilhança \( \ell(p|\boldsymbol{x}) = n \log(p) \) é uma função crescente de \( p \), com máximo em \( p = 1 \). A linha vermelha indica o valor \( p = 1 \), que é o EMV.
+
+- **Gráfico 2:** Para \( y = 0 \) (todos \( x_i = 0 \)), a log-verossimilhança \( \ell(p|\boldsymbol{x}) = n \log(1 - p) \) é uma função decrescente de \( p \), com máximo em \( p = 0 \). A linha vermelha indica o valor \( p = 0 \), que é o EMV.
+
+
+## Distribuição Exponencial: Cálculo do Estimador de Máxima Verossimilhança
+
+
+Dada uma amostra \( X_1, X_2, \ldots, X_n \sim \text{Exp}(\theta) \), a função de densidade da exponencial é dada por:
+\[
+f(x \mid \theta) = \frac{1}{\theta} e^{-\frac{x}{\theta}}, \quad x > 0, \theta > 0.
+\]
+
+A função de verossimilhança \( L(\theta) \) para \( n \) observações \( X_1, X_2, \ldots, X_n \) é o produto das densidades individuais:
+\[
+L(\theta) = \prod_{i=1}^{n} \left( \frac{1}{\theta} e^{-\frac{X_i}{\theta}} \right).
+\]
+Simplificando, temos:
+\[
+L(\theta) = \frac{1}{\theta^n} \exp\left( -\frac{1}{\theta} \sum_{i=1}^{n} X_i \right).
+\]
+
+Para facilitar a maximização, tomamos o logaritmo da verossimilhança, obtendo a \textbf{log-verossimilhança}:
+\[
+\ell(\theta) = \log L(\theta) = -n \log \theta - \frac{1}{\theta} \sum_{i=1}^{n} X_i.
+\]
+
+### Maximização da Log-Verossimilhança
+
+Para encontrar o estimador de máxima verossimilhança (EMV), derivamos a função de log-verossimilhança \( \ell(\theta) \) em relação a \( \theta \) e igualamos a zero:
+\[
+\frac{\partial \ell(\theta)}{\partial \theta} = -\frac{n}{\theta} + \frac{1}{\theta^2} \sum_{i=1}^{n} X_i = 0.
+\]
+
+Multiplicando ambos os lados por \( \theta^2 \) para simplificar:
+\[
+-n \theta + \sum_{i=1}^{n} X_i = 0.
+\]
+
+Isolando \( \theta \), obtemos:
+\[
+\hat{\theta} = \frac{1}{n} \sum_{i=1}^{n} X_i.
+\]
+
+Assim, o estimador de máxima verossimilhança \( \hat{\theta} \) é a \textbf{média amostral}:
+\[
+\hat{\theta} = \bar{X}.
+\]
+
+O estimador de máxima verossimilhança para o parâmetro \( \theta \) na distribuição exponencial é dado pela \textbf{média amostral} \( \bar{X} \), o que significa que a média das observações é o valor que maximiza a função de log-verossimilhança.
+
+
+
+```{r Exponencial, exercise=TRUE, exercise.eval=TRUE}
+# Função de log-verossimilhança correta (com o sinal negativo)
+log_verossimilhanca <- function(theta, x) {
+  n <- length(x)                # Número de observações
+  soma_x <- sum(x)              # Soma das observações
+  return(-n * log(theta) - soma_x / theta)
+}
+
+# Gerando dados de exemplo: uma amostra exponencial
+#set.seed(123)
+x <- rexp(10, rate = 1/2)  # Exemplo de uma amostra com taxa 1/2 (ou seja, theta = 2)
+
+# Definindo o intervalo de theta
+theta_vals <- seq(0.1, 10, length.out = 100)
+
+# Calculando a log-verossimilhança para cada valor de theta
+log_L_theta <- sapply(theta_vals, log_verossimilhanca, x = x)
+
+# Calculando o estimador de máxima verossimilhança (EMV)
+EMV <- mean(x)  # Média amostral é o EMV para Exponencial
+
+# Criando o dataframe para o ggplot
+df <- data.frame(theta = theta_vals, log_L_theta = log_L_theta)
+
+# Criando o gráfico com a linha do EMV
+ggplot(df, aes(x = theta, y = log_L_theta)) +
+  geom_line(color = "blue", size = 1.2) +  # Linha da log-verossimilhança
+  geom_vline(xintercept = EMV, linetype = "dashed", color = "red", size = 1) +  # Linha vertical no EMV
+  labs(
+    title = "Função de Log-Verossimilhança para a Distribuição Exponencial",
+    x = expression(theta),
+    y = expression(ell(theta))
+  ) +
+  annotate("text", x = EMV, y = max(log_L_theta), label = paste("EMV =", round(EMV, 2)), 
+           vjust = 1, color = "red", size = 5) +  # Texto anotando o valor do EMV
+  theme_minimal() +
+  theme(
+    plot.title = element_text(hjust = 0.5, size = 14, face = "bold"),
+    axis.title.x = element_text(size = 12),
+    axis.title.y = element_text(size = 12)
+  )
+
+```
+
+## Cálculo do Estimador de Máxima Verossimilhança (EMV) para \(\theta\) na Distribuição Uniforme
+
+Dada uma amostra \( X_1, X_2, \ldots, X_n \sim U(0, \theta] \), a função de densidade da uniforme é dada por:
+\[
+f(x \mid \theta) = \frac{1}{\theta}, \quad x \in (0, \theta], \quad \theta > 0.
+\]
+
+A função de verossimilhança \( L(\theta) \) para \( n \) observações \( X_1, X_2, \ldots, X_n \) é o produto das densidades individuais:
+\[
+L(\theta) = \prod_{i=1}^{n} f(x_i \mid \theta) = \prod_{i=1}^{n} \frac{1}{\theta} \cdot \delta(0, \theta],
+\]
+onde
+\[
+\delta(0, \theta] = 
+\begin{cases}
+1, & \text{se} \ x_i \in (0, \theta] \ \forall \ i, \\
+0, & \text{caso contrário}.
+\end{cases}
+\]
+
+Simplificando, temos:
+\[
+L(\theta) = \left( \frac{1}{\theta} \right)^n \delta\{ \max(x_1, \ldots, x_n) \leq \theta \}.
+\]
+Note que a função de verossimilhança é \( L(\theta) = 0 \) se \( \theta < \max(x_1, \ldots, x_n) \), pois pelo suporte da distribuição uniforme, todos os \( x_i \) devem estar no intervalo \( (0, \theta] \).
+
+### Maximização da Verossimilhança
+
+Para maximizar a verossimilhança, a função \( L(\theta) \) será maximizada quando \( \theta \) for o menor valor possível que satisfaça \( \theta \geq \max(x_1, \ldots, x_n) \). Ou seja, a verossimilhança é maximizada quando:
+\[
+\hat{\theta} = \max(X_1, \ldots, X_n).
+\]
+
+O estimador de máxima verossimilhança para o parâmetro \( \theta \) na distribuição uniforme \( U(0, \theta] \) é dado pelo valor máximo das observações, ou seja:
+\[
+\hat{\theta} = \max(X_1, \ldots, X_n).
+\]
+
+```{r Uniforme, exercise=TRUE, exercise.eval=TRUE}
+# Definir os parâmetros
+#set.seed(123)  # Para reprodutibilidade
+n <- 10  # Número de amostras
+x <- runif(n, min = 0, max = 5)  # Amostras de uma distribuição uniforme
+
+# Estimador de máxima verossimilhança
+theta_hat <- max(x)
+
+# Função de verossimilhança
+L_theta <- function(theta) {
+  if (theta > max(x)) {
+    return((1/theta)^n)  # Verossimilhança se theta > max(x)
+  } else {
+    return(0)  # Verossimilhança é 0 se theta <= max(x)
+  }
+}
+
+# Valores de theta
+theta_values <- seq(0, 10, length.out = 100)
+likelihood_values <- sapply(theta_values, L_theta)
+
+# Criar um dataframe para o ggplot
+df <- data.frame(theta = theta_values, likelihood = likelihood_values)
+
+# Criar o gráfico
+ggplot(df, aes(x = theta, y = likelihood)) +
+  geom_line(color = "blue") +
+  geom_vline(xintercept = theta_hat, linetype = "dashed", color = "red") +
+  labs(title = "Função de Verossimilhança para U(0, θ]",
+       x = "θ",
+       y = "L(θ)") +
+  theme_minimal() +
+  annotate("text", x = theta_hat + 0.2, y = max(likelihood_values) * 0.8,
+           label = paste("Estimador: ", round(theta_hat, 2)),
+           color = "red")
+```
+
+
+## Verossimilhança da Distribuição Normal
+
+Sejam \( X_1, X_2, \ldots, X_n \sim N(\theta, 1) \) iid e \( L(\theta|\boldsymbol{x}) \) denota a função de verossimilhança. Então, temos:
+
+\begin{align*}
+    L(\theta|\boldsymbol{x}) &= \prod_{i=1}^{n} f(x_i \mid \theta) \\
+    &= \prod_{i=1}^{n} \frac{1}{\sqrt{2\pi}} e^{-\frac{1}{2}(x_{i} - \theta)^{2}} \\
+    &= \frac{1}{(2\pi)^{\frac{n}{2}}} e^{-\frac{1}{2} \sum_{i=1}^{n} (x_{i} - \theta)^{2}}.
+\end{align*}
+
+Para encontrar o estimador de máxima verossimilhança, consideramos a log-verossimilhança:
+
+\begin{align*}
+    \ell(\theta|\boldsymbol{x}) &= \log L(\theta|\boldsymbol{x}) \\
+    &= -\frac{n}{2} \log(2\pi) - \frac{1}{2} \sum_{i=1}^{n} (x_{i} - \theta)^{2}.
+\end{align*}
+
+Agora, para maximizar a log-verossimilhança, derivamos em relação a \( \theta \):
+
+\begin{align*}
+    \frac{d}{d\theta} \ell(\theta|\boldsymbol{x}) &= -\frac{1}{2} \frac{d}{d\theta} \sum_{i=1}^{n} (x_{i} - \theta)^{2} \\
+    &= -\frac{1}{2} \sum_{i=1}^{n} \frac{d}{d\theta} (x_{i} - \theta)^{2} \\
+    &= -\frac{1}{2} \sum_{i=1}^{n} 2(x_{i} - \theta)(-1) \\
+    &= \sum_{i=1}^{n} (x_{i} - \theta).
+\end{align*}
+
+Igualando a derivada a zero, obtemos:
+
+\begin{align*}
+    \sum_{i=1}^{n} (x_{i} - \theta) = 0.
+\end{align*}
+
+Isso se simplifica para:
+
+\begin{align*}
+    \sum_{i=1}^{n} x_{i} = n\theta,
+\end{align*}
+
+e, portanto, temos que:
+
+\begin{align*}
+    \hat{\theta} = \frac{1}{n} \sum_{i=1}^{n} x_{i} = \bar{x}.
+\end{align*}
+
+Assim, o estimador de máxima verossimilhança é dado por \( \hat{\theta} = \bar{x} \).
+
+
+
+```{r Normal, exercise=TRUE, exercise.eval=TRUE}
+# Carregar as bibliotecas necessárias
+library(ggplot2)
+
+# Definir os parâmetros
+#set.seed(123)  # Para reprodutibilidade
+n <- 10  # Número de amostras
+x <- rnorm(n, mean = 5, sd = 1)  # Amostras de uma distribuição normal
+
+# Estimador de máxima verossimilhança
+theta_hat <- mean(x)
+
+# Função de verossimilhança
+L_theta <- function(theta) {
+  n <- length(x)
+  return((1 / (sqrt(2 * pi)))^n * exp(-0.5 * sum((x - theta)^2)))
+}
+
+# Valores de theta
+theta_values <- seq(2, 8, length.out = 100)
+likelihood_values <- sapply(theta_values, L_theta)
+
+# Criar um dataframe para o ggplot
+df <- data.frame(theta = theta_values, likelihood = likelihood_values)
+
+# Criar o gráfico
+ggplot(df, aes(x = theta, y = likelihood)) +
+  geom_line(color = "blue") +
+  geom_vline(xintercept = theta_hat, linetype = "dashed", color = "red") +
+  labs(title = "Função de Verossimilhança para N(θ, 1)",
+       x = "θ",
+       y = "L(θ)") +
+  theme_minimal() +
+  annotate("text", x = theta_hat + 0.1, y = max(likelihood_values) * 0.8,
+           label = paste("Estimador: ", round(theta_hat, 2)),
+           color = "red")
+
+```
+
+

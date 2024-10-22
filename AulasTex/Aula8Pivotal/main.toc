@@ -1,0 +1,5 @@
+\babel@toc {brazil}{}\relax 
+\beamer@sectionintoc {1}{O Método da Quantidade Pivotal}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Quantidade Pivotal Assintótica}{10}{0}{1}
+\beamer@sectionintoc {2}{Intervalos de Confiança com o Uso de Quantidades Pivotais}{14}{0}{2}
+\beamer@sectionintoc {3}{Intervalos de Confiança Aproximados}{32}{0}{3}

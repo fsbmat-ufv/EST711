@@ -1,0 +1,6 @@
+\babel@toc {brazil}{}\relax 
+\beamer@sectionintoc {1}{Propriedades dos Estimadores}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Viés}{4}{0}{1}
+\beamer@subsectionintoc {1}{2}{Variância de um Estimador}{16}{0}{1}
+\beamer@subsectionintoc {1}{3}{Erro Quadrático Médio}{17}{0}{1}
+\beamer@subsectionintoc {1}{4}{Estimador Não Viesado de Variância Mínima Uniformemente}{32}{0}{1}

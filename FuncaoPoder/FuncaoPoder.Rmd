@@ -1,0 +1,208 @@
+---
+title: "Gráfico Interativo da Função Poder"
+output: learnr::tutorial
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+library(tidyverse)
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Exemplo 1
+
+Suponha que desejamos testar
+\begin{align}
+H_0 : \mu = 30,000 \text{ versus } H_1 : \mu \neq 30,000. 
+\end{align}
+
+Suponha que $n = 20$ e $\alpha = 0.01$. Então, a regra de rejeição se torna
+
+\begin{align}
+\text{Rejeitar } H_0 \text{ em favor de } H_1 \text{ se } \frac{\bar{X} - 30,000}{S/\sqrt{20}} \geq |z_{\frac{0.01}{2}}|.
+\end{align}
+
+A próxima Figura exibe a curva da função poder para este teste quando $S$ é substituído por $\sigma = 5000$. Para comparação, a curva da função poder para o teste com nível $\alpha = 0.05$ também é apresentada. 
+
+
+```{r, echo=FALSE}
+sliderInput("mu", "Valor de μ:", min = 25000, max = 35000, value = 30000, step = 100)
+plotOutput("plot")
+```
+
+
+```{r, context="server"}
+output$plot <- renderPlot({
+    # Função que calcula o poder da hipótese
+poder <- function(mu, mu0, sigma, n, alpha) {
+  z_alpha <- qnorm(1 - alpha / 2)
+  term1 <- pnorm((sqrt(n) * (mu0 - mu) / sigma) - z_alpha)
+  term2 <- 1 - pnorm((sqrt(n) * (mu0 - mu) / sigma) + z_alpha)
+  return(term1 + term2)
+}
+    # Gera os valores de mu para o gráfico
+    mu_values <- seq(25000, 35000, by = 10)
+    # Calcula os valores de poder para alpha = 0.01 e alpha = 0.05
+poder_alpha_0.01 <- sapply(mu_values, poder, mu0 = 30000, sigma = 5000, n = 20, alpha = 0.01)
+poder_alpha_0.05 <- sapply(mu_values, poder, mu0 = 30000, sigma = 5000, n = 20, alpha = 0.05)
+
+    # # Cria o dataframe para o gráfico
+    # df <- data.frame(mu = mu_values, poder = poder_values)
+    # Cria o dataframe com os dados para os dois alphas
+df <- data.frame(
+  mu = rep(mu_values, 2),
+  poder = c(poder_alpha_0.01, poder_alpha_0.05),
+  alpha = factor(rep(c(0.01, 0.05), each = length(mu_values))) # fator para alpha
+)
+    # Gera o gráfico com ggplot2
+    ggplot(df, aes(x = mu, y = poder, color = alpha)) +
+      geom_line(size = 1) +
+      labs(title = "Função de Poder", x = expression(mu), y = expression(gamma(mu)), color = "Alpha") +
+      theme_minimal() +
+      geom_vline(xintercept = input$mu, linetype = "dashed", color = "red") +
+      annotate("text", x = input$mu, y = 0.1, label = paste("μ =", input$mu), color = "red") + 
+      annotate("text", 
+               x = input$mu, 
+               y = 0.3, 
+               label = paste("Poder =", 
+                             round(sapply(input$mu, 
+                                          poder, 
+                                          mu0 = 30000, 
+                                          sigma = 5000, 
+                                          n = 30, 
+                                          alpha = 0.01),
+                                   digits = 3)), 
+               color = "gray") + 
+      annotate("text", 
+               x = input$mu, 
+               y = 0.5, 
+               label = paste("Poder =", 
+                             round(sapply(input$mu, 
+                                          poder, 
+                                          mu0 = 30000, 
+                                          sigma = 5000, 
+                                          n = 30, 
+                                          alpha = 0.05),
+                                   digits = 3)), 
+               color = "brown")+
+  scale_color_manual(values = c("blue", "green"))  # cores para as duas linhas
+  })
+```
+
+
+## Exemplo 2
+
+Suponha que desejamos testar
+\begin{align}
+H_0 : \mu = 30,000 \text{ versus } H_1 : \mu \neq 30,000. 
+\end{align}
+
+Suponha que $n = 20$ e $\alpha = 0.01$. Então, a regra de rejeição se torna
+
+\begin{align}
+\text{Rejeitar } H_0 \text{ em favor de } H_1 \text{ se } \frac{\bar{X} - 30,000}{S/\sqrt{20}} \geq |z_{\frac{0.01}{2}}|.
+\end{align}
+
+A próxima Figura exibe a curva da função poder para este teste quando $S$ é substituído por $\sigma = 5000$. Para comparação, a curva da função poder para o teste com nível $\alpha = 0.05$ também é apresentada. 
+
+
+```{r ex2, echo=FALSE}
+sliderInput("mu2", "Valor de mu:", min = 25000, max = 35000, value = 30000, step = 100)
+sliderInput("n", "Valor de n:", min = 10, max = 500, value = 100, step = 5)
+sliderInput("alpha", "Valor de alpha:", min = 0.001, max = 0.5, value = 0.01, step = 0.005)
+plotOutput("plot2")
+```
+
+
+```{r server2, context="server"}
+output$plot2 <- renderPlot({
+    # Função que calcula o poder da hipótese
+poder <- function(mu2, mu0, sigma, n, alpha) {
+  z_alpha <- qnorm(1 - alpha / 2)
+  term1 <- pnorm((sqrt(n) * (mu0 - mu2) / sigma) - z_alpha)
+  term2 <- 1 - pnorm((sqrt(n) * (mu0 - mu2) / sigma) + z_alpha)
+  return(term1 + term2)
+}
+    # Gera os valores de mu para o gráfico
+    mu_values <- seq(25000, 35000, by = 10)
+    #n_values <- seq(10, 500, by = 5)
+    #alpha_values <- seq(0.001, 0.5, by = 0.005)
+    # Calcula os valores de poder para alpha = 0.01 e alpha = 0.05
+poder_values <- sapply(mu_values, poder, mu0 = 30000, sigma = 5000, n = input$n, alpha = input$alpha)
+
+
+    # # Cria o dataframe para o gráfico
+     df <- data.frame(mu2 = mu_values, poder = poder_values)
+
+    # Gera o gráfico com ggplot2
+    ggplot(df, aes(x = mu2, y = poder)) +
+      geom_line(size = 1, color = "blue") +
+      labs(title = "Função de Poder", x = expression(mu2), y = expression(gamma(mu2))) +
+      theme_minimal() +
+      geom_vline(xintercept = input$mu2, linetype = "dashed", color = "red") +
+      annotate("text", x = input$mu2, y = 0.1, label = paste("μ =", input$mu2), color = "red") + 
+      annotate("text", 
+               x = input$mu2, 
+               y = 0.3, 
+               label = paste("Poder =", 
+                             round(sapply(mu_values, poder, mu0 = 30000, sigma = 5000, n = input$n, alpha = input$alpha),
+                                   digits = 3)), 
+               color = "gray") 
+  })
+```
+
+
+## Usando a distribuição t de Student
+
+```{r ex3, echo=FALSE}
+sliderInput("mu3", "Valor de mu:", min = 25000, max = 35000, value = 30000, step = 100)
+sliderInput("n3", "Valor de n:", min = 10, max = 500, value = 100, step = 5)
+sliderInput("alpha3", "Valor de alpha:", min = 0.001, max = 0.5, value = 0.01, step = 0.005)
+plotOutput("plot3")
+```
+
+
+```{r server3, context="server"}
+output$plot3 <- renderPlot({
+    # Função que calcula o poder da hipótese
+# Função que calcula o poder para a distribuição t de Student
+poder_t <- function(mu, mu0, s, n, alpha) {
+  # Valor crítico da distribuição t para alpha/2 e n-1 graus de liberdade
+  t_alpha <- qt(1 - alpha / 2, df = n - 1)
+  
+  # Primeiro termo da função de poder
+  term1 <- pt((sqrt(n) * (mu0 - mu) / s) - t_alpha, df = n - 1)
+  
+  # Segundo termo da função de poder
+  term2 <- 1 - pt((sqrt(n) * (mu0 - mu) / s) + t_alpha, df = n - 1)
+  
+  return(term1 + term2)
+}
+    # Gera os valores de mu para o gráfico
+    mu_values3 <- seq(25000, 35000, by = 10)
+    #n_values <- seq(10, 500, by = 5)
+    #alpha_values <- seq(0.001, 0.5, by = 0.005)
+    # Calcula os valores de poder para alpha = 0.01 e alpha = 0.05
+poder_values3 <- sapply(mu_values3, poder_t, mu0 = 30000, s = 5000, n = input$n3, alpha = input$alpha3)
+
+
+    # # Cria o dataframe para o gráfico
+     df <- data.frame(mu = mu_values3, poder = poder_values3)
+
+    # Gera o gráfico com ggplot2
+    ggplot(df, aes(x = mu, y = poder)) +
+      geom_line(size = 1, color = "blue") +
+      labs(title = "Função de Poder para o Teste t de Student", x = expression(mu), y = expression(gamma(mu))) +
+      theme_minimal() +
+      geom_vline(xintercept = input$mu3, linetype = "dashed", color = "red") +
+      annotate("text", x = input$mu3, y = 0.1, label = paste("μ =", input$mu3), color = "red") + 
+      annotate("text", 
+               x = input$mu3, 
+               y = 0.5, 
+               label = paste("Poder =", 
+                             round(sapply(mu_values3, poder_t, mu0 = 30000, s = 5000, n = input$n3, alpha = input$alpha3),
+                                   digits = 3)), 
+               color = "black")  
+  })
+```

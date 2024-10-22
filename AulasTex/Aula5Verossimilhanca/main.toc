@@ -1,3 +1,4 @@
 \babel@toc {brazil}{}\relax 
 \beamer@sectionintoc {1}{Método dos Momentos}{3}{0}{1}
 \beamer@sectionintoc {2}{Método da Máxima Verossimilhança}{11}{0}{2}
+\beamer@subsectionintoc {2}{1}{Princípio da Invariância dos EMV}{39}{0}{2}

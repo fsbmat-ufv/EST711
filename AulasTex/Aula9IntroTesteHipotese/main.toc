@@ -1,0 +1,11 @@
+\babel@toc {brazil}{}\relax 
+\beamer@sectionintoc {1}{Introdução a Testes de Hipóteses}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Função de Decisão}{17}{0}{1}
+\beamer@subsectionintoc {1}{2}{Tipos de Erros}{21}{0}{1}
+\beamer@sectionintoc {2}{Função Poder}{31}{0}{2}
+\beamer@subsectionintoc {2}{1}{Tamanho do Teste}{33}{0}{2}
+\beamer@sectionintoc {3}{Teste para Média Baseado em Grandes Amostras}{44}{0}{3}
+\beamer@sectionintoc {4}{Teste para Média sob Normalidade}{52}{0}{4}
+\beamer@sectionintoc {5}{Teste Bilateral para a Média Baseado em Grandes Amostras}{53}{0}{5}
+\beamer@sectionintoc {6}{Exercícios da Seção 4.5}{55}{0}{6}
+\beamer@sectionintoc {7}{Exercícios da Seção 4.6}{56}{0}{7}
