@@ -1,0 +1,4 @@
+\babel@toc {brazil}{}\relax 
+\beamer@sectionintoc {1}{Intervalo de Confiança}{3}{0}{1}
+\beamer@sectionintoc {2}{Intervalo de Confiança para a Diferença de Médias}{24}{0}{2}
+\beamer@sectionintoc {3}{Intervalo de Confiança para a Diferença de Proporção}{31}{0}{3}
