@@ -46,7 +46,7 @@ poder <- function(mu, mu0, sigma, n, alpha) {
     # Calcula os valores de poder para alpha = 0.01 e alpha = 0.05
 poder_alpha_0.01 <- sapply(mu_values, poder, mu0 = 30000, sigma = 5000, n = 20, alpha = 0.01)
 poder_alpha_0.05 <- sapply(mu_values, poder, mu0 = 30000, sigma = 5000, n = 20, alpha = 0.05)
-
+#sapply(33000, poder, mu0 = 30000, sigma = 5000, n = 20, alpha = 0.05)
     # # Cria o dataframe para o gráfico
     # df <- data.frame(mu = mu_values, poder = poder_values)
     # Cria o dataframe com os dados para os dois alphas
@@ -70,10 +70,10 @@ df <- data.frame(
                                           poder, 
                                           mu0 = 30000, 
                                           sigma = 5000, 
-                                          n = 30, 
+                                          n = 20, 
                                           alpha = 0.01),
                                    digits = 3)), 
-               color = "gray") + 
+               color = "black") + 
       annotate("text", 
                x = input$mu, 
                y = 0.5, 
@@ -82,7 +82,7 @@ df <- data.frame(
                                           poder, 
                                           mu0 = 30000, 
                                           sigma = 5000, 
-                                          n = 30, 
+                                          n = 20, 
                                           alpha = 0.05),
                                    digits = 3)), 
                color = "brown")+
@@ -118,10 +118,10 @@ plotOutput("plot2")
 ```{r server2, context="server"}
 output$plot2 <- renderPlot({
     # Função que calcula o poder da hipótese
-poder <- function(mu2, mu0, sigma, n, alpha) {
+poder <- function(mu, mu0, sigma, n, alpha) {
   z_alpha <- qnorm(1 - alpha / 2)
-  term1 <- pnorm((sqrt(n) * (mu0 - mu2) / sigma) - z_alpha)
-  term2 <- 1 - pnorm((sqrt(n) * (mu0 - mu2) / sigma) + z_alpha)
+  term1 <- pnorm((sqrt(n) * (mu0 - mu) / sigma) - z_alpha)
+  term2 <- 1 - pnorm((sqrt(n) * (mu0 - mu) / sigma) + z_alpha)
   return(term1 + term2)
 }
     # Gera os valores de mu para o gráfico
@@ -133,22 +133,27 @@ poder_values <- sapply(mu_values, poder, mu0 = 30000, sigma = 5000, n = input$n,
 
 
     # # Cria o dataframe para o gráfico
-     df <- data.frame(mu2 = mu_values, poder = poder_values)
+     df2 <- data.frame(mu2 = mu_values, poder = poder_values)
 
     # Gera o gráfico com ggplot2
-    ggplot(df, aes(x = mu2, y = poder)) +
+    ggplot(df2, aes(x = mu2, y = poder)) +
       geom_line(size = 1, color = "blue") +
-      labs(title = "Função de Poder", x = expression(mu2), y = expression(gamma(mu2))) +
+      labs(title = "Função de Poder", x = expression(mu), y = expression(gamma(mu))) +
       theme_minimal() +
       geom_vline(xintercept = input$mu2, linetype = "dashed", color = "red") +
       annotate("text", x = input$mu2, y = 0.1, label = paste("μ =", input$mu2), color = "red") + 
       annotate("text", 
-               x = input$mu2, 
+               x = 31000, 
                y = 0.3, 
                label = paste("Poder =", 
-                             round(sapply(mu_values, poder, mu0 = 30000, sigma = 5000, n = input$n, alpha = input$alpha),
+                             round(sapply(input$mu2, 
+                                          poder, 
+                                          mu0 = 30000, 
+                                          sigma = 5000, 
+                                          n = input$n, 
+                                          alpha = input$alpha),
                                    digits = 3)), 
-               color = "gray") 
+               color = "black") 
   })
 ```
 
@@ -201,8 +206,257 @@ poder_values3 <- sapply(mu_values3, poder_t, mu0 = 30000, s = 5000, n = input$n3
                x = input$mu3, 
                y = 0.5, 
                label = paste("Poder =", 
-                             round(sapply(mu_values3, poder_t, mu0 = 30000, s = 5000, n = input$n3, alpha = input$alpha3),
+                             round(sapply(input$mu3, poder_t, mu0 = 30000, s = 5000, n = input$n3, alpha = input$alpha3),
                                    digits = 3)), 
                color = "black")  
   })
 ```
+
+## Aula de Exemplos
+
+### Exemplo 1
+
+```{r Ex1, exercise=TRUE}
+# Função para calcular o poder do teste unilateral
+calcula_poder <- function(mu, mu0 = 100, sigma = 12, n = 36, alpha = 0.05) {
+  # Valor crítico Z_alpha
+  z_alpha <- qnorm(1 - alpha)
+  
+  # Calcula o valor crítico de X-barra
+  x_critico <- mu0 + z_alpha * (sigma / sqrt(n))
+  
+  # Calcula o Z correspondente ao valor crítico sob a hipótese alternativa
+  z <- (x_critico - mu) / (sigma / sqrt(n))
+  
+  # O poder é a probabilidade de rejeitar H0 sob a distribuição normal
+  poder <- 1 - pnorm(z)
+  
+  return(poder)
+}
+
+# Exemplo de uso da função
+mu_valores <- seq(100, 110, by = 0.1)
+poderes <- sapply(mu_valores, calcula_poder)
+
+# Plotando a curva de poder
+plot(mu_valores, poderes, type = "l", col = "blue", lwd = 2, 
+     xlab = expression(mu), ylab = "Poder do Teste", 
+     main = "Curva de Poder para o Teste Unilateral")
+abline(h = 0.8, col = "red", lty = 2) # Linha para poder de 80%
+
+```
+
+### Exemplo 2
+
+```{r Ex2, exercise=TRUE}
+# Função para calcular o poder do teste unilateral à esquerda para a média
+calcula_poder_media_esquerda <- function(mu, mu0 = 50, sigma = 8, n = 36, alpha = 0.05) {
+  # Valor crítico Z_alpha para teste unilateral à esquerda
+  z_alpha <- qnorm(alpha)
+  
+  # Calcula o valor crítico de X-barra
+  x_critico <- mu0 + z_alpha * (sigma / sqrt(n))
+  
+  # Calcula o Z correspondente ao valor crítico sob a hipótese alternativa
+  z <- (x_critico - mu) / (sigma / sqrt(n))
+  
+  # O poder é a probabilidade de rejeitar H0 sob a distribuição normal
+  poder <- pnorm(z)
+  
+  return(poder)
+}
+
+# Exemplo de uso da função
+mu_valores <- seq(45, 50, by = 0.1)
+poderes <- sapply(mu_valores, calcula_poder_media_esquerda)
+
+# Plotando a curva de poder
+plot(mu_valores, poderes, type = "l", col = "blue", lwd = 2, 
+     xlab = expression(mu), ylab = "Poder do Teste", 
+     main = "Curva de Poder para o Teste Unilateral à Esquerda da Média")
+abline(h = 0.8, col = "red", lty = 2) # Linha para poder de 80%
+
+```
+
+
+### Exemplo 3
+
+```{r Ex3, exercise=T}
+# Função para calcular o poder do teste unilateral para proporções
+calcula_poder_proporcao <- function(p, p0 = 0.4, n = 100, alpha = 0.01) {
+  # Valor crítico Z_alpha
+  z_alpha <- qnorm(1 - alpha)
+  
+  # Calcula o valor crítico de p-hat
+  p_critico <- p0 + z_alpha * sqrt(p0 * (1 - p0) / n)
+  
+  # Calcula o Z correspondente ao valor crítico sob a hipótese alternativa
+  z <- (p_critico - p) / sqrt(p * (1 - p) / n)
+  
+  # O poder é a probabilidade de rejeitar H0 sob a distribuição normal
+  poder <- 1 - pnorm(z)
+  
+  return(poder)
+}
+
+# Exemplo de uso da função
+p_valores <- seq(0.4, 0.7, by = 0.01)
+poderes <- sapply(p_valores, calcula_poder_proporcao)
+
+# Plotando a curva de poder
+plot(p_valores, poderes, type = "l", col = "blue", lwd = 2, 
+     xlab = expression(p), ylab = "Poder do Teste", 
+     main = "Curva de Poder para o Teste Unilateral de Proporção")
+abline(h = 0.7656, col = "red", lty = 2) # Linha para poder de 80%
+text(0.6, 0.7, labels = paste0("Se p=0.55, o poder é: ",round(calcula_poder_proporcao(0.55), digits = 4)))
+```
+
+
+### Exemplo 4
+
+```{r Ex4, exercise = TRUE}
+# Função para calcular o poder do teste bilateral para a média
+calcula_poder_media <- function(mu, mu0 = 50, sigma = 10, n = 36, alpha = 0.05) {
+  # Valor crítico Z_alpha/2 para teste bilateral
+  z_alpha <- qnorm(1 - alpha / 2)
+  
+  # Calcula os valores críticos de X-barra
+  x_critico_lower <- mu0 - z_alpha * (sigma / sqrt(n))
+  x_critico_upper <- mu0 + z_alpha * (sigma / sqrt(n))
+  
+  # Calcula o Z correspondente aos valores críticos sob a hipótese alternativa
+  z_lower <- (x_critico_lower - mu) / (sigma / sqrt(n))
+  z_upper <- (x_critico_upper - mu) / (sigma / sqrt(n))
+  
+  # O poder é a probabilidade de rejeitar H0 sob a distribuição normal
+  poder <- pnorm(z_lower) + (1 - pnorm(z_upper))
+  
+  return(poder)
+}
+
+# Exemplo de uso da função
+mu_valores <- seq(45, 55, by = 0.1)
+poderes <- sapply(mu_valores, calcula_poder_media)
+
+# Plotando a curva de poder
+plot(mu_valores, poderes, type = "l", col = "blue", lwd = 2, 
+     xlab = expression(mu), ylab = "Poder do Teste", 
+     main = "Curva de Poder para o Teste Bilateral da Média")
+abline(h = 0.8, col = "red", lty = 2) # Linha para poder de 80%
+ 
+```
+
+### Comparação Com Intervalo de Confiança para a Distribuição Binomial
+
+Nos gráficos gerados as curvas de poder mostram que $Z_1$ apresenta maior poder 
+quando $H_0$ é claramente falsa, e $Z_2$ tem maior poder quando $p$ está mais 
+próximo de $p_0$, isso pode ser explicado da seguinte maneira:
+
+- Estatística $Z_1$ (com $p_0$ no denominador)
+
+Quando $p$ está longe de $p_0$ (ou seja, $H_0$ é claramente falsa), o valor de $p_0$ pode subestimar ou superestimar a variabilidade real dos dados. Mesmo assim, $Z_1$ continua usando $p_0$, o que pode resultar em uma estatística de teste que detecta com mais facilidade desvios maiores de $p_0$, **resultando em maior poder quando $H_0$ é falsa**.
+
+- Estatística $Z_2$ (com $\hat{p}$ no denominador)
+
+Quando $p$ está próximo de $p_0$, $Z_2$ ajusta a variância com base na proporção 
+observada $\hat{p}$, que estará perto de $p_0$. Isso melhora a precisão da estatística, 
+pois está adaptando a variabilidade ao valor estimado da amostra. Portanto, $Z_2$
+**fornece maior** poder quando $p$ está perto de $p_0$}, pois a estimativa da 
+variância é mais precisa e reflete melhor a realidade da amostra.
+
+Em resumo:
+
+\begin{itemize}
+    \item $Z_1$} funciona melhor quando há um desvio significativo entre $p$ e $p_0$, fornecendo maior poder para detectar diferenças claras.
+    \item $Z_2$} funciona melhor quando $p$ está próximo de $p_0$, pois ajusta a variância para refletir melhor a realidade da amostra, proporcionando maior poder nessa região.
+\end{itemize}
+
+Portanto, a observação dos gráficos é consistente com essa análise: $Z_1$ é mais poderoso quando $H_0$ é claramente falsa, e $Z_2$ é mais poderoso quando $p$ está próximo de $p_0$}.
+
+
+```{r ExemploBinomialICInput, echo=FALSE}
+sliderInput("p0", "Valor de p0:", min = 0, max = 1, value = 0.5, step = 0.001)
+sliderInput("p", "Valor de p:", min = 0, max = 1, value = 0.5, step = 0.001)
+sliderInput("nBin", "Valor de n:", min = 1, max = 500, value = 10, step = 1)
+sliderInput("alphaBin", "Valor de alpha:", min = 0.001, max = 0.5, value = 0.01, step = 0.001)
+plotOutput("plotBinIC")
+```
+
+
+```{r ExemploBinomialIC, context="server"}
+output$plotBinIC <- renderPlot({
+
+# Função de poder usando a estatística Z1 para teste bilateral
+calcula_poder_Z1 <- function(p, p0 = input$p0, n = input$nBin, alpha = input$alphaBin) {
+  z_alpha <- qnorm(1 - alpha / 2)  # Valor crítico para Z (dividido por 2 para as duas caudas)
+  p_hat_critico_superior <- p0 + z_alpha * sqrt(p0 * (1 - p0) / n)  # Valor crítico superior de p_hat
+  p_hat_critico_inferior <- p0 - z_alpha * sqrt(p0 * (1 - p0) / n)  # Valor crítico inferior de p_hat
+  
+  # Estatística Z1 para os valores críticos superior e inferior
+  z_superior <- (p_hat_critico_superior - p) / sqrt(p0 * (1 - p0) / n)
+  z_inferior <- (p_hat_critico_inferior - p) / sqrt(p0 * (1 - p0) / n)
+  
+  # O poder é a soma das probabilidades de Z estar abaixo do valor crítico inferior e acima do valor crítico superior
+  poder <- pnorm(z_inferior) + (1 - pnorm(z_superior))
+  return(poder)
+}
+
+# Função de poder usando a estatística Z2 para teste bilateral
+calcula_poder_Z2 <- function(p, p0 = input$p0, n = input$nBin, alpha = input$alphaBin) {
+  z_alpha <- qnorm(1 - alpha / 2)  # Valor crítico para Z (dividido por 2 para as duas caudas)
+  p_hat_critico_superior <- p0 + z_alpha * sqrt(p0 * (1 - p0) / n)  # Valor crítico superior de p_hat
+  p_hat_critico_inferior <- p0 - z_alpha * sqrt(p0 * (1 - p0) / n)  # Valor crítico inferior de p_hat
+  
+  # Estatística Z2 para os valores críticos superior e inferior
+  z_superior <- (p_hat_critico_superior - p) / sqrt(p * (1 - p) / n)
+  z_inferior <- (p_hat_critico_inferior - p) / sqrt(p * (1 - p) / n)
+  
+  # O poder é a soma das probabilidades de Z estar abaixo do valor crítico inferior e acima do valor crítico superior
+  poder <- pnorm(z_inferior) + (1 - pnorm(z_superior))
+  return(poder)
+}
+
+# Valores de p para gerar as curvas de poder
+p_valores <- seq(0, 1, by = 0.001)
+
+# Calcular os poderes para Z1 e Z2
+poderes_Z1 <- sapply(p_valores, calcula_poder_Z1)
+poderes_Z2 <- sapply(p_valores, calcula_poder_Z2)
+
+# Criar um dataframe para armazenar os resultados
+df_poder <- data.frame(
+  p = rep(p_valores, 2),
+  Poder = c(poderes_Z1, poderes_Z2),
+  Estatistica = rep(c("Z1", "Z2"), each = length(p_valores))
+)
+
+# Gerar o gráfico com ggplot2
+ggplot(df_poder, aes(x = p, y = Poder, color = Estatistica)) +
+  geom_line(size = 1.2) +
+  labs(title = "Curvas de Poder para Z1 e Z2 (Teste Bilateral)", 
+       x = "Valores de p", 
+       y = "Poder do Teste") +
+  theme_minimal() +
+  scale_color_manual(values = c("blue", "red")) +
+  geom_hline(yintercept = 0.8, linetype = "dashed", color = "black") +  # Linha de referência para poder de 80%
+  theme(plot.title = element_text(hjust = 0.5)) +
+  geom_vline(xintercept = input$p, linetype = "dashed", color = "red") +
+  annotate("text", x = input$p, y = 0.2, label = paste("p =", input$p), color = "red") +
+  annotate("text", 
+           x = input$p, 
+           y = 0.5, 
+           label = paste("Poder Z1 =", 
+                         round(sapply(input$p, calcula_poder_Z1),
+                               digits = 3)), 
+           color = "black")  +
+  annotate("text", 
+           x = input$p, 
+           y = 0.4, 
+           label = paste("Poder Z2 =", 
+                         round(sapply(input$p, calcula_poder_Z2),
+                               digits = 3)), 
+           color = "black")
+
+})
+```
+

@@ -21,7 +21,8 @@
 \tableofcontents
 \end{frame}
 
-\section{Exemplo 1: Teste Bilateral para a Média Baseado em Grandes Amostras}
+\section{Exemplos}
+\subsection{Exemplo 1: Teste Bilateral}
 \begin{frame}{Teste Bilateral para a Média Baseado em Grandes Amostras}
 \begin{block}{}
 \justifying
@@ -88,7 +89,7 @@ em que $\phi(z)$ é a função de densidade de probabilidade de uma variável al
 \end{block}
 \end{frame}
 
-\section{Exemplo 2: Exercício 4.6.2}
+\subsection{Exemplo 2}
 \begin{frame}{Exemplo 2: Exercício 4.6.2}
 \begin{block}{}
 \justifying
@@ -137,7 +138,7 @@ Nesse caso,
 \end{block}
 \end{frame}
 
-\section{Exemplo 3}
+\subsection{Exemplo 3}
 \begin{frame}{}
 \begin{block}{}
 \justifying
@@ -182,7 +183,7 @@ Ele também possui uma curva da função poder em forma de ``bacia'' semelhante 
 \end{block}
 \end{frame}
 
-\section{Outros Exemplos de Cálculo da função poder}
+\subsection{Exemplo 4}
 \begin{frame}{}
 \begin{block}{Distribuição Normal:}
 \justifying
@@ -220,75 +221,311 @@ A probabilidade de $Z$ ser maior que $-0,181$ é aproximadamente $0,5718$. Porta
 \end{block}
 \end{frame}
 
-\begin{frame}{}
-\begin{block}{Distribuição Binomial}
-\justifying
-\begin{itemize}
-\item \textbf{Hipótese Nula (H0):} A proporção de sucesso em um experimento binomial é de $p_{0}=0,4$.
-\item \textbf{Hipótese Alternativa (H1):} A proporção de sucesso em um experimento binomial é maior que 0,4.
-\item \textbf{Tamanho da amostra:} 100
-\item \textbf{Nível de significância:} 0,01
-\item \textbf{Proporção real sob H1 (Suposição):} 0,55
-\end{itemize}
+%\begin{frame}{}
+%\begin{block}{Distribuição Binomial}
+%\justifying
+%\begin{itemize}
+%\item \textbf{Hipótese Nula (H0):} A proporção de sucesso em um experimento binomial é de $p_{0}=0,4$.
+%\item \textbf{Hipótese Alternativa (H1):} A proporção de sucesso em um experimento binomial é maior que 0,4.
+%\item \textbf{Tamanho da amostra:} 100
+%\item \textbf{Nível de significância:} 0,01
+%\item \textbf{Proporção real sob H1 (Suposição):} 0,55
+%\end{itemize}
+%
+%Para testar uma hipótese sobre uma proporção \( p \) em um experimento binomial, usamos a estatística \( Z \) normalizada sob a hipótese nula:
+%\[
+%Z = \frac{\hat{p} - p}{\sqrt{\frac{p_0(1 - p_0)}{n}}}
+%\]
+%onde \( \hat{p} \) é a proporção amostral.
+%\end{block}
+%\end{frame}
+%
+%\begin{frame}{}
+%\begin{block}{}
+%\justifying
+%Como \( H_1 \) é unilateral (\( p > 0.4 \)), rejeitamos \( H_0 \) se \( Z \) for maior que o valor crítico \( z_\alpha \). Para \( \alpha = 0.01 \), o valor crítico \( z_\alpha \) é obtido da tabela normal padrão:
+%\[
+%z_{0.01} = 2.33
+%\]
+%Isso significa que rejeitamos \( H_0 \) se a estatística \( Z \) for maior que 2.33.
+%\end{block}
+%\pause
+%\begin{block}{}
+%	\justifying
+%Podemos agora converter o valor crítico de \( Z \) para um valor crítico para a proporção amostral \( \hat{p} \):
+%\[
+%\hat{p}_{crit} = p_0 + z_{0.01} \times \sqrt{\frac{p_0(1 - p_0)}{n}}
+%\]
+%Substituindo os valores:
+%\[
+%\hat{p}_{crit} = 0.4 + 2.33 \times \sqrt{\frac{0.4(1 - 0.4)}{100}}\approx 0.5141
+%\]
+%Portanto, rejeitamos \( H_0 \) se \( \hat{p} \geq 0.5141 \).
+%\end{block}
+%\end{frame}
+%
+%\begin{frame}{}
+%	\begin{block}{}
+%		\justifying
+%A função poder é a probabilidade de rejeitar \( H_0 \) quando a proporção real \( p_1 = 0.55 \). Podemos calcular essa probabilidade usando a mesma estatística \( Z \), mas agora considerando \( p_1 \) como a proporção verdadeira:
+%\[
+%Z = \frac{\hat{p}_{crit} - p_1}{\sqrt{\frac{p_1(1 - p_1)}{n}}}= \frac{0.5141 - 0.55}{\sqrt{\frac{0.55(1 - 0.55)}{100}}}\approx -0.722
+%\]
+%Usando a tabela da distribuição normal padrão, encontramos:
+%\[
+%P(Z > -0.722) = 1 - P(Z \leq -0.722) \approx 1 - 0.2358 = 0.7642
+%\]
+%Portanto, o \textbf{poder do teste} é aproximadamente \( 0.764 \), ou seja, existe uma probabilidade de cerca de 76,4\% de rejeitar a hipótese nula se a verdadeira proporção for \( 0.55 \).
+%		
+%	\end{block}
+%\end{frame}
+%
+%\begin{frame}{}
+%\begin{block}{}
+%\justifying
+%\begin{figure}
+%    \centering
+%    \includegraphics[scale=0.5]{figs/PoderBinomial.png}
+%    \caption{Função Poder de um teste unilateral usando a distribuição binomial}
+%    \label{fig:enter-label}
+%\end{figure}
+%\end{block}
+%\end{frame}
 
-Para testar uma hipótese sobre uma proporção \( p \) em um experimento binomial, usamos a estatística \( Z \) normalizada sob a hipótese nula:
-\[
-Z = \frac{\hat{p} - p}{\sqrt{\frac{p_0(1 - p_0)}{n}}}
-\]
-onde \( \hat{p} \) é a proporção amostral.
-\end{block}
-\end{frame}
-
-\begin{frame}{}
-\begin{block}{}
-\justifying
-Como \( H_1 \) é unilateral (\( p > 0.4 \)), rejeitamos \( H_0 \) se \( Z \) for maior que o valor crítico \( z_\alpha \). Para \( \alpha = 0.01 \), o valor crítico \( z_\alpha \) é obtido da tabela normal padrão:
-\[
-z_{0.01} = 2.33
-\]
-Isso significa que rejeitamos \( H_0 \) se a estatística \( Z \) for maior que 2.33.
-\end{block}
-\pause
-\begin{block}{}
-	\justifying
-Podemos agora converter o valor crítico de \( Z \) para um valor crítico para a proporção amostral \( \hat{p} \):
-\[
-\hat{p}_{crit} = p_0 + z_{0.01} \times \sqrt{\frac{p_0(1 - p_0)}{n}}
-\]
-Substituindo os valores:
-\[
-\hat{p}_{crit} = 0.4 + 2.33 \times \sqrt{\frac{0.4(1 - 0.4)}{100}}\approx 0.5141
-\]
-Portanto, rejeitamos \( H_0 \) se \( \hat{p} \geq 0.5141 \).
-\end{block}
-\end{frame}
-
-\begin{frame}{}
+\subsection{Exemplo 5: Teste unilateral a direita}
+\begin{frame}{Teste unilateral para a Média Baseado em Grandes Amostras}
 	\begin{block}{}
 		\justifying
-A função poder é a probabilidade de rejeitar \( H_0 \) quando a proporção real \( p_1 = 0.55 \). Podemos calcular essa probabilidade usando a mesma estatística \( Z \), mas agora considerando \( p_1 \) como a proporção verdadeira:
-\[
-Z = \frac{\hat{p}_{crit} - p_1}{\sqrt{\frac{p_1(1 - p_1)}{n}}}= \frac{0.5141 - 0.55}{\sqrt{\frac{0.55(1 - 0.55)}{100}}}\approx -0.722
-\]
-Usando a tabela da distribuição normal padrão, encontramos:
-\[
-P(Z > -0.722) = 1 - P(Z \leq -0.722) \approx 1 - 0.2358 = 0.7642
-\]
-Portanto, o \textbf{poder do teste} é aproximadamente \( 0.764 \), ou seja, existe uma probabilidade de cerca de 76,4\% de rejeitar a hipótese nula se a verdadeira proporção for \( 0.55 \).
+		Vamos testar a seguinte hipótese nula e alternativa:
 		
+		\[
+		H_0: \mu \leq \mu_0 \quad \text{contra} \quad H_1: \mu > \mu_0
+		\]
+		
+		Em que $\mu_0 = 100$ e $\mu$ é a média populacional desconhecida. Suponha que temos uma amostra de tamanho $n = 36$, com desvio padrão populacional conhecido $\sigma = 12$, e o nível de significância $\alpha = 0,05$.
+		
+	\end{block}
+	\pause
+	\begin{block}{}
+		\justifying
+		Vamos rejeitar $H_0$ se $\bar{X}>x_{c}>100,$ tal que $\alpha=P_{\text{Sob}~H_{0}}(\bar{X}>x_{c})$
+		\[
+		Z_{\alpha} = 1,645
+		\]	
 	\end{block}
 \end{frame}
 
 \begin{frame}{}
-\begin{block}{}
-\justifying
-\begin{figure}
-    \centering
-    \includegraphics[scale=0.7]{figs/binomPower.png}
-    \caption{Função Poder de um teste unilateral usando a distribuição binomial}
-    \label{fig:enter-label}
-\end{figure}
-\end{block}
+	\begin{block}{Cálculo do Valor Crítico sob $H_{0}$}
+		\justifying
+		\begin{align*}
+			0,05&=P_{\text{Sob}~H_{0}}(\bar{X}>x_{c})=P(Z>\dfrac{(x_{c}-100)\times6}{12})\\
+			&\Rightarrow \dfrac{(x_{c}-100)\times6}{12}=1,645\\
+			&\Rightarrow x_{c}=103,29
+		\end{align*}
+	\end{block}
+	\pause
+	\begin{block}{Cálculo do Poder do Teste}
+		\justifying
+		O poder do teste é a probabilidade de rejeitar $H_0$ quando a verdadeira média $\mu$ é maior que $\mu_0$. Assumindo que a verdadeira média é $\mu = 105:$
+		\begin{align*}
+			\gamma(\mu=105)&=P_{\mu=105}(\bar{X}>x_{c})=P(\bar{X}>103,29)\\
+			&=P(Z>\dfrac{(103,29-105)\times6}{12})=P(Z>-0,855)\\
+			&=0,804
+		\end{align*}
+	\end{block}
+\end{frame}
+
+\begin{frame}{}
+	\begin{block}{}
+		Vejam os gráficos de poder \href{https://est711.shinyapps.io/FuncaoPoder/}{cliquem aqui!}
+	\end{block}
+\end{frame}
+
+\subsection{Exemplo 6: Teste unilateral a esquerda}
+\begin{frame}{Teste unilateral para a Média Baseado em Grandes Amostras}
+	\begin{block}{}
+		\justifying
+		Vamos testar a seguinte hipótese nula e alternativa:
+		
+		\[
+		H_0: \mu = \mu_0 = 50 \quad \text{contra} \quad H_1: \mu < 50
+		\]
+		
+		Em que \( \mu_0 = 50 \) é a média sob \( H_0 \), e \( \mu \) é a média populacional desconhecida. Temos uma amostra de tamanho \( n = 36 \), com desvio padrão populacional \( \sigma = 8 \), e o nível de significância \( \alpha = 0.05 \).
+		
+		
+	\end{block}
+	\pause
+	\begin{block}{}
+		\justifying
+		Vamos rejeitar $H_0$ se $\bar{X}<x_{c}<50,$ tal que $\alpha=P_{\text{Sob}~H_{0}}(\bar{X}<x_{c})$
+		\[
+		Z_{\alpha} = -1,645
+		\]	
+	\end{block}
+\end{frame}
+
+\begin{frame}{}
+	\begin{block}{Cálculo do Valor Crítico sob $H_{0}$}
+		\justifying
+		\begin{align*}
+			0,05&=P_{\text{Sob}~H_{0}}(\bar{X}<x_{c})=P(Z<\dfrac{(x_{c}-50)\times6}{8})\\
+			&\Rightarrow \dfrac{(x_{c}-50)\times6}{8}=-1,645\\
+			&\Rightarrow x_{c}=47,81
+		\end{align*}
+	\end{block}
+	\pause
+	\begin{block}{Cálculo do Poder do Teste}
+		\justifying
+		O poder do teste é a probabilidade de rejeitar $H_0$ quando a verdadeira média $\mu$ é menor que $\mu_0$. Vamos assumir que a verdadeira média é $\mu = 47:$
+		\begin{align*}
+			\gamma(47)&=P_{\mu=47}(\bar{X}<x_{c})=P(\bar{X}<47,81)\\
+			&=P(Z<\dfrac{(47,81-47)\times6}{8})=P(Z<0,6075)\\
+			&=0,728
+		\end{align*}
+	\end{block}
+\end{frame}
+
+\begin{frame}{}
+	\begin{block}{}
+		Vejam os gráficos de poder \href{https://est711.shinyapps.io/FuncaoPoder/}{cliquem aqui!}
+	\end{block}
+\end{frame}
+
+\subsection{Exemplo 7: Teste unilateral para a Proporção Binomial}
+\begin{frame}{}
+	\begin{block}{}
+		\justifying
+		Vamos testar a seguinte hipótese nula e alternativa:
+		
+		\[
+		H_0: p = p_0 = 0,4 \quad \text{contra} \quad H_1: p > 0,4
+		\]
+		
+		O tamanho da amostra é \(n = 100\), o nível de significância é \(\alpha = 0,01\), e assumimos que a proporção real sob \(H_1\) é \(p = 0,55\).
+	\end{block}
+	\pause
+	\begin{block}{}
+		\justifying
+		Vamos rejeitar $H_0$ se $\bar{p}>p_{c}>0,4,$ tal que $\alpha=P_{\text{Sob}~H_{0}}(\bar{p}>p_{c})$
+		\[
+		Z_{\alpha} = 2,33
+		\]	
+	\end{block}
+\end{frame}
+
+\begin{frame}{}
+	\begin{block}{Cálculo do Valor Crítico sob $H_{0}$}
+		\justifying
+		\begin{align*}
+			0,01&=P_{\text{Sob}~H_{0}}(\bar{p}>p_{c})=P(Z>\dfrac{(p_{c}-0,4)\times10}{\sqrt{0,04\times(1-0,04)}})\\
+			&\Rightarrow \dfrac{(p_{c}-0,4)\times10}{\sqrt{0,4\times(1-0,4)}}=2,33\Rightarrow p_{c}=0,5141
+		\end{align*}
+	\end{block}
+	\pause
+	\begin{block}{Cálculo do Poder do Teste}
+		\justifying
+		O poder do teste é a probabilidade de rejeitar $H_0$ quando a verdadeira proporção $p$ é maior que $0,4$. Assumindo que a verdadeira proporção é $p=0,55:$
+		\begin{align*}
+			\gamma(p=0,55)&=P_{p=0,55}(\bar{p}>p_{c})=P(\bar{p}>0,5141)\\
+			&=P(Z>\dfrac{(0,5141-0,55)\times10}{\sqrt{0,55\times(1-0,55)}})=P(Z>-0,722)\\
+			&=0,7648
+		\end{align*}
+	\end{block}
+\end{frame}
+
+\begin{frame}{}
+	\begin{block}{}
+		Vejam os gráficos de poder \href{https://est711.shinyapps.io/FuncaoPoder/}{cliquem aqui!}
+	\end{block}
+\end{frame}
+
+\subsection{Exemplo 8: Teste Bilateral}
+\begin{frame}{Teste Bilateral para a Média Baseado em Grandes Amostras}
+	\begin{block}{}
+		\justifying
+		Vamos testar a seguinte hipótese nula e alternativa:
+		
+		\[
+		H_0: \mu = \mu_0 = 50 \quad \text{contra} \quad H_1: \mu \neq 50
+		\]
+		
+		Onde \( \mu_0 = 50 \) é a média sob \( H_0 \) e \( \mu \) é a média populacional desconhecida. Temos uma amostra de tamanho \( n = 36 \), com desvio padrão populacional \( \sigma = 10 \), e o nível de significância \( \alpha = 0.05 \).
+		
+	\end{block}
+	\pause
+	\begin{block}{}
+		\justifying
+		Vamos rejeitar $H_0$ se $\bar{X}>k>50,$ ou se $\bar{X}<h<50,$ tal que $\alpha=P_{\text{Sob}~H_{0}}(\bar{X}>k)+P_{\text{Sob}~H_{0}}(\bar{X}<h),$ assim,
+		\[
+		\dfrac{\alpha}{2}=P_{\text{Sob}~H_{0}}(\bar{X}>k)=P_{\text{Sob}~H_{0}}(\bar{X}<h)\Rightarrow Z_{\frac{\alpha}{2}} = 1,96
+		\]	
+	\end{block}
+\end{frame}
+
+\begin{frame}{}
+	\begin{block}{Cálculo do Valor Crítico sob $H_{0}$ para o lado direito}
+		\justifying
+		\begin{align*}
+			0,025&=P_{\text{Sob}~H_{0}}(\bar{X}>k)=P(Z>\dfrac{(k-50)\times6}{10})\\
+			&\Rightarrow \dfrac{(k-50)\times6}{10}=1,96\\
+			&\Rightarrow x_{c}=53,27
+		\end{align*}
+	\end{block}
+	\pause
+	\begin{block}{Cálculo do Valor Crítico sob $H_{0}$ para o lado esquerdo}
+		\justifying
+		\begin{align*}
+			0,025&=P_{\text{Sob}~H_{0}}(\bar{X}<h)=P(Z<\dfrac{(h-50)\times6}{10})\\
+			&\Rightarrow \dfrac{(h-50)\times6}{10}=-1,96\\
+			&\Rightarrow x_{c}=46,73
+		\end{align*}
+	\end{block}
+\end{frame}
+
+\begin{frame}{}
+	\begin{block}{Cálculo do Poder do Teste}
+		\justifying
+		A função poder é a probabilidade de rejeitar \( H_0 \) para $\mu\in \mathbb{R}.$
+		\begin{align*}
+			\gamma(\mu)&=P_{\mu}(\bar{X}>53,27)=P_{\mu}(\bar{X}<46,73)\\
+		\end{align*}
+	\end{block}
+	\pause
+	\begin{block}{Cálculo do Poder do Teste}
+		\justifying
+		O poder do Teste é a probabilidade de rejeitar $H_{0}$ quando a média verdadeira não é $50.$ Se $\mu=54,$ o poder do teste é:
+		\begin{align*}
+			\gamma(\mu)&=P_{\mu = 54}(\bar{X}>53,27)=P_{\mu = 54}(\bar{X}<46,73)\\
+			&=P(Z < -4,36) + P(Z > -0,438)\\
+			&\approx P(Z > -0,438) = 0,67
+		\end{align*}
+	\end{block}
+	\nocite{hogg}
+\end{frame}
+
+\begin{frame}{}
+	\begin{block}{}
+		Vejam os gráficos de poder \href{https://est711.shinyapps.io/FuncaoPoder/}{cliquem aqui!}
+	\end{block}
+\end{frame}
+
+\subsection{Exemplo 9: para Duas Amostras Independentes}
+\begin{frame}{}
+	\vspace{-0.2cm}
+	\begin{block}{}
+		\justifying
+		Considere amostras aleatórias independentes de $N(\mu_1, \sigma^2)$ e $N(\mu_2, \sigma^2)$, respectivamente. Definimos $n = n_1 + n_2$ como o tamanho combinado da amostra e $S_{p}^2$ como o estimador combinado da variância comum, dado por
+		\begin{align*}
+			S_{p}^2 = \frac{(n_1 - 1)S_1^2 + (n_2 - 1)S_2^2}{n - 2}.
+		\end{align*}
+		A um nível de significância $\alpha = 0.05$, rejeitamos $H_0 : \mu_1 = \mu_2$ em favor da alternativa unilateral $H_1 : \mu_1 > \mu_2$ se
+		\begin{align*}
+			T = \frac{\bar{X} - \bar{Y} - 0}{S_p\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}  \geq t_{0.05, n-2},
+		\end{align*}
+		pois, sob $H_0$, $T$ segue uma distribuição t com $n - 2$ graus de liberdade.
+	\end{block}
 \end{frame}
 
 \section{Relação entre Testes de Hipóteses e IC}
@@ -317,24 +554,7 @@ Ou seja, aceitamos $H_0$ ao nível de significância $\alpha$ se e somente se $\
 \end{block}
 \end{frame}
 
-\section{Exemplo 3}
-\begin{frame}{Exemplo 3}
-\vspace{-0.2cm}
-\begin{block}{}
-\justifying
-Considere amostras aleatórias independentes de $N(\mu_1, \sigma^2)$ e $N(\mu_2, \sigma^2)$, respectivamente. Definimos $n = n_1 + n_2$ como o tamanho combinado da amostra e $S_{p}^2$ como o estimador combinado da variância comum, dado por
-\begin{align*}
-S_{p}^2 = \frac{(n_1 - 1)S_1^2 + (n_2 - 1)S_2^2}{n - 2}.
-\end{align*}
-A um nível de significância $\alpha = 0.05$, rejeitamos $H_0 : \mu_1 = \mu_2$ em favor da alternativa unilateral $H_1 : \mu_1 > \mu_2$ se
-\begin{align*}
-T = \frac{\bar{X} - \bar{Y} - 0}{S_p\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}  \geq t_{0.05, n-2},
-\end{align*}
-pois, sob $H_0$, $T$ segue uma distribuição t com $n - 2$ graus de liberdade.
-\end{block}
-\end{frame}
-
-\section{Exemplo 4 - Distribuição Binomial}
+\subsection{Exemplo 1 - Distribuição Binomial}
 \begin{frame}{Exemplo 4}
 \begin{block}{}
 \justifying
@@ -352,40 +572,17 @@ Se o tamanho da amostra $n$ for grande, tanto $Z_1$ quanto $Z_2$ têm distribui�
 \begin{frame}{}
 \begin{block}{}
 \justifying
-O uso de $Z_1$ fornece melhores probabilidades para cálculos de poder se o verdadeiro valor de $p$ estiver próximo de $p_0$, enquanto $Z_2$ é melhor quando $H_0$ for claramente falsa. No entanto, com uma hipótese alternativa bilateral, $Z_2$ fornece uma melhor relação com o intervalo de confiança para $p$. Ou seja, $|Z_2| < z_{\alpha/2}$ é equivalente a $p_0$ estar no intervalo
+Com uma hipótese alternativa bilateral, $Z_2$ fornece uma melhor relação com o intervalo de confiança para $p$. Ou seja, $|Z_2| < z_{\alpha/2}$ é equivalente a $p_0$ estar no intervalo
 
 \begin{align*}
 \left(\hat{p} - z_{\alpha/2}\sqrt{\frac{\hat{p}(1 - \hat{p})}{n}}, \hat{p} + z_{\alpha/2}\sqrt{\frac{\hat{p}(1 - \hat{p})}{n}}\right),
 \end{align*}
 
-que é o intervalo que fornece um intervalo de confiança aproximado de $(1 - \alpha)100\%$ para $p$, conforme discutido na aula de Intervalos de Confiança.
+que é o intervalo que fornece um intervalo de confiança aproximado de $(1 - \alpha)100\%$ para $p$, conforme discutido na aula de Intervalos de Confiança. Vejam os gráficos de poder \href{https://est711.shinyapps.io/FuncaoPoder/}{cliquem aqui!}
 \end{block}
 \end{frame}
 
-\section{Exemplo 5 - Distribuição Poisson}
-\begin{frame}{Exemplo 5 - Distribuição Poisson}
-\begin{block}{}
-\justifying
-Seja $X_1, X_2, \ldots, X_{10}$ uma amostra aleatória de tamanho $n = 10$ de uma distribuição de Poisson com média $\theta$. A região crítica para testar $H_0 : \theta = 0.1$ contra $H_1 : \theta > 0.1$ é dada por $Y = {\displaystyle \sum_{i=1}^{10}} X_i \geq 3$. A estatística $Y$ segue uma distribuição de Poisson com média $10\theta$. Portanto, com $\theta = 0.1$, de modo que a média de $Y$ seja igual a 1, o nível de significância do teste é
 
-\begin{align*}
-P(Y \geq 3) = 1 - P(Y \leq 2) = 1 - 0.920 = 0.080.
-\end{align*}
-\end{block}
-\end{frame}
-
-\begin{frame}{}
-\begin{block}{}
-\justifying
-Por outro lado, se a região crítica definida por $\sum_{i=1}^{10} X_i \geq 4$ for usada, o nível de significância é
-
-\begin{align*}
-\alpha = P(Y \geq 4) = 1 - P(Y \leq 3) = 1 - 0.981 = 0.019.
-\end{align*}
-
-Por exemplo, se um nível de significância de aproximadamente $\alpha = 0.05$ for desejado, a maioria dos estatísticos usaria um desses testes, ou seja, eles ajustariam o nível de significância para o teste mais conveniente. 
-\end{block}
-\end{frame}
 
 %\begin{frame}{}
 %\begin{block}{}
@@ -412,6 +609,32 @@ Por exemplo, se um nível de significância de aproximadamente $\alpha = 0.05$ f
 %\end{frame}
 
 \section{Nível de Significância Observado (p-valor)}
+
+\subsection{Exemplo 1 - Distribuição Poisson}
+\begin{frame}{Exemplo - Distribuição Poisson}
+	\begin{block}{}
+		\justifying
+		Seja $X_1, X_2, \ldots, X_{10}$ uma amostra aleatória de tamanho $n = 10$ de uma distribuição de Poisson com média $\theta$. A região crítica para testar $H_0 : \theta = 0.1$ contra $H_1 : \theta > 0.1$ é dada por $Y = {\displaystyle \sum_{i=1}^{10}} X_i \geq 3$. A estatística $Y$ segue uma distribuição de Poisson com média $10\theta$. Portanto, com $\theta = 0.1$, de modo que a média de $Y$ seja igual a 1, o nível de significância do teste é
+		
+		\begin{align*}
+			P(Y \geq 3) = 1 - P(Y \leq 2) = 1 - 0.920 = 0.080.
+		\end{align*}
+	\end{block}
+\end{frame}
+
+\begin{frame}{}
+	\begin{block}{}
+		\justifying
+		Por outro lado, se a região crítica definida por $\sum_{i=1}^{10} X_i \geq 4$ for usada, o nível de significância é
+		
+		\begin{align*}
+			\alpha = P(Y \geq 4) = 1 - P(Y \leq 3) = 1 - 0.981 = 0.019.
+		\end{align*}
+		
+		Por exemplo, se um nível de significância de aproximadamente $\alpha = 0.05$ for desejado, a maioria dos estatísticos usaria um desses testes, ou seja, eles ajustariam o nível de significância para o teste mais conveniente. 
+	\end{block}
+\end{frame}
+
 \begin{frame}{Nível de Significância Observado (p-valor)}
 \begin{block}{}
 \justifying
@@ -443,7 +666,7 @@ Anteriormente, especificamos um nível e, em seguida, resolvemos para $k$. Na pr
 Para responder a isso, calculamos o valor-p, que é a probabilidade,
 
 \begin{align*}
-\text{valor-p} = P(H_0 (\Bar{X} \geq \Bar{x})).
+\text{valor-p} = P_{\text{Sob}~H_0}( \Bar{X} \geq \Bar{x}).
 \end{align*}
 
 Observe que este é um ``nível de significância'' baseado nos dados, e chamamos isso de nível de significância observado ou valor-p. 
@@ -457,8 +680,8 @@ A hipótese $H_0$ é rejeitada em todos os níveis maiores ou iguais ao valor-p.
 \end{block}
 \end{frame}
 
-\section{Exemplo 6 (Valor - p)}
-\begin{frame}{Exemplo 6 (Valor - p)}
+\subsection{Exemplo 2 (Valor - p)}
+\begin{frame}{Exemplo (Valor - p)}
 \begin{block}{}
 \justifying
 Considere os dados de Darwin do Exemplo 4.5.5 do livro do Hogg (Edição 8). Os dados são um design emparelhado sobre as alturas de plantas de Zea mays cruzadas e autofertilizadas. Em cada um dos 15 vasos, uma planta cruzada e uma autofertilizada foram cultivadas. Os dados de interesse são as 15 diferenças emparelhadas, (cruzada - autofertilizada). Como no Exemplo, deixe $X_i$ denotar a diferença emparelhada para o i-ésimo vaso. Deixe $\mu$ ser a verdadeira diferença média. As hipóteses de interesse são $H_0 : \mu = 0$ versus $H_1 : \mu > 0$. A regra de rejeição padronizada é
@@ -480,12 +703,12 @@ A hipótese alternativa afirma que, em média, as plantas cruzadas são mais alt
 P[t(14) > 2.15] = 1 - pt(2.15, 14) = 1 - 0.9752 = 0.0248. 
 \end{align*}
 
-Na prática, com esse valor-p, $H_0$ seria rejeitada em todos os níveis maiores ou iguais a 0,0248. .
+Na prática, com esse valor-p, $H_0$ seria rejeitada em todos os níveis maiores ou iguais a 0,0248.
 
 Suponha que as hipóteses sejam $H_0 : \mu = \mu_0$ versus $H_1 : \mu < \mu_0$. Obviamente, o valor-p observado neste caso é
 
 \begin{align*}
-\text{valor-p} = P(H_0 (\Bar{X} \leq \Bar{x})).
+\text{valor-p} = P_{\text{Sob}~H_0}( \Bar{X} \geq \Bar{x}).
 \end{align*}
 \end{block}
 \end{frame}
@@ -500,26 +723,27 @@ Para a hipótese bilateral $H_0 : \mu = \mu_0$ versus $H_1 : \mu \neq \mu_0$, no
 \end{align}
 
 Para o valor-p, calculamos cada um dos valores-p de um lado, pegamos o menor valor-p e o dobramos. Como ilustração, no exemplo de Darwin, suponha que as hipóteses sejam $H_0 : \mu = 0$ versus $H_1 : \mu \neq 0$. Então, o valor-p é $2 \times (0,0248) = 0,0496$. 
+\nocite{hogg}
 \end{block}
 \end{frame}
 
-\begin{frame}{}
-\begin{block}{}
-\justifying
-Como nota final sobre valores-p para hipóteses bilaterais, suponha que a estatística de teste possa ser expressa em termos de uma estatística de teste t. Nesse caso, o valor-p pode ser encontrado de forma equivalente da seguinte maneira. Se $d$ for o valor realizado da estatística de teste t, então o valor-p é
-
-\begin{align}
-\text{valor-p} = P(H_0 [|t| \geq |d|]), 
-\end{align}
-
-em que, sob $H_0$, $t$ tem uma distribuição $t$ com $n - 1$ graus de liberdade.
-\end{block}
-\pause
-\begin{block}{}
-\justifying
-Nessa discussão sobre valores-p, lembre-se de que a boa ciência dita que as hipóteses devem ser conhecidas antes que os dados sejam coletados.
-\end{block}
-\end{frame}
+%\begin{frame}{}
+%\begin{block}{}
+%\justifying
+%Como nota final sobre valores-p para hipóteses bilaterais, suponha que a estatística de teste possa ser expressa em termos de uma estatística de teste t. Nesse caso, o valor-p pode ser encontrado de forma equivalente da seguinte maneira. Se $d$ for o valor realizado da estatística de teste t, então o valor-p é
+%
+%\begin{align}
+%\text{valor-p} = P(H_0 [|t| \geq |d|]), 
+%\end{align}
+%
+%em que, sob $H_0$, $t$ tem uma distribuição $t$ com $n - 1$ graus de liberdade.
+%\end{block}
+%\pause
+%\begin{block}{}
+%\justifying
+%Nessa discussão sobre valores-p, lembre-se de que a boa ciência dita que as hipóteses devem ser conhecidas antes que os dados sejam coletados.
+%\end{block}
+%\end{frame}
 
 
 %\begin{frame}{}
@@ -539,105 +763,105 @@ Nessa discussão sobre valores-p, lembre-se de que a boa ciência dita que as hi
 %\end{block}
 %\end{frame}
 
-\begin{frame}{}
-\begin{block}{Aqui estão as etapas para entender o valor-p:}
+%\begin{frame}{}
+%\begin{block}{Aqui estão as etapas para entender o valor-p:}
+%
+%\begin{itemize}
+%\justifying
+%\item Formulação das Hipóteses:
+%
+%A primeira etapa é estabelecer duas hipóteses: a hipótese nula ($H_0$) e a hipótese alternativa ($H_1$). \pause
+%
+%\item Coleta de Dados:
+%
+%Em seguida, você coleta dados relevantes para o teste de hipóteses.\pause
+%
+%\item Cálculo da Estatística de Teste:
+%
+%Você calcula uma estatística de teste com base nos dados. A escolha da estatística depende do tipo de teste e da pergunta de pesquisa.
+%\end{itemize}
+%\end{block}
+%\end{frame}
 
-\begin{itemize}
-\justifying
-\item Formulação das Hipóteses:
-
-A primeira etapa é estabelecer duas hipóteses: a hipótese nula ($H_0$) e a hipótese alternativa ($H_1$). \pause
-
-\item Coleta de Dados:
-
-Em seguida, você coleta dados relevantes para o teste de hipóteses.\pause
-
-\item Cálculo da Estatística de Teste:
-
-Você calcula uma estatística de teste com base nos dados. A escolha da estatística depende do tipo de teste e da pergunta de pesquisa.
-\end{itemize}
-\end{block}
-\end{frame}
-
-\begin{frame}{}
-\begin{block}{}
-\justifying
-\begin{itemize}
-\justifying
-\item Determinação do Valor-p 
-
-Com a estatística de teste em mãos, você calcula o Valor-p. Esse cálculo envolve a probabilidade de obter uma estatística de teste tão extrema quanto a observada, supondo que a hipótese nula seja verdadeira. Essa probabilidade é chamada de Valor-p.\pause
-
-\item Interpretação do Valor-p 
-
-O valor $p$ é interpretado comparando-o a um nível de significância pré-definido, geralmente denotado como $\alpha$. Se o valor $p$ for menor ou igual a $\alpha$, é comum rejeitar a hipótese nula em favor da hipótese alternativa. Quanto menor o valor $p,$ mais fortes são as evidências contra a hipótese nula.
-\end{itemize}
-\end{block}
-\end{frame}
-
-\section{Exemplo 7 sobre Valor-p}
-\begin{frame}{Exemplo 7}
-\begin{block}{}
-\justifying
-
-Suponha que um fabricante afirma que a média de vida útil de suas lâmpadas é de $1000$ horas. Você suspeita que as lâmpadas, na verdade, têm uma vida útil média diferente.
-
-\begin{itemize}
-    \item Hipóteses
-\end{itemize}
-
-\begin{align*}
-H_0 &: \mu = 1000~\text{horas} \\
-H_1 &: \mu \neq 1000~\text{horas}
-\end{align*}
-\pause
-\begin{itemize}
-    \item Coleta de Dados
-\end{itemize}
-
-Você coleta uma amostra de $30$ lâmpadas e calcula a média da vida útil das lâmpadas da amostra. Suponha que você obtém uma média amostral de $980$ horas.
-
-\end{block}
-\end{frame}
-
-\begin{frame}{}
-\begin{block}{}
-\justifying
-\begin{itemize}
-    \item Cálculo da Estatística de Teste
-\end{itemize}
-
-Para este exemplo, a estatística de teste é o valor da média amostral subtraído do valor hipotético ($1000$) dividido pelo erro padrão. Neste caso:
-
-\[
-\text{Estatística de Teste} = \dfrac{980 - 1000}{\text{erro padrão}}
-\]
-\pause
-\begin{itemize}
-    \item Determinação do Valor-p
-\end{itemize}
-
-
-Você calcula o Valor-p, que é a probabilidade de obter uma estatística de teste tão extrema quanto a observada (no caso, $-20$) se a média real fosse $1000$ horas, sob a suposição da distribuição de médias amostrais.
-
-\end{block}
-\end{frame}
-
-\begin{frame}{}
-\begin{block}{}
-\justifying
-\begin{itemize}
-    \item Interpretação do Valor-p
-\end{itemize}
-
-Suponhamos que o Valor-p calculado seja $0,03$. Isso significa que, se a hipótese nula ($\mu = 1000$) fosse verdadeira, haveria uma probabilidade de $3\%$ de obter uma média amostral tão extrema quanto $980$ horas. Como esse Valor-p é menor que um nível de significância ($\alpha$) típico de $0,05$, você pode optar por rejeitar a hipótese nula. Isso sugere que as lâmpadas podem ter uma vida útil média diferente de $1000$ horas.
-\end{block}
-\pause
-\begin{block}{}
-\justifying
-Lembre-se de que o Valor-p não fornece a magnitude da diferença; ele simplesmente indica se as evidências observadas são consistentes com a hipótese nula. A interpretação do Valor-p deve ser feita em conjunto com o contexto e a pergunta de pesquisa. Quanto menor o Valor-p, mais forte é a evidência contra a hipótese nula.
-\end{block}
-\end{frame}
+%\begin{frame}{}
+%\begin{block}{}
+%\justifying
+%\begin{itemize}
+%\justifying
+%\item Determinação do Valor-p 
+%
+%Com a estatística de teste em mãos, você calcula o Valor-p. Esse cálculo envolve a probabilidade de obter uma estatística de teste tão extrema quanto a observada, supondo que a hipótese nula seja verdadeira. Essa probabilidade é chamada de Valor-p.\pause
+%
+%\item Interpretação do Valor-p 
+%
+%O valor $p$ é interpretado comparando-o a um nível de significância pré-definido, geralmente denotado como $\alpha$. Se o valor $p$ for menor ou igual a $\alpha$, é comum rejeitar a hipótese nula em favor da hipótese alternativa. Quanto menor o valor $p,$ mais fortes são as evidências contra a hipótese nula.
+%\end{itemize}
+%\end{block}
+%\end{frame}
+%
+%\section{Exemplo 7 sobre Valor-p}
+%\begin{frame}{Exemplo 7}
+%\begin{block}{}
+%\justifying
+%
+%Suponha que um fabricante afirma que a média de vida útil de suas lâmpadas é de $1000$ horas. Você suspeita que as lâmpadas, na verdade, têm uma vida útil média diferente.
+%
+%\begin{itemize}
+%    \item Hipóteses
+%\end{itemize}
+%
+%\begin{align*}
+%H_0 &: \mu = 1000~\text{horas} \\
+%H_1 &: \mu \neq 1000~\text{horas}
+%\end{align*}
+%\pause
+%\begin{itemize}
+%    \item Coleta de Dados
+%\end{itemize}
+%
+%Você coleta uma amostra de $30$ lâmpadas e calcula a média da vida útil das lâmpadas da amostra. Suponha que você obtém uma média amostral de $980$ horas.
+%
+%\end{block}
+%\end{frame}
+%
+%\begin{frame}{}
+%\begin{block}{}
+%\justifying
+%\begin{itemize}
+%    \item Cálculo da Estatística de Teste
+%\end{itemize}
+%
+%Para este exemplo, a estatística de teste é o valor da média amostral subtraído do valor hipotético ($1000$) dividido pelo erro padrão. Neste caso:
+%
+%\[
+%\text{Estatística de Teste} = \dfrac{980 - 1000}{\text{erro padrão}}
+%\]
+%\pause
+%\begin{itemize}
+%    \item Determinação do Valor-p
+%\end{itemize}
+%
+%
+%Você calcula o Valor-p, que é a probabilidade de obter uma estatística de teste tão extrema quanto a observada (no caso, $-20$) se a média real fosse $1000$ horas, sob a suposição da distribuição de médias amostrais.
+%
+%\end{block}
+%\end{frame}
+%
+%\begin{frame}{}
+%\begin{block}{}
+%\justifying
+%\begin{itemize}
+%    \item Interpretação do Valor-p
+%\end{itemize}
+%
+%Suponhamos que o Valor-p calculado seja $0,03$. Isso significa que, se a hipótese nula ($\mu = 1000$) fosse verdadeira, haveria uma probabilidade de $3\%$ de obter uma média amostral tão extrema quanto $980$ horas. Como esse Valor-p é menor que um nível de significância ($\alpha$) típico de $0,05$, você pode optar por rejeitar a hipótese nula. Isso sugere que as lâmpadas podem ter uma vida útil média diferente de $1000$ horas.
+%\end{block}
+%\pause
+%\begin{block}{}
+%\justifying
+%Lembre-se de que o Valor-p não fornece a magnitude da diferença; ele simplesmente indica se as evidências observadas são consistentes com a hipótese nula. A interpretação do Valor-p deve ser feita em conjunto com o contexto e a pergunta de pesquisa. Quanto menor o Valor-p, mais forte é a evidência contra a hipótese nula.
+%\end{block}
+%\end{frame}
 
 \begin{frame}[allowframebreaks]
 \frametitle{\bf Referências}

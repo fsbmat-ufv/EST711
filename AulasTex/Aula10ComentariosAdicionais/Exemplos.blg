@@ -1,0 +1,15 @@
+[0] Config.pm:308> INFO - This is Biber 2.20
+[0] Config.pm:311> INFO - Logfile is 'Exemplos.blg'
+[290] biber-MSWIN64:340> INFO - === 
+[400] Biber.pm:420> INFO - Reading 'Exemplos.bcf'
+[584] Biber.pm:994> INFO - Found 1 citekeys in bib section 0
+[608] Biber.pm:4463> INFO - Processing section 0
+[648] Biber.pm:4654> INFO - Looking for bibtex file '../Referencias/Referencias.bib' for section 0
+[745] bibtex.pm:1713> INFO - LaTeX decoding ...
+[785] bibtex.pm:1519> INFO - Found BibTeX data source '../Referencias/Referencias.bib'
+[883] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[883] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
+[883] Biber.pm:4283> INFO - Sorting list 'nyt/global//global/global/global' of type 'entry' with template 'nyt' and locale 'pt-BR'
+[884] Biber.pm:4289> INFO - No sort tailoring available for locale 'pt-BR'
+[887] bbl.pm:676> INFO - Writing 'Exemplos.bbl' with encoding 'UTF-8'
+[888] bbl.pm:779> INFO - Output to Exemplos.bbl

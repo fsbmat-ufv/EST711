@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.9)  23 OCT 2024 15:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.9)  23 OCT 2024 14:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**./main.tex
-(main.tex
+**./Exemplos.tex
+(Exemplos.tex
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-08-16>
 (C:\Program Files\MiKTeX\tex/latex/beamer\beamer.cls
@@ -1667,8 +1667,8 @@ Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'brazil'.
 
-(main.aux)
-\openout1 = `main.aux'.
+(Exemplos.aux)
+\openout1 = `Exemplos.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
 LaTeX Font Info:    ... okay on input line 14.
@@ -1865,11 +1865,11 @@ File: brazilian.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-\openout5 = `main.bcf'.
+\openout5 = `Exemplos.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'main.bbl' found.
- (main.bbl)
+Package biblatex Info: ... file 'Exemplos.bbl' found.
+ (Exemplos.bbl)
 Package biblatex Info: Reference section=0 on input line 14.
 Package biblatex Info: Reference segment=0 on input line 14.
 
@@ -1901,7 +1901,8 @@ File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/ma
 thkerncmss.
 )
 Package xypdf Info: Line width: 0.47998pt on input line 14.
- (main.nav)
+
+(Exemplos.nav)
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
 4.
  (C:\Program Files\MiKTeX\tex/latex/base\t1cmtt.fd
@@ -1917,7 +1918,7 @@ Package pdftex.def Info: figs/mylogo.png  used on input line 17.
 [1
 
 {C:/Users/Admin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./figs/mylog
-o.png>] (main.toc)
+o.png>] (Exemplos.toc)
 
 [2
 
@@ -1930,12 +1931,15 @@ o.png>] (main.toc)
 [4
 
 ]
+Overfull \vbox (10.42397pt too high) detected at line 66
+ []
+
+
 
 [5
 
 ]
-Overfull \hbox (16.72453pt too wide) detected at line 90
-[]
+Overfull \vbox (10.42397pt too high) detected at line 66
  []
 
 
@@ -1955,8 +1959,7 @@ Overfull \hbox (16.72453pt too wide) detected at line 90
 [9
 
 ]
-Overfull \hbox (25.79663pt too wide) detected at line 125
-[]
+Overfull \vbox (10.42397pt too high) detected at line 117
  []
 
 
@@ -1964,8 +1967,7 @@ Overfull \hbox (25.79663pt too wide) detected at line 125
 [10
 
 ]
-Overfull \hbox (25.79663pt too wide) detected at line 139
-[]
+Overfull \vbox (10.42397pt too high) detected at line 117
  []
 
 
@@ -1977,24 +1979,26 @@ Overfull \hbox (25.79663pt too wide) detected at line 139
 [12
 
 ]
-<figs/FunctionPower.png, id=331, 478.03593pt x 265.74281pt>
-File: figs/FunctionPower.png Graphic file (type png)
-<use figs/FunctionPower.png>
-Package pdftex.def Info: figs/FunctionPower.png  used on input line 171.
-(pdftex.def)             Requested size: 286.82376pt x 159.44691pt.
-
 
 [13
 
- <./figs/FunctionPower.png>]
+]
 
 [14
 
 ]
+Overfull \vbox (7.90987pt too high) detected at line 165
+ []
+
+
 
 [15
 
 ]
+Overfull \vbox (7.90987pt too high) detected at line 165
+ []
+
+
 
 [16
 
@@ -2007,18 +2011,10 @@ Package pdftex.def Info: figs/FunctionPower.png  used on input line 171.
 [18
 
 ]
-Overfull \vbox (10.42397pt too high) detected at line 337
- []
-
-
 
 [19
 
 ]
-Overfull \vbox (10.42397pt too high) detected at line 337
- []
-
-
 
 [20
 
@@ -2035,206 +2031,72 @@ Overfull \vbox (10.42397pt too high) detected at line 337
 [23
 
 ]
-Overfull \vbox (10.42397pt too high) detected at line 388
- []
-
-
 
 [24
 
 ]
-Overfull \vbox (10.42397pt too high) detected at line 388
- []
-
-
 
 [25
 
-]
-
-[26
-
-]
-
-[27
-
-]
-
-[28
-
-]
-Overfull \vbox (7.90987pt too high) detected at line 436
- []
-
-
-
-[29
-
-]
-Overfull \vbox (7.90987pt too high) detected at line 436
- []
-
-
-
-[30
-
-]
-
-[31
-
-]
-
-[32
-
-]
-
-[33
-
-]
-
-[34
-
-]
-
-[35
-
-]
-
-[36
-
-]
-
-[37
-
-]
-
-[38
-
-]
-
-[39
-
-]
-
-[40
-
-]
-
-[41
-
-]
-
-[42
-
-]
-
-[43
-
-]
-
-[44
-
-]
-
-[45
-
-]
-
-[46
-
-]
-
-[47
-
-]
-
-[48
-
-]
-
-[49
-
-]
-
-[50
-
-]
-
-[51
-
-]
-Overfull \vbox (5.21227pt too high) detected at line 695
- []
-
-
-
-[52
-
-]
-
-[53
-
-]
-
-[54
-
-]
-
-[55
-
  <C:/Program Files/MiKTeX/tex/latex/beamer/beamericonarticle.pdf>]
 \tf@nav=\write7
-\openout7 = `main.nav'.
+\openout7 = `Exemplos.nav'.
 
 \tf@toc=\write8
-\openout8 = `main.toc'.
+\openout8 = `Exemplos.toc'.
 
 \tf@snm=\write9
-\openout9 = `main.snm'.
+\openout9 = `Exemplos.snm'.
 
- (main.aux)
+
+
+LaTeX Warning: Hook 'shipout/lastpage' executed on wrong page (24 not 25).
+               Rerun to correct this.
+
+(Exemplos.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-08-16>
  ***********
-Package logreq Info: Writing requests to 'main.run.xml'.
-\openout1 = `main.run.xml'.
+
+
+Package biblatex Warning: Please rerun LaTeX.
+(biblatex)                Page breaks have changed.
+
+Package logreq Info: Writing requests to 'Exemplos.run.xml'.
+\openout1 = `Exemplos.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 55553 strings out of 473898
- 1204205 string characters out of 5736295
- 2249134 words of memory out of 5000000
- 77288 multiletter control sequences out of 15000+600000
- 594663 words of font info for 138 fonts, out of 8000000 for 9000
+ 55134 strings out of 473898
+ 1193420 string characters out of 5736295
+ 2242865 words of memory out of 5000000
+ 76949 multiletter control sequences out of 15000+600000
+ 592344 words of font info for 135 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,18n,123p,3279b,2230s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,17n,123p,3283b,2230s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsi
 1200.pk> <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
-0\ecsx1200.pk> <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
-/dpi600\ecss1095.pk> <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
-pen/ec/dpi600\ecsx1095.pk> <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour
-/jknappen/ec/dpi600\ecss1000.pk> <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/
-ljfour/jknappen/ec/dpi600\ecss1440.pk> <C:\Users\Admin\AppData\Local\MiKTeX\fon
-ts/pk/ljfour/jknappen/ec/dpi600\ecsx1728.pk> <C:\Users\Admin\AppData\Local\MiKT
-eX\fonts/pk/ljfour/jknappen/ec/dpi450\ectt0800.pk> <C:\Users\Admin\AppData\Loca
-l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss0600.pk> <C:\Users\Admin\AppDat
-a\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss0800.pk> <C:\Users\Admin\
-AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1200.pk> <C:\Users\
-Admin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1728.pk><C:/P
-rogram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files
-/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/font
-s/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX/fonts/type1/publi
-c/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm
-/cmss12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><
-C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi12.pfb><C:/Program 
-Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi8.pfb><C:/Program Files/MiKTeX
-/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1
-/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfo
-nts/symbols/msbm10.pfb>
-Output written on main.pdf (55 pages, 620328 bytes).
+0\ecss1000.pk> <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
+/dpi600\ecss1440.pk> <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
+pen/ec/dpi600\ecsx1728.pk> <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour
+/jknappen/ec/dpi450\ectt0800.pk> <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/
+ljfour/jknappen/ec/dpi600\ecss0600.pk> <C:\Users\Admin\AppData\Local\MiKTeX\fon
+ts/pk/ljfour/jknappen/ec/dpi600\ecss0800.pk> <C:\Users\Admin\AppData\Local\MiKT
+eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1200.pk> <C:\Users\Admin\AppData\Loca
+l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1728.pk><C:/Program Files/MiKTe
+X/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type
+1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/ams
+fonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi
+8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Pr
+ogram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Program Files/M
+iKTeX/fonts/type1/public/amsfonts/cm/cmssi12.pfb><C:/Program Files/MiKTeX/fonts
+/type1/public/amsfonts/cm/cmssi8.pfb><C:/Program Files/MiKTeX/fonts/type1/publi
+c/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/s
+ymbols/msbm10.pfb>
+Output written on Exemplos.pdf (25 pages, 359273 bytes).
 PDF statistics:
- 1869 PDF objects out of 2073 (max. 8388607)
- 134 named destinations out of 1000 (max. 500000)
- 2797 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1005 PDF objects out of 1200 (max. 8388607)
+ 57 named destinations out of 1000 (max. 500000)
+ 1426 words of extra memory for PDF output out of 10000 (max. 10000000)
 

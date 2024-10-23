@@ -1,0 +1,249 @@
+\documentclass[12pt]{beamer}
+
+\input{../Configuracoes/layout}
+
+\title{Inferência Estatística II}
+\author{Prof. Fernando de Souza Bastos\texorpdfstring{\\ fernando.bastos@ufv.br}{}}
+\institute{Departamento de Estatística\texorpdfstring{\\ Programa de Pós-Graduação em Estatística Aplicada e Biometria}\texorpdfstring{\\ Universidade Federal de Viçosa}{}\texorpdfstring{\\ Campus UFV - Viçosa}{}}
+\date{}
+\newcommand\mytext{Exemplos de TH}
+\newcommand\mytextt{Fernando de Souza Bastos}
+\newcommand\mytexttt{\url{https://est711.github.io/}}
+
+
+\begin{document}
+%\SweaveOpts{concordance=TRUE}
+
+\frame{\titlepage}
+
+\begin{frame}{}
+\frametitle{\bf Sumário}
+\tableofcontents
+\end{frame}
+
+\section{Exemplo 1: Teste unilateral  a direita para a Média Baseado em Grandes Amostras}
+\begin{frame}{Teste unilateral para a Média Baseado em Grandes Amostras}
+\begin{block}{}
+\justifying
+Vamos testar a seguinte hipótese nula e alternativa:
+
+\[
+H_0: \mu \leq \mu_0 \quad \text{contra} \quad H_1: \mu > \mu_0
+\]
+
+Em que $\mu_0 = 100$ e $\mu$ é a média populacional desconhecida. Suponha que temos uma amostra de tamanho $n = 36$, com desvio padrão populacional conhecido $\sigma = 12$, e o nível de significância $\alpha = 0,05$.
+
+\end{block}
+\pause
+\begin{block}{}
+	\justifying
+Vamos rejeitar $H_0$ se $\bar{X}>x_{c}>100,$ tal que $\alpha=P_{\text{Sob}~H_{0}}(\bar{X}>x_{c})$
+\[
+Z_{\alpha} = 1,645
+\]	
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{Cálculo do Valor Crítico sob $H_{0}$}
+\justifying
+\begin{align*}
+	0,05&=P_{\text{Sob}~H_{0}}(\bar{X}>x_{c})=P(Z>\dfrac{(x_{c}-100)\times6}{12})\\
+	&\Rightarrow \dfrac{(x_{c}-100)\times6}{12}=1,645\\
+	&\Rightarrow x_{c}=103,29
+\end{align*}
+\end{block}
+\pause
+\begin{block}{Cálculo do Poder do Teste}
+	\justifying
+	O poder do teste é a probabilidade de rejeitar $H_0$ quando a verdadeira média $\mu$ é maior que $\mu_0$. Assumindo que a verdadeira média é $\mu = 105:$
+	\begin{align*}
+\gamma(\mu=105)&=P_{\mu=105}(\bar{X}>x_{c})=P(\bar{X}>103,29)\\
+	           &=P(Z>\dfrac{(103,29-105)\times6}{12})=P(Z>-0,855)\\
+    	       &=0,804
+	\end{align*}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+	\begin{block}{}
+Vejam os gráficos de poder \href{https://est711.shinyapps.io/FuncaoPoder/}{cliquem aqui!}
+	\end{block}
+\end{frame}
+
+\section{Exemplo 2: Teste unilateral a esquerda para a Média Baseado em Grandes Amostras}
+\begin{frame}{Teste unilateral para a Média Baseado em Grandes Amostras}
+	\begin{block}{}
+		\justifying
+	Vamos testar a seguinte hipótese nula e alternativa:
+	
+	\[
+	H_0: \mu = \mu_0 = 50 \quad \text{contra} \quad H_1: \mu < 50
+	\]
+	
+	Em que \( \mu_0 = 50 \) é a média sob \( H_0 \), e \( \mu \) é a média populacional desconhecida. Temos uma amostra de tamanho \( n = 36 \), com desvio padrão populacional \( \sigma = 8 \), e o nível de significância \( \alpha = 0.05 \).
+	
+		
+	\end{block}
+	\pause
+	\begin{block}{}
+		\justifying
+		Vamos rejeitar $H_0$ se $\bar{X}<x_{c}<50,$ tal que $\alpha=P_{\text{Sob}~H_{0}}(\bar{X}<x_{c})$
+		\[
+		Z_{\alpha} = -1,645
+		\]	
+	\end{block}
+\end{frame}
+
+\begin{frame}{}
+	\begin{block}{Cálculo do Valor Crítico sob $H_{0}$}
+		\justifying
+		\begin{align*}
+			0,05&=P_{\text{Sob}~H_{0}}(\bar{X}<x_{c})=P(Z<\dfrac{(x_{c}-50)\times6}{8})\\
+			&\Rightarrow \dfrac{(x_{c}-50)\times6}{8}=-1,645\\
+			&\Rightarrow x_{c}=47,81
+		\end{align*}
+	\end{block}
+	\pause
+	\begin{block}{Cálculo do Poder do Teste}
+		\justifying
+		O poder do teste é a probabilidade de rejeitar $H_0$ quando a verdadeira média $\mu$ é menor que $\mu_0$. Vamos assumir que a verdadeira média é $\mu = 47:$
+		\begin{align*}
+			\gamma(47)&=P_{\mu=47}(\bar{X}<x_{c})=P(\bar{X}<47,81)\\
+			&=P(Z<\dfrac{(47,81-47)\times6}{8})=P(Z<0,6075)\\
+			&=0,728
+		\end{align*}
+	\end{block}
+\end{frame}
+
+\begin{frame}{}
+	\begin{block}{}
+		Vejam os gráficos de poder \href{https://est711.shinyapps.io/FuncaoPoder/}{cliquem aqui!}
+	\end{block}
+\end{frame}
+
+\section{Exemplo 3: Teste unilateral para a Proporção Binomial}
+\begin{frame}{}
+\begin{block}{}
+\justifying
+Vamos testar a seguinte hipótese nula e alternativa:
+
+\[
+H_0: p = p_0 = 0,4 \quad \text{contra} \quad H_1: p > 0,4
+\]
+
+O tamanho da amostra é \(n = 100\), o nível de significância é \(\alpha = 0,01\), e assumimos que a proporção real sob \(H_1\) é \(p = 0,55\).
+\end{block}
+\pause
+\begin{block}{}
+	\justifying
+	Vamos rejeitar $H_0$ se $\bar{p}>p_{c}>0,4,$ tal que $\alpha=P_{\text{Sob}~H_{0}}(\bar{p}>p_{c})$
+	\[
+	Z_{\alpha} = 2,33
+	\]	
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+	\begin{block}{Cálculo do Valor Crítico sob $H_{0}$}
+		\justifying
+		\begin{align*}
+			0,01&=P_{\text{Sob}~H_{0}}(\bar{p}>p_{c})=P(Z>\dfrac{(p_{c}-0,4)\times10}{\sqrt{0,04\times(1-0,04)}})\\
+			&\Rightarrow \dfrac{(p_{c}-0,4)\times10}{\sqrt{0,4\times(1-0,4)}}=2,33\Rightarrow p_{c}=0,5141
+		\end{align*}
+	\end{block}
+	\pause
+	\begin{block}{Cálculo do Poder do Teste}
+		\justifying
+		O poder do teste é a probabilidade de rejeitar $H_0$ quando a verdadeira proporção $p$ é maior que $0,4$. Assumindo que a verdadeira proporção é $p=0,55:$
+		\begin{align*}
+			\gamma(p=0,55)&=P_{p=0,55}(\bar{p}>p_{c})=P(\bar{p}>0,5141)\\
+			&=P(Z>\dfrac{(0,5141-0,55)\times10}{\sqrt{0,55\times(1-0,55)}})=P(Z>-0,722)\\
+			&=0,7648
+		\end{align*}
+	\end{block}
+\end{frame}
+
+\begin{frame}{}
+	\begin{block}{}
+		Vejam os gráficos de poder \href{https://est711.shinyapps.io/FuncaoPoder/}{cliquem aqui!}
+	\end{block}
+\end{frame}
+
+\section{Exemplo 4: Teste Bilateral para a Média}
+\begin{frame}{Teste Bilateral para a Média Baseado em Grandes Amostras}
+	\begin{block}{}
+		\justifying
+		Vamos testar a seguinte hipótese nula e alternativa:
+		
+		\[
+		H_0: \mu = \mu_0 = 50 \quad \text{contra} \quad H_1: \mu \neq 50
+		\]
+		
+		Onde \( \mu_0 = 50 \) é a média sob \( H_0 \) e \( \mu \) é a média populacional desconhecida. Temos uma amostra de tamanho \( n = 36 \), com desvio padrão populacional \( \sigma = 10 \), e o nível de significância \( \alpha = 0.05 \).
+		
+	\end{block}
+	\pause
+	\begin{block}{}
+		\justifying
+		Vamos rejeitar $H_0$ se $\bar{X}>k>50,$ ou se $\bar{X}<h<50,$ tal que $\alpha=P_{\text{Sob}~H_{0}}(\bar{X}>k)+P_{\text{Sob}~H_{0}}(\bar{X}<h),$ assim,
+		\[
+		\dfrac{\alpha}{2}=P_{\text{Sob}~H_{0}}(\bar{X}>k)=P_{\text{Sob}~H_{0}}(\bar{X}<h)\Rightarrow Z_{\frac{\alpha}{2}} = 1,96
+		\]	
+	\end{block}
+\end{frame}
+
+\begin{frame}{}
+	\begin{block}{Cálculo do Valor Crítico sob $H_{0}$ para o lado direito}
+		\justifying
+		\begin{align*}
+			0,025&=P_{\text{Sob}~H_{0}}(\bar{X}>k)=P(Z>\dfrac{(k-50)\times6}{10})\\
+			&\Rightarrow \dfrac{(k-50)\times6}{10}=1,96\\
+			&\Rightarrow x_{c}=53,27
+		\end{align*}
+	\end{block}
+	\pause
+	\begin{block}{Cálculo do Valor Crítico sob $H_{0}$ para o lado esquerdo}
+		\justifying
+		\begin{align*}
+			0,025&=P_{\text{Sob}~H_{0}}(\bar{X}<h)=P(Z<\dfrac{(h-50)\times6}{10})\\
+			&\Rightarrow \dfrac{(h-50)\times6}{10}=-1,96\\
+			&\Rightarrow x_{c}=46,73
+		\end{align*}
+	\end{block}
+\end{frame}
+
+\begin{frame}{}
+	\begin{block}{Cálculo do Poder do Teste}
+		\justifying
+A função poder é a probabilidade de rejeitar \( H_0 \) para $\mu\in \mathbb{R}.$
+		\begin{align*}
+			\gamma(\mu)&=P_{\mu}(\bar{X}>53,27)=P_{\mu}(\bar{X}<46,73)\\
+		\end{align*}
+	\end{block}
+	\pause
+	\begin{block}{Cálculo do Poder do Teste}
+		\justifying
+		O poder do Teste é a probabilidade de rejeitar $H_{0}$ quando a média verdadeira não é $50.$ Se $\mu=54,$ o poder do teste é:
+		\begin{align*}
+			\gamma(\mu)&=P_{\mu = 54}(\bar{X}>53,27)=P_{\mu = 54}(\bar{X}<46,73)\\
+			&=P(Z < -4,36) + P(Z > -0,438)\\
+			&\approx P(Z > -0,438) = 0,67
+		\end{align*}
+	\end{block}
+	\nocite{hogg}
+\end{frame}
+
+\begin{frame}{}
+	\begin{block}{}
+		Vejam os gráficos de poder \href{https://est711.shinyapps.io/FuncaoPoder/}{cliquem aqui!}
+	\end{block}
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+\frametitle{\bf Referências}
+\printbibliography
+\end{frame}
+
+
+\end{document}
