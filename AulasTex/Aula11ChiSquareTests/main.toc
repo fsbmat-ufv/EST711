@@ -2,9 +2,9 @@
 \beamer@sectionintoc {1}{Introdução}{3}{0}{1}
 \beamer@sectionintoc {2}{Resultado Importante}{5}{0}{2}
 \beamer@sectionintoc {3}{Teorema}{11}{0}{3}
-\beamer@sectionintoc {4}{Teste Qui-Quadrado}{17}{0}{4}
-\beamer@sectionintoc {5}{Exemplo 1}{22}{0}{5}
-\beamer@sectionintoc {6}{Exemplo 2}{26}{0}{6}
-\beamer@sectionintoc {7}{Distribuição F}{35}{0}{7}
-\beamer@sectionintoc {8}{Teste F}{37}{0}{8}
-\beamer@subsectionintoc {8}{1}{Exemplo 1}{39}{0}{8}
+\beamer@sectionintoc {4}{Teste Qui-Quadrado}{23}{0}{4}
+\beamer@sectionintoc {5}{Exemplo 1}{28}{0}{5}
+\beamer@sectionintoc {6}{Exemplo 2}{32}{0}{6}
+\beamer@sectionintoc {7}{Distribuição F}{41}{0}{7}
+\beamer@sectionintoc {8}{Teste F}{43}{0}{8}
+\beamer@subsectionintoc {8}{1}{Exemplo 1}{45}{0}{8}

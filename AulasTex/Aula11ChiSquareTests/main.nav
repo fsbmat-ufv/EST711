@@ -21,82 +21,86 @@
 \headcommand {\beamer@sectionpages {5}{10}}
 \headcommand {\beamer@subsectionpages {5}{10}}
 \headcommand {\sectionentry {3}{Teorema}{11}{Teorema}{0}}
-\headcommand {\slideentry {3}{0}{1}{11/12}{}{0}}
-\headcommand {\beamer@framepages {11}{12}}
-\headcommand {\slideentry {3}{0}{2}{13/14}{}{0}}
-\headcommand {\beamer@framepages {13}{14}}
-\headcommand {\slideentry {3}{0}{3}{15/15}{}{0}}
-\headcommand {\beamer@framepages {15}{15}}
-\headcommand {\slideentry {3}{0}{4}{16/16}{}{0}}
-\headcommand {\beamer@framepages {16}{16}}
-\headcommand {\beamer@sectionpages {11}{16}}
-\headcommand {\beamer@subsectionpages {11}{16}}
-\headcommand {\sectionentry {4}{Teste Qui-Quadrado}{17}{Teste Qui-Quadrado}{0}}
-\headcommand {\slideentry {4}{0}{1}{17/18}{}{0}}
-\headcommand {\beamer@framepages {17}{18}}
-\headcommand {\slideentry {4}{0}{2}{19/20}{}{0}}
-\headcommand {\beamer@framepages {19}{20}}
-\headcommand {\slideentry {4}{0}{3}{21/21}{}{0}}
-\headcommand {\beamer@framepages {21}{21}}
-\headcommand {\beamer@sectionpages {17}{21}}
-\headcommand {\beamer@subsectionpages {17}{21}}
-\headcommand {\sectionentry {5}{Exemplo 1}{22}{Exemplo 1}{0}}
-\headcommand {\slideentry {5}{0}{1}{22/22}{}{0}}
+\headcommand {\slideentry {3}{0}{1}{11/11}{}{0}}
+\headcommand {\beamer@framepages {11}{11}}
+\headcommand {\slideentry {3}{0}{2}{12/14}{}{0}}
+\headcommand {\beamer@framepages {12}{14}}
+\headcommand {\slideentry {3}{0}{3}{15/16}{}{0}}
+\headcommand {\beamer@framepages {15}{16}}
+\headcommand {\slideentry {3}{0}{4}{17/19}{}{0}}
+\headcommand {\beamer@framepages {17}{19}}
+\headcommand {\slideentry {3}{0}{5}{20/21}{}{0}}
+\headcommand {\beamer@framepages {20}{21}}
+\headcommand {\slideentry {3}{0}{6}{22/22}{}{0}}
 \headcommand {\beamer@framepages {22}{22}}
-\headcommand {\slideentry {5}{0}{2}{23/23}{}{0}}
-\headcommand {\beamer@framepages {23}{23}}
-\headcommand {\slideentry {5}{0}{3}{24/24}{}{0}}
-\headcommand {\beamer@framepages {24}{24}}
-\headcommand {\slideentry {5}{0}{4}{25/25}{}{0}}
-\headcommand {\beamer@framepages {25}{25}}
-\headcommand {\beamer@sectionpages {22}{25}}
-\headcommand {\beamer@subsectionpages {22}{25}}
-\headcommand {\sectionentry {6}{Exemplo 2}{26}{Exemplo 2}{0}}
-\headcommand {\slideentry {6}{0}{1}{26/26}{}{0}}
-\headcommand {\beamer@framepages {26}{26}}
-\headcommand {\slideentry {6}{0}{2}{27/28}{}{0}}
-\headcommand {\beamer@framepages {27}{28}}
-\headcommand {\slideentry {6}{0}{3}{29/29}{}{0}}
+\headcommand {\beamer@sectionpages {11}{22}}
+\headcommand {\beamer@subsectionpages {11}{22}}
+\headcommand {\sectionentry {4}{Teste Qui-Quadrado}{23}{Teste Qui-Quadrado}{0}}
+\headcommand {\slideentry {4}{0}{1}{23/24}{}{0}}
+\headcommand {\beamer@framepages {23}{24}}
+\headcommand {\slideentry {4}{0}{2}{25/26}{}{0}}
+\headcommand {\beamer@framepages {25}{26}}
+\headcommand {\slideentry {4}{0}{3}{27/27}{}{0}}
+\headcommand {\beamer@framepages {27}{27}}
+\headcommand {\beamer@sectionpages {23}{27}}
+\headcommand {\beamer@subsectionpages {23}{27}}
+\headcommand {\sectionentry {5}{Exemplo 1}{28}{Exemplo 1}{0}}
+\headcommand {\slideentry {5}{0}{1}{28/28}{}{0}}
+\headcommand {\beamer@framepages {28}{28}}
+\headcommand {\slideentry {5}{0}{2}{29/29}{}{0}}
 \headcommand {\beamer@framepages {29}{29}}
-\headcommand {\slideentry {6}{0}{4}{30/30}{}{0}}
+\headcommand {\slideentry {5}{0}{3}{30/30}{}{0}}
 \headcommand {\beamer@framepages {30}{30}}
-\headcommand {\slideentry {6}{0}{5}{31/31}{}{0}}
+\headcommand {\slideentry {5}{0}{4}{31/31}{}{0}}
 \headcommand {\beamer@framepages {31}{31}}
-\headcommand {\slideentry {6}{0}{6}{32/32}{}{0}}
+\headcommand {\beamer@sectionpages {28}{31}}
+\headcommand {\beamer@subsectionpages {28}{31}}
+\headcommand {\sectionentry {6}{Exemplo 2}{32}{Exemplo 2}{0}}
+\headcommand {\slideentry {6}{0}{1}{32/32}{}{0}}
 \headcommand {\beamer@framepages {32}{32}}
-\headcommand {\slideentry {6}{0}{7}{33/33}{}{0}}
-\headcommand {\beamer@framepages {33}{33}}
-\headcommand {\slideentry {6}{0}{8}{34/34}{}{0}}
-\headcommand {\beamer@framepages {34}{34}}
-\headcommand {\beamer@sectionpages {26}{34}}
-\headcommand {\beamer@subsectionpages {26}{34}}
-\headcommand {\sectionentry {7}{Distribuição F}{35}{Distribuição F}{0}}
-\headcommand {\slideentry {7}{0}{1}{35/35}{}{0}}
+\headcommand {\slideentry {6}{0}{2}{33/34}{}{0}}
+\headcommand {\beamer@framepages {33}{34}}
+\headcommand {\slideentry {6}{0}{3}{35/35}{}{0}}
 \headcommand {\beamer@framepages {35}{35}}
-\headcommand {\slideentry {7}{0}{2}{36/36}{}{0}}
+\headcommand {\slideentry {6}{0}{4}{36/36}{}{0}}
 \headcommand {\beamer@framepages {36}{36}}
-\headcommand {\beamer@sectionpages {35}{36}}
-\headcommand {\beamer@subsectionpages {35}{36}}
-\headcommand {\sectionentry {8}{Teste F}{37}{Teste F}{0}}
-\headcommand {\slideentry {8}{0}{1}{37/37}{}{0}}
+\headcommand {\slideentry {6}{0}{5}{37/37}{}{0}}
 \headcommand {\beamer@framepages {37}{37}}
-\headcommand {\slideentry {8}{0}{2}{38/38}{}{0}}
+\headcommand {\slideentry {6}{0}{6}{38/38}{}{0}}
 \headcommand {\beamer@framepages {38}{38}}
-\headcommand {\beamer@subsectionpages {37}{38}}
-\headcommand {\beamer@subsectionentry {0}{8}{1}{39}{Exemplo 1}}
-\headcommand {\slideentry {8}{1}{1}{39/39}{Exemplo 1}{0}}
+\headcommand {\slideentry {6}{0}{7}{39/39}{}{0}}
 \headcommand {\beamer@framepages {39}{39}}
-\headcommand {\slideentry {8}{1}{2}{40/40}{Exemplo 1}{0}}
+\headcommand {\slideentry {6}{0}{8}{40/40}{}{0}}
 \headcommand {\beamer@framepages {40}{40}}
-\headcommand {\slideentry {8}{1}{3}{41/41}{Exemplo 1}{0}}
+\headcommand {\beamer@sectionpages {32}{40}}
+\headcommand {\beamer@subsectionpages {32}{40}}
+\headcommand {\sectionentry {7}{Distribuição F}{41}{Distribuição F}{0}}
+\headcommand {\slideentry {7}{0}{1}{41/41}{}{0}}
 \headcommand {\beamer@framepages {41}{41}}
-\headcommand {\beamer@sectionpages {37}{41}}
-\headcommand {\beamer@subsectionpages {39}{41}}
-\headcommand {\sectionentry {9}{Refer\^encias}{42}{Refer\^encias}{0}}
-\headcommand {\slideentry {9}{0}{0}{42/42}{Exemplo 1}{0}}
+\headcommand {\slideentry {7}{0}{2}{42/42}{}{0}}
 \headcommand {\beamer@framepages {42}{42}}
-\headcommand {\beamer@partpages {1}{42}}
-\headcommand {\beamer@subsectionpages {39}{42}}
-\headcommand {\beamer@sectionpages {37}{42}}
-\headcommand {\beamer@documentpages {42}}
-\headcommand {\gdef \inserttotalframenumber {34}}
+\headcommand {\beamer@sectionpages {41}{42}}
+\headcommand {\beamer@subsectionpages {41}{42}}
+\headcommand {\sectionentry {8}{Teste F}{43}{Teste F}{0}}
+\headcommand {\slideentry {8}{0}{1}{43/43}{}{0}}
+\headcommand {\beamer@framepages {43}{43}}
+\headcommand {\slideentry {8}{0}{2}{44/44}{}{0}}
+\headcommand {\beamer@framepages {44}{44}}
+\headcommand {\beamer@subsectionpages {43}{44}}
+\headcommand {\beamer@subsectionentry {0}{8}{1}{45}{Exemplo 1}}
+\headcommand {\slideentry {8}{1}{1}{45/45}{Exemplo 1}{0}}
+\headcommand {\beamer@framepages {45}{45}}
+\headcommand {\slideentry {8}{1}{2}{46/46}{Exemplo 1}{0}}
+\headcommand {\beamer@framepages {46}{46}}
+\headcommand {\slideentry {8}{1}{3}{47/47}{Exemplo 1}{0}}
+\headcommand {\beamer@framepages {47}{47}}
+\headcommand {\beamer@sectionpages {43}{47}}
+\headcommand {\beamer@subsectionpages {45}{47}}
+\headcommand {\sectionentry {9}{Refer\^encias}{48}{Refer\^encias}{0}}
+\headcommand {\slideentry {9}{0}{0}{48/48}{Exemplo 1}{0}}
+\headcommand {\beamer@framepages {48}{48}}
+\headcommand {\beamer@partpages {1}{48}}
+\headcommand {\beamer@subsectionpages {45}{48}}
+\headcommand {\beamer@sectionpages {43}{48}}
+\headcommand {\beamer@documentpages {48}}
+\headcommand {\gdef \inserttotalframenumber {36}}
