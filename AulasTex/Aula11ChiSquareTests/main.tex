@@ -75,7 +75,7 @@ Considere $z=\sqrt{y}\Rightarrow~dz=\dfrac{y^{-\frac{1}{2}}}{2}dy=\dfrac{1}{2\sq
 \begin{align*}
     G(v)&=2{\displaystyle\int_{0}^{\sqrt{v}}}\dfrac{1}{\sqrt{2\pi}}e^{-\frac{z^{2}}{2}}dz\\
     &=2{\displaystyle\int_{0}^{v}}\dfrac{1}{\sqrt{2\pi}}e^{-\frac{y}{2}}\dfrac{1}{2\sqrt{y}}dy\\
-    &=2{\displaystyle\int_{0}^{v}}\dfrac{1}{\sqrt{\pi}\sqrt{2}}y^{\frac{1}{2}-1}e^{-\frac{y}{2}}dy,~v>0
+    &={\displaystyle\int_{0}^{v}}\dfrac{1}{\sqrt{\pi}\sqrt{2}}y^{\frac{1}{2}-1}e^{-\frac{y}{2}}dy,~v>0
 \end{align*}
 \end{block}
 \pause 
@@ -83,7 +83,7 @@ Considere $z=\sqrt{y}\Rightarrow~dz=\dfrac{y^{-\frac{1}{2}}}{2}dy=\dfrac{1}{2\sq
 \justifying
 Segue que,
 \begin{align*}
-    G^{'}(v)&=g(v)=\dfrac{1}{\sqrt{\pi}\sqrt{2}}v^{\frac{1}{2}-1}e^{-\frac{v}{2}}dy,~v>0
+    G^{'}(v)&=g(v)=\dfrac{1}{\sqrt{\pi}\sqrt{2}}v^{\frac{1}{2}-1}e^{-\frac{v}{2}},~v>0
 \end{align*}
 \end{block}
 \end{frame}
@@ -93,7 +93,7 @@ Segue que,
 \justifying
 Usando o fato de $\Gamma\left(\dfrac{1}{2}\right)=\sqrt{\pi},$ temos que,
 \begin{align*}
-   g(v)=\dfrac{1}{\Gamma\left(\dfrac{1}{2}\right)\sqrt{2}}v^{\frac{1}{2}-1}e^{-\frac{v}{2}}dy,~v>0~\cqd
+   g(v)=\dfrac{1}{\Gamma\left(\dfrac{1}{2}\right)\sqrt{2}}v^{\frac{1}{2}-1}e^{-\frac{v}{2}},~v>0~\cqd
 \end{align*}
 
 \end{block}
