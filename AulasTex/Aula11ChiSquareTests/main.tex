@@ -104,16 +104,56 @@ Usando o fato de $\Gamma\left(\dfrac{1}{2}\right)=\sqrt{\pi},$ temos que,
 \begin{Teorema}
 \justifying
 Sejam $Z_1, Z_2, \ldots, Z_{\nu}$ variáveis aleatórias independentes com distribuição normal padrão, onde $\nu$ é um inteiro positivo. Então, a variável aleatória $\chi^2(\nu) = {\displaystyle \sum_{i=1}^{\nu}} Z_i^2$ segue uma distribuição qui-quadrado com $\nu$ graus de liberdade.
+
 \end{Teorema}
-\pause
-\begin{block}{Observação:}
-\justifying
-A soma de duas variáveis qui-quadrado independentes, $\chi^2(\nu_1) + \chi^2(\nu_2)$, segue uma distribuição qui-quadrado com $\nu_1 + \nu_2$ graus de liberdade.
+%\pause
+%\begin{block}{Observação:}
+%\justifying
+%A soma de duas variáveis qui-quadrado independentes, $\chi^2(\nu_1) + \chi^2(\nu_2)$, segue uma distribuição qui-quadrado com $\nu_1 + \nu_2$ graus de liberdade.
+%\end{block}
+\end{frame}
+
+\begin{frame}{Demonstração:}
+\begin{block}{}
+\begin{description}
+	\item[1.] \( Z_i \sim N(0,1) \), então \( Z_i^2 \sim \chi^2(1) \), como acabamos de demonstrar. \pause
+	\item[2.] A FGM de uma variável qui-quadrado com \( n \) graus de liberdade é dada por:
+	\[
+	M_{Y}(t) = (1 - 2t)^{-n/2} \quad \text{para } t < \frac{1}{2}.
+	\]\pause
+	\item[3.] A FGM de \( Y \) é o produto das FGMs de \( V_1, V_2, \ldots, V_{\nu} \) porque elas são independentes:
+	\[
+	M_{Y}(t) = M_{V_1}(t) \cdot M_{V_2}(t) \cdot \ldots \cdot M_{V_{\nu}}(t).
+	\]
+    Como \( V_i \sim \chi^2(1) \), temos que \( M_{V_i}(t) = (1 - 2t)^{-1/2} \).
+\end{description}
 \end{block}
+
+\end{frame}
+
+\begin{frame}
+	\begin{block}{}
+\begin{description}
+	\item[4.] Então:
+	\[
+	M_{Y}(t) = \left[(1 - 2t)^{-1/2}\right]^{\nu} = (1 - 2t)^{-\nu/2}.
+	\]
+	\pause
+	\item[5.] Portanto:
+	\[
+	Y \sim \chi^2(\nu).
+	\]
+\end{description}
+	\end{block}
 \end{frame}
 
 \begin{frame}{}
-\begin{block}{}
+	\begin{block}{}
+		\justifying
+		Antes de entender o teste qui-quadrado de aderência, entenda a observação seguinte: 
+	\end{block}
+	\pause
+\begin{block}{Observação:}
 \justifying
 Devido aos resultados anteriores, se $X_1$ segue uma distribuição binomial $b(n, p_1)$, considere a variável aleatória:
 
@@ -122,14 +162,14 @@ Y = \frac{X_1 - np_1}{\sqrt{np_1(1 - p_1)}}
 \]
 \end{block}
 \pause
-\begin{block}{}
+\begin{block}{Observação:}
 \justifying
 Conforme $n$ se aproxima do infinito, a variável $Y$ tem uma distribuição aproximada $N(0, 1).$ Além disso, a distribuição de $Y^2$ é aproximadamente $\chi^2(1)$.
 \end{block}
 \end{frame}
 
 \begin{frame}{}
-\begin{block}{}
+\begin{block}{Observação:}
 \justifying
 Seja $X_2 = n - X_1$ e $p_2 = 1 - p_1$. Defina $Q_1=Y^{2},$ então
 
@@ -139,18 +179,28 @@ Q_1 = \frac{(X_1 - np_1)^2}{np_1(1 - p_1)} = \frac{(X_1 - np_1)^2}{np_1} + \frac
 
 Isso ocorre porque $(X_1 - np_1)^2 = (n - X_2 - n + np_2)^2 = (X_2 - np_2)^2$. 
 \end{block}
+\pause
+\begin{block}{Observação:}
+	\justifying
+	Notem que se $(X_1 - np_1)^2 = (X_2 - np_2)^2$ e $p_2 = 1 - p_1,$ então 
+	\[
+	\frac{(X_1 - np_1)^2}{np_1} + \frac{(X_2 - np_2)^2}{np_2}=\frac{np_{2}(X_1 - np_1)^2+np_{1}(X_1 - np_1)^2}{n^{2}p_{1}p_2}
+	\]
+	Usa-se o fato de $p_{1}+p_{2}=1.$
+\end{block}
 \end{frame}
 
 \begin{frame}{}
-\begin{block}{}
+\begin{block}{Observação:
+	}
 \justifying
 Esse resultado pode ser generalizado da seguinte maneira. Suponha que $X_1, X_2, \ldots, X_{k-1}$ tenham uma distribuição multinomial com os parâmetros $n$ e $p_1, p_2, \ldots, p_{k-1}$. Defina $X_k = n - (X_1 + X_2 + \ldots + X_{k-1})$ e $p_k = 1 - (p_1 + p_2 + \ldots + p_{k-1})$. Defina $Q_{k-1}$ por:
 
 \[
-Q_{k-1} = \sum_{i=1}^{k} \frac{(X_i - n p_i)^2}{n p_i}
+Q_{k-1} = \sum_{i=1}^{k} \frac{(X_i - n p_i)^2}{n p_{i}}
 \]
 
-À medida que $n$ se aproxima do infinito, $Q_{k-1}$ possui uma distribuição aproximada $\chi^2(k - 1)$. Para usar essa aproximação, é importante garantir que $n$ seja grande o suficiente para que cada $n p_i$, onde $i = 1, 2, \ldots, k$, seja pelo menos igual a 5.
+À medida que $n$ se aproxima do infinito, $Q_{k-1}$ possui uma distribuição aproximada $\chi^{2}(k - 1)$. Para usar essa aproximação, é importante garantir que $n$ seja grande o suficiente para que cada $n p_i$, onde $i = 1, 2, \ldots, k$, seja pelo menos igual a 5.
 \end{block}
 \end{frame}
 
@@ -163,7 +213,7 @@ Considere um espaço amostral $A$ de um experimento aleatório que seja a união
 \pause
 \begin{block}{}
 \justifying
-Repita um experimento aleatório $n$ vezes de forma independente, e considere $X_i$ como o número de vezes que o resultado do experimento é um elemento do conjunto $A_i$. Ou seja, $X_1, X_2, \ldots, X_k = n - X_1 - X_2 - \ldots - X_{k-1}$ representam as frequências com as quais o resultado é, respectivamente, um elemento de $A_1, A_2, \ldots, A_k$. A função de massa de probabilidade conjunta de $X_1, X_2, \ldots, X_{k-1}$ é a função de massa de probabilidade multinomial com os parâmetros $n, p_1, p_2, \ldots, p_{k-1}$.    
+Repita um experimento aleatório $n$ vezes de forma independente, e considere $X_i$ como o número de vezes que o resultado do experimento é um elemento do conjunto $A_i$. Ou seja, $X_1, X_2, \ldots, X_k = n - X_1 - X_2 - \ldots - X_{k-1}$ representam as frequências com as quais o resultado é, respectivamente, um elemento de $A_1, A_2, \ldots, A_k$. Assuma que a função de massa de probabilidade conjunta de $X_1, X_2, \ldots, X_{k-1}$ é a função de massa de probabilidade multinomial com os parâmetros $n, p_1, p_2, \ldots, p_{k-1}$.    
 \end{block}
 \end{frame}
 
@@ -194,7 +244,7 @@ tem uma distribuição aproximada qui-quadrado com $k - 1$ graus de liberdade. P
 \begin{frame}{}
 \begin{block}{}
 \justifying
-Podemos, portanto, considerar o teste com nível de significância $\alpha$ que rejeita $H_0$ quando $Q_{k-1} \geq c.$ Usando o software R, calculamos o valor crítico $c$ por meio da função \texttt{qchisq(1 - $\alpha$, k - 1)}. Se a hipótese $H_0$ for rejeitada quando o valor observado de $Q_{k-1}$ for pelo menos igual a $c$, o teste de $H_0$ terá um nível de significância aproximadamente igual a $\alpha$. Além disso, se $q$ for o valor realizado da estatística do teste $Q_{k-1}$, o nível de significância observado do teste pode ser calculado em R pela função \texttt{1-pchisq(q, k - 1)}. Isso é frequentemente chamado de teste de bondade de ajuste. 
+Podemos, portanto, considerar o teste com nível de significância $\alpha$ que rejeita $H_0$ quando $Q_{k-1} \geq c.$ Usando o software R, calculamos o valor crítico $c$ por meio da função \texttt{qchisq(1 - $\alpha$, k - 1)}. Se a hipótese $H_0$ for rejeitada quando o valor observado de $Q_{k-1}$ for pelo menos igual a $c$, o teste de $H_0$ terá um nível de significância aproximadamente igual a $\alpha$. Além disso, se $q$ for o valor realizado da estatística do teste $Q_{k-1}$, o nível de significância observado do teste pode ser calculado em R pela função \texttt{1-pchisq(q, k - 1)}. Isso é frequentemente chamado de teste de bondade de ajuste ou de teste qui-quadrado para aderência.
 
 \end{block}
 \end{frame}
@@ -373,7 +423,7 @@ Seja $X$ uma variável aleatória com distribuição $F$ com $m$ e $n$ graus de 
 \[
 f(x) = \dfrac{\Gamma\left[\frac{1}{2}(m+n)\right]m^{m/2}n^{n/2}}{\Gamma\left[\frac{1}{2}m\right]\Gamma\left[\frac{1}{2}n\right]}\dfrac{x^{m/2}-1}{(mx+n)^{(m+n)/2}},
 \]
-e $f(x) = 0$ para $x \geq 0.$
+e $f(x) = 0$ para $x \leq 0.$
 
 \end{block}
 \end{frame}
@@ -393,13 +443,13 @@ H_0: \sigma^2_1 \leq \sigma^2_2, \quad H_1: \sigma^2_1 > \sigma^2_2.
 \begin{frame}{}
 \begin{block}{}
 \justifying
-Definimos $S^2_X$ e $S^2_Y$ como as variâncias amostrais de $X$ e $Y,$ respectivamente. Então, $S^2_X / (m - 1)$ e $S^2_Y / (n - 1)$ são estimadores de $\sigma^2_1$ e $\sigma^2_2$, respectivamente. Faz sentido intuitivo rejeitar $H_0$ se a razão desses dois estimadores for grande. Ou seja, definimos
+Definimos $S^2_X$ e $S^2_Y$ como as variâncias amostrais de $X$ e $Y,$ respectivamente. Então, $\frac{(m - 1)S^2_{X}}{\sigma^{2}_{X}}\sim \chi^{2}(m-1)$ e $\frac{(n - 1)S^2_{Y}}{\sigma^{2}_{Y}}\sim \chi^{2}(n-1).$ Faz sentido intuitivo rejeitar $H_0$ se a razão desses dois estimadores for grande. Ou seja, definimos
 
 \[
-V = \frac{S^2_X}{m - 1} \bigg/ \frac{S^2_Y}{n - 1},
+V =\dfrac{S^{2}_{X}}{S^{2}_{Y}} \underset{\text{sob } H_0}{=}  \dfrac{\frac{(m - 1)S^2_{X}}{(m-1)\sigma^{2}_{X}}}{\frac{(n - 1)S^2_{Y}}{(n-1)\sigma^{2}_{Y}}}\sim F(m-1,n-1),
 \]
 
-e rejeitamos $H_0$ se $V \geq c$, onde $c$ é escolhido para que o teste tenha um nível de significância desejado.
+e rejeitamos $H_0$ se $V \geq c$, em que $c$ é escolhido para que o teste tenha um nível de significância desejado.
 
 \end{block}
 \end{frame}
@@ -420,16 +470,16 @@ H_0: \sigma^2_1 \leq \sigma^2_2, \quad H_1: \sigma^2_1 > \sigma^2_2.
 \begin{block}{}
 \justifying
 Neste exemplo, temos $m = 6$ e $n = 21$. Portanto, quando $H_0$ é verdadeira, a estatística $V$, seguirá a distribuição $F$ com $5$ e $20$ graus de liberdade. Segue que o valor de $V$ para as amostras dadas é
-$V = \frac{30/5}{40/20} = 3$.
+$V = \frac{30}{40} = 0,75$.
 
 O valor-p do teste, pode ser calculado no R por:
 
 \begin{align*}
-    Pvalor&=P(F>Tcal)\\
-    &=pf(Fcal,nx-1,ny-1,lower.tail=FALSE)=0.035
+    Pvalor&=P(F>Fcal)\\
+    &=pf(Fcal,nx-1,ny-1,lower.tail=FALSE)=0.596
 \end{align*}
 
-A hipótese $H_0$ de que $\sigma^2_1 \leq \sigma^2_2$ seria, portanto, rejeitada no nível de significância $\alpha_0 = 0.05$, e $H_0$ não seria rejeitada no nível de significância $\alpha_0 = 0.025$. 
+A hipótese $H_0$ de que $\sigma^2_1 \leq \sigma^2_2$ seria, portanto, não rejeitada no nível de significância $\alpha_0 = 0.05.$ 
 \end{block}
 \end{frame}
 
@@ -442,7 +492,7 @@ A hipótese $H_0$ de que $\sigma^2_1 \leq \sigma^2_2$ seria, portanto, rejeitada
     \gamma_{d}(\sigma_{1}^{2},\sigma_{2}^{2})=1-F_{m-1,n-1}(C*\dfrac{\sigma_{1}^{2}}{\sigma_{2}^{2}}), C=F_{tab}
 \end{align*}
 
-Suponha, assim, que seja importante rejeitar $H_0$ se $\sigma^2_1$ for três vezes maior que $\sigma^2_2$. Nesse caso, gostaríamos que a função poder fosse alta quando $\sigma^2_1 = 3\sigma^2_2$. Nesse caso, $1 - F_{5,20}(2.71 \times 1/3) \approx 0.5$. Logo, se $\sigma^2_1$ for três vezes maior que $\sigma^2_2$, o teste com nível de 0.05 tem cerca de 50\% de chance de rejeitar $H_0$.
+Suponha, assim, que seja importante rejeitar $H_0$ se $\sigma^2_1$ for três vezes maior que $\sigma^2_2$. Nesse caso, gostaríamos que a função poder fosse alta quando $\sigma^2_1 = 3\sigma^2_2$. Nesse caso, $1 - pf(qf(0.95,5,20)*(1/3),5,20)=1-F_{5,20}(2.71 \times 1/3) \approx 0.5$. Logo, se $\sigma^2_1$ for três vezes maior que $\sigma^2_2$, o teste com nível de 0.05 tem cerca de 50\% de chance de rejeitar $H_0$.
 \end{block}
 \end{frame}
 

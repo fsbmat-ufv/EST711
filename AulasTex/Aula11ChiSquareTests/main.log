@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.9)  4 NOV 2024 09:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.5)  4 NOV 2024 14:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1935,8 +1935,8 @@ Package pdftex.def Info: figs/mylogo.png  used on input line 17.
 
 [1
 
-{C:/Users/Admin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./figs/mylog
-o.png>] (main.toc)
+{C:/Users/Fernando/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./figs/my
+logo.png>] (main.toc)
 
 [2
 
@@ -2045,32 +2045,14 @@ Overfull \vbox (0.6384pt too high) detected at line 89
 [23
 
 ]
-<figs/EX1Chisq.png, id=657, 394.47375pt x 400.49625pt>
-File: figs/EX1Chisq.png Graphic file (type png)
-<use figs/EX1Chisq.png>
-Package pdftex.def Info: figs/EX1Chisq.png  used on input line 243.
-(pdftex.def)             Requested size: 197.23639pt x 200.24763pt.
-
 
 [24
 
- <./figs/EX1Chisq.png>]
-<figs/EX1Poder.png, id=682, 394.47375pt x 400.49625pt>
-File: figs/EX1Poder.png Graphic file (type png)
-<use figs/EX1Poder.png>
-Package pdftex.def Info: figs/EX1Poder.png  used on input line 254.
-(pdftex.def)             Requested size: 197.23639pt x 200.24763pt.
-
-pdfTeX warning (ext4): destination with the same identifier (name{fig:enter-lab
-el}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.254 \end{frame}
-                 
+]
 
 [25
 
- <./figs/EX1Poder.png>]
+]
 
 [26
 
@@ -2083,126 +2065,168 @@ l.254 \end{frame}
 [28
 
 ]
-<figs/EX2Chisq.png, id=779, 394.47375pt x 400.49625pt>
-File: figs/EX2Chisq.png Graphic file (type png)
-<use figs/EX2Chisq.png>
-Package pdftex.def Info: figs/EX2Chisq.png  used on input line 296.
-(pdftex.def)             Requested size: 197.23639pt x 200.24763pt.
-
-pdfTeX warning (ext4): destination with the same identifier (name{fig:enter-lab
-el}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.296 \end{frame}
-                 
 
 [29
 
- <./figs/EX2Chisq.png>]
-<figs/Ex2p1.png, id=798, 394.47375pt x 400.49625pt>
-File: figs/Ex2p1.png Graphic file (type png)
-<use figs/Ex2p1.png>
-Package pdftex.def Info: figs/Ex2p1.png  used on input line 307.
+]
+<figs/EX1Chisq.png, id=801, 394.47375pt x 400.49625pt>
+File: figs/EX1Chisq.png Graphic file (type png)
+<use figs/EX1Chisq.png>
+Package pdftex.def Info: figs/EX1Chisq.png  used on input line 293.
 (pdftex.def)             Requested size: 197.23639pt x 200.24763pt.
 
-pdfTeX warning (ext4): destination with the same identifier (name{fig:enter-lab
-el}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.307 \end{frame}
-                 
 
 [30
 
- <./figs/Ex2p1.png>]
-<figs/Ex2p2.png, id=817, 394.47375pt x 400.49625pt>
-File: figs/Ex2p2.png Graphic file (type png)
-<use figs/Ex2p2.png>
-Package pdftex.def Info: figs/Ex2p2.png  used on input line 318.
+ <./figs/EX1Chisq.png>]
+<figs/EX1Poder.png, id=826, 394.47375pt x 400.49625pt>
+File: figs/EX1Poder.png Graphic file (type png)
+<use figs/EX1Poder.png>
+Package pdftex.def Info: figs/EX1Poder.png  used on input line 304.
 (pdftex.def)             Requested size: 197.23639pt x 200.24763pt.
 
 pdfTeX warning (ext4): destination with the same identifier (name{fig:enter-lab
 el}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.318 \end{frame}
+l.304 \end{frame}
                  
 
 [31
 
- <./figs/Ex2p2.png>]
-<figs/Ex2p3.png, id=837, 394.47375pt x 400.49625pt>
-File: figs/Ex2p3.png Graphic file (type png)
-<use figs/Ex2p3.png>
-Package pdftex.def Info: figs/Ex2p3.png  used on input line 329.
-(pdftex.def)             Requested size: 197.23639pt x 200.24763pt.
-
-pdfTeX warning (ext4): destination with the same identifier (name{fig:enter-lab
-el}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.329 \end{frame}
-                 
+ <./figs/EX1Poder.png>]
 
 [32
 
- <./figs/Ex2p3.png>]
-<figs/Ex2p4.png, id=856, 394.47375pt x 400.49625pt>
-File: figs/Ex2p4.png Graphic file (type png)
-<use figs/Ex2p4.png>
-Package pdftex.def Info: figs/Ex2p4.png  used on input line 340.
+]
+
+[33
+
+]
+
+[34
+
+]
+<figs/EX2Chisq.png, id=923, 394.47375pt x 400.49625pt>
+File: figs/EX2Chisq.png Graphic file (type png)
+<use figs/EX2Chisq.png>
+Package pdftex.def Info: figs/EX2Chisq.png  used on input line 346.
 (pdftex.def)             Requested size: 197.23639pt x 200.24763pt.
 
 pdfTeX warning (ext4): destination with the same identifier (name{fig:enter-lab
 el}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.340 \end{frame}
+l.346 \end{frame}
                  
 
-[33
+[35
+
+ <./figs/EX2Chisq.png>]
+<figs/Ex2p1.png, id=942, 394.47375pt x 400.49625pt>
+File: figs/Ex2p1.png Graphic file (type png)
+<use figs/Ex2p1.png>
+Package pdftex.def Info: figs/Ex2p1.png  used on input line 357.
+(pdftex.def)             Requested size: 197.23639pt x 200.24763pt.
+
+pdfTeX warning (ext4): destination with the same identifier (name{fig:enter-lab
+el}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.357 \end{frame}
+                 
+
+[36
+
+ <./figs/Ex2p1.png>]
+<figs/Ex2p2.png, id=961, 394.47375pt x 400.49625pt>
+File: figs/Ex2p2.png Graphic file (type png)
+<use figs/Ex2p2.png>
+Package pdftex.def Info: figs/Ex2p2.png  used on input line 368.
+(pdftex.def)             Requested size: 197.23639pt x 200.24763pt.
+
+pdfTeX warning (ext4): destination with the same identifier (name{fig:enter-lab
+el}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.368 \end{frame}
+                 
+
+[37
+
+ <./figs/Ex2p2.png>]
+<figs/Ex2p3.png, id=981, 394.47375pt x 400.49625pt>
+File: figs/Ex2p3.png Graphic file (type png)
+<use figs/Ex2p3.png>
+Package pdftex.def Info: figs/Ex2p3.png  used on input line 379.
+(pdftex.def)             Requested size: 197.23639pt x 200.24763pt.
+
+pdfTeX warning (ext4): destination with the same identifier (name{fig:enter-lab
+el}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.379 \end{frame}
+                 
+
+[38
+
+ <./figs/Ex2p3.png>]
+<figs/Ex2p4.png, id=1000, 394.47375pt x 400.49625pt>
+File: figs/Ex2p4.png Graphic file (type png)
+<use figs/Ex2p4.png>
+Package pdftex.def Info: figs/Ex2p4.png  used on input line 390.
+(pdftex.def)             Requested size: 197.23639pt x 200.24763pt.
+
+pdfTeX warning (ext4): destination with the same identifier (name{fig:enter-lab
+el}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.390 \end{frame}
+                 
+
+[39
 
  <./figs/Ex2p4.png>]
 LaTeX Font Info:    Trying to load font information for U+fontawesometwo on inp
-ut line 352.
+ut line 402.
 
 (C:\Program Files\MiKTeX\tex/latex/fontawesome\ufontawesometwo.fd
 File: ufontawesometwo.fd 2016/05/22 Font definitions for U/fontawesometwo.
 )
 
-[34
-
-{C:/Program Files/MiKTeX/fonts/enc/dvips/fontawesome/fontawesometwo.enc}]
-
-[35
-
-]
-
-[36
-
-]
-
-[37
-
-]
-
-[38
-
-]
-
-[39
-
-]
-
 [40
 
-]
+{C:/Program Files/MiKTeX/fonts/enc/dvips/fontawesome/fontawesometwo.enc}]
 
 [41
 
 ]
 
 [42
+
+]
+
+[43
+
+]
+
+[44
+
+]
+
+[45
+
+]
+
+[46
+
+]
+
+[47
+
+]
+
+[48
 
  <C:/Program Files/MiKTeX/tex/latex/beamer/beamericonarticle.pdf>]
 \tf@nav=\write7
@@ -2228,43 +2252,44 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 55505 strings out of 473898
- 1203296 string characters out of 5736295
- 2237932 words of memory out of 5000000
- 77273 multiletter control sequences out of 15000+600000
+ 55561 strings out of 473899
+ 1204954 string characters out of 5736307
+ 2243932 words of memory out of 5000000
+ 77316 multiletter control sequences out of 15000+600000
  591446 words of font info for 129 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,17n,123p,3279b,2230s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx
-1200.pk> <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
-0\ecss1095.pk> <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
-/dpi600\ecsx1095.pk> <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
-pen/ec/dpi600\ectt1200.pk> <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour
-/jknappen/ec/dpi600\ecsi1200.pk> <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/
-ljfour/jknappen/ec/dpi600\ecss1440.pk> <C:\Users\Admin\AppData\Local\MiKTeX\fon
-ts/pk/ljfour/jknappen/ec/dpi600\ecsx1728.pk> <C:\Users\Admin\AppData\Local\MiKT
-eX\fonts/pk/ljfour/jknappen/ec/dpi450\ectt0800.pk> <C:\Users\Admin\AppData\Loca
-l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss0600.pk> <C:\Users\Admin\AppDat
-a\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss0800.pk> <C:\Users\Admin\
-AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1200.pk> <C:\Users\
-Admin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1728.pk><C:/P
-rogram Files/MiKTeX/fonts/type1/public/fontawesome/FontAwesome.pfb><C:/Program 
-Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX
-/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Program Files/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/
-amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/c
-mmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:
-/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss17.pfb><C:/Program Fil
-es/MiKTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Program Files/MiKTeX/fon
-ts/type1/public/amsfonts/cm/cmssi12.pfb><C:/Program Files/MiKTeX/fonts/type1/pu
-blic/amsfonts/cm/cmssi17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfon
-ts/cm/cmssi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10
-.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Prog
-ram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiK
-TeX/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on main.pdf (42 pages, 598686 bytes).
+ <C:\Users\Fernando\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\e
+csx1200.pk> <C:\Users\Fernando\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
+/dpi600\ecss1095.pk> <C:\Users\Fernando\AppData\Local\MiKTeX\fonts/pk/ljfour/jk
+nappen/ec/dpi600\ecsx1095.pk> <C:\Users\Fernando\AppData\Local\MiKTeX\fonts/pk/
+ljfour/jknappen/ec/dpi600\ectt1200.pk> <C:\Users\Fernando\AppData\Local\MiKTeX\
+fonts/pk/ljfour/jknappen/ec/dpi600\ecsi1200.pk> <C:\Users\Fernando\AppData\Loca
+l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1440.pk> <C:\Users\Fernando\App
+Data\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1728.pk> <C:\Users\Fer
+nando\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi450\ectt0800.pk> <C:\
+Users\Fernando\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss0600
+.pk> <C:\Users\Fernando\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600
+\ecss0800.pk> <C:\Users\Fernando\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/
+ec/dpi600\ecss1200.pk> <C:\Users\Fernando\AppData\Local\MiKTeX\fonts/pk/ljfour/
+jknappen/ec/dpi600\ecss1728.pk><C:/Program Files/MiKTeX/fonts/type1/public/font
+awesome/FontAwesome.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm
+/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.
+pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Prog
+ram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiK
+TeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/typ
+e1/public/amsfonts/cm/cmss12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/am
+sfonts/cm/cmss17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cm
+ss8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi12.pfb><C:
+/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi17.pfb><C:/Program Fi
+les/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi8.pfb><C:/Program Files/MiKTeX/f
+onts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfont
+s/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msa
+m10.pfb>
+Output written on main.pdf (48 pages, 641387 bytes).
 PDF statistics:
- 1542 PDF objects out of 1728 (max. 8388607)
- 97 named destinations out of 1000 (max. 500000)
- 2137 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1692 PDF objects out of 1728 (max. 8388607)
+ 109 named destinations out of 1000 (max. 500000)
+ 2455 words of extra memory for PDF output out of 10000 (max. 10000000)
 
