@@ -134,8 +134,15 @@ Por outro lado, se o conjunto \(A_2\) for usado como região crítica, então \(
 \begin{frame}{}
 \begin{block}{}
 \justifying
-Deve ser observado neste problema que a melhor região crítica \(C = A_2\) de tamanho \(\alpha = \frac{1}{32}\) é encontrada incluindo em \(C\) o ponto (ou pontos) em que \(\frac{f(x;\frac{1}{2})}{f(x;\frac{3}{4})}\) é pequeno em comparação com \(\frac{f(x;\frac{1}{2})}{f(x;\frac{3}{4})}\). Isso é observado ser verdadeiro uma vez que a razão \(\frac{f(x;\frac{1}{2})}{f(x;\frac{3}{4})}\) é mínima em \(x = 5\). Assim, a razão \(\frac{f(x;\frac{1}{2})}{f(x;\frac{3}{4})}\), que é dada na última linha da tabulação acima, nos fornece uma ferramenta precisa para encontrar uma melhor região crítica \(C\) para determinados valores dados de \(\alpha\). Para ilustrar isso, suponha \(\alpha = \frac{6}{32}\). Quando \(H_0\) é verdadeira, cada um dos subconjuntos \(\{x : x = 0, 1\}\), \(\{x : x = 0, 4\}\), \(\{x : x = 1, 5\}\), \(\{x : x = 4, 5\}\) tem medida de probabilidade \(\frac{6}{32}\). Por cálculo direto, é encontrado que a melhor região crítica desse tamanho é \(\{x : x = 4, 5\}\). Isso reflete o fato de que a razão \(\frac{f(x;\frac{1}{2})}{f(x;\frac{3}{4})}\) tem seus dois valores mínimos em \(x = 4\) e \(x = 5\). O poder deste teste, que tem \(\alpha = \frac{6}{32}\), é \(P_{\{\theta=\frac{3}{4}\}}(X = 4, 5) = \frac{405}{1024} + \frac{243}{1024} = \frac{648}{1024}\).
+Deve ser observado neste problema que a melhor região crítica \(C = A_2\) de tamanho \(\alpha = \frac{1}{32}\) é encontrada incluindo em \(C\) o ponto (ou pontos) em que \(\frac{f(x;\frac{1}{2})}{f(x;\frac{3}{4})}\) é mínimo. Assim, a razão \(\frac{f(x;\frac{1}{2})}{f(x;\frac{3}{4})}\), que é dada na última linha da tabulação acima, nos fornece uma ferramenta precisa para encontrar uma melhor região crítica \(C\) para determinados valores dados de \(\alpha\). 
 \end{block}
+\end{frame}
+
+\begin{frame}{}
+	\begin{block}{}
+		\justifying
+		Para ilustrar o último slide, suponha \(\alpha = \frac{6}{32}\). Quando \(H_0\) é verdadeira, cada um dos subconjuntos \(\{x : x = 0, 1\}\), \(\{x : x = 0, 4\}\), \(\{x : x = 1, 5\}\), \(\{x : x = 4, 5\}\) tem medida de probabilidade \(\frac{6}{32}\). Por cálculo direto, é encontrado que a melhor região crítica desse tamanho é \(\{x : x = 4, 5\}\). Isso reflete o fato de que a razão \(\frac{f(x;\frac{1}{2})}{f(x;\frac{3}{4})}\) tem seus dois valores mínimos em \(x = 4\) e \(x = 5\). O poder deste teste, que tem \(\alpha = \frac{6}{32}\), é \(P_{\{\theta=\frac{3}{4}\}}(X = 4, 5) = \frac{405}{1024} + \frac{243}{1024} = \frac{648}{1024}\).
+	\end{block}
 \end{frame}
 
 \section{Teorema de Neyman-Pearson}
@@ -152,6 +159,18 @@ $L(\theta,X)=\Prodi f(x_{i},\theta)$ a função de verossimilhança e $\undertil
 \end{enumerate}
 Então, $\mathcal{C}$ é a melhor região crítica de tamanho $\alpha$ para testar as hipóteses $H_{0}:\theta=\theta^{'}$ contra $H_{1}:\theta=\theta^{''}.$
 \end{Teorema}
+\end{frame}
+
+\begin{frame}{Demonstração}
+	\begin{block}{}
+		\justifying
+		É importante entender que deseja-se mostrar que, satisfeita as condições do teorema, $\mathcal{C}$ é a melhor região crítica de tamanho $\alpha.$ Isso pode ser escrito matematicamente como $P_{\theta^{''}}(\undertilde{X}\in\mathcal{C})>P_{\theta^{''}}(\undertilde{X}\in\mathcal{A})$ para qualquer outra região crítica $\mathcal{A}$ de tamanho $\alpha.$
+	\end{block}
+	\pause
+	\begin{block}{}
+		\justifying
+		Ou seja, queremos mostrar que $$P_{\theta^{''}}(\undertilde{X}\in\mathcal{C})-P_{\theta^{''}}(\undertilde{X}\in\mathcal{A})>0.$$
+	\end{block}
 \end{frame}
 
 \begin{frame}{Demonstração}
@@ -308,7 +327,7 @@ ou seja, $X_1 + X_2 \geq k_{3}$. Portanto, a região crítica $C$ pode ser defin
 C = \{(X_1, X_2) : X_1 + X_2 \geq k_{3}\},
 \]
 
-em que $k$ é escolhido de forma a controlar o nível de significância $\alpha$. O teste de hipóteses consiste em verificar se a amostra cai dentro ou fora da região crítica $C$. Portanto, o melhor teste usa a estatística $X_1 + X_2$ e a melhor região crítica $C$ é definida por $C=\{(x_{1},x_{2})/x_{1}+x_{2}\leq k\}$.
+em que $k$ é escolhido de forma a controlar o nível de significância $\alpha$. O teste de hipóteses consiste em verificar se a amostra cai dentro ou fora da região crítica $C$. Portanto, o melhor teste usa a estatística $X_1 + X_2$ e a melhor região crítica $C$ é definida por $C=\{(x_{1},x_{2})/x_{1}+x_{2}\geq k\}$.
 \end{block}
 \end{frame}
 
