@@ -1,0 +1,2 @@
+\babel@toc {brazil}{}\relax 
+\beamer@sectionintoc {1}{Testes de Hipóteses - Caso Multiparamétrico}{3}{0}{1}

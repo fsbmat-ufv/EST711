@@ -1,0 +1,15 @@
+[0] Config.pm:308> INFO - This is Biber 2.20
+[0] Config.pm:311> INFO - Logfile is 'Aula13.blg'
+[69] biber-MSWIN64:340> INFO - === 
+[97] Biber.pm:420> INFO - Reading 'Aula13.bcf'
+[166] Biber.pm:994> INFO - Found 1 citekeys in bib section 0
+[175] Biber.pm:4463> INFO - Processing section 0
+[182] Biber.pm:4654> INFO - Looking for bibtex file '../Referencias/Referencias.bib' for section 0
+[225] bibtex.pm:1713> INFO - LaTeX decoding ...
+[236] bibtex.pm:1519> INFO - Found BibTeX data source '../Referencias/Referencias.bib'
+[260] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[260] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
+[260] Biber.pm:4283> INFO - Sorting list 'nyt/global//global/global/global' of type 'entry' with template 'nyt' and locale 'pt-BR'
+[260] Biber.pm:4289> INFO - No sort tailoring available for locale 'pt-BR'
+[261] bbl.pm:676> INFO - Writing 'Aula13.bbl' with encoding 'UTF-8'
+[262] bbl.pm:779> INFO - Output to Aula13.bbl

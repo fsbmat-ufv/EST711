@@ -1,0 +1,2 @@
+\babel@toc {brazil}{}\relax 
+\beamer@sectionintoc {1}{Caso Multiparamétrico: Estimação}{3}{0}{1}
