@@ -1,4 +1,4 @@
 \babel@toc {brazil}{}\relax 
 \beamer@sectionintoc {1}{Testes Uniformemente Mais Poderosos}{3}{0}{1}
-\beamer@sectionintoc {2}{Exemplo 1}{8}{0}{2}
-\beamer@sectionintoc {3}{Exemplo 2}{12}{0}{3}
+\beamer@sectionintoc {2}{Exemplo 1}{10}{0}{2}
+\beamer@sectionintoc {3}{Exemplo 2}{14}{0}{3}

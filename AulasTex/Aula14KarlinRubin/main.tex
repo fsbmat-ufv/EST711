@@ -25,16 +25,37 @@
 \begin{frame}{Razão de Verossimilhança Monótona}
 \begin{block}{}
 \justifying
-A Razão de Verossimilhança Monótona (RVM) está relacionada à comparação de dois modelos estatísticos por meio da razão de suas funções de verossimilhança. Suponha que tenhamos dois modelos estatísticos, \(M_1\) e \(M_2\), com funções de verossimilhança associadas \(L(\theta_1 | T(X))\) e \(L(\theta_2 | T(X))\), respectivamente, onde \(X\) representa uma amostra observada e \(T(X)\) é uma estatística específica resumindo as informações contidas na amostra. A Razão de Verossimilhança Monótona compara essas duas verossimilhanças de uma maneira especial.
+A Razão de Verossimilhança Monótona (RVM) está relacionada à comparação de dois modelos estatísticos por meio da razão de suas funções de verossimilhança. 
 \end{block}
+\pause
+\begin{block}{}
+	\justifying
+	A razão de verossimilhança é definida como o quociente 
+	
+	\[
+	\frac{L(\theta_0 | T(X))}{L(\theta_1 | T(X))}
+	\]
+	
+	para dois valores de parâmetro \(\theta_0\) e \(\theta_1\). Dizemos que a razão de verossimilhança é \textbf{monótona} se, para quaisquer dois valores \(\theta_1 > \theta_0\), a razão de verossimilhança for uma função \textbf{monótona não-decrescente} em relação a estatística \(T(X)\).
+\end{block}
+%\begin{block}{}
+%	\justifying
+%	Suponha que tenhamos dois modelos estatísticos, \(M_0\) e \(M_1\), com funções de verossimilhança associadas \(L(\theta_0 | T(X))\) e \(L(\theta_1 | T(X))\), respectivamente, onde \(X\) representa uma amostra observada e \(T(X)\) é uma estatística específica resumindo as informações contidas na amostra. A Razão de Verossimilhança Monótona compara essas duas verossimilhanças de uma maneira especial.
+%\end{block}
 \end{frame}
 
 \begin{frame}{Razão de Verossimilhança Monótona}
-\begin{block}{}
-\justifying
-A razão de verossimilhança monótona é definida como o quociente \(\frac{L(\theta_1 | T(X))}{L(\theta_2 | T(X))}\). Esta razão é considerada monótona se, para quaisquer dois conjuntos de parâmetros \(\theta_1\) e \(\theta_2\) onde \(\theta_1\) é mais provável do que \(\theta_2\) para um dado \(X\), a razão \(\frac{L(\theta_1 | T(X))}{L(\theta_2 | T(X))}\) é uma função monótona não-decrescente de \(T(X)\).
-\end{block}
-\pause
+%\begin{block}{}
+%\justifying
+%A razão de verossimilhança é definida como o quociente 
+%
+%\[
+%\frac{L(\theta_0 | T(X))}{L(\theta_1 | T(X))}
+%\]
+%
+%para dois valores de parâmetro \(\theta_1\) e \(\theta_0\). Dizemos que a razão de verossimilhança é \textbf{monótona} se, para quaisquer dois valores \(\theta_1 > \theta_0\), a razão de verossimilhança for uma função \textbf{monótona não-decrescente} em relação a estatística \(T(X)\).
+%\end{block}
+%\pause
 \begin{block}{}
 \justifying
 A monotonicidade aqui é uma propriedade importante, pois implica que, se um modelo é mais provável do que outro para uma dada estatística \(T(X)\), ele permanecerá mais provável à medida que a estatística \(T(X)\) aumenta. Isso é fundamental em testes de hipóteses e inferência estatística, pois garante uma ordem consistente de preferência entre os modelos em estudo.
@@ -44,11 +65,14 @@ A monotonicidade aqui é uma propriedade importante, pois implica que, se um mod
 \begin{frame}{Razão de Verossimilhança Monótona}
 \begin{definicao}
 \justifying
-Uma família de funções de densidade de probabilidade $\{f_{\Vec{X}}(\cdot; \theta), \theta \in \Theta\}$, $\Theta \in \mathbb{R}$, é dita ter Razão de Verossimilhança Monótona (RVM) se existir uma estatística $T = t(\tend{X})$ tal que, para todo $\theta_2 > \theta_1$,
+Uma família de funções de densidade de probabilidade \(\{f_{\vec{X}}(\cdot; \theta), \theta \in \Theta\}\), \(\Theta \in \mathbb{R}\), é dita ter Razão de Verossimilhança Monótona (RVM) se existir uma estatística \(T = t(\vec{X})\) tal que, para todo \(\theta_1 > \theta_0\),
+
 \[
-\frac{L(\theta_1 | T(\tend{X}))}{L(\theta_2 | T(\tend{X}))}
+\frac{L(\theta_0 \mid T(\vec{X}))}{L(\theta_1 \mid T(\vec{X}))}
 \]
-é uma função monótona (não decrescente ou não crescente) em $t(\Vec{x})$ para $\Vec{x} \in \{f(\Vec{x}; \theta_1) > 0 \text{ ou } f(\Vec{x}; \theta_2) > 0\}$, em que $f_{\Vec{X}}(\Vec{x}; \theta_1) \neq f_{\Vec{X}}(\Vec{x}; \theta_2)$.
+
+é uma função monótona (não decrescente ou não crescente) em \(t(\vec{x})\), para \(\vec{x} \in \{f(\vec{x}; \theta_0) > 0 \text{e} f(\vec{x}; \theta_1) > 0\}\), em que \(f_{\vec{X}}(\vec{x}; \theta_0) \neq f_{\vec{X}}(\vec{x}; \theta_1)\).
+
 \end{definicao}
 \end{frame}
 
@@ -59,7 +83,7 @@ Uma família de funções de densidade de probabilidade $\{f_{\Vec{X}}(\cdot; \t
 \justifying
 Seja $X_1, \ldots, X_n$ uma amostra de $X \sim \text{Exp}(\theta)$. Segue que,
 \[
-\frac{L(\theta_1 | T(\tend{X}))}{L(\theta_2 | T(\tend{X}))} = \frac{{\displaystyle \prod_{i=1}^{n}} \theta_1}{{\displaystyle \prod_{i=1}^{n}} \theta_2} \exp\left(-\left(\frac{1}{\theta_2} - \frac{1}{\theta_1}\right)\sum_{i=1}^{n} x_i\right)
+\frac{L(\theta_0 | T(\tend{X}))}{L(\theta_1 | T(\tend{X}))} = \frac{{\displaystyle \prod_{i=1}^{n}} \theta_0}{{\displaystyle \prod_{i=1}^{n}} \theta_1} \exp\left(-\left(\frac{1}{\theta_1} - \frac{1}{\theta_0}\right)\sum_{i=1}^{n} x_i\right)
 \]
 \end{block}
 \pause
@@ -73,14 +97,18 @@ A função acima é monótona não decrescente em $t(\Vec{x}) = \Sumi x_i,$ logo
 \begin{frame}{Exemplo 2}
 \begin{block}{}
 \justifying
-Seja $X_1, \ldots, X_n$ uma amostra de $X \sim U(0, \theta)$. Considere $y_{n}=max\{X_1, \ldots, X_n\},$
+Seja \(X_1, \ldots, X_n\) uma amostra de \(X \sim U(0, \theta)\). Considere \(y_{n} = \max\{X_1, \ldots, X_n\}\),
+
 \[
-L(\Vec{x}; \theta) = \frac{1}{\theta^n} \prod_{i=1}^{n} 1_{(0, y_n)}(y_1) \cdot 1_{(0, \theta)}(y_n)
+L(\vec{x}; \theta) = \frac{1}{\theta^n} 1_{(0, \theta)}(y_n)
 \]
-Assim, se $\theta_1 < \theta_2$, temos que:
+
+Assim, se \(\theta_0 < \theta_1\), temos que:
+
 \[
-\frac{L(\Vec{x}; \theta_2)}{L(\Vec{x}; \theta_1)} = \left(\frac{\theta_1}{\theta_2}\right)^n \frac{1_{(0, \theta_2)}(y_n)}{1_{(0, \theta_1)}(y_n)}
+\frac{L(\vec{x}; \theta_1)}{L(\vec{x}; \theta_0)} = \left(\frac{\theta_0}{\theta_1}\right)^n \frac{1_{(0, \theta_1)}(y_n)}{1_{(0, \theta_0)}(y_n)}
 \]
+
 \end{block}
 \end{frame}
 
@@ -90,8 +118,8 @@ Assim, se $\theta_1 < \theta_2$, temos que:
 Portanto, note que, $U(0, \theta)$ tem Razão de Verossimilhança Monótona (RVM) não decrescente em $y_n$ e,
 \[
 g(y_n) = \begin{cases} 
-\left(\frac{\theta_1}{\theta_2}\right)^n, & \text{se } 0 < y_n < \theta_1 \\
-\infty, & \text{se } \theta_1 \leq y_n < \theta_2
+\left(\frac{\theta_0}{\theta_1}\right)^n, & \text{se } 0 < y_n < \theta_0 \\
+\infty, & \text{se } \theta_0 \leq y_n < \theta_1
 \end{cases}
 \]
 \end{block}

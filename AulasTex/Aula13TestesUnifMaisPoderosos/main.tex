@@ -50,7 +50,24 @@ Por exemplo, $\gamma(2) = 0.05$, $\gamma(4) = 0.31$ e $\gamma(9.5) = \frac{2}{e}
 \begin{frame}{}
 \begin{block}{}
 \justifying
-O exemplo anterior ilustra um teste de uma hipótese simples $H_0$ que é o melhor teste de $H_0$ contra todas as hipóteses simples na hipótese alternativa composta $H_1$. Agora definimos uma região crítica, quando ela existe, que é a melhor região crítica para testar uma hipótese simples $H_0$ contra uma hipótese alternativa composta $H_1$. Parece desejável que essa região crítica seja a melhor região crítica para testar $H_0$ contra cada hipótese simples em $H_1$. Ou seja, a função poder do teste que corresponde a essa região crítica deve ser pelo menos tão grande quanto a função poder de qualquer outro teste com o mesmo nível de significância para cada hipótese simples em $H_1$.
+%O exemplo anterior ilustra um teste de uma hipótese simples $H_0$ que é o melhor teste de $H_0$ contra todas as hipóteses simples na hipótese alternativa composta $H_1$. Agora definimos uma região crítica, quando ela existe, que é a melhor região crítica para testar uma hipótese simples $H_0$ contra uma hipótese alternativa composta $H_1$. Parece desejável que essa região crítica seja a melhor região crítica para testar $H_0$ contra cada hipótese simples em $H_1$. Ou seja, a função poder do teste que corresponde a essa região crítica deve ser pelo menos tão grande quanto a função poder de qualquer outro teste com o mesmo nível de significância para cada hipótese simples em $H_1$.
+\begin{itemize}
+	\item \textbf{Resumo do exemplo anterior:}
+	\begin{itemize}
+		\item exemplo anterior ilustra um teste de uma hipótese simples $H_0$ que é o melhor teste de $H_0$ contra todas as hipóteses simples na hipótese alternativa composta $H_1$.
+	\end{itemize}
+	
+	\item \textbf{Queremos agora definir uma Região Crítica para uma hipótese composta que:}
+	\begin{itemize}
+		\item Seja a ``melhor'' para testar $H_0$ contra $H_1$.\pause
+		\item Melhor região crítica significa:
+		\begin{itemize}
+			\item A função poder do teste deve ser \textbf{maior ou igual} à de qualquer outro teste para cada hipótese simples em $H_1$.\pause
+			\item Deve ter o \textbf{mesmo nível de significância}.
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+
 \end{block}
 \end{frame}
 
@@ -133,44 +150,69 @@ Se, na discussão anterior, tomarmos $n = 15$, $\alpha = 0,05$ e $\theta_0 = 3$,
 \begin{block}{}
 \justifying
 Seja $X_1, X_2, \ldots, X_n$ uma amostra aleatória de uma distribuição normal $N(\theta, 1)$, onde $\theta$ é desconhecido. Será demonstrado que não existe um teste uniformemente mais poderoso para a hipótese simples $H_0 : \theta = \theta_0$, onde $\theta_0$ é um número fixo, em oposição à hipótese alternativa composta $H_1 : \theta \neq \theta_0$. Assim, $\Omega = \{\theta : -\infty < \theta < \infty\}$.
-
-Seja $\theta_1$ um número diferente de $\theta_0$. Seja $k$ um número positivo e considere
-\[
-\frac{1}{(2\pi)^{n/2}} \exp\left(-\frac{1}{2}\sum_{i=1}^{n}(x_i - \theta)^2\right) \frac{1}{(2\pi)^{n/2}} \exp\left(-\frac{1}{2}\sum_{i=1}^{n}(x_i - \theta_1)^2\right) \leq k.
-\]
+\end{block}
+\pause
+\begin{block}{}
+	\justifying
+	Seja $\theta_1$ um número diferente de $\theta_0$. Seja $k$ um número positivo e considere
+	\[
+	\dfrac{\frac{1}{(2\pi)^{n/2}} \exp\left(-\frac{1}{2}{\displaystyle \sum_{i=1}^{n}(x_i - \theta_{0})^2}\right) }{\frac{1}{(2\pi)^{n/2}} \exp\left(-\frac{1}{2}{\displaystyle \sum_{i=1}^{n}(x_i - \theta_1)^2}\right)} \leq k.
+	\]
 \end{block}
 \end{frame}
 
 \begin{frame}{}
-\vspace{-0.2cm}
 \begin{block}{}
 \justifying
 A desigualdade anterior pode ser escrita como
 \[
-\exp\left(-( \theta - \theta_1)\sum_{i=1}^{n}x_i + \frac{n}{2}((\theta_1)^2 - (\theta)^2)\right) \leq k,
+(\theta_{0} - \theta_{1})\sum_{i=1}^{n}x_i \leq \dfrac{2\log k -n(\theta_{1}^{2}-\theta_{0}^{2})}{2}.
 \]
-ou
-\[
-(\theta - \theta_1)\sum_{i=1}^{n}x_i \geq \frac{n}{2}((\theta_1)^2 - (\theta)^2) - \log k.
-\]
-
-Essa última desigualdade é equivalente a
-\[
-\sum_{i=1}^{n}x_i \geq \frac{n}{2}(\theta_1 + \theta) - \frac{\log k}{\theta - \theta_1},
-\]
-desde que $\theta > \theta_1$, e,  se $\theta_1 < \theta,$ é equivalente a
-\[
-\sum_{i=1}^{n}x_i \leq \frac{n}{2}(\theta_1 + \theta) - \frac{\log k}{\theta - \theta_1}.
-\] 
+\end{block}
+\pause
+\begin{block}{}
+	\justifying
+	\begin{itemize}
+		\item Se $\theta_{0} > \theta_1$ essa última desigualdade é equivalente a
+		\[
+		\sum_{i=1}^{n}x_i \leq \dfrac{2\log k -n(\theta_{1}^{2}-\theta_{0}^{2})}{2(\theta_{0} - \theta_{1})},
+		\]\pause
+		\item Por outro lado, se $\theta_{0} < \theta_1,$ é equivalente a
+		\[
+		\sum_{i=1}^{n}x_i \geq \dfrac{2\log k -n(\theta_{1}^{2}-\theta_{0}^{2})}{2(\theta_{0} - \theta_{1})}.
+		\] 
+	\end{itemize}
 \end{block}
 \end{frame}
 
 \begin{frame}{}
 \begin{block}{}
 \justifying
-A primeira dessas duas expressões define uma melhor região crítica para testar $H_0 : \theta = \theta_0$ contra a hipótese $\theta = \theta_1$, desde que $\theta_1 > \theta$, enquanto a segunda expressão define uma melhor região crítica para testar $H_0 : \theta = \theta_0$ contra a hipótese $\theta = \theta_1$, desde que $\theta_1 < \theta$. Ou seja, uma melhor região crítica para testar a hipótese simples contra uma hipótese simples alternativa, digamos $\theta = \theta_0 + 1$, não serve como uma melhor região crítica para testar $H_0 : \theta = \theta_0$ contra a hipótese simples alternativa $\theta = \theta_0 - 1$. Por definição, então, não existe um teste uniformemente mais poderoso no caso em consideração.
+%A primeira dessas duas expressões define uma melhor região crítica para testar $H_0 : \theta = \theta_0$ contra a hipótese $\theta = \theta_1$, desde que $\theta_1 > \theta$, enquanto a segunda expressão define uma melhor região crítica para testar $H_0 : \theta = \theta_0$ contra a hipótese $\theta = \theta_1$, desde que $\theta_1 < \theta$. Ou seja, uma melhor região crítica para testar a hipótese simples contra uma hipótese simples alternativa, digamos $\theta = \theta_0 + 1$, não serve como uma melhor região crítica para testar $H_0 : \theta = \theta_0$ contra a hipótese simples alternativa $\theta = \theta_0 - 1$. Por definição, então, não existe um teste uniformemente mais poderoso no caso em consideração.
+%
+%Deve-se notar que se a hipótese alternativa composta fosse unidirecional, seja $H_1 : \theta > \theta_0$ ou $H_1 : \theta < \theta_0$, um teste uniformemente mais poderoso existiria em cada instância.
+\begin{itemize}
+	\item \textbf{Definição de Melhor Região Crítica:}
+	\begin{itemize}
+		\item \textbf{Primeira expressão:} Melhor região crítica para testar $H_0 : \theta = \theta_0$ contra $H_1 : \theta > \theta_0$.\pause
+		\item \textbf{Segunda expressão:} Melhor região crítica para testar $H_0 : \theta = \theta_0$ contra $H_1 : \theta < \theta_0$.
+	\end{itemize}
+	\pause
+	\item \textbf{Limitações da Melhor Região Crítica:}
+	\begin{itemize}
+		\item Uma melhor região crítica para $\theta = \theta_0 + 1$ não serve para testar $H_0 : \theta = \theta_0$ contra $\theta = \theta_0 - 1$.\pause
+		\item Portanto, não existe um teste uniformemente mais poderoso neste caso.
+	\end{itemize}
+	\pause
+	\item \textbf{Teste Uniformemente Mais Poderoso:}
+	\begin{itemize}
+		\item Caso a hipótese alternativa fosse composta unidirecional:
+		\begin{itemize}
+			\item $H_1 : \theta > \theta_0$ ou $H_1 : \theta < \theta_0$. Um teste uniformemente mais poderoso existiria para cada instância.
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
 
-Deve-se notar que se a hipótese alternativa composta fosse unidirecional, seja $H_1 : \theta > \theta_0$ ou $H_1 : \theta < \theta_0$, um teste uniformemente mais poderoso existiria em cada instância.
 \end{block}
 \end{frame}
 
