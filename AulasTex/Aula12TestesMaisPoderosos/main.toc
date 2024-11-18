@@ -1,4 +1,4 @@
 \babel@toc {brazil}{}\relax 
 \beamer@sectionintoc {1}{Testes Mais Poderosos}{3}{0}{1}
 \beamer@sectionintoc {2}{Exemplos}{8}{0}{2}
-\beamer@sectionintoc {3}{Teorema de Neyman-Pearson}{14}{0}{3}
+\beamer@sectionintoc {3}{Teorema de Neyman-Pearson}{15}{0}{3}

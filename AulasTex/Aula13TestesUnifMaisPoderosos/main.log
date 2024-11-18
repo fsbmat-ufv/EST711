@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.10)  17 NOV 2024 17:32
+=======
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.9)  6 NOV 2024 15:01
+>>>>>>> 247e51925f5349193093fe3d675d64b34146a2f1
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1912,9 +1916,14 @@ Package pdftex.def Info: figs/mylogo.png  used on input line 17.
 
 [1
 
+<<<<<<< HEAD
 {C:/Users/Fernando/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Program
  Files/MiKTeX/fonts/enc/dvips/cm-super/cm-super-t1.enc} <./figs/mylogo.png>]
 (main.toc)
+=======
+{C:/Users/Admin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./figs/mylog
+o.png>] (main.toc)
+>>>>>>> 247e51925f5349193093fe3d675d64b34146a2f1
 
 [2
 
@@ -2039,6 +2048,7 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
+<<<<<<< HEAD
  55426 strings out of 473682
  1199777 string characters out of 5729105
  2236945 words of memory out of 5000000
@@ -2073,6 +2083,38 @@ b><C:/Program Files/MiKTeX/fonts/type1/public/cm-super/sfsx1200.pfb><C:/Program
 /fonts/type1/public/cm-super/sftt0800.pfb><C:/Program Files/MiKTeX/fonts/type1/
 public/cm-super/sftt1200.pfb>
 Output written on main.pdf (25 pages, 554646 bytes).
+=======
+ 55145 strings out of 473898
+ 1194358 string characters out of 5736295
+ 2223830 words of memory out of 5000000
+ 76982 multiletter control sequences out of 15000+600000
+ 582934 words of font info for 106 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 128i,22n,123p,3279b,2230s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx
+1200.pk> <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
+0\ectt1200.pk> <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
+/dpi600\ecsi1200.pk> <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
+pen/ec/dpi600\ecss1440.pk> <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour
+/jknappen/ec/dpi600\ecsx1728.pk> <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/
+ljfour/jknappen/ec/dpi450\ectt0800.pk> <C:\Users\Admin\AppData\Local\MiKTeX\fon
+ts/pk/ljfour/jknappen/ec/dpi600\ecss0600.pk> <C:\Users\Admin\AppData\Local\MiKT
+eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss0800.pk> <C:\Users\Admin\AppData\Loca
+l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1200.pk> <C:\Users\Admin\AppDat
+a\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1728.pk><C:/Program Files
+/MiKTeX/fonts/type1/public/fontawesome/FontAwesome.pfb><C:/Program Files/MiKTeX
+/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1
+/public/amsfonts/cmextra/cmex8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/
+amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmmi6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:
+/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Program Fil
+es/MiKTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Program Files/MiKTeX/fon
+ts/type1/public/amsfonts/cm/cmssi12.pfb><C:/Program Files/MiKTeX/fonts/type1/pu
+blic/amsfonts/cm/cmssi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfont
+s/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.p
+fb>
+Output written on main.pdf (16 pages, 317727 bytes).
+>>>>>>> 247e51925f5349193093fe3d675d64b34146a2f1
 PDF statistics:
  719 PDF objects out of 1000 (max. 8388607)
  56 named destinations out of 1000 (max. 500000)
