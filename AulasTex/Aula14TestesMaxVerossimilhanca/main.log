@@ -1,4 +1,8 @@
+<<<<<<< HEAD:AulasTex/Aula15TestesMaxVerossimilhanca/main.log
 This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.10)  21 NOV 2024 14:57
+=======
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.16)  18 NOV 2024 15:16
+>>>>>>> 5b9dd9a0347e8c485742d6a5c4feb3bd293facc5:AulasTex/Aula14TestesMaxVerossimilhanca/main.log
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2140,6 +2144,7 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
+<<<<<<< HEAD:AulasTex/Aula15TestesMaxVerossimilhanca/main.log
  55559 strings out of 473682
  1203848 string characters out of 5729105
  2243374 words of memory out of 5000000
@@ -2169,6 +2174,39 @@ b><C:/Program Files/MiKTeX/fonts/type1/public/cm-super/sfss1728.pfb><C:/Program
 /fonts/type1/public/cm-super/sfsx1728.pfb><C:/Program Files/MiKTeX/fonts/type1/
 public/cm-super/sftt0800.pfb>
 Output written on main.pdf (37 pages, 609505 bytes).
+=======
+ 55558 strings out of 473681
+ 1203806 string characters out of 5729093
+ 2243374 words of memory out of 5000000
+ 77552 multiletter control sequences out of 15000+600000
+ 586751 words of font info for 117 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 128i,22n,123p,3279b,2232s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss
+1095.pk> <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
+0\ecsx1200.pk> <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
+/dpi600\ecsi1200.pk> <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
+pen/ec/dpi600\ecss1440.pk> <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour
+/jknappen/ec/dpi600\ecsx1728.pk> <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/
+ljfour/jknappen/ec/dpi450\ectt0800.pk> <C:\Users\Admin\AppData\Local\MiKTeX\fon
+ts/pk/ljfour/jknappen/ec/dpi600\ecss0600.pk> <C:\Users\Admin\AppData\Local\MiKT
+eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss0800.pk> <C:\Users\Admin\AppData\Loca
+l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1200.pk> <C:\Users\Admin\AppDat
+a\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1728.pk><C:/Program Files
+/MiKTeX/fonts/type1/public/fontawesome/FontAwesome.pfb><C:/Program Files/MiKTeX
+/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1
+/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsf
+onts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi
+8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Pr
+ogram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Program Files/
+MiKTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Program Files/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmssi10.pfb><C:/Program Files/MiKTeX/fonts/type1/publi
+c/amsfonts/cm/cmssi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/
+cm/cmssi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pf
+b><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program
+ Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on main.pdf (37 pages, 561519 bytes).
+>>>>>>> 5b9dd9a0347e8c485742d6a5c4feb3bd293facc5:AulasTex/Aula14TestesMaxVerossimilhanca/main.log
 PDF statistics:
  1161 PDF objects out of 1200 (max. 8388607)
  91 named destinations out of 1000 (max. 500000)

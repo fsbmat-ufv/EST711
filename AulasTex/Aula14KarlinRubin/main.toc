@@ -3,4 +3,5 @@
 \beamer@subsectionintoc {1}{1}{Exemplo 1}{7}{0}{1}
 \beamer@sectionintoc {2}{Teorema de Karlin-Rubin}{12}{0}{2}
 \beamer@subsectionintoc {2}{1}{Exemplo 1}{14}{0}{2}
-\beamer@subsectionintoc {2}{2}{Exemplo 2}{20}{0}{2}
+\beamer@subsectionintoc {2}{2}{Exemplo 2}{17}{0}{2}
+\beamer@subsectionintoc {2}{3}{Exemplo 3}{19}{0}{2}
