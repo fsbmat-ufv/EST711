@@ -57,7 +57,7 @@ Observe que $\Lambda \leq 1,$ pois $L(\theta_{0})$ é uma verossimilhança restr
 \end{block}
 \end{frame}
 
-
+\section{Teste da Razão de Verossimilhança}
 \begin{frame}{}
 \begin{block}{}
 \justifying
@@ -71,7 +71,66 @@ em que $c$ é tal que $\alpha = P_{\theta_0}(\Lambda \leq c)$. Chamamos isso de 
 \end{block}
 \end{frame}
 
-\section{Teste da Razão de Verossimilhança para a Distribuição Exponencial}
+\section{Exemplo 1 - Distribuição Normal}
+\begin{frame}{Exemplo 1 - Distribuição Normal}
+	\begin{block}{}
+		\justifying
+		Considere uma amostra aleatória $X_1, X_2, \ldots, X_n$ de uma distribuição $N(\theta, \sigma^2)$, em que $-\infty < \theta < \infty$ e $\sigma^2 > 0$ são conhecidos. Vamos considerar as hipóteses:
+		
+		\[ H_0 : \theta = \theta_0 \quad \text{versus} \quad H_1 : \theta \neq \theta_0, \]
+		
+		em que $\theta_0$ é especificado. A função de verossimilhança é dada por:
+		
+		\[
+		\begin{aligned}
+			L(\theta) &= \left(\frac{1}{2\pi\sigma^2}\right)^{n/2} \exp\left\{ -\frac{1}{2\sigma^2} \sum_{i=1}^{n}(x_i - \theta)^2 \right\} \\
+			&= \left(\frac{1}{2\pi\sigma^2}\right)^{n/2} \exp\left\{ -\frac{1}{2\sigma^2} \sum_{i=1}^{n}(x_i - \bar{x})^2 \right\} \exp\left\{ -\frac{1}{2\sigma^2}n(\bar{x} - \theta)^2 \right\},
+		\end{aligned}
+		\]
+	\end{block}
+\end{frame}
+
+\begin{frame}{}
+	\begin{block}{}
+		\justifying
+		Em $\Omega = \{\theta : -\infty < \theta < \infty\}$, o estimador de máxima verossimilhança é $\hat{\theta} = \bar{x}$, e, portanto, a razão de verossimilhança é:
+		
+		\[
+		\begin{aligned}
+			\Lambda &= \frac{L(\theta_0)}{L(\hat{\theta})} \\
+			&= \exp\left\{ -\frac{1}{2\sigma^2}n(\bar{X} - \theta_0)^2 \right\}.
+		\end{aligned}
+		\]
+	\end{block}
+	\pause
+	\begin{block}{}
+		\justifying
+		Logo, $\Lambda \leq c$ é equivalente a $-2 \log \Lambda \geq -2 \log c$. No entanto, 
+		\[
+		-2 \log \Lambda = \left(\frac{\Bar{X} - \theta_0}{\sigma/\sqrt{n}}\right)^{2},
+		\]
+		que segue uma distribuição $\chi^2(1)$ sob $H_0$. 
+	\end{block}
+\end{frame}
+
+
+\begin{frame}{}
+	\begin{block}{}
+		\justifying
+		Portanto, o teste da razão de verossimilhança com nível de significância $\alpha$ afirma que rejeitamos $H_0$ e aceitamos $H_1$ quando
+		\[
+		\left(\frac{\Bar{X} - \theta_0}{\sigma/\sqrt{n}}\right)^{2} \geq \chi^2_\alpha(1).
+		\]
+		
+		%Observe que este teste é o mesmo que o teste $z$ para uma média normal discutido anteriormente, com $s$ substituído por $\sigma$. Portanto, a função poder para este teste é dada na expressão:
+		%\begin{align*}
+		%\gamma(\mu) &= P\left(\Bar{X} \leq \mu_0 - \frac{z_{\alpha/2}\sigma}{\sqrt{n}}\right) + P\left(\Bar{X} \geq \mu_0 + \frac{z_{\alpha/2}\sigma}{\sqrt{n}}\right)\\ 
+		%&= \Phi\left(\frac{\sqrt{n}(\mu_0 - \mu)}{\sigma} - z_{\alpha/2}\right) + 1 - \Phi\left(\frac{\sqrt{n}(\mu_0 - \mu)}{\sigma} + z_{\alpha/2}\right)
+		%\end{align*}
+	\end{block}
+\end{frame}
+
+\section{Exemplo 2: Distribuição Exponencial}
 \begin{frame}{Teste da Razão de Verossimilhança para a Distribuição Exponencial}
 \begin{block}{}
 \justifying
@@ -108,7 +167,7 @@ Após alguma simplificação, a estatística do teste da razão de verossimilhan
 Além da constante $e^n$, a estatística do teste tem a forma:
 
 \[
-g(t) = t^n e^{-nt}, \quad t > 0
+g(t) = e^{n}t^n e^{-nt}, \quad t > 0
 \]
 
 em que $t = \Bar{X}/\theta_0$.
@@ -125,7 +184,7 @@ $\Lambda \leq c$ se e somente se $\Bar{X}/\theta_0 \leq c_1$ ou $\Bar{X}/\theta_
 \begin{block}{}
 \begin{figure}
     \centering
-    \includegraphics[scale=0.6]{figs/TRVGt.png}
+    \includegraphics[scale=0.4]{figs/g_t.png}
     %\caption{Caption}
     \label{fig:enter-label}
 \end{figure}
@@ -166,64 +225,6 @@ em que $\chi^2_{1-\alpha/2}(2n)$ é o quantil inferior $\alpha/2$ de uma distrib
 \end{block}
 \end{frame}
 
-\section{Exemplo 2 - Distribuição Normal}
-\begin{frame}{Exemplo 2 - Distribuição Normal}
-\begin{block}{}
-\justifying
-Considere uma amostra aleatória $X_1, X_2, \ldots, X_n$ de uma distribuição $N(\theta, \sigma^2)$, em que $-\infty < \theta < \infty$ e $\sigma^2 > 0$ são conhecidos. Vamos considerar as hipóteses:
-
-\[ H_0 : \theta = \theta_0 \quad \text{versus} \quad H_1 : \theta \neq \theta_0, \]
-
-em que $\theta_0$ é especificado. A função de verossimilhança é dada por:
-
-\[
-\begin{aligned}
-L(\theta) &= \left(\frac{1}{2\pi\sigma^2}\right)^{n/2} \exp\left\{ -\frac{1}{2\sigma^2} \sum_{i=1}^{n}(x_i - \theta)^2 \right\} \\
-&= \left(\frac{1}{2\pi\sigma^2}\right)^{n/2} \exp\left\{ -\frac{1}{2\sigma^2} \sum_{i=1}^{n}(x_i - \bar{x})^2 \right\} \exp\left\{ -\frac{1}{2\sigma^2}n(\bar{x} - \theta)^2 \right\},
-\end{aligned}
-\]
-\end{block}
-\end{frame}
-
-\begin{frame}{}
-\begin{block}{}
-\justifying
-Em $\Omega = \{\theta : -\infty < \theta < \infty\}$, o estimador de máxima verossimilhança é $\hat{\theta} = \bar{x}$, e, portanto, a razão de verossimilhança é:
-
-\[
-\begin{aligned}
-\Lambda &= \frac{L(\theta_0)}{L(\hat{\theta})} \\
-&= \exp\left\{ -\frac{1}{2\sigma^2}n(\bar{X} - \theta_0)^2 \right\}.
-\end{aligned}
-\]
-\end{block}
-\pause
-\begin{block}{}
-\justifying
-Logo, $\Lambda \leq c$ é equivalente a $-2 \log \Lambda \geq -2 \log c$. No entanto, 
-\[
--2 \log \Lambda = \left(\frac{\Bar{X} - \theta_0}{\sigma/\sqrt{n}}\right)^{2},
-\]
-que segue uma distribuição $\chi^2(1)$ sob $H_0$. 
-\end{block}
-\end{frame}
-
-
-\begin{frame}{}
-\begin{block}{}
-\justifying
-Portanto, o teste da razão de verossimilhança com nível de significância $\alpha$ afirma que rejeitamos $H_0$ e aceitamos $H_1$ quando
-\[
-\left(\frac{\Bar{X} - \theta_0}{\sigma/\sqrt{n}}\right)^{2} \geq \chi^2_\alpha(1).
-\]
-
-%Observe que este teste é o mesmo que o teste $z$ para uma média normal discutido anteriormente, com $s$ substituído por $\sigma$. Portanto, a função poder para este teste é dada na expressão:
-%\begin{align*}
-%\gamma(\mu) &= P\left(\Bar{X} \leq \mu_0 - \frac{z_{\alpha/2}\sigma}{\sqrt{n}}\right) + P\left(\Bar{X} \geq \mu_0 + \frac{z_{\alpha/2}\sigma}{\sqrt{n}}\right)\\ 
-%&= \Phi\left(\frac{\sqrt{n}(\mu_0 - \mu)}{\sigma} - z_{\alpha/2}\right) + 1 - \Phi\left(\frac{\sqrt{n}(\mu_0 - \mu)}{\sigma} + z_{\alpha/2}\right)
-%\end{align*}
-\end{block}
-\end{frame}
 
 \section{Teorema do Teste da Razão de Verossimilhança}
 \begin{frame}{Teorema do Teste da Razão de Verossimilhança}
@@ -393,7 +394,7 @@ $$H_0: \theta = 1~ \text{versus}~ H_1: \theta \neq 1$$
 \pause
 \begin{block}{}
 \justifying
-Sob \(H_0\), \(f(x; \theta)~\) Uniforme\((0, 1)\). Lembre-se de que \(\hat{\theta} = -\frac{n}{\Sumi \log X_i}\) é o estimador de máxima verossimilhança de \(\theta\). Após alguma simplificação, o valor da função de verossimilhança no estimador de máxima verossimilhança é dado por:
+Sob \(H_0\), \(f(x; \theta)~\sim\) Uniforme\((0, 1)\). Lembre-se de que \(\hat{\theta} = -\frac{n}{\Sumi \log X_i}\) é o estimador de máxima verossimilhança de \(\theta\). Após alguma simplificação, o valor da função de verossimilhança no estimador de máxima verossimilhança é dado por:
 
 \[L(\hat{\theta}) = \left(- \sum_{i=1}^n \log X_i\right)^{-n}\exp\left\{n(\log n - 1) - \sum_{i=1}^n \log X_i\right\}.\] 
 \end{block}

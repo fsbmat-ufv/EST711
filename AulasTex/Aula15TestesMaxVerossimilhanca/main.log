@@ -1,8 +1,4 @@
-<<<<<<< HEAD:AulasTex/Aula15TestesMaxVerossimilhanca/main.log
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.10)  21 NOV 2024 14:57
-=======
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.16)  18 NOV 2024 15:16
->>>>>>> 5b9dd9a0347e8c485742d6a5c4feb3bd293facc5:AulasTex/Aula14TestesMaxVerossimilhanca/main.log
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.10)  24 NOV 2024 23:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1939,6 +1935,11 @@ Package pdftex.def Info: figs/mylogo.png  used on input line 17.
 [6
 
 ]
+Overfull \hbox (7.75644pt too wide) detected at line 91
+[][]
+ []
+
+
 
 [7
 
@@ -1947,16 +1948,10 @@ Package pdftex.def Info: figs/mylogo.png  used on input line 17.
 [8
 
 ]
-<figs/TRVGt.png, id=231, 457.71pt x 272.51813pt>
-File: figs/TRVGt.png Graphic file (type png)
-<use figs/TRVGt.png>
-Package pdftex.def Info: figs/TRVGt.png  used on input line 134.
-(pdftex.def)             Requested size: 274.62813pt x 163.51213pt.
-
 
 [9
 
- <./figs/TRVGt.png>]
+]
 
 [10
 
@@ -1969,19 +1964,20 @@ Package pdftex.def Info: figs/TRVGt.png  used on input line 134.
 [12
 
 ]
+<figs/g_t.png, id=330, 516.42938pt x 408.02437pt>
+File: figs/g_t.png Graphic file (type png)
+<use figs/g_t.png>
+Package pdftex.def Info: figs/g_t.png  used on input line 193.
+(pdftex.def)             Requested size: 206.56808pt x 163.20685pt.
+
 
 [13
 
-]
+ <./figs/g_t.png>]
 
 [14
 
 ]
-Overfull \hbox (7.75644pt too wide) detected at line 186
-[][]
- []
-
-
 
 [15
 
@@ -2018,7 +2014,7 @@ Overfull \hbox (7.75644pt too wide) detected at line 186
 [23
 
 ]
-Overfull \vbox (27.40765pt too high) detected at line 313
+Overfull \vbox (27.40765pt too high) detected at line 314
  []
 
 
@@ -2026,7 +2022,7 @@ Overfull \vbox (27.40765pt too high) detected at line 313
 [24
 
 ]
-Overfull \vbox (27.40765pt too high) detected at line 313
+Overfull \vbox (27.40765pt too high) detected at line 314
  []
 
 
@@ -2034,24 +2030,24 @@ Overfull \vbox (27.40765pt too high) detected at line 313
 [25
 
 ]
-<figs/Abraham_Wald.jpg, id=728, 257.96375pt x 327.2225pt>
+<figs/Abraham_Wald.jpg, id=730, 257.96375pt x 327.2225pt>
 File: figs/Abraham_Wald.jpg Graphic file (type jpg)
 <use figs/Abraham_Wald.jpg>
-Package pdftex.def Info: figs/Abraham_Wald.jpg  used on input line 328.
+Package pdftex.def Info: figs/Abraham_Wald.jpg  used on input line 329.
 (pdftex.def)             Requested size: 99.58203pt x 142.26074pt.
 
 
 [26
 
  <./figs/Abraham_Wald.jpg>]
-Underfull \hbox (badness 1132) in paragraph at lines 345--345
+Underfull \hbox (badness 1132) in paragraph at lines 346--346
 []\T1/cmss/m/n/12 O ter-ceiro teste é cha-mado de
  []
 
-<figs/CRRao.JPG, id=750, 260.975pt x 233.87375pt>
+<figs/CRRao.JPG, id=752, 260.975pt x 233.87375pt>
 File: figs/CRRao.JPG Graphic file (type jpg)
 <use figs/CRRao.JPG>
-Package pdftex.def Info: figs/CRRao.JPG  used on input line 345.
+Package pdftex.def Info: figs/CRRao.JPG  used on input line 346.
 (pdftex.def)             Requested size: 99.58566pt x 142.27022pt.
 
 
@@ -2070,14 +2066,14 @@ Package pdftex.def Info: figs/CRRao.JPG  used on input line 345.
 [30
 
 ]
-Underfull \hbox (badness 2990) in paragraph at lines 400--400
+Underfull \hbox (badness 2990) in paragraph at lines 401--401
 []\T1/cmss/m/n/12 Seja $\OT1/mathkerncmss/m/sl/12 X[]\OML/cmm/m/it/12 ; [] ; \O
 T1/mathkerncmss/m/sl/12 X[]$ \T1/cmss/m/n/12 uma amos-tra ale-a-tó-ria com uma 
 dis-tri-bui-ção
  []
 
 
-Overfull \vbox (0.18921pt too high) detected at line 400
+Overfull \vbox (0.18921pt too high) detected at line 401
  []
 
 
@@ -2085,14 +2081,14 @@ Overfull \vbox (0.18921pt too high) detected at line 400
 [31
 
 ]
-Underfull \hbox (badness 2990) in paragraph at lines 400--400
+Underfull \hbox (badness 2990) in paragraph at lines 401--401
 []\T1/cmss/m/n/12 Seja $\OT1/mathkerncmss/m/sl/12 X[]\OML/cmm/m/it/12 ; [] ; \O
 T1/mathkerncmss/m/sl/12 X[]$ \T1/cmss/m/n/12 uma amos-tra ale-a-tó-ria com uma 
 dis-tri-bui-ção
  []
 
 
-Overfull \vbox (0.18921pt too high) detected at line 400
+Overfull \vbox (0.18921pt too high) detected at line 401
  []
 
 
@@ -2113,7 +2109,7 @@ Overfull \vbox (0.18921pt too high) detected at line 400
 
 ]
 LaTeX Font Info:    Trying to load font information for U+fontawesometwo on inp
-ut line 446.
+ut line 447.
  (C:\Program Files\MiKTeX\tex/latex/fontawesome\ufontawesometwo.fd
 File: ufontawesometwo.fd 2016/05/22 Font definitions for U/fontawesometwo.
 )
@@ -2144,11 +2140,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
-<<<<<<< HEAD:AulasTex/Aula15TestesMaxVerossimilhanca/main.log
- 55559 strings out of 473682
- 1203848 string characters out of 5729105
- 2243374 words of memory out of 5000000
- 77551 multiletter control sequences out of 15000+600000
+ 55564 strings out of 473682
+ 1203873 string characters out of 5729105
+ 2243344 words of memory out of 5000000
+ 77555 multiletter control sequences out of 15000+600000
  586751 words of font info for 117 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,22n,123p,3279b,2232s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2173,42 +2168,9 @@ b><C:/Program Files/MiKTeX/fonts/type1/public/cm-super/sfss1728.pfb><C:/Program
  Files/MiKTeX/fonts/type1/public/cm-super/sfsx1200.pfb><C:/Program Files/MiKTeX
 /fonts/type1/public/cm-super/sfsx1728.pfb><C:/Program Files/MiKTeX/fonts/type1/
 public/cm-super/sftt0800.pfb>
-Output written on main.pdf (37 pages, 609505 bytes).
-=======
- 55558 strings out of 473681
- 1203806 string characters out of 5729093
- 2243374 words of memory out of 5000000
- 77552 multiletter control sequences out of 15000+600000
- 586751 words of font info for 117 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 128i,22n,123p,3279b,2232s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss
-1095.pk> <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
-0\ecsx1200.pk> <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
-/dpi600\ecsi1200.pk> <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
-pen/ec/dpi600\ecss1440.pk> <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour
-/jknappen/ec/dpi600\ecsx1728.pk> <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/
-ljfour/jknappen/ec/dpi450\ectt0800.pk> <C:\Users\Admin\AppData\Local\MiKTeX\fon
-ts/pk/ljfour/jknappen/ec/dpi600\ecss0600.pk> <C:\Users\Admin\AppData\Local\MiKT
-eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss0800.pk> <C:\Users\Admin\AppData\Loca
-l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1200.pk> <C:\Users\Admin\AppDat
-a\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1728.pk><C:/Program Files
-/MiKTeX/fonts/type1/public/fontawesome/FontAwesome.pfb><C:/Program Files/MiKTeX
-/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1
-/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsf
-onts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi
-8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Pr
-ogram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Program Files/
-MiKTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Program Files/MiKTeX/fonts/
-type1/public/amsfonts/cm/cmssi10.pfb><C:/Program Files/MiKTeX/fonts/type1/publi
-c/amsfonts/cm/cmssi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/
-cm/cmssi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pf
-b><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program
- Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on main.pdf (37 pages, 561519 bytes).
->>>>>>> 5b9dd9a0347e8c485742d6a5c4feb3bd293facc5:AulasTex/Aula14TestesMaxVerossimilhanca/main.log
+Output written on main.pdf (37 pages, 612521 bytes).
 PDF statistics:
- 1161 PDF objects out of 1200 (max. 8388607)
- 91 named destinations out of 1000 (max. 500000)
- 2107 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1166 PDF objects out of 1200 (max. 8388607)
+ 92 named destinations out of 1000 (max. 500000)
+ 2115 words of extra memory for PDF output out of 10000 (max. 10000000)
 
