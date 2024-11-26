@@ -237,7 +237,7 @@ Suponha que as condições de regularidade R0 a R5 são satisfeitas. Sob a hipó
 \justifying
 \textbf{Prova:} Expanda a função $\ell(\theta)$ em uma série de Taylor em torno de $\theta_0$ de ordem 1 e avalie-a no estimador de máxima verossimilhança, $\hat{\theta}$. Isso resulta em
 \begin{align}\label{6.3.8}
-    \ell(\hat{\theta}) = \ell(\theta_{0}) + (\hat{\theta} - \theta_0)\ell'(\hat{\theta}_{0}) + \frac{1}{2}(\hat{\theta} - \theta_0)^2 \ell''(\theta^{*}_{n}),
+    \ell(\hat{\theta}) = \ell(\theta_{0}) + (\hat{\theta} - \theta_0)\ell'(\theta_{0}) + \frac{1}{2}(\hat{\theta} - \theta_0)^2 \ell''(\theta^{*}_{n}),
 \end{align}
 em que $\theta^*_n$ está entre $\hat{\theta}$ e $\theta_0.$
 \end{block}
@@ -255,7 +255,7 @@ Como $\hat{\theta} \ConvP \theta_0,$ segue que $\theta^*_n \ConvP \theta_0.$ Iss
 Pelo Corolário 6.2.3, do livro texto,
 
 \begin{align}\label{6.3.10}
-   \frac{1}{\sqrt{n}}\ell'(\hat{\theta}_{0}) = \sqrt{n}(\hat{\theta} - \theta_0)I(\theta_0) + R_n, 
+   \frac{1}{\sqrt{n}}\ell'(\theta_{0}) = \sqrt{n}(\hat{\theta} - \theta_0)I(\theta_0) + R_n, 
 \end{align}
 
 em que $R_n \ConvP 0.$ 
@@ -355,7 +355,7 @@ S(\theta) = \left\{\frac{\partial \log f(X_1; \theta)}{\partial \theta}, \ldots,
 
 Em nossa notação, temos
 \[
-\frac{1}{\sqrt{n}}\ell'(\hat{\theta}_{0}) = \frac{1}{\sqrt{n}}\Sumi \frac{\partial \log f(X_i; \theta_0)}{\partial \theta}.
+\frac{1}{\sqrt{n}}\ell'(\theta_{0}) = \frac{1}{\sqrt{n}}\Sumi \frac{\partial \log f(X_i; \theta_0)}{\partial \theta}.
 \]
 \end{block}
 \end{frame}
