@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.16)  25 NOV 2024 14:58
+=======
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.10)  26 NOV 2024 10:31
+>>>>>>> aa55f26e9ef9935e70c9e440ab440ad0619bd3d6
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1934,11 +1938,6 @@ o.png>] (main.toc)
 [6
 
 ]
-Overfull \hbox (7.75644pt too wide) detected at line 91
-[][]
- []
-
-
 
 [7
 
@@ -1963,20 +1962,19 @@ Overfull \hbox (7.75644pt too wide) detected at line 91
 [12
 
 ]
-<figs/g_t.png, id=330, 516.42938pt x 408.02437pt>
-File: figs/g_t.png Graphic file (type png)
-<use figs/g_t.png>
-Package pdftex.def Info: figs/g_t.png  used on input line 193.
-(pdftex.def)             Requested size: 206.56808pt x 163.20685pt.
-
 
 [13
 
- <./figs/g_t.png>]
+]
 
 [14
 
 ]
+Overfull \hbox (7.75644pt too wide) detected at line 208
+[]
+ []
+
+
 
 [15
 
@@ -2013,46 +2011,28 @@ Package pdftex.def Info: figs/g_t.png  used on input line 193.
 [23
 
 ]
-Overfull \vbox (27.40765pt too high) detected at line 314
- []
-
-
 
 [24
 
 ]
-Overfull \vbox (27.40765pt too high) detected at line 314
- []
-
-
 
 [25
 
 ]
-<figs/Abraham_Wald.jpg, id=730, 257.96375pt x 327.2225pt>
-File: figs/Abraham_Wald.jpg Graphic file (type jpg)
-<use figs/Abraham_Wald.jpg>
-Package pdftex.def Info: figs/Abraham_Wald.jpg  used on input line 329.
-(pdftex.def)             Requested size: 99.58203pt x 142.26074pt.
+<figs/g_t.png, id=613, 516.42938pt x 408.02437pt>
+File: figs/g_t.png Graphic file (type png)
+<use figs/g_t.png>
+Package pdftex.def Info: figs/g_t.png  used on input line 352.
+(pdftex.def)             Requested size: 206.56808pt x 163.20685pt.
 
 
 [26
 
- <./figs/Abraham_Wald.jpg>]
-Underfull \hbox (badness 1132) in paragraph at lines 346--346
-[]\T1/cmss/m/n/12 O ter-ceiro teste é cha-mado de
- []
-
-<figs/CRRao.JPG, id=752, 260.975pt x 233.87375pt>
-File: figs/CRRao.JPG Graphic file (type jpg)
-<use figs/CRRao.JPG>
-Package pdftex.def Info: figs/CRRao.JPG  used on input line 346.
-(pdftex.def)             Requested size: 99.58566pt x 142.27022pt.
-
+ <./figs/g_t.png>]
 
 [27
 
- <./figs/CRRao.JPG>]
+]
 
 [28
 
@@ -2065,32 +2045,10 @@ Package pdftex.def Info: figs/CRRao.JPG  used on input line 346.
 [30
 
 ]
-Underfull \hbox (badness 2990) in paragraph at lines 401--401
-[]\T1/cmss/m/n/12 Seja $\OT1/mathkerncmss/m/sl/12 X[]\OML/cmm/m/it/12 ; [] ; \O
-T1/mathkerncmss/m/sl/12 X[]$ \T1/cmss/m/n/12 uma amos-tra ale-a-tó-ria com uma 
-dis-tri-bui-ção
- []
-
-
-Overfull \vbox (0.18921pt too high) detected at line 401
- []
-
-
 
 [31
 
 ]
-Underfull \hbox (badness 2990) in paragraph at lines 401--401
-[]\T1/cmss/m/n/12 Seja $\OT1/mathkerncmss/m/sl/12 X[]\OML/cmm/m/it/12 ; [] ; \O
-T1/mathkerncmss/m/sl/12 X[]$ \T1/cmss/m/n/12 uma amos-tra ale-a-tó-ria com uma 
-dis-tri-bui-ção
- []
-
-
-Overfull \vbox (0.18921pt too high) detected at line 401
- []
-
-
 
 [32
 
@@ -2107,17 +2065,155 @@ Overfull \vbox (0.18921pt too high) detected at line 401
 [35
 
 ]
+
+[36
+
+]
+Overfull \vbox (27.40765pt too high) detected at line 473
+ []
+
+
+
+[37
+
+]
+Overfull \vbox (27.40765pt too high) detected at line 473
+ []
+
+
+
+[38
+
+]
+<figs/Abraham_Wald.jpg, id=1011, 257.96375pt x 327.2225pt>
+File: figs/Abraham_Wald.jpg Graphic file (type jpg)
+<use figs/Abraham_Wald.jpg>
+Package pdftex.def Info: figs/Abraham_Wald.jpg  used on input line 488.
+(pdftex.def)             Requested size: 99.58203pt x 142.26074pt.
+
+
+[39
+
+ <./figs/Abraham_Wald.jpg>]
+Underfull \hbox (badness 1132) in paragraph at lines 505--505
+[]\T1/cmss/m/n/12 O ter-ceiro teste é cha-mado de
+ []
+
+<figs/CRRao.JPG, id=1033, 260.975pt x 233.87375pt>
+File: figs/CRRao.JPG Graphic file (type jpg)
+<use figs/CRRao.JPG>
+Package pdftex.def Info: figs/CRRao.JPG  used on input line 505.
+(pdftex.def)             Requested size: 99.58566pt x 142.27022pt.
+
+
+[40
+
+ <./figs/CRRao.JPG>]
+
+[41
+
+]
+
+[42
+
+]
+
+[43
+
+]
+Underfull \hbox (badness 2990) in paragraph at lines 560--560
+[]\T1/cmss/m/n/12 Seja $\OT1/mathkerncmss/m/sl/12 X[]\OML/cmm/m/it/12 ; [] ; \O
+T1/mathkerncmss/m/sl/12 X[]$ \T1/cmss/m/n/12 uma amos-tra ale-a-tó-ria com uma 
+dis-tri-bui-ção
+ []
+
+
+
+[44
+
+]
+Underfull \hbox (badness 2990) in paragraph at lines 560--560
+[]\T1/cmss/m/n/12 Seja $\OT1/mathkerncmss/m/sl/12 X[]\OML/cmm/m/it/12 ; [] ; \O
+T1/mathkerncmss/m/sl/12 X[]$ \T1/cmss/m/n/12 uma amos-tra ale-a-tó-ria com uma 
+dis-tri-bui-ção
+ []
+
+
+
+[45
+
+]
+
+[46
+
+]
+
+[47
+
+]
+
+[48
+
+]
+
+[49
+
+]
+
+[50
+
+]
+
+[51
+
+]
+
+[52
+
+]
+
+[53
+
+]
+
+[54
+
+]
+
+[55
+
+]
+
+[56
+
+]
+
+[57
+
+]
+
+[58
+
+]
+
+[59
+
+]
+
+[60
+
+]
 LaTeX Font Info:    Trying to load font information for U+fontawesometwo on inp
-ut line 447.
+ut line 660.
  (C:\Program Files\MiKTeX\tex/latex/fontawesome\ufontawesometwo.fd
 File: ufontawesometwo.fd 2016/05/22 Font definitions for U/fontawesometwo.
 )
 
-[36
+[61
 
 {C:/Program Files/MiKTeX/fonts/enc/dvips/fontawesome/fontawesometwo.enc}]
 
-[37
+[62
 
  <C:/Program Files/MiKTeX/tex/latex/beamer/beamericonarticle.pdf>]
 \tf@nav=\write7
@@ -2139,6 +2235,7 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
+<<<<<<< HEAD
  55563 strings out of 473681
  1203831 string characters out of 5729093
  2243344 words of memory out of 5000000
@@ -2174,4 +2271,39 @@ PDF statistics:
  1445 PDF objects out of 1728 (max. 8388607)
  92 named destinations out of 1000 (max. 500000)
  2115 words of extra memory for PDF output out of 10000 (max. 10000000)
+=======
+ 55762 strings out of 473682
+ 1209280 string characters out of 5729105
+ 2254344 words of memory out of 5000000
+ 77702 multiletter control sequences out of 15000+600000
+ 586751 words of font info for 117 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 128i,22n,123p,3279b,2232s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Program Files/MiKTeX/fonts/type1/public/fontawesome/FontAwesome.pfb><C:/P
+rogram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files
+/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/font
+s/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/publ
+ic/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/c
+m/cmss10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb
+><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Program 
+Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi10.pfb><C:/Program Files/MiKTe
+X/fonts/type1/public/amsfonts/cm/cmssi12.pfb><C:/Program Files/MiKTeX/fonts/typ
+e1/public/amsfonts/cm/cmssi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/am
+sfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cm
+sy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb
+><C:/Program Files/MiKTeX/fonts/type1/public/cm-super/sfsi1200.pfb><C:/Program 
+Files/MiKTeX/fonts/type1/public/cm-super/sfss0600.pfb><C:/Program Files/MiKTeX/
+fonts/type1/public/cm-super/sfss0800.pfb><C:/Program Files/MiKTeX/fonts/type1/p
+ublic/cm-super/sfss1095.pfb><C:/Program Files/MiKTeX/fonts/type1/public/cm-supe
+r/sfss1200.pfb><C:/Program Files/MiKTeX/fonts/type1/public/cm-super/sfss1440.pf
+b><C:/Program Files/MiKTeX/fonts/type1/public/cm-super/sfss1728.pfb><C:/Program
+ Files/MiKTeX/fonts/type1/public/cm-super/sfsx1200.pfb><C:/Program Files/MiKTeX
+/fonts/type1/public/cm-super/sfsx1728.pfb><C:/Program Files/MiKTeX/fonts/type1/
+public/cm-super/sftt0800.pfb>
+Output written on main.pdf (62 pages, 770565 bytes).
+PDF statistics:
+ 1661 PDF objects out of 1728 (max. 8388607)
+ 143 named destinations out of 1000 (max. 500000)
+ 3041 words of extra memory for PDF output out of 10000 (max. 10000000)
+>>>>>>> aa55f26e9ef9935e70c9e440ab440ad0619bd3d6
 
