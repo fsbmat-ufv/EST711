@@ -185,7 +185,94 @@ Substituímos \(\hat{\theta}_0\) e \(\hat{\theta}\) na função de verossimilhan
 			\chi^2_{0,05}(1) = 3,841.
 			\]
 			
-			Como \(-2 \ln \Lambda = 3 < 3,841\), não rejeitamos \(H_0\). Com os dados \(X_1 = 6\), \(X_2 = 5,5\), \(X_3 = 6,5\), não há evidência suficiente para rejeitar \(H_0\) ao nível de significância de 5\%.	
+			Como $\bar{X}>\theta_{0}=5,$ e \(-2 \ln \Lambda = 3 < 3,841\), não rejeitamos \(H_0\). Com os dados \(X_1 = 6\), \(X_2 = 5,5\), \(X_3 = 6,5\), não há evidência suficiente para rejeitar \(H_0\) ao nível de significância de 5\%.	
+	\end{block}
+\end{frame}
+
+\begin{frame}{Exemplo 2 - Hipóteses Unilaterais}
+	\begin{block}{Regra de Decisão}
+		\justifying
+		Sob \(H_0: \theta \leq 5\), considere a estatística de teste:
+		\[
+		-2 \ln \Lambda.
+		\]
+		Para rejeitar \(H_0\):
+		\begin{enumerate}
+			\item Verifique a direção do desvio:
+			\begin{itemize}
+				\item Se \(\hat{\theta} \leq \theta_0\), não rejeite \(H_0\).
+				\item Caso contrário, passe para o próximo passo.
+			\end{itemize}
+			\item Compare \(-2 \ln \Lambda\) com o valor crítico:
+			\[
+			\chi^2_{0.05}(1) = 3.841.
+			\]
+			\item Rejeite \(H_0\) se \(-2 \ln \Lambda > 3.841\).
+		\end{enumerate}
+	\end{block}
+\end{frame}
+
+\begin{frame}{Exemplo 1 - Hipóteses Bilaterais}
+	\begin{block}{}
+		\justifying
+		Considere as hipóteses:
+		\[
+		H_0: \theta = \theta_{0} \quad \text{versus} \quad H_1: \theta \neq \theta_{0}.
+		\]
+		
+		\textbf{Características:}
+		\begin{itemize}
+			\justifying
+			\item O teste avalia se o parâmetro \(\theta\) é exatamente igual a \(\theta_{0}\) ou se difere em qualquer direção (maior ou menor).
+			\item A função de verossimilhança considera desvios em ambas as direções (\(\theta > \theta_{0}\) ou \(\theta < \theta_{0}\)).
+		\end{itemize}
+		
+		\textbf{Região Crítica:}
+		\begin{itemize}
+			\justifying
+			\item Rejeitamos \(H_0\) se a estatística do teste \(-2 \ln \Lambda\) for maior que o valor crítico, indicando que \(\theta\) está longe de \(\theta_{0}\) em qualquer direção.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}{Exemplo 2 - Hipóteses Unilaterais}
+	\begin{block}{}
+		\justifying
+		Considere as hipóteses:
+		\[
+		H_0: \theta \leq \theta_{0} \quad \text{versus} \quad H_1: \theta > \theta_{0}.
+		\]
+		
+		\textbf{Características:}
+		\begin{itemize}
+			\justifying
+			\item O teste avalia se o parâmetro \(\theta\) é maior que \(\theta_{0}\), contra a hipótese de que \(\theta\) seja menor ou igual a \(\theta_{0}\).
+			\item A função de verossimilhança considera apenas desvios positivos (\(\theta > \theta_{0}\)).
+		\end{itemize}
+		
+		\textbf{Região Crítica:}
+		\begin{itemize}
+			\justifying
+			\item Rejeitamos \(H_0\) se a estatística do teste \(-2 \ln \Lambda\) for maior que o valor crítico, indicando que há evidência de que \(\theta > \theta_{0}\).
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}{Resumo - Diferença na Região Crítica}
+	\begin{block}{Exemplo 1 - Bilateral}
+		\justifying
+		\begin{itemize}
+			\justifying
+			\item Considera desvios em ambas as direções (\(\theta > \theta_{0}\) ou \(\theta < \theta_{0}\)).
+			\item Mais rigoroso, pois rejeita \(H_0\) desvios significativos em qualquer direção.
+		\end{itemize}
+	\end{block}
+	\begin{block}{Exemplo 2 - Unilateral}
+		\justifying
+		\begin{itemize}
+			\item Considera apenas desvios em uma direção específica (\(\theta > \theta_{0}\)).
+			\item Mais sensível a mudanças direcionais, rejeitando \(H_0\) se houver forte evidência de \(\theta > \theta_{0}\).
+		\end{itemize}
 	\end{block}
 \end{frame}
 
@@ -394,7 +481,7 @@ Suponha que as condições de regularidade R0 a R5 são satisfeitas. Sob a hipó
 \pause
 \begin{block}{Demonstração:}
 \justifying
-\textbf{Prova:} Expanda a função $\ell(\theta)$ em uma série de Taylor em torno de $\theta_0$ de ordem 1 e avalie-a no estimador de máxima verossimilhança, $\hat{\theta}$. Isso resulta em
+\textbf{Prova:} Expanda a função $\ell(\theta)$ em um Polinômio de Taylor em torno de $\theta_0$ de ordem 1 e avalie-a no estimador de máxima verossimilhança, $\hat{\theta}$. Isso resulta em
 \begin{align}\label{6.3.8}
     \ell(\hat{\theta}) = \ell(\theta_{0}) + (\hat{\theta} - \theta_0)\ell'(\theta_{0}) + \frac{1}{2}(\hat{\theta} - \theta_0)^2 \ell''(\theta^{*}_{n}),
 \end{align}
@@ -551,11 +638,27 @@ Seja \(X_1, \ldots, X_n\) uma amostra aleatória com uma distribuição beta(\(\
 $$H_0: \theta = 1~ \text{versus}~ H_1: \theta \neq 1$$
 \end{block}
 \pause
-\begin{block}{}
-\justifying
-É possível mostrar que \(\hat{\theta} = -\frac{n}{\Sumi \log X_i}\) é o estimador de máxima verossimilhança de \(\theta\). Após alguma simplificação, o valor da função de verossimilhança no estimador de máxima verossimilhança é dado por:
 
-\[L(\hat{\theta}) = \left(- \sum_{i=1}^n \log X_i\right)^{-n}\exp\left\{n(\log n - 1) - \sum_{i=1}^n \log X_i\right\}.\] 
+\begin{block}{}
+A densidade da Beta\((\theta, 1)\) é:
+\[
+f(x; \theta) = \theta x^{\theta - 1}, \quad 0 < x < 1, \quad \theta > 0.
+\]
+
+O logaritmo da densidade, que chamaremos de \(\ell(\theta)\), é:
+\[
+\ell(\theta) = \log f(x; \theta) = \log \theta + (\theta - 1) \log x.
+\]
+
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{}
+	\justifying
+	É possível mostrar que \(\hat{\theta} = -\frac{n}{\Sumi \log X_i}\) é o estimador de máxima verossimilhança de \(\theta\). Após alguma simplificação, o valor da função de verossimilhança no estimador de máxima verossimilhança é dado por:
+	
+	\[L(\hat{\theta}) = \left(- \sum_{i=1}^n \log X_i\right)^{-n}\exp\left\{n(\log n - 1) - \sum_{i=1}^n \log X_i\right\}.\] 
 \end{block}
 \end{frame}
 
