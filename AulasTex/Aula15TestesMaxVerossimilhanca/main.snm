@@ -1,4 +1,5 @@
 \beamer@slide {razao1}{4}
+<<<<<<< HEAD
 \beamer@slide {razao1}{4}
 \beamer@slide {fig:enter-label}{26}
 \beamer@slide {6.3.8}{32}
@@ -11,3 +12,11 @@
 \beamer@slide {6.3.14}{37}
 \beamer@slide {6.3.20}{42}
 \beamer@slide {6.3.20}{42}
+=======
+\beamer@slide {fig:enter-label}{30}
+\beamer@slide {6.3.8}{36}
+\beamer@slide {6.3.9}{38}
+\beamer@slide {6.3.10}{38}
+\beamer@slide {6.3.14}{41}
+\beamer@slide {6.3.20}{46}
+>>>>>>> a5ecf5f73d67d52f5bf0924703a629a3c6584106
