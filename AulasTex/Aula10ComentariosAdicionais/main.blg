@@ -1,15 +1,15 @@
 [0] Config.pm:308> INFO - This is Biber 2.20
 [0] Config.pm:311> INFO - Logfile is 'main.blg'
-[162] biber-MSWIN64:340> INFO - === 
-[215] Biber.pm:420> INFO - Reading 'main.bcf'
-[380] Biber.pm:994> INFO - Found 1 citekeys in bib section 0
-[401] Biber.pm:4463> INFO - Processing section 0
-[420] Biber.pm:4654> INFO - Looking for bibtex file '../Referencias/Referencias.bib' for section 0
-[500] bibtex.pm:1713> INFO - LaTeX decoding ...
-[546] bibtex.pm:1519> INFO - Found BibTeX data source '../Referencias/Referencias.bib'
-[607] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[607] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
-[608] Biber.pm:4283> INFO - Sorting list 'nyt/global//global/global/global' of type 'entry' with template 'nyt' and locale 'pt-BR'
-[608] Biber.pm:4289> INFO - No sort tailoring available for locale 'pt-BR'
-[611] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[612] bbl.pm:779> INFO - Output to main.bbl
+[72] biber-MSWIN64:340> INFO - === 
+[101] Biber.pm:420> INFO - Reading 'main.bcf'
+[172] Biber.pm:994> INFO - Found 1 citekeys in bib section 0
+[180] Biber.pm:4463> INFO - Processing section 0
+[188] Biber.pm:4654> INFO - Looking for bibtex file '../Referencias/Referencias.bib' for section 0
+[234] bibtex.pm:1713> INFO - LaTeX decoding ...
+[245] bibtex.pm:1519> INFO - Found BibTeX data source '../Referencias/Referencias.bib'
+[271] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[271] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
+[271] Biber.pm:4283> INFO - Sorting list 'nyt/global//global/global/global' of type 'entry' with template 'nyt' and locale 'pt-BR'
+[271] Biber.pm:4289> INFO - No sort tailoring available for locale 'pt-BR'
+[272] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[273] bbl.pm:779> INFO - Output to main.bbl

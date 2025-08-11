@@ -54,7 +54,32 @@
 }
 
 \usetheme{Madrid}
-\usecolortheme[RGB={193,0,0}]{structure}
+% === Paletas de cores ===
+\definecolor{petroleo}{RGB}{0,61,92}        % Azul elegante
+\definecolor{verde}{RGB}{0,77,64}           % Verde sofisticado
+\definecolor{grafite}{RGB}{45,45,45}        % Cinza moderno
+\definecolor{azulnoturno}{RGB}{25,25,112}   % Azul noturno
+\definecolor{vinho}{RGB}{102,0,51}          % Vinho sofisticado
+\definecolor{grafiteazul}{RGB}{54,69,79}    % Grafite azulado
+
+% Comando para selecionar o tema de cor
+\newcommand{\setLayoutColor}[1]{%
+	\ifnum#1=1
+	\setbeamercolor{structure}{fg=petroleo}% Azul elegante
+	\else\ifnum#1=2
+	\setbeamercolor{structure}{fg=verde}% Verde sofisticado
+	\else\ifnum#1=3
+	\setbeamercolor{structure}{fg=grafite}% Cinza moderno
+	\else\ifnum#1=4
+	\setbeamercolor{structure}{fg=azulnoturno}% Azul noturno
+	\else\ifnum#1=5
+	\setbeamercolor{structure}{fg=vinho}% Vinho sofisticado
+	\else
+	\setbeamercolor{structure}{fg=grafiteazul}% Grafite azulado
+	\fi\fi\fi\fi\fi
+}
+
+
 
 %\setbeamertemplate{footline}[frame number]
 %\setbeamertemplate{footline}[text line]{%

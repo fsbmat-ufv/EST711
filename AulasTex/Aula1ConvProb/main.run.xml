@@ -41,7 +41,7 @@
   >
 ]>
 <requests version="1.0">
-  <internal package="biblatex" priority="9" active="1">
+  <internal package="biblatex" priority="9" active="0">
     <generic>latex</generic>
     <provides type="dynamic">
       <file>main.bcf</file>
@@ -55,14 +55,11 @@
       <file>biblatex.def</file>
       <file>blx-natbib.def</file>
       <file>standard.bbx</file>
-      <file>abnt.bbx</file>
-      <file>authoryear-comp.cbx</file>
-      <file>abnt.cbx</file>
+      <file>authoryear.bbx</file>
+      <file>authoryear.cbx</file>
       <file>biblatex.cfg</file>
       <file>brazilian.lbx</file>
-      <file>brazilian-abnt.lbx</file>
       <file>brazil.lbx</file>
-      <file>brazil-abnt.lbx</file>
     </requires>
   </internal>
   <external package="biblatex" priority="5" active="0">
@@ -84,7 +81,7 @@
       <file>main.bcf</file>
     </requires>
     <requires type="editable">
-      <file>Referencias/Referencias.bib</file>
+      <file>../Referencias/Referencias.bib</file>
     </requires>
   </external>
 </requests>
