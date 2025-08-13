@@ -5,6 +5,8 @@
 \setLayoutColor{2} % Escolhe a cor (1, 2 ou 3)
 
 
+
+
 \title{Inferência Estatística II}
 \author{Prof. Fernando de Souza Bastos\texorpdfstring{\\ fernando.bastos@ufv.br}{}}
 \institute{Departamento de Estatística\texorpdfstring{\\ Programa de Pós-Graduação em Estatística Aplicada e Biometria}\texorpdfstring{\\ Universidade Federal de Viçosa}{}\texorpdfstring{\\ Campus UFV - Viçosa}{}}
@@ -44,11 +46,11 @@ Sejam $X_{1}, \ldots, X_{n},\ldots$ uma sequência de variáveis aleatórias iid
 \begin{frame}{Exemplo}
 \begin{block}{}
 \justifying
-Sejam $X_1, \ldots, X_{n}$ uma amostra aleatória de uma distribuição com média $\mu$ e variância $\sigma^{2}<+\infty$. Suponha que $E[X^{4}_{1}] < +\infty$, de tal forma que $Var(S^{2}) < +\infty$. 
+Sejam $X_1, \ldots, X_{n}$ uma amostra aleatória de uma distribuição com média $\mu$ e variância $\sigma^{2}<+\infty$. Então $S^2_{n}$ é um estimador consistente para $\sigma^{2}.$%Suponha que $E[X^{4}_{1}] < +\infty$, de tal forma que $Var(S^{2}) < +\infty$. 
 \begin{align*}
 S^2_{n} &= \frac{1}{n-1} \sum_{i=1}^n (X_i - \overline{X}_{n})^2 \\
 &=\frac{1}{n-1} \left(\sum_{i=1}^n X_{i}^{2} - n\overline{X}_{n}^{2}\right)\\
-&= \frac{n}{n-1} \left(\frac{1}{n}\sum_{i=1}^n X^2_i - \overline{X}^{2}_{n}\right) \\
+&= \frac{n}{n-1} \left(\frac{1}{n}\sum_{i=1}^n X^{2}_i - \overline{X}^{2}_{n}\right) \\
 &\xrightarrow{P} 1 \cdot [E(X^2_1) - \mu^2] = \sigma^2.
 \end{align*}
 \end{block}

@@ -37,6 +37,8 @@
 \usepackage{url}
 \usepackage{cancel}
 \usepackage{accents}
+\usepackage{lmodern}                    % texto Latin Modern
+\usefonttheme{professionalfonts}        % beamer não troca as fontes de math
 \usepackage{bm}
 \usepackage{ragged2e}%para justificar o texto dentro de algum ambiente
 \definecolor{Gray}{gray}{0.9}
@@ -85,7 +87,7 @@
 %\setbeamertemplate{footline}[text line]{%
 %  \parbox{\linewidth}{\vspace*{-8pt}\hfill\date{}\hfill\insertshortauthor\hfill\insertpagenumber}}
 \beamertemplatenavigationsymbolsempty
-\renewcommand{\vec}[1]{\mbox{\boldmath$#1$}}
+\renewcommand{\vec}[1]{\bm{#1}} 
 \newtheorem{Teorema}{Teorema}
 \newtheorem{Proposicao}{Proposição}
 \newtheorem{definicao}{Definição}
@@ -119,8 +121,9 @@
 }
 \makeatother
 
-\providecommand{\arcsin}{} \renewcommand{\arcsin}{\hspace{2pt}\textrm{arcsen}}
-\providecommand{\sin}{} \renewcommand{\sin}{\hspace{2pt}\textrm{sen}}
+\usepackage{amsopn} % já vem com amsmath, mas ok
+\DeclareMathOperator{\sen}{sen}
+\DeclareMathOperator{\arcsen}{arcsen}
 \newcommand{\N}{\rm I\!N}
 \newcommand{\I}{\rm I\!I}
 \newcommand{\R}{\rm I\!R}
