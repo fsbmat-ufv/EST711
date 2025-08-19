@@ -230,8 +230,8 @@ Logo,
 \begin{block}{}
 \justifying
 \begin{align*}
-    \star&=\dfrac{e^{-\frac{1}{2}}}{\sqrt{2\pi}}{\displaystyle \lim_{n\rightarrow\infty}\dfrac{(n-1)^{\frac{n}{2}}}{(n-2)^{\frac{n}{2}}(n-2)^{-\frac{1}{2}}}}\dfrac{1}{\sqrt{n}}e^{-\frac{y^{2}}{2}}\\
-    &=\dfrac{e^{-\frac{1}{2}}}{\sqrt{2\pi}}e^{-\frac{y^{2}}{2}}{\displaystyle \lim_{n\rightarrow\infty}\Big(1+\dfrac{1}{n-2}\Big)^{\frac{n}{2}}}\\
+    \star&=\dfrac{e^{-\frac{1}{2}}}{\sqrt{2\pi}}{\displaystyle \lim_{n\rightarrow\infty}\dfrac{(n-1)^{\frac{n}{2}}}{(n-2)^{\frac{n}{2}}(n-2)^{-\frac{1}{2}}}}\dfrac{1}{\sqrt{n}}\dfrac{1}{\Big(1+\dfrac{y^{2}}{n}\Big)^{\frac{n+1}{2}}}\\
+    &=\dfrac{e^{-\frac{1}{2}}}{\sqrt{2\pi}}{\displaystyle \lim_{n\rightarrow\infty}\dfrac{(1-\frac{1}{n})^{\frac{n}{2}}}{(1-\frac{2}{n})^{\frac{n}{2}}}}\sqrt{\dfrac{n-2}{n}}\dfrac{1}{\Big(1+\dfrac{\frac{y^{2}}{2}}{\frac{n}{2}}\Big)^{\frac{n}{2}}}\dfrac{1}{\Big(1+\dfrac{y^{2}}{n}\Big)^{\frac{1}{2}}}\\
     &=\dfrac{e^{-\frac{1}{2}}}{\sqrt{2\pi}}e^{-\frac{y^{2}}{2}}e^{\frac{1}{2}}=\dfrac{e^{-\frac{y^{2}}{2}}}{\sqrt{2\pi}}
 \end{align*}
 \end{block}
@@ -240,9 +240,8 @@ Logo,
 \justifying
 Portanto, substituindo em $\star\star,$ temos 
 \begin{align*}
-\lim_{n\rightarrow+\infty}F_{T_{n}}(t)&=\int_{-\infty}^{t}\dfrac{e^{-\frac{y^{2}}{2}}}{\sqrt{2\pi}}dy
+\lim_{n\rightarrow+\infty}F_{T_{n}}(t)&=\int_{-\infty}^{t}\dfrac{e^{-\frac{y^{2}}{2}}}{\sqrt{2\pi}}dy\Rightarrow T_{n} \overset{D}{\rightarrow} N(0,1).
 \end{align*}
-Logo, $T_{n} \overset{D}{\rightarrow} N(0,1).$
 \nocite{hogg}
 \end{block}
 \end{frame}
