@@ -248,7 +248,7 @@ $Y_{1},\ldots,Y_{n}$ é uma sequência de v.a. iid com média finita. Pela lei f
 \justifying
 Note que,
 \begin{align*}
-E_{\theta_{0}}\Big(\dfrac{f(x_{i},\theta)}{f(x_{i},\theta_{0})}\Big)&\SetaUP{f~\text{de}~\theta~\text{e}~f~\text{de}~\theta_{0}~\text{tem o mesmo suporte}}{=}\int_{\R} \dfrac{f(x_{i},\theta)}{f(x_{i},\theta_{0})}f(x,\theta_{0})dx=1\\
+E_{\theta_{0}}\Big(\dfrac{f(x_{i},\theta)}{f(x_{i},\theta_{0})}\Big)&\SetaUP{f~\text{de}~\theta~\text{e}~f~\text{de}~\theta_{0}~\text{tem o mesmo suporte}}{=}\int_{\R} \dfrac{f(x,\theta)}{f(x,\theta_{0})}f(x,\theta_{0})dx=1\\
 &\Rightarrow \dfrac{\Sumi y_{i}}{n}<0~\text{para}~n\rightarrow +\infty\\
 &\Rightarrow \dfrac{1}{n}\Sumi\log{\Big(\dfrac{f(x_{i},\theta)}{f(x_{i},\theta_{0})}\Big)}~\text{converge em probabilidade}
 \end{align*}
@@ -438,8 +438,13 @@ e que ${\displaystyle \lim_{\theta\to\pm\infty}}L(\theta|\boldsymbol{x})=0.$ Log
 \begin{frame}{Princípio da Invariância dos EMV}
 \begin{Teorema}\label{Teo2}
 \justifying
-Seja $X_1, X_2, ..., X_n$ uma a.a. de uma distribuição com densidade $f(\boldsymbol{x};\theta),~\theta \in \Theta$ e $g: \Theta\rightarrow \tau$ uma função sobrejetora, denote $\eta=g(\theta).$ Suponha $\hat{\theta}$ o EMV de $\theta$, então $\hat{\eta}=g(\hat{\theta})$ é o EMV de $\eta.$
+Seja $X_1, X_2, ..., X_n$ uma a.a. de uma distribuição com densidade $f(\boldsymbol{x};\theta),~\theta \in \Theta$ e $g: \Theta\rightarrow \tau$ uma função sobrejetora, denote $\eta=g(\theta).$ Suponha $\hat{\theta}$ o EMV de $\theta$, então $\hat{\eta}=g(\hat{\theta})$ é o EMV de $\eta$ da mesma amostra considerada.
 \end{Teorema}
+\pause
+\begin{block}{Interpretação:}
+	\justifying
+	Mesmo estando $\eta$ e $\theta$ em espaços paramétricos, não necessariamente, iguais, a estimativa de $\eta=g(\theta)$ que torna a amostra observada mais provável é o valor obtido após a aplicação da função $g$ no valor de $\hat{\theta}$ (EMV de $\theta$) que torna a amostra observada mais provável de ser observada!
+\end{block}
 \end{frame}
 
 \begin{frame}{Princípio da Invariância dos EMV}
@@ -448,24 +453,88 @@ Seja $X_1, X_2, ..., X_n$ uma a.a. de uma distribuição com densidade $f(\bolds
 Em outras palavras, se estamos interessados em estimar alguma quantidade de interesse (\(\eta\)) que pode ser expressa como uma função dos parâmetros (\(\theta\)) da distribuição, pode ser, por exemplo, uma transformação do parâmetro $\theta$, como o quadrado, o logaritmo, ou qualquer outra função. Basta, simplesmente, aplicar essa função ao EMV do parâmetro. Isso é válido sob certas condições, e é uma propriedade muito útil da Estimativa de Máxima Verossimilhança, pois nos permite estimar uma ampla variedade de quantidades de interesse de maneira eficaz.
 %Podemos aplicar o EMV aos parâmetros e, em seguida, aplicar a função \(g\) aos resultados para obter o estimador do parâmetro \(\eta\). 
 \end{block}
-\pause
-\begin{block}{}
-\justifying
-Em resumo, o Princípio da Invariância dos Estimadores de Verossimilhança estabelece que aplicar uma função a um estimador de EMV resulta no estimador de EMV para a mesma função aplicada aos parâmetros originais.
-\end{block}
+%\pause
+%\begin{block}{}
+%\justifying
+%Em resumo, o Princípio da Invariância dos Estimadores de Verossimilhança estabelece que aplicar uma função a um estimador de EMV resulta no estimador de EMV para a mesma função aplicada aos parâmetros originais.
+%\end{block}
 \end{frame}
 
-\begin{frame}{Demonstração}
-	\begin{block}{}
+\begin{frame}{}
+	\begin{block}{Observação}
 		\justifying
-		\textbf{Função} \( g \): Seja \( g: \Theta \rightarrow \tau \) uma função sobrejetora que mapeia \( \theta \in \Theta \) em \( \eta = g(\theta) \in \tau \). A função de verossimilhança de \( \eta \) é a mesma que a função de verossimilhança de \( \theta \), uma vez que \( \eta \) é uma função de \( \theta \):
+		Considerando \( g: \Theta \rightarrow \tau \) uma função sobrejetora que mapeia \( \theta \in \Theta \) em \( \eta = g(\theta) \in \tau \). A função de verossimilhança de \( \eta \) é a mesma que a função de verossimilhança de \( \theta \), uma vez que \( \eta \) é uma função de \( \theta \), isto é:
 		\[
 		L(\eta \mid \boldsymbol{X}_{n}) = L(\theta \mid \boldsymbol{X}_{n}).
 		\]
-		Queremos mostrar que como \( \eta = g(\theta) \), maximizar \( L(\eta \mid \boldsymbol{X}_{n}) \) em \( \eta \) é equivalente a maximizar \( L(\theta \mid \boldsymbol{X}_{n}) \) em \( \theta \), e então aplicar \( g \) ao valor \( \hat{\theta} \).
-		
+		%Queremos mostrar que como \( \eta = g(\theta) \), maximizar \( L(\eta \mid \boldsymbol{X}_{n}) \) em \( \eta \) é equivalente a maximizar \( L(\theta \mid \boldsymbol{X}_{n}) \) em \( \theta \), e então aplicar \( g \) ao valor \( \hat{\theta} \).
 	\end{block}
 \end{frame}
+
+\begin{frame}{Exemplo: Invariância do EMV em Bernoulli}
+	\begin{block}{}
+		\justifying
+	Seja $X_1, X_2, \ldots, X_n \sim \text{Bernoulli}(p)$, onde $p \in (0,1)$. 
+	
+	A função de verossimilhança em termos de $p$ é:
+	\[
+	L(p \mid \mathbf{X}_n) = p^{\sum_{i=1}^n X_i}(1-p)^{n-\sum_{i=1}^n X_i}.
+	\]
+\end{block}
+\end{frame}
+
+\begin{frame}{Mudança de Parâmetro}
+	\begin{block}{}
+		\justifying
+	Defina
+	\[
+	\theta = p \quad \text{e} \quad \eta = g(\theta) = 1-\theta.
+	\]
+	
+	Ou seja, $\eta$ é a probabilidade de sair coroa.
+	
+	Como $\eta = 1-p$, temos $p = 1-\eta$. Logo,
+	\[
+	L(\eta \mid \mathbf{X}_n) 
+	= (1-\eta)^{\sum X_i} \, \eta^{\,n-\sum X_i}.
+	\]
+\end{block}
+\end{frame}
+
+\begin{frame}{Comparação}
+	\begin{block}{}
+		\justifying
+	Note que:
+	
+	\[
+	L(p \mid \mathbf{X}_n) = p^{\sum X_i}(1-p)^{n-\sum X_i},
+	\]
+	
+	\[
+	L(\eta \mid \mathbf{X}_n) = (1-\eta)^{\sum X_i}\,\eta^{\,n-\sum X_i}.
+	\]
+	
+	\bigskip
+	\centering
+	\textbf{É a mesma função, apenas reparametrizada.}
+\end{block}
+\end{frame}
+
+\begin{frame}{Conclusão}
+	\begin{block}{}
+		\justifying
+	A verossimilhança depende dos dados, mas não do rótulo do parâmetro.
+	
+	\[
+	L(\eta \mid \mathbf{X}_n) = L(\theta \mid \mathbf{X}_n).
+	\]
+	
+	\bigskip
+	\centering
+	\textbf{O princípio da invariância do EMV garante que $\hat{\eta}=g(\hat{\theta})$. Vamos provar!}
+\end{block}
+\end{frame}
+
 
 \begin{frame}{Demonstração}
 	\begin{block}{}
@@ -477,20 +546,20 @@ Queremos maximizar $L(\eta,\vec{X}_{n})=L(g(\theta),\vec{X}_{n})=L_{\vec{X}_{n}}
 	\pause
 		\begin{block}{}
 		\justifying
-		Notemos que o EMV para $\eta=g(\theta)$ é $$L_{\vec{X}_{n}}^{g}(\eta)={\displaystyle \max_{\theta \in A(\eta)}} L_{\vec{X}_{n}}(\theta), \eta\in \tau,$$ em que $A(\eta)=\{\theta\in\Theta;g(\theta)=\eta\}=g^{-1}(\{\eta\}).$
+		Para isso, é necessário entender que o EMV para $\eta=g(\theta)$ é $$L_{\vec{X}_{n}}^{g}(\eta)={\displaystyle \max_{\theta \in A(\eta)}} L_{\vec{X}_{n}}(\theta), \eta\in \tau,$$ em que $A(\eta)=\{\theta\in\Theta;g(\theta)=\eta\}=g^{-1}(\{\eta\}).$
 	\end{block}
 \end{frame}
 
-\begin{frame}{Justificativa da Igualdade anterior:}
-	\begin{block}{}
-		\begin{itemize}
-			\justifying
-			\item Temos uma amostra \( X_1, X_2, \dots, X_n \) gerada a partir de uma distribuição parametrizada por \( \theta \in \Theta \), e a função de verossimilhança é \( L_{\vec{X}_n}(\theta) \).
-			\item Agora estamos interessados em um novo parâmetro \( \eta \), que é uma função de \( \theta \), ou seja, \( \eta = g(\theta) \), onde \( g: \Theta \rightarrow \tau \).
-			\item O objetivo é encontrar o estimador de máxima verossimilhança (EMV) de \( \eta \).
-		\end{itemize}
-	\end{block}
-	\pause
+\begin{frame}{}%{}Justificativa da Igualdade anterior:}
+	%\begin{block}{}
+	%	\begin{itemize}
+	%		\justifying
+	%		\item Temos uma amostra \( X_1, X_2, \dots, X_n \) gerada a partir de uma distribuição parametrizada por \( \theta \in \Theta \), e a função de verossimilhança é \( L_{\vec{X}_n}(\theta) \).
+	%		\item Agora estamos interessados em um novo parâmetro \( \eta \), que é uma função de \( \theta \), ou seja, \( \eta = g(\theta) \), onde \( g: \Theta \rightarrow \tau \).
+	%		\item O objetivo é encontrar o estimador de máxima verossimilhança (EMV) de \( \eta \).
+	%	\end{itemize}
+	%\end{block}
+%	\pause
 	\begin{block}{Questão Central?}
 		Por que maximizar \( L(\theta) \) em \( \theta \in \Theta \) nos dá o EMV de \( \eta \in \tau \), dado que \( \eta \) e \( \theta \) pertencem a espaços diferentes?
 	\end{block}

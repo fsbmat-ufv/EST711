@@ -8,6 +8,7 @@ runtime: shiny_prerendered
 library(learnr)
 library(tidyverse)
 library(shiny)
+library(patchwork)  # para mostrar dois gráficos lado a lado
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
@@ -426,4 +427,259 @@ ggplot(df, aes(x = theta, y = likelihood)) +
 
 ```
 
+## Principio da Invariância
+
+
+### Objetivo
+
+Queremos visualizar a igualdade
+
+$$
+L_{\vec X_n}^{g}(\hat\eta) \;=\; L_{\vec X_n}(\hat\theta),
+$$
+
+onde $L(\theta,\vec X_n)=\prod_{i=1}^n f(X_i;\theta)$ é a função de verossimilhança (até constante em $\theta$), $\eta=g(\theta)$ é uma reparametrização (possivelmente não injetiva) e
+
+$$
+L_{\vec X_n}^{g}(\eta) \;=\; \max_{\theta \in A(\eta)} L_{\vec X_n}(\theta),\qquad
+A(\eta)=\{\theta\in\Theta: g(\theta)=\eta\}.
+$$
+
+Graficamente:
+
+1. Plotamos $L(\theta)$ em função de $\theta$ e identificamos $\hat\theta$.
+2. Projetamos $\hat\theta$ para $\hat\eta=g(\hat\theta)$.
+3. Construímos $L^g(\eta)$ tomando, para cada $\eta$, o **máximo** de $L(\theta)$ ao longo da fibra $A(\eta)$.
+4. O pico de $L^g$ em $\hat\eta$ tem a **mesma altura** do pico de $L$ em $\hat\theta$.
+
+# Exemplo base (Normal com variância conhecida e $g(\theta)=\theta^2$)
+
+Neste exemplo, $X_i \sim \mathcal N(\theta,\sigma^2)$ com $\sigma$ conhecida. O EMV é $\hat\theta=\bar X$. Escolhemos $g(\theta)=\theta^2$, **não injetiva**, então
+
+$$
+L^g(\eta)=\max\{L(+\sqrt{\eta}),\, L(-\sqrt{\eta})\}.
+$$
+
+
+```{r simulate-data}
+set.seed(1)
+n        <- 30
+sigma    <- 1
+theta_0  <- 0.8             # valor verdadeiro para simulação
+x        <- rnorm(n, mean = theta_0, sd = sigma)
+
+# log-verossimilhança (até constante em theta)
+ll_theta <- function(theta) {
+  sum(dnorm(x, mean = theta, sd = sigma, log = TRUE))
+}
+
+theta_hat <- mean(x)        # EMV em theta
+eta_hat   <- theta_hat^2    # imagem do EMV: g(hat{theta})
+
+# Grades para os gráficos
+theta_grid <- seq(min(-2, theta_hat)-1, max(2, theta_hat)+1, length.out = 1200)
+ll_vals    <- sapply(theta_grid, ll_theta)
+
+eta_grid   <- seq(0, max(theta_grid^2), length.out = 800)
+ll_g_vals  <- sapply(eta_grid, function(eta) {
+  t1 <-  sqrt(eta); t2 <- -sqrt(eta)
+  max(ll_theta(t1), ll_theta(t2))
+})
+
+# Normalizações para comparar picos (opcional, apenas visual)
+ll_vals_n   <- ll_vals   - max(ll_vals)
+ll_g_vals_n <- ll_g_vals - max(ll_g_vals)
+```
+
+```{r plot-both, fig.cap="À esquerda: log-verossimilhança em θ. À direita: log-verossimilhança induzida em η=g(θ)=θ² (envelope máximo sobre as fibras). Os picos têm a mesma altura: L^g(\\hat{η}) = L(\\hat{θ})."}
+p_theta <- data.frame(theta = theta_grid, ll = ll_vals_n) |>
+  ggplot(aes(theta, ll)) +
+  geom_line(linewidth = 1) +
+  geom_vline(xintercept = theta_hat, linetype = 2) +
+  geom_point(aes(x = theta_hat, y = 0), size = 2) +
+  annotate("text", x = theta_hat, y = 0.12,
+           label = expression(hat(theta)), vjust = -0.5, parse = TRUE) +
+  labs(title = "Verossimilhança em θ",
+       x = expression(theta), y = "log L(θ) (normalizada)")
+
+p_eta <- data.frame(eta = eta_grid, ll = ll_g_vals_n) |>
+  ggplot(aes(eta, ll)) +
+  geom_line(linewidth = 1) +
+  geom_vline(xintercept = eta_hat, linetype = 2) +
+  geom_point(aes(x = eta_hat, y = 0), size = 2) +
+  annotate("text", x = eta_hat, y = 0.12,
+           label = expression(hat(eta)==g(hat(theta))), vjust = -0.5, parse = TRUE) +
+  labs(title = "Verossimilhança induzida em η = g(θ) = θ²",
+       x = expression(eta), y = expression(log~L^g(eta)~(normalizada)))
+
+p_theta + p_eta
+```
+
+## Leitura do gráfico
+
+* **Esquerda**: o pico em $\theta=\hat\theta$ é o máximo de $L(\theta)$.
+* **Direita**: para cada $\eta$, tomamos $L(\sqrt\eta)$ e $L(-\sqrt\eta)$ e ficamos com o **máximo** — isto é o *envelope* $L^g(\eta)$.
+* Na abscissa $\eta=\hat\eta=g(\hat\theta)$, a ordenada coincide com a do pico em $\hat\theta$. Assim, $L^g(\hat\eta)=L(\hat\theta)$.
+
+# Vendo as fibras $A(\eta)=g^{-1}\{\eta\}$
+
+Para um $\eta$ fixo, a fibra é $A(\eta)=\{\sqrt{\eta},-\sqrt{\eta}\}$. O valor de $L^g(\eta)$ é a **maior** altura de $L(\theta)$ nesses dois pontos.
+
+```{r fibers, fig.height=4.8, fig.cap="Construção de L^g(η) como envelope máximo em uma fibra {−√η, +√η}."}
+eta_demo <- eta_hat  # escolha uma eta próxima do pico
+A        <- c(-sqrt(eta_demo), +sqrt(eta_demo))
+
+df_theta <- data.frame(theta = theta_grid, ll = ll_vals)
+df_pts   <- data.frame(theta = A, ll = sapply(A, ll_theta))
+
+ggplot(df_theta, aes(theta, ll)) +
+  geom_line(linewidth = 1) +
+  geom_point(data = df_pts, aes(theta, ll), size = 2) +
+  geom_segment(aes(x = A[1], xend = A[2],
+                   y = max(df_pts$ll), yend = max(df_pts$ll)),
+               linetype = 3) +
+  annotate("text", x = mean(A), y = max(df_pts$ll),
+           vjust = -0.8, label = expression(L^g(eta)==max~L(theta)~colon~theta%in%A(eta)),
+           parse = TRUE) +
+  labs(title = "Fibra A(η) e construção do envelope",
+       x = expression(theta), y = "log L(θ)")
+```
+
+# Caso injetivo e monótono (comparação)
+
+Se $g$ é injetora e monótona (por ex., $g(\theta)=\theta$ ou $g(\theta)=\exp(\theta)$ com $\Theta=\mathbb R$), então cada $\eta$ corresponde a um único $\theta=g^{-1}(\eta)$, e
+
+$$
+L^g(\eta)=L\big(g^{-1}(\eta)\big).
+$$
+
+O máximo é o mesmo ponto “reparametrizado”, e a **altura do pico** também é a mesma.
+
+```{r injective-case, fig.cap="Reparametrização injetiva e monótona: o pico é preservado ao compor com g^{-1}."}
+g_inj      <- function(theta) exp(theta)
+ginv_inj   <- function(eta) log(eta)
+
+eta_grid_2 <- seq(min(g_inj(theta_grid[1]), 1e-3), max(g_inj(tail(theta_grid,1))), length.out = 800)
+ll_g2_vals <- sapply(eta_grid_2, function(eta) {
+  theta <- ginv_inj(eta)
+  ll_theta(theta)
+})
+
+# Normalizar para comparar visualmente
+ll_g2_vals_n <- ll_g2_vals - max(ll_g2_vals)
+
+p_theta2 <- data.frame(theta = theta_grid, ll = ll_vals_n) |>
+  ggplot(aes(theta, ll)) +
+  geom_line(linewidth = 1) +
+  geom_vline(xintercept = theta_hat, linetype = 2) +
+  labs(title = "Verossimilhança em θ (caso base)",
+       x = expression(theta), y = "log L(θ) (normalizada)")
+
+p_eta2 <- data.frame(eta = eta_grid_2, ll = ll_g2_vals_n) |>
+  ggplot(aes(eta, ll)) +
+  geom_line(linewidth = 1) +
+  geom_vline(xintercept = g_inj(theta_hat), linetype = 2) +
+  labs(title = "Verossimilhança induzida em η = g(θ) = e^θ",
+       x = expression(eta), y = expression(log~L^g(eta)~(normalizada)))
+
+p_theta2 + p_eta2
+```
+
+# Resumo conceitual
+
+* **Definição**: $L^g(\eta)=\max_{\theta\in A(\eta)} L(\theta)$.
+* **No máximo**: como $\hat\eta=g(\hat\theta)$ e $\hat\theta\in A(\hat\eta)$,
+
+  $$
+  L^g(\hat\eta)\;\ge\;L(\hat\theta).
+  $$
+
+  Por outro lado, como $L(\hat\theta)$ é o **máximo global** de $L$,
+
+  $$
+  L^g(\hat\eta)\;\le\;\max_{\theta} L(\theta) \;=\; L(\hat\theta).
+  $$
+
+  Logo, $L^g(\hat\eta)=L(\hat\theta)$.
+* **Intuição gráfica**: $L^g$ é o “invólucro superior” obtido varrendo as fibras $A(\eta)$. O topo permanece com a **mesma altura**.
+
+# (Opcional) Parâmetros do exemplo
+
+Você pode ajustar abaixo e *Knitar* novamente.
+
+```{r parametros-rapidos, eval=FALSE}
+n        <- 50       # tamanho amostral
+sigma    <- 0.8      # desvio conhecido
+theta_0  <- -0.5     # valor verdadeiro
+g        <- function(theta) theta^2
+```
+
+
+```{r invariancia, exercise=TRUE, exercise.eval=TRUE}
+## ===== Parâmetros que você pode alterar =====
+g_choice <- "square"   # "square" (g(theta)=theta^2) ou "exp" (g(theta)=exp(theta))
+eta      <- 0.8        # eta >= 0 para "square"; eta > 0 para "exp"
+
+## ===== Modelo e dados (Normal com sigma conhecida) =====
+set.seed(1)
+n       <- 30
+sigma   <- 1
+theta0  <- 0.8
+x       <- rnorm(n, mean = theta0, sd = sigma)
+
+## Log-verossimilhanca (ate constante em theta)
+ll_theta <- function(theta) sum(dnorm(x, mean = theta, sd = sigma, log = TRUE))
+
+## EMV em theta
+theta_hat <- mean(x)
+
+## Grade de theta e valores de log L(theta)
+theta_grid <- seq(-3.5, 3.5, length.out = 1200)
+ll_vals    <- vapply(theta_grid, ll_theta, numeric(1))
+
+## ===== Defina g, a preimagem A(eta) e L^g(eta) =====
+if (g_choice == "square") {
+  if (eta < 0) stop("Para g(theta)=theta^2, use eta >= 0.")
+  A_eta <- if (abs(eta) < 1e-12) 0 else c(-sqrt(eta), +sqrt(eta))
+  eta_grid <- seq(0, max(theta_grid^2), length.out = 800)
+  ll_g <- vapply(eta_grid, function(e) {
+    t1 <-  sqrt(e); t2 <- -sqrt(e)
+    max(ll_theta(t1), ll_theta(t2))
+  }, numeric(1))
+  eta_hat <- theta_hat^2
+} else if (g_choice == "exp") {
+  if (eta <= 0) stop("Para g(theta)=exp(theta), use eta > 0.")
+  A_eta <- log(eta)
+  eta_grid <- seq(exp(min(theta_grid)), exp(max(theta_grid)), length.out = 800)
+  ll_g <- vapply(eta_grid, function(e) ll_theta(log(e)), numeric(1))
+  eta_hat <- exp(theta_hat)
+} else {
+  stop("g_choice desconhecida; use 'square' ou 'exp'.")
+}
+
+## ===== Graficos (base R) =====
+op <- par(mfrow = c(1, 2), mar = c(4, 4, 3, 1))
+on.exit(par(op), add = TRUE)
+
+## (1) log L(theta) com a fibra A(eta) destacada
+plot(theta_grid, ll_vals, type = "l", lwd = 2,
+     xlab = "theta", ylab = "log L(theta)",
+     main = "log-likelihood em theta")
+abline(v = theta_hat, lty = 2)
+if (length(A_eta) > 0 && all(is.finite(A_eta))) {
+  pts_y <- vapply(A_eta, ll_theta, numeric(1))
+  points(A_eta, pts_y, pch = 19)
+}
+
+## (2) log L^g(eta) com linhas em eta e eta_hat
+plot(eta_grid, ll_g, type = "l", lwd = 2,
+     xlab = "eta", ylab = "log L^g(eta)",
+     main = "log-likelihood induzida em eta")
+abline(v = eta, lty = 3)      # eta escolhido
+abline(v = eta_hat, lty = 2)  # eta_hat = g(theta_hat)
+```
+
+
+
+<!--**Dica**: para usar outros modelos, basta substituir a função `ll_theta()` pela log-verossimilhança apropriada (por exemplo, Bernoulli com $p$ e $g(p)=\text{logit}(p)$; Poisson com $\lambda$ e $g(\lambda)=\sqrt{\lambda}$). O procedimento gráfico é idêntico: construir $L(\theta)$, definir $A(\eta)$ e tomar o máximo ao longo da fibra para obter $L^g(\eta)$.-->
 
