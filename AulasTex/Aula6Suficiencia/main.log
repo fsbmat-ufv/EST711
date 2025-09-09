@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.6.27)  3 AUG 2025 14:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.6.27)  6 SEP 2025 23:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1503,21 +1503,51 @@ Package: accents 2006/05/12 v1.4 Math Accent Tools
 \cc@group=\count573
 \cc@skewchar=\count574
 )
-\sympureletters=\mathgroup7
-LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on inp
-ut line 41.
-
+(C:\Program Files\MiKTeX\tex/latex/lm\lmodern.sty
+Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+)
+(C:\Program Files\MiKTeX\tex/latex/beamer\beamerfontthemeprofessionalfonts.sty)
 (C:\Program Files\MiKTeX\tex/latex/tools\bm.sty
 Package: bm 2023/12/19 v1.2f Bold Symbol Support (DPC/FMi)
-\symboldoperators=\mathgroup8
-\symboldletters=\mathgroup9
-\symboldsymbols=\mathgroup10
-Package bm Info: No bold for \OMX/cmex/m/n, using \pmb.
+\symboldoperators=\mathgroup7
+\symboldletters=\mathgroup8
+\symboldsymbols=\mathgroup9
+Package bm Info: No bold for \OMX/lmex/m/n, using \pmb.
 Package bm Info: No bold for \U/msa/m/n, using \pmb.
 Package bm Info: No bold for \U/msb/m/n, using \pmb.
 Package bm Info: No bold for \U/esvect/m/n, using \pmb.
-\symboldpureletters=\mathgroup11
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 149.
 )
 (C:\Program Files\MiKTeX\tex/latex/ragged2e\ragged2e.sty
@@ -1661,7 +1691,7 @@ File: bkm-pdftex.def 2023-12-10 v1.31 bookmark driver for pdfTeX and luaTeX (HO
 )
 \BKM@id=\count585
 ))
-Package hyperref Info: Option `colorlinks' set `true' on input line 54.
+Package hyperref Info: Option `colorlinks' set `true' on input line 56.
 
 (C:\Program Files\MiKTeX\tex/latex/beamer\beamerthemeMadrid.sty
 (C:\Program Files\MiKTeX\tex/latex/beamer\beamercolorthemewhale.sty)
@@ -1679,8 +1709,12 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'brazil'.
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 1
+6.
 
-(main.aux
+(C:\Program Files\MiKTeX\tex/latex/lm\t1lmss.fd
+File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) (main.aux
 Package babel Info: 'brazil' activates 'portuges' shorthands.
 (babel)             Reported  on input line 14.
 )
@@ -1761,70 +1795,6 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 Package hyperref Info: Link coloring ON on input line 16.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 16.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 16.
-\symnumbers=\mathgroup12
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 16.
-LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
-(Font)              `pureletters' in the math version `normal' on input line 16
-.
-LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
-(Font)                  OT1/mathkerncmss/m/sl --> T1/cmss/m/it on input line 16
-.
-LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
-(Font)              `pureletters' in the math version `bold' on input line 16.
-LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/mathkerncmss/bx/sl --> T1/cmss/m/it on input line 1
-6.
-LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/cmr/m/n on input line 16.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 16.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 16.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/cmss/m/n on input line 16.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> T1/cmss/m/n on input line 16.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 16.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> T1/cmss/m/it on input line 16.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> T1/cmss/m/it on input line 16.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 16.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 16.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 16.
-LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  T1/cmss/m/n --> T1/cmss/b/n on input line 16.
-LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/cmss/m/it --> T1/cmss/b/it on input line 16.
-LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/b/n --> T1/cmr/b/n on input line 16.
-LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  T1/cmss/b/n --> T1/cmss/b/n on input line 16.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  T1/cmss/m/n --> T1/cmss/b/n on input line 16.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  T1/cmss/m/it --> T1/cmss/b/it on input line 16.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  T1/cmtt/m/n --> T1/cmtt/b/n on input line 16.
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 16.
-LaTeX Font Info:    Encoding `T1' has changed to `OT1' for symbol font
-(Font)              `pureletters' in the math version `normal' on input line 16
-.
-LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
-(Font)                  T1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 16
-.
-LaTeX Font Info:    Encoding `T1' has changed to `OT1' for symbol font
-(Font)              `pureletters' in the math version `bold' on input line 16.
-LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/cmss/b/it --> OT1/mathkerncmss/m/sl on input line 16
-.
-LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on inp
-ut line 16.
 
 (C:\Program Files\MiKTeX\tex/latex/translator\translator-basic-dictionary-Engli
 sh.dict
@@ -1892,7 +1862,37 @@ Package biblatex Info: Reference segment=0 on input line 16.
 Package pgfplots notification 'compat/show suggested version=true': you might b
 enefit from \pgfplotsset{compat=1.18} (current compat level: 1.17).
 
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
+6.
+(C:\Program Files\MiKTeX\tex/latex/lm\ot1lmr.fd
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
+6.
+
+(C:\Program Files\MiKTeX\tex/latex/lm\omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+16.
+
+(C:\Program Files\MiKTeX\tex/latex/lm\omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+16.
+
+(C:\Program Files\MiKTeX\tex/latex/lm\omxlmex.fd
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 16.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 16.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 16.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 16.
+
 
 (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -1909,15 +1909,16 @@ LaTeX Font Info:    Trying to load font information for U+esvect on input line
 (C:\Program Files\MiKTeX\tex/latex/esvect\uesvect.fd
 File: uesvect.fd 
 )
-LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on inp
-ut line 16.
-
-(C:\Program Files\MiKTeX\tex/latex/sansmathaccent\ot1mathkerncmss.fd
-File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/ma
-thkerncmss.
-)
-Package xypdf Info: Line width: 0.47998pt on input line 16.
+Package xypdf Info: Line width: 0.39998pt on input line 16.
  (main.nav)
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
+6.
+
+(C:\Program Files\MiKTeX\tex/latex/lm\t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 16.
 <figs/mylogo.png, id=27, 272.01625pt x 195.73125pt>
 File: figs/mylogo.png Graphic file (type png)
 <use figs/mylogo.png>
@@ -1928,8 +1929,7 @@ Package pdftex.def Info: figs/mylogo.png  used on input line 19.
 [1
 
 {C:/Users/Fernando/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Program
- Files/MiKTeX/fonts/enc/dvips/cm-super/cm-super-t1.enc} <./figs/mylogo.png>]
-(main.toc)
+ Files/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc} <./figs/mylogo.png>] (main.toc)
 
 [2
 
@@ -1937,7 +1937,9 @@ Package pdftex.def Info: figs/mylogo.png  used on input line 19.
 
 [3
 
-]
+{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Program Files/MiK
+TeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm
+-mathsy.enc}]
 
 [4
 
@@ -1949,7 +1951,7 @@ Package pdftex.def Info: figs/mylogo.png  used on input line 19.
 
 [6
 
-]
+{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}]
 
 [7
 
@@ -1994,15 +1996,10 @@ Package pdftex.def Info: figs/mylogo.png  used on input line 19.
 [17
 
 ]
-LaTeX Font Info:    Trying to load font information for U+fontawesometwo on inp
-ut line 144.
- (C:\Program Files\MiKTeX\tex/latex/fontawesome\ufontawesometwo.fd
-File: ufontawesometwo.fd 2016/05/22 Font definitions for U/fontawesometwo.
-)
 
 [18
 
-{C:/Program Files/MiKTeX/fonts/enc/dvips/fontawesome/fontawesometwo.enc}]
+]
 
 [19
 
@@ -2019,11 +2016,6 @@ File: ufontawesometwo.fd 2016/05/22 Font definitions for U/fontawesometwo.
 [22
 
 ]
-Overfull \hbox (17.74342pt too wide) detected at line 201
-[] \OT1/cmss/m/n/12 = [] \OMS/cmsy/m/n/12 ^^A []\OML/cmm/m/it/12 ;
- []
-
-
 
 [23
 
@@ -2036,10 +2028,18 @@ Overfull \hbox (17.74342pt too wide) detected at line 201
 [25
 
 ]
+LaTeX Font Info:    Trying to load font information for U+fontawesometwo on inp
+ut line 368.
+ (C:\Program Files\MiKTeX\tex/latex/fontawesome\ufontawesometwo.fd
+File: ufontawesometwo.fd 2016/05/22 Font definitions for U/fontawesometwo.
+)
 
 [26
 
-]
+{C:/Program Files/MiKTeX/fonts/enc/dvips/fontawesome/fontawesometwo.enc}]
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <12> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 381.
+
 
 [27
 
@@ -2052,15 +2052,12 @@ Overfull \hbox (17.74342pt too wide) detected at line 201
 [29
 
 ]
-Overfull \vbox (10.31245pt too high) detected at line 320
- []
-
-
 
 [30
 
 ]
-Overfull \vbox (10.31245pt too high) detected at line 320
+Overfull \hbox (29.92047pt too wide) detected at line 425
+[] \OT1/lmr/m/n/12 = [] \OMS/lmsy/m/n/12 ^^A []\OML/lmm/m/it/12 ;
  []
 
 
@@ -2068,6 +2065,18 @@ Overfull \vbox (10.31245pt too high) detected at line 320
 [31
 
 ]
+Overfull \hbox (7.81023pt too wide) detected at line 441
+\OML/lmm/m/it/12 f\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 x[]\OT1/lmr/m/n/12 ; \OML/l
+mm/m/it/12 ^^R\OT1/lmr/m/n/12 )\OML/lmm/m/it/12 f\OT1/lmr/m/n/12 (\OML/lmm/m/it
+/12 x[]\OT1/lmr/m/n/12 ; \OML/lmm/m/it/12 ^^R\OT1/lmr/m/n/12 ) [] \OML/lmm/m/it
+/12 f\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 x[]\OT1/lmr/m/n/12 ; \OML/lmm/m/it/12 ^^
+R\OT1/lmr/m/n/12 ) = \OML/lmm/m/it/12 k[]\OT1/lmr/m/n/12 [\OML/lmm/m/it/12 u\OT
+1/lmr/m/n/12 (\OML/lmm/m/it/12 x[]; x[]; [] ; x[]\OT1/lmr/m/n/12 ); \OML/lmm/m/
+it/12 ^^R\OT1/lmr/m/n/12 ]\OML/lmm/m/it/12 k[]\OT1/lmr/m/n/12 (\OML/lmm/m/it/12
+ x[]; x[]; [] ; x[]\OT1/lmr/m/n/12 )
+ []
+
+
 
 [32
 
@@ -2076,23 +2085,48 @@ Overfull \vbox (10.31245pt too high) detected at line 320
 [33
 
 ]
-Underfull \hbox (badness 1107) in paragraph at lines 357--357
-[]\T1/cmss/m/n/12 Seja $\OT1/mathkerncmss/m/sl/12 X[]\OML/cmm/m/it/12 ; \OT1/ma
-thkerncmss/m/sl/12 X[]\OML/cmm/m/it/12 ; [] ; \OT1/mathkerncmss/m/sl/12 X[]$ \T
-1/cmss/m/n/12 amos-tra ale-a-tó-ria com den-si-dade $\OT1/mathkerncmss/m/sl/12 
-f\OT1/cmss/m/n/12 (\OT1/mathkerncmss/m/sl/12 x\OT1/cmss/m/n/12 ; \OML/cmm/m/it/
-12 ^^R\OT1/cmss/m/n/12 ) =
- []
-
-
 
 [34
 
 ]
+Overfull \hbox (15.82408pt too wide) detected at line 508
+\OML/lmm/m/it/12 f\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 x[]\OT1/lmr/m/n/12 ; \OML/l
+mm/m/it/12 ^^R\OT1/lmr/m/n/12 )\OML/lmm/m/it/12 f\OT1/lmr/m/n/12 (\OML/lmm/m/it
+/12 x[]\OT1/lmr/m/n/12 ; \OML/lmm/m/it/12 ^^R\OT1/lmr/m/n/12 ) [] \OML/lmm/m/it
+/12 f\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 x[]\OT1/lmr/m/n/12 ; \OML/lmm/m/it/12 ^^
+R\OT1/lmr/m/n/12 ) = \OML/lmm/m/it/12 k[]\OT1/lmr/m/n/12 [\OML/lmm/m/it/12 u[]\
+OT1/lmr/m/n/12 (\OML/lmm/m/it/12 x[]; x[]; [] ; x[]\OT1/lmr/m/n/12 ); \OML/lmm/
+m/it/12 ^^R\OT1/lmr/m/n/12 ]\OML/lmm/m/it/12 k[]\OT1/lmr/m/n/12 (\OML/lmm/m/it/
+12 x[]; x[]; [] ; x[]\OT1/lmr/m/n/12 )\OML/lmm/m/it/12 ;
+ []
+
+
+Overfull \hbox (17.36021pt too wide) detected at line 508
+[]
+ []
+
+
 
 [35
 
 ]
+Overfull \hbox (15.82408pt too wide) detected at line 508
+\OML/lmm/m/it/12 f\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 x[]\OT1/lmr/m/n/12 ; \OML/l
+mm/m/it/12 ^^R\OT1/lmr/m/n/12 )\OML/lmm/m/it/12 f\OT1/lmr/m/n/12 (\OML/lmm/m/it
+/12 x[]\OT1/lmr/m/n/12 ; \OML/lmm/m/it/12 ^^R\OT1/lmr/m/n/12 ) [] \OML/lmm/m/it
+/12 f\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 x[]\OT1/lmr/m/n/12 ; \OML/lmm/m/it/12 ^^
+R\OT1/lmr/m/n/12 ) = \OML/lmm/m/it/12 k[]\OT1/lmr/m/n/12 [\OML/lmm/m/it/12 u[]\
+OT1/lmr/m/n/12 (\OML/lmm/m/it/12 x[]; x[]; [] ; x[]\OT1/lmr/m/n/12 ); \OML/lmm/
+m/it/12 ^^R\OT1/lmr/m/n/12 ]\OML/lmm/m/it/12 k[]\OT1/lmr/m/n/12 (\OML/lmm/m/it/
+12 x[]; x[]; [] ; x[]\OT1/lmr/m/n/12 )\OML/lmm/m/it/12 ;
+ []
+
+
+Overfull \hbox (17.36021pt too wide) detected at line 508
+[]
+ []
+
+
 
 [36
 
@@ -2101,10 +2135,18 @@ f\OT1/cmss/m/n/12 (\OT1/mathkerncmss/m/sl/12 x\OT1/cmss/m/n/12 ; \OML/cmm/m/it/
 [37
 
 ]
+Overfull \vbox (0.64664pt too high) detected at line 544
+ []
+
+
 
 [38
 
 ]
+Overfull \vbox (0.64664pt too high) detected at line 544
+ []
+
+
 
 [39
 
@@ -2113,8 +2155,47 @@ f\OT1/cmss/m/n/12 (\OT1/mathkerncmss/m/sl/12 x\OT1/cmss/m/n/12 ; \OML/cmm/m/it/
 [40
 
 ]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <14.4> on input line 565.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 565.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 565.
+
 
 [41
+
+]
+
+[42
+
+]
+
+[43
+
+]
+
+[44
+
+]
+
+[45
+
+]
+
+[46
+
+]
+
+[47
+
+]
+
+[48
+
+]
+
+[49
 
  <C:/Program Files/MiKTeX/tex/latex/beamer/beamericonarticle.pdf>]
 \tf@nav=\write7
@@ -2136,38 +2217,32 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 55600 strings out of 468219
- 1204153 string characters out of 5442927
- 2256030 words of memory out of 5000000
- 83028 multiletter control sequences out of 15000+600000
- 667546 words of font info for 148 fonts, out of 8000000 for 9000
+ 55824 strings out of 468219
+ 1210242 string characters out of 5442927
+ 2258525 words of memory out of 5000000
+ 83223 multiletter control sequences out of 15000+600000
+ 709405 words of font info for 127 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,24n,123p,3279b,2230s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Program Files/MiKTeX/fonts/type1/public/fontawesome/FontAwesome.pfb><C:/P
-rogram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files
-/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/font
-s/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX/fonts/type1/publi
-c/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm
-/cmss12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><
-C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi12.pfb><C:/Program 
-Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi8.pfb><C:/Program Files/MiKTeX
-/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1
-/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfo
-nts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/latxfont/
-line10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.
-pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:
-/Program Files/MiKTeX/fonts/type1/public/cm-super/sfrm1200.pfb><C:/Program File
-s/MiKTeX/fonts/type1/public/cm-super/sfsi1200.pfb><C:/Program Files/MiKTeX/font
-s/type1/public/cm-super/sfss0600.pfb><C:/Program Files/MiKTeX/fonts/type1/publi
-c/cm-super/sfss0800.pfb><C:/Program Files/MiKTeX/fonts/type1/public/cm-super/sf
-ss1200.pfb><C:/Program Files/MiKTeX/fonts/type1/public/cm-super/sfss1440.pfb><C
-:/Program Files/MiKTeX/fonts/type1/public/cm-super/sfss1728.pfb><C:/Program Fil
-es/MiKTeX/fonts/type1/public/cm-super/sfsx1200.pfb><C:/Program Files/MiKTeX/fon
-ts/type1/public/cm-super/sfsx1728.pfb><C:/Program Files/MiKTeX/fonts/type1/publ
-ic/cm-super/sftt0800.pfb>
-Output written on main.pdf (41 pages, 593095 bytes).
+rogram Files/MiKTeX/fonts/type1/public/amsfonts/latxfont/line10.pfb><C:/Program
+ Files/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Program Files/MiKTeX/fonts/t
+ype1/public/lm/lmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmmi6.
+pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Program Files/
+MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/pub
+lic/lm/lmr6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Pro
+gram Files/MiKTeX/fonts/type1/public/lm/lmss12.pfb><C:/Program Files/MiKTeX/fon
+ts/type1/public/lm/lmss17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lm
+ss8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Program
+ Files/MiKTeX/fonts/type1/public/lm/lmsso12.pfb><C:/Program Files/MiKTeX/fonts/
+type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmsy6
+.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Program Files
+/MiKTeX/fonts/type1/public/lm/lmtt8.pfb><C:/Program Files/MiKTeX/fonts/type1/pu
+blic/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/am
+sfonts/symbols/msbm10.pfb>
+Output written on main.pdf (49 pages, 658482 bytes).
 PDF statistics:
- 1203 PDF objects out of 1440 (max. 8388607)
- 93 named destinations out of 1000 (max. 500000)
- 2196 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1406 PDF objects out of 1440 (max. 8388607)
+ 109 named destinations out of 1000 (max. 500000)
+ 2676 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -47,55 +47,279 @@ Vamos agora discutir o problema da estimação pontual de um parâmetro a partir
 \begin{frame}{Função de Decisão}
 \begin{block}{}
 \justifying
-Seja $Y = u(X_1,X_2, \ldots, X_n)$ uma estatística com valor observado $y = u(x_1,x_2, \ldots, x_n)$. Seja $\delta(y)$ uma função da estatística observada $y,$ uma estimativa pontual para $\theta$. Assim, a função $\delta(y)$ decide o valor de $\theta.$  $\delta$ é chamada de função de decisão ou regra de decisão.
+Seja $Y = u(X_1,X_2, \ldots, X_n)$ uma estatística com valor observado $y = u(x_1,x_2, \ldots, x_n)$. Seja $\delta(y)$ uma função da estatística observada $y,$ uma estimativa pontual para $\theta$. Vamos chamar $\delta$ de função de decisão ou regra de decisão.
 \end{block}
 \pause
-\begin{block}{}
-\justifying
-Um valor da função de decisão, digamos $\delta(y)$, é chamado de decisão. Assim, uma estimativa pontual numericamente determinada de um parâmetro $\theta$ é uma decisão. Uma decisão pode estar correta ou pode estar errada. Seria útil ter uma medida da diferença, se houver, entre o valor verdadeiro de $\theta$ e a estimativa pontual $\delta(y)$.
+\begin{block}{Exemplo}
+	\justifying
+	Queremos avaliar se o uso do adubo A aumenta a produtividade média $\mu$ da lavoura. A produtividade média amostral é usada como estimador:
+	\[
+	\hat{\mu} = \frac{1}{n}\sum_{i=1}^n X_i
+	\]
+	Exemplo: $\hat{\mu} = 3.2$ ton/ha.
 \end{block}
+\end{frame}
+
+\begin{frame}{Exemplo 1: Produtividade Agrária como Função de Decisão}
+	
+	\begin{block}{}
+		\justifying
+		A cada amostra $X=(X_1,\dots,X_n)$ associamos uma decisão: \\
+		atribuir um número para representar $\mu$.
+		\[
+		\delta(X) = \hat{\mu}(X) = \frac{1}{n}\sum_{i=1}^n X_i
+		\]
+		Um valor da função de decisão, digamos $\delta(x)$, é chamado de decisão. Assim, uma estimativa pontual numericamente determinada de um parâmetro $\theta$ é uma decisão. 
+	\end{block}
+\end{frame}
+
+%----------------------------------
+\begin{frame}{Exemplo 2: Produtividade Agrária como Função de Decisão}
+	\begin{block}{Decisão do Produtor}
+		O agricultor deve escolher:
+		\begin{itemize}
+			\item $D_1$: Usar o adubo A na próxima safra.
+			\item $D_2$: Não usar o adubo A.
+		\end{itemize}
+	\end{block}
+	\pause
+	\begin{block}{Função de Decisão}
+		\[
+		\delta(\hat{\mu}) = 
+		\begin{cases}
+			D_1, & \text{se } \hat{\mu} \geq 3.0 \text{ ton/ha} \\
+			D_2, & \text{se } \hat{\mu} < 3.0 \text{ ton/ha}
+		\end{cases}
+		\]
+	\end{block}
+\end{frame}
+
+\begin{frame}{Exemplo 2: Produtividade Agrária como Função de Decisão}
+	\begin{block}{Ações Possíveis}
+		Definimos o conjunto de ações:
+		\[
+		\mathcal{A} = \{0,1\}, \quad
+		0 = \text{não usar adubo}, \quad
+		1 = \text{usar adubo}.
+		\]
+	\end{block}
+	
+	\begin{block}{Função de Decisão}
+		Novamente aqui, um valor da função de decisão, digamos $\delta(y)$, é chamado de decisão. Assim, uma estimativa pontual numericamente determinada de $\delta(y)$ é uma decisão. 
+		\[
+		\delta(\hat{\mu}) =
+		\begin{cases}
+			1, & \text{se } \hat{\mu} \geq 3.0 \text{ ton/ha} \\
+			0, & \text{se } \hat{\mu} < 3.0 \text{ ton/ha}
+		\end{cases}
+		\]
+	\end{block}
 \end{frame}
 
 \begin{frame}{}
-\begin{block}{}
-\justifying
-Associamos a cada par $(\theta, \delta(y))$, $\theta \in \Omega$, um número não negativo $L(\theta, \delta(y))$ que reflete o quanto $\delta(y)$ está afastado de $\theta.$ 
-\begin{itemize}
-    \item Chamamos a função $L$ de função perda. 
-\end{itemize}
+	\begin{block}{}
+		\justifying
+	Uma decisão pode estar correta ou incorreta. De modo análogo, ao estimar um parâmetro, pode ser interessante dispor de uma forma de avaliar o quanto a estimativa pontual $\delta(y)$ se aproxima ou se afasta do valor verdadeiro de $\theta$.
+	\end{block}
+	\pause
+	\begin{block}{}
+	Para avaliar se uma decisão é adequada, podemos pensar em duas formas de mensuração: uma ligada à ideia de acerto ou erro da escolha tomada (Função Perda) e outra relacionada ao quanto a estimativa $\delta(y)$ se aproxima do valor verdadeiro de $\theta$ (Função Risco).
+	\end{block}
+\end{frame}
+
+\begin{frame}{Qualidade da Decisão} 
+%\begin{block}{Função Perda}
+%		\justifying 
+%		Quando $\delta(y)$ é um estimador de $\theta$ associamos a cada par $(\theta, \delta(y))$, $\theta \in \Omega$, um número não negativo $L(\theta, \delta(y))$ que reflete o quanto $\delta(y)$ está afastado de $\theta.$ Quando $\delta(y)$ é uma \textbf{ação} (ex.: 0 ou 1), 
+%		$L(\theta, \delta(y))$ mede o custo de uma decisão incorreta.
+%		\begin{itemize} 
+%			\item Chamamos a função $L$ de função perda. 
+%		\end{itemize} 
+%	\end{block} 
+
+\begin{block}{Definição 1 — Estimação}
+	Quando $\delta(Y)$ é um estimador de $\theta$, 
+	a função perda mede o \textbf{afastamento entre o valor verdadeiro e a estimativa}.
+	\[
+	L(\theta,\delta(Y)) \;\geq\; 0, \quad
+	\text{ex.: } L(\theta,\delta(Y))=(\theta-\delta(Y))^2.
+	\]
 \end{block}
-\pause
-\begin{block}{}
-Para a variável aleatória contínua $Y,$ podemos calcular a função Risco:
-$$R(\theta, \delta) =\mathbb{E}\Big({L(\theta, \delta(y))}\Big),$$ 
-em que,
-\begin{itemize}
-    \item $\mathbb{E}\Big({L(\theta, \delta(y))}\Big) = \int_{-\infty}^{\infty} L(\theta, \delta(y)) \cdot f_Y(y)dy$
-\end{itemize}
+
+\begin{block}{Definição 2 — Decisão Geral}
+	Quando $\delta(Y)$ é uma \textbf{ação} (ex.: 0 ou 1), 
+	a função perda mede o \textbf{custo da ação escolhida dado o estado verdadeiro}.
+	\[
+	L(\theta,\delta(Y)) =
+	\begin{cases}
+		0, & \text{se a decisão for correta}, \\
+		>0, & \text{se a decisão for incorreta}.
+	\end{cases}
+	\]
 \end{block}
 \end{frame}
 
-\begin{frame}{Exemplo}
-\begin{block}{}
-\justifying
-$X_1, X_2, \ldots, X_{25}\overset{\text{iid}}{\sim} N(\theta, 1), ~ \theta \in \R$. Seja $Y = \bar{X}\overset{\text{iid}}{\sim} N(\theta, \dfrac{1}{25}).$ Considere, $\delta_1(y) = y, ~\delta_2(y) = 0$ e tome $L(\theta, \delta(y)) = (\theta - \delta(y))^2.$ As funções de risco correspondentes são:
-\begin{itemize}
-    \item $R(\theta, \delta_1) = E[(\theta - Y)^2] = Var(Y) = \frac{1}{25};$
-    \item $R(\theta, \delta_2) = E[(\theta - 0)^2] = \theta^2$.
-\end{itemize}
-\end{block}
-\pause
-\begin{block}{}
-\justifying
-Se nosso critério for selecionar o estimador com menor risco, temos:
-$R(\theta, \delta_2)\leq R(\theta, \delta_1) \iff \theta^2\leq \dfrac{1}{25}\iff -\dfrac{1}{5}\leq \theta \leq \dfrac{1}{5}.$
-\end{block}
-\pause
-\begin{block}{}
-\justifying
-Neste caso, se $-\dfrac{1}{5}\leq \theta \leq \dfrac{1}{5}$ o estimador $\delta_{2}$ será melhor que o estimador $\delta_{1}.$ Caso contrário, ou seja, para $\theta \not \in [-\dfrac{1}{5},\dfrac{1}{5}],~\delta_{1} $ será melhor que $\delta_{2}.$
-\end{block}
+\begin{frame}{Qualidade da Decisão} 
+	\begin{block}{Função Risco} 
+		Para a variável aleatória contínua $Y,$ podemos calcular a função Risco: 
+
+\[R(\theta, \delta) =\mathbb{E}\Big({L(\theta, \delta(y))}\Big)
+			= \int_{-\infty}^{\infty} L(\theta, \delta(y)) \cdot f_Y(y)\, dy.\]
+
+		Isso permite comparar diferentes regras de decisão e escolher a que minimiza o risco.
+	\end{block} 
 \end{frame}
+
+%
+%\begin{frame}{Função Perda: dois contextos}
+%	\begin{block}{Definição 1 — Estimação}
+%		Quando $\delta(Y)$ é um estimador de $\theta$, 
+%		a função perda mede o \textbf{afastamento entre o valor verdadeiro e a estimativa}.
+%		\[
+%		L(\theta,\delta(Y)) \;\geq\; 0, \quad
+%		\text{ex.: } L(\theta,\delta(Y))=(\theta-\delta(Y))^2.
+%		\]
+%	\end{block}
+%	
+%	\begin{block}{Definição 2 — Decisão Geral}
+%		Quando $\delta(Y)$ é uma \textbf{ação} (ex.: 0 ou 1), 
+%		a função perda mede o \textbf{custo da ação escolhida dado o estado verdadeiro}.
+%		\[
+%		L(\theta,\delta(Y)) =
+%		\begin{cases}
+%			0, & \text{se a decisão for correta}, \\
+%			>0, & \text{se a decisão for incorreta}.
+%		\end{cases}
+%		\]
+%	\end{block}
+%	
+%\end{frame}
+%
+%\begin{frame}{Função Risco}
+%	
+%	\begin{block}{Função Risco}
+%		\justifying
+%		Para a variável aleatória contínua $Y$, podemos calcular o risco:
+%		\[
+%		R(\theta, \delta) = \mathbb{E}\!\left(L(\theta, \delta(Y))\right)
+%		= \int_{-\infty}^{\infty} L(\theta, \delta(y)) \cdot f_Y(y)\, dy.
+%		\]
+%	\end{block}
+%\end{frame}
+
+\begin{frame}{Exemplo — Estimação}
+	\begin{block}{}
+		\justifying
+		$X_1, X_2, \ldots, X_{25}\overset{\text{iid}}{\sim} N(\theta, 1), ~ \theta \in \R$. Seja $Y = \bar{X}\sim N(\theta, \tfrac{1}{25}).$ 
+		
+		Considere $\delta_1(y) = y, ~\delta_2(y) = 0$ e tome 
+		$L(\theta, \delta(y)) = (\theta - \delta(y))^2.$ 
+		
+		As funções de risco correspondentes são:
+		\begin{itemize}
+			\item $R(\theta, \delta_1) = E[(\theta - Y)^2] = Var(Y) = \tfrac{1}{25};$
+			\item $R(\theta, \delta_2) = E[(\theta - 0)^2] = \theta^2$.
+		\end{itemize}
+	\end{block}
+	\pause
+	\begin{block}{}
+		\justifying
+		Se nosso critério for selecionar o estimador com menor risco, temos:
+		\[
+		R(\theta, \delta_2)\leq R(\theta, \delta_1) 
+		\iff \theta^2\leq \tfrac{1}{25}
+		\iff -\tfrac{1}{5}\leq \theta \leq \tfrac{1}{5}.
+		\]
+	\end{block}
+	\pause
+	\begin{block}{}
+		\justifying
+		Assim, se $-\tfrac{1}{5}\leq \theta \leq \tfrac{1}{5}$ o estimador $\delta_{2}$ é melhor que $\delta_{1}$. 
+		Caso contrário, $\delta_{1}$ é melhor que $\delta_{2}$.
+	\end{block}
+\end{frame}
+
+\begin{frame}{Exemplo 2 — Decisão}
+%	\begin{block}{Definição Geral}
+%		\justifying
+%		Associamos a cada par $(\theta, \delta(y))$, $\theta \in \Omega$, um número não negativo 
+%		$L(\theta, \delta(y))$ que representa o \textbf{custo da decisão} $\delta(y)$ 
+%		quando o estado verdadeiro é $\theta$. 
+%		\begin{itemize}
+%			\item Chamamos a função $L$ de \textbf{função perda}.
+%		\end{itemize}
+%	\end{block}
+%	\pause
+
+	\begin{block}{}
+		\justifying
+		Queremos decidir se plantar uma cultura vai gerar lucro ($\theta=1$) ou não ($\theta=0$). 
+		
+		\[
+		\delta(y) \in \{0,1\}, \quad 0=\text{não plantar}, \; 1=\text{plantar}.
+		\]
+		
+		Definimos a perda:
+		\[
+		L(\theta,\delta(y)) =
+		\begin{cases}
+			0, & \text{se } \delta(y) = \theta \; (\text{decisão correta}), \\[6pt]
+			1, & \text{se } \delta(y) \neq \theta \; (\text{decisão incorreta}).
+		\end{cases}
+		\]
+	\end{block}
+	\pause
+	\begin{block}{Função Risco}
+		\justifying
+		O risco é a probabilidade de errar:
+		\[
+		R(\theta,\delta) = \mathbb{E}[L(\theta,\delta(Y))] 
+		= \Pr_\theta(\text{decisão incorreta}).
+		\]
+	\end{block}
+\end{frame}
+
+
+%\begin{frame}{}
+%\begin{block}{}
+%\justifying
+%Associamos a cada par $(\theta, \delta(y))$, $\theta \in \Omega$, um número não negativo $L(\theta, \delta(y))$ que reflete o quanto $\delta(y)$ está afastado de $\theta.$ 
+%\begin{itemize}
+%    \item Chamamos a função $L$ de função perda. 
+%\end{itemize}
+%\end{block}
+%\pause
+%\begin{block}{}
+%Para a variável aleatória contínua $Y,$ podemos calcular a função Risco:
+%$$R(\theta, \delta) =\mathbb{E}\Big({L(\theta, \delta(y))}\Big),$$ 
+%em que,
+%\begin{itemize}
+%    \item $\mathbb{E}\Big({L(\theta, \delta(y))}\Big) = \int_{-\infty}^{\infty} L(\theta, \delta(y)) \cdot f_Y(y)dy$
+%\end{itemize}
+%\end{block}
+%\end{frame}
+
+%\begin{frame}{Exemplo}
+%\begin{block}{}
+%\justifying
+%$X_1, X_2, \ldots, X_{25}\overset{\text{iid}}{\sim} N(\theta, 1), ~ \theta \in \R$. Seja $Y = \bar{X}\overset{\text{iid}}{\sim} N(\theta, \dfrac{1}{25}).$ Considere, $\delta_1(y) = y, ~\delta_2(y) = 0$ e tome $L(\theta, \delta(y)) = (\theta - \delta(y))^2.$ As funções de risco correspondentes são:
+%\begin{itemize}
+%    \item $R(\theta, \delta_1) = E[(\theta - Y)^2] = Var(Y) = \frac{1}{25};$
+%    \item $R(\theta, \delta_2) = E[(\theta - 0)^2] = \theta^2$.
+%\end{itemize}
+%\end{block}
+%\pause
+%\begin{block}{}
+%\justifying
+%Se nosso critério for selecionar o estimador com menor risco, temos:
+%$R(\theta, \delta_2)\leq R(\theta, \delta_1) \iff \theta^2\leq \dfrac{1}{25}\iff -\dfrac{1}{5}\leq \theta \leq \dfrac{1}{5}.$
+%\end{block}
+%\pause
+%\begin{block}{}
+%\justifying
+%Neste caso, se $-\dfrac{1}{5}\leq \theta \leq \dfrac{1}{5}$ o estimador $\delta_{2}$ será melhor que o estimador $\delta_{1}.$ Caso contrário, ou seja, para $\theta \not \in [-\dfrac{1}{5},\dfrac{1}{5}],~\delta_{1} $ será melhor que $\delta_{2}.$
+%\end{block}
+%\end{frame}
 
 \begin{frame}{}
 \begin{block}{}
