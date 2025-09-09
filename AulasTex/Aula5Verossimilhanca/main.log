@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=xelatex 2025.7.24)  8 SEP 2025 14:27
+This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=xelatex 2025.7.24)  9 SEP 2025 13:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2256,7 +2256,11 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <17.28> on input line 626.
  [54
 
-] [55
+]
+Overfull \vbox (4.10352pt too high) detected at line 662
+ []
+
+[55
 
 ] [56
 
@@ -2272,22 +2276,19 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 ] [62
 
-]
-[63
+] [63
 
 ] [64
-
-] [65
 
 ]
 Overfull \vbox (40.85243pt too high) detected at line 772
  []
 
-[66
+[65
+
+] [66
 
 ] [67
-
-] [68
 
 ]
 File: beamericonarticle.pdf Graphic file (type pdf)
@@ -2298,7 +2299,7 @@ File: beamericonarticle.pdf Graphic file (type pdf)
 <use beamericonarticle.pdf>
 File: beamericonarticle.pdf Graphic file (type pdf)
 <use beamericonarticle.pdf>
- [69
+ [68
 
 ]
 \tf@nav=\write7
@@ -2320,12 +2321,12 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 56725 strings out of 409617
- 1270304 string characters out of 5773810
- 2343249 words of memory out of 5000000
- 77875 multiletter control sequences out of 15000+600000
+ 56717 strings out of 409617
+ 1270015 string characters out of 5773810
+ 2343193 words of memory out of 5000000
+ 77867 multiletter control sequences out of 15000+600000
  624627 words of font info for 138 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  128i,36n,123p,759b,4877s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (69 pages).
+Output written on main.pdf (68 pages).
