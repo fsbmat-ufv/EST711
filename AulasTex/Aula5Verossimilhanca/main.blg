@@ -1,15 +1,15 @@
-[0] Config.pm:307> INFO - This is Biber 2.19
-[0] Config.pm:310> INFO - Logfile is 'main.blg'
-[113] biber-MSWIN64:340> INFO - === 
-[156] Biber.pm:419> INFO - Reading 'main.bcf'
-[278] Biber.pm:979> INFO - Found 3 citekeys in bib section 0
-[293] Biber.pm:4419> INFO - Processing section 0
-[304] Biber.pm:4610> INFO - Looking for bibtex file '../Referencias/Referencias.bib' for section 0
-[365] bibtex.pm:1713> INFO - LaTeX decoding ...
-[382] bibtex.pm:1519> INFO - Found BibTeX data source '../Referencias/Referencias.bib'
-[436] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
-[436] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[436] Biber.pm:4239> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'pt-BR'
-[436] Biber.pm:4245> INFO - No sort tailoring available for locale 'pt-BR'
-[440] bbl.pm:660> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[441] bbl.pm:763> INFO - Output to main.bbl
+[0] Config.pm:308> INFO - This is Biber 2.20
+[0] Config.pm:311> INFO - Logfile is 'main.blg'
+[127] biber-MSWIN64:340> INFO - === 
+[168] Biber.pm:420> INFO - Reading 'main.bcf'
+[288] Biber.pm:994> INFO - Found 3 citekeys in bib section 0
+[304] Biber.pm:4463> INFO - Processing section 0
+[318] Biber.pm:4654> INFO - Looking for bibtex file '../Referencias/Referencias.bib' for section 0
+[380] bibtex.pm:1713> INFO - LaTeX decoding ...
+[399] bibtex.pm:1519> INFO - Found BibTeX data source '../Referencias/Referencias.bib'
+[439] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
+[439] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[439] Biber.pm:4283> INFO - Sorting list 'nyt/global//global/global/global' of type 'entry' with template 'nyt' and locale 'pt-BR'
+[439] Biber.pm:4289> INFO - No sort tailoring available for locale 'pt-BR'
+[441] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[442] bbl.pm:779> INFO - Output to main.bbl

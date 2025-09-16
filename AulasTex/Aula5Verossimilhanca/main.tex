@@ -751,8 +751,10 @@ tem uma solução $\hat{\theta}_{n}$ tal que $\hat{\theta}_{n}\ConvP \theta_{0}.
 \end{frame}
 
 \begin{frame}{Demonstração}
+	\vspace{-0.5cm}
 \begin{block}{}
 \justifying
+\small
 Como $\theta_{0}$ é um ponto interior de $\Theta,$ existe $a>0$ tal que $(\theta_{0}-a,\theta_{0}+a)\subset\Theta.$ Defina, 
 \begin{align*}
     S_{n}=\{L(\theta_{0},\vecX)>L(\theta_{0}+a,\vecX)\}\cap \{L(\theta_{0},\vecX)>L(\theta_{0}-a,\vecX)\}
@@ -761,13 +763,13 @@ Provamos (Ver Teorema (\ref{Teo1})) que $\Lim P(S_{n})=1.$
 \end{block}
 \begin{block}{}
 \justifying
-Em $S_{n}$ temos a existência de um máximo local, digamos $\hat{\theta}_{n},$ ou seja, $\theta_{0}-a<\hat{\theta}_{n}<\theta_{0}+a$ e $\dfrac{\partial \ell(\theta)}{\partial\theta}|_{\theta=\hat{\theta}_{n}}=0.$ Portanto, 
+\small
+Como $L(\theta)$ é contínua, diferenciável e $L(\theta_{0})$ é maior que nos extremos, 
+o Teorema de Weierstrass garante a existência de $\hat{\theta}_{n} \in (\theta_{0}-a,\theta_{0}+a)$ que maximiza $L(\theta)$ e $\dfrac{\partial \ell(\theta)}{\partial\theta}|_{\theta=\hat{\theta}_{n}}=0.$ Portanto, 
 \begin{align*}
     S_{n}&\subset \{|\hat{\theta}_{n}-\theta_{0}|<a\}\cap\Big\{\dfrac{\partial \ell(\theta)}{\partial\theta}=0\Big\}\\
     \Rightarrow P(S_{n})&\leq P\Big(\{|\hat{\theta}_{n}-\theta_{0}|<a\}\cap\Big\{\dfrac{\partial \ell(\theta)}{\partial\theta}=0\Big\}\Big)
 \end{align*}
-Observação: Essa etapa é importante porque estamos garantindo que o EMV existe e está próximo de 
-$\hat{\theta}_{n}$ com alta probabilidade.
 \end{block}
 \end{frame}
 
