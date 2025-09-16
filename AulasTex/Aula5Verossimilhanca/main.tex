@@ -625,27 +625,27 @@ Queremos maximizar $L(\eta,\vec{X}_{n})=L(g(\theta),\vec{X}_{n})=L_{\vec{X}_{n}}
 	\end{block}
 \end{frame}
 
-\begin{frame}{Por que não podemos assumir diretamente que \( L_{\vec{X}_n}^{g}(\hat{\eta}) = L_{\vec{X}_n}(\hat{\theta}) \)?}
-	\begin{block}{}
-		\justifying
-		%Como \( \hat{\theta} \) é o EMV de \( \theta \), o valor correspondente de \( \eta \) é \( \hat{\eta} = g(\hat{\theta}) \). Isso significa que \( \hat{\theta} \in A(\hat{\eta}) \), já que \( A(\hat{\eta}) \) contém todos os \( \theta \)'s que produzem \( \hat{\eta} \). 
-		
-		Já sabemos que:
-		
-		\[
-		L_{\vec{X}_n}^{g}(\eta) = \max_{\theta \in A(\eta)} L_{\vec{X}_n}(\theta).
-		\]
-		
-		Quando \( \eta = \hat{\eta} \), a função de verossimilhança para \( \hat{\eta} \) é:
-		
-		\[
-		L_{\vec{X}_n}^{g}(\hat{\eta}) = \max_{\theta \in A(\hat{\eta})} L_{\vec{X}_n}(\theta).
-		\]
-		
-		Aqui estamos \textbf{maximizando a verossimilhança sobre um subconjunto de \( \Theta \)}, ou seja, estamos maximizando apenas sobre os \( \theta \)'s que produzem o valor \( \hat{\eta} \).
-		
-	\end{block}
-\end{frame}
+%\begin{frame}{Por que não podemos assumir diretamente que \( L_{\vec{X}_n}^{g}(\hat{\eta}) = L_{\vec{X}_n}(\hat{\theta}) \)?}
+%	\begin{block}{}
+%		\justifying
+%		%Como \( \hat{\theta} \) é o EMV de \( \theta \), o valor correspondente de \( \eta \) é \( \hat{\eta} = g(\hat{\theta}) \). Isso significa que \( \hat{\theta} \in A(\hat{\eta}) \), já que \( A(\hat{\eta}) \) contém todos os \( \theta \)'s que produzem \( \hat{\eta} \). 
+%		
+%		Já sabemos que:
+%		
+%		\[
+%		L_{\vec{X}_n}^{g}(\eta) = \max_{\theta \in A(\eta)} L_{\vec{X}_n}(\theta).
+%		\]
+%		
+%		Quando \( \eta = \hat{\eta} \), a função de verossimilhança para \( \hat{\eta} \) é:
+%		
+%		\[
+%		L_{\vec{X}_n}^{g}(\hat{\eta}) = \max_{\theta \in A(\hat{\eta})} L_{\vec{X}_n}(\theta).
+%		\]
+%		
+%		Aqui estamos \textbf{maximizando a verossimilhança sobre um subconjunto de \( \Theta \)}, ou seja, estamos maximizando apenas sobre os \( \theta \)'s que produzem o valor \( \hat{\eta} \).
+%		
+%	\end{block}
+%\end{frame}
 
 \begin{frame}{Por que não podemos assumir diretamente que \( L_{\vec{X}_n}^{g}(\hat{\eta}) = L_{\vec{X}_n}(\hat{\theta}) \)?}
 	\begin{block}{}
@@ -656,7 +656,7 @@ Queremos maximizar $L(\eta,\vec{X}_{n})=L(g(\theta),\vec{X}_{n})=L_{\vec{X}_{n}}
 		L_{\vec{X}_n}^{g}(\hat{\eta}) = \max_{\theta \in A(\hat{\eta})} L_{\vec{X}_n}(\theta) \geq L_{\vec{X}_n}(\hat{\theta}),
 		\]
 		
-		porque a maximização sobre o conjunto \( A(\hat{\eta}) \) pode resultar em um valor de verossimilhança maior do que \( L(\hat{\theta}) \), que foi obtido ao maximizar sobre todo o espaço \( \Theta \), e não apenas sobre \( A(\hat{\eta}) \).
+		porque a maximização sobre o conjunto \( A(\hat{\eta}) \) pode resultar em um valor de verossimilhança maior do que \( L(\hat{\theta}) \), que foi obtido ao maximizar sobre todo o espaço \( \Theta \), e não apenas sobre \( A(\hat{\eta}) \). Mas, lembre-se que \( \theta' \in A(\hat{\eta}) \).
 		
 	\end{block}
 \end{frame}
