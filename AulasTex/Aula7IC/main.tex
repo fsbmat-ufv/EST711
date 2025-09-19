@@ -189,6 +189,7 @@ conterá $\theta_{0}$ com probabilidade $1-\alpha,$ aproximadamente.
 \end{block}
 \end{frame}
 
+
 \begin{frame}{}
 \begin{block}{}
 \justifying
@@ -254,7 +255,7 @@ Com isso,
 \end{block}
 \end{frame}
 
-\begin{frame}{}
+\begin{frame}{Via Método Delta}
 \begin{block}{}
 \justifying
 Outra forma de fazer é utilizar o método delta para encontrar uma função $g$ tal que $p(1-p)[g^{'}(p)]^{2}=k~(\text{constante}).$ Segue que,
@@ -274,6 +275,15 @@ Um intervalo de confiança $(1-\alpha)\%$ assintótico para $p$ pode ser obtido 
 \end{align*}
 Escreva o intervalo de confiança explicitamente!
 \end{block}
+%\pause
+%\begin{block}{}
+%$IC_{1-\alpha}(p)\;=\;
+%\Bigg[
+%\ \sin^{2}\!\Big(\arcsin\sqrt{\hat p}-\frac{z_{1-\alpha/2}}{2\sqrt{n}}\Big)\;,\;
+%\sin^{2}\!\Big(\arcsin\sqrt{\hat p}+\frac{z_{1-\alpha/2}}{2\sqrt{n}}\Big)
+%\ \Bigg].
+%$
+%\end{block}
 \end{frame}
 
 \begin{frame}{Exemplo: Intervalo de Confiança para $\mu$ sob Normalidade}
@@ -329,7 +339,13 @@ Segue que,
 \pause
 \begin{block}{}
 \justifying
-Usamos o fato de $\sqrt{\dfrac{n}{n_{1}}}\rightLim\sqrt{\dfrac{1}{\lambda_{1}}}$ e $\sqrt{n_{1}}(\Bar{X}-\mu_{1})\ConvD N(0,\sigma_{1}^{2}).$
+\[
+\operatorname{Var}\!\big(\sqrt{n}(\bar X-\mu_{1})\big)
+= n\,\operatorname{Var}(\bar X)
+= n\,\frac{\sigma_{1}^{2}}{n_{1}}
+\;\xrightarrow[n\to\infty]{}\;
+\frac{\sigma_{1}^{2}}{\lambda_{1}}.
+\]
 \end{block}
 \end{frame}
 
