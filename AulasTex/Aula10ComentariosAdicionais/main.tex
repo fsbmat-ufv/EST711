@@ -17,6 +17,47 @@
 
 \frame{\titlepage}
 
+% --- INSERIR APÓS \frame{\titlepage} E ANTES DO SUMÁRIO ---
+
+% SLIDE 1/2 — Motivação e perguntas
+\begin{frame}{Por que Testes de Hipóteses e Poder importam?}
+	\begin{block}{Decidir sob incerteza}
+		\justifying
+		No mundo real decidimos com dados imperfeitos: aprovar um tratamento, liberar um lote, avaliar uma política. 
+		Testes de hipóteses formalizam essa decisão, controlando o \textbf{tamanho} ($\alpha$) e quantificando a capacidade de detectar efeitos reais via \textbf{poder} ($1-\beta$).
+	\end{block}
+	
+	\pause
+	\begin{block}{Perguntas-motrizes da aula}
+		\begin{itemize}[<+->]
+			\item Como controlar erro tipo I e compreender erro tipo II?
+			\item O que determina o \textbf{poder} e como aumentá-lo (n, $\sigma$, efeito, $\alpha$)?
+			\item Qual a relação entre \textbf{teste bilateral} e \textbf{intervalo de confiança}?
+			\item Como interpretar corretamente o \textbf{p-valor}?
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+% SLIDE 2/2 — Objetivos e roteiro
+\begin{frame}{O que você levará desta aula}
+	\begin{block}{Ao final, você será capaz de}
+		\begin{itemize}[<+->]
+			\item Derivar/aplicar testes (Z, $t$, proporções, duas amostras) e obter \textbf{valores críticos}.
+			\item Traçar e interpretar \textbf{curvas de poder} e seus trade-offs.
+			\item Conectar decisão em teste com \textbf{IC}: incluir/excluir $\mu_0$.
+			\item Reportar \textbf{p-valor} com ênfase também em \textbf{efeito prático}.
+		\end{itemize}
+	\end{block}
+	
+	\pause
+	\begin{block}{Roteiro aplicado}
+		\justifying
+		Exemplos numéricos (média e proporção), cenários uni/bilaterais, comparação de níveis $\alpha$, e visualização interativa do poder (\emph{shiny}) para orientar decisões em pesquisa e indústria.
+	\end{block}
+\end{frame}
+% --- FIM DOS 2 SLIDES INTRODUTÓRIOS ---
+
+
 \begin{frame}{}
 \frametitle{\bf Sumário}
 \tableofcontents
@@ -24,52 +65,67 @@
 
 \section{Exemplos}
 \subsection{Exemplo 1: Teste Bilateral}
-\begin{frame}{Teste Bilateral para a Média Baseado em Grandes Amostras}
-\begin{block}{}
-\justifying
-Considere $X$ uma variável aleatória com média $\mu$ e variância finita $\sigma^2$. Queremos testar
-
-\begin{align}\label{t1}
-H_0 : \mu = \mu_0 \quad \text{contra} \quad H_1 : \mu \neq \mu_0
-\end{align}
-
-onde $\mu_0$ é especificado. Sejam $X_1, \ldots, X_n$ uma amostra aleatória da distribuição de $X$ e denotem a média e a variância da amostra por $\bar{X}$ e $S^2$, respectivamente.
-\end{block}
+\begin{frame}{Exemplo 1: Teste Bilateral para a Média com Variância Conhecida}
+	\begin{block}{}
+		\justifying
+		Considere $X$ uma variável aleatória com média $\mu$ e variância finita $\sigma^2$. Queremos testar
+		\begin{align}\label{t1}
+			H_0 : \mu = \mu_0 \quad \text{contra} \quad H_1 : \mu \neq \mu_0
+		\end{align}
+		onde $\mu_0$ é especificado. Sejam $X_1, \ldots, X_n$ uma amostra aleatória i.i.d. da distribuição de $X$ e denotem a média e a variância amostrais por $\bar{X}$ e $S^2$, respectivamente. Vamos fazer um estudo de sua função poder.
+	\end{block}
 \end{frame}
 
-\begin{frame}{}
-\begin{block}{}
-\justifying
-Para o teste unilateral, rejeitamos $H_0$ se $\bar{X}$ for muito grande. Portanto, para as hipóteses (\ref{t1}), usamos a regra de decisão
-
-\begin{align}\label{t2}
-\text{Rejeitar } H_0 \text{ em favor de } H_1 \text{ se } \bar{X} \leq h \text{ ou } \bar{X} \geq k
-\end{align}
-
-onde $h$ e $k$ são tais que $\alpha = P_{H_0} [\bar{X} \leq h \text{ ou } \bar{X} \geq k]$. Claramente, $h < k$; portanto, temos
-
-\begin{align}
-\alpha = P_{H_0} [\bar{X} \leq h \text{ ou } \bar{X} \geq k] = P_{H_0} [\bar{X} \leq h] + P_{H_0} [\bar{X} \geq k].
-\end{align}
-\end{block}
+\begin{frame}{Regra de decisão (bicaudal)}
+	\begin{block}{}
+		\justifying
+		Para o teste \textbf{bilateral}, rejeitamos $H_0$ quando $\bar{X}$ estiver \emph{muito distante} de $\mu_0$. Assim, para as hipóteses \eqref{t1}, usamos a regra de decisão
+		\begin{align}\label{t2}
+			\text{Rejeitar } H_0 \text{ em favor de } H_1 \text{ se } \bar{X} \leq h \ \text{ ou } \ \bar{X} \geq k,
+		\end{align}
+		onde $h<k$ são tais que
+		\begin{align}
+			\alpha \;=\; P_{H_0} [\bar{X} \leq h \ \text{ ou } \ \bar{X} \geq k]
+			= P_{H_0} [\bar{X} \leq h] + P_{H_0} [\bar{X} \geq k].
+		\end{align}
+	\end{block}
 \end{frame}
 
-\begin{frame}{}
-\begin{block}{}
-\justifying
-Uma vez que, pelo menos para amostras grandes, a distribuição de $X$ é simétrica em torno de $\mu_0$, sob $H_0$, uma regra intuitiva é dividir $\alpha$ igualmente entre os dois termos do lado direito da expressão acima; isto é, $h$ e $k$ são escolhidos de forma que
-
-\begin{align}\label{t3}
-P_{H_0} [\bar{X} \leq h] = \frac{\alpha}{2} \quad \text{e} \quad P_{H_0} [\bar{X} \geq k] = \frac{\alpha}{2}.
-\end{align}
-
-Sabemos que, para amostras grandes, $(\bar{X} - \mu_0) / (S / \sqrt{n})$ é aproximadamente $N(0, 1)$. Isso e (\ref{t3}) levam à regra de decisão aproximada
-
-\begin{align}\label{t4}
-\text{Rejeitar } H_0 \text{ em favor de } H_1 \text{ se } \left|\frac{\bar{X} - \mu_0}{S / \sqrt{n}}\right| \geq z_{1-\alpha/2}.
-\end{align}
-\end{block}
+\begin{frame}{Aproximação assintótica e regiões críticas}
+	\begin{block}{}
+		\justifying
+		Pelo \textbf{TCL} e por \textbf{Slutsky}, sob $H_0$ temos, para $n$ grande,
+		\[
+		T_n \;=\; \frac{\sqrt{n}\,(\bar X-\mu_0)}{S} \ \xrightarrow{d}\ N(0,1).
+		\]
+		Logo, uma escolha natural é dividir $\alpha$ igualmente entre as duas caudas da \emph{distribuição assintótica de $T_n$}:
+		\begin{align}\label{t3}
+			P_{H_0}\!\left[T_n \leq -z_{1-\alpha/2}\right] = \frac{\alpha}{2}
+			\quad\text{e}\quad
+			P_{H_0}\!\left[T_n \geq z_{1-\alpha/2}\right] = \frac{\alpha}{2}.
+		\end{align}
+		Isso leva à regra (nível assintótico $\alpha$):
+		\begin{align}\label{t4}
+			\text{Rejeitar } H_0 \text{ em favor de } H_1 \;\; \text{se} \;\;
+			\left|\frac{\bar{X} - \mu_0}{S / \sqrt{n}}\right| \geq z_{1-\alpha/2}.
+		\end{align}
+	\end{block}
 \end{frame}
+
+\begin{frame}{Aproximação assintótica e regiões críticas}
+	\begin{block}{}
+		\justifying
+		Equivalentemente, em termos de $\bar X$,
+		\[
+		h \approx \mu_0 - z_{1-\alpha/2}\,\frac{S}{\sqrt{n}}
+		\quad\text{e}\quad
+		k \approx \mu_0 + z_{1-\alpha/2}\,\frac{S}{\sqrt{n}}.
+		\]
+		\smallskip
+		\textit{Observação:} Se $X$ é exatamente Normal, então $T_n \sim t_{(n-1)}$ sob $H_0$ (para qualquer $n$) e podemos usar $t_{1-\alpha/2,(n-1)}$ no lugar de $z_{1-\alpha/2}$.
+	\end{block}
+\end{frame}
+
 
 \begin{frame}{}
 \begin{block}{}
@@ -90,8 +146,7 @@ em que $\phi(z)$ é a função de densidade de probabilidade de uma variável al
 \end{block}
 \end{frame}
 
-\subsection{Exemplo 2}
-\begin{frame}{Exemplo 2: Exercício 4.6.2}
+\begin{frame}{Exercício 4.6.2}
 \begin{block}{}
 \justifying
 Considere $a=\dfrac{\sqrt{n}(\mu_0 - \mu)}{\sigma}$ e notem que,
@@ -119,7 +174,7 @@ Nesse caso,
 \begin{align*}
     |z_{\alpha/2}|+a>|z_{\alpha/2}|-a&\Rightarrow -\dfrac{(|z_{\alpha/2}|+a)^{2}}{2}<-\dfrac{(|z_{\alpha/2}|-a)^{2}}{2}\\
     &\Rightarrow e^{-\dfrac{(|z_{\alpha/2}|+a)^{2}}{2}} < e^{-\dfrac{(|z_{\alpha/2}|-a)^{2}}{2}}\\
-    &\Rightarrow \dfrac{\sqrt{n}}{\sigma\sqrt{2\pi}}\left[e^{-\dfrac{(|z_{\alpha/2}|+a)^{2}}{2}}-e^{-\dfrac{(|z_{\alpha/2}|-a)^{2}}{2}}\right]<0\\
+\Rightarrow   \dfrac{\sqrt{n}}{\sigma\sqrt{2\pi}} & \left[e^{-\dfrac{(|z_{\alpha/2}|+a)^{2}}{2}}-e^{-\dfrac{(|z_{\alpha/2}|-a)^{2}}{2}}\right]<0\\
     &\Rightarrow \gamma'(\mu)<0
 \end{align*}
 \end{block}
@@ -139,8 +194,23 @@ Nesse caso,
 \end{block}
 \end{frame}
 
-\subsection{Exemplo 3}
-\begin{frame}{}
+\begin{frame}{Conclusões (Teste bilateral, grandes amostras)}
+	\begin{block}{}
+		\justifying
+		\begin{itemize}
+			\item \textbf{Pressupostos:} $X_1,\ldots,X_n$ i.i.d., $E[X]=\mu$, $V(X)=\sigma^2<\infty$; $n$ grande.
+			\item \textbf{Estatística:} $T_n=\dfrac{\sqrt{n}(\bar X-\mu_0)}{S}\ \overset{H_0}{\xrightarrow{d}}\ N(0,1)$.
+			\item \textbf{Regra (nível $\alpha$):} rejeitar $H_0$ se $|T_n|\ge z_{1-\alpha/2}$.\\
+			\item \textbf{Função poder:} $\gamma(\mu_0)=\alpha$; $\gamma'(\mu)<0$ se $\mu<\mu_0$ e $\gamma'(\mu)>0$ se $\mu>\mu_0$; \textbf{consistente}: $\gamma(\mu)\to1$ para $\mu\neq\mu_0$ quando $n\to\infty$.
+			\item \textbf{Casos especiais:} se $X$ é Normal, usar $t_{n-1}$ no lugar de $z$; se $\sigma$ é conhecido, o teste $Z$ é exato.
+			\item \textbf{Prática:} para $n$ pequeno ou caudas pesadas, preferir $t$, transformações, bootstrap ou testes robustos.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+
+\subsection{Exemplo 2}
+\begin{frame}{Exemplo 2: Teste Bilateral para a Média com Variância Conhecida}
 \begin{block}{}
 \justifying
 Suponha que desejamos testar
@@ -151,10 +221,10 @@ H_0 : \mu = 30,000 \text{ versus } H_1 : \mu \neq 30,000.
 Suponha que $n = 20$ e $\alpha = 0.01$. Então, a regra de rejeição se torna
 
 \begin{align}
-\text{Rejeitar } H_0 \text{ em favor de } H_1 \text{ se } \frac{\Bar{X} - 30,000}{S/\sqrt{20}} \geq |z_{\frac{0.01}{2}}|.
+\text{Rejeitar } H_0 \text{ em favor de } H_1 \text{ se } \frac{\Bar{X} - 30,000}{\sigma/\sqrt{20}} \geq |z_{\frac{0.01}{2}}|.
 \end{align}
 
-A próxima Figura exibe a curva da função poder para este teste quando $S$ é substituído por $\sigma = 5000$. Para comparação, a curva da função poder para o teste com nível $\alpha = 0.05$ também é apresentada. Veja também \href{https://est711.shinyapps.io/FuncaoPoder/}{shiny da função poder!}
+A próxima Figura exibe a curva da função poder para este teste quando $\sigma = 5000$. Para comparação, a curva da função poder para o teste com nível $\alpha = 0.05$ também é apresentada. Veja também \href{https://est711.shinyapps.io/FuncaoPoder/}{shiny da função poder!}
 \end{block}
 \end{frame}
 
@@ -171,54 +241,55 @@ A próxima Figura exibe a curva da função poder para este teste quando $S$ é 
 \end{block}
 \end{frame}
 
-\begin{frame}{}
-\begin{block}{}
-\justifying
-Se assumirmos que $X$ tem uma distribuição normal, então, o seguinte teste tem tamanho exato $\alpha$ para testar $H_0 : \mu = \mu_0$ versus $H_1 : \mu \neq \mu_0$:
-
-\begin{align}
-\text{Rejeitar } H_0 \text{ em favor de } H_1 \text{ se } \frac{\Bar{X} - \mu_0}{S/\sqrt{n}} \geq t_{\alpha/2, n-1}. 
-\end{align}
-
-Ele também possui uma curva da função poder em forma de ``bacia'' semelhante à Figura anterior, embora não seja tão fácil de mostrar; veja Lehmann (1986).
-\end{block}
+\begin{frame}{Exemplo 3: Teste Bilateral para a Média com Variância Desconhecida}
+	\begin{block}{}
+		\justifying
+		Se $X$ é Normal, então sob $H_0$ temos
+		\[
+		T=\frac{\bar X-\mu_0}{S/\sqrt{n}} \sim t_{\,n-1}.
+		\]
+		Logo, o teste bicaudal de tamanho exato $\alpha$ é:
+		\[
+		\text{Rejeitar } H_0 \text{ se } \left|\frac{\bar X-\mu_0}{S/\sqrt{n}}\right| \ \ge\ t_{1-\alpha/2,\,n-1}.
+		\]
+		Ele também possui uma curva da função poder em forma de `bacia'' semelhante à Figura anterior, embora não seja tão fácil de mostrar; veja Lehmann (1986).
+	\end{block}
 \end{frame}
 
+
 \subsection{Exemplo 4}
-\begin{frame}{}
+\begin{frame}{Exemplo 4: Teste Unilateral para a Média com Variância Conhecida}
 \begin{block}{Distribuição Normal:}
 \justifying
 
 \begin{itemize}
-\item \textbf{Hipótese Nula (H0):} A média de uma população é igual a 100.
-\item \textbf{Hipótese Alternativa (H1):} A média de uma população é maior que 100.
-\item \textbf{Tamanho da amostra:} 30
-\item \textbf{Desvio padrão populacional conhecido:} 15
-\item \textbf{Nível de significância:} 0,05
+\item \textbf{Hipótese Nula (H0):} A média de uma população é igual a 100 e \textbf{Hipótese Alternativa (H1):} A média de uma população é maior que 100.
+\item $n=30,~\sigma=15$ e $\alpha=0,05$
 \item \textbf{Média real sob H1 (Suposição):} 105
 \end{itemize}
 
 Para calcular a função poder, usamos a distribuição normal padrão ($Z$) e a fórmula:
 
-\[ \text{Poder} = P(Z > Z_{\alpha} - \frac{\mu - \mu_0}{\sigma/\sqrt{n}}) \]
+\[ \gamma(\mu) = P(Z > Z_{1-\alpha} - \frac{\mu - \mu_0}{\sigma/\sqrt{n}}) \]
 
-em que $Z_{\alpha}$ é o valor crítico para o nível de significância $\alpha$.
+em que $Z_{1-\alpha}$ é o valor crítico para o nível de significância $\alpha$.
 \end{block}
 \end{frame}
 
 \begin{frame}{}
 \begin{block}{}
 \justifying
-Para $\alpha = 0,05$, $Z_{0,05} \approx 1,645.$
+Para $\alpha = 0,05$, $Z_{0,95} \approx 1,645.$
 
 Agora, substituindo os valores:
 \begin{align*}
-    \text{Poder} &= P(Z > 1,645 - \frac{105 - 100}{15/\sqrt{30}})\\
+    \gamma(105) &= P(Z > 1,645 - \frac{105 - 100}{15/\sqrt{30}})\\
     &= P(Z > 1,645 - 1,826)\\
     &= P(Z > -0,181)
 \end{align*}
 
-A probabilidade de $Z$ ser maior que $-0,181$ é aproximadamente $0,5718$. Portanto, o poder do teste é de aproximadamente $0,572$.
+A probabilidade de $Z$ ser maior que $-0,181$ é aproximadamente $0,5718$. Portanto, o poder do teste é de aproximadamente $0,572$. Logo, com essa amostra, temos cerca de $57{,}2\%$ de chance de rejeitar $H_0$ quando a média verdadeira é $105$. O erro tipo II é $\beta \approx 0{,}428$.
+
 \end{block}
 \end{frame}
 
@@ -293,39 +364,40 @@ A probabilidade de $Z$ ser maior que $-0,181$ é aproximadamente $0,5718$. Porta
 %\end{block}
 %\end{frame}
 
-\subsection{Exemplo 5: Teste unilateral a direita}
-\begin{frame}{Teste unilateral para a Média Baseado em Grandes Amostras}
+\subsection{Teste unilateral a direita}
+\begin{frame}{Exemplo 5: Teste $Z$ unilateral para a média ($\sigma$ conhecido)}
 	\begin{block}{}
 		\justifying
-		Vamos testar a seguinte hipótese nula e alternativa:
-		
+		Testar
 		\[
-		H_0: \mu \leq \mu_0 \quad \text{contra} \quad H_1: \mu > \mu_0
+		H_0:\ \mu \le \mu_0 \quad \text{vs} \quad H_1:\ \mu > \mu_0,
 		\]
-		
-		Em que $\mu_0 = 100$ e $\mu$ é a média populacional desconhecida. Suponha que temos uma amostra de tamanho $n = 36$, com desvio padrão populacional conhecido $\sigma = 12$, e o nível de significância $\alpha = 0,05$.
-		
-	\end{block}
-	\pause
-	\begin{block}{}
-		\justifying
-		Vamos rejeitar $H_0$ se $\bar{X}>x_{c}>100,$ tal que $\alpha=P_{\text{Sob}~H_{0}}(\bar{X}>x_{c})$
+		com $\mu_0=100$, $n=36$, $\sigma=12$, $\alpha=0{,}05$. Rejeitamos $H_0$ se
 		\[
-		Z_{\alpha} = 1,645
-		\]	
+		Z=\frac{\bar X-\mu_0}{\sigma/\sqrt{n}} > z_{1-\alpha}.
+		\]
+		Como $z_{1-\alpha}=z_{0{,}95}\approx 1{,}645$, o ponto crítico em termos de $\bar X$ é
+		\[
+		x_c=\mu_0+z_{1-\alpha}\frac{\sigma}{\sqrt{n}}
+		=100+1{,}645\cdot\frac{12}{6}
+		=100+3{,}29
+		=103{,}29.
+		\]
+		Logo, rejeite $H_0$ se $\bar X>103{,}29$. Observação: $\alpha=P_{\mu=\mu_0}(\bar X>x_c)$.
 	\end{block}
 \end{frame}
 
+
 \begin{frame}{}
-	\begin{block}{Cálculo do Valor Crítico sob $H_{0}$}
-		\justifying
-		\begin{align*}
-			0,05&=P_{\text{Sob}~H_{0}}(\bar{X}>x_{c})=P(Z>\dfrac{(x_{c}-100)\times6}{12})\\
-			&\Rightarrow \dfrac{(x_{c}-100)\times6}{12}=1,645\\
-			&\Rightarrow x_{c}=103,29
-		\end{align*}
-	\end{block}
-	\pause
+%	\begin{block}{Cálculo do Valor Crítico sob $H_{0}$}
+%		\justifying
+%		\begin{align*}
+%			0,05&=P_{\text{Sob}~H_{0}}(\bar{X}>x_{c})=P(Z>\dfrac{(x_{c}-100)\times6}{12})\\
+%			&\Rightarrow \dfrac{(x_{c}-100)\times6}{12}=1,645\\
+%			&\Rightarrow x_{c}=103,29
+%		\end{align*}
+%	\end{block}
+%	\pause
 	\begin{block}{Cálculo do Poder do Teste}
 		\justifying
 		O poder do teste é a probabilidade de rejeitar $H_0$ quando a verdadeira média $\mu$ é maior que $\mu_0$. Assumindo que a verdadeira média é $\mu = 105:$
@@ -344,7 +416,7 @@ A probabilidade de $Z$ ser maior que $-0,181$ é aproximadamente $0,5718$. Porta
 \end{frame}
 
 \subsection{Exemplo 6: Teste unilateral a esquerda}
-\begin{frame}{Teste unilateral para a Média Baseado em Grandes Amostras}
+\begin{frame}{Exemplo 6: Teste unilateral para a Média ($\sigma$ conhecido)}
 	\begin{block}{}
 		\justifying
 		Vamos testar a seguinte hipótese nula e alternativa:
@@ -395,7 +467,7 @@ A probabilidade de $Z$ ser maior que $-0,181$ é aproximadamente $0,5718$. Porta
 \end{frame}
 
 \subsection{Exemplo 7: Teste unilateral para a Proporção Binomial}
-\begin{frame}{}
+\begin{frame}{Exemplo 7: Teste unilateral para a Proporção Binomial}
 	\begin{block}{}
 		\justifying
 		Vamos testar a seguinte hipótese nula e alternativa:
@@ -443,68 +515,71 @@ A probabilidade de $Z$ ser maior que $-0,181$ é aproximadamente $0,5718$. Porta
 \end{frame}
 
 \subsection{Exemplo 8: Teste Bilateral}
-\begin{frame}{Teste Bilateral para a Média Baseado em Grandes Amostras}
+\begin{frame}{Exemplo 8: Teste Bilateral para a Média}
 	\begin{block}{}
 		\justifying
-		Vamos testar a seguinte hipótese nula e alternativa:
-		
+		Vamos testar:
 		\[
 		H_0: \mu = \mu_0 = 50 \quad \text{contra} \quad H_1: \mu \neq 50
 		\]
-		
-		Onde \( \mu_0 = 50 \) é a média sob \( H_0 \) e \( \mu \) é a média populacional desconhecida. Temos uma amostra de tamanho \( n = 36 \), com desvio padrão populacional \( \sigma = 10 \), e o nível de significância \( \alpha = 0.05 \).
-		
+		com $n=36$, desvio-padrão populacional conhecido $\sigma=10$ e nível $\alpha=0{,}05$.
 	\end{block}
 	\pause
-	\begin{block}{}
+	\begin{block}{Regra de decisão e quantis}
 		\justifying
-		Vamos rejeitar $H_0$ se $\bar{X}>k>50,$ ou se $\bar{X}<h<50,$ tal que $\alpha=P_{\text{Sob}~H_{0}}(\bar{X}>k)+P_{\text{Sob}~H_{0}}(\bar{X}<h),$ assim,
+		Rejeitar $H_0$ se $\bar X>k$ ou $\bar X<h$, com
 		\[
-		\dfrac{\alpha}{2}=P_{\text{Sob}~H_{0}}(\bar{X}>k)=P_{\text{Sob}~H_{0}}(\bar{X}<h)\Rightarrow Z_{\frac{\alpha}{2}} = 1,96
-		\]	
+		\frac{\alpha}{2} = P_{H_0}(\bar X>k) = P_{H_0}(\bar X<h),\quad
+		z_{1-\alpha/2} = 1{,}96.
+		\]
 	\end{block}
 \end{frame}
 
 \begin{frame}{}
-	\begin{block}{Cálculo do Valor Crítico sob $H_{0}$ para o lado direito}
+	\begin{block}{Crítico do lado direito ($k$)}
 		\justifying
 		\begin{align*}
-			0,025&=P_{\text{Sob}~H_{0}}(\bar{X}>k)=P(Z>\dfrac{(k-50)\times6}{10})\\
-			&\Rightarrow \dfrac{(k-50)\times6}{10}=1,96\\
-			&\Rightarrow x_{c}=53,27
+			0{,}025 &= P_{H_0}(\bar X>k) = P\!\left(Z > \frac{k-50}{\sigma/\sqrt{n}}\right)
+			= P\!\left(Z > \frac{(k-50)\cdot 6}{10}\right) \\
+			&\Rightarrow \frac{(k-50)\cdot 6}{10} = 1{,}96
+			\;\Rightarrow\; k = 50 + 1{,}96\cdot \frac{10}{6} = 53{,}27.
 		\end{align*}
 	\end{block}
 	\pause
-	\begin{block}{Cálculo do Valor Crítico sob $H_{0}$ para o lado esquerdo}
+	\begin{block}{Crítico do lado esquerdo ($h$)}
 		\justifying
 		\begin{align*}
-			0,025&=P_{\text{Sob}~H_{0}}(\bar{X}<h)=P(Z<\dfrac{(h-50)\times6}{10})\\
-			&\Rightarrow \dfrac{(h-50)\times6}{10}=-1,96\\
-			&\Rightarrow x_{c}=46,73
+			0{,}025 &= P_{H_0}(\bar X<h) = P\!\left(Z < \frac{h-50}{\sigma/\sqrt{n}}\right)
+			= P\!\left(Z < \frac{(h-50)\cdot 6}{10}\right) \\
+			&\Rightarrow \frac{(h-50)\cdot 6}{10} = -1{,}96
+			\;\Rightarrow\; h = 50 - 1{,}96\cdot \frac{10}{6} = 46{,}73.
 		\end{align*}
 	\end{block}
 \end{frame}
 
 \begin{frame}{}
-	\begin{block}{Cálculo do Poder do Teste}
+	\begin{block}{Função poder (bicaudal)}
 		\justifying
-		A função poder é a probabilidade de rejeitar \( H_0 \) para $\mu\in \mathbb{R}.$
-		\begin{align*}
-			\gamma(\mu)&=P_{\mu}(\bar{X}>53,27)=P_{\mu}(\bar{X}<46,73)\\
-		\end{align*}
+		Para $\mu\in\mathbb{R}$,
+		\[
+		\gamma(\mu) \;=\; P_{\mu}(\bar X>k) \;+\; P_{\mu}(\bar X<h).
+		\]
 	\end{block}
 	\pause
-	\begin{block}{Cálculo do Poder do Teste}
+	\begin{block}{Exemplo numérico: $\mu=54$}
 		\justifying
-		O poder do Teste é a probabilidade de rejeitar $H_{0}$ quando a média verdadeira não é $50.$ Se $\mu=54,$ o poder do teste é:
+		Com $k=53{,}27$, $h=46{,}73$ e $\sigma/\sqrt{n}=10/6\approx 1{,}667$,
 		\begin{align*}
-			\gamma(\mu)&=P_{\mu = 54}(\bar{X}>53,27)=P_{\mu = 54}(\bar{X}<46,73)\\
-			&=P(Z < -4,36) + P(Z > -0,438)\\
-			&\approx P(Z > -0,438) = 0,67
+		\gamma(54) = P\!\left(Z>\frac{53{,}27-54}{1{,}667}\right) + P\!\left(Z<\frac{46{,}73-54}{1{,}667}\right)\\
+		= P(Z>-0{,}438) + P(Z<-4{,}36).
 		\end{align*}
+		Como $P(Z<-4{,}36)\approx 0$, conclui-se
+		\[
+		\gamma(54)\approx P(Z>-0{,}438)\approx 0{,}67.
+		\]
 	\end{block}
-	\nocite{hogg}
 \end{frame}
+
 
 \begin{frame}{}
 	\begin{block}{}
@@ -513,17 +588,17 @@ A probabilidade de $Z$ ser maior que $-0,181$ é aproximadamente $0,5718$. Porta
 \end{frame}
 
 \subsection{Exemplo 9: para Duas Amostras Independentes}
-\begin{frame}{}
+\begin{frame}{Exemplo 9: para Duas Amostras Independentes}
 	\vspace{-0.2cm}
 	\begin{block}{}
 		\justifying
 		Considere amostras aleatórias independentes de $N(\mu_1, \sigma^2)$ e $N(\mu_2, \sigma^2)$, respectivamente. Definimos $n = n_1 + n_2$ como o tamanho combinado da amostra e $S_{p}^2$ como o estimador combinado da variância comum, dado por
 		\begin{align*}
-			S_{p}^2 = \frac{(n_1 - 1)S_1^2 + (n_2 - 1)S_2^2}{n - 2}.
+			S_{c}^2 = \frac{(n_1 - 1)S_1^2 + (n_2 - 1)S_2^2}{n - 2}.
 		\end{align*}
 		A um nível de significância $\alpha = 0.05$, rejeitamos $H_0 : \mu_1 = \mu_2$ em favor da alternativa unilateral $H_1 : \mu_1 > \mu_2$ se
 		\begin{align*}
-			T = \frac{\bar{X} - \bar{Y} - 0}{S_p\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}  \geq t_{0.05, n-2},
+			T = \frac{\bar{X} - \bar{Y} - 0}{S_c\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}  \geq t_{0.05, n-2},
 		\end{align*}
 		pois, sob $H_0$, $T$ segue uma distribuição t com $n - 2$ graus de liberdade.
 	\end{block}
@@ -555,8 +630,8 @@ Ou seja, aceitamos $H_0$ ao nível de significância $\alpha$ se e somente se $\
 \end{block}
 \end{frame}
 
-\subsection{Exemplo 1 - Distribuição Binomial}
-\begin{frame}{Exemplo 4}
+\subsection{Exemplo 10 - Distribuição Binomial}
+\begin{frame}{Exemplo 10 - Distribuição Binomial}
 \begin{block}{}
 \justifying
 Suponha que $X$ segue uma distribuição binomial com parâmetros $1$ e $p$. Considere o teste de hipótese $H_0 : p = p_0$ contra $H_1 : p < p_0$. Seja $X_1, \ldots, X_n$ uma amostra aleatória da distribuição de $X$, e seja $\hat{p} = \frac{X}{n}$. Para testar $H_0$ versus $H_1$, utilizamos uma das seguintes estatísticas:
@@ -609,13 +684,13 @@ que é o intervalo que fornece um intervalo de confiança aproximado de $(1 - \a
 %\end{block}
 %\end{frame}
 
-\section{Nível de Significância Observado (p-valor)}
+%\section{Nível de Significância Observado (p-valor)}
 
 \subsection{Exemplo 1 - Distribuição Poisson}
 \begin{frame}{Exemplo - Distribuição Poisson}
 	\begin{block}{}
 		\justifying
-		Seja $X_1, X_2, \ldots, X_{10}$ uma amostra aleatória de tamanho $n = 10$ de uma distribuição de Poisson com média $\theta$. A região crítica para testar $H_0 : \theta = 0.1$ contra $H_1 : \theta > 0.1$ é dada por $Y = {\displaystyle \sum_{i=1}^{10}} X_i \geq 3$. A estatística $Y$ segue uma distribuição de Poisson com média $10\theta$. Portanto, com $\theta = 0.1$, de modo que a média de $Y$ seja igual a 1, o nível de significância do teste é
+		Seja $X_1, X_2, \ldots, X_{10}$ uma amostra aleatória de tamanho $n = 10$ de uma distribuição de Poisson com média $\theta$. A região crítica para testar $H_0 : \theta = 0.1$ contra $H_1 : \theta > 0.1$ é dada por $Y = {\displaystyle \sum_{i=1}^{10}} X_i \geq 3$. A estatística $Y$ segue uma distribuição de Poisson com média $10\theta$. Portanto, com $\theta = 0.1$, a média de $Y$ é 1, o nível de significância do teste é
 		
 		\begin{align*}
 			P(Y \geq 3) = 1 - P(Y \leq 2) = 1 - 0.920 = 0.080.
