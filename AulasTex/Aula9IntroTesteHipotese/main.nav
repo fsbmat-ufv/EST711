@@ -66,43 +66,45 @@
 \headcommand {\beamer@framepages {42}{42}}
 \headcommand {\slideentry {2}{1}{8}{43/43}{Tamanho do Teste}{0}}
 \headcommand {\beamer@framepages {43}{43}}
-\headcommand {\beamer@sectionpages {31}{43}}
-\headcommand {\beamer@subsectionpages {33}{43}}
-\headcommand {\sectionentry {3}{Teste para Média Baseado em Grandes Amostras}{44}{Teste para Média Baseado em Grandes Amostras}{0}}
-\headcommand {\slideentry {3}{0}{1}{44/45}{}{0}}
-\headcommand {\beamer@framepages {44}{45}}
-\headcommand {\slideentry {3}{0}{2}{46/47}{}{0}}
-\headcommand {\beamer@framepages {46}{47}}
-\headcommand {\slideentry {3}{0}{3}{48/49}{}{0}}
-\headcommand {\beamer@framepages {48}{49}}
-\headcommand {\slideentry {3}{0}{4}{50/51}{}{0}}
-\headcommand {\beamer@framepages {50}{51}}
-\headcommand {\beamer@sectionpages {44}{51}}
-\headcommand {\beamer@subsectionpages {44}{51}}
-\headcommand {\sectionentry {4}{Teste para Média sob Normalidade}{52}{Teste para Média sob Normalidade}{0}}
-\headcommand {\slideentry {4}{0}{1}{52/52}{}{0}}
-\headcommand {\beamer@framepages {52}{52}}
-\headcommand {\beamer@sectionpages {52}{52}}
-\headcommand {\beamer@subsectionpages {52}{52}}
-\headcommand {\sectionentry {5}{Teste Bilateral para a Média Baseado em Grandes Amostras}{53}{Teste Bilateral para a Média Baseado em Grandes Amostras}{0}}
-\headcommand {\slideentry {5}{0}{1}{53/53}{}{0}}
+\headcommand {\slideentry {2}{1}{9}{44/44}{Tamanho do Teste}{0}}
+\headcommand {\beamer@framepages {44}{44}}
+\headcommand {\beamer@sectionpages {31}{44}}
+\headcommand {\beamer@subsectionpages {33}{44}}
+\headcommand {\sectionentry {3}{Teste para Média Baseado em Grandes Amostras}{45}{Teste para Média Baseado em Grandes Amostras}{0}}
+\headcommand {\slideentry {3}{0}{1}{45/46}{}{0}}
+\headcommand {\beamer@framepages {45}{46}}
+\headcommand {\slideentry {3}{0}{2}{47/48}{}{0}}
+\headcommand {\beamer@framepages {47}{48}}
+\headcommand {\slideentry {3}{0}{3}{49/50}{}{0}}
+\headcommand {\beamer@framepages {49}{50}}
+\headcommand {\slideentry {3}{0}{4}{51/52}{}{0}}
+\headcommand {\beamer@framepages {51}{52}}
+\headcommand {\beamer@sectionpages {45}{52}}
+\headcommand {\beamer@subsectionpages {45}{52}}
+\headcommand {\sectionentry {4}{Teste para Média sob Normalidade}{53}{Teste para Média sob Normalidade}{0}}
+\headcommand {\slideentry {4}{0}{1}{53/53}{}{0}}
 \headcommand {\beamer@framepages {53}{53}}
-\headcommand {\slideentry {5}{0}{2}{54/54}{}{0}}
+\headcommand {\beamer@sectionpages {53}{53}}
+\headcommand {\beamer@subsectionpages {53}{53}}
+\headcommand {\sectionentry {5}{Teste Bilateral para a Média Baseado em Grandes Amostras}{54}{Teste Bilateral para a Média Baseado em Grandes Amostras}{0}}
+\headcommand {\slideentry {5}{0}{1}{54/54}{}{0}}
 \headcommand {\beamer@framepages {54}{54}}
-\headcommand {\beamer@sectionpages {53}{54}}
-\headcommand {\beamer@subsectionpages {53}{54}}
-\headcommand {\sectionentry {6}{Exercícios da Seção 4.5}{55}{Exercícios da Seção 4.5}{0}}
-\headcommand {\slideentry {6}{0}{1}{55/55}{}{0}}
+\headcommand {\slideentry {5}{0}{2}{55/55}{}{0}}
 \headcommand {\beamer@framepages {55}{55}}
-\headcommand {\beamer@sectionpages {55}{55}}
-\headcommand {\beamer@subsectionpages {55}{55}}
-\headcommand {\sectionentry {7}{Exercícios da Seção 4.6}{56}{Exercícios da Seção 4.6}{0}}
-\headcommand {\slideentry {7}{0}{1}{56/56}{}{0}}
+\headcommand {\beamer@sectionpages {54}{55}}
+\headcommand {\beamer@subsectionpages {54}{55}}
+\headcommand {\sectionentry {6}{Exercícios da Seção 4.5}{56}{Exercícios da Seção 4.5}{0}}
+\headcommand {\slideentry {6}{0}{1}{56/56}{}{0}}
 \headcommand {\beamer@framepages {56}{56}}
-\headcommand {\slideentry {7}{0}{2}{57/57}{}{0}}
+\headcommand {\beamer@sectionpages {56}{56}}
+\headcommand {\beamer@subsectionpages {56}{56}}
+\headcommand {\sectionentry {7}{Exercícios da Seção 4.6}{57}{Exercícios da Seção 4.6}{0}}
+\headcommand {\slideentry {7}{0}{1}{57/57}{}{0}}
 \headcommand {\beamer@framepages {57}{57}}
-\headcommand {\beamer@partpages {1}{57}}
-\headcommand {\beamer@subsectionpages {56}{57}}
-\headcommand {\beamer@sectionpages {56}{57}}
-\headcommand {\beamer@documentpages {57}}
-\headcommand {\gdef \inserttotalframenumber {38}}
+\headcommand {\slideentry {7}{0}{2}{58/58}{}{0}}
+\headcommand {\beamer@framepages {58}{58}}
+\headcommand {\beamer@partpages {1}{58}}
+\headcommand {\beamer@subsectionpages {57}{58}}
+\headcommand {\beamer@sectionpages {57}{58}}
+\headcommand {\beamer@documentpages {58}}
+\headcommand {\gdef \inserttotalframenumber {39}}

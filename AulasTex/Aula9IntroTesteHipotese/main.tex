@@ -307,7 +307,7 @@ Notem que, nesse caso, estamos considerando que $H_{1}$ é a negação de $H_{0}
 \justifying
 De todas as regiões de tamanho $\alpha,$ queremos encontrar aquela que tem o menor erro do tipo II. Ou, de forma equivalente, maximizar a probabilidade de rejeitar $H_{0},$ quando $H_{1}$ é verdadeira. Ou seja, para $\theta\in\Theta,$ queremos maximizar 
 \begin{align*}
-    1-P(\text{erro tipo II})=\underbrace{P_{\theta}(d(\vec{X})=1)}_{\text{Poder do Teste para}~\theta}
+    1-P(\text{erro tipo II})=\underbrace{P_{\theta_{1}}(d(\vec{X})=1)}_{\text{Poder do Teste para}~\theta}
 \end{align*}
 \end{block}
 \end{frame}
@@ -410,6 +410,14 @@ Se duas regiões críticas $\mathcal{C}_{1}$ e $\mathcal{C}_{2}$ tem o mesmo tam
 \end{block}
 \end{frame}
 
+\begin{frame}{}
+	\begin{block}{}
+		\justifying
+		Uma vez definidos os conceitos de função poder, tamanho do teste e região crítica, nosso próximo objetivo é construir um teste de hipóteses que satisfaça um nível de significância pré-estabelecido. Assim, o desafio passa a ser encontrar uma região crítica adequada, de modo que o teste resultante apresente tamanho $\alpha$ e o maior poder possível contra as alternativas de interesse.
+		
+	\end{block}
+\end{frame}
+
 \begin{frame}{Exemplo 1}
 \begin{block}{}
 \justifying
@@ -417,17 +425,25 @@ Sejam \(X_1, \ldots , X_n\) uma amostra aleatória de tamanho \(n\) da distribui
 \end{block}
 \end{frame}
 
-\begin{frame}{Exemplo 1}
-\begin{block}{}
-\justifying
-Suponhamos que \(n = 16\) e que estamos interessados em fixar \(\alpha = 0,05\). Então, para determinar \(c\), temos que resolver a equação \(\alpha = P(H_0 [\Bar{X} \geq c])\), ou seja,
-\[
-0,05 = P(H_0 [\Bar{X}\geq c]) = P(Z \geq c\sqrt{n}),
-\]
-onde \(Z = \Bar{X}\sqrt{n} \sim N(0, 1)\). Portanto, \(c\sqrt{n} = 1,64\), pois na distribuição \(N(0,1)\), o valor \(1,64\) é o percentil 95\%. Logo, \(c = 0,41\), de modo que \(A_1 = \{x; \Bar{x} \geq 0,41\}\).
-
-\end{block}
+\begin{frame}{Determinação do valor crítico $c$}
+	\justifying
+	Suponhamos que $n = 16$ e que estamos interessados em fixar $\alpha = 0{,}05$. Então, para determinar $c$, temos que resolver a equação 
+	\[
+	\alpha = P_{H_0}(\Bar{X} \geq c),
+	\]
+	ou seja,
+	\[
+	0{,}05 = P_{H_0}(\Bar{X} \geq c) = P\left(Z \geq \frac{c - \mu_0}{\sigma/\sqrt{n}}\right),\Rightarrow 
+	\frac{c - \mu_0}{\sigma/\sqrt{n}} = 1{,}64,
+	\]
+	pois, na distribuição $N(0,1)$, o valor $1{,}64$ é o percentil $95\%$. 
+	
+	Logo, se $\mu_0 = 0$ e $\sigma = 1$, então $c = 0{,}41$, de modo que
+	\[
+	A_1 = \{x; \Bar{x} \geq 0{,}41\}.
+	\]
 \end{frame}
+
 
 \section{Teste para Média Baseado em Grandes Amostras}
 \begin{frame}{Exemplo 2 - Teste para média baseado em grandes amostras}

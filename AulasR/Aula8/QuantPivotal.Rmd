@@ -96,4 +96,49 @@ cat("- Quando a variância é desconhecida, usamos a quantidade pivotal T (distr
 ```
 
 
+## Distribuição qui-quadrado com $2n$ graus de liberdade
+
+```{r IC2, exercise=TRUE}
+# Pacotes
+library(ggplot2)
+
+# parâmetros do problema
+n <- 10                  # tamanho da amostra
+gamma <- 0.95            # coeficiente de confiança
+alpha <- 1 - gamma       
+
+df <- 2*n
+
+# limites da qui-quadrado
+lambda1 <- qchisq(alpha/2, df)
+lambda2 <- qchisq(1 - alpha/2, df)
+
+cat("Lambda1 =", lambda1, "\n")
+cat("Lambda2 =", lambda2, "\n")
+
+# conferindo a probabilidade
+prob <- pchisq(lambda2, df = df) - pchisq(lambda1, df = df)
+cat("Probabilidade =", prob, "\n")
+
+# gerar pontos para a densidade
+x <- seq(0, qchisq(0.999, df), length.out = 500)
+y <- dchisq(x, df)
+dados <- data.frame(x, y)
+
+# gráfico
+ggplot(dados, aes(x, y)) +
+  geom_line(color = "blue", size = 1) +
+  geom_area(data = subset(dados, x >= lambda1 & x <= lambda2),
+            aes(x, y), fill = "skyblue", alpha = 0.6) +
+  geom_vline(xintercept = lambda1, color = "red", linetype = "dashed") +
+  geom_vline(xintercept = lambda2, color = "darkgreen", linetype = "dashed") +
+  labs(title = bquote("Exemplo: Intervalo de confiança na distribuição " ~ chi^2[.(df)]),
+       x = "x", y = "Densidade") +
+  annotate("text", x = lambda1, y = 0.01, label = paste0("λ1 = ", round(lambda1, 2)),
+           color = "red", angle = 90, vjust = -0.5) +
+  annotate("text", x = lambda2, y = 0.01, label = paste0("λ2 = ", round(lambda2, 2)),
+           color = "darkgreen", angle = 90, vjust = -0.5) +
+  theme_minimal(base_size = 14)
+
+```
 

@@ -33,20 +33,167 @@ f(x; \theta) = \begin{cases}
 0, & \text{Caso Contrário}
 \end{cases}
 \end{align*}
-dos Exercícios 8.1.2 e 8.1.3. Deseja-se testar a hipótese simples $H_0: \theta = 2$ contra a hipótese alternativa composta $H_1: \theta > 2$. Assim, $\Omega = \{\theta: \theta \geq 2\}$. Uma amostra aleatória, $X_1, X_2$, de tamanho $n = 2$ é utilizada e a região crítica é $C = \{(x_1, x_2): 9.5 \leq x_1 + x_2 < \infty\}$. Foi mostrado nos exercícios citados que o nível de significância do teste é aproximadamente $0.05$ e o poder do teste quando $\theta = 4$ é aproximadamente $0.31$. A função poder $\gamma(\theta)$ do teste para todos os $\theta \geq 2$ é:
+Deseja-se testar a hipótese simples $H_0: \theta = 2$ contra a hipótese alternativa composta $H_1: \theta > 2$. Assim, $\Omega = \{\theta: \theta \geq 2\}$. Uma amostra aleatória, $X_1, X_2$, de tamanho $n = 2$ é utilizada, assumindo $\alpha=0,05$ a região crítica é $C = \{(x_1, x_2): x_1 + x_2 \geq k\}$ em que $k$ é tal que $P_{\theta=2}(x_1 + x_2 \geq k)=0,05.$ Usando {k=\texttt qgamma(0.95,2,1/2)} obtemos $k\approx 9.5$. Observe que assumi que $T = X_1 + X_2$ segue uma distribuição gama com parâmetros $k = 2$ e taxa $\lambda = 1/\theta$.  
 \end{block}
+\end{frame}
+%Foi mostrado nos exercícios citados que o nível de significância do teste é aproximadamente $0.05$ e o poder do teste quando $\theta = 4$ é aproximadamente $0.31$. 
+
+\begin{frame}{}
+	\begin{block}{}
+		\justifying
+		Usando que $T \sim \text{Gamma}(2, 1/\theta),$ a função poder é dada por:
+		\begin{align*}
+			\gamma(\theta) &= P_\theta(T > 9.5) \\
+			&= 1 - F_T(9.5; 2, 1/\theta),
+		\end{align*}
+		onde $F_T(\cdot)$ é a função de distribuição acumulada da variável gama. Como
+		\[
+		F_T(t; 2, 1/\theta) = 1 - e^{-t/\theta}\left(1 + \frac{t}{\theta}\right),
+		\]
+		segue que
+		\[
+		\boxed{\gamma(\theta) = e^{-9.5/\theta}\left(1 + \frac{9.5}{\theta}\right)}, \quad \theta \geq 2.
+		\]
+	\end{block}
 \end{frame}
 
 \begin{frame}{}
-\begin{block}{}
-\justifying
-\begin{align*}
-\gamma(\theta) &= 1 - \int_0^{9.5} \int_0^{9.5-x_2} \frac{1}{\theta^2} e^{-\frac{x_1+x_2}{\theta}} dx_1dx_2 \\
-&= \left(\dfrac{\theta+9.5}{\theta}\right)e^{-9.5/\theta}, \quad 2 \leq \theta.
-\end{align*}
-Por exemplo, $\gamma(2) = 0.05$, $\gamma(4) = 0.31$ e $\gamma(9.5) = \frac{2}{e} \approx 0.74$. É mostrado (Exercício 8.1.3) que o conjunto $C = \{(x_1, x_2): 9.5 \leq x_1 + x_2 < \infty\}$ é uma melhor região crítica de tamanho $0.05$ para testar a hipótese simples $H_0: \theta = 2$ contra cada hipótese simples na hipótese composta $H_1: \theta > 2$.
+	\begin{block}{De outra forma:}
+		\justifying
+		A função poder $\gamma(\theta)$ do teste para todos os $\theta \geq 2$ é:
+		\begin{align*}
+			\gamma(\theta) &= P_\theta(X_{1}+X_{2} > 9.5)\\ 
+			&=1 - \int_0^{9.5} \int_0^{9.5-x_2} \frac{1}{\theta^2} e^{-\frac{x_1+x_2}{\theta}} dx_1dx_2 \\
+			&= \left(\dfrac{\theta+9.5}{\theta}\right)e^{-9.5/\theta}, \quad \theta\geq 2.
+		\end{align*}
+		Por exemplo, $\gamma(2) = 0.05$, $\gamma(4) = 0.31$ e $\gamma(9.5) = \frac{2}{e} \approx 0.74$. O conjunto $C = \{(x_1, x_2): x_1 + x_2 \geq 9,5\}$ é uma melhor região crítica de tamanho $0.05$ para testar a hipótese simples $H_0: \theta = 2$ contra cada hipótese simples na hipótese composta $H_1: \theta > 2$.
+	\end{block}
+\end{frame}
+
+\begin{frame}{}
+	\begin{block}{Mesmo Exemplo (variação com $\theta_1 = 6$)}
+		\justifying
+		Vamos considerar o problema de testar a hipótese simples $H_0: \theta = \theta_0 = 2$ contra a hipótese alternativa simples $H_1: \theta = \theta_1 = 6.$
+	\end{block}
+\pause
+	\begin{block}{Razão de verossimilhança}
+	\justifying
+	A razão de verossimilhança é dada por:
+	\begin{align*}
+		\frac{L(\theta_0; X_1, X_2)}{L(\theta_1; X_1, X_2)}
+		&=  
+		\left(\frac{\theta_1}{\theta_0}\right)^2 
+		e^{-(X_1+X_2)\left(\frac{1}{\theta_0}-\frac{1}{\theta_1}\right)}.
+	\end{align*}
+	
+	Substituindo $\theta_0 = 2$ e $\theta_1 = 6$, obtemos:
+	\[
+	\frac{L(2)}{L(6)} = 9\, e^{-(X_1+X_2)\left(\frac{1}{2}-\frac{1}{6}\right)}
+	= 9\, e^{-(X_1+X_2)/3}.
+	\]
 \end{block}
 \end{frame}
+
+
+
+\begin{frame}{}
+	\begin{block}{Região crítica ótima}
+		\justifying
+		O teste de Neyman–Pearson rejeita $H_0$ quando a razão de verossimilhança é pequena, ou seja:
+		\[
+		\frac{L(2)}{L(6)} \leq k
+		\quad \Longleftrightarrow \quad 
+		9e^{-(X_1+X_2)/3} \leq k.
+		\]
+	Assim, a melhor região crítica de tamanho $\alpha$ é:
+		\[
+		\boxed{C = \{(x_1, x_2): x_1 + x_2 \geq c\}},
+		\]
+		onde $c$ é escolhido tal que $P_{\theta=2}(X_1 + X_2 \geq c) = \alpha.$ Pelo mesmo motivo das hipóteses anteriores, se $\alpha=0.05$ obtemos $c \approx 9{,}49$.
+	\end{block}
+\end{frame}
+
+%\begin{frame}{}
+%	\begin{block}{Função poder para $\theta_1 = 6$}
+%		\justifying
+%		A estatística de teste é $T = X_1 + X_2$, e sabemos que
+%		\[
+%		T \mid \theta \sim \text{Gamma}(2, \text{escala} = \theta).
+%		\]
+%		A função poder do teste é definida por:
+%		\[
+%		\gamma(\theta) = P_\theta(T > 9.5) = 1 - F_T(9.5; 2, \text{escala} = \theta),
+%		\]
+%		em que $F_T$ é a função de distribuição acumulada da variável gama. Para a parametrização por taxa ($\lambda = 1/\theta$):
+%		\[
+%		F_T(t; 2, 1/\theta) = 1 - e^{-t/\theta}\left(1 + \frac{t}{\theta}\right).
+%		\]
+%		Logo,
+%		\[
+%		\boxed{\gamma(\theta) = e^{-9.5/\theta}\left(1 + \frac{9.5}{\theta}\right)}.
+%		\]
+%	\end{block}
+%\end{frame}
+
+\begin{frame}{}
+	\begin{block}{Exemplo numérico: $\theta_1 = 6$}
+		\justifying
+		Substituindo $\theta = 6$ na expressão da função poder, já calculada para todo $\theta\geq 2$, obtemos:
+		\begin{align*}
+		\gamma(6) = e^{-9.5/6}\left(1 + \frac{9.5}{6}\right)
+		= e^{-1.5833}(2.5833)\\
+		\approx 0.2059 \times 2.5833
+		\approx 0.532.
+		\end{align*}
+		
+		Portanto, a probabilidade de rejeitar corretamente $H_0$ quando $\theta = 6$ é aproximadamente:
+		\[
+		\boxed{\gamma(6) \approx 0.53.}
+		\]
+		
+		Em R, o mesmo resultado é obtido por:
+		{\texttt pgamma(9.5, shape = 2, rate = 1/6, lower.tail = FALSE) = 0.532}
+		Assim, o teste tem potência de aproximadamente $53\%$ quando $\theta = 6$.
+	\end{block}
+\end{frame}
+
+\begin{frame}{}
+	\begin{block}{Justificativa: o poder em $\theta = 2$ é o supremo sob $H_0$}
+		\justifying
+		Por definição, o \textbf{nível de significância} $\alpha$ de um teste é o maior valor da probabilidade de rejeitar $H_0$ quando $H_0$ é verdadeira.%, ou seja:
+		%\[
+		%\alpha = \sup_{\theta \in \Omega_0} P_\theta(T \in C),
+		%\]
+		%em que $C$ é a região crítica e $\Omega_0$ é o conjunto de parâmetros sob $H_0$.
+		
+		No problema em questão, temos:
+		\[
+		H_0: \theta = 2, \quad H_1: \theta > 2,
+		\]
+		portanto, $\Omega_0 = \{2\}$ e a função poder é:
+		\[
+		\gamma(\theta) = e^{-9.5/\theta}\left(1 + \frac{9.5}{\theta}\right).
+		\]
+		Como $\gamma(\theta)$ é \textbf{crescente} em $\theta$ (maior $\theta$ implica maior chance de rejeitar $H_0$), temos:
+		\[
+		\sup_{\theta \in \Omega_0} \gamma(\theta) = \gamma(2).
+		\]
+	\end{block}
+\end{frame}
+
+\begin{frame}{}
+	\begin{block}{Interpretação prática}
+		\justifying
+		O valor $\gamma(2)$ representa a probabilidade de rejeitar $H_0$ quando ela é verdadeira — isto é, o \textbf{erro tipo I}. Por construção da região crítica,
+		\[
+		\gamma(2) = P_{\theta=2}(T > 9.5) = 0.05 = \alpha.
+		\]
+		Portanto, o poder em $\theta = 2$ é o \textbf{supremo da função poder sob $H_0$}, e o teste é dito ter \textbf{tamanho 0.05}.
+		
+		Essa propriedade garante que o teste é válido, isto é, não ultrapassa o nível de significância especificado, sendo também o mais poderoso entre todos os testes com esse mesmo tamanho.
+	\end{block}
+\end{frame}
+
 
 \begin{frame}{}
 \begin{block}{}
