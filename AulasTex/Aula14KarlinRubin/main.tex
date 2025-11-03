@@ -23,11 +23,6 @@
 \section{Razão de Verossimilhança Monótona}
 \begin{frame}{Razão de Verossimilhança Monótona}
 \begin{block}{}
-\justifying
-A Razão de Verossimilhança Monótona (RVM) está relacionada à comparação de dois modelos estatísticos por meio da razão de suas funções de verossimilhança. 
-\end{block}
-\pause
-\begin{block}{}
 	\justifying
 	A razão de verossimilhança é definida como o quociente 
 	
@@ -35,8 +30,9 @@ A Razão de Verossimilhança Monótona (RVM) está relacionada à comparação d
 	\frac{L(\theta_0 | T(X))}{L(\theta_1 | T(X))}
 	\]
 	
-	para dois valores de parâmetro \(\theta_0\) e \(\theta_1\). Dizemos que a razão de verossimilhança é \textbf{monótona} se, para quaisquer dois valores \(\theta_1 > \theta_0\), a razão de verossimilhança for uma função \textbf{monótona não-decrescente} em relação a estatística \(T(X)\).
+	para dois valores de parâmetro \(\theta_0\) e \(\theta_1\). Dizemos que a razão de verossimilhança é \textbf{monótona} se, para quaisquer dois valores \(\theta_1 > \theta_0\), a razão de verossimilhança for uma função \textbf{monótona não-decrescente} ou \textbf{não-crescente} em relação à estatística \(T(X)\). Ambas as formas permitem a construção de testes uniformemente mais poderosos.
 \end{block}
+
 %\begin{block}{}
 %	\justifying
 %	Suponha que tenhamos dois modelos estatísticos, \(M_0\) e \(M_1\), com funções de verossimilhança associadas \(L(\theta_0 | T(X))\) e \(L(\theta_1 | T(X))\), respectivamente, onde \(X\) representa uma amostra observada e \(T(X)\) é uma estatística específica resumindo as informações contidas na amostra. A Razão de Verossimilhança Monótona compara essas duas verossimilhanças de uma maneira especial.
@@ -56,42 +52,89 @@ A Razão de Verossimilhança Monótona (RVM) está relacionada à comparação d
 %\end{block}
 %\pause
 \begin{block}{}
-\justifying
-A monotonicidade aqui é uma propriedade importante, pois implica que, se um modelo é mais provável do que outro para uma dada estatística \(T(X)\), ele permanecerá mais provável à medida que a estatística \(T(X)\) aumenta. Isso é fundamental em testes de hipóteses e inferência estatística, pois garante uma ordem consistente de preferência entre os modelos em estudo.
+	\justifying
+	A monotonicidade da razão de verossimilhança é uma propriedade crucial, pois assegura que, se um modelo é mais plausível do que outro para um certo valor da estatística \(T(X)\), essa relação de preferência se mantém à medida que \(T(X)\) aumenta (ou diminui, dependendo do caso). Isso permite estabelecer uma ordenação consistente entre os modelos, o que é essencial na construção de testes de hipóteses mais poderosos e na tomada de decisões inferenciais.
 \end{block}
+
 \end{frame}
+
+%\begin{frame}{Razão de Verossimilhança Monótona}
+%\begin{definicao}
+%\justifying
+%Uma família de funções de densidade de probabilidade \(\{f_{\vec{X}}(\cdot; \theta), \theta \in \Theta\}\), \(\Theta \in \mathbb{R}\), é dita ter Razão de Verossimilhança Monótona (RVM) se existir uma estatística \(T = t(\vec{X})\) tal que, para todo \(\theta_1 > \theta_0\),
+%
+%\[
+%\frac{L(\theta_0 \mid T(\vec{X}))}{L(\theta_1 \mid T(\vec{X}))}
+%\]
+%
+%é uma função monótona (não decrescente ou não crescente) em \(t(\vec{x})\), para \(\vec{x} \in \{f(\vec{x}; \theta_0) > 0 \text{e} f(\vec{x}; \theta_1) > 0\}\), em que \(f_{\vec{X}}(\vec{x}; \theta_0) \neq f_{\vec{X}}(\vec{x}; \theta_1)\).
+%
+%\end{definicao}
+%\end{frame}
 
 \begin{frame}{Razão de Verossimilhança Monótona}
-\begin{definicao}
-\justifying
-Uma família de funções de densidade de probabilidade \(\{f_{\vec{X}}(\cdot; \theta), \theta \in \Theta\}\), \(\Theta \in \mathbb{R}\), é dita ter Razão de Verossimilhança Monótona (RVM) se existir uma estatística \(T = t(\vec{X})\) tal que, para todo \(\theta_1 > \theta_0\),
-
-\[
-\frac{L(\theta_0 \mid T(\vec{X}))}{L(\theta_1 \mid T(\vec{X}))}
-\]
-
-é uma função monótona (não decrescente ou não crescente) em \(t(\vec{x})\), para \(\vec{x} \in \{f(\vec{x}; \theta_0) > 0 \text{e} f(\vec{x}; \theta_1) > 0\}\), em que \(f_{\vec{X}}(\vec{x}; \theta_0) \neq f_{\vec{X}}(\vec{x}; \theta_1)\).
-
-\end{definicao}
+	\begin{definicao}
+		\justifying
+		Uma família de densidades \(\{f_{\vec{X}}(\cdot; \theta), \theta \in \Theta\}\), com \(\Theta \subseteq \mathbb{R}\), possui a \textbf{propriedade da razão de verossimilhança monótona (RVM)} se existe uma estatística \(T = t(\vec{X})\) tal que, para quaisquer \(\theta_1 > \theta_0\), a razão
+		
+		\[
+		\frac{L(\theta_0 \mid T(\vec{X}))}{L(\theta_1 \mid T(\vec{X}))}
+		\]
+		
+		é uma função monótona (não decrescente ou não crescente) em \(t(\vec{x})\), para todo \(\vec{x}\) tal que \(f_{\vec{X}}(\vec{x}; \theta_0) > 0\), \(f_{\vec{X}}(\vec{x}; \theta_1) > 0\), e \(f_{\vec{X}}(\vec{x}; \theta_0) \neq f_{\vec{X}}(\vec{x}; \theta_1)\).
+	\end{definicao}
 \end{frame}
+
 
 \subsection{Exemplo 1}
-\begin{frame}{Exemplo 1}
-\vspace{-0.3cm}
-\begin{block}{}
-\justifying
-Seja $X_1, \ldots, X_n$ uma amostra de $X \sim \text{Exp}(\theta)$. Segue que,
-\[
-\frac{L(\theta_0 | T(\tend{X}))}{L(\theta_1 | T(\tend{X}))} = \frac{\theta_{1}^{n}}{\theta_{0}^{n}} \exp\left(-\left(\frac{1}{\theta_1} - \frac{1}{\theta_0}\right)\sum_{i=1}^{n} x_i\right)
-\]
-\end{block}
-\pause
-\vspace{-0.3cm}
-\begin{block}{}
-\justifying
-Para $\theta_{1}>\theta_{0}$ fixados, a função acima é monótona não crescente em $t(\Vec{x}) = \Sumi x_i,$ logo, $\text{Exp}(\theta)$ tem Razão de Verossimilhança Monótona (RVM) não crescente em $t(\Vec{x}) = \Sumi x_i$. De outro lado, $\text{Exp}(\theta)$ tem RVM não decrescente em $t^{*}(\Vec{x}) = -\Sumi x_i$.
-\end{block}
+\begin{frame}{Exemplo 1: Distribuição Exponencial}
+	\vspace{-0.3cm}
+	\begin{block}{}
+		\justifying
+		Seja \(X_1, \ldots, X_n\) uma amostra aleatória de \(X \sim \text{Exp}(\frac{1}{\theta})\), com densidade
+		
+		\[
+		f(x;\theta) = \frac{1}{\theta} \exp\left(-\frac{x}{\theta}\right), \quad \theta > 0.
+		\]
+		
+		A função de verossimilhança para a amostra \(\vec{X}\) é:
+		
+		\[
+		L(\theta \mid \vec{x}) = \left(\frac{1}{\theta}\right)^n \exp\left(-\frac{1}{\theta} \sum_{i=1}^n x_i\right).
+		\]
+	\end{block}
 \end{frame}
+
+\begin{frame}{Exemplo 1: Distribuição Exponencial}
+	\begin{block}{}
+		\justifying
+		Assim, a razão de verossimilhança para dois valores \(\theta_0\) e \(\theta_1\) é:
+		
+		\[
+		\frac{L(\theta_0 \mid \vec{x})}{L(\theta_1 \mid \vec{x})}
+		= \frac{\theta_1^n}{\theta_0^n} \exp\left(-\left(\frac{1}{\theta_1} - \frac{1}{\theta_0} \right) \sum_{i=1}^{n} x_i\right).
+		\]
+		
+		Para \(\theta_1 > \theta_0\), a razão acima é uma função \textbf{monótona não decrescente} em \(t(\vec{x}) = \sum x_i\). Portanto, a distribuição \(\text{Exp}(\theta)\) possui \textbf{RVM crescente} em \(t(\vec{x}) = \sum x_i\). Alternativamente, também possui \textbf{RVM crescente} em \(t^*(\vec{x}) = -\sum x_i\).
+	\end{block}
+\end{frame}
+
+%\begin{frame}{Exemplo 1}
+%\vspace{-0.3cm}
+%\begin{block}{}
+%\justifying
+%Seja $X_1, \ldots, X_n$ uma amostra de $X \sim \text{Exp}(\theta)$. Segue que,
+%\[
+%\frac{L(\theta_0 | T(\tend{X}))}{L(\theta_1 | T(\tend{X}))} = \frac{\theta_{1}^{n}}{\theta_{0}^{n}} \exp\left(-\left(\frac{1}{\theta_1} - \frac{1}{\theta_0}\right)\sum_{i=1}^{n} x_i\right)
+%\]
+%\end{block}
+%\pause
+%\vspace{-0.3cm}
+%\begin{block}{}
+%\justifying
+%Para $\theta_{1}>\theta_{0}$ fixados, a função acima é monótona não crescente em $t(\Vec{x}) = \Sumi x_i,$ logo, $\text{Exp}(\theta)$ tem Razão de Verossimilhança Monótona (RVM) não crescente em $t(\Vec{x}) = \Sumi x_i$. De outro lado, $\text{Exp}(\theta)$ tem RVM não decrescente em $t^{*}(\Vec{x}) = -\Sumi x_i$.
+%\end{block}
+%\end{frame}
 
 \begin{frame}{Exemplo 2}
 \begin{block}{}
@@ -99,7 +142,7 @@ Para $\theta_{1}>\theta_{0}$ fixados, a função acima é monótona não crescen
 Seja \(X_1, \ldots, X_n\) uma amostra de \(X \sim U(0, \theta)\). Considere \(y_{n} = \max\{X_1, \ldots, X_n\}\),
 
 \[
-L(\vec{x}; \theta) = L(\vec{y}; \theta)= \frac{1}{\theta^n} 1_{(0, \theta)}(y_n)
+L(\vec{x}; \theta) =\frac{1}{\theta^n} 1_{(0, \theta)}(x_(n))= L(\vec{y}; \theta)= \frac{1}{\theta^n} 1_{(0, \theta)}(y_n)
 \]
 
 Assim, se \(\theta_0 < \theta_1\), temos que:
@@ -112,24 +155,20 @@ Assim, se \(\theta_0 < \theta_1\), temos que:
 \end{frame}
 
 \begin{frame}{Exemplo 2}
-\begin{block}{}
-\justifying
-Portanto, note que, $U(0, \theta)$ tem Razão de Verossimilhança Monótona (RVM) não decrescente em $y_n$ e,
-\[
-g(y_n) = \begin{cases} 
-\left(\frac{\theta_0}{\theta_1}\right)^n, & \text{se } 0 < y_n < \theta_0 \\
-\text{Indeterminado}, & \text{se } \theta_0 \leq y_n < \theta_1
-\end{cases}
-\]
-\end{block}
+	\begin{block}{}
+		\justifying
+		Portanto, a distribuição \(U(0, \theta)\) possui Razão de Verossimilhança Monótona (RVM) \textbf{não crescente} em \(y_n = \max\{X_1, \ldots, X_n\}\), pois:
+		
+		\[
+		g(y_n) = \begin{cases} 
+			\left(\frac{\theta_0}{\theta_1}\right)^n, & \text{se } 0 < y_n < \theta_0 \\
+			0, & \text{se } \theta_0 \leq y_n < \theta_1 \\
+			\text{Indeterminado}, & \text{se } y_n \geq \theta_1
+		\end{cases}
+		\]
+	\end{block}
 \end{frame}
 
-\begin{frame}{Observação}
-\begin{block}{Página 350 do Casella e Berger (Tradução)}
-\justifying
-Muitas famílias de distribuição comuns têm uma RVM. Por exemplo, a distribuição normal (Variância conhecida, média desconhecida), de Poisson, e a Binomial, todas têm. Na verdade, qualquer família exponencial regular com $f(t|\theta)=h(t)c(\theta)\exp{w(\theta)t}$ tem uma RVM se $w(\theta)$ for uma função não decrescente.
-\end{block}
-\end{frame}
 
 \section{Teorema de Karlin-Rubin}
 \begin{frame}{Teorema de Karlin-Rubin}
@@ -194,25 +233,43 @@ Considere \seqX $\sim$ Poisson$(\theta).$ Encontre um TUMP de nível $\alpha$ pa
 %\end{frame}
 
 \subsection{Exemplo 2}
-\begin{frame}{Exemplo2}
-\begin{block}{}
-\justifying
-Suponha 
-\begin{align*}
-    H_{0}&:\theta\leq 1~\text{contra}~H_{1}:\theta> 1\\
-    n&=100\\
-    \alpha&=0.05
-\end{align*}
-Segue que $\Sumi X_{i}\sim~$Poisson$(100\theta),$ sob $H_{0}, \Sumi X_{i}\sim~$Poisson$(100).$
-\end{block}
+
+\begin{frame}{Exemplo 2}
+	\begin{block}{}
+		\justifying
+		Suponha o problema de teste:
+		\begin{align*}
+			H_{0}&:\theta \leq 1 \quad \text{versus} \quad H_{1}: \theta > 1\\
+			n &= 100\\
+			\alpha &= 0{,}05
+		\end{align*}
+		
+		Sabemos que, sob \(X_i \sim \text{Poisson}(\theta)\), a estatística \(T = \sum_{i=1}^{n} X_i\) tem distribuição \(T \sim \text{Poisson}(n\theta)\). Assim, sob \(H_0\), a distribuição mais favorável à \(H_0\) é quando \(\theta = 1\), e portanto:
+		
+		\[
+		T = \sum X_i \sim \text{Poisson}(100).
+		\]
+	\end{block}
+\end{frame}
+\begin{frame}{Continuação}
+	\begin{block}{}
+		\justifying
+		Utilizando o software \textsf{R}, obtemos que o menor valor inteiro \(t_0\) tal que:
+		
+		\[
+		P_{\theta = 1}(T > t_0) \leq 0{,}05
+		\]
+		
+		é \(t_0 = 117\), pois:
+		
+		\[
+		P_{\theta = 1}(T > 117) = P(T \geq 118) \approx 0{,}043.
+		\]
+		
+		Logo, o teste que rejeita \(H_0\) sempre que \(\sum X_i > 117\) é um TUMP de nível \(\alpha = 0{,}05\). O tamanho exato do teste é \(P_{\theta = 1}(T \geq 118) \approx 0{,}043\).
+	\end{block}
 \end{frame}
 
-\begin{frame}{}
-\begin{block}{}
-\justifying
-No software R, obtemos $t_{0}=117$ e $P_{\theta_{0}}(\Sumi X_{i}>t_{0})\approx 0,043\leq \alpha.$ Logo, o teste que rejeita $H_{0}$ para toda amostra de tamanho $n=100$ quando $\Sumi X_{i}>117$ é um TUMP de nível $0.05.$ O tamanho do teste é $P_{\theta_{0}}(\Sumi X_{i}>117)\approx 0,043.$
-\end{block}
-\end{frame}
 
 \subsection{Exemplo 3}
 \begin{frame}{Exemplo 3}
