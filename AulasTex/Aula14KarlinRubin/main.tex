@@ -91,7 +91,7 @@
 	\vspace{-0.3cm}
 	\begin{block}{}
 		\justifying
-		Seja \(X_1, \ldots, X_n\) uma amostra aleatória de \(X \sim \text{Exp}(\frac{1}{\theta})\), com densidade
+		Seja \(X_1, \ldots, X_n\) uma amostra aleatória de \(X \sim \text{Exp}(\theta)\), com densidade
 		
 		\[
 		f(x;\theta) = \frac{1}{\theta} \exp\left(-\frac{x}{\theta}\right), \quad \theta > 0.
@@ -115,7 +115,7 @@
 		= \frac{\theta_1^n}{\theta_0^n} \exp\left(-\left(\frac{1}{\theta_1} - \frac{1}{\theta_0} \right) \sum_{i=1}^{n} x_i\right).
 		\]
 		
-		Para \(\theta_1 > \theta_0\), a razão acima é uma função \textbf{monótona não decrescente} em \(t(\vec{x}) = \sum x_i\). Portanto, a distribuição \(\text{Exp}(\theta)\) possui \textbf{RVM crescente} em \(t(\vec{x}) = \sum x_i\). Alternativamente, também possui \textbf{RVM crescente} em \(t^*(\vec{x}) = -\sum x_i\).
+		Para \(\theta_1 > \theta_0\), a razão acima é uma função \textbf{monótona não decrescente} em \(t(\vec{x}) = \sum x_i\). Portanto, a distribuição \(\text{Exp}(\theta)\) possui \textbf{RVM crescente} em \(t(\vec{x}) = \sum x_i\). Alternativamente, também possui \textbf{RVM não crescente} em \(t^*(\vec{x}) = -\sum x_i\).
 	\end{block}
 \end{frame}
 
@@ -172,28 +172,35 @@ Assim, se \(\theta_0 < \theta_1\), temos que:
 
 \section{Teorema de Karlin-Rubin}
 \begin{frame}{Teorema de Karlin-Rubin}
-\vspace{-0.2cm}
-\begin{block}{}
-\justifying
-Considere testar $H_{0}: \theta \leq \theta_0$ versus $H_{1}: \theta > \theta_0.$
-Seja $L(\theta; \Vec{x})$ a função de verosimilhança de uma distribuição com espaço de parâmetros $\Theta$ e estatística suficiente $T = t(\Vec{x})$ para $\theta,$ tal que, para quaisquer $\theta_0$ e $\theta_1$ em $\Theta$ tais que $\theta_0 < \theta_1$, a razão de verosimilhança
-\begin{align*}
-\Lambda(\Vec{x}; \theta_0, \theta_1) &= \frac{L(\theta_0; \Vec{x})}{L(\theta_1; \Vec{x})}
-\end{align*}
-é uma RVM (Ou seja, é uma função monótona (não decrescente ou não crescente) em $t(x)$). Sob tais condições, para um apropriado valor $t_{0},$ 
-\begin{align*}
-    C=\{\Vec{x};T(\Vec{x})> t_{0}\} 
-\end{align*}
-é uma região crítica para um teste uniformemente mais poderoso para $H_{0}: \theta \leq \theta_0$ versus $H_{1}: \theta > \theta_0$ de tamanho $\alpha=P_{\theta_{0}}(T(\Vec{x})> t_{0})$.
-\end{block}
+	\vspace{-0.3cm}
+	\begin{block}{}
+		\justifying
+		\small{Considere testar \(H_{0}: \theta \leq \theta_0\) versus \(H_{1}: \theta > \theta_0.\)
+			Seja \(L(\theta; T(\vec{X}))\) a função de verossimilhança expressa em termos de uma
+			estatística suficiente \(T = t(\vec{X})\) para \(\theta\), tal que, para quaisquer \(\theta_0 < \theta_1\) em \(\Theta,\)
+			a razão de verossimilhança
+			\[
+			\Lambda(T(\vec{X}); \theta_0, \theta_1) =
+			\frac{L(\theta_0; T(\vec{X}))}{L(\theta_1; T(\vec{X}))}
+			\]
+			é uma função monótona (não decrescente ou não crescente) em \(T(\vec{X})\),
+			isto é, a família possui a propriedade de Razão de Verossimilhança Monótona (RVM). Sob tais condições, para um valor apropriado \(t_{0},\)
+			\[
+			C = \{\vec{X} : T(\vec{X}) > t_{0}\}
+			\]
+			é uma região crítica para um teste \textbf{uniformemente mais poderoso (UMP)}
+			de nível \(\alpha = P_{\theta_{0}}(T(\vec{X}) > t_{0})\),
+			para \(H_{0}: \theta \leq \theta_0\) versus \(H_{1}: \theta > \theta_0.\)}
+	\end{block}
 \end{frame}
+
 
 \begin{frame}{}
 \begin{block}{Observação:}
 \justifying
 Sob as condições do teorema anterior podemos testar $H_{0}: \theta \geq \theta_0$ versus $H_{1}: \theta < \theta_0.$ Nesse caso, 
 \begin{align*}
-    C=\{\Vec{x};T(\Vec{x})< t_{0}\} 
+   C = \{\vec{X} : T(\vec{X}) < t_{0}\}
 \end{align*}
 é uma região crítica para um teste uniformemente mais poderoso para $H_{0}: \theta \geq \theta_0$ versus $H_{1}: \theta < \theta_0$ de tamanho $\alpha=P_{\theta_{0}}(T(\Vec{x})< t_{0})$.
 \end{block}
@@ -311,7 +318,7 @@ Segue que $\Sumi X_{i}\sim~$Gamma$(5,\theta),$ sob $H_{0}, \Sumi X_{i}\sim~$Gamm
 
 \begin{frame}{}
 \begin{block}{}
-    No software R, obtemos $t_{0}=3,05$ e $P_{\theta_{0}}(\Sumi X_{i}>t_{0})\approx 0,05.$ Logo, o teste que rejeita $H_{0}$ para toda amostra de tamanho $n=5$ quando $\Sumi X_{i}<3,05$ é um TUMP de tamanho $0.05.$ 
+    No software R, obtemos $t_{0}=3,05$ e $P_{\theta_{0}}(\Sumi X_{i}<t_{0})\approx 0,05.$ Logo, o teste que rejeita $H_{0}$ para toda amostra de tamanho $n=5$ quando $\Sumi X_{i}<3,05$ é um TUMP de tamanho $0.05.$ 
 \end{block}
 \nocite{hogg, casella2021statistical}
 \end{frame}
