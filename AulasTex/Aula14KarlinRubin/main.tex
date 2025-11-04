@@ -290,9 +290,9 @@ Seja \seqX~ uma amostra aleatória de uma distribuição exponencial$(\theta).$ 
 \pause
 \begin{block}{}
 \justifying
-Sabemos que $T(\Vec{X})=\Sumi X_{i}$ é uma estatística suficiente para $\theta$ e que a distribuição de $T(\Vec{X})=\Sumi X_{i}$ é Gamma$(n,\theta).$ Para $0<\theta_{0}<\theta_{1}<\infty$
+Sabemos que $T(\Vec{X})=\Sumi X_{i}$ é uma estatística suficiente para $\theta$ e que a distribuição de $T(\Vec{X})=\Sumi X_{i}$ é Gamma$(n,\theta).$ Para $0<\theta_{1}<\theta_{0}<\infty$
 \begin{align*}
-    \dfrac{L(t;\theta_{0})}{L(t;\theta_{1})}=\left(\dfrac{\theta_{1}}{\theta_{2}}\right)^{n}e^{t\left(\frac{1}{\theta_{1}}-\frac{1}{\theta_{0}}\right)},~\frac{1}{\theta_{1}}-\frac{1}{\theta_{0}}<0, 
+    \dfrac{L(t;\theta_{0})}{L(t;\theta_{1})}=\left(\dfrac{\theta_{1}}{\theta_{0}}\right)^{n}e^{t\left(\frac{1}{\theta_{1}}-\frac{1}{\theta_{0}}\right)},~\frac{1}{\theta_{1}}-\frac{1}{\theta_{0}}>0, 
 \end{align*}
 é uma RVM de $t.$ Logo, a família gamma tem a propriedade RVM. 
 \end{block}
@@ -301,7 +301,7 @@ Sabemos que $T(\Vec{X})=\Sumi X_{i}$ é uma estatística suficiente para $\theta
 \begin{frame}{}
 \begin{block}{}
 \justifying
-Pelo teorema de Karlin-Rubin, o teste que rejeita $H_{0}$ para toda amostra $\Vec{X}$ tal que $\Sumi X_{i}<3$ é um teste uniformemente mais poderoso de tamanho $\alpha=P_{\theta_{0}}(\Sumi X_{i}<t_{0}).$
+Pelo teorema de Karlin-Rubin, o teste que rejeita $H_{0}$ para toda amostra $\Vec{X}$ tal que $\Sumi X_{i}<t_{0}$ é um teste uniformemente mais poderoso de tamanho $\alpha=P_{\theta_{0}}(\Sumi X_{i}<t_{0}).$
 \end{block}
 \pause
 \begin{block}{}
