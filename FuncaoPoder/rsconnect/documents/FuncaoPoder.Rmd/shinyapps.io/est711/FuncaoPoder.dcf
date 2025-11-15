@@ -5,7 +5,7 @@ account: est711
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 13083021
-bundleId: 9260797
+bundleId: 11160002
 url: https://est711.shinyapps.io/FuncaoPoder/
 version: 1
 asMultiple: FALSE

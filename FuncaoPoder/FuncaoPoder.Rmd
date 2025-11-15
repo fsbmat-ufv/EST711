@@ -460,3 +460,85 @@ ggplot(df_poder, aes(x = p, y = Poder, color = Estatistica)) +
 })
 ```
 
+## Teste da Razão de Verossimilhança
+
+```{r, echo=FALSE}
+# Slider interativo para o valor de θ₀
+sliderInput("theta0", "Valor de θ₀:", min = 0, max = 4, value = 2, step = 0.1)
+actionButton("gerar", "Gerar novos dados")
+plotOutput("plot_lr")
+```
+
+
+```{r, context="server"}
+# -----------------------------
+# Criar armazenamento reativo dos dados
+# -----------------------------
+dados <- reactiveVal(rnorm(30, mean = 2, sd = 1))
+
+# Regerar dados sempre que o botão for clicado
+observeEvent(input$gerar, {
+  n <- 20
+  theta_verdadeiro <- 2
+  dados(rnorm(n, mean = theta_verdadeiro, sd = 1))
+})
+
+# -----------------------------
+# Gráfico
+# -----------------------------
+output$plot_lr <- renderPlot({
+  x <- dados()  # recupera os dados atuais
+  theta_hat <- mean(x)
+
+  # Sequência de valores de θ para a curva de log-verossimilhança
+  theta_seq <- seq(theta_hat - 2, theta_hat + 2, length.out = 200)
+
+  # Função de log-verossimilhança para Normal(θ, 1)
+  loglik <- sapply(theta_seq, function(theta) {
+    sum(dnorm(x, mean = theta, sd = 1, log = TRUE))
+  })
+
+  # Valor de θ₀ definido pelo usuário
+  theta0 <- input$theta0
+
+  # Cálculo da razão de verossimilhança
+  loglik_theta0 <- loglik[which.min(abs(theta_seq - theta0))]
+  Lambda <- exp(loglik_theta0 - max(loglik))
+  LR <- -2 * log(Lambda)
+
+  # -----------------------------
+  # Gráfico com ggplot2
+  # -----------------------------
+  library(ggplot2)
+  df <- data.frame(theta = theta_seq, loglik = loglik)
+
+  ggplot(df, aes(x = theta, y = loglik)) +
+    geom_line(color = "blue", linewidth = 1) +
+    geom_vline(xintercept = theta_hat, color = "red", linetype = "dashed", linewidth = 1) +
+    geom_vline(xintercept = theta0, color = "darkgreen", linetype = "dashed", linewidth = 1) +
+    annotate("point", x = theta_hat, y = max(loglik), color = "red", size = 3) +
+    annotate("point", x = theta0, y = loglik_theta0, color = "darkgreen", size = 3) +
+    annotate("segment", x = theta0, y = loglik_theta0, xend = theta0, yend = max(loglik),
+             arrow = arrow(length = unit(0.1, "inches")), color = "purple", linewidth = 1) +
+    annotate("text", x = theta_hat, y = max(loglik) + 0.2,
+             label = "θ̂", color = "red", size = 5, fontface = "bold") +
+    annotate("text", x = theta0, y = loglik_theta0 - 0.2,
+             label = "θ₀", color = "darkgreen", size = 5, fontface = "bold") +
+    annotate("text",
+             x = theta0 - 0.2,
+             y = (max(loglik) + loglik_theta0) / 2,
+             label = "-2[ℓ(θ₀) - ℓ(θ̂)]",
+             color = "purple", size = 4, hjust = 1, fontface = "italic") +
+    labs(
+      title = "Teste da Razão de Verossimilhança (TRV)",
+      subtitle = paste0("Λ = ", round(Lambda, 4),
+                        "   |   -2 log Λ = ", round(LR, 3)),
+      x = expression(theta),
+      y = expression(ell(theta))
+    ) +
+    theme_minimal(base_size = 13)
+})
+```
+
+
+
