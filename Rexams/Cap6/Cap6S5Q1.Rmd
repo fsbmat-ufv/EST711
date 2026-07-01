@@ -1,0 +1,42 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Choices textuais
+all_choices <- c(
+  "$\\Lambda = \\frac{\\sup_{\\theta \\in \\Omega_0} L(\\theta;\\mathbf{x})}{\\sup_{\\theta \\in \\Omega} L(\\theta;\\mathbf{x})}$, e $H_0$ e rejeitada quando $\\Lambda \\leq k$ (ou equivalentemente $-2\\log\\Lambda \\geq c$).",
+  "$\\Lambda = \\frac{L(\\hat{\\theta};\\mathbf{x})}{L(\\theta_0;\\mathbf{x})}$, rejeitando quando $\\Lambda > k$ (razao de verossimilhancas simples).",
+  "$\\Lambda = \\frac{\\sup_{\\theta \\in \\Omega} L(\\theta;\\mathbf{x})}{\\sup_{\\theta \\in \\Omega_0} L(\\theta;\\mathbf{x})}$, com a razao invertida em relacao a definicao padrao.",
+  "$\\Lambda = -2\\log(L(\\hat{\\theta})/L(\\theta_0))$, que tem distribuicao $F$ sob $H_0$.",
+  "$\\Lambda = L(\\hat{\\theta}_1;\\mathbf{x})/L(\\hat{\\theta}_0;\\mathbf{x})$, onde $\\hat{\\theta}_1$ e o EMV irrestrito e $\\hat{\\theta}_0$ o EMV restrito a $\\Omega_0$."
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+A estatistica do Teste de Razao de Verossimilhanca (TRV) e corretamente definida como:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+A estatistica TRV e $\Lambda = \sup_{\theta \in \Omega_0}L(\theta)/\sup_{\theta \in \Omega}L(\theta) \in [0,1]$. Como o numerador e mais restrito, $\Lambda \leq 1$. Rejeita-se $H_0$ quando $\Lambda$ e pequeno (evidencia contra $H_0$), ou equivalentemente $-2\log\Lambda$ e grande.
+
+A opcao 2 e a razao de verossimilhancas ponto-a-ponto (Lema de NP), nao o TRV generalizado. A opcao 3 tem numerador e denominador trocados. A opcao 4 tem distribuicao $\chi^2$, nao $F$. A opcao 5 e equivalente mas com notacao diferente.
+
+Meta-information
+================
+exname: Cap6S5Q1_TRV_definicao
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

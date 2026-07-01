@@ -1,0 +1,913 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+<title>Exam 1</title>
+<style type="text/css">
+body{font-family: Arial, Helvetica, Sans;}
+</style>
+<meta charset="utf-8" />
+</head>
+
+<body>
+<h2>Exam 1</h2>
+
+<ol>
+<li>
+<h4>Question</h4>
+<p>Em testes de hipoteses, qual par de afirmacoes e CORRETO?</p>
+<br/>
+<ol type="a">
+<li>
+Erro Tipo I: nao rejeitar <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math> quando ela e falsa. Erro Tipo II: rejeitar <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math> quando ela e verdadeira.
+</li>
+<li>
+Erro Tipo I: a probabilidade de rejeitar <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>1</mn></msub><annotation encoding="application/x-tex">H_1</annotation></semantics></math> quando <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>1</mn></msub><annotation encoding="application/x-tex">H_1</annotation></semantics></math> e verdadeira.
+</li>
+<li>
+Erro Tipo I: aceitar <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>1</mn></msub><annotation encoding="application/x-tex">H_1</annotation></semantics></math> quando <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math> e falsa. Erro Tipo II: aceitar <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math> quando <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>1</mn></msub><annotation encoding="application/x-tex">H_1</annotation></semantics></math> e verdadeira.
+</li>
+<li>
+Erro Tipo I e Tipo II sao equivalentes quando o tamanho amostral e suficientemente grande.
+</li>
+<li>
+Erro Tipo I: rejeitar <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math> quando ela e verdadeira. Erro Tipo II: nao rejeitar <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math> quando ela e falsa.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Por definicao: Erro Tipo I (falso positivo) ocorre ao rejeitar <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math> sendo ela verdadeira, com probabilidade <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>. Erro Tipo II (falso negativo) ocorre ao nao rejeitar <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math> sendo ela falsa, com probabilidade <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>β</mi><annotation encoding="application/x-tex">\beta</annotation></semantics></math>. As demais opcoes invertem as definicoes ou contem afirmacoes incorretas sobre a relacao entre os erros e o tamanho amostral.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>O poder de um teste e a probabilidade de rejeitar <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math> quando ela e falsa. Para um teste com nivel de significancia <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><mn>0.1</mn></mrow><annotation encoding="application/x-tex">\alpha = 0.1</annotation></semantics></math> e probabilidade de Erro Tipo II <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>β</mi><mo>=</mo><mn>0.25</mn></mrow><annotation encoding="application/x-tex">\beta = 0.25</annotation></semantics></math>, o poder do teste e:</p>
+<br/>
+<ol type="a">
+<li>
+0.35
+</li>
+<li>
+0.075
+</li>
+<li>
+0.1
+</li>
+<li>
+0.75
+</li>
+<li>
+0.9
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Poder <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>=</mo><mn>1</mn><mo>−</mo><mi>β</mi><mo>=</mo><mn>1</mn><mo>−</mo><mn>0.25</mn><mo>=</mo><mn>0.75</mn></mrow><annotation encoding="application/x-tex">= 1 - \beta = 1 - 0.25 = 0.75</annotation></semantics></math>.</p>
+<p>Erros comuns: confundir poder com <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math> (nivel) ou com <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>−</mo><mi>α</mi></mrow><annotation encoding="application/x-tex">1-\alpha</annotation></semantics></math> (confianca); somar <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>+</mo><mi>β</mi></mrow><annotation encoding="application/x-tex">\alpha + \beta</annotation></semantics></math>; multiplicar <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>β</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\alpha(1-\beta)</annotation></semantics></math>.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>A funcao de poder de um teste e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>γ</mi><mo stretchy="false" form="prefix">(</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>P</mi><mi>θ</mi></msub><mo stretchy="false" form="prefix">[</mo><mrow><mtext mathvariant="normal">rejeitar </mtext><mspace width="0.333em"></mspace></mrow><msub><mi>H</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">\gamma(\theta) = P_\theta[\text{rejeitar } H_0]</annotation></semantics></math>. Para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mi>θ</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">H_0: \theta = 2</annotation></semantics></math> com nivel <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><mn>0.01</mn></mrow><annotation encoding="application/x-tex">\alpha = 0.01</annotation></semantics></math>, o valor de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>γ</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>θ</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>γ</mi><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\gamma(\theta_0) = \gamma(2)</annotation></semantics></math> e:</p>
+<br/>
+<ol type="a">
+<li>
+Igual a <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>β</mi><annotation encoding="application/x-tex">\beta</annotation></semantics></math> (probabilidade de Erro Tipo II), pois <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>γ</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>θ</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\gamma(\theta_0)</annotation></semantics></math> mede o erro cometido sob <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math>.
+</li>
+<li>
+Igual ao nivel de significancia <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><mn>0.01</mn></mrow><annotation encoding="application/x-tex">\alpha = 0.01</annotation></semantics></math>, pois <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>γ</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>θ</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>P</mi><msub><mi>θ</mi><mn>0</mn></msub></msub><mo stretchy="false" form="prefix">[</mo><mrow><mtext mathvariant="normal">rejeitar </mtext><mspace width="0.333em"></mspace></mrow><msub><mi>H</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">]</mo><mo>=</mo><mi>α</mi></mrow><annotation encoding="application/x-tex">\gamma(\theta_0) = P_{\theta_0}[\text{rejeitar } H_0] = \alpha</annotation></semantics></math>.
+</li>
+<li>
+Igual ao poder <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>−</mo><mi>β</mi></mrow><annotation encoding="application/x-tex">1 - \beta</annotation></semantics></math>, que e sempre maior que <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>.
+</li>
+<li>
+Igual a <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>−</mo><mi>α</mi><mo>=</mo><mn>0.99</mn></mrow><annotation encoding="application/x-tex">1 - \alpha = 0.99</annotation></semantics></math>, pois e a probabilidade de nao rejeitar <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math> quando ela e verdadeira.
+</li>
+<li>
+Igual a 0, pois quando <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math> e verdadeira em <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>θ</mi><mn>0</mn></msub><annotation encoding="application/x-tex">\theta_0</annotation></semantics></math> nunca se rejeita <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math>.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Por definicao do nivel de significancia, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>γ</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>θ</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>P</mi><msub><mi>θ</mi><mn>0</mn></msub></msub><mo stretchy="false" form="prefix">[</mo><mrow><mtext mathvariant="normal">rejeitar </mtext><mspace width="0.333em"></mspace></mrow><msub><mi>H</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">]</mo><mo>=</mo><mi>α</mi></mrow><annotation encoding="application/x-tex">\gamma(\theta_0) = P_{\theta_0}[\text{rejeitar } H_0] = \alpha</annotation></semantics></math>. A funcao de poder avaliada no valor nulo e justamente o nivel do teste. Ela nao e zero (o teste pode rejeitar mesmo sob <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math>, com probabilidade <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>); nao e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>−</mo><mi>α</mi></mrow><annotation encoding="application/x-tex">1-\alpha</annotation></semantics></math> (que seria a probabilidade de nao rejeitar); e nao e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>β</mi><annotation encoding="application/x-tex">\beta</annotation></semantics></math> (que e avaliado sob <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>1</mn></msub><annotation encoding="application/x-tex">H_1</annotation></semantics></math>).</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>A regiao critica <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝒞</mi><annotation encoding="application/x-tex">\mathcal{C}</annotation></semantics></math> de um teste de hipoteses e definida como:</p>
+<br/>
+<ol type="a">
+<li>
+O intervalo de confianca para o parametro sob <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math>.
+</li>
+<li>
+O conjunto de valores do p-valor que levam a rejeicao de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math>.
+</li>
+<li>
+O subconjunto do espaco amostral tal que, se a amostra cair em <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝒞</mi><annotation encoding="application/x-tex">\mathcal{C}</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math> e rejeitada.
+</li>
+<li>
+O conjunto de valores do parametro compativeis com <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math>.
+</li>
+<li>
+O espaco amostral complementar ao espaco parametrico de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math>.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>A regiao critica (ou regiao de rejeicao) e um subconjunto do espaco amostral: se a amostra observada pertencer a <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝒞</mi><annotation encoding="application/x-tex">\mathcal{C}</annotation></semantics></math>, rejeita-se <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math>. O nivel do teste e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><msub><mi>P</mi><msub><mi>θ</mi><mn>0</mn></msub></msub><mo stretchy="false" form="prefix">(</mo><mi>𝐗</mi><mo>∈</mo><mi>𝒞</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\alpha = P_{\theta_0}(\mathbf{X} \in \mathcal{C})</annotation></semantics></math>.</p>
+<p>As demais opcoes confundem regiao critica com espaco parametrico, intervalo de confianca, ou p-valor.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>O p-valor de um teste de hipoteses e corretamente interpretado como:</p>
+<br/>
+<ol type="a">
+<li>
+A probabilidade de cometer Erro Tipo I na proxima rejeicao.
+</li>
+<li>
+A probabilidade de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math> ser verdadeira dado os dados observados.
+</li>
+<li>
+O nivel de significancia <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math> que os dados suportam.
+</li>
+<li>
+A probabilidade de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>1</mn></msub><annotation encoding="application/x-tex">H_1</annotation></semantics></math> ser verdadeira dado os dados observados.
+</li>
+<li>
+A probabilidade, sob <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math>, de observar um resultado tao ou mais extremo que o observado.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>O p-valor e uma probabilidade calculada sob <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math>: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><msub><mi>P</mi><msub><mi>H</mi><mn>0</mn></msub></msub><mo stretchy="false" form="prefix">(</mo><mi>T</mi><mo>≥</mo><msub><mi>t</mi><mtext mathvariant="normal">obs</mtext></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">p = P_{H_0}(T \geq t_{\text{obs}})</annotation></semantics></math> para testes unilaterais (adaptado para bilaterais). Ele nao e a probabilidade de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math> ser verdadeira (isso seria interpretacao bayesiana), nem de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>1</mn></msub><annotation encoding="application/x-tex">H_1</annotation></semantics></math> ser verdadeira. Tambem nao equivale ao nivel <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math> nem e a probabilidade de Erro Tipo I futuro.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Mantendo o tamanho amostral <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math> fixo, o que ocorre ao diminuirmos <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math> (o nivel de significancia)?</p>
+<br/>
+<ol type="a">
+<li>
+O Erro Tipo II tambem diminui, pois ambos os erros sao controlados pelo mesmo parametro <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>.
+</li>
+<li>
+O poder do teste aumenta, pois controlamos melhor o Erro Tipo I ao reduzir <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>.
+</li>
+<li>
+O Erro Tipo II (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>β</mi><annotation encoding="application/x-tex">\beta</annotation></semantics></math>) tende a aumentar, pois torna-se mais dificil rejeitar <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math>, reduzindo o poder.
+</li>
+<li>
+Nao ha relacao entre <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math> e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>β</mi><annotation encoding="application/x-tex">\beta</annotation></semantics></math> quando o tamanho amostral e fixo.
+</li>
+<li>
+O Erro Tipo II fica inalterado, pois os dois tipos de erro sao independentes entre si.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Existe um trade-off fundamental: com <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math> fixo, reduzir <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math> (tornar o teste mais conservador, exigindo mais evidencia para rejeitar <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math>) implica aumentar <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>β</mi><annotation encoding="application/x-tex">\beta</annotation></semantics></math> (maior probabilidade de nao rejeitar <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math> falsa), ou seja, menor poder. Para reduzir ambos <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math> e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>β</mi><annotation encoding="application/x-tex">\beta</annotation></semantics></math> simultaneamente, e necessario aumentar <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>O nivel de significancia de um teste <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mi>θ</mi><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">H_0:\theta = 4</annotation></semantics></math> vs. <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mi>θ</mi><mo>≠</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">H_1:\theta \neq 4</annotation></semantics></math> com regiao critica <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝒞</mi><annotation encoding="application/x-tex">\mathcal{C}</annotation></semantics></math> e definido como:</p>
+<br/>
+<ol type="a">
+<li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><mi>P</mi><mo stretchy="false" form="prefix">[</mo><mo stretchy="false" form="prefix">(</mo><mi>𝐗</mi><mo stretchy="false" form="postfix">)</mo><mo>∈</mo><mi>𝒞</mi><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">\alpha = P[(\mathbf{X}) \in \mathcal{C}]</annotation></semantics></math> marginalizando sobre <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>θ</mi><annotation encoding="application/x-tex">\theta</annotation></semantics></math> com distribuicao a priori.
+</li>
+<li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><mn>1</mn><mo>−</mo><msub><mi>P</mi><msub><mi>θ</mi><mn>0</mn></msub></msub><mo stretchy="false" form="prefix">[</mo><mo stretchy="false" form="prefix">(</mo><mi>𝐗</mi><mo stretchy="false" form="postfix">)</mo><mo>∈</mo><mi>𝒞</mi><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">\alpha = 1 - P_{\theta_0}[(\mathbf{X}) \in \mathcal{C}]</annotation></semantics></math> — o complemento da probabilidade de rejeicao sob <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>θ</mi><mn>0</mn></msub><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">\theta_0 = 4</annotation></semantics></math>.
+</li>
+<li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><msub><mi>P</mi><msub><mi>θ</mi><mn>0</mn></msub></msub><mo stretchy="false" form="prefix">[</mo><mo stretchy="false" form="prefix">(</mo><mi>𝐗</mi><mo stretchy="false" form="postfix">)</mo><mo>∈</mo><mi>𝒞</mi><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">\alpha = P_{\theta_0}[(\mathbf{X}) \in \mathcal{C}]</annotation></semantics></math> — a probabilidade de rejeitar <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math> quando <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">\theta = 4</annotation></semantics></math>.
+</li>
+<li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><msub><mrow><mi mathvariant="normal">max</mi><mo>&#8289;</mo></mrow><mrow><mi>θ</mi><mo>∈</mo><msub><mi mathvariant="normal">Ω</mi><mn>1</mn></msub></mrow></msub><msub><mi>P</mi><mi>θ</mi></msub><mo stretchy="false" form="prefix">[</mo><mo stretchy="false" form="prefix">(</mo><mi>𝐗</mi><mo stretchy="false" form="postfix">)</mo><mo>∈</mo><mi>𝒞</mi><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">\alpha = \max_{\theta \in \Omega_1} P_\theta[(\mathbf{X}) \in \mathcal{C}]</annotation></semantics></math> — maximo sobre a hipotese alternativa.
+</li>
+<li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><msub><mi>P</mi><msub><mi>θ</mi><mn>0</mn></msub></msub><mo stretchy="false" form="prefix">[</mo><mo stretchy="false" form="prefix">(</mo><mi>𝐗</mi><mo stretchy="false" form="postfix">)</mo><mi>i̸</mi><mi>n</mi><mi>𝒞</mi><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">\alpha = P_{\theta_0}[(\mathbf{X}) \not in \mathcal{C}]</annotation></semantics></math> — a probabilidade de NAO rejeitar <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math> quando <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">\theta = 4</annotation></semantics></math>.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>O nivel de significancia e a probabilidade de rejeitar <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math> quando ela e verdadeira: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><msub><mi>P</mi><msub><mi>θ</mi><mn>0</mn></msub></msub><mo stretchy="false" form="prefix">[</mo><mi>𝐗</mi><mo>∈</mo><mi>𝒞</mi><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">\alpha = P_{\theta_0}[\mathbf{X} \in \mathcal{C}]</annotation></semantics></math>. Para hipoteses simples, isso e direto. Para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math> composta, seria <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><msub><mrow><mi mathvariant="normal">sup</mi><mo>&#8289;</mo></mrow><mrow><mi>θ</mi><mo>∈</mo><msub><mi mathvariant="normal">Ω</mi><mn>0</mn></msub></mrow></msub><msub><mi>P</mi><mi>θ</mi></msub><mo stretchy="false" form="prefix">[</mo><mi>𝐗</mi><mo>∈</mo><mi>𝒞</mi><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">\alpha = \sup_{\theta \in \Omega_0} P_\theta[\mathbf{X} \in \mathcal{C}]</annotation></semantics></math> (opcao 2 esta errada pois maximiza sobre <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi mathvariant="normal">Ω</mi><mn>1</mn></msub><annotation encoding="application/x-tex">\Omega_1</annotation></semantics></math>).</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Para o teste <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mi>μ</mi><mo>=</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">H_0:\mu = 5</annotation></semantics></math> vs. <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mi>μ</mi><mo>&gt;</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">H_1:\mu &gt; 5</annotation></semantics></math> (unilateral a direita) com nivel <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><mn>0</mn><mo>,</mo><mn>05</mn></mrow><annotation encoding="application/x-tex">\alpha = 0{,}05</annotation></semantics></math>, usando a estatistica <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Z</mi><mo>=</mo><msqrt><mi>n</mi></msqrt><mo stretchy="false" form="prefix">(</mo><mover><mi>X</mi><mo accent="true">‾</mo></mover><mo>−</mo><msub><mi>μ</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mi>σ</mi></mrow><annotation encoding="application/x-tex">Z = \sqrt{n}(\bar{X}-\mu_0)/\sigma</annotation></semantics></math>, a regiao critica e:</p>
+<br/>
+<ol type="a">
+<li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Z</mi><mo>&gt;</mo><msub><mi>z</mi><mrow><mn>0</mn><mo>,</mo><mn>975</mn></mrow></msub><mo>=</mo><mn>1</mn><mo>,</mo><mn>96</mn></mrow><annotation encoding="application/x-tex">Z &gt; z_{0{,}975} = 1{,}96</annotation></semantics></math>.
+</li>
+<li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Z</mi><mo>&gt;</mo><msub><mi>z</mi><mrow><mn>0</mn><mo>,</mo><mn>95</mn></mrow></msub><mo>=</mo><mn>1</mn><mo>,</mo><mn>645</mn></mrow><annotation encoding="application/x-tex">Z &gt; z_{0{,}95} = 1{,}645</annotation></semantics></math>.
+</li>
+<li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Z</mi><mo>&lt;</mo><mi>−</mi><msub><mi>z</mi><mrow><mn>0</mn><mo>,</mo><mn>95</mn></mrow></msub><mo>=</mo><mi>−</mi><mn>1</mn><mo>,</mo><mn>645</mn></mrow><annotation encoding="application/x-tex">Z &lt; -z_{0{,}95} = -1{,}645</annotation></semantics></math>.
+</li>
+<li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mi>Z</mi><mo stretchy="false" form="prefix">|</mo><mo>&gt;</mo><msub><mi>z</mi><mrow><mn>0</mn><mo>,</mo><mn>975</mn></mrow></msub><mo>=</mo><mn>1</mn><mo>,</mo><mn>96</mn></mrow><annotation encoding="application/x-tex">|Z| &gt; z_{0{,}975} = 1{,}96</annotation></semantics></math>.
+</li>
+<li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Z</mi><mo>&gt;</mo><msub><mi>z</mi><mrow><mn>0</mn><mo>,</mo><mn>99</mn></mrow></msub><mo>=</mo><mn>2</mn><mo>,</mo><mn>326</mn></mrow><annotation encoding="application/x-tex">Z &gt; z_{0{,}99} = 2{,}326</annotation></semantics></math>.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mi>μ</mi><mo>&gt;</mo><msub><mi>μ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_1:\mu &gt; \mu_0</annotation></semantics></math>, a regiao critica e unilateral a direita: rejeita-se <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math> quando <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Z</mi><mo>&gt;</mo><msub><mi>z</mi><mrow><mn>1</mn><mo>−</mo><mi>α</mi></mrow></msub><mo>=</mo><msub><mi>z</mi><mrow><mn>0</mn><mo>,</mo><mn>95</mn></mrow></msub><mo>=</mo><mn>1</mn><mo>,</mo><mn>645</mn></mrow><annotation encoding="application/x-tex">Z &gt; z_{1-\alpha} = z_{0{,}95} = 1{,}645</annotation></semantics></math>.</p>
+<p>Usar <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>z</mi><mrow><mn>0</mn><mo>,</mo><mn>975</mn></mrow></msub><mo>=</mo><mn>1</mn><mo>,</mo><mn>96</mn></mrow><annotation encoding="application/x-tex">z_{0{,}975}=1{,}96</annotation></semantics></math> seria para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><mn>0</mn><mo>,</mo><mn>025</mn></mrow><annotation encoding="application/x-tex">\alpha=0{,}025</annotation></semantics></math> unilateral ou <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><mn>0</mn><mo>,</mo><mn>05</mn></mrow><annotation encoding="application/x-tex">\alpha=0{,}05</annotation></semantics></math> bilateral. A regiao <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mi>Z</mi><mo stretchy="false" form="prefix">|</mo><mo>&gt;</mo><mn>1</mn><mo>,</mo><mn>96</mn></mrow><annotation encoding="application/x-tex">|Z|&gt;1{,}96</annotation></semantics></math> e bilateral. <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Z</mi><mo>&lt;</mo><mi>−</mi><mn>1</mn><mo>,</mo><mn>645</mn></mrow><annotation encoding="application/x-tex">Z&lt;-1{,}645</annotation></semantics></math> seria para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mi>μ</mi><mo>&lt;</mo><msub><mi>μ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_1:\mu &lt; \mu_0</annotation></semantics></math>. <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>z</mi><mrow><mn>0</mn><mo>,</mo><mn>99</mn></mrow></msub><mo>=</mo><mn>2</mn><mo>,</mo><mn>326</mn></mrow><annotation encoding="application/x-tex">z_{0{,}99}=2{,}326</annotation></semantics></math> corresponderia a <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><mn>0</mn><mo>,</mo><mn>01</mn></mrow><annotation encoding="application/x-tex">\alpha=0{,}01</annotation></semantics></math>.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mi>μ</mi><mo>=</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">H_0:\mu = 5</annotation></semantics></math> vs. <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mi>μ</mi><mo>&gt;</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">H_1:\mu &gt; 5</annotation></semantics></math> com <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">\sigma = 3</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>49</mn></mrow><annotation encoding="application/x-tex">n = 49</annotation></semantics></math> e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><mn>0</mn><mo>,</mo><mn>05</mn></mrow><annotation encoding="application/x-tex">\alpha = 0{,}05</annotation></semantics></math>: a regiao critica e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>X</mi><mo accent="true">‾</mo></mover><mo>&gt;</mo><mn>5.705</mn></mrow><annotation encoding="application/x-tex">\bar{X} &gt; 5.705</annotation></semantics></math>. Se o verdadeiro valor e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>=</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">\mu = 8</annotation></semantics></math>, a probabilidade do Erro Tipo II e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo stretchy="false" form="prefix">(</mo><mover><mi>X</mi><mo accent="true">‾</mo></mover><mo>≤</mo><mn>5.705</mn><mo>∣</mo><mi>μ</mi><mo>=</mo><mn>8</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">P(\bar{X} \leq 5.705 \mid \mu = 8)</annotation></semantics></math>:</p>
+<br/>
+<ol type="a">
+<li>
+0.05
+</li>
+<li>
+1
+</li>
+<li>
+1
+</li>
+<li>
+0.95
+</li>
+<li>
+0
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo stretchy="false" form="prefix">(</mo><mtext mathvariant="normal">Erro Tipo II</mtext><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>P</mi><mspace width="-0.167em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mi>Z</mi><mo>≤</mo><mfrac><mrow><mn>5.705</mn><mo>−</mo><mn>8</mn></mrow><mrow><mn>3</mn><mi>/</mi><msqrt><mn>49</mn></msqrt></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi mathvariant="normal">Φ</mi><mspace width="-0.167em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mi>−</mi><mn>5.355</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">P(\text{Erro Tipo II}) = P\!\left(Z \leq \frac{5.705 - 8}{3/\sqrt{49}}\right) = \Phi\!\left(-5.355\right) = 0</annotation></semantics></math>.</p>
+<p>O poder correspondente seria <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>−</mo><mi>β</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">1 - \beta = 1</annotation></semantics></math>.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Um pesquisador quer verificar se um novo tratamento aumenta a media de producao ACIMA de 50 unidades por hora. As hipoteses corretas para esse teste sao:</p>
+<br/>
+<ol type="a">
+<li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mi>μ</mi><mo>&gt;</mo><mn>50</mn></mrow><annotation encoding="application/x-tex">H_0: \mu &gt; 50</annotation></semantics></math> contra <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mi>μ</mi><mo>≤</mo><mn>50</mn></mrow><annotation encoding="application/x-tex">H_1: \mu \leq 50</annotation></semantics></math>.
+</li>
+<li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mi>μ</mi><mo>≤</mo><mn>50</mn></mrow><annotation encoding="application/x-tex">H_0: \mu \leq 50</annotation></semantics></math> contra <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mi>μ</mi><mo>&gt;</mo><mn>50</mn></mrow><annotation encoding="application/x-tex">H_1: \mu &gt; 50</annotation></semantics></math>.
+</li>
+<li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mi>μ</mi><mo>≥</mo><mn>50</mn></mrow><annotation encoding="application/x-tex">H_0: \mu \geq 50</annotation></semantics></math> contra <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mi>μ</mi><mo>&lt;</mo><mn>50</mn></mrow><annotation encoding="application/x-tex">H_1: \mu &lt; 50</annotation></semantics></math>.
+</li>
+<li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mi>μ</mi><mo>&lt;</mo><mn>50</mn></mrow><annotation encoding="application/x-tex">H_0: \mu &lt; 50</annotation></semantics></math> contra <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mi>μ</mi><mo>≥</mo><mn>50</mn></mrow><annotation encoding="application/x-tex">H_1: \mu \geq 50</annotation></semantics></math>.
+</li>
+<li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mi>μ</mi><mo>=</mo><mn>50</mn></mrow><annotation encoding="application/x-tex">H_0: \mu = 50</annotation></semantics></math> contra <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mi>μ</mi><mo>≠</mo><mn>50</mn></mrow><annotation encoding="application/x-tex">H_1: \mu \neq 50</annotation></semantics></math>.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>A hipotese alternativa <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>1</mn></msub><annotation encoding="application/x-tex">H_1</annotation></semantics></math> deve refletir o que o pesquisador deseja demonstrar (o efeito de interesse): <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>&gt;</mo><mn>50</mn></mrow><annotation encoding="application/x-tex">\mu &gt; 50</annotation></semantics></math>. A hipotese nula e o seu complemento: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mi>μ</mi><mo>≤</mo><mn>50</mn></mrow><annotation encoding="application/x-tex">H_0: \mu \leq 50</annotation></semantics></math>. Colocar <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>&gt;</mo><mn>50</mn></mrow><annotation encoding="application/x-tex">\mu &gt; 50</annotation></semantics></math> em <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math> inverte a logica do teste. O teste bilateral (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>≠</mo><mn>50</mn></mrow><annotation encoding="application/x-tex">\mu \neq 50</annotation></semantics></math>) nao captura a direcionalidade do interesse. As demais opcoes invertem as hipoteses ou usam a direcao errada.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>O Lema de Neyman-Pearson afirma que, para testar <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mi>θ</mi><mo>=</mo><msub><mi>θ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0:\theta = \theta_0</annotation></semantics></math> vs. <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mi>θ</mi><mo>=</mo><msub><mi>θ</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">H_1:\theta = \theta_1</annotation></semantics></math> (hipoteses simples), o teste mais poderoso de tamanho <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math> rejeita <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math> quando:</p>
+<br/>
+<ol type="a">
+<li>
+A estatistica <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>X</mi><mo accent="true">‾</mo></mover><annotation encoding="application/x-tex">\bar{X}</annotation></semantics></math> excede o quantil <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>z</mi><mrow><mn>1</mn><mo>−</mo><mi>α</mi></mrow></msub><annotation encoding="application/x-tex">z_{1-\alpha}</annotation></semantics></math> da distribuicao normal padrao.
+</li>
+<li>
+A verossimilhanca marginal excede <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>⋅</mo><mi>α</mi></mrow><annotation encoding="application/x-tex">k \cdot \alpha</annotation></semantics></math> para alguma constante <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>.
+</li>
+<li>
+A log-verossimilhanca sob <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>1</mn></msub><annotation encoding="application/x-tex">H_1</annotation></semantics></math> excede a log-verossimilhanca sob <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math> em pelo menos 1 unidade.
+</li>
+<li>
+A razao de verossimilhancas <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Λ</mi><mo>=</mo><mi>L</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>θ</mi><mn>1</mn></msub><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mi>L</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>θ</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\Lambda = L(\theta_1)/L(\theta_0)</annotation></semantics></math> excede uma constante <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math> escolhida tal que o tamanho do teste seja <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>.
+</li>
+<li>
+O p-valor e menor que <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>, independente da razao de verossimilhancas.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>O Lema de Neyman-Pearson estabelece que o teste mais poderoso de tamanho <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math> tem regiao critica <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝒞</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>x</mi><mo>:</mo><mi>L</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>θ</mi><mn>1</mn></msub><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mi>L</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>θ</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>&gt;</mo><mi>k</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\mathcal{C} = \{x: L(\theta_1)/L(\theta_0) &gt; k\}</annotation></semantics></math>, onde <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math> e escolhido tal que <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><msub><mi>θ</mi><mn>0</mn></msub></msub><mo stretchy="false" form="prefix">(</mo><mi>𝐗</mi><mo>∈</mo><mi>𝒞</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>α</mi></mrow><annotation encoding="application/x-tex">P_{\theta_0}(\mathbf{X} \in \mathcal{C}) = \alpha</annotation></semantics></math>. Este resultado e valido para hipoteses SIMPLES vs. SIMPLES.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mi>i</mi></msub><mover><mo>∼</mo><mtext mathvariant="normal">iid</mtext></mover><mtext mathvariant="normal">Bernoulli</mtext><mo stretchy="false" form="prefix">(</mo><mi>p</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">X_i \overset{\text{iid}}{\sim} \text{Bernoulli}(p)</annotation></semantics></math>, testando <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mi>p</mi><mo>=</mo><mn>0.3</mn></mrow><annotation encoding="application/x-tex">H_0:p = 0.3</annotation></semantics></math> vs. <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mi>p</mi><mo>=</mo><mn>0.8</mn></mrow><annotation encoding="application/x-tex">H_1:p = 0.8</annotation></semantics></math> com <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>10</mn></mrow><annotation encoding="application/x-tex">n = 10</annotation></semantics></math>. A razao de verossimilhancas e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Λ</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>p</mi><mn>1</mn></msub><mi>/</mi><msub><mi>p</mi><mn>0</mn></msub><msup><mo stretchy="false" form="postfix">)</mo><mrow><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub></mrow></msup><mo>⋅</mo><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><msub><mi>p</mi><mn>1</mn></msub><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><msub><mi>p</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">)</mo><msup><mo stretchy="false" form="postfix">)</mo><mrow><mi>n</mi><mo>−</mo><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub></mrow></msup></mrow><annotation encoding="application/x-tex">\Lambda = (p_1/p_0)^{\sum X_i}\cdot((1-p_1)/(1-p_0))^{n-\sum X_i}</annotation></semantics></math>. A regiao critica do Lema de NP rejeita <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math> para valores GRANDES de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\sum X_i</annotation></semantics></math>. Por que?</p>
+<br/>
+<ol type="a">
+<li>
+Como <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>p</mi><mn>1</mn></msub><mi>/</mi><msub><mi>p</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\log(p_1/p_0) &gt; 0</annotation></semantics></math> e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><msub><mi>p</mi><mn>1</mn></msub><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><msub><mi>p</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mo>&lt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\log((1-p_1)/(1-p_0)) &lt; 0</annotation></semantics></math>, a condicao <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Λ</mi><mo>&gt;</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">\Lambda &gt; k</annotation></semantics></math> se reduz a <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub><mo>&gt;</mo><msup><mi>k</mi><mo>′</mo></msup></mrow><annotation encoding="application/x-tex">\sum X_i &gt; k&#39;</annotation></semantics></math> para algum <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>k</mi><mo>′</mo></msup><annotation encoding="application/x-tex">k&#39;</annotation></semantics></math>.
+</li>
+<li>
+A regiao critica para Bernoulli e sempre bilateral, independente de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mn>0</mn></msub><mo>=</mo><mn>0.3</mn></mrow><annotation encoding="application/x-tex">p_0 = 0.3</annotation></semantics></math> e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mn>1</mn></msub><mo>=</mo><mn>0.8</mn></mrow><annotation encoding="application/x-tex">p_1 = 0.8</annotation></semantics></math>.
+</li>
+<li>
+A condicao <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Λ</mi><mo>&gt;</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">\Lambda &gt; k</annotation></semantics></math> sempre equivale a ${X} &gt; $ algum valor, independente das distribuicoes.
+</li>
+<li>
+Como <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mn>0</mn></msub><mo>&lt;</mo><msub><mi>p</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">p_0 &lt; p_1</annotation></semantics></math>, a razao <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Λ</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\Lambda &lt; 1</annotation></semantics></math> sempre, e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math> nunca e rejeitada.
+</li>
+<li>
+O Lema de NP nunca se aplica a distribuicoes discretas como Bernoulli.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Tomando logaritmo: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mi mathvariant="normal">Λ</mi><mo>=</mo><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>p</mi><mn>1</mn></msub><mi>/</mi><msub><mi>p</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo>−</mo><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub><mo stretchy="false" form="postfix">)</mo><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><msub><mi>p</mi><mn>1</mn></msub><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><msub><mi>p</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\log\Lambda = \sum X_i \log(p_1/p_0) + (n-\sum X_i)\log((1-p_1)/(1-p_0))</annotation></semantics></math>.</p>
+<p>Como <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mn>1</mn></msub><mo>&gt;</mo><msub><mi>p</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">p_1 &gt; p_0</annotation></semantics></math>: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>p</mi><mn>1</mn></msub><mi>/</mi><msub><mi>p</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\log(p_1/p_0) &gt; 0</annotation></semantics></math> e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><msub><mi>p</mi><mn>1</mn></msub><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><msub><mi>p</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mo>&lt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\log((1-p_1)/(1-p_0)) &lt; 0</annotation></semantics></math>. Portanto <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mi mathvariant="normal">Λ</mi></mrow><annotation encoding="application/x-tex">\log\Lambda</annotation></semantics></math> e crescente em <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\sum X_i</annotation></semantics></math>, e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Λ</mi><mo>&gt;</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">\Lambda &gt; k</annotation></semantics></math> equivale a <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub><mo>&gt;</mo><msup><mi>k</mi><mo>′</mo></msup></mrow><annotation encoding="application/x-tex">\sum X_i &gt; k&#39;</annotation></semantics></math>.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mi>i</mi></msub><mover><mo>∼</mo><mtext mathvariant="normal">iid</mtext></mover><mi>N</mi><mo stretchy="false" form="prefix">(</mo><mi>μ</mi><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">X_i \overset{\text{iid}}{\sim} N(\mu,1)</annotation></semantics></math> com <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>σ</mi><mn>2</mn></msup><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\sigma^2 = 1</annotation></semantics></math> conhecido, testando <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mi>μ</mi><mo>=</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">H_0:\mu = 5</annotation></semantics></math> vs. <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mi>μ</mi><mo>=</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">H_1:\mu = 9</annotation></semantics></math> com <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><mn>0</mn><mo>,</mo><mn>05</mn></mrow><annotation encoding="application/x-tex">\alpha = 0{,}05</annotation></semantics></math>. Pelo Lema de NP, a regiao critica e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>X</mi><mo accent="true">‾</mo></mover><mo>&gt;</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">\bar{X} &gt; k</annotation></semantics></math>. O valor critico <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><msub><mi>μ</mi><mn>0</mn></msub><mo>+</mo><msub><mi>z</mi><mrow><mn>0</mn><mo>,</mo><mn>95</mn></mrow></msub><mspace width="0.167em"></mspace><mi>σ</mi><mi>/</mi><msqrt><mi>n</mi></msqrt></mrow><annotation encoding="application/x-tex">k = \mu_0 + z_{0{,}95}\,\sigma/\sqrt{n}</annotation></semantics></math> e:</p>
+<br/>
+<ol type="a">
+<li>
+5.392
+</li>
+<li>
+8.671
+</li>
+<li>
+7
+</li>
+<li>
+4.671
+</li>
+<li>
+5.329
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>5</mn><mo>+</mo><mn>1</mn><mo>,</mo><mn>645</mn><mo>×</mo><msqrt><mn>1</mn></msqrt><mi>/</mi><msqrt><mn>25</mn></msqrt><mo>=</mo><mn>5</mn><mo>+</mo><mn>1</mn><mo>,</mo><mn>645</mn><mo>×</mo><mn>1</mn><mi>/</mi><mn>5</mn><mo>=</mo><mn>5.329</mn></mrow><annotation encoding="application/x-tex">k = 5 + 1{,}645 \times \sqrt{1}/\sqrt{25} = 5 + 1{,}645 \times 1/5 = 5.329</annotation></semantics></math>.</p>
+<p>Erros comuns: usar <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>z</mi><mrow><mn>0</mn><mo>,</mo><mn>975</mn></mrow></msub><mo>=</mo><mn>1</mn><mo>,</mo><mn>96</mn></mrow><annotation encoding="application/x-tex">z_{0{,}975}=1{,}96</annotation></semantics></math> (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><mn>0</mn><mo>,</mo><mn>025</mn></mrow><annotation encoding="application/x-tex">\alpha=0{,}025</annotation></semantics></math>); sinal negativo (teste unilateral esquerdo); usar o ponto medio entre <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>μ</mi><mn>0</mn></msub><annotation encoding="application/x-tex">\mu_0</annotation></semantics></math> e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>μ</mi><mn>1</mn></msub><annotation encoding="application/x-tex">\mu_1</annotation></semantics></math>; subtrair de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>μ</mi><mn>1</mn></msub><annotation encoding="application/x-tex">\mu_1</annotation></semantics></math>.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mi>μ</mi><mo>=</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">H_0:\mu = 5</annotation></semantics></math> vs. <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mi>μ</mi><mo>=</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">H_1:\mu = 9</annotation></semantics></math> com <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>σ</mi><mn>2</mn></msup><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">\sigma^2 = 4</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>25</mn></mrow><annotation encoding="application/x-tex">n = 25</annotation></semantics></math> e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><mn>0</mn><mo>,</mo><mn>05</mn></mrow><annotation encoding="application/x-tex">\alpha = 0{,}05</annotation></semantics></math>: o valor critico e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>5.658</mn></mrow><annotation encoding="application/x-tex">k = 5.658</annotation></semantics></math>. O poder do teste MP e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo stretchy="false" form="prefix">(</mo><mover><mi>X</mi><mo accent="true">‾</mo></mover><mo>&gt;</mo><mn>5.658</mn><mo>∣</mo><mi>μ</mi><mo>=</mo><mn>9</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">P(\bar{X} &gt; 5.658 \mid \mu = 9)</annotation></semantics></math>:</p>
+<br/>
+<ol type="a">
+<li>
+1
+</li>
+<li>
+0
+</li>
+<li>
+0
+</li>
+<li>
+0.95
+</li>
+<li>
+0.05
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">Poder</mtext><mo>=</mo><mi>P</mi><mspace width="-0.167em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mi>Z</mi><mo>&gt;</mo><mfrac><mrow><mn>5.658</mn><mo>−</mo><mn>9</mn></mrow><mrow><msqrt><mn>4</mn></msqrt><mi>/</mi><msqrt><mn>25</mn></msqrt></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>P</mi><mspace width="-0.167em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mi>Z</mi><mo>&gt;</mo><mi>−</mi><mn>8.355</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\text{Poder} = P\!\left(Z &gt; \frac{5.658 - 9}{\sqrt{4}/\sqrt{25}}\right) = P\!\left(Z &gt; -8.355\right) = 1</annotation></semantics></math>.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mi>i</mi></msub><mover><mo>∼</mo><mtext mathvariant="normal">iid</mtext></mover><mtext mathvariant="normal">Exp</mtext><mo stretchy="false" form="prefix">(</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">X_i \overset{\text{iid}}{\sim} \text{Exp}(\theta)</annotation></semantics></math>, testando <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mi>θ</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">H_0:\theta = 3</annotation></semantics></math> vs. <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mi>θ</mi><mo>=</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">H_1:\theta = 5</annotation></semantics></math> com <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>θ</mi><mn>1</mn></msub><mo>&gt;</mo><msub><mi>θ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\theta_1 &gt; \theta_0</annotation></semantics></math>. A razao de verossimilhanca e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Λ</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>θ</mi><mn>1</mn></msub><mi>/</mi><msub><mi>θ</mi><mn>0</mn></msub><msup><mo stretchy="false" form="postfix">)</mo><mi>n</mi></msup><mrow><mi mathvariant="normal">exp</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">{</mo><mi>−</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>θ</mi><mn>1</mn></msub><mo>−</mo><msub><mi>θ</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\Lambda = (\theta_1/\theta_0)^n \exp\{-(\theta_1-\theta_0)\sum X_i\}</annotation></semantics></math>. Como <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>θ</mi><mn>1</mn></msub><mo>&gt;</mo><msub><mi>θ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\theta_1 &gt; \theta_0</annotation></semantics></math>, o expoente <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>θ</mi><mn>1</mn></msub><mo>−</mo><msub><mi>θ</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">-(\theta_1-\theta_0)</annotation></semantics></math> e negativo, portanto <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Λ</mi><mo>&gt;</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">\Lambda &gt; k</annotation></semantics></math> equivale a:</p>
+<br/>
+<ol type="a">
+<li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub><mo>&lt;</mo><msup><mi>k</mi><mo>′</mo></msup></mrow><annotation encoding="application/x-tex">\sum X_i &lt; k&#39;</annotation></semantics></math> (regiao critica para valores pequenos de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\sum X_i</annotation></semantics></math>, pois taxas maiores geram somas menores em distribuicoes exponenciais).
+</li>
+<li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>X</mi><mo accent="true">‾</mo></mover><mo>=</mo><mn>1</mn><mi>/</mi><msub><mi>θ</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">\bar{X} = 1/\theta_1</annotation></semantics></math>, que e a media sob <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>1</mn></msub><annotation encoding="application/x-tex">H_1</annotation></semantics></math>.
+</li>
+<li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub><mo>&gt;</mo><msup><mi>k</mi><mo>′</mo></msup></mrow><annotation encoding="application/x-tex">\sum X_i &gt; k&#39;</annotation></semantics></math> (valores grandes de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\sum X_i</annotation></semantics></math>, analogamente ao teste para a media normal).
+</li>
+<li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>X</mi><mo accent="true">‾</mo></mover><mo>&gt;</mo><msup><mi>k</mi><mo>′</mo></msup></mrow><annotation encoding="application/x-tex">\bar{X} &gt; k&#39;</annotation></semantics></math>, pois o teste MP sempre usa a media amostral.
+</li>
+<li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\sum X_i</annotation></semantics></math> fora de um intervalo <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>k</mi><mn>1</mn></msub><mo>,</mo><msub><mi>k</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(k_1, k_2)</annotation></semantics></math>, pois o teste e bilateral.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mi mathvariant="normal">Λ</mi><mo>=</mo><mi>n</mi><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>θ</mi><mn>1</mn></msub><mi>/</mi><msub><mi>θ</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>θ</mi><mn>1</mn></msub><mo>−</mo><msub><mi>θ</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\log\Lambda = n\log(\theta_1/\theta_0) - (\theta_1-\theta_0)\sum X_i</annotation></semantics></math>. Como <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>θ</mi><mn>1</mn></msub><mo>&gt;</mo><msub><mi>θ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\theta_1 &gt; \theta_0</annotation></semantics></math>, o coeficiente de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\sum X_i</annotation></semantics></math> e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>θ</mi><mn>1</mn></msub><mo>−</mo><msub><mi>θ</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>&lt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">-(\theta_1-\theta_0) &lt; 0</annotation></semantics></math>, portanto <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mi mathvariant="normal">Λ</mi></mrow><annotation encoding="application/x-tex">\log\Lambda</annotation></semantics></math> e DECRESCENTE em <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\sum X_i</annotation></semantics></math>. A condicao <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Λ</mi><mo>&gt;</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">\Lambda &gt; k</annotation></semantics></math> (equivalentemente <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mi mathvariant="normal">Λ</mi><mo>&gt;</mo><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">\log\Lambda &gt; \log k</annotation></semantics></math>) e satisfeita para valores PEQUENOS de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\sum X_i</annotation></semantics></math>.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>O Lema de Neyman-Pearson garante que o teste baseado na razao de verossimilhancas <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Λ</mi><mo>=</mo><mi>L</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>θ</mi><mn>1</mn></msub><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mi>L</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>θ</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\Lambda = L(\theta_1)/L(\theta_0)</annotation></semantics></math> e:</p>
+<br/>
+<ol type="a">
+<li>
+O mais poderoso entre todos os testes de tamanho <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math> para hipoteses simples vs. simples.
+</li>
+<li>
+O teste com menor erro quadratico medio da estatistica de teste.
+</li>
+<li>
+O mais poderoso entre todos os testes possiveis, incluindo testes para hipoteses compostas.
+</li>
+<li>
+O unico teste de tamanho exatamente <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math> para qualquer distribuicao.
+</li>
+<li>
+O unico teste nao-viesado de tamanho <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math> para hipoteses simples vs. simples.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>O Lema de NP garante optimalidade NO SENTIDO DE MAXIMIZAR O PODER para hipoteses SIMPLES vs. SIMPLES (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mi>θ</mi><mo>=</mo><msub><mi>θ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0:\theta=\theta_0</annotation></semantics></math> vs. <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mi>θ</mi><mo>=</mo><msub><mi>θ</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">H_1:\theta=\theta_1</annotation></semantics></math>). Para hipoteses compostas, e necessario o Teorema de Karlin-Rubin ou outros resultados. O lema nao garante unicidade do teste nao-viesado nem minimo EQM da estatistica.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mi>i</mi></msub><mover><mo>∼</mo><mtext mathvariant="normal">iid</mtext></mover><mtext mathvariant="normal">Poisson</mtext><mo stretchy="false" form="prefix">(</mo><mi>λ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">X_i \overset{\text{iid}}{\sim} \text{Poisson}(\lambda)</annotation></semantics></math>, testando <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mi>λ</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">H_0:\lambda = 2</annotation></semantics></math> vs. <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mi>λ</mi><mo>=</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">H_1:\lambda = 5</annotation></semantics></math> com <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>λ</mi><mn>1</mn></msub><mo>&gt;</mo><msub><mi>λ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\lambda_1 &gt; \lambda_0</annotation></semantics></math>. A razao e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Λ</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>λ</mi><mn>1</mn></msub><mi>/</mi><msub><mi>λ</mi><mn>0</mn></msub><msup><mo stretchy="false" form="postfix">)</mo><mrow><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub></mrow></msup><msup><mi>e</mi><mrow><mi>−</mi><mi>n</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>λ</mi><mn>1</mn></msub><mo>−</mo><msub><mi>λ</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">)</mo></mrow></msup></mrow><annotation encoding="application/x-tex">\Lambda = (\lambda_1/\lambda_0)^{\sum X_i} e^{-n(\lambda_1-\lambda_0)}</annotation></semantics></math>. Como <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>λ</mi><mn>1</mn></msub><mo>&gt;</mo><msub><mi>λ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\lambda_1 &gt; \lambda_0</annotation></semantics></math>, a regiao critica do Lema de NP e:</p>
+<br/>
+<ol type="a">
+<li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub><mo>−</mo><mi>n</mi><msub><mi>λ</mi><mn>0</mn></msub><mo stretchy="false" form="prefix">|</mo><mo>&gt;</mo><msup><mi>k</mi><mo>′</mo></msup></mrow><annotation encoding="application/x-tex">|\sum X_i - n\lambda_0| &gt; k&#39;</annotation></semantics></math> (regiao bilateral em torno da media sob <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math>).
+</li>
+<li>
+A razao de verossimilhanca nao simplifica para uma funcao de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\sum X_i</annotation></semantics></math> neste caso.
+</li>
+<li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub><mo>&lt;</mo><msup><mi>k</mi><mo>′</mo></msup></mrow><annotation encoding="application/x-tex">\sum X_i &lt; k&#39;</annotation></semantics></math> para alguma constante <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>k</mi><mo>′</mo></msup><annotation encoding="application/x-tex">k&#39;</annotation></semantics></math> (valores pequenos de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\sum X_i</annotation></semantics></math>).
+</li>
+<li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub><mo>&gt;</mo><msup><mi>k</mi><mo>′</mo></msup></mrow><annotation encoding="application/x-tex">\sum X_i &gt; k&#39;</annotation></semantics></math> para alguma constante <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>k</mi><mo>′</mo></msup><annotation encoding="application/x-tex">k&#39;</annotation></semantics></math> determinada pelo nivel <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>.
+</li>
+<li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub><mo>=</mo><msub><mi>λ</mi><mn>1</mn></msub><mi>n</mi></mrow><annotation encoding="application/x-tex">\sum X_i = \lambda_1 n</annotation></semantics></math> exatamente.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mi mathvariant="normal">Λ</mi><mo>=</mo><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>λ</mi><mn>1</mn></msub><mi>/</mi><msub><mi>λ</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>n</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>λ</mi><mn>1</mn></msub><mo>−</mo><msub><mi>λ</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\log\Lambda = \sum X_i \log(\lambda_1/\lambda_0) - n(\lambda_1-\lambda_0)</annotation></semantics></math>. Como <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>λ</mi><mn>1</mn></msub><mo>&gt;</mo><msub><mi>λ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\lambda_1 &gt; \lambda_0</annotation></semantics></math>, temos <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>λ</mi><mn>1</mn></msub><mi>/</mi><msub><mi>λ</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\log(\lambda_1/\lambda_0) &gt; 0</annotation></semantics></math>, portanto <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mi mathvariant="normal">Λ</mi></mrow><annotation encoding="application/x-tex">\log\Lambda</annotation></semantics></math> e crescente em <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\sum X_i</annotation></semantics></math>. A condicao <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Λ</mi><mo>&gt;</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">\Lambda &gt; k</annotation></semantics></math> equivale a <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub><mo>&gt;</mo><msup><mi>k</mi><mo>′</mo></msup></mrow><annotation encoding="application/x-tex">\sum X_i &gt; k&#39;</annotation></semantics></math>.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mi>μ</mi><mo>=</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">H_0:\mu = 5</annotation></semantics></math> vs. <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mi>μ</mi><mo>=</mo><mn>7</mn></mrow><annotation encoding="application/x-tex">H_1:\mu = 7</annotation></semantics></math> com <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">\sigma = 2</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>64</mn></mrow><annotation encoding="application/x-tex">n = 64</annotation></semantics></math> e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><mn>0</mn><mo>,</mo><mn>05</mn></mrow><annotation encoding="application/x-tex">\alpha = 0{,}05</annotation></semantics></math>, o teste de Neyman-Pearson tem poder:</p>
+<br/>
+<ol type="a">
+<li>
+1
+</li>
+<li>
+0
+</li>
+<li>
+0.05
+</li>
+<li>
+0.9
+</li>
+<li>
+1.1
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Poder <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>=</mo><mn>1</mn><mo>−</mo><mi mathvariant="normal">Φ</mi><mspace width="-0.167em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>z</mi><mrow><mn>0</mn><mo>,</mo><mn>95</mn></mrow></msub><mo>−</mo><mfrac><mrow><msub><mi>μ</mi><mn>1</mn></msub><mo>−</mo><msub><mi>μ</mi><mn>0</mn></msub></mrow><mrow><mi>σ</mi><mi>/</mi><msqrt><mi>n</mi></msqrt></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>1</mn><mo>−</mo><mi mathvariant="normal">Φ</mi><mspace width="-0.167em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>645</mn><mo>−</mo><mfrac><mn>2</mn><mrow><mn>2</mn><mi>/</mi><msqrt><mn>64</mn></msqrt></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">= 1 - \Phi\!\left(z_{0{,}95} - \frac{\mu_1-\mu_0}{\sigma/\sqrt{n}}\right) = 1 - \Phi\!\left(1{,}645 - \frac{2}{2/\sqrt{64}}\right) = 1</annotation></semantics></math>.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Para membros da familia exponencial uniparametrica, o teste mais poderoso obtido pelo Lema de Neyman-Pearson pode sempre ser expresso como:</p>
+<br/>
+<ol type="a">
+<li>
+Uma funcao do EMV, que por invariancia coincide com a razao de verossimilhanca em todos os casos.
+</li>
+<li>
+Uma funcao da media amostral <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>X</mi><mo accent="true">‾</mo></mover><annotation encoding="application/x-tex">\bar{X}</annotation></semantics></math>, independente da familia parametrica considerada.
+</li>
+<li>
+Uma funcao da estatistica suficiente natural <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo>=</mo><mo>∑</mo><mi>T</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>X</mi><mi>i</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">T = \sum T(X_i)</annotation></semantics></math>, pois a razao de verossimilhanca depende da amostra apenas via <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>.
+</li>
+<li>
+Uma funcao da mediana amostral, pois ela e mais robusta e possui propriedades otimas na familia exponencial.
+</li>
+<li>
+Uma funcao das estatisticas de ordem <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>X</mi><mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>X</mi><mrow><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo stretchy="false" form="postfix">)</mo></mrow></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(X_{(1)},\ldots,X_{(n)})</annotation></semantics></math>, que contem toda a informacao da amostra.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Na familia exponencial, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>;</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mrow><mi mathvariant="normal">exp</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">{</mo><mi>c</mi><mo stretchy="false" form="prefix">(</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo><mi>T</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>d</mi><mo stretchy="false" form="prefix">(</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">}</mo><mi>h</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f(x;\theta) = \exp\{c(\theta)T(x) - d(\theta)\}h(x)</annotation></semantics></math>. A razao de verossimilhancas e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Λ</mi><mo>=</mo><mrow><mi mathvariant="normal">exp</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">{</mo><mo stretchy="false" form="prefix">(</mo><mi>c</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>θ</mi><mn>1</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>c</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>θ</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mo>∑</mo><mi>T</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>X</mi><mi>i</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mo stretchy="false" form="prefix">(</mo><mi>d</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>θ</mi><mn>1</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>d</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>θ</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\Lambda = \exp\{(c(\theta_1)-c(\theta_2))\sum T(X_i) - (d(\theta_1)-d(\theta_2))\}</annotation></semantics></math>, que depende da amostra apenas via a estatistica suficiente <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><mi>T</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>X</mi><mi>i</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\sum T(X_i)</annotation></semantics></math>. Portanto o teste MP e funcao de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><mi>T</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>X</mi><mi>i</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\sum T(X_i)</annotation></semantics></math>.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>∼</mo><mtext mathvariant="normal">Bin</mtext><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo>,</mo><mi>p</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">X \sim \text{Bin}(n,p)</annotation></semantics></math> com <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>15</mn></mrow><annotation encoding="application/x-tex">n = 15</annotation></semantics></math>, testando <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mi>p</mi><mo>=</mo><mn>0.3</mn></mrow><annotation encoding="application/x-tex">H_0:p = 0.3</annotation></semantics></math> vs. <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mi>p</mi><mo>=</mo><mn>0.7</mn></mrow><annotation encoding="application/x-tex">H_1:p = 0.7</annotation></semantics></math> com <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><mn>0</mn><mo>,</mo><mn>05</mn></mrow><annotation encoding="application/x-tex">\alpha = 0{,}05</annotation></semantics></math>. O teste de NP rejeita <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math> quando <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>≥</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">X \geq k</annotation></semantics></math>, com <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">k = 9</annotation></semantics></math> tal que <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo>≥</mo><mn>9</mn><mo>∣</mo><mi>p</mi><mo>=</mo><mn>0.3</mn><mo stretchy="false" form="postfix">)</mo><mo>≤</mo><mn>0</mn><mo>,</mo><mn>05</mn></mrow><annotation encoding="application/x-tex">P(X \geq 9 \mid p = 0.3) \leq 0{,}05</annotation></semantics></math>. O poder do teste e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo>≥</mo><mn>9</mn><mo>∣</mo><mi>p</mi><mo>=</mo><mn>0.7</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">P(X \geq 9 \mid p = 0.7)</annotation></semantics></math>:</p>
+<br/>
+<ol type="a">
+<li>
+0.1311
+</li>
+<li>
+0.8689
+</li>
+<li>
+0.7216
+</li>
+<li>
+0.0152
+</li>
+<li>
+0.7689
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Poder <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>=</mo><mi>P</mi><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo>≥</mo><mn>9</mn><mo>∣</mo><mi>p</mi><mo>=</mo><mn>0.7</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>1</mn><mo>−</mo><mi>P</mi><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo>≤</mo><mn>8</mn><mo>∣</mo><mi>p</mi><mo>=</mo><mn>0.7</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>1</mn><mo>−</mo><mtext mathvariant="normal">pbinom</mtext><mo stretchy="false" form="prefix">(</mo><mn>8</mn><mo>,</mo><mn>15</mn><mo>,</mo><mn>0.7</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>0.8689</mn></mrow><annotation encoding="application/x-tex">= P(X \geq 9 \mid p = 0.7) = 1 - P(X \leq 8 \mid p = 0.7) = 1 - \text{pbinom}(8, 15, 0.7) = 0.8689</annotation></semantics></math>.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Um teste uniformemente mais poderoso (UMP) de tamanho <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math> e definido como:</p>
+<br/>
+<ol type="a">
+<li>
+Um teste de tamanho <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math> cuja funcao poder <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>γ</mi><mo stretchy="false" form="prefix">(</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo><mo>≥</mo><msup><mi>γ</mi><mo>*</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\gamma(\theta) \geq \gamma^*(\theta)</annotation></semantics></math> para todo <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi><mo>∈</mo><msub><mi mathvariant="normal">Ω</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">\theta \in \Omega_1</annotation></semantics></math>, onde <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>γ</mi><mo>*</mo></msup><annotation encoding="application/x-tex">\gamma^*</annotation></semantics></math> e a funcao poder de qualquer outro teste de tamanho <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>.
+</li>
+<li>
+O teste que minimiza a probabilidade de Erro Tipo II para um unico valor alternativo de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>θ</mi><annotation encoding="application/x-tex">\theta</annotation></semantics></math>.
+</li>
+<li>
+O teste mais poderoso para hipoteses simples, estendido a hipoteses compostas por continuidade.
+</li>
+<li>
+O teste que maximiza <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>β</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\alpha + (1-\beta)</annotation></semantics></math> sobre todos os testes possiveis.
+</li>
+<li>
+O teste com maior poder para o pior caso de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi><mo>∈</mo><msub><mi mathvariant="normal">Ω</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">\theta \in \Omega_1</annotation></semantics></math> (criterio minimax).
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Um teste UMP tem tamanho <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math> E domina qualquer outro teste de tamanho <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math> em termos de poder para TODOS os valores alternativos <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi><mo>∈</mo><msub><mi mathvariant="normal">Ω</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">\theta \in \Omega_1</annotation></semantics></math> simultaneamente. Isso e mais forte que maximizar o poder para um unico <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>θ</mi><mn>1</mn></msub><annotation encoding="application/x-tex">\theta_1</annotation></semantics></math> (MP, opcao 2) ou usar criterio minimax (opcao 5).</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mi>i</mi></msub><mover><mo>∼</mo><mtext mathvariant="normal">iid</mtext></mover><mi>N</mi><mo stretchy="false" form="prefix">(</mo><mi>μ</mi><mo>,</mo><msup><mi>σ</mi><mn>2</mn></msup><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">X_i \overset{\text{iid}}{\sim} N(\mu,\sigma^2)</annotation></semantics></math> com <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>σ</mi><mn>2</mn></msup><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">\sigma^2 = 4</annotation></semantics></math> conhecido, o teste UMP de tamanho <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><mn>0</mn><mo>,</mo><mn>05</mn></mrow><annotation encoding="application/x-tex">\alpha = 0{,}05</annotation></semantics></math> para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mi>μ</mi><mo>≤</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">H_0:\mu \leq 5</annotation></semantics></math> vs. <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mi>μ</mi><mo>&gt;</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">H_1:\mu &gt; 5</annotation></semantics></math> rejeita <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math> quando:</p>
+<br/>
+<ol type="a">
+<li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mover><mi>X</mi><mo accent="true">‾</mo></mover><mo>−</mo><mn>5</mn><mo stretchy="false" form="prefix">|</mo><mo>&gt;</mo><mn>1</mn><mo>,</mo><mn>96</mn><mo>⋅</mo><mn>0.2857</mn></mrow><annotation encoding="application/x-tex">|\bar{X} - 5| &gt; 1{,}96\cdot0.2857</annotation></semantics></math> (regiao bilateral).
+</li>
+<li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>X</mi><mo accent="true">‾</mo></mover><mo>&gt;</mo><mn>5</mn><mo>+</mo><mn>2</mn><mo>,</mo><mn>576</mn><mo>⋅</mo><mn>0.2857</mn><mo>=</mo><mn>5.736</mn></mrow><annotation encoding="application/x-tex">\bar{X} &gt; 5 + 2{,}576\cdot0.2857 = 5.736</annotation></semantics></math> (nivel <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><mn>0</mn><mo>,</mo><mn>005</mn></mrow><annotation encoding="application/x-tex">\alpha = 0{,}005</annotation></semantics></math>).
+</li>
+<li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>X</mi><mo accent="true">‾</mo></mover><mo>&lt;</mo><mn>5</mn><mo>−</mo><mn>1</mn><mo>,</mo><mn>645</mn><mo>⋅</mo><mn>0.2857</mn><mo>=</mo><mn>4.53</mn></mrow><annotation encoding="application/x-tex">\bar{X} &lt; 5 - 1{,}645\cdot0.2857 = 4.53</annotation></semantics></math> (unilateral esquerdo).
+</li>
+<li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>X</mi><mo accent="true">‾</mo></mover><mo>&gt;</mo><mn>5</mn><mo>+</mo><mn>1</mn><mo>,</mo><mn>645</mn><mo>⋅</mo><mn>0.2857</mn><mo>=</mo><mn>5.47</mn></mrow><annotation encoding="application/x-tex">\bar{X} &gt; 5 + 1{,}645\cdot0.2857 = 5.47</annotation></semantics></math> (equivale a <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Z</mi><mo>&gt;</mo><mn>1</mn><mo>,</mo><mn>645</mn></mrow><annotation encoding="application/x-tex">Z &gt; 1{,}645</annotation></semantics></math>).
+</li>
+<li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>X</mi><mo accent="true">‾</mo></mover><mo>&gt;</mo><mn>5</mn><mo>+</mo><mn>1</mn><mo>,</mo><mn>96</mn><mo>⋅</mo><mn>0.2857</mn><mo>=</mo><mn>5.56</mn></mrow><annotation encoding="application/x-tex">\bar{X} &gt; 5 + 1{,}96\cdot0.2857 = 5.56</annotation></semantics></math>.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Pelo Teorema de Karlin-Rubin (a familia Normal tem MLR crescente em <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>X</mi><mo accent="true">‾</mo></mover><annotation encoding="application/x-tex">\bar{X}</annotation></semantics></math>), o UMP rejeita quando <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>X</mi><mo accent="true">‾</mo></mover><mo>&gt;</mo><msub><mi>μ</mi><mn>0</mn></msub><mo>+</mo><msub><mi>z</mi><mrow><mn>0</mn><mo>,</mo><mn>95</mn></mrow></msub><msqrt><mrow><msup><mi>σ</mi><mn>2</mn></msup><mi>/</mi><mi>n</mi></mrow></msqrt><mo>=</mo><mn>5</mn><mo>+</mo><mn>1</mn><mo>,</mo><mn>645</mn><mo>×</mo><mn>0.2857</mn><mo>=</mo><mn>5.47</mn></mrow><annotation encoding="application/x-tex">\bar{X} &gt; \mu_0 + z_{0{,}95}\sqrt{\sigma^2/n} = 5 + 1{,}645 \times 0.2857 = 5.47</annotation></semantics></math>.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mi>θ</mi><mo>=</mo><msub><mi>θ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0:\theta = \theta_0</annotation></semantics></math> vs. <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mi>θ</mi><mo>≠</mo><msub><mi>θ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_1:\theta \neq \theta_0</annotation></semantics></math> (hipotese alternativa bilateral), um teste UMP geralmente NAO existe porque:</p>
+<br/>
+<ol type="a">
+<li>
+Para hipoteses bilaterais, o Erro Tipo I e sempre maior que <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>, qualquer que seja o teste.
+</li>
+<li>
+O teste mais poderoso contra <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>θ</mi><mn>1</mn></msub><mo>&gt;</mo><msub><mi>θ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\theta_1 &gt; \theta_0</annotation></semantics></math> usa regiao critica unilateral direita, mas o mais poderoso contra <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>θ</mi><mn>1</mn></msub><mo>&lt;</mo><msub><mi>θ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\theta_1 &lt; \theta_0</annotation></semantics></math> usa regiao esquerda. Nenhuma regiao e simultaneamente otima para ambos os lados.
+</li>
+<li>
+A hipotese bilateral nao pode ser testada usando o Lema de Neyman-Pearson.
+</li>
+<li>
+O poder de qualquer teste bilateral e sempre menor que 0{,}5, independente de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>.
+</li>
+<li>
+Hipoteses bilaterais requerem amostras infinitas para ter poder adequado.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>θ</mi><mn>1</mn></msub><mo>&gt;</mo><msub><mi>θ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\theta_1 &gt; \theta_0</annotation></semantics></math>, o teste MP tem regiao critica unilateral a direita (rejeita para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math> grande). Para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>θ</mi><mn>1</mn></msub><mo>&lt;</mo><msub><mi>θ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\theta_1 &lt; \theta_0</annotation></semantics></math>, o teste MP tem regiao unilateral a esquerda (rejeita para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math> pequeno). Como essas regioes sao diferentes, nao existe um unico teste que seja simultaneamente MP para todo <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>θ</mi><mn>1</mn></msub><mo>≠</mo><msub><mi>θ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\theta_1 \neq \theta_0</annotation></semantics></math>. Busca-se entao o teste UMPU (nao-viesado).</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mi>i</mi></msub><mover><mo>∼</mo><mtext mathvariant="normal">iid</mtext></mover><mtext mathvariant="normal">Poisson</mtext><mo stretchy="false" form="prefix">(</mo><mi>λ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">X_i \overset{\text{iid}}{\sim} \text{Poisson}(\lambda)</annotation></semantics></math>, o teste UMP de tamanho <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math> para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mi>λ</mi><mo>≤</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">H_0:\lambda \leq 5</annotation></semantics></math> vs. <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mi>λ</mi><mo>&gt;</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">H_1:\lambda &gt; 5</annotation></semantics></math> rejeita <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math> quando:</p>
+<br/>
+<ol type="a">
+<li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>X</mi><mo accent="true">‾</mo></mover><mo>&gt;</mo><msub><mi>λ</mi><mn>0</mn></msub><mo>+</mo><msub><mi>z</mi><mrow><mn>1</mn><mo>−</mo><mi>α</mi></mrow></msub><mi>/</mi><msqrt><mi>n</mi></msqrt><mo>=</mo><mn>5.4247</mn></mrow><annotation encoding="application/x-tex">\bar{X} &gt; \lambda_0 + z_{1-\alpha}/\sqrt{n} = 5.4247</annotation></semantics></math> (aproximacao normal).
+</li>
+<li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub><mo>&gt;</mo><mi>n</mi><msub><mi>λ</mi><mn>0</mn></msub><mo>=</mo><mn>75</mn></mrow><annotation encoding="application/x-tex">\sum X_i &gt; n\lambda_0 = 75</annotation></semantics></math> exatamente, sem ajuste por <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>.
+</li>
+<li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub><mo>&gt;</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">\sum X_i &gt; k</annotation></semantics></math>, onde <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math> e o menor inteiro tal que <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo stretchy="false" form="prefix">(</mo><mtext mathvariant="normal">Pois</mtext><mo stretchy="false" form="prefix">(</mo><mn>75</mn><mo stretchy="false" form="postfix">)</mo><mo>&gt;</mo><mi>k</mi><mo stretchy="false" form="postfix">)</mo><mo>≤</mo><mi>α</mi></mrow><annotation encoding="application/x-tex">P(\text{Pois}(75) &gt; k) \leq \alpha</annotation></semantics></math>.
+</li>
+<li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub><mo>−</mo><mi>n</mi><msub><mi>λ</mi><mn>0</mn></msub><mo stretchy="false" form="prefix">|</mo><mo>&gt;</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">|\sum X_i - n\lambda_0| &gt; k</annotation></semantics></math> (regiao bilateral centrada em <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><msub><mi>λ</mi><mn>0</mn></msub><mo>=</mo><mn>75</mn></mrow><annotation encoding="application/x-tex">n\lambda_0 = 75</annotation></semantics></math>).
+</li>
+<li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub><mo>&lt;</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">\sum X_i &lt; k</annotation></semantics></math> para valores pequenos (distribuicao Poisson e simetrica).
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>A familia Poisson tem MLR crescente em <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\sum X_i</annotation></semantics></math>. Pelo Teorema de Karlin-Rubin, o UMP rejeita <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math> quando <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub><mo>&gt;</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">\sum X_i &gt; k</annotation></semantics></math>, onde <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math> satisfaz <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo stretchy="false" form="prefix">(</mo><mtext mathvariant="normal">Poisson</mtext><mo stretchy="false" form="prefix">(</mo><mi>n</mi><msub><mi>λ</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>&gt;</mo><mi>k</mi><mo stretchy="false" form="postfix">)</mo><mo>≤</mo><mi>α</mi></mrow><annotation encoding="application/x-tex">P(\text{Poisson}(n\lambda_0) &gt; k) \leq \alpha</annotation></semantics></math> (com <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><msub><mi>λ</mi><mn>0</mn></msub><mo>=</mo><mn>75</mn></mrow><annotation encoding="application/x-tex">n\lambda_0 = 75</annotation></semantics></math>). A Poisson e assimetrica, nao simetrica, portanto a regiao nao e bilateral.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>O teste UMP para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mi>μ</mi><mo>≤</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">H_0:\mu \leq 5</annotation></semantics></math> vs. <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mi>μ</mi><mo>&gt;</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">H_1:\mu &gt; 5</annotation></semantics></math> com <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>σ</mi><mn>2</mn></msup><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">\sigma^2 = 4</annotation></semantics></math> e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>36</mn></mrow><annotation encoding="application/x-tex">n = 36</annotation></semantics></math>. A funcao de poder para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mn>5</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>9</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\mu \in \{5, 6, 7, 8, 9\}</annotation></semantics></math> assume os valores <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>0.05</mn><mo>,</mo><mn>0.9123</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{0.05, 0.9123, 1, 1, 1\}</annotation></semantics></math> respectivamente. Qual e o poder para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>=</mo><mn>7</mn></mrow><annotation encoding="application/x-tex">\mu = 7</annotation></semantics></math> (terceiro valor)?</p>
+<br/>
+<ol type="a">
+<li>
+1
+</li>
+<li>
+0.9123
+</li>
+<li>
+0.05
+</li>
+<li>
+0.9
+</li>
+<li>
+0
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>=</mo><mn>7</mn></mrow><annotation encoding="application/x-tex">\mu = 7</annotation></semantics></math>: Poder <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>=</mo><mn>1</mn><mo>−</mo><mi mathvariant="normal">Φ</mi><mspace width="-0.167em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>z</mi><mrow><mn>0</mn><mo>,</mo><mn>95</mn></mrow></msub><mo>−</mo><mfrac><mrow><mn>7</mn><mo>−</mo><mn>5</mn></mrow><msqrt><mrow><mn>4</mn><mi>/</mi><mn>36</mn></mrow></msqrt></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>1</mn><mo>−</mo><mi mathvariant="normal">Φ</mi><mspace width="-0.167em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mi>−</mi><mn>4.3551</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">= 1 - \Phi\!\left(z_{0{,}95} - \frac{7 - 5}{\sqrt{4/36}}\right) = 1 - \Phi\!\left(-4.3551\right) = 1</annotation></semantics></math>.</p>
+<p>Em <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>=</mo><msub><mi>μ</mi><mn>0</mn></msub><mo>=</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">\mu = \mu_0 = 5</annotation></semantics></math>, o poder vale <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><mn>0.05</mn></mrow><annotation encoding="application/x-tex">\alpha = 0.05</annotation></semantics></math> (nivel do teste).</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mi>i</mi></msub><mover><mo>∼</mo><mtext mathvariant="normal">iid</mtext></mover><mtext mathvariant="normal">Exp</mtext><mo stretchy="false" form="prefix">(</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">X_i \overset{\text{iid}}{\sim} \text{Exp}(\theta)</annotation></semantics></math> com <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub><mo>∼</mo><mtext mathvariant="normal">Gamma</mtext><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo>,</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\sum X_i \sim \text{Gamma}(n, \theta)</annotation></semantics></math> sob <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mi>θ</mi><mo>=</mo><msub><mi>θ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0:\theta = \theta_0</annotation></semantics></math>, o teste UMP para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mi>θ</mi><mo>≥</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">H_0:\theta \geq 2</annotation></semantics></math> vs. <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mi>θ</mi><mo>&lt;</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">H_1:\theta &lt; 2</annotation></semantics></math> rejeita <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math> quando <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub><mo>&gt;</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">\sum X_i &gt; k</annotation></semantics></math>, com <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><msub><mi>θ</mi><mn>0</mn></msub></msub><mo stretchy="false" form="prefix">(</mo><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub><mo>&gt;</mo><mi>k</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>α</mi><mo>=</mo><mn>0</mn><mo>,</mo><mn>05</mn></mrow><annotation encoding="application/x-tex">P_{\theta_0}(\sum X_i &gt; k) = \alpha = 0{,}05</annotation></semantics></math>. O valor de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math> e:</p>
+<br/>
+<ol type="a">
+<li>
+16.8762
+</li>
+<li>
+16.6121
+</li>
+<li>
+67.5048
+</li>
+<li>
+12.5
+</li>
+<li>
+8.6911
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub><mo>∼</mo><mtext mathvariant="normal">Gamma</mtext><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo>,</mo><msub><mi>θ</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\sum X_i \sim \text{Gamma}(n, \theta_0)</annotation></semantics></math> sob <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mi>θ</mi><mo>=</mo><msub><mi>θ</mi><mn>0</mn></msub><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">H_0:\theta = \theta_0 = 2</annotation></semantics></math>. O quantil <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math> satisfaz <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo stretchy="false" form="prefix">(</mo><mtext mathvariant="normal">Gamma</mtext><mo stretchy="false" form="prefix">(</mo><mn>25</mn><mo>,</mo><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mo>&gt;</mo><mi>k</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>0</mn><mo>,</mo><mn>05</mn></mrow><annotation encoding="application/x-tex">P(\text{Gamma}(25, 2) &gt; k) = 0{,}05</annotation></semantics></math>, ou seja, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mtext mathvariant="normal">qgamma</mtext><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>95</mn><mo>,</mo><mn>25</mn><mo>,</mo><mtext mathvariant="normal">rate</mtext><mo>=</mo><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>16.8762</mn></mrow><annotation encoding="application/x-tex">k = \text{qgamma}(0{,}95, 25, \text{rate} = 2) = 16.8762</annotation></semantics></math>.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>A existencia de um teste UMP para hipoteses unilaterais esta garantida quando:</p>
+<br/>
+<ol type="a">
+<li>
+A familia pertence a familia exponencial com parametro escalar (condicao suficiente, mas nao necessaria para a existencia de UMP).
+</li>
+<li>
+O estimador de maxima verossimilhanca <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>θ</mi><mo accent="true">̂</mo></mover><annotation encoding="application/x-tex">\hat{\theta}</annotation></semantics></math> existe e e unico para todos os valores da amostra.
+</li>
+<li>
+O espaco parametrico <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="normal">Ω</mi><annotation encoding="application/x-tex">\Omega</annotation></semantics></math> e um intervalo compacto e a verossimilhanca e continua em <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>θ</mi><annotation encoding="application/x-tex">\theta</annotation></semantics></math>.
+</li>
+<li>
+A funcao de poder e continua em <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>θ</mi><annotation encoding="application/x-tex">\theta</annotation></semantics></math>, o que garante a existencia de maximo.
+</li>
+<li>
+A familia de distribuicoes tem razao de verossimilhanca monotonica (RVM) em alguma estatistica <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>, pelo Teorema de Karlin-Rubin.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>O Teorema de Karlin-Rubin estabelece: se a familia tem razao de verossimilhanca monotonica (RVM/MLR) em <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>, entao o teste que rejeita <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mi>θ</mi><mo>≤</mo><msub><mi>θ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0:\theta \leq \theta_0</annotation></semantics></math> quando <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo>&gt;</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">T &gt; k</annotation></semantics></math> e UMP de tamanho <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>. A familia exponencial tem MLR (e portanto e um caso especial), mas a condicao geral e a MLR, nao a familia exponencial especificamente.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mi>i</mi></msub><mover><mo>∼</mo><mtext mathvariant="normal">iid</mtext></mover><mtext mathvariant="normal">Bernoulli</mtext><mo stretchy="false" form="prefix">(</mo><mi>p</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">X_i \overset{\text{iid}}{\sim} \text{Bernoulli}(p)</annotation></semantics></math>, o teste UMP para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mi>p</mi><mo>≤</mo><mn>0.3</mn></mrow><annotation encoding="application/x-tex">H_0:p \leq 0.3</annotation></semantics></math> vs. <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mi>p</mi><mo>&gt;</mo><mn>0.3</mn></mrow><annotation encoding="application/x-tex">H_1:p &gt; 0.3</annotation></semantics></math> com <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>20</mn></mrow><annotation encoding="application/x-tex">n = 20</annotation></semantics></math> e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>≈</mo><mn>0</mn><mo>,</mo><mn>05</mn></mrow><annotation encoding="application/x-tex">\alpha \approx 0{,}05</annotation></semantics></math> rejeita quando <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub><mo>≥</mo><mn>10</mn></mrow><annotation encoding="application/x-tex">\sum X_i \geq 10</annotation></semantics></math>. O poder do teste quando <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mn>0.5</mn></mrow><annotation encoding="application/x-tex">p = 0.5</annotation></semantics></math> e:</p>
+<br/>
+<ol type="a">
+<li>
+0.048
+</li>
+<li>
+0.4119
+</li>
+<li>
+0.5881
+</li>
+<li>
+0.4119
+</li>
+<li>
+0.05
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Poder <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>=</mo><mi>P</mi><mspace width="-0.167em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub><mo>≥</mo><mn>10</mn><mo>∣</mo><mi>p</mi><mo>=</mo><mn>0.5</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>1</mn><mo>−</mo><mi>P</mi><mspace width="-0.167em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub><mo>≤</mo><mn>9</mn><mo>∣</mo><mi>p</mi><mo>=</mo><mn>0.5</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>1</mn><mo>−</mo><mtext mathvariant="normal">pbinom</mtext><mo stretchy="false" form="prefix">(</mo><mn>9</mn><mo>,</mo><mn>20</mn><mo>,</mo><mn>0.5</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>0.5881</mn></mrow><annotation encoding="application/x-tex">= P\!\left(\sum X_i \geq 10 \mid p = 0.5\right) = 1 - P\!\left(\sum X_i \leq 9 \mid p = 0.5\right) = 1 - \text{pbinom}(9, 20, 0.5) = 0.5881</annotation></semantics></math>.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Para hipoteses bilaterais <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mi>θ</mi><mo>=</mo><msub><mi>θ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0:\theta = \theta_0</annotation></semantics></math> vs. <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mi>θ</mi><mo>≠</mo><msub><mi>θ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_1:\theta \neq \theta_0</annotation></semantics></math>, quando pode existir um teste UMP?</p>
+<br/>
+<ol type="a">
+<li>
+O teste UMP bilateral sempre coincide com o teste bilateral da distribuicao Normal padrao.
+</li>
+<li>
+O teste UMP bilateral existe apenas para a familia exponencial com dois parametros naturais.
+</li>
+<li>
+Sempre existe um teste UMP bilateral: basta tomar a interseccao das regioes criticas unilaterais esquerda e direita.
+</li>
+<li>
+Para hipoteses bilaterais, o teste UMP e sempre o teste qui-quadrado com <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n-1</annotation></semantics></math> graus de liberdade.
+</li>
+<li>
+Em geral nao existe um teste UMP para hipoteses bilaterais. Pode-se buscar um teste UMP nao-viesado (UMPU), que maximiza o poder mantendo <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>γ</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>θ</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>α</mi></mrow><annotation encoding="application/x-tex">\gamma(\theta_0) = \alpha</annotation></semantics></math> e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>γ</mi><mo stretchy="false" form="prefix">(</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo><mo>≥</mo><mi>α</mi></mrow><annotation encoding="application/x-tex">\gamma(\theta) \geq \alpha</annotation></semantics></math> para todo <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>θ</mi><annotation encoding="application/x-tex">\theta</annotation></semantics></math>.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Em geral, um teste UMP nao existe para hipoteses bilaterais (como discutido na questao anterior). A solucao e restringir a classe de testes aos nao-viesados (testes com poder <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≥</mo><mi>α</mi></mrow><annotation encoding="application/x-tex">\geq \alpha</annotation></semantics></math> para todo <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi><mo>∈</mo><msub><mi mathvariant="normal">Ω</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">\theta \in \Omega_1</annotation></semantics></math>) e buscar o UMPU dentro dessa classe. A interseccao de regioes unilaterais (opcao 2) pode ser vazia ou ter nivel errado.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Para o UMP de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mi>μ</mi><mo>≤</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">H_0:\mu \leq 5</annotation></semantics></math> vs. <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mi>μ</mi><mo>&gt;</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">H_1:\mu &gt; 5</annotation></semantics></math> com <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>σ</mi><mn>2</mn></msup><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">\sigma^2 = 4</annotation></semantics></math> e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>36</mn></mrow><annotation encoding="application/x-tex">n = 36</annotation></semantics></math>, a funcao poder <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>γ</mi><mo stretchy="false" form="prefix">(</mo><mi>μ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\gamma(\mu)</annotation></semantics></math> e:</p>
+<br/>
+<ol type="a">
+<li>
+Uma funcao decrescente de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mi>μ</mi><mo>−</mo><msub><mi>μ</mi><mn>0</mn></msub><mo stretchy="false" form="prefix">|</mo></mrow><annotation encoding="application/x-tex">|\mu - \mu_0|</annotation></semantics></math> para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>≠</mo><msub><mi>μ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\mu \neq \mu_0</annotation></semantics></math>.
+</li>
+<li>
+Crescente em <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math> para todo <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>∈</mo><mi>ℝ</mi></mrow><annotation encoding="application/x-tex">\mu \in \mathbb{R}</annotation></semantics></math>, sem atingir o valor 1 para nenhum <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math> finito.
+</li>
+<li>
+Constante e igual ao poder maximo para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>&gt;</mo><msub><mi>μ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\mu &gt; \mu_0</annotation></semantics></math>, e zero para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>≤</mo><msub><mi>μ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\mu \leq \mu_0</annotation></semantics></math>.
+</li>
+<li>
+Crescente em <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math> para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>&gt;</mo><msub><mi>μ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\mu &gt; \mu_0</annotation></semantics></math>, igual a <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math> em <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>=</mo><msub><mi>μ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\mu = \mu_0</annotation></semantics></math>, e tendendo a 1 quando <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>→</mo><mi>∞</mi></mrow><annotation encoding="application/x-tex">\mu \to \infty</annotation></semantics></math>.
+</li>
+<li>
+Uma funcao em forma de U com minimo em <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>μ</mi><mn>0</mn></msub><annotation encoding="application/x-tex">\mu_0</annotation></semantics></math> e simetrica em torno de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>μ</mi><mn>0</mn></msub><annotation encoding="application/x-tex">\mu_0</annotation></semantics></math>.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>A funcao poder do UMP para hipotese unilateral e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>γ</mi><mo stretchy="false" form="prefix">(</mo><mi>μ</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>1</mn><mo>−</mo><mi mathvariant="normal">Φ</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>z</mi><mrow><mn>0</mn><mo>,</mo><mn>95</mn></mrow></msub><mo>−</mo><mo stretchy="false" form="prefix">(</mo><mi>μ</mi><mo>−</mo><msub><mi>μ</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mi>σ</mi><mi>/</mi><msqrt><mi>n</mi></msqrt><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\gamma(\mu) = 1 - \Phi(z_{0{,}95} - (\mu-\mu_0)/(\sigma/\sqrt{n}))</annotation></semantics></math>. Esta funcao e crescente em <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math> (quanto maior <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math>, maior o poder). Em <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>=</mo><msub><mi>μ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\mu = \mu_0</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>γ</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>μ</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>1</mn><mo>−</mo><mi mathvariant="normal">Φ</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>z</mi><mrow><mn>0</mn><mo>,</mo><mn>95</mn></mrow></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>α</mi><mo>=</mo><mn>0</mn><mo>,</mo><mn>05</mn></mrow><annotation encoding="application/x-tex">\gamma(\mu_0) = 1 - \Phi(z_{0{,}95}) = \alpha = 0{,}05</annotation></semantics></math>. Quando <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>→</mo><mi>∞</mi></mrow><annotation encoding="application/x-tex">\mu \to \infty</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>γ</mi><mo stretchy="false" form="prefix">(</mo><mi>μ</mi><mo stretchy="false" form="postfix">)</mo><mo>→</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\gamma(\mu) \to 1</annotation></semantics></math>.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>A familia <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>;</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo><mo>:</mo><mi>θ</mi><mo>∈</mo><mi mathvariant="normal">Ω</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{f(x;\theta):\theta \in \Omega\}</annotation></semantics></math> tem razao de verossimilhanca monotonica (MLR) CRESCENTE em <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">T(x)</annotation></semantics></math> se:</p>
+<br/>
+<ol type="a">
+<li>
+A funcao de distribuicao <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>;</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">F(x;\theta)</annotation></semantics></math> e monotonica em <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>θ</mi><annotation encoding="application/x-tex">\theta</annotation></semantics></math> para todo <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math> fixo.
+</li>
+<li>
+Para todo <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>θ</mi><mn>1</mn></msub><mo>&gt;</mo><msub><mi>θ</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\theta_1 &gt; \theta_2</annotation></semantics></math>, a razao <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>;</mo><msub><mi>θ</mi><mn>1</mn></msub><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>;</mo><msub><mi>θ</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f(x;\theta_1)/f(x;\theta_2)</annotation></semantics></math> e funcao nao-decrescente de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">T(x)</annotation></semantics></math>.
+</li>
+<li>
+O EMV <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>θ</mi><mo accent="true">̂</mo></mover><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\hat{\theta}(x)</annotation></semantics></math> e crescente em <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">T(x)</annotation></semantics></math> para todo <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>.
+</li>
+<li>
+A log-verossimilhanca <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℓ</mi><mo stretchy="false" form="prefix">(</mo><mi>θ</mi><mo>;</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\ell(\theta;x)</annotation></semantics></math> e crescente em <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>θ</mi><annotation encoding="application/x-tex">\theta</annotation></semantics></math> para todo <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math> fixo.
+</li>
+<li>
+A razao <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>;</mo><msub><mi>θ</mi><mn>1</mn></msub><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>;</mo><msub><mi>θ</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f(x;\theta_1)/f(x;\theta_2)</annotation></semantics></math> e maior que 1 para todo <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>, quando <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>θ</mi><mn>1</mn></msub><mo>&gt;</mo><msub><mi>θ</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\theta_1 &gt; \theta_2</annotation></semantics></math>.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>A definicao formal de MLR crescente em <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">T(x)</annotation></semantics></math>: para todo <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>θ</mi><mn>1</mn></msub><mo>&gt;</mo><msub><mi>θ</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\theta_1 &gt; \theta_2</annotation></semantics></math>, a razao <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>;</mo><msub><mi>θ</mi><mn>1</mn></msub><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>;</mo><msub><mi>θ</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f(x;\theta_1)/f(x;\theta_2)</annotation></semantics></math> e funcao nao-decrescente de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">T(x)</annotation></semantics></math>. Isso garante que valores maiores de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math> evidenciam <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>θ</mi><annotation encoding="application/x-tex">\theta</annotation></semantics></math> maior, permitindo o Teorema de Karlin-Rubin.</p>
+<p>As demais opcoes descrevem propriedades diferentes: monotonicidade da log-verossimilhanca em <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>θ</mi><annotation encoding="application/x-tex">\theta</annotation></semantics></math>; monotonicidade do EMV; monotonicidade da FDA (que seria monotonicidade estocastica); ou magnitude absoluta da razao.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Membros da familia exponencial uniparametrica <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>;</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mrow><mi mathvariant="normal">exp</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">{</mo><mi>c</mi><mo stretchy="false" form="prefix">(</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo><mi>T</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>d</mi><mo stretchy="false" form="prefix">(</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">}</mo><mi>h</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f(x;\theta) = \exp\{c(\theta)T(x) - d(\theta)\}h(x)</annotation></semantics></math> com <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo stretchy="false" form="prefix">(</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">c(\theta)</annotation></semantics></math> crescente tem MLR crescente em <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">T(x)</annotation></semantics></math> porque:</p>
+<br/>
+<ol type="a">
+<li>
+A MLR decorre do fato de que <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><mi>T</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>X</mi><mi>i</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\sum T(X_i)</annotation></semantics></math> e estatistica suficiente para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>θ</mi><annotation encoding="application/x-tex">\theta</annotation></semantics></math> na familia exponencial.
+</li>
+<li>
+A MLR e consequencia direta da completude da estatistica suficiente na familia exponencial.
+</li>
+<li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>;</mo><msub><mi>θ</mi><mn>1</mn></msub><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>;</mo><msub><mi>θ</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mrow><mi mathvariant="normal">exp</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">{</mo><mo stretchy="false" form="prefix">(</mo><mi>c</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>θ</mi><mn>1</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>c</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>θ</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mi>T</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mo stretchy="false" form="prefix">(</mo><mi>d</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>θ</mi><mn>1</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>d</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>θ</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">f(x;\theta_1)/f(x;\theta_2) = \exp\{(c(\theta_1)-c(\theta_2))T(x) - (d(\theta_1)-d(\theta_2))\}</annotation></semantics></math> e crescente em <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">T(x)</annotation></semantics></math> quando <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>θ</mi><mn>1</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>&gt;</mo><mi>c</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>θ</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">c(\theta_1) &gt; c(\theta_2)</annotation></semantics></math>.
+</li>
+<li>
+A familia exponencial tem MLR em <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">T(x)</annotation></semantics></math> somente se <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>θ</mi><annotation encoding="application/x-tex">\theta</annotation></semantics></math> for o parametro natural da familia.
+</li>
+<li>
+A familia exponencial sempre tem MLR por definicao, sem necessidade de verificar condicoes adicionais.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>A razao e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>;</mo><msub><mi>θ</mi><mn>1</mn></msub><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>;</mo><msub><mi>θ</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mrow><mi mathvariant="normal">exp</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">{</mo><mo stretchy="false" form="prefix">(</mo><mi>c</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>θ</mi><mn>1</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>c</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>θ</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mi>T</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mo stretchy="false" form="prefix">(</mo><mi>d</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>θ</mi><mn>1</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>d</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>θ</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">f(x;\theta_1)/f(x;\theta_2) = \exp\{(c(\theta_1)-c(\theta_2))T(x) - (d(\theta_1)-d(\theta_2))\}</annotation></semantics></math>. Quando <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>θ</mi><mn>1</mn></msub><mo>&gt;</mo><msub><mi>θ</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\theta_1 &gt; \theta_2</annotation></semantics></math> e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math> e crescente, temos <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>θ</mi><mn>1</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>&gt;</mo><mi>c</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>θ</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">c(\theta_1) &gt; c(\theta_2)</annotation></semantics></math>, portanto o expoente e crescente linear em <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">T(x)</annotation></semantics></math>, tornando a razao crescente em <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">T(x)</annotation></semantics></math>.</p>
+<p>A MLR nao e automatica na familia exponencial (depende de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math> crescente), nao e consequencia da suficiencia ou completude por si so.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>O Teorema de Karlin-Rubin afirma que, se a familia tem MLR crescente em <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>, entao o teste que rejeita <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mi>θ</mi><mo>≤</mo><msub><mi>θ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0:\theta \leq \theta_0</annotation></semantics></math> quando <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo>&gt;</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">T &gt; k</annotation></semantics></math> (com <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math> tal que o nivel seja <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>) e:</p>
+<br/>
+<ol type="a">
+<li>
+UMP de tamanho <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math> para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mi>θ</mi><mo>≤</mo><msub><mi>θ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0:\theta \leq \theta_0</annotation></semantics></math> vs. <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mi>θ</mi><mo>&gt;</mo><msub><mi>θ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_1:\theta &gt; \theta_0</annotation></semantics></math>.
+</li>
+<li>
+O teste mais poderoso apenas para alternativas simples <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi><mo>=</mo><msub><mi>θ</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">\theta = \theta_1</annotation></semantics></math> (hipotese simples).
+</li>
+<li>
+O unico teste nao-viesado de tamanho <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math> para hipoteses unilaterais com MLR.
+</li>
+<li>
+O teste de razao de verossimilhanca generalizada (TRVG) de tamanho <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>.
+</li>
+<li>
+UMP de tamanho <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math> para qualquer tipo de hipotese alternativa, incluindo bilateral.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>O Teorema de Karlin-Rubin garante que o teste baseado em <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo>&gt;</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">T &gt; k</annotation></semantics></math> e UMP para hipoteses UNILATERAIS <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mi>θ</mi><mo>≤</mo><msub><mi>θ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0:\theta \leq \theta_0</annotation></semantics></math> vs. <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mi>θ</mi><mo>&gt;</mo><msub><mi>θ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_1:\theta &gt; \theta_0</annotation></semantics></math>. Esse resultado e mais forte que o Lema de NP (que cobre apenas hipoteses simples vs. simples), pois <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math> e composta (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi><mo>≤</mo><msub><mi>θ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\theta \leq \theta_0</annotation></semantics></math>). O resultado NAO vale para hipoteses bilaterais.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mi>i</mi></msub><mover><mo>∼</mo><mtext mathvariant="normal">iid</mtext></mover><mi>N</mi><mo stretchy="false" form="prefix">(</mo><mi>μ</mi><mo>,</mo><msup><mi>σ</mi><mn>2</mn></msup><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">X_i \overset{\text{iid}}{\sim} N(\mu,\sigma^2)</annotation></semantics></math> com <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>σ</mi><mn>2</mn></msup><mo>=</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">\sigma^2 = 9</annotation></semantics></math> conhecido, a familia tem MLR crescente em <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>X</mi><mo accent="true">‾</mo></mover><annotation encoding="application/x-tex">\bar{X}</annotation></semantics></math>. Pelo Teorema de Karlin-Rubin, o UMP para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mi>μ</mi><mo>≤</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">H_0:\mu \leq 4</annotation></semantics></math> vs. <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mi>μ</mi><mo>&gt;</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">H_1:\mu &gt; 4</annotation></semantics></math> com <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><mn>0</mn><mo>,</mo><mn>05</mn></mrow><annotation encoding="application/x-tex">\alpha = 0{,}05</annotation></semantics></math> rejeita quando <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>X</mi><mo accent="true">‾</mo></mover><mo>&gt;</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">\bar{X} &gt; k</annotation></semantics></math>. O valor de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math> e:</p>
+<br/>
+<ol type="a">
+<li>
+3.3831
+</li>
+<li>
+4.735
+</li>
+<li>
+4.6169
+</li>
+<li>
+4.966
+</li>
+<li>
+0.735
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><msub><mi>μ</mi><mn>0</mn></msub><mo>+</mo><msub><mi>z</mi><mrow><mn>0</mn><mo>,</mo><mn>95</mn></mrow></msub><msqrt><mrow><msup><mi>σ</mi><mn>2</mn></msup><mi>/</mi><mi>n</mi></mrow></msqrt><mo>=</mo><mn>4</mn><mo>+</mo><mn>1</mn><mo>,</mo><mn>645</mn><mo>×</mo><msqrt><mrow><mn>9</mn><mi>/</mi><mn>64</mn></mrow></msqrt><mo>=</mo><mn>4</mn><mo>+</mo><mn>1</mn><mo>,</mo><mn>645</mn><mo>×</mo><mn>0.375</mn><mo>=</mo><mn>4.6169</mn></mrow><annotation encoding="application/x-tex">k = \mu_0 + z_{0{,}95}\sqrt{\sigma^2/n} = 4 + 1{,}645 \times \sqrt{9/64} = 4 + 1{,}645 \times 0.375 = 4.6169</annotation></semantics></math>.</p>
+<p>Erros comuns: usar <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>z</mi><mrow><mn>0</mn><mo>,</mo><mn>975</mn></mrow></msub><mo>=</mo><mn>1</mn><mo>,</mo><mn>96</mn></mrow><annotation encoding="application/x-tex">z_{0{,}975}=1{,}96</annotation></semantics></math> (IC 95% bilateral); valor negativo (regiao esquerda); usar <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>z</mi><mrow><mn>0</mn><mo>,</mo><mn>995</mn></mrow></msub><mo>=</mo><mn>2</mn><mo>,</mo><mn>576</mn></mrow><annotation encoding="application/x-tex">z_{0{,}995}=2{,}576</annotation></semantics></math> (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><mn>0</mn><mo>,</mo><mn>005</mn></mrow><annotation encoding="application/x-tex">\alpha=0{,}005</annotation></semantics></math>).</p>
+<br/>
+</li>
+</ol>
+
+</body>
+</html>

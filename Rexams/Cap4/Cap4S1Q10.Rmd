@@ -1,0 +1,47 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+## Choices textuais
+all_choices <- c(
+  "Se $T$ e uma estatistica suficiente e completa para $\\theta$, e $\\phi(T)$ e um estimador nao-viesado de $g(\\theta)$, entao $\\phi(T)$ e o unico ENVVUM para $g(\\theta)$.",
+  "Toda estatistica suficiente e automaticamente um ENVVUM para alguma funcao do parametro, sem necessidade de completude.",
+  "O teorema de Lehmann-Scheffe garante a existencia do ENVVUM para qualquer familia parametrica, mesmo sem estatistica suficiente completa.",
+  "Uma estatistica suficiente minimal e sempre completa e, portanto, qualquer funcao nao-viesada dela e automaticamente ENVVUM.",
+  "O ENVVUM e sempre o EMV quando este e nao-viesado, pelo teorema de Lehmann-Scheffe."
+)
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+O **Teorema de Lehmann-Scheffe** e um dos resultados mais importantes na teoria da estimacao, pois fornece um metodo construtivo para encontrar o ENVVUM.
+
+Qual das seguintes afirmacoes enuncia **corretamente** o Teorema de Lehmann-Scheffe?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+O Teorema de Lehmann-Scheffe afirma: se $T$ e uma estatistica **suficiente e completa** para $\theta$, e $\phi(T)$ e um estimador nao-viesado de $g(\theta)$, entao $\phi(T)$ e o **unico** ENVVUM para $g(\theta)$.
+
+As demais alternativas sao incorretas porque:
+
+- A suficiencia sozinha nao garante ENVVUM; a **completude** e essencial.
+- O teorema nao garante existencia para qualquer familia — requer a existencia de estatistica suficiente completa.
+- Suficiencia minimal nao implica completude em geral (embora para familias exponenciais regulares coincida).
+- O EMV nao-viesado nao e necessariamente ENVVUM; pode nao atingir o limite de Cramer-Rao.
+
+Meta-information
+================
+exname: Cap4S1Q10_Lehmann_Scheffe
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

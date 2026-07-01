@@ -1,0 +1,52 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+## Choices textuais
+all_choices <- c(
+  "A estatistica suficiente natural $T = \\sum_{i=1}^n T(X_i)$, onde $T$ e a funcao caracteristica da familia exponencial. Para a familia de $k$ parametros, $T$ e um vetor $k$-dimensional.",
+  "O vetor de estatisticas de ordem completo $(X_{(1)},\\ldots,X_{(n)})$, que e suficiente minimal para qualquer familia parametrica.",
+  "O vetor $(\\bar{X}, S^2)$ para qualquer membro da familia exponencial, independente do numero de parametros.",
+  "Apenas $\\bar{X}$, pois todas as familias exponenciais sao parametrizadas pela media da distribuicao.",
+  "A estatistica suficiente minimal existe apenas para distribuicoes continuas na familia exponencial; para discretas, o vetor completo e necessario."
+)
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+Para membros da **familia exponencial regular**, existe um resultado geral que caracteriza a estatistica suficiente minimal.
+
+Para a familia exponencial $k$-parametrica
+$$f(x; \boldsymbol{\theta}) = \exp\!\left\{\sum_{j=1}^k c_j(\boldsymbol{\theta})\,T_j(x) - d(\boldsymbol{\theta})\right\}h(x),$$
+qual e a **estatistica suficiente minimal** para $\boldsymbol{\theta}$?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+Para a familia exponencial regular de posto completo com $k$ parametros, a estatistica suficiente minimal e o vetor $k$-dimensional:
+$$\mathbf{T} = \left(\sum_{i=1}^n T_1(X_i),\, \sum_{i=1}^n T_2(X_i),\, \ldots,\, \sum_{i=1}^n T_k(X_i)\right).$$
+
+Exemplos:
+
+- $\text{Poisson}(\lambda)$ ($k=1$): $T = \sum X_i$.
+- $\text{Bernoulli}(p)$ ($k=1$): $T = \sum X_i$.
+- $N(\mu, \sigma^2)$ ($k=2$): $\mathbf{T} = (\sum X_i, \sum X_i^2)$.
+- $\text{Beta}(\alpha,\beta)$ ($k=2$): $\mathbf{T} = (\sum\log X_i, \sum\log(1-X_i))$.
+
+A estatistica de ordem completa nao e minimal em geral (e redundante). $(\bar{X}, S^2)$ e especifico para a Normal biparametrica, nao geral.
+
+Meta-information
+================
+exname: Cap4S4Q10_suficiencia_minimal_familia_exponencial
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

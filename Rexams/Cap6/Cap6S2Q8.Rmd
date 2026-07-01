@@ -1,0 +1,55 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parametros
+alpha <- 0.05
+mu0   <- 5
+sigma <- 2
+n     <- sample(c(25, 36, 49, 64), 1)
+mu1   <- mu0 + 2
+
+## Poder do teste NP
+Poder <- round(1 - pnorm(qnorm(1 - alpha) - (mu1 - mu0) / (sigma / sqrt(n))), 4)
+
+## Respostas
+correct <- Poder
+w1 <- round(Poder - 0.1, 4)
+w2 <- round(1 - Poder, 4)
+w3 <- round(Poder + 0.1, 4)
+w4 <- round(0.05, 4)
+
+all_vals <- c(correct, w1, w2, w3, w4)
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+Para $H_0:\mu = `r mu0`$ vs. $H_1:\mu = `r mu1`$ com $\sigma = `r sigma`$, $n = `r n`$ e $\alpha = 0{,}05$, o teste de Neyman-Pearson tem poder:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+Poder $= 1 - \Phi\!\left(z_{0{,}95} - \frac{\mu_1-\mu_0}{\sigma/\sqrt{n}}\right) = 1 - \Phi\!\left(1{,}645 - \frac{`r mu1-mu0`}{`r sigma`/\sqrt{`r n`}}\right) = `r Poder`$.
+
+Meta-information
+================
+exname: Cap6S2Q8_NP_tamanho_poder
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

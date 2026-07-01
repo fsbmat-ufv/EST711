@@ -1,0 +1,57 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+n     <- sample(c(100, 200, 300), 1)
+r_tab <- sample(c(2, 3), 1)
+c_tab <- sample(c(2, 3), 1)
+
+gl <- (r_tab - 1) * (c_tab - 1)
+
+correct <- gl
+w1      <- r_tab * c_tab - 1
+w2      <- r_tab + c_tab - 2
+w3      <- r_tab * c_tab
+w4      <- (r_tab - 1) * (c_tab + 1)
+
+all_vals <- c(correct, w1, w2, w3, w4)
+
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+Para testar **independência** em uma tabela de contingência $`r r_tab` \times `r c_tab`$ com $n = `r n`$ observações, a estatística do TRV (ou qui-quadrado de Pearson) tem distribuição assintótica $\chi^2_?$ sob $H_0$ (independência). Quantos **graus de liberdade** tem essa distribuição?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+Os graus de liberdade para o teste qui-quadrado de independência em uma tabela $r \times c$ são:
+$$\text{gl} = (r-1)(c-1).$$
+
+Para uma tabela $`r r_tab` \times `r c_tab`$:
+$$\text{gl} = (`r r_tab` - 1)(`r c_tab` - 1) = `r r_tab-1` \times `r c_tab-1` = `r gl`.$$
+
+**Raciocínio:** O modelo irrestrito (dependência) tem $rc - 1 = `r r_tab*c_tab - 1`$ parâmetros livres (probabilidades de célula somando 1). O modelo restrito (independência) tem $(r-1) + (c-1) = `r r_tab+c_tab-2`$ parâmetros livres (probabilidades marginais). A diferença é $`r r_tab*c_tab-1` - `r r_tab+c_tab-2` = `r gl`$ = $(r-1)(c-1)$.
+
+Meta-information
+================
+exname: Cap7S2Q5_TRV_tabela_contingencia
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

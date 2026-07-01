@@ -1,0 +1,65 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+## Parametros
+lambda <- sample(c(2, 3, 4, 5, 6, 8), 1)
+
+## Resposta correta e alternativas incorretas
+correct <- round(1 / lambda, 4)
+w1 <- round(lambda, 4)
+w2 <- round(1 / lambda^2, 4)
+## w3: lambda/lambda^2 = 1/lambda mas com pequena perturbacao para diferir
+w3 <- round(1 / lambda + 0.01, 4)
+w4 <- round(sqrt(1 / lambda), 4)
+
+## Garantir que correct != w3
+if (correct == w3) w3 <- w3 + 0.01
+
+all_vals <- c(correct, w1, w2, w3, w4)
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+Para $X \sim \text{Poisson}(\lambda)$, a log-verossimilhanca de uma unica observacao e:
+$$\ell(\lambda; x) = x\log\lambda - \lambda - \log(x!).$$
+
+Calculando as derivadas:
+$$\ell'(\lambda; x) = \frac{x}{\lambda} - 1, \qquad \ell''(\lambda; x) = -\frac{x}{\lambda^2}.$$
+
+A informacao de Fisher via segunda derivada e $I(\lambda) = -E[\ell''(\lambda; X)] = E[X]/\lambda^2 = \lambda/\lambda^2$.
+
+Para $\lambda = `r lambda`$, qual e o valor de $I(\lambda)$?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+Usando a formula via segunda derivada:
+$$I(\lambda) = -E\!\left[\ell''(\lambda; X)\right] = -E\!\left[-\frac{X}{\lambda^2}\right] = \frac{E[X]}{\lambda^2} = \frac{\lambda}{\lambda^2} = \frac{1}{\lambda}.$$
+
+Para $\lambda = `r lambda`$:
+$$I(`r lambda`) = \frac{1}{`r lambda`} = `r correct`.$$
+
+Essa e a mesma resposta obtida pela formula direta: a informacao de Fisher de uma Poisson($\lambda$) e $1/\lambda$.
+
+Meta-information
+================
+exname: Cap4S2Q8_Fisher_segunda_derivada_Poisson
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

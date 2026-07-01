@@ -1,0 +1,67 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parâmetros aleatórios
+mu     <- sample(2:8, 1)
+sigma2 <- sample(1:9, 1)
+n      <- sample(c(25, 36, 49, 64, 100), 1)
+
+## Resposta correta: Var(S_n) = n * sigma2
+correct <- n * sigma2
+
+## Alternativas incorretas plausíveis
+w1 <- sigma2
+w2 <- round(n * sqrt(sigma2), 4)
+w3 <- round(sigma2 / n, 4)
+w4 <- sigma2^n  # pode ser muito grande; usar outro
+w4 <- sigma2 + n  # mais plausível
+
+## Garantir unicidade
+w_list <- c(w1, w2, w3, w4)
+for (i in seq_along(w_list)) {
+  if (w_list[i] == correct) w_list[i] <- correct + 1
+}
+
+## Embaralhamento
+all_vals <- c(correct, w_list[1], w_list[2], w_list[3], w_list[4])
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+
+Seja $X_1, \ldots, X_n \overset{\text{iid}}{\sim}$ alguma distribuição com $E(X_i) = `r mu`$ e $\text{Var}(X_i) = \sigma^2 = `r sigma2`$, com $n = `r n`$. Defina $S_n = \sum_{i=1}^n X_i$. Qual é a variância de $S_n$?
+
+Answerlist
+----------
+
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+
+Como $X_1, \ldots, X_n$ são iid:
+$$\text{Var}(S_n) = \text{Var}\!\left(\sum_{i=1}^n X_i\right) = \sum_{i=1}^n \text{Var}(X_i) = n\sigma^2 = `r n` \times `r sigma2` = `r correct`$$
+
+Note que $\text{Var}(\bar{X}_n) = \sigma^2/n = `r round(sigma2/n,4)`$ (divide por $n^2$ pois $\bar{X}_n = S_n/n$), enquanto $\text{Var}(S_n) = n\sigma^2$ (multiplica por $n$). O TCL se aplica à soma padronizada $\frac{S_n - n\mu}{\sqrt{n\sigma^2}} = \frac{S_n - n\mu}{\sigma\sqrt{n}} \xrightarrow{D} N(0,1)$.
+
+Meta-information
+================
+exname: Cap2S1Q3_TCL_soma
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE
+```

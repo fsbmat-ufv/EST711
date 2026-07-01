@@ -1,0 +1,48 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+## Choices textuais
+all_choices <- c(
+  "Sua variancia e igual ao limite inferior de Cramer-Rao: $\\text{Var}(T) = 1/(n\\,I(\\theta))$.",
+  "Sua variancia e a menor possivel entre todos os estimadores, com ou sem vicio, para todo $\\theta$.",
+  "E nao-viesado e consistente simultaneamente, convergindo para $\\theta$ em probabilidade.",
+  "E o estimador de maxima verossimilhanca (EMV) quando este e nao-viesado, por definicao.",
+  "Converge mais rapidamente que qualquer outro estimador para $\\theta$ quando $n \\to \\infty$."
+)
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+Na teoria da estimacao, um estimador nao-viesado $T$ de $\theta$ e chamado de **eficiente** quando atinge o limite de Cramer-Rao.
+
+Um estimador nao-viesado $T$ e chamado de eficiente se:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+A definicao correta de estimador eficiente: sua variancia e igual ao limite inferior de Cramer-Rao:
+$$\text{Var}(T) = \frac{1}{n\,I(\theta)}.$$
+
+As demais alternativas sao incorretas:
+
+- O LICR e valido apenas entre estimadores nao-viesados, nao entre todos os estimadores.
+- Consistencia e uma propriedade assintótica e nao implica eficiencia.
+- O EMV pode ser viesado ou nao atingir o LICR (apenas assintoticamente o EMV e eficiente, sob condicoes de regularidade).
+- A velocidade de convergencia e uma propriedade assintótica diferente da eficiencia (criterio de variancia finita).
+
+Meta-information
+================
+exname: Cap4S2Q6_estimador_eficiente_CR
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

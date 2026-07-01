@@ -1,0 +1,51 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parametros
+lambda_hat <- sample(c(2, 3, 4, 5, 6, 8), 1)
+n          <- sample(c(50, 100, 200), 1)
+
+## Respostas: margem de erro IC 95% para Poisson (grande amostra)
+correct <- round(1.96 * sqrt(lambda_hat / n), 4)
+w1 <- round(1.96 * lambda_hat / sqrt(n), 4)
+w2 <- round(1.96 * sqrt(lambda_hat * n), 4)
+w3 <- round(1.96 * lambda_hat / n, 4)
+w4 <- round(1.96 * sqrt(lambda_hat) / n, 4)
+
+all_vals <- c(correct, w1, w2, w3, w4)
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+Para $X_i \overset{\text{iid}}{\sim} \text{Poisson}(\lambda)$, pelo TCL temos $\bar{X} \approx N(\lambda,\, \lambda/n)$ para $n$ grande. Com $\hat{\lambda} = \bar{X} = `r lambda_hat`$ e $n = `r n`$, a margem de erro do IC 95% e $1{,}96\sqrt{\hat{\lambda}/n}$. Esse valor e:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+A margem de erro e $1{,}96\sqrt{\hat{\lambda}/n} = 1{,}96\sqrt{`r lambda_hat`/`r n`} = `r correct`$.
+
+Erros comuns: usar $\hat{\lambda}/\sqrt{n}$ sem a raiz exterior; multiplicar $\hat{\lambda}$ por $n$; dividir $\hat{\lambda}$ por $n$ sem raiz; usar $\sqrt{\hat{\lambda}}/n$.
+
+Meta-information
+================
+exname: Cap5S1Q10_IC_Poisson_TCL
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

@@ -1,0 +1,51 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parâmetros aleatórios
+mu    <- sample(3:9, 1)
+sigma <- sample(1:4, 1)
+n     <- sample(c(36, 100, 400), 1)
+
+## Alternativas (textuais)
+all_choices <- c(
+  "A aproximação melhora à medida que $n$ aumenta, e a taxa de convergência depende do grau de não-normalidade da distribuição original.",
+  paste0("A aproximação é exata para qualquer $n \\geq 30$, independentemente da distribuição original."),
+  "A aproximação normal só é válida para distribuições simétricas.",
+  "A aproximação é exata quando a distribuição original é exponencial.",
+  "O TCL garante exatidão da aproximação normal para todo $n$, independentemente da distribuição."
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+
+Pelo TCL, para $n$ grande, $\bar{X}_n$ tem distribuição aproximadamente $N\!\left(\mu, \sigma^2/n\right) = N\!\left(`r mu`, `r round(sigma^2/n,4)`\right)$ quando $\mu = `r mu`$, $\sigma = `r sigma`$ e $n = `r n`$. Qual afirmação sobre essa aproximação é **correta**?
+
+Answerlist
+----------
+
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+
+A afirmação correta é que a qualidade da aproximação normal melhora com $n$, e a taxa de convergência depende da assimetria e curtose da distribuição original (Teorema de Berry-Esseen formaliza isso).
+
+O critério empírico "$n \geq 30$" não tem respaldo teórico universal: para distribuições muito assimétricas ou com caudas pesadas, são necessários $n$ muito maiores. A aproximação não é exata para nenhuma distribuição não-normal (apenas para normais, onde $\bar{X}_n$ é exatamente normal para qualquer $n$).
+
+Meta-information
+================
+exname: Cap2S1Q8_interpretacao_TCL
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE
+```

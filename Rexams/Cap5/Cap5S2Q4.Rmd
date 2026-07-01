@@ -1,0 +1,47 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parametros (usados no enunciado para contexto)
+mu_val  <- sample(c(2, 4, 6, 8), 1)
+sigma2  <- sample(c(1, 4, 9), 1)
+n       <- sample(c(25, 36, 49, 64), 1)
+
+## Choices textuais
+all_choices <- c(
+  "$Z = \\frac{\\sqrt{n}(\\bar{X}-\\mu)}{\\sigma} \\sim N(0,1)$ exatamente (para qualquer $n$).",
+  "$T = \\frac{\\sqrt{n}(\\bar{X}-\\mu)}{S} \\sim N(0,1)$ exatamente para qualquer $n$.",
+  "$Z = \\frac{\\sqrt{n}(\\bar{X}-\\mu)}{\\sigma} \\sim N(0,1)$ apenas assintoticamente, nao para $n$ finito.",
+  "$\\chi^2 = \\frac{n(\\bar{X}-\\mu)^2}{\\sigma^2} \\sim \\chi^2_n$ exatamente.",
+  "$F = \\frac{n(\\bar{X}-\\mu)^2}{\\sigma^2} \\sim F_{1,\\,n-1}$ exatamente."
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+Para $X_i \overset{\text{iid}}{\sim} N(\mu,\sigma^2)$ com $\sigma^2 = `r sigma2`$ conhecido e $n = `r n`$, qual e o pivo EXATO para construir um IC para $\mu$?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+Quando $X_i \sim N(\mu,\sigma^2)$ com $\sigma^2$ conhecido, a media amostral tem distribuicao $\bar{X} \sim N(\mu, \sigma^2/n)$ EXATAMENTE para qualquer $n$. Portanto $Z = \sqrt{n}(\bar{X}-\mu)/\sigma \sim N(0,1)$ e um pivo exato.
+
+A opcao com $S$ (variancia amostral) segue $t_{n-1}$, nao $N(0,1)$. A afirmacao "apenas assintoticamente" e errada para Normal. As opcoes com $\chi^2_n$ e $F_{1,n-1}$ tem graus de liberdade incorretos.
+
+Meta-information
+================
+exname: Cap5S2Q4_pivo_normal_mu
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

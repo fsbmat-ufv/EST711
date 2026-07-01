@@ -1,0 +1,63 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parâmetros aleatórios
+c_val <- sample(2:7, 1)
+d_val <- sample(1:5, 1)
+
+## Resposta correta
+correct <- c_val + d_val
+
+## Alternativas incorretas plausíveis
+w1 <- c_val * d_val
+w2 <- c_val - d_val
+w3 <- round(c_val / d_val, 4)
+## perturbação ±1, evitando colisão
+delta <- sample(c(1, -1), 1)
+w4    <- correct + delta
+if (w4 == w1 || w4 == w2 || w4 == w3) w4 <- correct + 2
+
+## Embaralhamento
+all_vals <- c(correct, w1, w2, w3, w4)
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+
+Sejam $X_n$ e $Y_n$ sequências de variáveis aleatórias tais que $X_n \xrightarrow{P} `r c_val`$ e $Y_n \xrightarrow{P} `r d_val`$. Pelo Teorema de Slutsky (ou pelas propriedades da convergência em probabilidade), qual é o limite em probabilidade de $X_n + Y_n$?
+
+Answerlist
+----------
+
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+
+A convergência em probabilidade é preservada por operações aritméticas: se $X_n \xrightarrow{P} a$ e $Y_n \xrightarrow{P} b$, então $X_n + Y_n \xrightarrow{P} a + b$.
+
+Portanto $X_n + Y_n \xrightarrow{P} `r c_val` + `r d_val` = `r correct`$.
+
+De forma análoga, $X_n \cdot Y_n \xrightarrow{P} `r c_val * d_val`$ e $X_n / Y_n \xrightarrow{P} `r round(c_val/d_val, 4)`$ (desde que $b \neq 0$).
+
+Meta-information
+================
+exname: Cap1S1Q7_slutsky_soma
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE
+```

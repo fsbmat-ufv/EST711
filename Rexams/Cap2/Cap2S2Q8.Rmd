@@ -1,0 +1,75 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parâmetros aleatórios
+p     <- sample(c(0.2, 0.3, 0.4, 0.5, 0.6), 1)
+n_val <- sample(c(100, 200, 400), 1)
+
+## g(p) = log(p/(1-p)) = logit(p)
+## g'(p) = 1/(p*(1-p))
+## Var(hat_p) = p*(1-p)/n  [Bernoulli]
+## Var assintótica de logit(hat_p) em escala sqrt(n) = [g'(p)]^2 * p*(1-p) = 1/(p*(1-p))
+correct <- round(1 / (p * (1 - p)), 4)
+
+## Alternativas incorretas plausíveis
+w1 <- round(p * (1 - p), 4)                  # variância de hat_p, não de logit(hat_p)
+w2 <- round(1 / (p * (1 - p))^2, 4)          # quadrado errado
+w3 <- round(1 / (p^2 * (1 - p)^2), 4)        # mesma coisa diferente escrita
+w4 <- round(p * (1 - p) * 4, 4)              # fator errado
+
+## Ajustar duplicatas: w2 e w3 são iguais, usar perturbação
+if (w3 == w2) w3 <- w2 + 0.1
+w_list <- c(w1, w2, w3, w4)
+for (i in seq_along(w_list)) {
+  if (w_list[i] == correct) w_list[i] <- correct + 0.1
+}
+
+## Embaralhamento
+all_vals <- c(correct, w_list[1], w_list[2], w_list[3], w_list[4])
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+
+Seja $\hat{p}_n \sim \text{Bernoulli}(p)$ (proporção amostral) com $p = `r p`$ e $n = `r n_val`$. Para a transformação logit $g(p) = \log\!\left(\dfrac{p}{1-p}\right)$ com derivada $g'(p) = \dfrac{1}{p(1-p)}$, pelo Método Delta a variância assintótica (em escala $\sqrt{n}$) de $\text{logit}(\hat{p}_n)$ é:
+$$[g'(p)]^2 \cdot p(1-p) = \frac{1}{p(1-p)}$$
+
+Calcule $1/[p(1-p)]$ para $p = `r p`$.
+
+Answerlist
+----------
+
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+
+Temos $g'(p) = 1/[p(1-p)]$ e $\text{Var}_{\text{ass}}(\hat{p}_n) = p(1-p)$ (em escala $\sqrt{n}$). Pelo Método Delta:
+$$[g'(p)]^2 \cdot p(1-p) = \frac{1}{[p(1-p)]^2} \cdot p(1-p) = \frac{1}{p(1-p)}$$
+
+Substituindo $p = `r p`$:
+$$\frac{1}{p(1-p)} = \frac{1}{`r p` \times `r 1-p`} = \frac{1}{`r round(p*(1-p),4)`} = `r correct`$$
+
+A propriedade $\text{logit}(\hat{p}) \approx N(\text{logit}(p), 1/[np(1-p)])$ é útil para construir ICs com melhor comportamento para $p$ próximo de 0 ou 1.
+
+Meta-information
+================
+exname: Cap2S2Q8_delta_logit
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE
+```

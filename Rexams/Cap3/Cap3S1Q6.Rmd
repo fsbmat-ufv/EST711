@@ -1,0 +1,70 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parâmetros aleatórios
+alpha <- sample(c(2, 3, 4, 5), 1)
+beta  <- sample(c(1, 2, 3), 1)
+xbar  <- round(alpha / beta + runif(1, -0.5, 0.5), 2)
+s2    <- round(alpha / beta^2 + runif(1, -0.2, 0.2), 3)
+## Garantir s2 > 0
+s2 <- max(s2, 0.05)
+
+## Resposta correta: beta_hat = xbar / s2
+correct <- round(xbar / s2, 4)
+
+## Alternativas incorretas plausíveis
+w1 <- round(s2 / xbar, 4)
+w2 <- round(xbar^2 / s2, 4)
+w3 <- round(xbar / s2 + 1, 4)
+w4 <- round(s2 / xbar^2, 4)
+
+## Garantir unicidade
+if (w1 == correct) w1 <- round(s2 / xbar + 0.1, 4)
+if (w2 == correct) w2 <- round(xbar^2 / s2 + 0.1, 4)
+if (w3 == correct) w3 <- round(xbar / s2 + 2, 4)
+if (w4 == correct) w4 <- round(s2 / xbar^2 + 0.1, 4)
+if (w2 == w1)      w2 <- round(xbar^2 / s2 - 0.1, 4)
+if (w3 == w1 || w3 == w2) w3 <- round(xbar / s2 - 1, 4)
+if (w4 == w1 || w4 == w2 || w4 == w3) w4 <- round(s2^2 / xbar, 4)
+
+## Embaralhamento SEMPRE
+all_vals <- c(correct, w1, w2, w3, w4)
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+
+Seja $X \sim \text{Gama}(\alpha, \beta)$ com $E(X) = \alpha/\beta$ e $\text{Var}(X) = \alpha/\beta^2$. O método dos momentos resolve o sistema $\bar{X} = \hat{\alpha}/\hat{\beta}$ e $\hat{\sigma}^2 = \hat{\alpha}/\hat{\beta}^2$. Dividindo a segunda equação pela primeira: $\hat{\beta}_{MM} = \bar{X}/\hat{\sigma}^2$. Com $\bar{X} = `r xbar`$ e $\hat{\sigma}^2 = `r s2`$, calcule $\hat{\beta}_{MM}$.
+
+Answerlist
+----------
+
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+
+Das equações do método dos momentos:
+$$\bar{X} = \frac{\hat{\alpha}}{\hat{\beta}}, \quad \hat{\sigma}^2 = \frac{\hat{\alpha}}{\hat{\beta}^2}.$$
+Dividindo: $\hat{\sigma}^2 / \bar{X} = 1/\hat{\beta}$, logo $\hat{\beta}_{MM} = \bar{X}/\hat{\sigma}^2 = `r xbar`/`r s2` = `r correct`$. Em seguida, $\hat{\alpha}_{MM} = \bar{X} \cdot \hat{\beta}_{MM} = `r round(xbar * correct, 4)`$.
+
+Meta-information
+================
+exname: Cap3S1Q6_emm_gama
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

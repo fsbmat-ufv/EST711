@@ -1,0 +1,46 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parametros (contexto)
+mu0    <- 5
+sigma2 <- 4
+n      <- 36
+alpha  <- 0.05
+
+## Choices textuais
+all_choices <- c(
+  "Crescente em $\\mu$ para $\\mu > \\mu_0$, igual a $\\alpha$ em $\\mu = \\mu_0$, e tendendo a 1 quando $\\mu \\to \\infty$.",
+  "Crescente em $\\mu$ para todo $\\mu \\in \\mathbb{R}$, sem atingir o valor 1 para nenhum $\\mu$ finito.",
+  "Constante e igual ao poder maximo para $\\mu > \\mu_0$, e zero para $\\mu \\leq \\mu_0$.",
+  "Uma funcao decrescente de $|\\mu - \\mu_0|$ para $\\mu \\neq \\mu_0$.",
+  "Uma funcao em forma de U com minimo em $\\mu_0$ e simetrica em torno de $\\mu_0$."
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+Para o UMP de $H_0:\mu \leq `r mu0`$ vs. $H_1:\mu > `r mu0`$ com $\sigma^2 = `r sigma2`$ e $n = `r n`$, a funcao poder $\gamma(\mu)$ e:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+A funcao poder do UMP para hipotese unilateral e $\gamma(\mu) = 1 - \Phi(z_{0{,}95} - (\mu-\mu_0)/(\sigma/\sqrt{n}))$. Esta funcao e crescente em $\mu$ (quanto maior $\mu$, maior o poder). Em $\mu = \mu_0$, $\gamma(\mu_0) = 1 - \Phi(z_{0{,}95}) = \alpha = 0{,}05$. Quando $\mu \to \infty$, $\gamma(\mu) \to 1$.
+
+Meta-information
+================
+exname: Cap6S3Q10_UMP_funcao_poder_forma
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

@@ -1,0 +1,66 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parâmetros aleatórios
+sigma2 <- sample(c(1, 4, 9, 16), 1)
+n      <- sample(c(25, 36, 64, 100), 1)
+mu_gen <- sample(2:8, 1)
+sum_x  <- round(n * mu_gen + rnorm(1, 0, 1), 1)
+
+## Resposta correta
+correct <- round(sum_x / n, 4)
+
+## Alternativas incorretas plausíveis
+w1 <- round(sum_x / n + sigma2 / n, 4)
+w2 <- round(sum_x / n + 0.3, 4)
+w3 <- round(sum_x / n - 0.3, 4)
+w4 <- round(sum_x / (n + 2), 4)
+
+## Garantir unicidade
+if (w1 == correct) w1 <- round(correct + 0.5, 4)
+if (w2 == correct) w2 <- round(correct + 0.1, 4)
+if (w2 == w1)      w2 <- round(correct - 0.1, 4)
+if (w3 == correct || w3 == w1 || w3 == w2) w3 <- round(correct - 0.4, 4)
+if (w4 == correct || w4 == w1 || w4 == w2 || w4 == w3) w4 <- round(sum_x / (n - 2), 4)
+
+## Embaralhamento SEMPRE
+all_vals <- c(correct, w1, w2, w3, w4)
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+
+Seja $X_i \overset{\text{iid}}{\sim} N(\mu, `r sigma2`)$ com $\sigma_0^2 = `r sigma2`$ conhecido. A log-verossimilhança é $\ell(\mu) = -\frac{1}{2\sigma_0^2}\sum_{i=1}^n (X_i - \mu)^2 + \text{const}$. Com $n = `r n`$ e $\sum_{i=1}^n X_i = `r sum_x`$, calcule o EMV $\hat{\mu}_{MV} = \bar{X}$.
+
+Answerlist
+----------
+
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+
+Derivando $\ell(\mu)$ em relação a $\mu$ e igualando a zero:
+$$\frac{d\ell}{d\mu} = \frac{1}{\sigma_0^2}\sum_{i=1}^n (X_i - \mu) = 0 \implies \hat{\mu}_{MV} = \bar{X} = \frac{\sum X_i}{n} = \frac{`r sum_x`}{`r n`} = `r correct`.$$
+O valor de $\sigma_0^2 = `r sigma2`$ não influencia o EMV de $\mu$ quando $\sigma^2$ é conhecido.
+
+Meta-information
+================
+exname: Cap3S2Q1_emv_normal_mu
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

@@ -1,0 +1,40 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Choices textuais
+all_choices <- c(
+  "$H_0: \\mu \\leq 50$ contra $H_1: \\mu > 50$.",
+  "$H_0: \\mu > 50$ contra $H_1: \\mu \\leq 50$.",
+  "$H_0: \\mu = 50$ contra $H_1: \\mu \\neq 50$.",
+  "$H_0: \\mu \\geq 50$ contra $H_1: \\mu < 50$.",
+  "$H_0: \\mu < 50$ contra $H_1: \\mu \\geq 50$."
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+Um pesquisador quer verificar se um novo tratamento aumenta a media de producao ACIMA de 50 unidades por hora. As hipoteses corretas para esse teste sao:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+A hipotese alternativa $H_1$ deve refletir o que o pesquisador deseja demonstrar (o efeito de interesse): $\mu > 50$. A hipotese nula e o seu complemento: $H_0: \mu \leq 50$. Colocar $\mu > 50$ em $H_0$ inverte a logica do teste. O teste bilateral ($\mu \neq 50$) nao captura a direcionalidade do interesse. As demais opcoes invertem as hipoteses ou usam a direcao errada.
+
+Meta-information
+================
+exname: Cap6S1Q10_identificar_H0_H1
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

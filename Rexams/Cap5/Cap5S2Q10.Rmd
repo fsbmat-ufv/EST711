@@ -1,0 +1,40 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Choices textuais
+all_choices <- c(
+  "O IC baseado na distribuicao $t$ de Student com $n-1$ graus de liberdade, pois e exato sob normalidade.",
+  "O IC via TCL com $z = 1{,}96$, pois o TCL e valido para qualquer $n$.",
+  "O IC de bootstrap parametrico, pois e sempre mais preciso que o $t$ para amostras pequenas.",
+  "O IC de Wilson para proporcoes, adaptado para medias.",
+  "O IC baseado em $\\chi^2_{n-1}$, pois esta distribuicao e adequada para medias e variancias."
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+Para amostras pequenas ($n \leq 20$) de uma distribuicao Normal com variancia desconhecida, qual IC para $\mu$ e mais apropriado?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+O IC $t$ com $n-1$ graus de liberdade e exato quando os dados sao normais, independentemente do tamanho amostral. O IC via TCL com $z=1{,}96$ e apenas assintoticamente valido e pode ser inadequado para $n$ pequeno. O bootstrap parametrico nao e necessariamente mais preciso que o IC $t$ exato para dados normais. Os ICs de Wilson e qui-quadrado sao para outros parametros.
+
+Meta-information
+================
+exname: Cap5S2Q10_IC_exato_vs_assint
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

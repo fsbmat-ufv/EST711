@@ -1,0 +1,40 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Choices textuais
+all_choices <- c(
+  "A probabilidade, sob $H_0$, de observar um resultado tao ou mais extremo que o observado.",
+  "A probabilidade de $H_0$ ser verdadeira dado os dados observados.",
+  "A probabilidade de $H_1$ ser verdadeira dado os dados observados.",
+  "O nivel de significancia $\\alpha$ que os dados suportam.",
+  "A probabilidade de cometer Erro Tipo I na proxima rejeicao."
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+O p-valor de um teste de hipoteses e corretamente interpretado como:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+O p-valor e uma probabilidade calculada sob $H_0$: $p = P_{H_0}(T \geq t_{\text{obs}})$ para testes unilaterais (adaptado para bilaterais). Ele nao e a probabilidade de $H_0$ ser verdadeira (isso seria interpretacao bayesiana), nem de $H_1$ ser verdadeira. Tambem nao equivale ao nivel $\alpha$ nem e a probabilidade de Erro Tipo I futuro.
+
+Meta-information
+================
+exname: Cap6S1Q5_interpretacao_pvalor
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

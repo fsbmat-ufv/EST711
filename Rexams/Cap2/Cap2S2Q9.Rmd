@@ -1,0 +1,53 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parâmetros aleatórios (usados apenas para contextualizar)
+mu <- sample(2:8, 1)
+
+## Alternativas (textuais) — questão puramente conceitual
+all_choices <- c(
+  "Se $g'(\\mu) = 0$, o método delta de primeira ordem dá variância assintótica zero, sendo necessário usar o método delta de segunda ordem.",
+  "Se $g'(\\mu) = 0$, o método delta não pode ser aplicado pois $g$ não é diferenciável nesse ponto.",
+  "Se $g'(\\mu) = 0$, a transformação $g$ não é invertível em $\\mu$ e portanto não faz sentido aplicar o método.",
+  "Se $g'(\\mu) = 0$, a variância assintótica de $g(\\bar{X}_n)$ torna-se infinita.",
+  "Se $g'(\\mu) = 0$, $g(\\bar{X}_n)$ não converge em nenhum sentido estocástico."
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+
+O Método Delta de primeira ordem requer que $g'(\mu) \neq 0$ no ponto de expansão $\mu$. Por que essa condição é necessária?
+
+Answerlist
+----------
+
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+
+Quando $g'(\mu) = 0$, o método delta de primeira ordem produz variância assintótica $[g'(\mu)]^2\sigma^2 = 0$, o que é degenerado e não informativo. Nesse caso, a taxa de convergência é diferente da usual $\sqrt{n}$ e é necessário o método delta de segunda ordem:
+
+$$n(g(\bar{X}_n) - g(\mu)) \xrightarrow{D} \frac{g''(\mu)}{2}\sigma^2\chi^2_1$$
+
+(quando $g'(\mu) = 0$ e $g''(\mu) \neq 0$).
+
+Note que $g'(\mu) = 0$ não implica que $g$ não seja diferenciável — pelo contrário, $g$ é diferenciável, mas a derivada se anula. Também não implica que $g$ seja não-invertível ou que $g(\bar{X}_n)$ divirja.
+
+Meta-information
+================
+exname: Cap2S2Q9_condicao_delta
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE
+```

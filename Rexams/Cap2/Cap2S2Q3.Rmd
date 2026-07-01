@@ -1,0 +1,66 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parâmetros aleatórios
+mu     <- sample(2:8, 1)
+sigma2 <- sample(1:9, 1)
+
+## g(x) = log(x), g'(x) = 1/x
+## Variância assintótica = [g'(mu)]^2 * sigma2 = sigma2 / mu^2
+correct <- round(sigma2 / mu^2, 4)
+
+## Alternativas incorretas plausíveis
+w1 <- round(sigma2 / mu, 4)          # esquece o quadrado
+w2 <- round(sigma2 * mu^2, 4)        # inverte
+w3 <- round(sigma2 / (2 * mu^2), 4)  # fator 2 errado
+w4 <- round(sigma2 / mu^2 * mu, 4)   # = sigma2/mu
+
+## Garantir unicidade
+w_list <- c(w1, w2, w3, w4)
+for (i in seq_along(w_list)) {
+  if (w_list[i] == correct) w_list[i] <- correct + 0.01
+}
+
+## Embaralhamento
+all_vals <- c(correct, w_list[1], w_list[2], w_list[3], w_list[4])
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+
+Seja $\bar{X}_n$ com variância assintótica $\sigma^2/n$ onde $\sigma^2 = `r sigma2`$. Considere a transformação $g(x) = \log(x)$ com derivada $g'(x) = 1/x$. Pelo Método Delta com $\mu = `r mu`$, a variância assintótica (em escala $\sqrt{n}$) de $\log(\bar{X}_n)$ é $[g'(\mu)]^2\sigma^2 = \sigma^2/\mu^2$. Calcule $\sigma^2/\mu^2$ para os valores dados.
+
+Answerlist
+----------
+
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+
+Temos $g'(\mu) = 1/\mu = 1/`r mu`$. Portanto:
+$$[g'(\mu)]^2\sigma^2 = \frac{1}{\mu^2}\,\sigma^2 = \frac{`r sigma2`}{`r mu`^2} = \frac{`r sigma2`}{`r mu^2`} = `r correct`$$
+
+Note que $g'(\mu) = 1/\mu$ (não $1/\mu^2$ nem $1/(2\mu)$). O quadrado de $1/\mu$ é $1/\mu^2$.
+
+Meta-information
+================
+exname: Cap2S2Q3_delta_log
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE
+```

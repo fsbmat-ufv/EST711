@@ -1,0 +1,48 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parâmetros aleatórios
+sigma2 <- sample(c(1, 4, 9), 1)
+n      <- sample(c(25, 36, 64, 100), 1)
+sum_xi <- round(runif(1, n * 2, n * 8), 1)
+
+## Choices textuais
+all_choices <- c(
+  "o primeiro momento amostral $m_1 = \\bar{X}_n$, que iguala o momento teórico $\\mu_1 = \\mu$.",
+  "a mediana amostral, pois é mais robusta que a média.",
+  "o momento de segunda ordem $m_2 = \\frac{1}{n}\\sum X_i^2$.",
+  "o estimador que minimiza $\\sum (X_i - \\theta)^2$.",
+  "o momento amostral de maior ordem disponível."
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+
+Seja $X_i \overset{\text{iid}}{\sim} N(\mu, \sigma_0^2)$ com $\sigma_0^2 = `r sigma2`$ conhecido. Com base em uma amostra de tamanho $n = `r n`$, o estimador de $\mu$ pelo método dos momentos é:
+
+Answerlist
+----------
+
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+
+O método dos momentos consiste em igualar os momentos teóricos da distribuição aos momentos amostrais. Para $X \sim N(\mu, \sigma_0^2)$, o primeiro momento teórico é $\mu_1 = E(X) = \mu$. Igualando ao primeiro momento amostral $m_1 = \bar{X}_n$, obtemos $\hat{\mu}_{MM} = \bar{X}_n$. Não é necessário usar momentos de ordem superior nem $\sigma_0^2$, pois o parâmetro de interesse $\mu$ já aparece no primeiro momento.
+
+Meta-information
+================
+exname: Cap3S1Q1_emm_normal_mu
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

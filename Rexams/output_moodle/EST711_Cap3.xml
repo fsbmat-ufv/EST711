@@ -1,0 +1,2994 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap3/Exercise 01</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q01 : Cap3_Cap3S1Q1 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_i \overset{\text{iid}}{\sim} N(\mu, \sigma_0^2)\)</span> com <span class="math inline">\(\sigma_0^2 = 4\)</span> conhecido. Com base em uma amostra de tamanho <span class="math inline">\(n = 25\)</span>, o estimador de <span class="math inline">\(\mu\)</span> pelo método dos momentos é:</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>O método dos momentos consiste em igualar os momentos teóricos da distribuição aos momentos amostrais. Para <span class="math inline">\(X \sim N(\mu, \sigma_0^2)\)</span>, o primeiro momento teórico é <span class="math inline">\(\mu_1 = E(X) = \mu\)</span>. Igualando ao primeiro momento amostral <span class="math inline">\(m_1 = \bar{X}_n\)</span>, obtemos <span class="math inline">\(\hat{\mu}_{MM} = \bar{X}_n\)</span>. Não é necessário usar momentos de ordem superior nem <span class="math inline">\(\sigma_0^2\)</span>, pois o parâmetro de interesse <span class="math inline">\(\mu\)</span> já aparece no primeiro momento.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+o estimador que minimiza <span class="math inline">\(\sum (X_i - \theta)^2\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+o primeiro momento amostral <span class="math inline">\(m_1 = \bar{X}_n\)</span>, que iguala o momento teórico <span class="math inline">\(\mu_1 = \mu\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+a mediana amostral, pois é mais robusta que a média.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+o momento de segunda ordem <span class="math inline">\(m_2 = \frac{1}{n}\sum X_i^2\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+o momento amostral de maior ordem disponível.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q01 : Cap3_Cap3S1Q1 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_i \overset{\text{iid}}{\sim} N(\mu, \sigma_0^2)\)</span> com <span class="math inline">\(\sigma_0^2 = 4\)</span> conhecido. Com base em uma amostra de tamanho <span class="math inline">\(n = 25\)</span>, o estimador de <span class="math inline">\(\mu\)</span> pelo método dos momentos é:</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>O método dos momentos consiste em igualar os momentos teóricos da distribuição aos momentos amostrais. Para <span class="math inline">\(X \sim N(\mu, \sigma_0^2)\)</span>, o primeiro momento teórico é <span class="math inline">\(\mu_1 = E(X) = \mu\)</span>. Igualando ao primeiro momento amostral <span class="math inline">\(m_1 = \bar{X}_n\)</span>, obtemos <span class="math inline">\(\hat{\mu}_{MM} = \bar{X}_n\)</span>. Não é necessário usar momentos de ordem superior nem <span class="math inline">\(\sigma_0^2\)</span>, pois o parâmetro de interesse <span class="math inline">\(\mu\)</span> já aparece no primeiro momento.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+a mediana amostral, pois é mais robusta que a média.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+o momento de segunda ordem <span class="math inline">\(m_2 = \frac{1}{n}\sum X_i^2\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+o momento amostral de maior ordem disponível.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+o estimador que minimiza <span class="math inline">\(\sum (X_i - \theta)^2\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+o primeiro momento amostral <span class="math inline">\(m_1 = \bar{X}_n\)</span>, que iguala o momento teórico <span class="math inline">\(\mu_1 = \mu\)</span>.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap3/Exercise 02</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q02 : Cap3_Cap3S1Q2 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_i \overset{\text{iid}}{\sim} \text{Poisson}(\lambda)\)</span>. Como <span class="math inline">\(E(X) = \lambda\)</span>, o estimador pelo método dos momentos é <span class="math inline">\(\hat{\lambda}_{MM} = \bar{X}_n\)</span>. Dado que <span class="math inline">\(n = 64\)</span> e a soma <span class="math inline">\(\sum_{i=1}^{64} X_i = 131\)</span>, calcule <span class="math inline">\(\hat{\lambda}_{MM}\)</span>.</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Para <span class="math inline">\(X_i \overset{\text{iid}}{\sim} \text{Poisson}(\lambda)\)</span>, temos <span class="math inline">\(E(X) = \lambda\)</span>. O método dos momentos iguala o primeiro momento teórico ao amostral: <span class="math inline">\(\lambda = m_1 = \bar{X}_n\)</span>. Portanto:
+<span class="math display">\[\hat{\lambda}_{MM} = \bar{X}_n = \frac{\sum_{i=1}^n X_i}{n} = \frac{131}{64} = 2.0469.\]</span></p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+2.5469
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+2.0469
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+2.0312
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+2.0149
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+2.0625
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q02 : Cap3_Cap3S1Q2 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_i \overset{\text{iid}}{\sim} \text{Poisson}(\lambda)\)</span>. Como <span class="math inline">\(E(X) = \lambda\)</span>, o estimador pelo método dos momentos é <span class="math inline">\(\hat{\lambda}_{MM} = \bar{X}_n\)</span>. Dado que <span class="math inline">\(n = 100\)</span> e a soma <span class="math inline">\(\sum_{i=1}^{100} X_i = 402\)</span>, calcule <span class="math inline">\(\hat{\lambda}_{MM}\)</span>.</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Para <span class="math inline">\(X_i \overset{\text{iid}}{\sim} \text{Poisson}(\lambda)\)</span>, temos <span class="math inline">\(E(X) = \lambda\)</span>. O método dos momentos iguala o primeiro momento teórico ao amostral: <span class="math inline">\(\lambda = m_1 = \bar{X}_n\)</span>. Portanto:
+<span class="math display">\[\hat{\lambda}_{MM} = \bar{X}_n = \frac{\sum_{i=1}^n X_i}{n} = \frac{402}{100} = 4.02.\]</span></p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+4.03
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+4.52
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+4.02
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+4.01
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+3.9798
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap3/Exercise 03</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q03 : Cap3_Cap3S1Q3 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_i \overset{\text{iid}}{\sim} \text{Exp}(\theta)\)</span> com função de densidade <span class="math inline">\(f(x;\theta) = \theta e^{-\theta x}\)</span>, <span class="math inline">\(x &gt; 0\)</span>, de modo que <span class="math inline">\(E(X) = 1/\theta\)</span>. O estimador pelo método dos momentos obtém <span class="math inline">\(\hat{\theta}\)</span> igualando <span class="math inline">\(m_1 = \bar{X} = 1/\hat{\theta}\)</span>, resultando em <span class="math inline">\(\hat{\theta}_{MM} = n/\sum X_i\)</span>. Dado <span class="math inline">\(n = 50\)</span> e <span class="math inline">\(\sum_{i=1}^{50} X_i = 14.08\)</span>, calcule <span class="math inline">\(\hat{\theta}_{MM}\)</span>.</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Para <span class="math inline">\(X_i \sim \text{Exp}(\theta)\)</span>, o primeiro momento teórico é <span class="math inline">\(\mu_1 = E(X) = 1/\theta\)</span>. Igualando ao momento amostral <span class="math inline">\(m_1 = \bar{X}\)</span>:
+<span class="math display">\[\bar{X} = \frac{1}{\hat{\theta}} \implies \hat{\theta}_{MM} = \frac{1}{\bar{X}} = \frac{n}{\sum_{i=1}^n X_i} = \frac{50}{14.08} = 3.5511.\]</span></p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+3.5511
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+12.6106
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.071
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.2816
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+3.5711
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q03 : Cap3_Cap3S1Q3 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_i \overset{\text{iid}}{\sim} \text{Exp}(\theta)\)</span> com função de densidade <span class="math inline">\(f(x;\theta) = \theta e^{-\theta x}\)</span>, <span class="math inline">\(x &gt; 0\)</span>, de modo que <span class="math inline">\(E(X) = 1/\theta\)</span>. O estimador pelo método dos momentos obtém <span class="math inline">\(\hat{\theta}\)</span> igualando <span class="math inline">\(m_1 = \bar{X} = 1/\hat{\theta}\)</span>, resultando em <span class="math inline">\(\hat{\theta}_{MM} = n/\sum X_i\)</span>. Dado <span class="math inline">\(n = 100\)</span> e <span class="math inline">\(\sum_{i=1}^{100} X_i = 18.08\)</span>, calcule <span class="math inline">\(\hat{\theta}_{MM}\)</span>.</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Para <span class="math inline">\(X_i \sim \text{Exp}(\theta)\)</span>, o primeiro momento teórico é <span class="math inline">\(\mu_1 = E(X) = 1/\theta\)</span>. Igualando ao momento amostral <span class="math inline">\(m_1 = \bar{X}\)</span>:
+<span class="math display">\[\bar{X} = \frac{1}{\hat{\theta}} \implies \hat{\theta}_{MM} = \frac{1}{\bar{X}} = \frac{n}{\sum_{i=1}^n X_i} = \frac{100}{18.08} = 5.531.\]</span></p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+5.531
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+5.541
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+30.5917
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.0553
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.1808
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap3/Exercise 04</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q04 : Cap3_Cap3S1Q4 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_i \overset{\text{iid}}{\sim} \text{Bernoulli}(p)\)</span> com <span class="math inline">\(E(X) = p\)</span>. O estimador pelo método dos momentos iguala o primeiro momento amostral ao teórico: <span class="math inline">\(\hat{p}_{MM} = \bar{X} = \sum X_i / n\)</span>. Com <span class="math inline">\(n = 200\)</span> e <span class="math inline">\(\sum_{i=1}^{200} X_i = 79\)</span>, calcule <span class="math inline">\(\hat{p}_{MM}\)</span>.</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Para <span class="math inline">\(X_i \sim \text{Bernoulli}(p)\)</span>, temos <span class="math inline">\(E(X) = p\)</span>. O método dos momentos iguala <span class="math inline">\(m_1 = \bar{X}\)</span> a <span class="math inline">\(\mu_1 = p\)</span>, obtendo:
+<span class="math display">\[\hat{p}_{MM} = \bar{X} = \frac{\sum_{i=1}^n X_i}{n} = \frac{79}{200} = 0.395.\]</span></p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.393
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+0.395
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.156
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.605
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.445
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q04 : Cap3_Cap3S1Q4 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_i \overset{\text{iid}}{\sim} \text{Bernoulli}(p)\)</span> com <span class="math inline">\(E(X) = p\)</span>. O estimador pelo método dos momentos iguala o primeiro momento amostral ao teórico: <span class="math inline">\(\hat{p}_{MM} = \bar{X} = \sum X_i / n\)</span>. Com <span class="math inline">\(n = 50\)</span> e <span class="math inline">\(\sum_{i=1}^{50} X_i = 18\)</span>, calcule <span class="math inline">\(\hat{p}_{MM}\)</span>.</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Para <span class="math inline">\(X_i \sim \text{Bernoulli}(p)\)</span>, temos <span class="math inline">\(E(X) = p\)</span>. O método dos momentos iguala <span class="math inline">\(m_1 = \bar{X}\)</span> a <span class="math inline">\(\mu_1 = p\)</span>, obtendo:
+<span class="math display">\[\hat{p}_{MM} = \bar{X} = \frac{\sum_{i=1}^n X_i}{n} = \frac{18}{50} = 0.36.\]</span></p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.3529
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+0.36
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.64
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.41
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.1296
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap3/Exercise 05</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q05 : Cap3_Cap3S1Q5 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_i \overset{\text{iid}}{\sim} U(0, \theta)\)</span> com <span class="math inline">\(E(X) = \theta/2\)</span>. O estimador pelo método dos momentos iguala <span class="math inline">\(\bar{X} = \hat{\theta}/2\)</span>, resultando em <span class="math inline">\(\hat{\theta}_{MM} = 2\bar{X}\)</span>. Com <span class="math inline">\(n = 50\)</span> e <span class="math inline">\(\bar{X} = 1.01\)</span>, calcule <span class="math inline">\(\hat{\theta}_{MM}\)</span>.</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Para <span class="math inline">\(X_i \sim U(0, \theta)\)</span>, o primeiro momento teórico é <span class="math inline">\(\mu_1 = E(X) = \theta/2\)</span>. O método dos momentos iguala <span class="math inline">\(m_1 = \bar{X}\)</span> a <span class="math inline">\(\mu_1 = \theta/2\)</span>:
+<span class="math display">\[\bar{X} = \frac{\hat{\theta}}{2} \implies \hat{\theta}_{MM} = 2\bar{X} = 2 \times 1.01 = 2.02.\]</span></p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+3.02
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.505
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+2.02
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+1.01
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+3.03
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q05 : Cap3_Cap3S1Q5 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_i \overset{\text{iid}}{\sim} U(0, \theta)\)</span> com <span class="math inline">\(E(X) = \theta/2\)</span>. O estimador pelo método dos momentos iguala <span class="math inline">\(\bar{X} = \hat{\theta}/2\)</span>, resultando em <span class="math inline">\(\hat{\theta}_{MM} = 2\bar{X}\)</span>. Com <span class="math inline">\(n = 50\)</span> e <span class="math inline">\(\bar{X} = 1.52\)</span>, calcule <span class="math inline">\(\hat{\theta}_{MM}\)</span>.</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Para <span class="math inline">\(X_i \sim U(0, \theta)\)</span>, o primeiro momento teórico é <span class="math inline">\(\mu_1 = E(X) = \theta/2\)</span>. O método dos momentos iguala <span class="math inline">\(m_1 = \bar{X}\)</span> a <span class="math inline">\(\mu_1 = \theta/2\)</span>:
+<span class="math display">\[\bar{X} = \frac{\hat{\theta}}{2} \implies \hat{\theta}_{MM} = 2\bar{X} = 2 \times 1.52 = 3.04.\]</span></p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+4.04
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.76
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+1.52
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+3.04
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+4.56
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap3/Exercise 06</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q06 : Cap3_Cap3S1Q6 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X \sim \text{Gama}(\alpha, \beta)\)</span> com <span class="math inline">\(E(X) = \alpha/\beta\)</span> e <span class="math inline">\(\text{Var}(X) = \alpha/\beta^2\)</span>. O método dos momentos resolve o sistema <span class="math inline">\(\bar{X} = \hat{\alpha}/\hat{\beta}\)</span> e <span class="math inline">\(\hat{\sigma}^2 = \hat{\alpha}/\hat{\beta}^2\)</span>. Dividindo a segunda equação pela primeira: <span class="math inline">\(\hat{\beta}_{MM} = \bar{X}/\hat{\sigma}^2\)</span>. Com <span class="math inline">\(\bar{X} = 2.81\)</span> e <span class="math inline">\(\hat{\sigma}^2 = 2.801\)</span>, calcule <span class="math inline">\(\hat{\beta}_{MM}\)</span>.</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Das equações do método dos momentos:
+<span class="math display">\[\bar{X} = \frac{\hat{\alpha}}{\hat{\beta}}, \quad \hat{\sigma}^2 = \frac{\hat{\alpha}}{\hat{\beta}^2}.\]</span>
+Dividindo: <span class="math inline">\(\hat{\sigma}^2 / \bar{X} = 1/\hat{\beta}\)</span>, logo <span class="math inline">\(\hat{\beta}_{MM} = \bar{X}/\hat{\sigma}^2 = 2.81/2.801 = 1.0032\)</span>. Em seguida, <span class="math inline">\(\hat{\alpha}_{MM} = \bar{X} \cdot \hat{\beta}_{MM} = 2.819\)</span>.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+1.0032
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+2.819
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.9968
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.3547
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+2.0032
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q06 : Cap3_Cap3S1Q6 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X \sim \text{Gama}(\alpha, \beta)\)</span> com <span class="math inline">\(E(X) = \alpha/\beta\)</span> e <span class="math inline">\(\text{Var}(X) = \alpha/\beta^2\)</span>. O método dos momentos resolve o sistema <span class="math inline">\(\bar{X} = \hat{\alpha}/\hat{\beta}\)</span> e <span class="math inline">\(\hat{\sigma}^2 = \hat{\alpha}/\hat{\beta}^2\)</span>. Dividindo a segunda equação pela primeira: <span class="math inline">\(\hat{\beta}_{MM} = \bar{X}/\hat{\sigma}^2\)</span>. Com <span class="math inline">\(\bar{X} = 4.42\)</span> e <span class="math inline">\(\hat{\sigma}^2 = 4.103\)</span>, calcule <span class="math inline">\(\hat{\beta}_{MM}\)</span>.</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Das equações do método dos momentos:
+<span class="math display">\[\bar{X} = \frac{\hat{\alpha}}{\hat{\beta}}, \quad \hat{\sigma}^2 = \frac{\hat{\alpha}}{\hat{\beta}^2}.\]</span>
+Dividindo: <span class="math inline">\(\hat{\sigma}^2 / \bar{X} = 1/\hat{\beta}\)</span>, logo <span class="math inline">\(\hat{\beta}_{MM} = \bar{X}/\hat{\sigma}^2 = 4.42/4.103 = 1.0773\)</span>. Em seguida, <span class="math inline">\(\hat{\alpha}_{MM} = \bar{X} \cdot \hat{\beta}_{MM} = 4.7617\)</span>.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.21
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+4.7615
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.9283
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+2.0773
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+1.0773
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap3/Exercise 07</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q07 : Cap3_Cap3S1Q7 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Qual propriedade geralmente garante que estimadores pelo método dos momentos (EMM) são consistentes?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>A consistência dos EMM é garantida pela Lei dos Grandes Números (LGN): para <span class="math inline">\(X_i\)</span> i.i.d. com <span class="math inline">\(E|X^k| &lt; \infty\)</span>, temos <span class="math inline">\(m_k = \frac{1}{n}\sum X_i^k \xrightarrow{P} \mu_k = E(X^k)\)</span>. Se <span class="math inline">\(\hat{\theta} = g(m_1, \ldots, m_k)\)</span> e <span class="math inline">\(g\)</span> é uma função contínua, então pelo teorema de mapeamento contínuo <span class="math inline">\(\hat{\theta} \xrightarrow{P} g(\mu_1, \ldots, \mu_k) = \theta\)</span>. Não-viesamento não implica consistência em geral; e a LGN não exige simetria nem família exponencial.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Os EMM são consistentes apenas se a distribuição for simétrica.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Os EMM minimizam o erro quadrático médio, garantindo consistência.
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+Pela Lei dos Grandes Números, os momentos amostrais <span class="math inline">\(m_k = \frac{1}{n}\sum X_i^k\)</span> convergem em probabilidade para os momentos teóricos <span class="math inline">\(\mu_k\)</span>. Se os parâmetros são funções contínuas dos momentos, os EMM são consistentes.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+A consistência dos EMM segue apenas para distribuições da família exponencial.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Os EMM são sempre não-viesados, o que implica consistência.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q07 : Cap3_Cap3S1Q7 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Qual propriedade geralmente garante que estimadores pelo método dos momentos (EMM) são consistentes?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>A consistência dos EMM é garantida pela Lei dos Grandes Números (LGN): para <span class="math inline">\(X_i\)</span> i.i.d. com <span class="math inline">\(E|X^k| &lt; \infty\)</span>, temos <span class="math inline">\(m_k = \frac{1}{n}\sum X_i^k \xrightarrow{P} \mu_k = E(X^k)\)</span>. Se <span class="math inline">\(\hat{\theta} = g(m_1, \ldots, m_k)\)</span> e <span class="math inline">\(g\)</span> é uma função contínua, então pelo teorema de mapeamento contínuo <span class="math inline">\(\hat{\theta} \xrightarrow{P} g(\mu_1, \ldots, \mu_k) = \theta\)</span>. Não-viesamento não implica consistência em geral; e a LGN não exige simetria nem família exponencial.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Os EMM são sempre não-viesados, o que implica consistência.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Os EMM minimizam o erro quadrático médio, garantindo consistência.
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+Pela Lei dos Grandes Números, os momentos amostrais <span class="math inline">\(m_k = \frac{1}{n}\sum X_i^k\)</span> convergem em probabilidade para os momentos teóricos <span class="math inline">\(\mu_k\)</span>. Se os parâmetros são funções contínuas dos momentos, os EMM são consistentes.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Os EMM são consistentes apenas se a distribuição for simétrica.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+A consistência dos EMM segue apenas para distribuições da família exponencial.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap3/Exercise 08</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q08 : Cap3_Cap3S1Q8 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Qual afirmação descreve corretamente a diferença entre o método dos momentos (MM) e o método da máxima verossimilhança (MV)?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>O método dos momentos (MM) é baseado em igualar momentos populacionais a momentos amostrais. O método da máxima verossimilhança (MV) maximiza <span class="math inline">\(L(\theta; \mathbf{x}) = \prod f(x_i; \theta)\)</span>. Embora para algumas distribuições (como Poisson e Normal) os dois métodos produzam estimadores idênticos, em geral divergem. O EMV possui melhores propriedades assintóticas: é consistente, assintoticamente normal e assintoticamente eficiente (atinge o limite de Cramér-Rao). O MM é computacionalmente mais simples, mas pode ser menos eficiente.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+O MM maximiza a log-verossimilhança, enquanto o MV minimiza a soma de quadrados.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+O MM usa todos os dados igualmente, enquanto o MV pondera cada observação pela sua verossimilhança.
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+O MM iguala momentos amostrais a momentos teóricos; o MV maximiza a função de verossimilhança. Para muitas distribuições, os dois coincdem, mas em geral o EMV tem melhores propriedades assintóticas.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Ambos os métodos sempre produzem os mesmos estimadores para qualquer distribuição.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+O MM é sempre mais eficiente que o MV para amostras pequenas.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q08 : Cap3_Cap3S1Q8 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Qual afirmação descreve corretamente a diferença entre o método dos momentos (MM) e o método da máxima verossimilhança (MV)?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>O método dos momentos (MM) é baseado em igualar momentos populacionais a momentos amostrais. O método da máxima verossimilhança (MV) maximiza <span class="math inline">\(L(\theta; \mathbf{x}) = \prod f(x_i; \theta)\)</span>. Embora para algumas distribuições (como Poisson e Normal) os dois métodos produzam estimadores idênticos, em geral divergem. O EMV possui melhores propriedades assintóticas: é consistente, assintoticamente normal e assintoticamente eficiente (atinge o limite de Cramér-Rao). O MM é computacionalmente mais simples, mas pode ser menos eficiente.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Ambos os métodos sempre produzem os mesmos estimadores para qualquer distribuição.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+O MM usa todos os dados igualmente, enquanto o MV pondera cada observação pela sua verossimilhança.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+O MM maximiza a log-verossimilhança, enquanto o MV minimiza a soma de quadrados.
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+O MM iguala momentos amostrais a momentos teóricos; o MV maximiza a função de verossimilhança. Para muitas distribuições, os dois coincdem, mas em geral o EMV tem melhores propriedades assintóticas.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+O MM é sempre mais eficiente que o MV para amostras pequenas.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap3/Exercise 09</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q09 : Cap3_Cap3S1Q9 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_i \overset{\text{iid}}{\sim} N(\mu, \sigma^2)\)</span> com ambos os parâmetros desconhecidos. Com <span class="math inline">\(n = 50\)</span>, <span class="math inline">\(\sum_{i=1}^n X_i = 101.1\)</span> e <span class="math inline">\(\sum_{i=1}^n X_i^2 = 650.83\)</span>, os EMM são <span class="math inline">\(\hat{\mu}_{MM} = \bar{X} = 2.022\)</span> e <span class="math inline">\(\hat{\sigma}^2_{MM} = \frac{1}{n}\sum X_i^2 - \bar{X}^2\)</span>. Calcule <span class="math inline">\(\hat{\sigma}^2_{MM}\)</span>.</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Os dois primeiros momentos teóricos da <span class="math inline">\(N(\mu, \sigma^2)\)</span> são <span class="math inline">\(\mu_1 = \mu\)</span> e <span class="math inline">\(\mu_2 = \mu^2 + \sigma^2\)</span>. O método dos momentos iguala <span class="math inline">\(m_1 = \bar{X} = 2.022\)</span> e <span class="math inline">\(m_2 = \sum X_i^2/n = 13.0166\)</span>. De <span class="math inline">\(\hat{\sigma}^2_{MM} = m_2 - m_1^2\)</span>:
+<span class="math display">\[\hat{\sigma}^2_{MM} = \frac{650.83}{50} - (2.022)^2 = 13.0166 - 4.0885 = 8.9281.\]</span></p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+13.0166
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+8.9281
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+8.4281
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+8.9481
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+9.1103
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q09 : Cap3_Cap3S1Q9 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_i \overset{\text{iid}}{\sim} N(\mu, \sigma^2)\)</span> com ambos os parâmetros desconhecidos. Com <span class="math inline">\(n = 50\)</span>, <span class="math inline">\(\sum_{i=1}^n X_i = 400.12\)</span> e <span class="math inline">\(\sum_{i=1}^n X_i^2 = 3399.03\)</span>, os EMM são <span class="math inline">\(\hat{\mu}_{MM} = \bar{X} = 8.0024\)</span> e <span class="math inline">\(\hat{\sigma}^2_{MM} = \frac{1}{n}\sum X_i^2 - \bar{X}^2\)</span>. Calcule <span class="math inline">\(\hat{\sigma}^2_{MM}\)</span>.</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Os dois primeiros momentos teóricos da <span class="math inline">\(N(\mu, \sigma^2)\)</span> são <span class="math inline">\(\mu_1 = \mu\)</span> e <span class="math inline">\(\mu_2 = \mu^2 + \sigma^2\)</span>. O método dos momentos iguala <span class="math inline">\(m_1 = \bar{X} = 8.0024\)</span> e <span class="math inline">\(m_2 = \sum X_i^2/n = 67.9806\)</span>. De <span class="math inline">\(\hat{\sigma}^2_{MM} = m_2 - m_1^2\)</span>:
+<span class="math display">\[\hat{\sigma}^2_{MM} = \frac{3399.03}{50} - (8.0024)^2 = 67.9806 - 64.0384 = 3.9422.\]</span></p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+3.4422
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+3.9622
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+67.9806
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+3.9422
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+4.0226
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap3/Exercise 10</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q10 : Cap3_Cap3S1Q10 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Para <span class="math inline">\(X_i \overset{\text{iid}}{\sim} \text{Poisson}(\lambda)\)</span>, por que o estimador do método dos momentos (EMM) e o estimador de máxima verossimilhança (EMV) são iguais?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Para <span class="math inline">\(X_i \sim \text{Poisson}(\lambda)\)</span>: (i) o EMM iguala <span class="math inline">\(\mu_1 = E(X) = \lambda\)</span> a <span class="math inline">\(m_1 = \bar{X}\)</span>, obtendo <span class="math inline">\(\hat{\lambda}_{MM} = \bar{X}\)</span>; (ii) a log-verossimilhança é <span class="math inline">\(\ell(\lambda) = (\sum X_i)\log\lambda - n\lambda + \text{const}\)</span>, e <span class="math inline">\(d\ell/d\lambda = \sum X_i/\lambda - n = 0\)</span> implica <span class="math inline">\(\hat{\lambda}_{MV} = \bar{X}\)</span>. A coincidência não ocorre para todos os membros da família exponencial (por exemplo, para a Gama com dois parâmetros os dois métodos também coincidem, mas isso precisa de verificação caso a caso). O argumento correto é a derivação direta de ambos os estimadores.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Porque a Poisson é uma distribuição simétrica, o que garante a igualdade entre MM e MV.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Porque a distribuição de Poisson pertence à família exponencial, e nessa família os dois métodos sempre coincidem.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Por coincidência particular; em geral, o MM e o MV são sempre diferentes para qualquer distribuição.
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+Porque <span class="math inline">\(E(X) = \lambda\)</span>, logo o EMM é <span class="math inline">\(\hat{\lambda}_{MM} = \bar{X}\)</span>. A log-verossimilhança <span class="math inline">\(\ell(\lambda) = \sum X_i \log\lambda - n\lambda + \text{const}\)</span> também tem máximo em <span class="math inline">\(\hat{\lambda}_{MV} = \bar{X}\)</span>. Ambos coincidem.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Porque o EMV e o EMM são sempre idênticos para distribuições com suporte em <span class="math inline">\(\{0, 1, 2, \ldots\}\)</span>.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q10 : Cap3_Cap3S1Q10 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Para <span class="math inline">\(X_i \overset{\text{iid}}{\sim} \text{Poisson}(\lambda)\)</span>, por que o estimador do método dos momentos (EMM) e o estimador de máxima verossimilhança (EMV) são iguais?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Para <span class="math inline">\(X_i \sim \text{Poisson}(\lambda)\)</span>: (i) o EMM iguala <span class="math inline">\(\mu_1 = E(X) = \lambda\)</span> a <span class="math inline">\(m_1 = \bar{X}\)</span>, obtendo <span class="math inline">\(\hat{\lambda}_{MM} = \bar{X}\)</span>; (ii) a log-verossimilhança é <span class="math inline">\(\ell(\lambda) = (\sum X_i)\log\lambda - n\lambda + \text{const}\)</span>, e <span class="math inline">\(d\ell/d\lambda = \sum X_i/\lambda - n = 0\)</span> implica <span class="math inline">\(\hat{\lambda}_{MV} = \bar{X}\)</span>. A coincidência não ocorre para todos os membros da família exponencial (por exemplo, para a Gama com dois parâmetros os dois métodos também coincidem, mas isso precisa de verificação caso a caso). O argumento correto é a derivação direta de ambos os estimadores.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Por coincidência particular; em geral, o MM e o MV são sempre diferentes para qualquer distribuição.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Porque a Poisson é uma distribuição simétrica, o que garante a igualdade entre MM e MV.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Porque a distribuição de Poisson pertence à família exponencial, e nessa família os dois métodos sempre coincidem.
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+Porque <span class="math inline">\(E(X) = \lambda\)</span>, logo o EMM é <span class="math inline">\(\hat{\lambda}_{MM} = \bar{X}\)</span>. A log-verossimilhança <span class="math inline">\(\ell(\lambda) = \sum X_i \log\lambda - n\lambda + \text{const}\)</span> também tem máximo em <span class="math inline">\(\hat{\lambda}_{MV} = \bar{X}\)</span>. Ambos coincidem.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Porque o EMV e o EMM são sempre idênticos para distribuições com suporte em <span class="math inline">\(\{0, 1, 2, \ldots\}\)</span>.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap3/Exercise 11</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q11 : Cap3_Cap3S2Q1 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_i \overset{\text{iid}}{\sim} N(\mu, 4)\)</span> com <span class="math inline">\(\sigma_0^2 = 4\)</span> conhecido. A log-verossimilhança é <span class="math inline">\(\ell(\mu) = -\frac{1}{2\sigma_0^2}\sum_{i=1}^n (X_i - \mu)^2 + \text{const}\)</span>. Com <span class="math inline">\(n = 25\)</span> e <span class="math inline">\(\sum_{i=1}^n X_i = 124.3\)</span>, calcule o EMV <span class="math inline">\(\hat{\mu}_{MV} = \bar{X}\)</span>.</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Derivando <span class="math inline">\(\ell(\mu)\)</span> em relação a <span class="math inline">\(\mu\)</span> e igualando a zero:
+<span class="math display">\[\frac{d\ell}{d\mu} = \frac{1}{\sigma_0^2}\sum_{i=1}^n (X_i - \mu) = 0 \implies \hat{\mu}_{MV} = \bar{X} = \frac{\sum X_i}{n} = \frac{124.3}{25} = 4.972.\]</span>
+O valor de <span class="math inline">\(\sigma_0^2 = 4\)</span> não influencia o EMV de <span class="math inline">\(\mu\)</span> quando <span class="math inline">\(\sigma^2\)</span> é conhecido.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+5.132
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+4.672
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+4.972
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+5.272
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+4.6037
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q11 : Cap3_Cap3S2Q1 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_i \overset{\text{iid}}{\sim} N(\mu, 4)\)</span> com <span class="math inline">\(\sigma_0^2 = 4\)</span> conhecido. A log-verossimilhança é <span class="math inline">\(\ell(\mu) = -\frac{1}{2\sigma_0^2}\sum_{i=1}^n (X_i - \mu)^2 + \text{const}\)</span>. Com <span class="math inline">\(n = 25\)</span> e <span class="math inline">\(\sum_{i=1}^n X_i = 174.9\)</span>, calcule o EMV <span class="math inline">\(\hat{\mu}_{MV} = \bar{X}\)</span>.</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Derivando <span class="math inline">\(\ell(\mu)\)</span> em relação a <span class="math inline">\(\mu\)</span> e igualando a zero:
+<span class="math display">\[\frac{d\ell}{d\mu} = \frac{1}{\sigma_0^2}\sum_{i=1}^n (X_i - \mu) = 0 \implies \hat{\mu}_{MV} = \bar{X} = \frac{\sum X_i}{n} = \frac{174.9}{25} = 6.996.\]</span>
+O valor de <span class="math inline">\(\sigma_0^2 = 4\)</span> não influencia o EMV de <span class="math inline">\(\mu\)</span> quando <span class="math inline">\(\sigma^2\)</span> é conhecido.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+6.696
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+6.996
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+6.4778
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+7.296
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+7.156
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap3/Exercise 12</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q12 : Cap3_Cap3S2Q2 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_i \overset{\text{iid}}{\sim} N(6, \sigma^2)\)</span> com <span class="math inline">\(\mu = 6\)</span> conhecido. O EMV de <span class="math inline">\(\sigma^2\)</span> é <span class="math inline">\(\hat{\sigma}^2_{MV} = \frac{1}{n}\sum_{i=1}^n (X_i - 6)^2\)</span>. Dado <span class="math inline">\(n = 25\)</span> e <span class="math inline">\(\sum_{i=1}^n (X_i - 6)^2 = 101.9\)</span>, calcule <span class="math inline">\(\hat{\sigma}^2_{MV}\)</span>.</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>A log-verossimilhança para <span class="math inline">\(\sigma^2\)</span> com <span class="math inline">\(\mu\)</span> conhecido é <span class="math inline">\(\ell(\sigma^2) = -\frac{n}{2}\log\sigma^2 - \frac{1}{2\sigma^2}\sum(X_i - 6)^2\)</span>. Derivando e igualando a zero:
+<span class="math display">\[\frac{d\ell}{d\sigma^2} = -\frac{n}{2\sigma^2} + \frac{\sum(X_i - 6)^2}{2(\sigma^2)^2} = 0 \implies \hat{\sigma}^2_{MV} = \frac{\sum(X_i - 6)^2}{n} = \frac{101.9}{25} = 4.076.\]</span>
+Note que o divisor é <span class="math inline">\(n\)</span>, não <span class="math inline">\(n-1\)</span> (como na variância amostral não viesada <span class="math inline">\(S^2\)</span>).</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+5.076
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+2.0189
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+3.9192
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+4.2458
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+4.076
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q12 : Cap3_Cap3S2Q2 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_i \overset{\text{iid}}{\sim} N(7, \sigma^2)\)</span> com <span class="math inline">\(\mu = 7\)</span> conhecido. O EMV de <span class="math inline">\(\sigma^2\)</span> é <span class="math inline">\(\hat{\sigma}^2_{MV} = \frac{1}{n}\sum_{i=1}^n (X_i - 7)^2\)</span>. Dado <span class="math inline">\(n = 100\)</span> e <span class="math inline">\(\sum_{i=1}^n (X_i - 7)^2 = 898.59\)</span>, calcule <span class="math inline">\(\hat{\sigma}^2_{MV}\)</span>.</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>A log-verossimilhança para <span class="math inline">\(\sigma^2\)</span> com <span class="math inline">\(\mu\)</span> conhecido é <span class="math inline">\(\ell(\sigma^2) = -\frac{n}{2}\log\sigma^2 - \frac{1}{2\sigma^2}\sum(X_i - 7)^2\)</span>. Derivando e igualando a zero:
+<span class="math display">\[\frac{d\ell}{d\sigma^2} = -\frac{n}{2\sigma^2} + \frac{\sum(X_i - 7)^2}{2(\sigma^2)^2} = 0 \implies \hat{\sigma}^2_{MV} = \frac{\sum(X_i - 7)^2}{n} = \frac{898.59}{100} = 8.9859.\]</span>
+Note que o divisor é <span class="math inline">\(n\)</span>, não <span class="math inline">\(n-1\)</span> (como na variância amostral não viesada <span class="math inline">\(S^2\)</span>).</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+9.0767
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+9.9859
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+2.9976
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+8.8969
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+8.9859
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap3/Exercise 13</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q13 : Cap3_Cap3S2Q3 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_i \overset{\text{iid}}{\sim} \text{Poisson}(\lambda)\)</span>. A log-verossimilhança é <span class="math inline">\(\ell(\lambda) = \left(\sum_{i=1}^n X_i\right)\log\lambda - n\lambda + \text{const}\)</span>. Derivando e igualando a zero obtém-se <span class="math inline">\(\hat{\lambda}_{MV} = \bar{X}\)</span>. Com <span class="math inline">\(n = 50\)</span> e <span class="math inline">\(\sum_{i=1}^n X_i = 305\)</span>, calcule <span class="math inline">\(\hat{\lambda}_{MV}\)</span>.</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>A equação de verossimilhança é:
+<span class="math display">\[\frac{d\ell}{d\lambda} = \frac{\sum X_i}{\lambda} - n = 0 \implies \hat{\lambda}_{MV} = \frac{\sum X_i}{n} = \frac{305}{50} = 6.1.\]</span>
+A segunda derivada <span class="math inline">\(d^2\ell/d\lambda^2 = -\sum X_i / \lambda^2 &lt; 0\)</span> confirma que é um máximo.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+1.8083
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+6.1
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+6.2245
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+445.8578
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+6.6
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q13 : Cap3_Cap3S2Q3 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_i \overset{\text{iid}}{\sim} \text{Poisson}(\lambda)\)</span>. A log-verossimilhança é <span class="math inline">\(\ell(\lambda) = \left(\sum_{i=1}^n X_i\right)\log\lambda - n\lambda + \text{const}\)</span>. Derivando e igualando a zero obtém-se <span class="math inline">\(\hat{\lambda}_{MV} = \bar{X}\)</span>. Com <span class="math inline">\(n = 25\)</span> e <span class="math inline">\(\sum_{i=1}^n X_i = 98\)</span>, calcule <span class="math inline">\(\hat{\lambda}_{MV}\)</span>.</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>A equação de verossimilhança é:
+<span class="math display">\[\frac{d\ell}{d\lambda} = \frac{\sum X_i}{\lambda} - n = 0 \implies \hat{\lambda}_{MV} = \frac{\sum X_i}{n} = \frac{98}{25} = 3.92.\]</span>
+A segunda derivada <span class="math inline">\(d^2\ell/d\lambda^2 = -\sum X_i / \lambda^2 &lt; 0\)</span> confirma que é um máximo.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+50.4004
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+1.3661
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+3.92
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+4.0833
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+4.42
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap3/Exercise 14</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q14 : Cap3_Cap3S2Q4 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_i \overset{\text{iid}}{\sim} \text{Exp}(\theta)\)</span> com função de densidade <span class="math inline">\(f(x;\theta) = \theta e^{-\theta x}\)</span>, <span class="math inline">\(x &gt; 0\)</span>. A log-verossimilhança é <span class="math inline">\(\ell(\theta) = n\log\theta - \theta\sum X_i\)</span>, e o EMV é <span class="math inline">\(\hat{\theta}_{MV} = n/\sum X_i\)</span>. Com <span class="math inline">\(n = 100\)</span> e <span class="math inline">\(\sum_{i=1}^n X_i = 98.58\)</span>, calcule <span class="math inline">\(\hat{\theta}_{MV}\)</span>.</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>A equação de verossimilhança é:
+<span class="math display">\[\frac{d\ell}{d\theta} = \frac{n}{\theta} - \sum X_i = 0 \implies \hat{\theta}_{MV} = \frac{n}{\sum X_i} = \frac{100}{98.58} = 1.0144.\]</span>
+Note que <span class="math inline">\(\hat{\theta}_{MV} = 1/\bar{X}\)</span>, e que <span class="math inline">\(\sum X_i / n = \bar{X} = 1/\hat{\theta}_{MV}\)</span> é o estimador de <span class="math inline">\(E(X) = 1/\theta\)</span>, não de <span class="math inline">\(\theta\)</span>.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.9858
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+1.029
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+1.4858
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+1.0244
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+1.0144
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q14 : Cap3_Cap3S2Q4 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_i \overset{\text{iid}}{\sim} \text{Exp}(\theta)\)</span> com função de densidade <span class="math inline">\(f(x;\theta) = \theta e^{-\theta x}\)</span>, <span class="math inline">\(x &gt; 0\)</span>. A log-verossimilhança é <span class="math inline">\(\ell(\theta) = n\log\theta - \theta\sum X_i\)</span>, e o EMV é <span class="math inline">\(\hat{\theta}_{MV} = n/\sum X_i\)</span>. Com <span class="math inline">\(n = 36\)</span> e <span class="math inline">\(\sum_{i=1}^n X_i = 9.54\)</span>, calcule <span class="math inline">\(\hat{\theta}_{MV}\)</span>.</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>A equação de verossimilhança é:
+<span class="math display">\[\frac{d\ell}{d\theta} = \frac{n}{\theta} - \sum X_i = 0 \implies \hat{\theta}_{MV} = \frac{n}{\sum X_i} = \frac{36}{9.54} = 3.7736.\]</span>
+Note que <span class="math inline">\(\hat{\theta}_{MV} = 1/\bar{X}\)</span>, e que <span class="math inline">\(\sum X_i / n = \bar{X} = 1/\hat{\theta}_{MV}\)</span> é o estimador de <span class="math inline">\(E(X) = 1/\theta\)</span>, não de <span class="math inline">\(\theta\)</span>.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+3.7736
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+3.8014
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.765
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.265
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+14.2399
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap3/Exercise 15</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q15 : Cap3_Cap3S2Q5 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_i \overset{\text{iid}}{\sim} \text{Bernoulli}(p)\)</span>. A log-verossimilhança é <span class="math inline">\(\ell(p) = \left(\sum X_i\right)\log p + \left(n - \sum X_i\right)\log(1-p)\)</span>. O EMV é <span class="math inline">\(\hat{p}_{MV} = \sum X_i / n\)</span>. Com <span class="math inline">\(n = 200\)</span> e <span class="math inline">\(\sum_{i=1}^n X_i = 59\)</span>, calcule <span class="math inline">\(\hat{p}_{MV}\)</span>.</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>A equação de verossimilhança é:
+<span class="math display">\[\frac{d\ell}{dp} = \frac{\sum X_i}{p} - \frac{n - \sum X_i}{1-p} = 0 \implies \hat{p}_{MV} = \frac{\sum X_i}{n} = \frac{59}{200} = 0.295.\]</span>
+A alternativa <span class="math inline">\((sum\_x + 1)/(n + 2)\)</span> é o estimador de Bayes com prior <span class="math inline">\(\text{Beta}(1,1)\)</span>, e <span class="math inline">\(1 - \hat{p}\)</span> seria o EMV de <span class="math inline">\(q = 1 - p\)</span>, não de <span class="math inline">\(p\)</span>.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.208
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.2965
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+0.295
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.705
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.297
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q15 : Cap3_Cap3S2Q5 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_i \overset{\text{iid}}{\sim} \text{Bernoulli}(p)\)</span>. A log-verossimilhança é <span class="math inline">\(\ell(p) = \left(\sum X_i\right)\log p + \left(n - \sum X_i\right)\log(1-p)\)</span>. O EMV é <span class="math inline">\(\hat{p}_{MV} = \sum X_i / n\)</span>. Com <span class="math inline">\(n = 100\)</span> e <span class="math inline">\(\sum_{i=1}^n X_i = 75\)</span>, calcule <span class="math inline">\(\hat{p}_{MV}\)</span>.</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>A equação de verossimilhança é:
+<span class="math display">\[\frac{d\ell}{dp} = \frac{\sum X_i}{p} - \frac{n - \sum X_i}{1-p} = 0 \implies \hat{p}_{MV} = \frac{\sum X_i}{n} = \frac{75}{100} = 0.75.\]</span>
+A alternativa <span class="math inline">\((sum\_x + 1)/(n + 2)\)</span> é o estimador de Bayes com prior <span class="math inline">\(\text{Beta}(1,1)\)</span>, e <span class="math inline">\(1 - \hat{p}\)</span> seria o EMV de <span class="math inline">\(q = 1 - p\)</span>, não de <span class="math inline">\(p\)</span>.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.7576
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+0.75
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.1875
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.7451
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.25
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap3/Exercise 16</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q16 : Cap3_Cap3S2Q6 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_i \overset{\text{iid}}{\sim} U(0, \theta)\)</span> com <span class="math inline">\(f(x;\theta) = 1/\theta\)</span> para <span class="math inline">\(0 \leq x \leq \theta\)</span>. A verossimilhança é <span class="math inline">\(L(\theta) = \theta^{-n}\)</span> para <span class="math inline">\(\theta \geq x_{(n)} = \max\{X_i\}\)</span>, e <span class="math inline">\(L(\theta) = 0\)</span> para <span class="math inline">\(\theta &lt; x_{(n)}\)</span>. Como <span class="math inline">\(L\)</span> é decrescente em <span class="math inline">\(\theta\)</span>, ela é maximizada pelo menor valor compatível: <span class="math inline">\(\hat{\theta}_{MV} = X_{(n)}\)</span>. Com <span class="math inline">\(n = 100\)</span> e <span class="math inline">\(X_{(n)} = 4.871\)</span>, qual é o EMV de <span class="math inline">\(\theta\)</span>?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>A verossimilhança <span class="math inline">\(L(\theta) = \theta^{-n} \cdot \mathbf{1}(\theta \geq x_{(n)})\)</span> é estritamente decrescente em <span class="math inline">\(\theta\)</span> para <span class="math inline">\(\theta \geq x_{(n)}\)</span>. Portanto, o máximo ocorre no ponto de fronteira <span class="math inline">\(\hat{\theta}_{MV} = x_{(n)} = 4.871\)</span>. Note que <span class="math inline">\(\hat{\theta}_{MV}\)</span> é viesado: <span class="math inline">\(E(X_{(n)}) = \frac{n}{n+1}\theta &lt; \theta\)</span>. O estimador não-viesado seria <span class="math inline">\(\frac{n+1}{n}X_{(n)}\)</span>.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+4.9197
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+4.881
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.0974
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+4.871
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+4.9202
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q16 : Cap3_Cap3S2Q6 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_i \overset{\text{iid}}{\sim} U(0, \theta)\)</span> com <span class="math inline">\(f(x;\theta) = 1/\theta\)</span> para <span class="math inline">\(0 \leq x \leq \theta\)</span>. A verossimilhança é <span class="math inline">\(L(\theta) = \theta^{-n}\)</span> para <span class="math inline">\(\theta \geq x_{(n)} = \max\{X_i\}\)</span>, e <span class="math inline">\(L(\theta) = 0\)</span> para <span class="math inline">\(\theta &lt; x_{(n)}\)</span>. Como <span class="math inline">\(L\)</span> é decrescente em <span class="math inline">\(\theta\)</span>, ela é maximizada pelo menor valor compatível: <span class="math inline">\(\hat{\theta}_{MV} = X_{(n)}\)</span>. Com <span class="math inline">\(n = 50\)</span> e <span class="math inline">\(X_{(n)} = 6.6682\)</span>, qual é o EMV de <span class="math inline">\(\theta\)</span>?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>A verossimilhança <span class="math inline">\(L(\theta) = \theta^{-n} \cdot \mathbf{1}(\theta \geq x_{(n)})\)</span> é estritamente decrescente em <span class="math inline">\(\theta\)</span> para <span class="math inline">\(\theta \geq x_{(n)}\)</span>. Portanto, o máximo ocorre no ponto de fronteira <span class="math inline">\(\hat{\theta}_{MV} = x_{(n)} = 6.6682\)</span>. Note que <span class="math inline">\(\hat{\theta}_{MV}\)</span> é viesado: <span class="math inline">\(E(X_{(n)}) = \frac{n}{n+1}\theta &lt; \theta\)</span>. O estimador não-viesado seria <span class="math inline">\(\frac{n+1}{n}X_{(n)}\)</span>.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+6.8043
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+6.8016
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+6.6882
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.2667
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+6.6682
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap3/Exercise 17</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q17 : Cap3_Cap3S2Q7 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Qual propriedade do EMV é enunciada por: “Se <span class="math inline">\(\hat{\theta}\)</span> é o EMV de <span class="math inline">\(\theta\)</span>, então <span class="math inline">\(g(\hat{\theta})\)</span> é o EMV de <span class="math inline">\(g(\theta)\)</span>”?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>A propriedade descrita é a invariância (ou equivariância) do EMV. Formalmente: se <span class="math inline">\(\hat{\theta}\)</span> maximiza <span class="math inline">\(L(\theta; \mathbf{x})\)</span> e <span class="math inline">\(g\)</span> é uma função (não necessariamente bijetora), então o EMV de <span class="math inline">\(g(\theta)\)</span> é <span class="math inline">\(g(\hat{\theta})\)</span>. Por exemplo, se <span class="math inline">\(\hat{\sigma}^2\)</span> é o EMV de <span class="math inline">\(\sigma^2\)</span>, então <span class="math inline">\(\hat{\sigma} = \sqrt{\hat{\sigma}^2}\)</span> é o EMV de <span class="math inline">\(\sigma\)</span>. As demais propriedades listadas (consistência, eficiência assintótica, suficiência) são propriedades reais do EMV sob condições de regularidade, mas não descrevem a invariância.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Não-viesamento: o EMV é não-viesado para qualquer transformação <span class="math inline">\(g(\theta)\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+Propriedade de invariância (ou equivariância) do EMV: se <span class="math inline">\(\hat{\theta}\)</span> é o EMV de <span class="math inline">\(\theta\)</span>, então <span class="math inline">\(g(\hat{\theta})\)</span> é o EMV de <span class="math inline">\(g(\theta)\)</span>, para qualquer função <span class="math inline">\(g\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Consistência: o EMV converge em probabilidade para o verdadeiro parâmetro à medida que <span class="math inline">\(n \to \infty\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Eficiência assintótica: o EMV atinge o limite de Cramér-Rao assintoticamente.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Suficiência: o EMV é sempre função de estatísticas suficientes para o parâmetro.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q17 : Cap3_Cap3S2Q7 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Qual propriedade do EMV é enunciada por: “Se <span class="math inline">\(\hat{\theta}\)</span> é o EMV de <span class="math inline">\(\theta\)</span>, então <span class="math inline">\(g(\hat{\theta})\)</span> é o EMV de <span class="math inline">\(g(\theta)\)</span>”?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>A propriedade descrita é a invariância (ou equivariância) do EMV. Formalmente: se <span class="math inline">\(\hat{\theta}\)</span> maximiza <span class="math inline">\(L(\theta; \mathbf{x})\)</span> e <span class="math inline">\(g\)</span> é uma função (não necessariamente bijetora), então o EMV de <span class="math inline">\(g(\theta)\)</span> é <span class="math inline">\(g(\hat{\theta})\)</span>. Por exemplo, se <span class="math inline">\(\hat{\sigma}^2\)</span> é o EMV de <span class="math inline">\(\sigma^2\)</span>, então <span class="math inline">\(\hat{\sigma} = \sqrt{\hat{\sigma}^2}\)</span> é o EMV de <span class="math inline">\(\sigma\)</span>. As demais propriedades listadas (consistência, eficiência assintótica, suficiência) são propriedades reais do EMV sob condições de regularidade, mas não descrevem a invariância.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Eficiência assintótica: o EMV atinge o limite de Cramér-Rao assintoticamente.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Suficiência: o EMV é sempre função de estatísticas suficientes para o parâmetro.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Consistência: o EMV converge em probabilidade para o verdadeiro parâmetro à medida que <span class="math inline">\(n \to \infty\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Não-viesamento: o EMV é não-viesado para qualquer transformação <span class="math inline">\(g(\theta)\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+Propriedade de invariância (ou equivariância) do EMV: se <span class="math inline">\(\hat{\theta}\)</span> é o EMV de <span class="math inline">\(\theta\)</span>, então <span class="math inline">\(g(\hat{\theta})\)</span> é o EMV de <span class="math inline">\(g(\theta)\)</span>, para qualquer função <span class="math inline">\(g\)</span>.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap3/Exercise 18</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q18 : Cap3_Cap3S2Q8 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_i \overset{\text{iid}}{\sim} N(\mu, \sigma^2)\)</span> com ambos os parâmetros desconhecidos. Com <span class="math inline">\(n = 36\)</span>, <span class="math inline">\(\bar{X} = 8.0611\)</span> e <span class="math inline">\(\sum_{i=1}^n X_i^2 = 2377.4\)</span>. O EMV de <span class="math inline">\(\sigma^2\)</span> é <span class="math inline">\(\hat{\sigma}^2_{MV} = \frac{1}{n}\sum(X_i - \bar{X})^2 = \frac{\sum X_i^2}{n} - \bar{X}^2\)</span>. Calcule <span class="math inline">\(\hat{\sigma}^2_{MV}\)</span>.</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Usando a identidade <span class="math inline">\(\sum(X_i - \bar{X})^2 = \sum X_i^2 - n\bar{X}^2\)</span>:
+<span class="math display">\[\hat{\sigma}^2_{MV} = \frac{\sum X_i^2}{n} - \bar{X}^2 = \frac{2377.4}{36} - (8.0611)^2 = 66.0389 - 64.9813 = 1.0576.\]</span>
+O divisor do EMV é <span class="math inline">\(n\)</span> (não <span class="math inline">\(n-1\)</span>): este estimador é viesado, com <span class="math inline">\(E(\hat{\sigma}^2_{MV}) = \frac{n-1}{n}\sigma^2\)</span>.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+1.0576
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+66.0389
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+1.0878
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+1.0853
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+2.9444
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q18 : Cap3_Cap3S2Q8 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_i \overset{\text{iid}}{\sim} N(\mu, \sigma^2)\)</span> com ambos os parâmetros desconhecidos. Com <span class="math inline">\(n = 25\)</span>, <span class="math inline">\(\bar{X} = 4.0224\)</span> e <span class="math inline">\(\sum_{i=1}^n X_i^2 = 425.44\)</span>. O EMV de <span class="math inline">\(\sigma^2\)</span> é <span class="math inline">\(\hat{\sigma}^2_{MV} = \frac{1}{n}\sum(X_i - \bar{X})^2 = \frac{\sum X_i^2}{n} - \bar{X}^2\)</span>. Calcule <span class="math inline">\(\hat{\sigma}^2_{MV}\)</span>.</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Usando a identidade <span class="math inline">\(\sum(X_i - \bar{X})^2 = \sum X_i^2 - n\bar{X}^2\)</span>:
+<span class="math display">\[\hat{\sigma}^2_{MV} = \frac{\sum X_i^2}{n} - \bar{X}^2 = \frac{425.44}{25} - (4.0224)^2 = 17.0176 - 16.1797 = 0.8379.\]</span>
+O divisor do EMV é <span class="math inline">\(n\)</span> (não <span class="math inline">\(n-1\)</span>): este estimador é viesado, com <span class="math inline">\(E(\hat{\sigma}^2_{MV}) = \frac{n-1}{n}\sigma^2\)</span>.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.8728
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+17.0176
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+1.547
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.8779
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+0.8379
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap3/Exercise 19</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q19 : Cap3_Cap3S2Q9 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>O EMV de <span class="math inline">\(\sigma^2\)</span> na distribuição Normal é <span class="math inline">\(\hat{\sigma}^2_{MV} = \frac{1}{n}\sum_{i=1}^n (X_i - \bar{X})^2\)</span>. Para uma amostra de tamanho <span class="math inline">\(n = 100\)</span>, qual é o vício deste estimador?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Sabe-se que <span class="math inline">\(\frac{(n-1)S^2}{\sigma^2} \sim \chi^2_{n-1}\)</span>, onde <span class="math inline">\(S^2 = \frac{1}{n-1}\sum(X_i-\bar{X})^2\)</span>. Portanto <span class="math inline">\(E(S^2) = \sigma^2\)</span>. Como <span class="math inline">\(\hat{\sigma}^2_{MV} = \frac{n-1}{n}S^2\)</span>, temos:
+<span class="math display">\[E(\hat{\sigma}^2_{MV}) = \frac{n-1}{n}\sigma^2.\]</span>
+O vício é <span class="math inline">\(E(\hat{\sigma}^2_{MV}) - \sigma^2 = -\frac{\sigma^2}{n}\)</span>, que é negativo (subestimação). Para <span class="math inline">\(n = 100\)</span>, o vício é <span class="math inline">\(-\sigma^2/100\)</span>. O EMV é assintoticamente não-viesado (o vício <span class="math inline">\(\to 0\)</span> quando <span class="math inline">\(n \to \infty\)</span>), mas é viesado para todo <span class="math inline">\(n\)</span> finito.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+O vício é <span class="math inline">\(-\sigma^2/(n-1)\)</span>, pois o denominador correto seria <span class="math inline">\(n-1\)</span> para <span class="math inline">\(n = 100\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+O EMV de <span class="math inline">\(\sigma^2\)</span> é não-viesado, pois o método da máxima verossimilhança sempre produz estimadores não-viesados.
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(E(\hat{\sigma}^2_{MV}) = \frac{n-1}{n}\sigma^2\)</span>, portanto o vício é <span class="math inline">\(E(\hat{\sigma}^2_{MV}) - \sigma^2 = -\frac{\sigma^2}{n}\)</span>. Para <span class="math inline">\(n = 100\)</span>, o vício é <span class="math inline">\(-\sigma^2/100\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+O vício é <span class="math inline">\(+\sigma^2/n\)</span>, pois o EMV tende a superestimar a variância populacional.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+O EMV de <span class="math inline">\(\sigma^2\)</span> é viesado apenas para amostras pequenas, sendo não-viesado para <span class="math inline">\(n \geq 30\)</span>.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q19 : Cap3_Cap3S2Q9 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>O EMV de <span class="math inline">\(\sigma^2\)</span> na distribuição Normal é <span class="math inline">\(\hat{\sigma}^2_{MV} = \frac{1}{n}\sum_{i=1}^n (X_i - \bar{X})^2\)</span>. Para uma amostra de tamanho <span class="math inline">\(n = 25\)</span>, qual é o vício deste estimador?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Sabe-se que <span class="math inline">\(\frac{(n-1)S^2}{\sigma^2} \sim \chi^2_{n-1}\)</span>, onde <span class="math inline">\(S^2 = \frac{1}{n-1}\sum(X_i-\bar{X})^2\)</span>. Portanto <span class="math inline">\(E(S^2) = \sigma^2\)</span>. Como <span class="math inline">\(\hat{\sigma}^2_{MV} = \frac{n-1}{n}S^2\)</span>, temos:
+<span class="math display">\[E(\hat{\sigma}^2_{MV}) = \frac{n-1}{n}\sigma^2.\]</span>
+O vício é <span class="math inline">\(E(\hat{\sigma}^2_{MV}) - \sigma^2 = -\frac{\sigma^2}{n}\)</span>, que é negativo (subestimação). Para <span class="math inline">\(n = 25\)</span>, o vício é <span class="math inline">\(-\sigma^2/25\)</span>. O EMV é assintoticamente não-viesado (o vício <span class="math inline">\(\to 0\)</span> quando <span class="math inline">\(n \to \infty\)</span>), mas é viesado para todo <span class="math inline">\(n\)</span> finito.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(E(\hat{\sigma}^2_{MV}) = \frac{n-1}{n}\sigma^2\)</span>, portanto o vício é <span class="math inline">\(E(\hat{\sigma}^2_{MV}) - \sigma^2 = -\frac{\sigma^2}{n}\)</span>. Para <span class="math inline">\(n = 25\)</span>, o vício é <span class="math inline">\(-\sigma^2/25\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+O vício é <span class="math inline">\(+\sigma^2/n\)</span>, pois o EMV tende a superestimar a variância populacional.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+O EMV de <span class="math inline">\(\sigma^2\)</span> é viesado apenas para amostras pequenas, sendo não-viesado para <span class="math inline">\(n \geq 30\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+O vício é <span class="math inline">\(-\sigma^2/(n-1)\)</span>, pois o denominador correto seria <span class="math inline">\(n-1\)</span> para <span class="math inline">\(n = 25\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+O EMV de <span class="math inline">\(\sigma^2\)</span> é não-viesado, pois o método da máxima verossimilhança sempre produz estimadores não-viesados.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap3/Exercise 20</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q20 : Cap3_Cap3S2Q10 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Para <span class="math inline">\(X_i \overset{\text{iid}}{\sim} \text{Poisson}(\lambda)\)</span>, o score (derivada da log-verossimilhança) é <span class="math inline">\(\frac{d\ell}{d\lambda} = \frac{\sum X_i}{\lambda} - n\)</span>. Com <span class="math inline">\(n = 50\)</span> e <span class="math inline">\(\sum_{i=1}^n X_i = 203\)</span>, qual das alternativas descreve corretamente a equação de verossimilhança e sua solução?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>A log-verossimilhança para <span class="math inline">\(X_i \sim \text{Poisson}(\lambda)\)</span> é:
+<span class="math display">\[\ell(\lambda) = \left(\sum_{i=1}^n X_i\right)\log\lambda - n\lambda + \text{const}.\]</span>
+O score é <span class="math inline">\(\ell&#39;(\lambda) = \sum X_i/\lambda - n\)</span>. Igualando a zero:
+<span class="math display">\[\frac{\sum X_i}{\lambda} - n = 0 \implies \hat{\lambda}_{MV} = \frac{\sum X_i}{n} = \frac{203}{50} = 4.06.\]</span>
+A segunda derivada <span class="math inline">\(\ell&#39;&#39;(\lambda) = -\sum X_i/\lambda^2 &lt; 0\)</span> confirma que é máximo. O score correto é <span class="math inline">\(\sum X_i/\lambda - n\)</span>, não <span class="math inline">\(\sum X_i \cdot \log\lambda - n\)</span>.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+A equação de verossimilhança <span class="math inline">\(\frac{d\ell}{d\lambda} = 0\)</span> resulta em <span class="math inline">\(\hat{\lambda}_{MV} = \bar{X} = 4.06\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+A equação de verossimilhança é resolvida por <span class="math inline">\(\hat{\lambda}_{MV} = 1/\bar{X} = 0.2463\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+A equação de verossimilhança resulta em <span class="math inline">\(\hat{\lambda}_{MV} = \sum X_i = 203\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+A log-verossimilhança da Poisson é maximizada em <span class="math inline">\(\hat{\lambda}_{MV} = n/\sum X_i = 0.2463\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+O score para Poisson é <span class="math inline">\(\ell&#39;(\lambda) = \sum X_i \cdot \log\lambda - n\)</span>, e a equação de verossimilhança não possui solução fechada.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q20 : Cap3_Cap3S2Q10 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Para <span class="math inline">\(X_i \overset{\text{iid}}{\sim} \text{Poisson}(\lambda)\)</span>, o score (derivada da log-verossimilhança) é <span class="math inline">\(\frac{d\ell}{d\lambda} = \frac{\sum X_i}{\lambda} - n\)</span>. Com <span class="math inline">\(n = 50\)</span> e <span class="math inline">\(\sum_{i=1}^n X_i = 148\)</span>, qual das alternativas descreve corretamente a equação de verossimilhança e sua solução?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>A log-verossimilhança para <span class="math inline">\(X_i \sim \text{Poisson}(\lambda)\)</span> é:
+<span class="math display">\[\ell(\lambda) = \left(\sum_{i=1}^n X_i\right)\log\lambda - n\lambda + \text{const}.\]</span>
+O score é <span class="math inline">\(\ell&#39;(\lambda) = \sum X_i/\lambda - n\)</span>. Igualando a zero:
+<span class="math display">\[\frac{\sum X_i}{\lambda} - n = 0 \implies \hat{\lambda}_{MV} = \frac{\sum X_i}{n} = \frac{148}{50} = 2.96.\]</span>
+A segunda derivada <span class="math inline">\(\ell&#39;&#39;(\lambda) = -\sum X_i/\lambda^2 &lt; 0\)</span> confirma que é máximo. O score correto é <span class="math inline">\(\sum X_i/\lambda - n\)</span>, não <span class="math inline">\(\sum X_i \cdot \log\lambda - n\)</span>.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+A equação de verossimilhança resulta em <span class="math inline">\(\hat{\lambda}_{MV} = \sum X_i = 148\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+A log-verossimilhança da Poisson é maximizada em <span class="math inline">\(\hat{\lambda}_{MV} = n/\sum X_i = 0.3378\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+A equação de verossimilhança <span class="math inline">\(\frac{d\ell}{d\lambda} = 0\)</span> resulta em <span class="math inline">\(\hat{\lambda}_{MV} = \bar{X} = 2.96\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+A equação de verossimilhança é resolvida por <span class="math inline">\(\hat{\lambda}_{MV} = 1/\bar{X} = 0.3378\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+O score para Poisson é <span class="math inline">\(\ell&#39;(\lambda) = \sum X_i \cdot \log\lambda - n\)</span>, e a equação de verossimilhança não possui solução fechada.
+</p>]]></text>
+</answer>
+</question>
+
+</quiz>

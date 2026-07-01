@@ -1,0 +1,57 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+p_full    <- sample(c(3, 4, 5, 6), 1)
+p_restrit <- sample(1:(p_full - 1), 1)
+r         <- p_full - p_restrit
+
+correct <- r
+w1      <- p_full
+w2      <- p_restrit
+w3      <- p_full + r
+w4      <- p_full - 1
+
+all_vals <- c(correct, w1, w2, w3, w4)
+
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+No **Teste da Razão de Verossimilhanças (TRV)**, testamos $H_0: \boldsymbol{\theta} \in \Omega_0$ versus $H_1: \boldsymbol{\theta} \in \Omega$, onde $\Omega_0 \subset \Omega$, com $\dim(\Omega_0) = `r p_restrit`$ e $\dim(\Omega) = `r p_full`$.
+
+Pelo **Teorema de Wilks**, sob $H_0$:
+$$-2\log\Lambda_n \xrightarrow{D} \chi^2_r.$$
+
+Quantos **graus de liberdade** $r$ tem essa distribuição assintótica?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+Pelo Teorema de Wilks, os graus de liberdade do TRV são a **diferença de dimensão** entre o espaço paramétrico irrestrito e o espaço sob $H_0$:
+$$r = \dim(\Omega) - \dim(\Omega_0) = `r p_full` - `r p_restrit` = `r r`.$$
+
+Intuitivamente, $r$ é o número de restrições impostas por $H_0$ sobre $\boldsymbol{\theta}$. Os outros valores ($`r w1`$, $`r w2`$, $`r w3`$, $`r w4`$) correspondem a erros comuns: usar a dimensão total do modelo ($`r p_full`$), a dimensão do modelo restrito ($`r p_restrit`$), a soma ($`r w3`$) ou $p-1$ ($`r w4`$).
+
+Meta-information
+================
+exname: Cap7S2Q1_TRV_graus_liberdade
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

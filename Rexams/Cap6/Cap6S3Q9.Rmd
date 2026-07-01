@@ -1,0 +1,40 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Choices textuais
+all_choices <- c(
+  "Em geral nao existe um teste UMP para hipoteses bilaterais. Pode-se buscar um teste UMP nao-viesado (UMPU), que maximiza o poder mantendo $\\gamma(\\theta_0) = \\alpha$ e $\\gamma(\\theta) \\geq \\alpha$ para todo $\\theta$.",
+  "Sempre existe um teste UMP bilateral: basta tomar a interseccao das regioes criticas unilaterais esquerda e direita.",
+  "O teste UMP bilateral sempre coincide com o teste bilateral da distribuicao Normal padrao.",
+  "Para hipoteses bilaterais, o teste UMP e sempre o teste qui-quadrado com $n-1$ graus de liberdade.",
+  "O teste UMP bilateral existe apenas para a familia exponencial com dois parametros naturais."
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+Para hipoteses bilaterais $H_0:\theta = \theta_0$ vs. $H_1:\theta \neq \theta_0$, quando pode existir um teste UMP?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+Em geral, um teste UMP nao existe para hipoteses bilaterais (como discutido na questao anterior). A solucao e restringir a classe de testes aos nao-viesados (testes com poder $\geq \alpha$ para todo $\theta \in \Omega_1$) e buscar o UMPU dentro dessa classe. A interseccao de regioes unilaterais (opcao 2) pode ser vazia ou ter nivel errado.
+
+Meta-information
+================
+exname: Cap6S3Q9_UMPU_bilateral
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

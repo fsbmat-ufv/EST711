@@ -1,0 +1,47 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Alternativas (textuais) — questão puramente conceitual
+all_choices <- c(
+  "$\\sqrt{n}(g(\\bar{X}_n) - g(\\mu)) \\xrightarrow{D} N(0,\\, [g'(\\mu)]^2 \\sigma^2)$.",
+  "$\\sqrt{n}(g(\\bar{X}_n) - g(\\mu)) \\xrightarrow{D} N(0,\\, g'(\\mu)\\, \\sigma^2)$ (sem elevar ao quadrado).",
+  "$\\sqrt{n}(g(\\bar{X}_n) - g(\\mu)) \\xrightarrow{D} N(0,\\, [g(\\mu)]^2 \\sigma^2)$ (usando $g(\\mu)$ em vez de $g'(\\mu)$).",
+  "$g(\\bar{X}_n) \\xrightarrow{D} N(g(\\mu),\\, [g'(\\mu)]^2 \\sigma^2)$ (sem escala $\\sqrt{n}$, variância não dividida por $n$).",
+  "$\\sqrt{n}(g(\\bar{X}_n) - g(\\mu)) \\xrightarrow{D} N(0,\\, [g'(\\mu)\\,\\sigma]^2/n)$ (variância dividida por $n$ erroneamente)."
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+
+Suponha que $\sqrt{n}(\bar{X}_n - \mu) \xrightarrow{D} N(0, \sigma^2)$ e que $g : \mathbb{R} \to \mathbb{R}$ é diferenciável com $g'(\mu) \neq 0$. O **Método Delta** (Delta Method) afirma que:
+
+Answerlist
+----------
+
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+
+O Método Delta é obtido por expansão de Taylor de primeira ordem: $g(\bar{X}_n) \approx g(\mu) + g'(\mu)(\bar{X}_n - \mu)$, portanto:
+$$\sqrt{n}(g(\bar{X}_n) - g(\mu)) \approx g'(\mu)\sqrt{n}(\bar{X}_n - \mu) \xrightarrow{D} N(0,\, [g'(\mu)]^2\sigma^2)$$
+
+A variância assintótica é $[g'(\mu)]^2\sigma^2$, com $g'(\mu)$ elevado ao **quadrado**. Os erros comuns são: não elevar ao quadrado, confundir $g(\mu)$ com $g'(\mu)$, ou omitir a escala $\sqrt{n}$.
+
+Meta-information
+================
+exname: Cap2S2Q1_delta_method_enunciado
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE
+```

@@ -1,0 +1,42 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  n <- sample(5:8, 1)
+  tau <- sample(seq(0.1, 0.9, by = 0.1), n, replace = TRUE)
+  vals <- round(c(mean(tau), median(tau), 1 - mean(tau),
+                  sum(tau)/(n + 1), sum(tau)/(n - 1)), 3)
+  if (length(unique(vals)) == 5L && all(vals[-1] >= 0) && all(vals[-1] <= 1.5)) break
+}
+tau_txt <- paste(sprintf("%.1f", tau), collapse = ", ")
+opts <- sprintf("$%.3f$", vals)
+```
+
+Question
+========
+No passo E de uma mistura com dois componentes, as responsabilidades do primeiro componente foram
+$$
+(`r tau_txt`).
+$$
+Qual é a atualização de máxima verossimilhança para o peso $\pi$ desse componente no passo M?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+O número esperado de observações no primeiro componente é $\sum_i\tau_i$. Logo,
+$$
+\pi^{(t+1)}=\frac{1}{n}\sum_{i=1}^n\tau_i=`r sprintf('%.3f', mean(tau))`.
+$$
+
+Meta-information
+================
+exname: Cap8S1Q4_atualizacao_peso_mistura
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

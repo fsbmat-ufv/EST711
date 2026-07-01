@@ -1,0 +1,50 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+## Choices textuais
+all_choices <- c(
+  "Pertence a familia exponencial biparametrica com $T(x) = (\\log x,\\, \\log(1-x))$ e parametros naturais $(\\alpha-1,\\, \\beta-1)$.",
+  "Nao pertence a familia exponencial pois seu suporte e limitado a $(0,1)$; a familia exponencial exige suporte ilimitado.",
+  "Pertence a familia exponencial uniparametrica com parametro natural $\\alpha/\\beta$, quando os dois parametros variam.",
+  "Pertence a familia exponencial apenas se $\\alpha = \\beta$ (caso simetrico), pois so entao a forma fatoravel e possivel.",
+  "Pertence a familia exponencial apenas quando $\\alpha, \\beta > 1$ (caso unimodal), pois so entao a log-verossimilhanca e concava."
+)
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+Considere $X \sim \text{Beta}(\alpha, \beta)$ com densidade:
+$$f(x; \alpha, \beta) = \frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)}\,x^{\alpha-1}(1-x)^{\beta-1}, \quad 0 < x < 1.$$
+
+Esta distribuicao pode ser escrita como:
+$$f(x;\alpha,\beta) = \exp\!\big\{(\alpha-1)\log x + (\beta-1)\log(1-x) + \log\Gamma(\alpha+\beta) - \log\Gamma(\alpha) - \log\Gamma(\beta)\big\}.$$
+
+Sobre a pertenca da distribuicao Beta a familia exponencial, qual afirmacao e **correta**?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+A afirmacao correta e: a Beta pertence a familia exponencial **biparametrica** com $T(x) = (\log x, \log(1-x))$ e parametros naturais $(\alpha - 1, \beta - 1)$.
+
+A forma fatorada e:
+$$f(x;\alpha,\beta) = \exp\!\left\{(\alpha-1)\log x + (\beta-1)\log(1-x) - \log B(\alpha,\beta)\right\} \cdot \mathbf{1}_{(0,1)}(x),$$
+onde $B(\alpha,\beta) = \Gamma(\alpha)\Gamma(\beta)/\Gamma(\alpha+\beta)$.
+
+O suporte $(0,1)$ fixo (independente de $\alpha$ e $\beta$) permite a representacao exponencial. A familia exponencial nao exige suporte ilimitado.
+
+Meta-information
+================
+exname: Cap4S3Q9_Beta_familia_exponencial
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

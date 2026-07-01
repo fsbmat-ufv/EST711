@@ -1,0 +1,59 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+## Parametros
+lambda <- sample(c(1, 2, 3, 4, 5, 6, 8, 10), 1)
+
+## Resposta correta e alternativas incorretas
+correct <- round(1 / lambda, 4)
+w1 <- round(lambda, 4)
+w2 <- round(1 / lambda^2, 4)
+w3 <- round(sqrt(1 / lambda), 4)
+w4 <- round(1 / (lambda + 1), 4)
+
+all_vals <- c(correct, w1, w2, w3, w4)
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+Seja $X \sim \text{Poisson}(\lambda)$, com funcao de probabilidade:
+$$P(X = x; \lambda) = \frac{e^{-\lambda}\lambda^x}{x!}, \quad x = 0, 1, 2, \ldots$$
+
+A **informacao de Fisher** sobre o parametro $\lambda$ e:
+$$I(\lambda) = -E\!\left[\frac{\partial^2}{\partial \lambda^2}\log f(X;\lambda)\right] = \frac{1}{\lambda}.$$
+
+Para $\lambda = `r lambda`$, qual e o valor de $I(\lambda)$?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+Para $X \sim \text{Poisson}(\lambda)$:
+$$\log f(x; \lambda) = x\log\lambda - \lambda - \log(x!).$$
+$$\frac{\partial}{\partial\lambda}\log f = \frac{x}{\lambda} - 1, \qquad \frac{\partial^2}{\partial\lambda^2}\log f = -\frac{x}{\lambda^2}.$$
+$$I(\lambda) = -E\!\left[-\frac{X}{\lambda^2}\right] = \frac{E(X)}{\lambda^2} = \frac{\lambda}{\lambda^2} = \frac{1}{\lambda}.$$
+
+Para $\lambda = `r lambda`$:
+$$I(`r lambda`) = \frac{1}{`r lambda`} = `r correct`.$$
+
+Meta-information
+================
+exname: Cap4S2Q2_Fisher_Poisson
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

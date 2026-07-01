@@ -1,0 +1,60 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parametros
+theta_hat <- round(runif(1, 2, 8), 2)
+theta0    <- sample(2:7, 1)
+# garantir que theta_hat != theta0
+while (abs(theta_hat - theta0) < 0.5) {
+  theta_hat <- round(runif(1, 2, 8), 2)
+  theta0    <- sample(2:7, 1)
+}
+se_hat <- round(runif(1, 0.3, 1.5), 2)
+
+## Estatistica de Wald: W = (theta_hat - theta0)^2 / se_hat^2
+W <- round((theta_hat - theta0)^2 / se_hat^2, 4)
+
+## Respostas
+correct <- W
+w1 <- round((theta_hat - theta0) / se_hat, 4)         # Z (nao W)
+w2 <- round(W + 1, 4)
+w3 <- round(abs(theta_hat - theta0) / se_hat^2, 4)    # sem quadrado no numerador
+w4 <- round((theta_hat - theta0)^2 / se_hat, 4)       # sem quadrado no SE
+
+all_vals <- c(correct, w1, w2, w3, w4)
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+O teste de Wald para $H_0:\theta = `r theta0`$ usa a estatistica $W = (\hat{\theta} - \theta_0)^2/\widehat{\text{Var}}(\hat{\theta})$. Com $\hat{\theta} = `r theta_hat`$, $\theta_0 = `r theta0`$ e erro padrao estimado $\widehat{\text{EP}}(\hat{\theta}) = `r se_hat`$ (portanto $\widehat{\text{Var}}(\hat{\theta}) = `r se_hat`^2 = `r round(se_hat^2,4)`$), o valor de $W$ e:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+$W = \frac{(\hat{\theta} - \theta_0)^2}{\widehat{\text{Var}}(\hat{\theta})} = \frac{(`r theta_hat` - `r theta0`)^2}{`r se_hat`^2} = \frac{`r round((theta_hat-theta0)^2,4)`}{`r round(se_hat^2,4)`} = `r W`$.
+
+Sob $H_0$, $W \xrightarrow{D} \chi^2_1$. Note que $\sqrt{W} = Z = (\hat{\theta}-\theta_0)/\widehat{\text{EP}}(\hat{\theta})$ e a estatistica $z$ de Wald.
+
+Meta-information
+================
+exname: Cap6S5Q9_teste_Wald
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

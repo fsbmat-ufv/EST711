@@ -1,0 +1,58 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parametros
+mu0   <- 5
+mu1   <- sample(c(6, 7, 8), 1)
+sigma <- sample(c(2, 3, 4), 1)
+n     <- sample(c(25, 36, 49, 64), 1)
+alpha <- 0.05
+
+z_crit  <- 1.645
+c_crit  <- mu0 + z_crit * sigma / sqrt(n)
+beta_val <- round(pnorm((c_crit - mu1) / (sigma / sqrt(n))), 4)
+
+## Respostas
+correct <- beta_val
+w1 <- round(1 - beta_val, 4)
+w2 <- round(pnorm((mu1 - c_crit) / (sigma / sqrt(n))), 4)
+w3 <- round(pnorm((c_crit - mu0) / (sigma / sqrt(n))), 4)
+w4 <- round(0.05, 4)
+
+all_vals <- c(correct, w1, w2, w3, w4)
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+Para $H_0:\mu = `r mu0`$ vs. $H_1:\mu > `r mu0`$ com $\sigma = `r sigma`$, $n = `r n`$ e $\alpha = 0{,}05$: a regiao critica e $\bar{X} > `r round(c_crit,4)`$. Se o verdadeiro valor e $\mu = `r mu1`$, a probabilidade do Erro Tipo II e $P(\bar{X} \leq `r round(c_crit,4)` \mid \mu = `r mu1`)$:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+$P(\text{Erro Tipo II}) = P\!\left(Z \leq \frac{`r round(c_crit,4)` - `r mu1`}{`r sigma`/\sqrt{`r n`}}\right) = \Phi\!\left(`r round((c_crit - mu1)/(sigma/sqrt(n)),4)`\right) = `r beta_val`$.
+
+O poder correspondente seria $1 - \beta = `r round(1-beta_val,4)`$.
+
+Meta-information
+================
+exname: Cap6S1Q9_prob_erro_tipo_II
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

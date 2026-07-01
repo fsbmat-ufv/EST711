@@ -1,0 +1,40 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Choices textuais
+all_choices <- c(
+  "$-2\\log\\Lambda \\xrightarrow{D} \\chi^2_r$ quando $n \\to \\infty$, onde $r$ e o numero de restricoes impostas por $H_0$.",
+  "$-2\\log\\Lambda \\xrightarrow{D} \\chi^2_p$, onde $p$ e a dimensao do espaco parametrico sob $H_0$.",
+  "$-2\\log\\Lambda \\xrightarrow{D} \\chi^2_{p+r}$, onde $p+r$ e a dimensao do modelo irrestrito.",
+  "$-2\\log\\Lambda \\xrightarrow{D} N(0,r)$ para amostras grandes.",
+  "$-2\\log\\Lambda \\xrightarrow{D} F_{r,\\,n-p}$ para qualquer $n$ finito."
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+O Teorema de Wilks afirma que, sob $H_0$ e sob certas condicoes de regularidade, se o modelo irrestrito tem $p+r$ parametros livres e $H_0$ impoe $r$ restricoes (reduzindo para $p$ parametros livres), entao:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+O Teorema de Wilks: $-2\log\Lambda \xrightarrow{D} \chi^2_r$ sob $H_0$, onde $r$ e o numero de restricoes (diferenca nas dimensoes dos espacos parametricos). Por exemplo: se o modelo tem 3 parametros e $H_0$ fixa 2 deles, $r=2$ e $-2\log\Lambda \xrightarrow{D} \chi^2_2$.
+
+Meta-information
+================
+exname: Cap6S5Q2_Teorema_Wilks
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

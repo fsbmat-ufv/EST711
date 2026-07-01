@@ -1,0 +1,46 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+## Choices textuais
+all_choices <- c(
+  "Suficiente e completa, o que garante, pelo teorema de Lehmann-Scheffe, que qualquer funcao nao-viesada de $T$ e o unico ENVVUM.",
+  "Suficiente mas nao necessariamente completa --- a completude requer hipoteses adicionais sobre a familia.",
+  "Completa mas nao suficiente --- a completude e uma propriedade da estatistica, independente de suficiencia.",
+  "Suficiente e completa apenas se a distribuicao for continua; para distribuicoes discretas a completude pode falhar.",
+  "Suficiente e completa apenas para o parametro natural, nao para re-parametrizacoes ou funcoes do parametro."
+)
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+Um resultado fundamental da teoria da estimacao e que para a **familia exponencial regular de posto completo** (onde o espaco parametrico natural tem interior nao-vazio), a estatistica suficiente natural $T = \sum_{i=1}^n T(X_i)$ possui uma propriedade especialmente importante.
+
+Para a familia exponencial regular de posto completo, $T = \sum T(X_i)$ e:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+Para a familia exponencial regular de posto completo, a estatistica suficiente natural $T = \sum T(X_i)$ e **suficiente e completa**.
+
+A **completude** significa que se $E_\theta[g(T)] = 0$ para todo $\theta$ implica $P_\theta(g(T) = 0) = 1$ para todo $\theta$.
+
+Pelo **Teorema de Lehmann-Scheffe**: como $T$ e suficiente e completa, qualquer funcao nao-viesada $\phi(T)$ de $g(\theta)$ e o **unico** ENVVUM para $g(\theta)$.
+
+Isso vale tanto para distribuicoes continuas quanto discretas na familia exponencial regular. A completude nao e uma propriedade apenas do parametro natural, mas da estatistica $T$ em relacao a toda a familia.
+
+Meta-information
+================
+exname: Cap4S3Q4_completude_familia_exponencial
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

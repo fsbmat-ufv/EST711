@@ -1,0 +1,67 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parâmetros aleatórios
+lambda <- sample(c(2, 3, 4, 5, 8, 10), 1)
+n_val  <- sample(c(25, 36, 49, 64, 100), 1)
+
+## Resposta correta: variância assintótica em escala sqrt(n) = lambda
+correct <- lambda
+
+## Alternativas incorretas plausíveis
+w1 <- round(lambda / n_val, 4)
+w2 <- lambda^2
+w3 <- round(sqrt(lambda), 4)
+w4 <- round(1 / lambda, 4)
+
+## Garantir unicidade
+w_list <- c(w1, w2, w3, w4)
+for (i in seq_along(w_list)) {
+  if (w_list[i] == correct) w_list[i] <- correct + 1
+}
+
+## Embaralhamento
+all_vals <- c(correct, w_list[1], w_list[2], w_list[3], w_list[4])
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+
+Seja $X_i \overset{\text{iid}}{\sim} \text{Poisson}(\lambda)$ com $\lambda = `r lambda`$ e $n = `r n_val`$. Sabe-se que $E(X_i) = \text{Var}(X_i) = \lambda$. Pelo TCL, $\sqrt{n}(\bar{X}_n - \lambda) \xrightarrow{D} N(0, V)$ onde $V$ é a variância assintótica (em escala $\sqrt{n}$). Qual é o valor de $V$?
+
+Answerlist
+----------
+
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+
+Para $X_i \overset{\text{iid}}{\sim} \text{Poisson}(\lambda)$, temos $\text{Var}(X_i) = \lambda$. Pelo TCL:
+$$\sqrt{n}(\bar{X}_n - \lambda) \xrightarrow{D} N(0, \lambda)$$
+
+A variância assintótica (em escala $\sqrt{n}$) é $V = \lambda = `r lambda`$.
+
+Note que a variância de $\bar{X}_n$ para $n$ fixo é $\lambda/n = `r round(lambda/n_val, 4)`$, mas a variância assintótica da quantidade padronizada $\sqrt{n}(\bar{X}_n - \lambda)$ é $\lambda$.
+
+Meta-information
+================
+exname: Cap2S1Q6_TCL_poisson
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE
+```

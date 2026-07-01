@@ -1,0 +1,47 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parametros
+p0 <- sample(c(0.2, 0.3, 0.4), 1)
+p1 <- sample(c(0.6, 0.7, 0.8), 1)
+n  <- sample(c(10, 15, 20, 25), 1)
+
+## Choices textuais
+all_choices <- c(
+  paste0("Como $\\log(p_1/p_0) > 0$ e $\\log((1-p_1)/(1-p_0)) < 0$, a condicao $\\Lambda > k$ se reduz a $\\sum X_i > k'$ para algum $k'$."),
+  "O Lema de NP nunca se aplica a distribuicoes discretas como Bernoulli.",
+  paste0("A regiao critica para Bernoulli e sempre bilateral, independente de $p_0 = ", p0, "$ e $p_1 = ", p1, "$."),
+  paste0("Como $p_0 < p_1$, a razao $\\Lambda < 1$ sempre, e $H_0$ nunca e rejeitada."),
+  "A condicao $\\Lambda > k$ sempre equivale a $\\bar{X} > $ algum valor, independente das distribuicoes."
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+Para $X_i \overset{\text{iid}}{\sim} \text{Bernoulli}(p)$, testando $H_0:p = `r p0`$ vs. $H_1:p = `r p1`$ com $n = `r n`$. A razao de verossimilhancas e $\Lambda = (p_1/p_0)^{\sum X_i}\cdot((1-p_1)/(1-p_0))^{n-\sum X_i}$. A regiao critica do Lema de NP rejeita $H_0$ para valores GRANDES de $\sum X_i$. Por que?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+Tomando logaritmo: $\log\Lambda = \sum X_i \log(p_1/p_0) + (n-\sum X_i)\log((1-p_1)/(1-p_0))$.
+
+Como $p_1 > p_0$: $\log(p_1/p_0) > 0$ e $\log((1-p_1)/(1-p_0)) < 0$. Portanto $\log\Lambda$ e crescente em $\sum X_i$, e $\Lambda > k$ equivale a $\sum X_i > k'$.
+
+Meta-information
+================
+exname: Cap6S2Q2_NP_Bernoulli
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

@@ -1,0 +1,47 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+all_choices <- c(
+  "$\\hat{\\mu}_1 = \\bar{X}$, $\\hat{\\mu}_2 = \\bar{Y}$, $\\hat{\\sigma}_{jk} = \\frac{1}{n}\\sum_{i=1}^n (X_{ij}-\\bar{X}_j)(X_{ik}-\\bar{X}_k)$ — matriz de covariâncias amostral com divisão por $n$.",
+  "$\\hat{\\mu}_1 = \\bar{X}$, $\\hat{\\mu}_2 = \\bar{Y}$ e $\\hat{\\Sigma} = S$ (covariância amostral com divisão por $n-1$, não-viesada).",
+  "$\\hat{\\boldsymbol{\\mu}} = (X_1, Y_1)$ (primeira observação como estimativa) e $\\hat{\\Sigma}$ estimada pelo método dos momentos.",
+  "Os EMVs da normal bivariada não têm forma fechada e exigem métodos numéricos iterativos.",
+  "$\\hat{\\mu}_1 = \\text{mediana}(X_i)$ e $\\hat{\\mu}_2 = \\text{mediana}(Y_i)$ como estimadores robustos de localização."
+)
+
+perm <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+Para $(X_i, Y_i) \overset{\text{iid}}{\sim} N_2(\boldsymbol{\mu}, \Sigma)$ com $\boldsymbol{\mu} = (\mu_1, \mu_2)^\top$ e matriz de covariâncias $\Sigma$ **desconhecida** ($2 \times 2$ positivo-definida), quais são os **Estimadores de Máxima Verossimilhança**?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+Para a Normal Bivariada, os EMVs têm **forma fechada**:
+
+**Médias:** $\hat{\mu}_1 = \bar{X} = \frac{1}{n}\sum X_i$ e $\hat{\mu}_2 = \bar{Y} = \frac{1}{n}\sum Y_i$.
+
+**Matriz de covariâncias:**
+$$\hat{\Sigma}_{MV} = \frac{1}{n}\sum_{i=1}^n \begin{pmatrix} X_i - \bar{X} \\ Y_i - \bar{Y} \end{pmatrix} \begin{pmatrix} X_i - \bar{X} \\ Y_i - \bar{Y} \end{pmatrix}^\top,$$
+com divisão por $n$ (não por $n-1$). Portanto, $\hat{\Sigma}_{MV}$ é **viesada** para $\Sigma$ (o estimador não-viesado usa $n-1$).
+
+**Importante:** dividir por $n-1$ (opção 2) produz o estimador não-viesado $S$, mas **não** o EMV.
+
+Meta-information
+================
+exname: Cap7S1Q10_emv_normal_bivariada
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

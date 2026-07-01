@@ -1,0 +1,60 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+## Parametros
+mu     <- sample(2:7, 1)
+sigma2 <- sample(c(1, 4, 9), 1)
+n      <- sample(c(25, 50, 100), 1)
+
+## Resposta correta e alternativas incorretas
+correct <- round(sigma2 / n, 4)
+w1 <- round(sigma2, 4)
+w2 <- round(sigma2 * n, 4)
+w3 <- round(sigma2 / (n - 1), 4)
+w4 <- round(sqrt(sigma2 / n), 4)
+
+## Garantir unicidade
+vals <- c(correct, w1, w2, w3, w4)
+if (length(unique(vals)) < 5) w4 <- w4 + 0.0001
+
+all_vals <- c(correct, w1, w2, w3, w4)
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+Para $X_i \overset{\text{iid}}{\sim} N(\mu, \sigma^2)$ com $\mu$ desconhecido e $\sigma^2 = `r sigma2`$ conhecido, sabe-se que $\bar{X}_n$ e o ENVVUM para $\mu$.
+
+Com $n = `r n`$ observacoes, qual e a variancia de $\bar{X}_n$?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+A variancia da media amostral e:
+$$\text{Var}(\bar{X}_n) = \frac{\sigma^2}{n} = \frac{`r sigma2`}{`r n`} = `r correct`.$$
+
+Este valor coincide com o limite inferior de Cramer-Rao para estimadores nao-viesados de $\mu$ quando $X_i \sim N(\mu, \sigma^2)$, confirmando que $\bar{X}_n$ e eficiente e, portanto, e o ENVVUM.
+
+As demais alternativas confundem $\sigma^2$ com $\sigma^2/n$ (alternativa $`r w1`$), multiplicam em vez de dividir por $n$ ($`r w2`$), usam $n-1$ no denominador ($`r w3`$), ou tomam o desvio padrao em vez da variancia ($`r w4`$).
+
+Meta-information
+================
+exname: Cap4S1Q7_Xbar_ENVVUM_Normal
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

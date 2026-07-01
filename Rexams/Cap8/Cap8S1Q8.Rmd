@@ -1,0 +1,47 @@
+```{r, echo=FALSE, results="hide"}
+tol <- sample(c(1e-3, 5e-4, 1e-4), 1)
+stop_now <- sample(c(TRUE, FALSE), 1)
+delta <- if (stop_now) tol * sample(c(0.2, 0.5, 0.8), 1) else tol * sample(c(2, 5, 10), 1)
+ell_old <- -sample(seq(80, 140, by = 5), 1)
+ell_new <- ell_old + delta
+correct <- if (stop_now) {
+  "Interromper: o ganho absoluto de log-verossimilhança é menor que a tolerância."
+} else {
+  "Continuar: o ganho absoluto de log-verossimilhança ainda excede a tolerância."
+}
+wrong_direction <- if (stop_now) {
+  "Continuar: qualquer ganho positivo obriga novas iterações, independentemente da tolerância."
+} else {
+  "Interromper: a log-verossimilhança aumentou, logo a convergência já foi atingida."
+}
+```
+
+Question
+========
+Um algoritmo EM usa o critério $|\ell^{(t+1)}-\ell^{(t)}|<\varepsilon$. Na iteração corrente,
+$\ell^{(t)}=`r sprintf('%.6f', ell_old)`$, $\ell^{(t+1)}=`r sprintf('%.6f', ell_new)`$ e
+$\varepsilon=`r format(tol, scientific = TRUE)`$. Qual decisão segue exatamente esse critério?
+
+Answerlist
+----------
+* `r correct`
+* `r wrong_direction`
+* Interromper: toda log-verossimilhança negativa indica convergência.
+* Continuar: o EM só pode parar quando a log-verossimilhança for igual a zero.
+* Interromper: basta que os parâmetros pertençam ao espaço paramétrico.
+
+Solution
+========
+O ganho é
+$$
+|\ell^{(t+1)}-\ell^{(t)}|=`r format(delta, scientific = TRUE)`.
+$$
+Ele é `r if (stop_now) 'menor' else 'maior'` que a tolerância. Portanto, pelo critério declarado, deve-se `r if (stop_now) 'interromper' else 'continuar'`.
+
+Meta-information
+================
+exname: Cap8S1Q8_criterio_convergencia_EM
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

@@ -1,0 +1,57 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+## Parametros
+var1      <- sample(c(1, 2, 4, 9), 1)
+var2_mult <- sample(c(1.5, 2, 3, 4), 1)
+var2      <- var1 * var2_mult
+
+## Resposta correta e alternativas incorretas
+correct <- round(var1 / var2, 4)
+w1 <- round(var2 / var1, 4)
+w2 <- round(var1 * var2, 4)
+w3 <- round((var1 - var2) / var1, 4)
+w4 <- round(var1 / (var1 + var2), 4)
+
+all_vals <- c(correct, w1, w2, w3, w4)
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+Considere dois estimadores não-viesados de um parâmetro $\theta$: o estimador $T_1$ com variância $\text{Var}(T_1) = `r var1`$ e o estimador $T_2$ com variância $\text{Var}(T_2) = `r var2`$.
+
+A **eficiência relativa** de $T_2$ em relação a $T_1$ é definida como:
+$$e(T_2, T_1) = \frac{\text{Var}(T_1)}{\text{Var}(T_2)}.$$
+
+Qual é o valor de $e(T_2, T_1)$?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+A eficiência relativa de $T_2$ em relação a $T_1$ é:
+$$e(T_2, T_1) = \frac{\text{Var}(T_1)}{\text{Var}(T_2)} = \frac{`r var1`}{`r var2`} = `r correct`.$$
+
+Como $e(T_2, T_1) = `r correct` < 1$, o estimador $T_1$ é mais eficiente que $T_2$ (possui menor variância).
+
+Meta-information
+================
+exname: Cap4S1Q4_eficiencia_relativa
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

@@ -1,0 +1,69 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+## Parametros
+lambda <- sample(c(1, 2, 3, 4, 5), 1)
+n      <- sample(c(25, 50, 100), 1)
+
+## Gerar sum_x de forma reprodutivel
+set.seed(sample.int(.Machine$integer.max, 1))
+noise  <- runif(1, -2, 2)
+sum_x  <- round(n / lambda + noise, 2)
+
+## EMV de lambda: lambda_hat = n / sum_x
+correct <- round(n / sum_x, 4)
+
+## Alternativas erradas
+w1 <- round(sum_x / n, 4)           # inverso do correto
+w2 <- round(n / (sum_x + 1), 4)     # denominador errado
+w3 <- round((n - 1) / sum_x, 4)     # n-1 no lugar de n
+w4 <- round(n^2 / sum_x, 4)         # n^2 no numerador
+
+## Garantir unicidade
+vals <- c(correct, w1, w2, w3, w4)
+if (length(unique(round(vals, 5))) < 5) w4 <- w4 + 0.001
+
+all_vals <- c(correct, w1, w2, w3, w4)
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+Para $X_i \overset{\text{iid}}{\sim} \text{Exp}(\lambda)$ com $f(x;\lambda) = \lambda\,e^{-\lambda x}$, a forma exponencial identifica $T(x) = x$ e a estatistica suficiente minimal e $T = \sum_{i=1}^n X_i$.
+
+Com $n = `r n`$ observacoes e $\displaystyle\sum_{i=1}^n X_i = `r sum_x`$, o EMV de $\lambda$ (que e funcao da estatistica suficiente $T$) e $\hat{\lambda} = n/\sum X_i$. Qual e o valor do EMV?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+A log-verossimilhanca e:
+$$\ell(\lambda) = n\log\lambda - \lambda\sum_{i=1}^n X_i.$$
+
+Maximizando: $\dfrac{d\ell}{d\lambda} = \dfrac{n}{\lambda} - \sum X_i = 0 \implies \hat{\lambda} = \dfrac{n}{\sum X_i}.$
+
+Para $n = `r n`$ e $\sum X_i = `r sum_x`$:
+$$\hat{\lambda} = \frac{`r n`}{`r sum_x`} = `r correct`.$$
+
+Note que $\hat{\lambda} = 1/\bar{X}$, que e a funcao da estatistica suficiente $T = \sum X_i$ (ou equivalentemente $\bar{X}$).
+
+Meta-information
+================
+exname: Cap4S3Q10_Exp_forma_canonica_EMV
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

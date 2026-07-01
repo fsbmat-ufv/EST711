@@ -1,0 +1,55 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parametros
+mu0    <- 5
+mu1    <- sample(c(7, 8, 9), 1)
+sigma2 <- sample(c(4, 9, 16), 1)
+n      <- sample(c(25, 36, 49, 64), 1)
+
+## Valor critico e poder
+k_val <- mu0 + 1.645 * sqrt(sigma2) / sqrt(n)
+poder <- round(1 - pnorm((k_val - mu1) / (sqrt(sigma2) / sqrt(n))), 4)
+
+## Respostas
+correct <- poder
+w1 <- round(1 - poder, 4)
+w2 <- round(pnorm((k_val - mu1) / (sqrt(sigma2) / sqrt(n))), 4)
+w3 <- round(poder - 0.05, 4)
+w4 <- round(0.05, 4)
+
+all_vals <- c(correct, w1, w2, w3, w4)
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+Para $H_0:\mu = `r mu0`$ vs. $H_1:\mu = `r mu1`$ com $\sigma^2 = `r sigma2`$, $n = `r n`$ e $\alpha = 0{,}05$: o valor critico e $k = `r round(k_val,4)`$. O poder do teste MP e $P(\bar{X} > `r round(k_val,4)` \mid \mu = `r mu1`)$:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+$\text{Poder} = P\!\left(Z > \frac{`r round(k_val,4)` - `r mu1`}{\sqrt{`r sigma2`}/\sqrt{`r n`}}\right) = P\!\left(Z > `r round((k_val-mu1)/(sqrt(sigma2)/sqrt(n)),4)`\right) = `r poder`$.
+
+Meta-information
+================
+exname: Cap6S2Q4_NP_poder_normal
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

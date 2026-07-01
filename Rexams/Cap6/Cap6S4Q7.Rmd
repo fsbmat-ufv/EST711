@@ -1,0 +1,56 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parametros
+mu0   <- 5
+mu1   <- sample(c(7, 8, 9), 1)
+sigma <- 2
+n     <- sample(c(25, 36, 49), 1)
+alpha <- 0.05
+
+## Valor critico e poder
+c_val <- round(mu0 + qnorm(1 - alpha) * sigma / sqrt(n), 4)
+poder <- round(1 - pnorm((c_val - mu1) / (sigma / sqrt(n))), 4)
+
+## Respostas
+correct <- poder
+w1 <- round(1 - poder, 4)
+w2 <- round(poder - 0.1, 4)
+w3 <- round(pnorm((c_val - mu0) / (sigma / sqrt(n))), 4)
+w4 <- round(0.05, 4)
+
+all_vals <- c(correct, w1, w2, w3, w4)
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+UMP de Karlin-Rubin para $H_0:\mu \leq `r mu0`$ vs. $H_1:\mu > `r mu0`$, com $\sigma = `r sigma`$ e $n = `r n`$. O valor critico e $\bar{X} > `r c_val`$. O poder quando $\mu = `r mu1`$ e:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+Poder $= P(\bar{X} > `r c_val` \mid \mu = `r mu1`) = 1 - \Phi\!\left(\frac{`r c_val` - `r mu1`}{`r sigma`/\sqrt{`r n`}}\right) = 1 - \Phi(`r round((c_val-mu1)/(sigma/sqrt(n)),4)`) = `r poder`$.
+
+Meta-information
+================
+exname: Cap6S4Q7_KR_poder_normal
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

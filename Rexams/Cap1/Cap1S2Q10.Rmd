@@ -1,0 +1,48 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Alternativas (textuais) — questão puramente conceitual
+all_choices <- c(
+  "$X_n \\xrightarrow{D} N(0,1)$ pois $X$ e $-X$ têm a mesma distribuição $N(0,1)$, mas $X_n$ não converge em probabilidade para $X$.",
+  "$X_n \\xrightarrow{P} X$ pois a distribuição é simétrica e o valor médio não muda.",
+  "$X_n \\xrightarrow{a.s.} X$ pois cada realização alterna entre $x$ e $-x$ de forma controlada.",
+  "$X_n \\xrightarrow{P} 0$ pois as oscilações entre $+x$ e $-x$ se cancelam em média.",
+  "$X_n$ não tem limite em nenhum sentido de convergência estocástica."
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+
+Seja $X \sim N(0,1)$ e defina a sequência $X_n = (-1)^n X$ para $n = 1, 2, 3, \ldots$. Qual afirmação sobre a convergência de $X_n$ é **verdadeira**?
+
+Answerlist
+----------
+
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+
+Como $X \sim N(0,1)$, temos $-X \sim N(0,1)$ (a normal padrão é simétrica). Portanto, $X_n = (-1)^n X$ tem distribuição $N(0,1)$ para todo $n$, e trivialmente $X_n \xrightarrow{D} N(0,1) = X$ em distribuição.
+
+No entanto, $X_n$ **não** converge em probabilidade para $X$: para $n$ par, $X_n = X$, mas para $n$ ímpar, $X_n = -X$. Temos $P(|X_n - X| > \varepsilon) = P(2|X| > \varepsilon) \not\to 0$.
+
+Este é o exemplo clássico que mostra que convergência em distribuição $\not\Rightarrow$ convergência em probabilidade quando o limite não é uma constante.
+
+Meta-information
+================
+exname: Cap1S2Q10_conv_dist_nao_prob
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE
+```

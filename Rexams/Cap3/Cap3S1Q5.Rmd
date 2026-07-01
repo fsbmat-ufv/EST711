@@ -1,0 +1,64 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parâmetros aleatórios
+theta <- sample(c(3, 4, 5, 6, 8, 10), 1)
+n     <- sample(c(25, 36, 50, 100), 1)
+xbar  <- round(theta / 2 + runif(1, -0.5, 0.5), 2)
+
+## Resposta correta
+correct <- round(2 * xbar, 4)
+
+## Alternativas incorretas plausíveis
+w1 <- round(xbar, 4)
+w2 <- round(xbar / 2, 4)
+w3 <- round(3 * xbar, 4)
+w4 <- round(2 * xbar + 1, 4)
+
+## Garantir unicidade
+if (w1 == correct) w1 <- round(xbar + 0.1, 4)
+if (w2 == correct) w2 <- round(xbar / 2 - 0.1, 4)
+if (w3 == correct) w3 <- round(3 * xbar + 0.1, 4)
+if (w4 == correct) w4 <- round(2 * xbar + 1.5, 4)
+if (w2 == w1)      w2 <- round(xbar / 3, 4)
+
+## Embaralhamento SEMPRE
+all_vals <- c(correct, w1, w2, w3, w4)
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+
+Seja $X_i \overset{\text{iid}}{\sim} U(0, \theta)$ com $E(X) = \theta/2$. O estimador pelo método dos momentos iguala $\bar{X} = \hat{\theta}/2$, resultando em $\hat{\theta}_{MM} = 2\bar{X}$. Com $n = `r n`$ e $\bar{X} = `r xbar`$, calcule $\hat{\theta}_{MM}$.
+
+Answerlist
+----------
+
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+
+Para $X_i \sim U(0, \theta)$, o primeiro momento teórico é $\mu_1 = E(X) = \theta/2$. O método dos momentos iguala $m_1 = \bar{X}$ a $\mu_1 = \theta/2$:
+$$\bar{X} = \frac{\hat{\theta}}{2} \implies \hat{\theta}_{MM} = 2\bar{X} = 2 \times `r xbar` = `r correct`.$$
+
+Meta-information
+================
+exname: Cap3S1Q5_emm_uniforme
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

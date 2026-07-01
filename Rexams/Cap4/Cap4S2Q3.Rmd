@@ -1,0 +1,59 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+## Parametros
+theta <- sample(c(1, 2, 3, 4, 5), 1)
+
+## Resposta correta e alternativas incorretas
+correct <- round(1 / theta^2, 4)
+w1 <- round(theta^2, 4)
+w2 <- round(1 / theta, 4)
+w3 <- round(theta, 4)
+w4 <- round(1 / (2 * theta^2), 4)
+
+all_vals <- c(correct, w1, w2, w3, w4)
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+Seja $X \sim \text{Exp}(\theta)$ com funcao de densidade:
+$$f(x; \theta) = \theta\, e^{-\theta x}, \quad x > 0, \quad \theta > 0.$$
+
+A **informacao de Fisher** sobre o parametro $\theta$ e:
+$$I(\theta) = -E\!\left[\frac{\partial^2}{\partial\theta^2}\log f(X;\theta)\right] = \frac{1}{\theta^2}.$$
+
+Para $\theta = `r theta`$, qual e o valor de $I(\theta)$?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+Para $X \sim \text{Exp}(\theta)$:
+$$\log f(x; \theta) = \log\theta - \theta x.$$
+$$\frac{\partial}{\partial\theta}\log f = \frac{1}{\theta} - x, \qquad \frac{\partial^2}{\partial\theta^2}\log f = -\frac{1}{\theta^2}.$$
+$$I(\theta) = -E\!\left[-\frac{1}{\theta^2}\right] = \frac{1}{\theta^2}.$$
+
+Para $\theta = `r theta`$:
+$$I(`r theta`) = \frac{1}{`r theta`^2} = `r correct`.$$
+
+Meta-information
+================
+exname: Cap4S2Q3_Fisher_Exponencial
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

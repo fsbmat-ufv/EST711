@@ -1,0 +1,49 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+n     <- sample(c(25, 36, 49, 64, 100), 1)
+k     <- sample(c(2, 3), 1)
+alpha <- 0.05
+
+correct <- round(qchisq(1 - alpha, k), 4)
+w1      <- round(qchisq(1 - alpha, k + 1), 4)
+w2      <- round(qchisq(alpha, k), 4)
+w3      <- round(qchisq(1 - alpha, k - 1), 4)
+w4      <- round(qf(1 - alpha, k, n - k), 4)
+
+all_vals <- c(correct, w1, w2, w3, w4)
+
+choices  <- sample(all_vals)
+sol_pos  <- which(choices == correct)
+sol_str  <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+Uma **região de confiança elipsoidal** assintótica de nível $1-\alpha$ para $\boldsymbol{\theta} \in \mathbb{R}^k$ baseada no EMV é:
+$$\mathcal{C}_n = \left\{\boldsymbol{\theta} : n(\hat{\boldsymbol{\theta}} - \boldsymbol{\theta})^\top \hat{I}(\boldsymbol{\theta})\,(\hat{\boldsymbol{\theta}} - \boldsymbol{\theta}) \leq c\right\},$$
+onde $c = \chi^2_{k,\,1-\alpha}$ é o quantil da qui-quadrado com $k$ graus de liberdade.
+
+Para $k = `r k`$ parâmetros e $\alpha = 0.05$, qual é o valor crítico $c = \chi^2_{`r k`,\,0.95}$?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+Pelo Teorema de Wilks, a estatística $n(\hat{\boldsymbol{\theta}} - \boldsymbol{\theta})^\top \hat{I}(\boldsymbol{\theta})(\hat{\boldsymbol{\theta}} - \boldsymbol{\theta})$ tem distribuição assintótica $\chi^2_k$ sob $\boldsymbol{\theta}$ verdadeiro. Para $k = `r k`$ e $\alpha = 0.05$:
+$$c = \chi^2_{`r k`,\,0.95} = \texttt{qchisq(0.95, `r k`)} = `r correct`.$$
+
+Os demais valores correspondem a: $\chi^2_{`r k+1`,0.95} = `r w1`$ (graus de liberdade errado), $\chi^2_{`r k`,0.05} = `r w2`$ (quantil inferior), $\chi^2_{`r k-1`,0.95} = `r w3`$ (graus de liberdade errado), e $F_{`r k`,`r n-k`} = `r w4`$ (distribuição errada).
+
+Meta-information
+================
+exname: Cap7S1Q4_regiao_conf_elipsoidal
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

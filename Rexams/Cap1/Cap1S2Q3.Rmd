@@ -1,0 +1,51 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parâmetros aleatórios
+n_grande  <- sample(c(100, 200, 500, 1000), 1)
+p_pequeno <- sample(c(0.01, 0.02, 0.05, 0.1), 1)
+lambda    <- n_grande * p_pequeno
+
+## Alternativas (textuais)
+all_choices <- c(
+  paste0("$\\text{Poisson}(\\lambda) = \\text{Poisson}(", lambda, ")$."),
+  paste0("$N(", lambda, ",\\, ", lambda, ")$ (normal com mesma média e variância)."),
+  paste0("$N(np, np(1-p)) = N(", lambda, ",\\, ", round(n_grande*p_pequeno*(1-p_pequeno),4), ")$ (aproximação normal direta)."),
+  paste0("$\\text{Bin}(n, np/n) = \\text{Bin}(", n_grande, ",\\, ", p_pequeno, ")$ (a própria distribuição original)."),
+  paste0("$\\text{Exp}(1/", lambda, ")$ (exponencial com taxa $1/\\lambda$).")
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+
+Seja $X \sim \text{Bin}(n, p)$ com $n = `r n_grande`$ e $p = `r p_pequeno`$, de modo que $\lambda = np = `r lambda`$. Qual distribuição melhor aproxima $X$ no regime $n \to \infty$ e $p \to 0$ com $np = \lambda$ fixo?
+
+Answerlist
+----------
+
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+
+Este é o Teorema de Poisson (aproximação de Poisson à Binomial): quando $n \to \infty$ e $p \to 0$ com $np = \lambda$ fixo, a distribuição $\text{Bin}(n,p)$ converge em distribuição para $\text{Poisson}(\lambda)$.
+
+Para $n = `r n_grande`$ e $p = `r p_pequeno`$, temos $\lambda = np = `r lambda`$, e a aproximação é $X \approx \text{Poisson}(`r lambda`)$. A aproximação normal é adequada para grandes $n$ e $p$ não muito pequeno, mas não é o regime correto aqui (eventos raros).
+
+Meta-information
+================
+exname: Cap1S2Q3_aprox_poisson_binomial
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE
+```

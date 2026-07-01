@@ -1,0 +1,48 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+## Choices textuais
+all_choices <- c(
+  "$(\\bar{X},\\, S^2)$ ou equivalentemente $(\\sum X_i,\\, \\sum X_i^2)$.",
+  "$\\bar{X}$ sozinho e suficiente para ambos os parametros $\\mu$ e $\\sigma^2$ simultaneamente.",
+  "$S^2$ sozinho e suficiente para $\\sigma^2$, e $\\bar{X}$ sozinho e suficiente para $\\mu$, independentemente.",
+  "$(X_{(1)}, X_{(n)})$ (minimo e maximo da amostra), pois a gama da amostra determina $\\mu$ e $\\sigma^2$.",
+  "$(\\bar{X},\\, X_{(1)},\\, X_{(n)})$ --- sao necessarias tres estatisticas para a Normal biparametrica."
+)
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+Seja $X_i \overset{\text{iid}}{\sim} N(\mu, \sigma^2)$ com **ambos** $\mu$ e $\sigma^2$ desconhecidos. A verossimilhanca conjunta e:
+$$L(\mu, \sigma^2; \mathbf{x}) = (2\pi\sigma^2)^{-n/2}\exp\!\left\{-\frac{1}{2\sigma^2}\sum_{i=1}^n(x_i-\mu)^2\right\}.$$
+
+Usando a identidade $\sum(x_i-\mu)^2 = \sum x_i^2 - n\bar{x}^2 + n(\bar{x}-\mu)^2$, qual e a estatistica suficiente para o parametro $(\mu, \sigma^2)$?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+Fatorando a verossimilhanca via Neyman-Fisher:
+$$L(\mu,\sigma^2;\mathbf{x}) \propto (\sigma^2)^{-n/2}\exp\!\left\{-\frac{1}{2\sigma^2}\left(\sum x_i^2 - n\bar{x}^2\right) - \frac{n(\bar{x}-\mu)^2}{2\sigma^2}\right\}.$$
+
+A verossimilhanca depende da amostra apenas atraves de $(\sum X_i, \sum X_i^2)$, equivalentemente $(\bar{X}, S^2)$.
+
+Portanto, a estatistica suficiente para $(\mu, \sigma^2)$ e $\mathbf{T} = (\bar{X}, S^2)$.
+
+Nota: $\bar{X}$ sozinho nao e suficiente quando $\sigma^2$ e desconhecido (nao carrega informacao sobre $\sigma^2$). Da mesma forma, $S^2$ sozinho nao e suficiente quando $\mu$ e desconhecido.
+
+Meta-information
+================
+exname: Cap4S4Q5_suficiencia_Normal_biparametrica
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

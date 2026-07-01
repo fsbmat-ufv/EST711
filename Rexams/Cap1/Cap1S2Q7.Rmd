@@ -1,0 +1,46 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Alternativas (textuais) — questão puramente conceitual
+all_choices <- c(
+  "$g(X_n) \\xrightarrow{D} g(X)$ (o Teorema do Mapeamento Contínuo vale para convergência em distribuição).",
+  "$g(X_n) \\xrightarrow{P} g(X)$ (convergência em probabilidade, que é mais forte).",
+  "$g(X_n) \\xrightarrow{a.s.} g(X)$ (convergência quase certa).",
+  "Nenhuma conclusão pode ser tirada sobre $g(X_n)$ sem hipóteses adicionais sobre a derivada de $g$.",
+  "$g(X_n) \\xrightarrow{D} g(X)$ apenas se $g$ for linear ou afim."
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+
+Seja $X_n \xrightarrow{D} X$ e $g : \mathbb{R} \to \mathbb{R}$ uma função contínua. O que podemos concluir sobre $g(X_n)$?
+
+Answerlist
+----------
+
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+
+O Teorema do Mapeamento Contínuo (CMT) para convergência em distribuição afirma: se $X_n \xrightarrow{D} X$ e $g$ é contínua (exceto possivelmente em um conjunto de probabilidade zero sob $X$), então $g(X_n) \xrightarrow{D} g(X)$.
+
+Este resultado vale para qualquer função contínua $g$, não apenas para funções lineares. Contudo, a convergência em distribuição de $g(X_n)$ não garante convergência em probabilidade de $g(X_n)$ para $g(X)$ (que é mais forte).
+
+Meta-information
+================
+exname: Cap1S2Q7_CMT_distribuicao
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE
+```

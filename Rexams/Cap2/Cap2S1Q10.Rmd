@@ -1,0 +1,68 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parâmetros aleatórios
+mu     <- sample(2:7, 1)
+sigma2 <- sample(1:9, 1)
+n      <- sample(c(25, 36, 64, 100), 1)
+
+## Resposta correta: média de S_n = n*mu
+correct <- n * mu
+
+## Alternativas incorretas plausíveis
+w1 <- mu
+w2 <- n * sigma2
+w3 <- n * mu + n * sigma2
+w4 <- as.integer(round(sqrt(n) * mu, 0))
+
+## Garantir unicidade
+w_list <- c(w1, w2, w3, w4)
+for (i in seq_along(w_list)) {
+  if (w_list[i] == correct) w_list[i] <- correct + mu
+}
+
+## Embaralhamento
+all_vals <- c(correct, w_list[1], w_list[2], w_list[3], w_list[4])
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+
+Seja $X_i \overset{\text{iid}}{\sim}$ alguma distribuição com $\mu = `r mu`$ e $\sigma^2 = `r sigma2`$. Pelo TCL, a soma $S_n = \sum_{i=1}^n X_i$ tem distribuição aproximada $N(n\mu, n\sigma^2) = N(`r n*mu`, `r n*sigma2`)$ para $n = `r n`$. Qual é a **média** de $S_n$?
+
+Answerlist
+----------
+
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+
+Como $X_i$ são iid com $E(X_i) = \mu$:
+$$E(S_n) = E\!\left(\sum_{i=1}^n X_i\right) = n\mu = `r n` \times `r mu` = `r correct`$$
+
+A variância é $\text{Var}(S_n) = n\sigma^2 = `r n` \times `r sigma2` = `r n*sigma2`$.
+
+Note que a média de $\bar{X}_n = S_n/n$ é $\mu = `r mu`$ (não $n\mu$).
+
+Meta-information
+================
+exname: Cap2S1Q10_media_soma
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE
+```

@@ -1,0 +1,71 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+mu     <- sample(2:8, 1)
+sigma2 <- sample(c(1, 4, 9), 1)
+n      <- sample(c(25, 36, 64, 100), 1)
+
+# g(mu, sigma2) = mu / sigma = mu / sqrt(sigma2)
+# nabla g = (1/sigma, -mu/(2*sigma^3)) = (1/sqrt(sigma2), -mu/(2*sigma2^(3/2)))
+# I^{-1} = diag(sigma2, 2*sigma2^2)
+# Var assint de sqrt(n)*g_hat = nabla g^T I^{-1} nabla g
+# = sigma2 * (1/sigma2) + 2*sigma2^2 * (mu/(2*sigma2^(3/2)))^2
+# = 1 + 2*sigma2^2 * mu^2/(4*sigma2^3)
+# = 1 + mu^2/(2*sigma2)
+
+correct <- round(1 + mu^2 / (2 * sigma2), 4)
+w1      <- round(1 + mu^2 / sigma2, 4)
+w2      <- round(sigma2 + mu^2 / (2 * sigma2), 4)
+w3      <- round(abs(1 - mu^2 / (2 * sigma2)), 4)
+w4      <- round(mu^2 / (2 * sigma2), 4)
+
+all_vals <- c(correct, w1, w2, w3, w4)
+
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+Para $X_i \overset{\text{iid}}{\sim} N(\mu, \sigma^2)$, seja $g(\mu, \sigma^2) = \mu/\sigma$ (coeficiente de variação inverso).
+
+Pelo **Método Delta Multivariado**, a variância assintótica de $\sqrt{n}\,\hat{g}_{MV}$ é $\nabla g^\top I^{-1} \nabla g$, onde:
+- $\nabla g = (1/\sigma,\; -\mu/(2\sigma^3))^\top$
+- $I^{-1} = \text{diag}(\sigma^2,\; 2\sigma^4)$
+
+**Cálculo:** o primeiro termo contribui $\sigma^2 \cdot (1/\sigma)^2 = 1$; o segundo contribui $2\sigma^4 \cdot (\mu/(2\sigma^3))^2 = \mu^2/(2\sigma^2)$.
+
+Com $\mu = `r mu`$ e $\sigma^2 = `r sigma2`$, qual é a variância assintótica de $\sqrt{n}\,\hat{g}_{MV}$?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+Aplicando o Método Delta Multivariado:
+$$\text{Var}_{\text{assint}}(\sqrt{n}\,\hat{g}_{MV}) = \nabla g^\top I^{-1} \nabla g = 1 + \frac{\mu^2}{2\sigma^2}.$$
+
+Substituindo $\mu = `r mu`$ e $\sigma^2 = `r sigma2`$:
+$$1 + \frac{`r mu`^2}{2 \times `r sigma2`} = 1 + \frac{`r mu^2`}{`r 2*sigma2`} = `r correct`.$$
+
+A variância assintótica de $\hat{g}_{MV}$ (sem o fator $n$) seria $(`r correct`)/n$.
+
+Meta-information
+================
+exname: Cap7S1Q9_delta_cv_normal
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

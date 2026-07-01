@@ -1,0 +1,40 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Choices textuais
+all_choices <- c(
+  "A razao de verossimilhancas $\\Lambda = L(\\theta_1)/L(\\theta_0)$ excede uma constante $k$ escolhida tal que o tamanho do teste seja $\\alpha$.",
+  "A estatistica $\\bar{X}$ excede o quantil $z_{1-\\alpha}$ da distribuicao normal padrao.",
+  "A log-verossimilhanca sob $H_1$ excede a log-verossimilhanca sob $H_0$ em pelo menos 1 unidade.",
+  "O p-valor e menor que $\\alpha$, independente da razao de verossimilhancas.",
+  "A verossimilhanca marginal excede $k \\cdot \\alpha$ para alguma constante $k$."
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+O Lema de Neyman-Pearson afirma que, para testar $H_0:\theta = \theta_0$ vs. $H_1:\theta = \theta_1$ (hipoteses simples), o teste mais poderoso de tamanho $\alpha$ rejeita $H_0$ quando:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+O Lema de Neyman-Pearson estabelece que o teste mais poderoso de tamanho $\alpha$ tem regiao critica $\mathcal{C} = \{x: L(\theta_1)/L(\theta_0) > k\}$, onde $k$ e escolhido tal que $P_{\theta_0}(\mathbf{X} \in \mathcal{C}) = \alpha$. Este resultado e valido para hipoteses SIMPLES vs. SIMPLES.
+
+Meta-information
+================
+exname: Cap6S2Q1_lema_NP_enunciado
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

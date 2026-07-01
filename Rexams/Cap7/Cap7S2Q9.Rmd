@@ -1,0 +1,46 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+all_choices <- c(
+  "Usa a verossimilhança perfilada $L_P(\\theta_1) = \\sup_{\\boldsymbol{\\lambda}} L(\\theta_1, \\boldsymbol{\\lambda})$; a estatística $-2\\log\\Lambda_P$ tem distribuição $\\chi^2_1$ assintoticamente, eliminando $\\boldsymbol{\\lambda}$ do teste.",
+  "Exige estimar $\\boldsymbol{\\lambda}$ separadamente por outro método (ex: momentos) antes de testar $\\theta_1$, introduzindo duas etapas distintas.",
+  "Não pode ser aplicado na presença de parâmetros de perturbação sem hipóteses adicionais de ortogonalidade entre $\\theta_1$ e $\\boldsymbol{\\lambda}$.",
+  "Tem distribuição $\\chi^2_{1+\\dim(\\boldsymbol{\\lambda})}$ para acomodar a incerteza adicional em $\\boldsymbol{\\lambda}$.",
+  "A presença de $\\boldsymbol{\\lambda}$ invalida o Teorema de Wilks para o teste de $\\theta_1$, exigindo simulação ou bootstrap."
+)
+
+perm <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+Ao testar $H_0: \theta_1 = \theta_{1,0}$ em um modelo com **parâmetros de perturbação** (nuisance parameters) $\boldsymbol{\lambda}$, o **TRV de perfil** é baseado na verossimilhança de perfil. Qual das alternativas descreve corretamente esse procedimento?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+O **TRV de Perfil** para $H_0: \theta_1 = \theta_{1,0}$ é:
+$$\Lambda_P = \frac{\sup_{\boldsymbol{\lambda}} L(\theta_{1,0}, \boldsymbol{\lambda})}{\sup_{\theta_1, \boldsymbol{\lambda}} L(\theta_1, \boldsymbol{\lambda})} = \frac{L_P(\theta_{1,0})}{L(\hat{\theta}_1, \hat{\boldsymbol{\lambda}})}.$$
+
+Sob condições de regularidade, $-2\log\Lambda_P \xrightarrow{D} \chi^2_1$ independentemente da dimensão de $\boldsymbol{\lambda}$.
+
+**O Teorema de Wilks se mantém:** os graus de liberdade são apenas 1 (a dimensão do parâmetro de interesse testado), **não** $1 + \dim(\boldsymbol{\lambda})$. Os parâmetros de perturbação são eliminados pela maximização no numerador, não adicionam graus de liberdade ao teste.
+
+**Não** é necessário ortogonalidade entre $\theta_1$ e $\boldsymbol{\lambda}$ (ortogonalidade simplifica cálculos, mas não é condição necessária para a validade do TRV de perfil).
+
+Meta-information
+================
+exname: Cap7S2Q9_TRV_perfil_nuisance
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

@@ -1,0 +1,55 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parâmetros aleatórios
+lambda <- sample(c(2, 3, 4, 5), 1)
+n      <- sample(c(25, 36, 50, 100), 1)
+delta  <- sample(-3:3, 1)
+sum_x  <- n * lambda + delta
+
+lambda_hat <- round(sum_x / n, 4)
+
+## Choices textuais
+all_choices <- c(
+  paste0("A equação de verossimilhança $\\frac{d\\ell}{d\\lambda} = 0$ resulta em $\\hat{\\lambda}_{MV} = \\bar{X} = ", lambda_hat, "$."),
+  paste0("A equação de verossimilhança resulta em $\\hat{\\lambda}_{MV} = \\sum X_i = ", sum_x, "$."),
+  paste0("A equação de verossimilhança é resolvida por $\\hat{\\lambda}_{MV} = 1/\\bar{X} = ", round(1/lambda_hat, 4), "$."),
+  paste0("O score para Poisson é $\\ell'(\\lambda) = \\sum X_i \\cdot \\log\\lambda - n$, e a equação de verossimilhança não possui solução fechada."),
+  paste0("A log-verossimilhança da Poisson é maximizada em $\\hat{\\lambda}_{MV} = n/\\sum X_i = ", round(n/sum_x, 4), "$.")
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+
+Para $X_i \overset{\text{iid}}{\sim} \text{Poisson}(\lambda)$, o score (derivada da log-verossimilhança) é $\frac{d\ell}{d\lambda} = \frac{\sum X_i}{\lambda} - n$. Com $n = `r n`$ e $\sum_{i=1}^n X_i = `r sum_x`$, qual das alternativas descreve corretamente a equação de verossimilhança e sua solução?
+
+Answerlist
+----------
+
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+
+A log-verossimilhança para $X_i \sim \text{Poisson}(\lambda)$ é:
+$$\ell(\lambda) = \left(\sum_{i=1}^n X_i\right)\log\lambda - n\lambda + \text{const}.$$
+O score é $\ell'(\lambda) = \sum X_i/\lambda - n$. Igualando a zero:
+$$\frac{\sum X_i}{\lambda} - n = 0 \implies \hat{\lambda}_{MV} = \frac{\sum X_i}{n} = \frac{`r sum_x`}{`r n`} = `r lambda_hat`.$$
+A segunda derivada $\ell''(\lambda) = -\sum X_i/\lambda^2 < 0$ confirma que é máximo. O score correto é $\sum X_i/\lambda - n$, não $\sum X_i \cdot \log\lambda - n$.
+
+Meta-information
+================
+exname: Cap3S2Q10_emv_score_poisson
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

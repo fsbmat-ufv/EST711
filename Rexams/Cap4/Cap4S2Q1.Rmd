@@ -1,0 +1,63 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+## Parametros
+p <- sample(c(0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9), 1)
+
+## Resposta correta e alternativas incorretas
+correct <- round(1 / (p * (1 - p)), 4)
+w1 <- round(p * (1 - p), 4)
+w2 <- round(1/p + 1/(1 - p), 4)
+w3 <- round(1/p^2 + 1/(1 - p)^2, 4)
+w4 <- round(1 / (p * (1 - p))^2, 4)
+
+## Garantir unicidade
+vals <- c(correct, w1, w2, w3, w4)
+if (length(unique(vals)) < 5) w1 <- w1 + 0.0001
+
+all_vals <- c(correct, w1, w2, w3, w4)
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+Seja $X \sim \text{Bernoulli}(p)$, com funcao de probabilidade:
+$$P(X = x; p) = p^x(1-p)^{1-x}, \quad x \in \{0, 1\}.$$
+
+A **informacao de Fisher** sobre o parametro $p$ e definida como:
+$$I(p) = E\!\left[\left(\frac{\partial}{\partial p}\log f(X; p)\right)^2\right] = \frac{1}{p(1-p)}.$$
+
+Para $p = `r p`$, qual e o valor de $I(p)$?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+Para $X \sim \text{Bernoulli}(p)$:
+$$\log f(x; p) = x\log p + (1-x)\log(1-p).$$
+$$\frac{\partial}{\partial p}\log f = \frac{x}{p} - \frac{1-x}{1-p}.$$
+$$I(p) = -E\!\left[\frac{\partial^2}{\partial p^2}\log f\right] = \frac{1}{p} + \frac{1}{1-p} = \frac{1}{p(1-p)}.$$
+
+Para $p = `r p`$:
+$$I(`r p`) = \frac{1}{`r p` \times `r 1-p`} = \frac{1}{`r p*(1-p)`} = `r correct`.$$
+
+Meta-information
+================
+exname: Cap4S2Q1_Fisher_Bernoulli
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

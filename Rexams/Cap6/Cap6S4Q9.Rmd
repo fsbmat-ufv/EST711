@@ -1,0 +1,45 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parametros
+theta0 <- sample(c(1, 2, 3), 1)
+n      <- sample(c(15, 20, 25), 1)
+alpha  <- 0.05
+
+## Choices textuais
+all_choices <- c(
+  paste0("$\\sum X_i < k$, onde $k$ e determinado por $P_{\\theta_0}(\\sum X_i < k) = \\alpha$. Taxas maiores $\\rightarrow$ somas menores."),
+  paste0("$\\sum X_i > k$ (valores grandes de $\\sum X_i$, como no teste para a media normal)."),
+  paste0("$\\bar{X} > \\theta_0 + z_{0{,}95}/\\sqrt{n} = ", round(theta0 + 1.645/sqrt(n),4), "$ (formula erronea para a exponencial)."),
+  paste0("$|\\sum X_i - n/\\theta_0| > k$ (regiao bilateral centrada na media esperada $n/\\theta_0 = ", round(n/theta0,2), "$)."),
+  paste0("$\\sum X_i = n/\\theta_0 = ", round(n/theta0,2), "$ exatamente (regiao pontual).")
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+Para $X_i \overset{\text{iid}}{\sim} \text{Exp}(\theta)$ com MLR decrescente em $\sum X_i$ (crescente em $-\sum X_i$), o UMP por Karlin-Rubin para $H_0:\theta \leq `r theta0`$ vs. $H_1:\theta > `r theta0`$ rejeita quando:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+Como a MLR e decrescente em $\sum X_i$ (crescente em $-\sum X_i$), o Teorema de Karlin-Rubin aplicado a $T = -\sum X_i$ garante que o UMP rejeita quando $-\sum X_i > k'$, ou equivalentemente $\sum X_i < k$. Isso faz sentido: taxas maiores $\theta$ implicam tempos medios $1/\theta$ menores, logo somas $\sum X_i$ menores.
+
+Meta-information
+================
+exname: Cap6S4Q9_KR_exponencial_sentido
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

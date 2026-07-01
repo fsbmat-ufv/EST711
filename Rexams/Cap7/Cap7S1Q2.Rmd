@@ -1,0 +1,61 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+sigma2 <- sample(c(1, 4, 9, 16), 1)
+
+correct <- round(1 / sigma2, 4)
+w1 <- round(1 / (2 * sigma2^2), 4)
+w2 <- round(sigma2, 4)
+w3 <- round(1 / sigma2^2, 4)
+w4 <- round(2 / sigma2, 4)
+
+# Garantir unicidade
+all_vals <- c(correct, w1, w2, w3, w4)
+if (length(unique(all_vals)) < 5) {
+  w4 <- correct + 0.5
+  all_vals <- c(correct, w1, w2, w3, w4)
+}
+
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+Para $X \sim N(\mu, \sigma^2)$ com vetor de parâmetros $\boldsymbol{\theta} = (\mu, \sigma^2)^\top$, a matriz de informação de Fisher é **diagonal**, com entradas:
+$$I_{11}(\boldsymbol{\theta}) = \frac{1}{\sigma^2}, \quad I_{22}(\boldsymbol{\theta}) = \frac{1}{2\sigma^4}.$$
+
+Com $\sigma^2 = `r sigma2`$, qual é o valor de $I_{11}(\boldsymbol{\theta})$?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+A entrada $(1,1)$ da matriz de informação de Fisher para a distribuição Normal é:
+$$I_{11}(\boldsymbol{\theta}) = \frac{1}{\sigma^2}.$$
+
+Com $\sigma^2 = `r sigma2`$:
+$$I_{11} = \frac{1}{`r sigma2`} = `r correct`.$$
+
+A entrada $(2,2)$ seria $I_{22} = 1/(2\sigma^4) = `r w1`$, que é a informação sobre $\sigma^2$, não sobre $\mu$.
+
+Meta-information
+================
+exname: Cap7S1Q2_fisher_normal_I11
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

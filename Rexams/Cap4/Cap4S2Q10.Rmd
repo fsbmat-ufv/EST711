@@ -1,0 +1,59 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+## Parametros
+theta <- sample(c(2, 3, 4, 5), 1)
+n     <- sample(c(25, 50, 100), 1)
+
+## g(theta) = theta^2, g'(theta) = 2*theta
+## I(theta) = 1/theta^2 (Exponencial)
+## CR bound para g(theta): [g'(theta)]^2 / (n*I(theta)) = (2*theta)^2 * theta^2 / n = 4*theta^4/n
+correct <- round(4 * theta^4 / n, 4)
+w1 <- round(4 * theta^2 / n, 4)
+w2 <- round(4 * theta^4 * n, 4)
+w3 <- round(2 * theta^4 / n, 4)
+w4 <- round(4 * theta^4 / (n * theta^2), 4)
+
+all_vals <- c(correct, w1, w2, w3, w4)
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+O **Limite de Cramer-Rao generalizado** para estimadores nao-viesados de $g(\theta)$ e:
+$$\text{LICR}(g(\theta)) = \frac{[g'(\theta)]^2}{n\,I(\theta)}.$$
+
+Para $X_i \overset{\text{iid}}{\sim} \text{Exp}(\theta)$ com $I(\theta) = 1/\theta^2$, considere $g(\theta) = \theta^2$ (de modo que $g'(\theta) = 2\theta$).
+
+Com $\theta = `r theta`$ e $n = `r n`$, qual e o LICR para estimadores nao-viesados de $g(\theta) = \theta^2$?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+Aplicando a formula:
+$$\text{LICR}(g(\theta)) = \frac{[g'(\theta)]^2}{n\,I(\theta)} = \frac{(2\theta)^2}{n \cdot (1/\theta^2)} = \frac{4\theta^2 \cdot \theta^2}{n} = \frac{4\theta^4}{n}.$$
+
+Para $\theta = `r theta`$ e $n = `r n`$:
+$$\text{LICR} = \frac{4 \times `r theta`^4}{`r n`} = \frac{4 \times `r theta^4`}{`r n`} = `r correct`.$$
+
+Meta-information
+================
+exname: Cap4S2Q10_CR_funcao_parametro
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

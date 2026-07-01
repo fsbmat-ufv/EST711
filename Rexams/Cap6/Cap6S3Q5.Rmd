@@ -1,0 +1,57 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parametros fixos
+mu0    <- 5
+sigma2 <- 4
+n      <- 36
+alpha  <- 0.05
+mu_alt <- c(5, 6, 7, 8, 9)
+
+## Poder para cada mu_alt
+Poder_vals <- round(1 - pnorm(qnorm(1 - alpha) - (mu_alt - mu0) / sqrt(sigma2 / n)), 4)
+
+## Pergunta sobre o terceiro valor (mu_alt[3] = 7)
+correct <- Poder_vals[3]
+w1 <- Poder_vals[2]
+w2 <- round(1 - Poder_vals[3], 4)
+w3 <- round(Poder_vals[3] - 0.1, 4)
+w4 <- round(0.05, 4)
+
+all_vals <- c(correct, w1, w2, w3, w4)
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+O teste UMP para $H_0:\mu \leq `r mu0`$ vs. $H_1:\mu > `r mu0`$ com $\sigma^2 = `r sigma2`$ e $n = `r n`$. A funcao de poder para $\mu \in \{`r paste(mu_alt, collapse=", ")`\}$ assume os valores $\{`r paste(Poder_vals, collapse=", ")`\}$ respectivamente. Qual e o poder para $\mu = `r mu_alt[3]`$ (terceiro valor)?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+Para $\mu = `r mu_alt[3]`$: Poder $= 1 - \Phi\!\left(z_{0{,}95} - \frac{`r mu_alt[3]` - `r mu0`}{\sqrt{`r sigma2`/`r n`}}\right) = 1 - \Phi\!\left(`r round(qnorm(1-alpha) - (mu_alt[3]-mu0)/sqrt(sigma2/n),4)`\right) = `r correct`$.
+
+Em $\mu = \mu_0 = `r mu0`$, o poder vale $\alpha = `r Poder_vals[1]`$ (nivel do teste).
+
+Meta-information
+================
+exname: Cap6S3Q5_UMP_funcao_poder_normal
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

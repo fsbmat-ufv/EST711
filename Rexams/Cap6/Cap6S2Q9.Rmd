@@ -1,0 +1,40 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Choices textuais
+all_choices <- c(
+  "Uma funcao da estatistica suficiente natural $T = \\sum T(X_i)$, pois a razao de verossimilhanca depende da amostra apenas via $T$.",
+  "Uma funcao das estatisticas de ordem $(X_{(1)},\\ldots,X_{(n)})$, que contem toda a informacao da amostra.",
+  "Uma funcao da media amostral $\\bar{X}$, independente da familia parametrica considerada.",
+  "Uma funcao do EMV, que por invariancia coincide com a razao de verossimilhanca em todos os casos.",
+  "Uma funcao da mediana amostral, pois ela e mais robusta e possui propriedades otimas na familia exponencial."
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+Para membros da familia exponencial uniparametrica, o teste mais poderoso obtido pelo Lema de Neyman-Pearson pode sempre ser expresso como:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+Na familia exponencial, $f(x;\theta) = \exp\{c(\theta)T(x) - d(\theta)\}h(x)$. A razao de verossimilhancas e $\Lambda = \exp\{(c(\theta_1)-c(\theta_2))\sum T(X_i) - (d(\theta_1)-d(\theta_2))\}$, que depende da amostra apenas via a estatistica suficiente $\sum T(X_i)$. Portanto o teste MP e funcao de $\sum T(X_i)$.
+
+Meta-information
+================
+exname: Cap6S2Q9_NP_suficiencia
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

@@ -1,0 +1,55 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parametros
+lambda0 <- sample(c(3, 4, 5), 1)
+n       <- sample(c(20, 25, 30), 1)
+alpha   <- 0.05
+
+## Valor critico: quantil 0.95 da Poisson(n*lambda0)
+k_val <- as.integer(qpois(1 - alpha, n * lambda0))
+
+## Respostas
+correct <- k_val
+w1 <- as.integer(k_val + 1)
+w2 <- as.integer(k_val - 1)
+w3 <- as.integer(qpois(1 - 2 * alpha, n * lambda0))
+w4 <- as.integer(round(n * lambda0 + 1.645 * sqrt(n * lambda0)))
+
+all_vals <- c(correct, w1, w2, w3, w4)
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+Para $X_i \overset{\text{iid}}{\sim} \text{Poisson}(\lambda)$, a familia tem MLR crescente em $\sum X_i$. O UMP para $H_0:\lambda \leq `r lambda0`$ vs. $H_1:\lambda > `r lambda0`$ por Karlin-Rubin rejeita quando $\sum X_i > k$. Sob $H_0$ com igualdade ($\lambda = `r lambda0`$), $\sum X_i \sim \text{Poisson}(`r n*lambda0`)$. O valor critico $k$ tal que $P(\text{Pois}(`r n*lambda0`) > k) \leq 0{,}05$ e:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+$k = \text{qpois}(0{,}95, `r n*lambda0`) = `r k_val`$. Isso garante $P(\text{Pois}(`r n*lambda0`) > `r k_val`) \leq 0{,}05$.
+
+Nota: o quantil 0,95 de uma distribuicao discreta satisfaz $P(X \leq k) \geq 0{,}95$, portanto $P(X > k) \leq 0{,}05$.
+
+Meta-information
+================
+exname: Cap6S4Q5_KR_Poisson_valor_critico
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

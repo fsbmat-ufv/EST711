@@ -1,0 +1,53 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parametros fixos (relacao 1:4 entre n1 e n2)
+sigma <- sample(c(1, 2, 3, 4), 1)
+n1    <- 25
+n2    <- 100
+
+## Respostas: razao largura(n1)/largura(n2) = sqrt(n2/n1)
+correct <- round(sqrt(n2 / n1), 4)
+w1 <- round(n2 / n1, 4)
+w2 <- round(sqrt(n1 / n2), 4)
+w3 <- round(n1 / n2, 4)
+w4 <- round(log(n2 / n1), 4)
+
+all_vals <- c(correct, w1, w2, w3, w4)
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+Duas amostras independentes provem de populacoes com $\sigma = `r sigma`$. A primeira tem $n_1 = `r n1`$ e a segunda tem $n_2 = `r n2`$. A largura do IC 95% e proporcional a $1/\sqrt{n}$. Qual e a razao entre a largura do IC obtido com $n_1$ e a largura do IC obtido com $n_2$?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+A largura do IC 95% e $2 \times 1{,}96\,\sigma/\sqrt{n}$. A razao das larguras e:
+$$\frac{L_{n_1}}{L_{n_2}} = \frac{\sigma/\sqrt{n_1}}{\sigma/\sqrt{n_2}} = \sqrt{\frac{n_2}{n_1}} = \sqrt{\frac{`r n2`}{`r n1`}} = `r correct`.$$
+
+Quadruplicar o tamanho amostral reduz a largura do IC pela metade. Erros comuns: usar a razao $n_2/n_1$ sem a raiz; inverter a razao; usar logaritmo.
+
+Meta-information
+================
+exname: Cap5S1Q6_largura_IC
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

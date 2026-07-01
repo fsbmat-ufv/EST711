@@ -1,0 +1,40 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Choices textuais
+all_choices <- c(
+  "Um teste de tamanho $\\alpha$ cuja funcao poder $\\gamma(\\theta) \\geq \\gamma^*(\\theta)$ para todo $\\theta \\in \\Omega_1$, onde $\\gamma^*$ e a funcao poder de qualquer outro teste de tamanho $\\alpha$.",
+  "O teste que minimiza a probabilidade de Erro Tipo II para um unico valor alternativo de $\\theta$.",
+  "O teste que maximiza $\\alpha + (1-\\beta)$ sobre todos os testes possiveis.",
+  "O teste mais poderoso para hipoteses simples, estendido a hipoteses compostas por continuidade.",
+  "O teste com maior poder para o pior caso de $\\theta \\in \\Omega_1$ (criterio minimax)."
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+Um teste uniformemente mais poderoso (UMP) de tamanho $\alpha$ e definido como:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+Um teste UMP tem tamanho $\alpha$ E domina qualquer outro teste de tamanho $\alpha$ em termos de poder para TODOS os valores alternativos $\theta \in \Omega_1$ simultaneamente. Isso e mais forte que maximizar o poder para um unico $\theta_1$ (MP, opcao 2) ou usar criterio minimax (opcao 5).
+
+Meta-information
+================
+exname: Cap6S3Q1_def_UMP
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

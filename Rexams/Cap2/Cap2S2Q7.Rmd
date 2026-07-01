@@ -1,0 +1,67 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parâmetros aleatórios
+mu_hat  <- sample(2:8, 1)
+sigma2  <- sample(1:9, 1)
+n       <- sample(c(36, 64, 100), 1)
+sigma_hat <- sqrt(sigma2)
+
+## Para g(x) = sqrt(x), g'(x) = 1/(2*sqrt(x))
+## Margem de erro = 1.96 * |g'(mu_hat)| * sigma_hat / sqrt(n)
+##                = 1.96 * sigma_hat / (2 * sqrt(mu_hat) * sqrt(n))
+me_correct <- round(1.96 * sigma_hat / (2 * sqrt(mu_hat) * sqrt(n)), 4)
+
+## Alternativas (textuais)
+all_choices <- c(
+  paste0("$1{,}96 \\cdot \\dfrac{\\hat{\\sigma}}{2\\sqrt{\\hat{\\mu}}\\,\\sqrt{n}} = 1{,}96 \\cdot \\dfrac{",
+         round(sigma_hat,4), "}{2\\sqrt{", mu_hat, "} \\cdot \\sqrt{", n, "}} = ", me_correct, "$"),
+  paste0("$1{,}96 \\cdot \\dfrac{\\hat{\\sigma}}{\\sqrt{n}} = 1{,}96 \\cdot \\dfrac{",
+         round(sigma_hat,4), "}{\\sqrt{", n, "}} = ", round(1.96*sigma_hat/sqrt(n),4), "$ (sem o fator $g'$)."),
+  paste0("$1{,}96 \\cdot \\dfrac{\\hat{\\sigma}^2}{4\\hat{\\mu}\\,n} = ",
+         round(1.96*sigma2/(4*mu_hat*n),4), "$ (variância, não desvio padrão)."),
+  paste0("$1{,}96 \\cdot \\hat{\\sigma} \\cdot g'(\\hat{\\mu}) = 1{,}96 \\cdot ",
+         round(sigma_hat,4), " \\cdot ", round(1/(2*sqrt(mu_hat)),4), " = ",
+         round(1.96*sigma_hat/(2*sqrt(mu_hat)),4), "$ (sem dividir por $\\sqrt{n}$)."),
+  paste0("$\\dfrac{1{,}96}{g'(\\hat{\\mu}) \\cdot n} = \\dfrac{1{,}96}{",
+         round(1/(2*sqrt(mu_hat)),4), " \\cdot ", n, "} = ",
+         round(1.96/(1/(2*sqrt(mu_hat))*n),4), "$ (fórmula incorreta).")
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+
+Pelo Método Delta com $g(x) = \sqrt{x}$, o intervalo de confiança assintótico de 95% para $\sqrt{\mu}$ é $\sqrt{\hat{\mu}} \pm$ (margem de erro). Qual é a margem de erro correta usando $\hat{\mu} = `r mu_hat`$, $\hat{\sigma} = `r round(sigma_hat,4)`$ e $n = `r n`$?
+
+Answerlist
+----------
+
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+
+Pelo Método Delta, $\sqrt{n}(\sqrt{\bar{X}_n} - \sqrt{\mu}) \xrightarrow{D} N(0, [g'(\mu)]^2\sigma^2) = N\!\left(0, \frac{\sigma^2}{4\mu}\right)$.
+
+O desvio padrão assintótico de $\sqrt{\bar{X}_n}$ é $\dfrac{\sigma}{2\sqrt{\mu}\sqrt{n}}$, estimado por $\dfrac{\hat{\sigma}}{2\sqrt{\hat{\mu}}\sqrt{n}}$.
+
+A margem de erro a 95% é:
+$$1{,}96 \cdot \frac{\hat{\sigma}}{2\sqrt{\hat{\mu}}\,\sqrt{n}} = 1{,}96 \cdot \frac{`r round(sigma_hat,4)`}{2\sqrt{`r mu_hat`} \cdot \sqrt{`r n`}} = `r me_correct`$$
+
+Meta-information
+================
+exname: Cap2S2Q7_delta_IC_sqrt
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE
+```

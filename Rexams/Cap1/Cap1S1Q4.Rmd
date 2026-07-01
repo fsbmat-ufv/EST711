@@ -1,0 +1,57 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parâmetros aleatórios
+theta <- sample(3:9, 1)
+n     <- sample(c(10, 25, 50, 100, 200), 1)
+
+## Alternativas (textuais)
+all_choices <- c(
+  paste0("$", theta, "$ (o próprio parâmetro $\\theta$)."),
+  "$0$.",
+  paste0("$", theta, "/2 = ", theta/2, "$ (metade de $\\theta$)."),
+  paste0("$\\theta/n = ", theta, "/", n, " = ", round(theta/n, 4), "$."),
+  paste0("$2\\theta = ", 2*theta, "$.")
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+
+Seja $X_1, X_2, \ldots, X_n \overset{\text{iid}}{\sim} U(0, \theta)$ com $\theta = `r theta`$, e defina o estimador $Y_n = \max\{X_1, \ldots, X_n\}$ (o máximo amostral).
+
+Qual é o limite em probabilidade de $Y_n$ quando $n \to \infty$?
+
+Answerlist
+----------
+
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+
+Para $X_i \overset{\text{iid}}{\sim} U(0,\theta)$, o máximo amostral $Y_n = \max\{X_1,\ldots,X_n\}$ é o estimador de máxima verossimilhança de $\theta$.
+
+A função de distribuição acumulada de $Y_n$ é $F_{Y_n}(y) = (y/\theta)^n$ para $0 \leq y \leq \theta$.
+
+Para qualquer $\varepsilon > 0$:
+$$P(|Y_n - \theta| \geq \varepsilon) = P(Y_n \leq \theta - \varepsilon) = \left(\frac{\theta - \varepsilon}{\theta}\right)^n \to 0$$
+
+portanto $Y_n \xrightarrow{P} \theta = `r theta`$.
+
+Meta-information
+================
+exname: Cap1S1Q4_max_uniforme
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE
+```

@@ -1,0 +1,43 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  x <- sample(-3:6, 5, replace = FALSE)
+  tau <- sample(c(0.2, 0.4, 0.6, 0.8), 5, replace = TRUE)
+  correct <- sum(tau * x)/sum(tau)
+  vals <- round(c(correct, mean(x), sum(tau * x)/length(x),
+                  sum((1 - tau) * x)/sum(1 - tau), median(x)), 2)
+  if (length(unique(vals)) == 5L) break
+}
+x_txt <- paste(x, collapse = ", ")
+tau_txt <- paste(sprintf("%.1f", tau), collapse = ", ")
+opts <- sprintf("$%.2f$", vals)
+```
+
+Question
+========
+Em uma mistura de Normais com variâncias conhecidas, observam-se
+$\mathbf x=(`r x_txt`)$ e, para o primeiro componente, as responsabilidades são
+$\boldsymbol\tau=(`r tau_txt`)$. Qual é a atualização EM da média $\mu_1$?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+A média do componente é atualizada pela média ponderada das observações:
+$$
+\mu_1^{(t+1)}=\frac{\sum_i\tau_i x_i}{\sum_i\tau_i}
+=`r sprintf('%.2f', correct)`.
+$$
+
+Meta-information
+================
+exname: Cap8S1Q5_atualizacao_media_normal
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

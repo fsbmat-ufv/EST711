@@ -1,0 +1,57 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+## Parametros
+p <- sample(c(0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8), 1)
+n <- sample(c(25, 50, 100, 200), 1)
+
+## LICR para Bernoulli: p*(1-p)/n
+correct <- round(p * (1 - p) / n, 4)
+w1 <- round(p * (1 - p) * n, 4)
+w2 <- round(p * (1 - p) / n^2, 4)
+w3 <- round(sqrt(p * (1 - p) / n), 4)
+w4 <- round(p * (1 - p) / (n - 1), 4)
+
+all_vals <- c(correct, w1, w2, w3, w4)
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+Para $X_i \overset{\text{iid}}{\sim} \text{Bernoulli}(p)$, a informacao de Fisher total de $n$ observacoes e:
+$$I_n(p) = \frac{n}{p(1-p)}.$$
+
+O **limite de Cramer-Rao** para a variancia de estimadores nao-viesados de $p$ e:
+$$\text{LICR}(p) = \frac{1}{I_n(p)} = \frac{p(1-p)}{n}.$$
+
+Para $p = `r p`$ e $n = `r n`$, qual e o LICR?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+O limite inferior de Cramer-Rao para estimadores nao-viesados de $p$ e:
+$$\text{LICR}(p) = \frac{p(1-p)}{n} = \frac{`r p` \times `r 1-p`}{`r n`} = \frac{`r p*(1-p)`}{`r n`} = `r correct`.$$
+
+Note que a media amostral $\bar{X}$ tem $\text{Var}(\bar{X}) = p(1-p)/n$, que coincide com o LICR, confirmando que $\bar{X}$ e o ENVVUM para $p$ no modelo Bernoulli.
+
+Meta-information
+================
+exname: Cap4S2Q9_CR_Bernoulli
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

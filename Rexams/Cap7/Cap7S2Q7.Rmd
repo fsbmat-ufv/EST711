@@ -1,0 +1,63 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+SSR <- round(runif(1, 20, 80), 2)
+SSE <- round(runif(1, 10, 40), 2)
+k   <- sample(c(2, 3, 4), 1)
+n   <- sample(c(25, 36, 49, 64), 1)
+
+F_val <- round((SSR / k) / (SSE / (n - k - 1)), 4)
+
+correct <- F_val
+w1      <- round((SSR / k) / (SSE / (n - k)), 4)
+w2      <- round((SSR / (k + 1)) / (SSE / (n - k - 1)), 4)
+w3      <- round((SSR * k) / (SSE / (n - k - 1)), 4)
+w4      <- round(SSR / SSE, 4)
+
+all_vals <- c(correct, w1, w2, w3, w4)
+
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+Na **regressão linear múltipla** com $k = `r k`$ preditores e $n = `r n`$ observações, o **Teste F** para $H_0: \beta_1 = \cdots = \beta_k = 0$ usa a estatística:
+$$F = \frac{SSR/k}{SSE/(n-k-1)} \sim F_{k,\,n-k-1} \text{ sob } H_0.$$
+
+Com $SSR = `r SSR`$, $SSE = `r SSE`$, $k = `r k`$, $n = `r n`$, qual é o valor observado de $F$?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+**Cálculo:**
+$$F = \frac{SSR/k}{SSE/(n-k-1)} = \frac{`r SSR`/`r k`}{`r SSE`/(`r n`-`r k`-1)} = \frac{`r round(SSR/k,4)`}{`r round(SSE/(n-k-1),4)`} = `r F_val`.$$
+
+**Graus de liberdade:** $F \sim F_{`r k`,\,`r n-k-1`}$ sob $H_0$.
+
+**Erros comuns:**
+- Usar $n-k$ em vez de $n-k-1$ no denominador (esquece do intercepto): produziria $F = `r w1`$.
+- Usar $k+1$ no numerador: incorreto, pois não se testa o intercepto, produziria $F = `r w2`$.
+- Razão direta $SSR/SSE = `r w4`$: ignora os graus de liberdade.
+
+Meta-information
+================
+exname: Cap7S2Q7_teste_F_regressao
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

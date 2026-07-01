@@ -1,0 +1,34 @@
+```{r, echo=FALSE, results="hide"}
+modelo <- sample(c("uma mistura de duas Normais", "um modelo com dados censurados",
+                   "um modelo com classes latentes"), 1)
+tol <- sample(c(1e-4, 1e-5, 1e-6), 1)
+```
+
+Question
+========
+Ao ajustar `r modelo` pelo algoritmo EM, usa-se tolerância `r format(tol, scientific = TRUE)` e cada passo M maximiza a função construída no passo E. Qual propriedade descreve corretamente a sequência de log-verossimilhanças observadas produzida pelo EM?
+
+Answerlist
+----------
+* Ela não diminui a cada iteração, embora isso não garanta convergência ao máximo global.
+* Ela aumenta estritamente em toda iteração e, por isso, sempre converge ao máximo global.
+* Ela pode diminuir livremente, pois apenas a verossimilhança dos dados completos é relevante.
+* Ela permanece constante desde a primeira iteração, independentemente dos valores iniciais.
+* Ela é monotônica somente quando não há variáveis latentes no modelo.
+
+Solution
+========
+O passo E constrói uma função auxiliar minorante da log-verossimilhança observada no ponto corrente, e o passo M maximiza essa função. Portanto, o EM satisfaz
+$$
+\ell(\boldsymbol\theta^{(t+1)};\mathbf{x})\geq
+\ell(\boldsymbol\theta^{(t)};\mathbf{x}).
+$$
+A monotonicidade não elimina máximos locais nem pontos de sela; por isso, diferentes inicializações podem levar a soluções distintas.
+
+Meta-information
+================
+exname: Cap8S1Q1_monotonicidade_EM
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

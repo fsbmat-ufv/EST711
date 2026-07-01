@@ -1,0 +1,69 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parâmetros aleatórios
+n          <- sample(c(25, 36, 50, 100), 1)
+mu_true    <- sample(c(2, 4, 6, 8), 1)
+sigma_true <- sample(c(1, 2, 3), 1)
+
+sum1 <- round(n * mu_true + rnorm(1, 0, 1), 2)
+sum2 <- round(n * (mu_true^2 + sigma_true^2) + rnorm(1, 0, 2), 2)
+
+xbar <- round(sum1 / n, 4)
+
+## Resposta correta
+correct <- round(sum2 / n - xbar^2, 4)
+
+## Alternativas incorretas plausíveis
+w1 <- round(sum2 / n - xbar^2 + 1 / n, 4)
+w2 <- round((sum2 - sum1^2 / n) / (n - 1), 4)
+w3 <- round(sum2 / n, 4)
+w4 <- round(abs(sum2 / n - xbar^2 - 0.5), 4)
+
+## Garantir unicidade
+if (w1 == correct) w1 <- round(correct + 0.05, 4)
+if (w2 == correct) w2 <- round(w2 + 0.1, 4)
+if (w2 == w1)      w2 <- round(w2 - 0.15, 4)
+if (w3 == correct || w3 == w1 || w3 == w2) w3 <- round(sum2 / n + 0.5, 4)
+if (w4 == correct || w4 == w1 || w4 == w2 || w4 == w3) w4 <- round(abs(correct - 1), 4)
+
+## Embaralhamento SEMPRE
+all_vals <- c(correct, w1, w2, w3, w4)
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+
+Seja $X_i \overset{\text{iid}}{\sim} N(\mu, \sigma^2)$ com ambos os parâmetros desconhecidos. Com $n = `r n`$, $\sum_{i=1}^n X_i = `r sum1`$ e $\sum_{i=1}^n X_i^2 = `r sum2`$, os EMM são $\hat{\mu}_{MM} = \bar{X} = `r xbar`$ e $\hat{\sigma}^2_{MM} = \frac{1}{n}\sum X_i^2 - \bar{X}^2$. Calcule $\hat{\sigma}^2_{MM}$.
+
+Answerlist
+----------
+
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+
+Os dois primeiros momentos teóricos da $N(\mu, \sigma^2)$ são $\mu_1 = \mu$ e $\mu_2 = \mu^2 + \sigma^2$. O método dos momentos iguala $m_1 = \bar{X} = `r xbar`$ e $m_2 = \sum X_i^2/n = `r round(sum2/n, 4)`$. De $\hat{\sigma}^2_{MM} = m_2 - m_1^2$:
+$$\hat{\sigma}^2_{MM} = \frac{`r sum2`}{`r n`} - (`r xbar`)^2 = `r round(sum2/n,4)` - `r round(xbar^2,4)` = `r correct`.$$
+
+Meta-information
+================
+exname: Cap3S1Q9_emm_normal_dois_param
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

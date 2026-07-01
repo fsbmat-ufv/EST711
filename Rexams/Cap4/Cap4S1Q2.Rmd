@@ -1,0 +1,57 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+## Parametros
+vies  <- sample(c(0.5, 1, 1.5, 2), 1)
+var_T <- sample(c(1, 2, 4, 9, 16), 1)
+
+## Resposta correta e alternativas incorretas
+correct <- var_T + vies^2
+w1 <- var_T + vies
+w2 <- var_T * vies^2
+w3 <- var_T + 2 * vies
+w4 <- round(sqrt(var_T + vies^2), 4)
+
+all_vals <- c(correct, w1, w2, w3, w4)
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+Um estimador $T$ de um parâmetro $\theta$ possui vício $b = `r vies`$ e variância $\text{Var}(T) = `r var_T`$.
+
+O **Erro Quadrático Médio** (EQM) de um estimador é dado por:
+$$\text{EQM}(T) = \text{Var}(T) + [B(T)]^2,$$
+onde $B(T)$ é o vício do estimador.
+
+Qual é o EQM de $T$?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+Usando a decomposição do EQM:
+$$\text{EQM}(T) = \text{Var}(T) + [B(T)]^2 = `r var_T` + (`r vies`)^2 = `r var_T` + `r vies^2` = `r correct`.$$
+
+As demais alternativas correspondem a confusões comuns: somar o vício em vez de seu quadrado ($`r w1`$), multiplicar variância e vício ao quadrado ($`r w2`$), dobrar o vício ($`r w3`$), ou tomar a raiz quadrada do EQM ($`r w4`$).
+
+Meta-information
+================
+exname: Cap4S1Q2_EQM_vicio_variancia
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

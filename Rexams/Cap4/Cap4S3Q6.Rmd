@@ -1,0 +1,49 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+## Parametros
+sigma2 <- sample(c(1, 2, 4, 9), 1)
+
+## Choices textuais
+all_choices <- c(
+  "A estatistica suficiente e completa para $\\mu$ e $\\bar{X}_n$, e portanto $\\bar{X}_n$ e o ENVVUM para $\\mu$.",
+  "A estatistica suficiente para $\\mu$ e $\\sum X_i^2$, pois a Normal depende de $\\mu$ atraves dos desvios ao quadrado.",
+  "A familia exponencial exige dois parametros para a Normal, portanto $\\bar{X}$ sozinho nao e suficiente para $\\mu$ quando $\\sigma^2$ e fixo.",
+  "A suficiencia de $\\bar{X}$ vale apenas assintoticamente (para $n > 30$); amostras pequenas requerem o vetor completo.",
+  "O ENVVUM de $\\mu$ e $\\tilde{X}$ (mediana amostral), pois e mais robusto e tem variancia assintoticamente equivalente a $\\bar{X}$."
+)
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+Seja $X \sim N(\mu, \sigma^2)$ com $\sigma^2 = `r sigma2`$ fixo e $\mu$ desconhecido. Esta distribuicao pertence a familia exponencial com $T(x) = x$ e parametro natural $c(\mu) = \mu/\sigma^2$.
+
+Para $n$ observacoes iid, a estatistica suficiente natural e $\sum_{i=1}^n X_i$ (equivalente a $\bar{X}$).
+
+Qual das seguintes afirmacoes e **correta**?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+A afirmacao correta e: a estatistica suficiente e completa para $\mu$ e $\bar{X}_n$, e pelo Teorema de Lehmann-Scheffe, $\bar{X}_n$ e o ENVVUM para $\mu$.
+
+Justificativa: Como $N(\mu, \sigma^2)$ com $\sigma^2$ fixo pertence a familia exponencial regular de 1 parametro, a estatistica suficiente natural $T = \sum X_i$ (equivalente a $\bar{X}$) e **completa**. Pelo Teorema de Lehmann-Scheffe, qualquer funcao nao-viesada de $T$ e o unico ENVVUM.
+
+Como $\bar{X}$ e nao-viesado para $\mu$ e funcao de $T = \sum X_i$, concluimos que $\bar{X}$ e o ENVVUM para $\mu$.
+
+Meta-information
+================
+exname: Cap4S3Q6_Normal_familia_exponencial_ENVVUM
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

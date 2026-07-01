@@ -1,0 +1,49 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parametros
+mu0    <- sample(c(5, 8, 10), 1)
+sigma2 <- sample(c(1, 4, 9), 1)
+n      <- sample(c(25, 36, 49, 64), 1)
+alpha  <- 0.05
+
+ep    <- round(sqrt(sigma2 / n), 4)
+c_val <- round(mu0 + 1.645 * sqrt(sigma2 / n), 4)
+
+## Choices textuais
+all_choices <- c(
+  paste0("$\\bar{X} > ", mu0, " + 1{,}645\\cdot", ep, " = ", c_val, "$ (equivale a $Z > 1{,}645$)."),
+  paste0("$\\bar{X} > ", mu0, " + 1{,}96\\cdot", ep, " = ", round(mu0 + 1.96*sqrt(sigma2/n),4), "$."),
+  paste0("$|\\bar{X} - ", mu0, "| > 1{,}96\\cdot", ep, "$ (regiao bilateral)."),
+  paste0("$\\bar{X} < ", mu0, " - 1{,}645\\cdot", ep, " = ", round(mu0 - 1.645*sqrt(sigma2/n),4), "$ (unilateral esquerdo)."),
+  paste0("$\\bar{X} > ", mu0, " + 2{,}576\\cdot", ep, " = ", round(mu0 + 2.576*sqrt(sigma2/n),4), "$ (nivel $\\alpha = 0{,}005$).")
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+Para $X_i \overset{\text{iid}}{\sim} N(\mu,\sigma^2)$ com $\sigma^2 = `r sigma2`$ conhecido, o teste UMP de tamanho $\alpha = 0{,}05$ para $H_0:\mu \leq `r mu0`$ vs. $H_1:\mu > `r mu0`$ rejeita $H_0$ quando:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+Pelo Teorema de Karlin-Rubin (a familia Normal tem MLR crescente em $\bar{X}$), o UMP rejeita quando $\bar{X} > \mu_0 + z_{0{,}95}\sqrt{\sigma^2/n} = `r mu0` + 1{,}645 \times `r round(sqrt(sigma2/n),4)` = `r c_val`$.
+
+Meta-information
+================
+exname: Cap6S3Q2_UMP_normal_unilateral
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

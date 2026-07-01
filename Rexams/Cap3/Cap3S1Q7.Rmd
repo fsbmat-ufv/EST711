@@ -1,0 +1,43 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Choices textuais
+all_choices <- c(
+  "Pela Lei dos Grandes Números, os momentos amostrais $m_k = \\frac{1}{n}\\sum X_i^k$ convergem em probabilidade para os momentos teóricos $\\mu_k$. Se os parâmetros são funções contínuas dos momentos, os EMM são consistentes.",
+  "Os EMM são sempre não-viesados, o que implica consistência.",
+  "Os EMM minimizam o erro quadrático médio, garantindo consistência.",
+  "A consistência dos EMM segue apenas para distribuições da família exponencial.",
+  "Os EMM são consistentes apenas se a distribuição for simétrica."
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+
+Qual propriedade geralmente garante que estimadores pelo método dos momentos (EMM) são consistentes?
+
+Answerlist
+----------
+
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+
+A consistência dos EMM é garantida pela Lei dos Grandes Números (LGN): para $X_i$ i.i.d. com $E|X^k| < \infty$, temos $m_k = \frac{1}{n}\sum X_i^k \xrightarrow{P} \mu_k = E(X^k)$. Se $\hat{\theta} = g(m_1, \ldots, m_k)$ e $g$ é uma função contínua, então pelo teorema de mapeamento contínuo $\hat{\theta} \xrightarrow{P} g(\mu_1, \ldots, \mu_k) = \theta$. Não-viesamento não implica consistência em geral; e a LGN não exige simetria nem família exponencial.
+
+Meta-information
+================
+exname: Cap3S1Q7_emm_consistencia
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

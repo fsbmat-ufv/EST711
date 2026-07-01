@@ -1,0 +1,40 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Choices textuais
+all_choices <- c(
+  "A familia de distribuicoes tem razao de verossimilhanca monotonica (RVM) em alguma estatistica $T$, pelo Teorema de Karlin-Rubin.",
+  "A familia pertence a familia exponencial com parametro escalar (condicao suficiente, mas nao necessaria para a existencia de UMP).",
+  "O estimador de maxima verossimilhanca $\\hat{\\theta}$ existe e e unico para todos os valores da amostra.",
+  "O espaco parametrico $\\Omega$ e um intervalo compacto e a verossimilhanca e continua em $\\theta$.",
+  "A funcao de poder e continua em $\\theta$, o que garante a existencia de maximo."
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+A existencia de um teste UMP para hipoteses unilaterais esta garantida quando:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+O Teorema de Karlin-Rubin estabelece: se a familia tem razao de verossimilhanca monotonica (RVM/MLR) em $T$, entao o teste que rejeita $H_0:\theta \leq \theta_0$ quando $T > k$ e UMP de tamanho $\alpha$. A familia exponencial tem MLR (e portanto e um caso especial), mas a condicao geral e a MLR, nao a familia exponencial especificamente.
+
+Meta-information
+================
+exname: Cap6S3Q7_UMP_MLR_Karlin_Rubin
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

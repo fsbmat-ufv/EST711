@@ -1,0 +1,44 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parametros (contexto)
+alpha  <- sample(c(0.05, 0.01, 0.10), 1)
+theta0 <- sample(c(2, 4, 6, 8), 1)
+
+## Choices textuais
+all_choices <- c(
+  paste0("Igual ao nivel de significancia $\\alpha = ", alpha, "$, pois $\\gamma(\\theta_0) = P_{\\theta_0}[\\text{rejeitar } H_0] = \\alpha$."),
+  paste0("Igual a $1 - \\alpha = ", round(1-alpha,2), "$, pois e a probabilidade de nao rejeitar $H_0$ quando ela e verdadeira."),
+  "Igual ao poder $1 - \\beta$, que e sempre maior que $\\alpha$.",
+  "Igual a 0, pois quando $H_0$ e verdadeira em $\\theta_0$ nunca se rejeita $H_0$.",
+  "Igual a $\\beta$ (probabilidade de Erro Tipo II), pois $\\gamma(\\theta_0)$ mede o erro cometido sob $H_0$."
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+A funcao de poder de um teste e $\gamma(\theta) = P_\theta[\text{rejeitar } H_0]$. Para $H_0: \theta = `r theta0`$ com nivel $\alpha = `r alpha`$, o valor de $\gamma(\theta_0) = \gamma(`r theta0`)$ e:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+Por definicao do nivel de significancia, $\gamma(\theta_0) = P_{\theta_0}[\text{rejeitar } H_0] = \alpha$. A funcao de poder avaliada no valor nulo e justamente o nivel do teste. Ela nao e zero (o teste pode rejeitar mesmo sob $H_0$, com probabilidade $\alpha$); nao e $1-\alpha$ (que seria a probabilidade de nao rejeitar); e nao e $\beta$ (que e avaliado sob $H_1$).
+
+Meta-information
+================
+exname: Cap6S1Q3_funcao_poder_em_theta0
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

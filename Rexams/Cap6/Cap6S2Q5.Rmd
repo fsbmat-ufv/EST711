@@ -1,0 +1,45 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parametros
+theta0 <- sample(c(1, 2, 3), 1)
+theta1 <- theta0 + sample(c(2, 3, 4), 1)
+n      <- sample(c(10, 15, 20, 25), 1)
+
+## Choices textuais
+all_choices <- c(
+  "$\\sum X_i < k'$ (regiao critica para valores pequenos de $\\sum X_i$, pois taxas maiores geram somas menores em distribuicoes exponenciais).",
+  "$\\sum X_i > k'$ (valores grandes de $\\sum X_i$, analogamente ao teste para a media normal).",
+  "$\\bar{X} > k'$, pois o teste MP sempre usa a media amostral.",
+  "$\\bar{X} = 1/\\theta_1$, que e a media sob $H_1$.",
+  "$\\sum X_i$ fora de um intervalo $(k_1, k_2)$, pois o teste e bilateral."
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+Para $X_i \overset{\text{iid}}{\sim} \text{Exp}(\theta)$, testando $H_0:\theta = `r theta0`$ vs. $H_1:\theta = `r theta1`$ com $\theta_1 > \theta_0$. A razao de verossimilhanca e $\Lambda = (\theta_1/\theta_0)^n \exp\{-(\theta_1-\theta_0)\sum X_i\}$. Como $\theta_1 > \theta_0$, o expoente $-(\theta_1-\theta_0)$ e negativo, portanto $\Lambda > k$ equivale a:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+$\log\Lambda = n\log(\theta_1/\theta_0) - (\theta_1-\theta_0)\sum X_i$. Como $\theta_1 > \theta_0$, o coeficiente de $\sum X_i$ e $-(\theta_1-\theta_0) < 0$, portanto $\log\Lambda$ e DECRESCENTE em $\sum X_i$. A condicao $\Lambda > k$ (equivalentemente $\log\Lambda > \log k$) e satisfeita para valores PEQUENOS de $\sum X_i$.
+
+Meta-information
+================
+exname: Cap6S2Q5_NP_exponencial
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

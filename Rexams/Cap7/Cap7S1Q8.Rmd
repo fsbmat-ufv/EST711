@@ -1,0 +1,51 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+alpha_true <- sample(c(2, 3, 4, 5), 1)
+beta_true  <- sample(c(1, 2, 3), 1)
+
+all_choices <- c(
+  "No caso multiparamétrico, a variância assintótica de $\\hat{\\beta}_{MV}$ leva em conta a informação cruzada entre $\\hat{\\alpha}$ e $\\hat{\\beta}$, dada pela matriz de informação inversa $I(\\alpha, \\beta)^{-1}$.",
+  "A variância assintótica de $\\hat{\\beta}_{MV}$ é simplesmente $1/I_{22}(\\alpha,\\beta)$, ignorando os termos fora da diagonal da matriz de informação.",
+  "No caso Gama, os EMVs de $\\alpha$ e $\\beta$ são assintoticamente independentes, pois a distribuição pertence à família exponencial.",
+  "A variância assintótica de $\\hat{\\beta}_{MV}$ é $\\beta^2/(\\alpha \\cdot n)$ para qualquer $n$ grande.",
+  "A matriz de informação de Fisher da distribuição Gama é sempre diagonal, sem termos de covariância entre $\\alpha$ e $\\beta$."
+)
+
+perm <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+Para $X \sim \text{Gama}(\alpha, \beta)$ com função de densidade $f(x) = \frac{\beta^\alpha}{\Gamma(\alpha)} x^{\alpha-1} e^{-\beta x}$, os EMVs $\hat{\alpha}_{MV}$ e $\hat{\beta}_{MV}$ são obtidos resolvendo o **sistema de equações de score conjuntas**. No verdadeiro valor $(\alpha, \beta) = (`r alpha_true`, `r beta_true`)$, qual afirmação sobre a variância assintótica de $\hat{\beta}_{MV}$ é **correta**?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+A matriz de informação de Fisher para a distribuição Gama$(\alpha, \beta)$ é:
+$$I(\alpha, \beta) = \begin{pmatrix} \psi'(\alpha) & -1/\beta \\ -1/\beta & \alpha/\beta^2 \end{pmatrix},$$
+onde $\psi'(\alpha) = \sum_{k=0}^\infty \frac{1}{(\alpha+k)^2}$ é a função trigamma.
+
+**Fora da diagonal** (covariância entre os scores de $\alpha$ e $\beta$) é $-1/\beta \neq 0$, portanto a matriz de informação **não é diagonal** e os EMVs **não são assintoticamente independentes**.
+
+A variância assintótica de $\hat{\beta}_{MV}$ é $[I(\alpha,\beta)^{-1}]_{22}$, que depende de **todos** os elementos de $I$ (inclusive os termos cruzados), via fórmula de inversão de matrizes $2\times 2$:
+$$[I^{-1}]_{22} = \frac{I_{11}}{\det(I)} = \frac{\psi'(\alpha)}{\psi'(\alpha)\,\alpha/\beta^2 - 1/\beta^2}.$$
+
+Ignorar os termos fora da diagonal superestima a variância assintótica.
+
+Meta-information
+================
+exname: Cap7S1Q8_fisher_gama_multi
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

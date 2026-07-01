@@ -1,0 +1,42 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Choices textuais
+all_choices <- c(
+  "$f(x;\\theta_1)/f(x;\\theta_2) = \\exp\\{(c(\\theta_1)-c(\\theta_2))T(x) - (d(\\theta_1)-d(\\theta_2))\\}$ e crescente em $T(x)$ quando $c(\\theta_1) > c(\\theta_2)$.",
+  "A familia exponencial sempre tem MLR por definicao, sem necessidade de verificar condicoes adicionais.",
+  "A MLR decorre do fato de que $\\sum T(X_i)$ e estatistica suficiente para $\\theta$ na familia exponencial.",
+  "A MLR e consequencia direta da completude da estatistica suficiente na familia exponencial.",
+  "A familia exponencial tem MLR em $T(x)$ somente se $\\theta$ for o parametro natural da familia."
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+Membros da familia exponencial uniparametrica $f(x;\theta) = \exp\{c(\theta)T(x) - d(\theta)\}h(x)$ com $c(\theta)$ crescente tem MLR crescente em $T(x)$ porque:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+A razao e $f(x;\theta_1)/f(x;\theta_2) = \exp\{(c(\theta_1)-c(\theta_2))T(x) - (d(\theta_1)-d(\theta_2))\}$. Quando $\theta_1 > \theta_2$ e $c$ e crescente, temos $c(\theta_1) > c(\theta_2)$, portanto o expoente e crescente linear em $T(x)$, tornando a razao crescente em $T(x)$.
+
+A MLR nao e automatica na familia exponencial (depende de $c$ crescente), nao e consequencia da suficiencia ou completude por si so.
+
+Meta-information
+================
+exname: Cap6S4Q2_familia_exponencial_MLR
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

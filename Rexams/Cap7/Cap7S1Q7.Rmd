@@ -1,0 +1,46 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+all_choices <- c(
+  "$\\text{Cov}(\\hat{\\boldsymbol{\\theta}}) \\geq I_n(\\boldsymbol{\\theta})^{-1}$ no sentido de matrizes positivo-semidefinidas, onde $I_n(\\boldsymbol{\\theta})$ é a matriz de informação de Fisher para $n$ observações.",
+  "$\\text{Var}(\\hat{\\theta}_j) \\geq [I_n(\\boldsymbol{\\theta})^{-1}]_{jj}$ somente para os estimadores individuais, sem implicação sobre a matriz de covariância completa.",
+  "O limite de Cramér-Rao não se generaliza para o caso multiparamétrico; vale apenas para $k = 1$.",
+  "A variância de cada componente satisfaz $\\text{Var}(\\hat{\\theta}_j) \\geq 1/[I_n(\\boldsymbol{\\theta})]_{jj}$, usando a entrada diagonal de $I_n$ (não sua inversa).",
+  "$\\text{Cov}(\\hat{\\boldsymbol{\\theta}}) = I_n(\\boldsymbol{\\theta})^{-1}$ para o EMV, com igualdade exata para qualquer $n$ finito."
+)
+
+perm <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+Para $\boldsymbol{\theta} \in \mathbb{R}^k$, o **Limite Inferior de Cramér-Rao (LICR) Multivariado** estabelece um limite para a matriz de covariâncias de qualquer estimador não-viesado $\hat{\boldsymbol{\theta}}$. Qual das alternativas abaixo descreve corretamente esse limite?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+O **Limite de Cramér-Rao Multivariado** afirma que, para qualquer estimador não-viesado $\hat{\boldsymbol{\theta}}$ de $\boldsymbol{\theta} \in \mathbb{R}^k$:
+$$\text{Cov}(\hat{\boldsymbol{\theta}}) - I_n(\boldsymbol{\theta})^{-1} \geq 0$$
+no sentido de matrizes **positivo-semidefinidas** (PSD), onde $I_n(\boldsymbol{\theta}) = n\,I(\boldsymbol{\theta})$ é a matriz de informação de Fisher para $n$ observações.
+
+**Implicações:**
+- A desigualdade matricial PSD implica que $\text{Var}(\hat{\theta}_j) \geq [I_n(\boldsymbol{\theta})^{-1}]_{jj}$ para cada componente.
+- Note que $[I_n(\boldsymbol{\theta})^{-1}]_{jj} \geq 1/[I_n(\boldsymbol{\theta})]_{jj}$ (pela desigualdade de Cauchy-Schwarz para matrizes), portanto a opção 4 é um limite mais fraco que o LICR correto.
+- A igualdade $\text{Cov} = I_n^{-1}$ vale apenas assintoticamente para o EMV, não para $n$ finito em geral.
+
+Meta-information
+================
+exname: Cap7S1Q7_cramer_rao_multi
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

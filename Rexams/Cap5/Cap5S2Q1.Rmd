@@ -1,0 +1,42 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Choices textuais
+all_choices <- c(
+  "Uma funcao da amostra e do parametro cuja distribuicao nao depende de $\\theta$.",
+  "Uma estatistica suficiente minima para $\\theta$.",
+  "O estimador de maxima verossimilhanca de $\\theta$ padronizado pela informacao de Fisher.",
+  "Qualquer estatistica com distribuicao conhecida, independente da amostra e do parametro.",
+  "Uma estatistica anciliar que e independente do parametro $\\theta$."
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+Em inferencia estatistica, uma quantidade pivotal $Q(X_1,\ldots,X_n;\theta)$ e definida como:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+Uma quantidade pivotal e uma funcao da amostra e do parametro desconhecido cuja distribuicao e completamente conhecida (nao depende de $\theta$). Exemplos classicos: $Z = \sqrt{n}(\bar{X}-\mu)/\sigma \sim N(0,1)$ e $T = \sqrt{n}(\bar{X}-\mu)/S \sim t_{n-1}$.
+
+Ela nao precisa ser suficiente (opcao 2), nem e o EMV padronizado (opcao 3). Uma estatistica anciliar (opcao 5) tem distribuicao que nao depende de $\theta$, mas nao contem o parametro na sua definicao - e diferente de quantidade pivotal.
+
+Meta-information
+================
+exname: Cap5S2Q1_def_quantidade_pivotal
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

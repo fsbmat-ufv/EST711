@@ -1,0 +1,70 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+n <- sample(c(100, 200), 1)
+K <- sample(c(4, 5, 6), 1)
+
+probs    <- rep(1 / K, K)
+obs_vals <- as.integer(rmultinom(1, n, probs))
+esp_vals <- n * probs
+
+chi2_obs <- round(sum((obs_vals - esp_vals)^2 / esp_vals), 4)
+
+correct <- round(qchisq(0.95, K - 1), 4)
+w1      <- round(qchisq(0.95, K), 4)
+w2      <- round(qchisq(0.95, K - 2), 4)
+w3      <- round(qchisq(0.90, K - 1), 4)
+w4      <- round(qchisq(0.975, K - 1), 4)
+
+all_vals <- c(correct, w1, w2, w3, w4)
+
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+O **teste qui-quadrado de bondade de ajuste** verifica se $K = `r K`$ categorias seguem probabilidades especificadas $p_j = p_{0j}$. A estatística é:
+$$\chi^2 = \sum_{j=1}^{K} \frac{(O_j - E_j)^2}{E_j} \xrightarrow{D} \chi^2_{K-1}.$$
+
+Com $n = `r n`$ observações e hipótese de **equiprobabilidade** ($p_j = 1/`r K`$), as frequências esperadas são $E_j = n/K = `r round(n/K, 1)`$.
+
+Para $\alpha = 0.05$, qual é o **valor crítico** $\chi^2_{`r K-1`,\,0.95}$ para rejeitar $H_0$?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+Os graus de liberdade são $K - 1 = `r K` - 1 = `r K-1`$ (estimamos $K-1$ probabilidades livres sob $H_0$, pois $\sum p_j = 1$).
+
+O valor crítico para $\alpha = 0.05$ é:
+$$\chi^2_{`r K-1`,\,0.95} = \texttt{qchisq(0.95, `r K-1`)} = `r correct`.$$
+
+**Regra de decisão:** rejeitar $H_0$ se $\chi^2_{\text{obs}} > `r correct`$.
+
+**Erros comuns:**
+- $\chi^2_{`r K`,\,0.95} = `r w1`$: usa $K$ em vez de $K-1$ graus de liberdade.
+- $\chi^2_{`r K-2`,\,0.95} = `r w2`$: usa $K-2$ (muito poucos graus de liberdade).
+- $\chi^2_{`r K-1`,\,0.90} = `r w3`$: nível $\alpha = 0.10$ em vez de $\alpha = 0.05$.
+- $\chi^2_{`r K-1`,\,0.975} = `r w4`$: nível $\alpha = 0.025$ em vez de $\alpha = 0.05$.
+
+Meta-information
+================
+exname: Cap7S2Q8_bondade_ajuste_chi2
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

@@ -1,0 +1,53 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parâmetros aleatórios
+n <- sample(c(10, 20, 25, 50, 100), 1)
+
+## Choices textuais (a opção correta inclui n)
+correct_text <- paste0(
+  "$E(\\hat{\\sigma}^2_{MV}) = \\frac{n-1}{n}\\sigma^2$, portanto o vício é $E(\\hat{\\sigma}^2_{MV}) - \\sigma^2 = -\\frac{\\sigma^2}{n}$. ",
+  "Para $n = ", n, "$, o vício é $-\\sigma^2/", n, "$."
+)
+
+all_choices <- c(
+  correct_text,
+  "O EMV de $\\sigma^2$ é não-viesado, pois o método da máxima verossimilhança sempre produz estimadores não-viesados.",
+  "O vício é $+\\sigma^2/n$, pois o EMV tende a superestimar a variância populacional.",
+  paste0("O vício é $-\\sigma^2/(n-1)$, pois o denominador correto seria $n-1$ para $n = ", n, "$."),
+  paste0("O EMV de $\\sigma^2$ é viesado apenas para amostras pequenas, sendo não-viesado para $n \\geq 30$.")
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+
+O EMV de $\sigma^2$ na distribuição Normal é $\hat{\sigma}^2_{MV} = \frac{1}{n}\sum_{i=1}^n (X_i - \bar{X})^2$. Para uma amostra de tamanho $n = `r n`$, qual é o vício deste estimador?
+
+Answerlist
+----------
+
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+
+Sabe-se que $\frac{(n-1)S^2}{\sigma^2} \sim \chi^2_{n-1}$, onde $S^2 = \frac{1}{n-1}\sum(X_i-\bar{X})^2$. Portanto $E(S^2) = \sigma^2$. Como $\hat{\sigma}^2_{MV} = \frac{n-1}{n}S^2$, temos:
+$$E(\hat{\sigma}^2_{MV}) = \frac{n-1}{n}\sigma^2.$$
+O vício é $E(\hat{\sigma}^2_{MV}) - \sigma^2 = -\frac{\sigma^2}{n}$, que é negativo (subestimação). Para $n = `r n`$, o vício é $-\sigma^2/`r n`$. O EMV é assintoticamente não-viesado (o vício $\to 0$ quando $n \to \infty$), mas é viesado para todo $n$ finito.
+
+Meta-information
+================
+exname: Cap3S2Q9_emv_vicio_sigma2
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

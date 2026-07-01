@@ -1,0 +1,45 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+## Choices textuais
+all_choices <- c(
+  "$\\sqrt{n}(\\hat{\\theta}_n - \\theta) \\xrightarrow{D} N\\!\\left(0,\\, \\dfrac{1}{I(\\theta)}\\right)$, ou seja, o EMV e assintoticamente eficiente.",
+  "$\\sqrt{n}(\\hat{\\theta}_n - \\theta) \\xrightarrow{D} N(0,\\, I(\\theta))$, com variancia assintótica igual a propria informacao de Fisher.",
+  "$n(\\hat{\\theta}_n - \\theta) \\xrightarrow{D} N\\!\\left(0,\\, I(\\theta)^{-1}\\right)$, com normalizacao por $n$ em vez de $\\sqrt{n}$.",
+  "$\\sqrt{n}(\\hat{\\theta}_n - \\theta) \\xrightarrow{D} N(0,1)$ independentemente de $I(\\theta)$, para qualquer distribuicao regular.",
+  "$\\sqrt{n}(\\hat{\\theta}_n - \\theta) \\xrightarrow{D} N\\!\\left(0,\\, I(\\theta)^2\\right)$, com variancia assintótica igual ao quadrado da informacao."
+)
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+Sob **condicoes de regularidade** (familia exponencial regular ou hipoteses de Cramer), o **Estimador de Maxima Verossimilhanca** (EMV) $\hat{\theta}_n$ possui distribuicao assintótica conhecida.
+
+Qual das seguintes expressoes descreve **corretamente** a distribuicao assintótica do EMV?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+Sob condicoes de regularidade, o EMV satisfaz:
+$$\sqrt{n}(\hat{\theta}_n - \theta) \xrightarrow{D} N\!\left(0,\, \frac{1}{I(\theta)}\right).$$
+
+Isso significa que o EMV e **assintoticamente eficiente**: sua variancia assintótica ($1/(nI(\theta))$) coincide com o limite de Cramer-Rao. A variancia assintótica e o **inverso** da informacao de Fisher, nao a propria informacao.
+
+As demais alternativas erram ao usar $I(\theta)$ no lugar de $1/I(\theta)$, ao normalizar por $n$ em vez de $\sqrt{n}$, ao omitir $I(\theta)$ da variancia, ou ao elevar $I(\theta)$ ao quadrado.
+
+Meta-information
+================
+exname: Cap4S2Q7_Fisher_EMV_assintótico
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

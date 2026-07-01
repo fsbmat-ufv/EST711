@@ -1,0 +1,51 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+## Choices textuais
+all_choices <- c(
+  "e um estimador nao-viesado de $\\theta$ cuja variancia e menor ou igual a variancia de qualquer outro estimador nao-viesado de $\\theta$, para todo $\\theta \\in \\Omega$.",
+  "e o estimador de minimo EQM entre todos os estimadores possiveis, incluindo os viesados.",
+  "e um estimador que minimiza a variancia dentre todos os estimadores, com ou sem vicio.",
+  "e o estimador nao-viesado com menor variancia apenas para grandes amostras (assintoticamente).",
+  "e o estimador que minimiza o EQM dentre os estimadores nao-viesados, nao necessariamente de variancia minima uniforme."
+)
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+O **ENVVUM** (Estimador Nao-Viesado de Variancia Uniformemente Minima), tambem chamado de UMVUE (*Uniformly Minimum Variance Unbiased Estimator*), e um conceito central na teoria da estimacao pontual.
+
+Qual das seguintes afirmacoes define **corretamente** o ENVVUM de $g(\theta)$?
+
+Um ENVVUM:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+A definicao correta de ENVVUM e: um estimador nao-viesado de $\theta$ cuja variancia e menor ou igual a variancia de qualquer outro estimador nao-viesado de $\theta$, **para todo** $\theta \in \Omega$.
+
+O adjetivo "uniformemente" e fundamental: a superioridade da variancia deve valer para **todos** os valores do parametro $\theta$ no espaco parametrico, nao apenas em alguns pontos ou assintoticamente.
+
+As demais alternativas sao incorretas porque:
+
+- O ENVVUM nao e o estimador de minimo EQM em geral (o EQM inclui o quadrado do vicio).
+- A minimizacao da variancia e apenas entre estimadores **nao-viesados**.
+- A condicao de variancia minima deve valer para todo $\theta$, nao apenas assintoticamente.
+- O ENVVUM minimiza a variancia (nao o EQM) entre os nao-viesados, e o faz uniformemente em $\theta$.
+
+Meta-information
+================
+exname: Cap4S1Q6_definicao_ENVVUM
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

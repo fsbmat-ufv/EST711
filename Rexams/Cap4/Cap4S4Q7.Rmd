@@ -1,0 +1,50 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+## Choices textuais
+all_choices <- c(
+  "E funcao de toda outra estatistica suficiente --- ou seja, e a reducao maxima possivel da amostra sem perda de informacao sobre $\\theta$.",
+  "E a estatistica suficiente com menor variancia entre todas as estatisticas suficientes para $\\theta$.",
+  "E a unica estatistica suficiente existente; toda familia parametrica tem exatamente uma estatistica suficiente.",
+  "E suficiente e nao-viesada simultaneamente para $\\theta$.",
+  "E a estatistica suficiente que coincide com o EMV, que e sempre minimal por definicao."
+)
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+Entre todas as estatisticas suficientes para $\theta$, a mais importante e a **suficiente minimal**, que representa a maior compressao possivel da informacao amostral.
+
+Uma estatistica suficiente $T$ e dita **minimal** se:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+A definicao correta: $T$ e suficiente **minimal** se e funcao de toda outra estatistica suficiente.
+
+Em outras palavras, se $S$ e qualquer outra estatistica suficiente, entao existe uma funcao $\phi$ tal que $T = \phi(S)$. Isso significa que $T$ nao pode ser ainda mais reduzida sem perder informacao sobre $\theta$.
+
+Exemplos:
+
+- Para $\text{Poisson}(\lambda)$: $T = \sum X_i$ e suficiente minimal.
+- Para $N(\mu, \sigma^2)$ biparametrico: $(\bar{X}, S^2)$ e suficiente minimal.
+- O vetor completo $(X_1, \ldots, X_n)$ e sempre suficiente mas **nunca** minimal (para $n > 1$).
+
+Suficiencia minimal nao implica variancia minima, unicidade, nao-viesamento, ou coincidencia com o EMV.
+
+Meta-information
+================
+exname: Cap4S4Q7_suficiencia_minimal
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

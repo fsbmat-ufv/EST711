@@ -1,0 +1,51 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parametros
+alpha    <- sample(c(0.05, 0.01, 0.10), 1)
+beta_alt <- sample(c(0.10, 0.15, 0.20, 0.25, 0.30), 1)
+
+## Respostas: poder = 1 - beta
+correct <- round(1 - beta_alt, 4)
+w1 <- round(alpha, 4)
+w2 <- round(1 - alpha, 4)
+w3 <- round(alpha + beta_alt, 4)
+w4 <- round(alpha * (1 - beta_alt), 4)
+
+all_vals <- c(correct, w1, w2, w3, w4)
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+O poder de um teste e a probabilidade de rejeitar $H_0$ quando ela e falsa. Para um teste com nivel de significancia $\alpha = `r alpha`$ e probabilidade de Erro Tipo II $\beta = `r beta_alt`$, o poder do teste e:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+Poder $= 1 - \beta = 1 - `r beta_alt` = `r correct`$.
+
+Erros comuns: confundir poder com $\alpha$ (nivel) ou com $1-\alpha$ (confianca); somar $\alpha + \beta$; multiplicar $\alpha(1-\beta)$.
+
+Meta-information
+================
+exname: Cap6S1Q2_poder_teste
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

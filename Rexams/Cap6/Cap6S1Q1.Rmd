@@ -1,0 +1,40 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Choices textuais
+all_choices <- c(
+  "Erro Tipo I: rejeitar $H_0$ quando ela e verdadeira. Erro Tipo II: nao rejeitar $H_0$ quando ela e falsa.",
+  "Erro Tipo I: nao rejeitar $H_0$ quando ela e falsa. Erro Tipo II: rejeitar $H_0$ quando ela e verdadeira.",
+  "Erro Tipo I: aceitar $H_1$ quando $H_0$ e falsa. Erro Tipo II: aceitar $H_0$ quando $H_1$ e verdadeira.",
+  "Erro Tipo I e Tipo II sao equivalentes quando o tamanho amostral e suficientemente grande.",
+  "Erro Tipo I: a probabilidade de rejeitar $H_1$ quando $H_1$ e verdadeira."
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+Em testes de hipoteses, qual par de afirmacoes e CORRETO?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+Por definicao: Erro Tipo I (falso positivo) ocorre ao rejeitar $H_0$ sendo ela verdadeira, com probabilidade $\alpha$. Erro Tipo II (falso negativo) ocorre ao nao rejeitar $H_0$ sendo ela falsa, com probabilidade $\beta$. As demais opcoes invertem as definicoes ou contem afirmacoes incorretas sobre a relacao entre os erros e o tamanho amostral.
+
+Meta-information
+================
+exname: Cap6S1Q1_erro_tipo_I_II
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

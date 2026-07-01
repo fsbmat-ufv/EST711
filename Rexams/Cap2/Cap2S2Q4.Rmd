@@ -1,0 +1,64 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parâmetros aleatórios
+mu     <- sample(2:6, 1)
+sigma2 <- sample(1:9, 1)
+
+## g(x) = x^2, g'(x) = 2x
+## Variância assintótica = [g'(mu)]^2 * sigma2 = 4*mu^2*sigma2
+correct <- 4 * mu^2 * sigma2
+
+## Alternativas incorretas plausíveis
+w1 <- 2 * mu^2 * sigma2     # fator 2 em vez de 4
+w2 <- 4 * mu * sigma2       # mu em vez de mu^2
+w3 <- 2 * mu * sigma2       # fator e potência errados
+w4 <- 4 * mu^2 / sigma2     # divide em vez de multiplica
+
+## Garantir unicidade
+w_list <- c(w1, w2, w3, w4)
+for (i in seq_along(w_list)) {
+  if (w_list[i] == correct) w_list[i] <- correct + 1
+}
+
+## Embaralhamento
+all_vals <- c(correct, w_list[1], w_list[2], w_list[3], w_list[4])
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+
+Seja $\bar{X}_n$ com variância assintótica $\sigma^2/n$ onde $\sigma^2 = `r sigma2`$. Considere a transformação $g(x) = x^2$ com derivada $g'(x) = 2x$. Pelo Método Delta com $\mu = `r mu`$, a variância assintótica (em escala $\sqrt{n}$) de $\bar{X}_n^2$ é $[g'(\mu)]^2\sigma^2 = 4\mu^2\sigma^2$. Calcule $4\mu^2\sigma^2$ para os valores dados.
+
+Answerlist
+----------
+
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+
+Temos $g'(\mu) = 2\mu = 2 \times `r mu` = `r 2*mu`$. Portanto:
+$$[g'(\mu)]^2\sigma^2 = (2\mu)^2\sigma^2 = 4\mu^2\sigma^2 = 4 \times `r mu`^2 \times `r sigma2` = 4 \times `r mu^2` \times `r sigma2` = `r correct`$$
+
+Meta-information
+================
+exname: Cap2S2Q4_delta_quadrado
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE
+```

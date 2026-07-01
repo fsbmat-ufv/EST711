@@ -1,0 +1,46 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parametros
+lambda0 <- sample(c(2, 3, 4), 1)
+lambda1 <- lambda0 + sample(c(2, 3, 4), 1)
+n       <- sample(c(10, 15, 20, 25), 1)
+sum_x   <- n * lambda0 + sample(-3:3, 1)
+
+## Choices textuais
+all_choices <- c(
+  "$\\sum X_i > k'$ para alguma constante $k'$ determinada pelo nivel $\\alpha$.",
+  "$\\sum X_i < k'$ para alguma constante $k'$ (valores pequenos de $\\sum X_i$).",
+  "$|\\sum X_i - n\\lambda_0| > k'$ (regiao bilateral em torno da media sob $H_0$).",
+  "$\\sum X_i = \\lambda_1 n$ exatamente.",
+  "A razao de verossimilhanca nao simplifica para uma funcao de $\\sum X_i$ neste caso."
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+Para $X_i \overset{\text{iid}}{\sim} \text{Poisson}(\lambda)$, testando $H_0:\lambda = `r lambda0`$ vs. $H_1:\lambda = `r lambda1`$ com $\lambda_1 > \lambda_0$. A razao e $\Lambda = (\lambda_1/\lambda_0)^{\sum X_i} e^{-n(\lambda_1-\lambda_0)}$. Como $\lambda_1 > \lambda_0$, a regiao critica do Lema de NP e:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+$\log\Lambda = \sum X_i \log(\lambda_1/\lambda_0) - n(\lambda_1-\lambda_0)$. Como $\lambda_1 > \lambda_0$, temos $\log(\lambda_1/\lambda_0) > 0$, portanto $\log\Lambda$ e crescente em $\sum X_i$. A condicao $\Lambda > k$ equivale a $\sum X_i > k'$.
+
+Meta-information
+================
+exname: Cap6S2Q7_NP_Poisson
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

@@ -1,0 +1,71 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+## Parametros
+mu     <- sample(2:8, 1)
+sigma2 <- sample(c(1, 4, 9), 1)
+n      <- sample(c(25, 50, 100), 1)
+c_val  <- (n - 1) / n
+
+## EQM de T2 = c*Xbar: Var(T2) + [B(T2)]^2
+## Var(T2) = c^2 * sigma2/n
+## B(T2) = mu*(c - 1) = mu*(- 1/n) = -mu/n
+correct <- round(c_val^2 * sigma2 / n + (mu * (c_val - 1))^2, 6)
+
+## Erradas
+w1 <- round(sigma2 / n + (mu / n)^2, 6)
+w2 <- round(c_val * sigma2 / n, 6)
+w3 <- round(c_val^2 * sigma2 / n, 6)
+w4 <- round(sigma2 / n, 6)
+
+## Garantir unicidade
+vals <- c(correct, w1, w2, w3, w4)
+if (length(unique(round(vals, 8))) < 5) w1 <- w1 + 1e-5
+
+all_vals <- c(correct, w1, w2, w3, w4)
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+Seja $X_1, \ldots, X_n$ uma amostra iid com média $\mu = `r mu`$, variância $\sigma^2 = `r sigma2`$ e $n = `r n`$. Considere dois estimadores de $\mu$:
+
+- $T_1 = \bar{X}$ (não-viesado, com $\text{Var}(T_1) = \sigma^2/n$).
+- $T_2 = c\bar{X}$, com $c = \dfrac{n-1}{n} = `r round(c_val, 4)`$ (estimador viesado).
+
+O EQM de $T_2$ é $\text{EQM}(T_2) = \text{Var}(T_2) + [B(T_2)]^2$, onde $\text{Var}(T_2) = c^2\sigma^2/n$ e $B(T_2) = \mu(c-1)$.
+
+Calcule o $\text{EQM}(T_2)$:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+Com $c = `r round(c_val, 4)`$, $\mu = `r mu`$, $\sigma^2 = `r sigma2`$, $n = `r n`$:
+
+$$\text{Var}(T_2) = c^2\frac{\sigma^2}{n} = (`r round(c_val,4)`)^2 \cdot \frac{`r sigma2`}{`r n`} = `r round(c_val^2 * sigma2/n, 6)`.$$
+
+$$B(T_2) = \mu(c - 1) = `r mu` \times (`r round(c_val,4)` - 1) = `r round(mu*(c_val-1),6)`.$$
+
+$$\text{EQM}(T_2) = `r round(c_val^2*sigma2/n, 6)` + (`r round(mu*(c_val-1),6)`)^2 = `r correct`.$$
+
+Meta-information
+================
+exname: Cap4S1Q5_EQM_estimador_viesado
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

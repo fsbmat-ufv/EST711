@@ -1,0 +1,49 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Alternativas (textuais) — questão puramente conceitual
+all_choices <- c(
+  "$T_n \\xrightarrow{P} \\theta$ (consistência em probabilidade).",
+  "$T_n \\xrightarrow{a.s.} \\theta$ (convergência quase certa).",
+  "$T_n$ é não-viesado, ou seja, $E(T_n) = \\theta$ para todo $n$.",
+  "$T_n$ tem variância mínima entre todos os estimadores de $\\theta$.",
+  "$\\text{EQM}(T_n) \\to 0$ não implica nenhuma forma de convergência estocástica de $T_n$."
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+
+Seja $T_n$ um estimador de $\theta$ tal que o erro quadrático médio satisfaz $\text{EQM}(T_n) = E[(T_n - \theta)^2] \to 0$ quando $n \to \infty$. O que se pode concluir?
+
+Answerlist
+----------
+
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+
+Se $\text{EQM}(T_n) = E[(T_n - \theta)^2] \to 0$, então $T_n \xrightarrow{P} \theta$ (consistência em probabilidade).
+
+Isso segue diretamente da desigualdade de Markov: para qualquer $\varepsilon > 0$,
+$$P(|T_n - \theta| \geq \varepsilon) = P((T_n - \theta)^2 \geq \varepsilon^2) \leq \frac{E[(T_n-\theta)^2]}{\varepsilon^2} = \frac{\text{EQM}(T_n)}{\varepsilon^2} \to 0.$$
+
+Note que: (i) EQM $\to 0$ não implica convergência quase certa; (ii) EQM $\to 0$ não implica não-viés para $n$ fixo (pode haver viés que vai a zero); (iii) EQM $\to 0$ não diz nada sobre variância mínima.
+
+Meta-information
+================
+exname: Cap1S1Q9_EQM_consistencia
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE
+```

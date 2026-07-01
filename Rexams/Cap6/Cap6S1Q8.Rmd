@@ -1,0 +1,45 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parametros
+mu0 <- sample(c(3, 5, 8, 10), 1)
+
+## Choices textuais
+all_choices <- c(
+  "$Z > z_{0{,}95} = 1{,}645$.",
+  "$Z > z_{0{,}975} = 1{,}96$.",
+  "$|Z| > z_{0{,}975} = 1{,}96$.",
+  "$Z < -z_{0{,}95} = -1{,}645$.",
+  "$Z > z_{0{,}99} = 2{,}326$."
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+Para o teste $H_0:\mu = `r mu0`$ vs. $H_1:\mu > `r mu0`$ (unilateral a direita) com nivel $\alpha = 0{,}05$, usando a estatistica $Z = \sqrt{n}(\bar{X}-\mu_0)/\sigma$, a regiao critica e:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+Para $H_1:\mu > \mu_0$, a regiao critica e unilateral a direita: rejeita-se $H_0$ quando $Z > z_{1-\alpha} = z_{0{,}95} = 1{,}645$.
+
+Usar $z_{0{,}975}=1{,}96$ seria para $\alpha=0{,}025$ unilateral ou $\alpha=0{,}05$ bilateral. A regiao $|Z|>1{,}96$ e bilateral. $Z<-1{,}645$ seria para $H_1:\mu < \mu_0$. $z_{0{,}99}=2{,}326$ corresponderia a $\alpha=0{,}01$.
+
+Meta-information
+================
+exname: Cap6S1Q8_teste_unilateral_bilateral
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

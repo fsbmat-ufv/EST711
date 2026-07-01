@@ -1,0 +1,42 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  n_obs <- sample(12:25, 1)
+  m <- sample(3:8, 1)
+  y <- sample(3:(n_obs - 3), 1)
+  p_old <- sample(c(0.20, 0.35, 0.55, 0.70, 0.80), 1)
+  n <- n_obs + m
+  p_new <- (y + m * p_old)/n
+  vals <- round(c(p_new, y/n_obs, y/n, (y + m * (1 - p_old))/n,
+                  (y + p_old)/n), 3)
+  if (length(unique(vals)) == 5L) break
+}
+opts <- sprintf("$%.3f$", vals)
+```
+
+Question
+========
+Em uma amostra Bernoulli, `r n_obs` respostas foram observadas, com `r y` sucessos, e `r m` respostas estão ausentes de modo ignorável. Na iteração corrente do EM, $p^{(t)}=`r p_old`$. Tratando cada resposta ausente como dado latente, qual é $p^{(t+1)}$?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+No passo E, o número esperado de sucessos entre as respostas ausentes é $m p^{(t)}$. O passo M divide o número esperado total de sucessos pelo tamanho total:
+$$
+p^{(t+1)}=\frac{y+m p^{(t)}}{n_{\mathrm{obs}}+m}
+=\frac{`r y`+`r m`\times `r p_old`}{`r n`}
+=`r sprintf('%.3f', p_new)`.
+$$
+
+Meta-information
+================
+exname: Cap8S1Q10_Bernoulli_dados_ausentes
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE

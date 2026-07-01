@@ -1,0 +1,55 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parâmetros aleatórios
+mu     <- sample(2:8, 1)
+sigma2 <- sample(1:9, 1)
+n      <- sample(c(25, 36, 49, 64, 100), 1)
+
+## Alternativas (textuais)
+all_choices <- c(
+  "$N(0,1)$ (normal padrão).",
+  paste0("$N(", mu, ",\\, ", sigma2, ")$ (a distribuição original)."),
+  paste0("$N\\!\\left(0,\\, \\frac{", sigma2, "}{", n, "}\\right) = N(0,\\, ", round(sigma2/n, 4), ")$."),
+  paste0("$t_{", n-1, "}$ (distribuição $t$ de Student com $n-1$ graus de liberdade)."),
+  paste0("$N\\!\\left(", mu, ",\\, \\frac{", sigma2, "}{", n, "}\\right)$ (distribuição exata de $\\bar{X}_n$, não o limite de $Z_n$).")
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+
+Seja $X_1, X_2, \ldots$ uma sequência de variáveis aleatórias iid com $E(X_i) = `r mu`$ e $\text{Var}(X_i) = `r sigma2`$. Defina a estatística padronizada:
+$$Z_n = \frac{\sqrt{n}(\bar{X}_n - `r mu`)}{\sqrt{`r sigma2`}}$$
+
+Pelo Teorema Central do Limite, qual é a distribuição **limite** de $Z_n$ quando $n \to \infty$?
+
+Answerlist
+----------
+
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+
+O TCL (Teorema Central do Limite) afirma que, se $X_i$ são iid com média $\mu$ e variância $\sigma^2 < \infty$, então:
+$$Z_n = \frac{\sqrt{n}(\bar{X}_n - \mu)}{\sigma} \xrightarrow{D} N(0,1)$$
+
+A distribuição limite é sempre $N(0,1)$, independentemente da distribuição original. Note que $N(\mu, \sigma^2/n)$ é a distribuição **aproximada** de $\bar{X}_n$, não de $Z_n$.
+
+Meta-information
+================
+exname: Cap1S2Q2_TCL_conv_distribuicao
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE
+```

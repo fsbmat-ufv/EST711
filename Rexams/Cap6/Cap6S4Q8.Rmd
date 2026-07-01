@@ -1,0 +1,44 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parametros
+theta0 <- sample(c(1, 2, 3), 1)
+theta1 <- theta0 + sample(c(2, 3, 4), 1)
+
+## Choices textuais
+all_choices <- c(
+  "E decrescente em $x$ (pois o expoente $-(\\theta_1-\\theta_0)x$ e negativo e crescente em magnitude), portanto a familia tem MLR decrescente em $x$ (ou crescente em $-x$ ou equivalentemente em $-\\sum X_i$).",
+  "E crescente em $x$, portanto a familia tem MLR crescente em $x$ e o UMP rejeita para valores grandes de $\\sum X_i$.",
+  "E constante em $x$, portanto a distribuicao exponencial nao tem MLR.",
+  "Depende dos valores especificos de $\\theta_0$ e $\\theta_1$, sem padrao geral.",
+  "E crescente em $x$ quando $\\theta_1 > 1$ e decrescente quando $\\theta_1 < 1$."
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+Para $X \sim \text{Exp}(\theta)$ com $f(x;\theta) = \theta e^{-\theta x}$, a razao $f(x;\theta_1)/f(x;\theta_0)$ com $\theta_1 = `r theta1` > \theta_0 = `r theta0`$:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+$f(x;\theta_1)/f(x;\theta_0) = (\theta_1/\theta_0)\exp\{-(\theta_1-\theta_0)x\}$. Como $\theta_1 > \theta_0$, o expoente $-(\theta_1-\theta_0) < 0$, portanto a razao e DECRESCENTE em $x$. A familia exponencial tem MLR decrescente em $x$ (ou crescente em $-x$), e o teste UMP para $H_0:\theta \leq \theta_0$ vs. $H_1:\theta > \theta_0$ rejeita quando $\sum X_i$ e PEQUENO.
+
+Meta-information
+================
+exname: Cap6S4Q8_MLR_exponencial
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

@@ -1,0 +1,56 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parametros
+s2    <- sample(c(1, 2, 4, 9, 16), 1)
+n     <- sample(c(10, 15, 20, 25), 1)
+alpha <- 0.05
+
+gl      <- n - 1
+q_lower <- round(qchisq(alpha / 2, gl), 4)
+q_upper <- round(qchisq(1 - alpha / 2, gl), 4)
+
+## Respostas: limite inferior do IC para sigma^2
+correct <- round((n - 1) * s2 / q_upper, 4)
+w1 <- round((n - 1) * s2 / q_lower, 4)
+w2 <- round(n * s2 / q_upper, 4)
+w3 <- round((n - 1) * s2 / n, 4)
+w4 <- round(s2 / q_upper, 4)
+
+all_vals <- c(correct, w1, w2, w3, w4)
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+Para $X_i \overset{\text{iid}}{\sim} N(\mu,\sigma^2)$, o pivo $(n-1)S^2/\sigma^2 \sim \chi^2_{n-1}$. Com $n = `r n`$ e $S^2 = `r s2`$, os quantis relevantes sao $\chi^2_{`r gl`,\,0{,}025} = `r q_lower`$ e $\chi^2_{`r gl`,\,0{,}975} = `r q_upper`$. O IC 95% para $\sigma^2$ e $\left(\frac{(n-1)S^2}{\chi^2_{n-1,\,0{,}975}},\; \frac{(n-1)S^2}{\chi^2_{n-1,\,0{,}025}}\right)$. O limite inferior e:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+O limite inferior e $\frac{(n-1)S^2}{\chi^2_{n-1,\,0{,}975}} = \frac{`r n-1` \times `r s2`}{`r q_upper`} = `r correct`$.
+
+Nota: dividimos pelo quantil SUPERIOR $\chi^2_{0{,}975}$ para obter o limite INFERIOR (inversao caracteristica do IC qui-quadrado). Erros comuns: dividir pelo quantil inferior; usar $n$ em vez de $n-1$; usar $S^2$ sem multiplicar por $(n-1)$.
+
+Meta-information
+================
+exname: Cap5S2Q3_IC_sigma2_chisq
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

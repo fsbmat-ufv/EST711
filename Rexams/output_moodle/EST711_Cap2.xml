@@ -1,0 +1,3044 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap2/Exercise 01</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q01 : Cap2_Cap2S1Q1 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_1, X_2, \ldots\)</span> uma sequência de variáveis aleatórias iid com <span class="math inline">\(E(X_i) = \mu = 7\)</span> e <span class="math inline">\(\text{Var}(X_i) = \sigma^2 = 1\)</span> finita. Qual das afirmações abaixo enuncia <strong>corretamente</strong> o Teorema Central do Limite (TCL)?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>O TCL afirma que <span class="math inline">\(\dfrac{\sqrt{n}(\bar{X}_n - \mu)}{\sigma} \xrightarrow{D} N(0,1)\)</span>.</p>
+<p>Os erros comuns são: (i) esquecer o fator <span class="math inline">\(\sqrt{n}\)</span> (sem ele, <span class="math inline">\((\bar{X}_n - \mu)/\sigma\)</span> converge a 0 em probabilidade); (ii) usar <span class="math inline">\(\sigma^2\)</span> em vez de <span class="math inline">\(\sigma\)</span> no denominador; (iii) dizer que <span class="math inline">\(\bar{X}_n\)</span> converge em distribuição para <span class="math inline">\(N(\mu,\sigma^2)\)</span> — na verdade, é a estatística padronizada que converge para <span class="math inline">\(N(0,1)\)</span>.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(\dfrac{\sqrt{n}(\bar{X}_n - \mu)}{\sigma} \xrightarrow{D} N(0,1)\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(\bar{X}_n \xrightarrow{D} N(\mu, \sigma^2)\)</span> para todo <span class="math inline">\(n\)</span> suficientemente grande.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(\dfrac{\sqrt{n}(\bar{X}_n - \mu)}{\sigma^2} \xrightarrow{D} N(0,1)\)</span> (usando <span class="math inline">\(\sigma^2\)</span> em vez de <span class="math inline">\(\sigma\)</span>).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(\sqrt{n}(\bar{X}_n - \mu) \xrightarrow{D} N(0,1)\)</span> (sem dividir por <span class="math inline">\(\sigma\)</span>).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(\dfrac{\bar{X}_n - \mu}{\sigma} \xrightarrow{D} N(0,1)\)</span> (sem o fator <span class="math inline">\(\sqrt{n}\)</span>).
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q01 : Cap2_Cap2S1Q1 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_1, X_2, \ldots\)</span> uma sequência de variáveis aleatórias iid com <span class="math inline">\(E(X_i) = \mu = 8\)</span> e <span class="math inline">\(\text{Var}(X_i) = \sigma^2 = 3\)</span> finita. Qual das afirmações abaixo enuncia <strong>corretamente</strong> o Teorema Central do Limite (TCL)?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>O TCL afirma que <span class="math inline">\(\dfrac{\sqrt{n}(\bar{X}_n - \mu)}{\sigma} \xrightarrow{D} N(0,1)\)</span>.</p>
+<p>Os erros comuns são: (i) esquecer o fator <span class="math inline">\(\sqrt{n}\)</span> (sem ele, <span class="math inline">\((\bar{X}_n - \mu)/\sigma\)</span> converge a 0 em probabilidade); (ii) usar <span class="math inline">\(\sigma^2\)</span> em vez de <span class="math inline">\(\sigma\)</span> no denominador; (iii) dizer que <span class="math inline">\(\bar{X}_n\)</span> converge em distribuição para <span class="math inline">\(N(\mu,\sigma^2)\)</span> — na verdade, é a estatística padronizada que converge para <span class="math inline">\(N(0,1)\)</span>.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(\bar{X}_n \xrightarrow{D} N(\mu, \sigma^2)\)</span> para todo <span class="math inline">\(n\)</span> suficientemente grande.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(\dfrac{\sqrt{n}(\bar{X}_n - \mu)}{\sigma^2} \xrightarrow{D} N(0,1)\)</span> (usando <span class="math inline">\(\sigma^2\)</span> em vez de <span class="math inline">\(\sigma\)</span>).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(\dfrac{\bar{X}_n - \mu}{\sigma} \xrightarrow{D} N(0,1)\)</span> (sem o fator <span class="math inline">\(\sqrt{n}\)</span>).
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(\dfrac{\sqrt{n}(\bar{X}_n - \mu)}{\sigma} \xrightarrow{D} N(0,1)\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(\sqrt{n}(\bar{X}_n - \mu) \xrightarrow{D} N(0,1)\)</span> (sem dividir por <span class="math inline">\(\sigma\)</span>).
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap2/Exercise 02</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q02 : Cap2_Cap2S1Q2 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_i \overset{\text{iid}}{\sim}\)</span> alguma distribuição com <span class="math inline">\(\mu = 10\)</span> e <span class="math inline">\(\sigma = 4\)</span>, e <span class="math inline">\(n = 49\)</span>. Para calcular <span class="math inline">\(P(\bar{X}_n &gt; 10.5)\)</span> usando a aproximação normal do TCL, devemos padronizar: <span class="math inline">\(z = (\bar{x} - \mu) / (\sigma/\sqrt{n})\)</span>. Qual é o valor de <span class="math inline">\(z\)</span> correspondente a <span class="math inline">\(\bar{x} = 10.5\)</span>?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>A padronização pelo TCL é:
+<span class="math display">\[z = \frac{\bar{x} - \mu}{\sigma/\sqrt{n}} = \frac{10.5 - 10}{4/\sqrt{49}} = \frac{0.5}{0.5714} = 0.875\]</span></p>
+<p>Erros comuns: dividir por <span class="math inline">\(\sigma^2\)</span> em vez de <span class="math inline">\(\sigma\)</span>, ou esquecer o <span class="math inline">\(\sqrt{n}\)</span> no denominador.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.2188
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+14
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+6.125
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+0.875
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.125
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q02 : Cap2_Cap2S1Q2 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_i \overset{\text{iid}}{\sim}\)</span> alguma distribuição com <span class="math inline">\(\mu = 10\)</span> e <span class="math inline">\(\sigma = 1\)</span>, e <span class="math inline">\(n = 64\)</span>. Para calcular <span class="math inline">\(P(\bar{X}_n &gt; 10.7)\)</span> usando a aproximação normal do TCL, devemos padronizar: <span class="math inline">\(z = (\bar{x} - \mu) / (\sigma/\sqrt{n})\)</span>. Qual é o valor de <span class="math inline">\(z\)</span> correspondente a <span class="math inline">\(\bar{x} = 10.7\)</span>?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>A padronização pelo TCL é:
+<span class="math display">\[z = \frac{\bar{x} - \mu}{\sigma/\sqrt{n}} = \frac{10.7 - 10}{1/\sqrt{64}} = \frac{0.7}{0.125} = 5.6\]</span></p>
+<p>Erros comuns: dividir por <span class="math inline">\(\sigma^2\)</span> em vez de <span class="math inline">\(\sigma\)</span>, ou esquecer o <span class="math inline">\(\sqrt{n}\)</span> no denominador.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+5.7
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+44.8
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+5.6
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+5.7
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.7
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap2/Exercise 03</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q03 : Cap2_Cap2S1Q3 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_1, \ldots, X_n \overset{\text{iid}}{\sim}\)</span> alguma distribuição com <span class="math inline">\(E(X_i) = 2\)</span> e <span class="math inline">\(\text{Var}(X_i) = \sigma^2 = 4\)</span>, com <span class="math inline">\(n = 36\)</span>. Defina <span class="math inline">\(S_n = \sum_{i=1}^n X_i\)</span>. Qual é a variância de <span class="math inline">\(S_n\)</span>?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Como <span class="math inline">\(X_1, \ldots, X_n\)</span> são iid:
+<span class="math display">\[\text{Var}(S_n) = \text{Var}\!\left(\sum_{i=1}^n X_i\right) = \sum_{i=1}^n \text{Var}(X_i) = n\sigma^2 = 36 \times 4 = 144\]</span></p>
+<p>Note que <span class="math inline">\(\text{Var}(\bar{X}_n) = \sigma^2/n = 0.1111\)</span> (divide por <span class="math inline">\(n^2\)</span> pois <span class="math inline">\(\bar{X}_n = S_n/n\)</span>), enquanto <span class="math inline">\(\text{Var}(S_n) = n\sigma^2\)</span> (multiplica por <span class="math inline">\(n\)</span>). O TCL se aplica à soma padronizada <span class="math inline">\(\frac{S_n - n\mu}{\sqrt{n\sigma^2}} = \frac{S_n - n\mu}{\sigma\sqrt{n}} \xrightarrow{D} N(0,1)\)</span>.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+72
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+4
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.1111
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+40
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+144
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q03 : Cap2_Cap2S1Q3 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_1, \ldots, X_n \overset{\text{iid}}{\sim}\)</span> alguma distribuição com <span class="math inline">\(E(X_i) = 7\)</span> e <span class="math inline">\(\text{Var}(X_i) = \sigma^2 = 5\)</span>, com <span class="math inline">\(n = 25\)</span>. Defina <span class="math inline">\(S_n = \sum_{i=1}^n X_i\)</span>. Qual é a variância de <span class="math inline">\(S_n\)</span>?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Como <span class="math inline">\(X_1, \ldots, X_n\)</span> são iid:
+<span class="math display">\[\text{Var}(S_n) = \text{Var}\!\left(\sum_{i=1}^n X_i\right) = \sum_{i=1}^n \text{Var}(X_i) = n\sigma^2 = 25 \times 5 = 125\]</span></p>
+<p>Note que <span class="math inline">\(\text{Var}(\bar{X}_n) = \sigma^2/n = 0.2\)</span> (divide por <span class="math inline">\(n^2\)</span> pois <span class="math inline">\(\bar{X}_n = S_n/n\)</span>), enquanto <span class="math inline">\(\text{Var}(S_n) = n\sigma^2\)</span> (multiplica por <span class="math inline">\(n\)</span>). O TCL se aplica à soma padronizada <span class="math inline">\(\frac{S_n - n\mu}{\sqrt{n\sigma^2}} = \frac{S_n - n\mu}{\sigma\sqrt{n}} \xrightarrow{D} N(0,1)\)</span>.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+5
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+125
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+30
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+55.9017
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.2
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap2/Exercise 04</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q04 : Cap2_Cap2S1Q4 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_i \overset{\text{iid}}{\sim} \text{Bernoulli}(p)\)</span> com <span class="math inline">\(p = 0.3\)</span> e <span class="math inline">\(n = 100\)</span>. O estimador <span class="math inline">\(\hat{p}_n = \bar{X}_n\)</span> satisfaz o TCL: <span class="math inline">\(\sqrt{n}(\hat{p}_n - p) \xrightarrow{D} N(0, p(1-p))\)</span>. Qual é a variância assintótica (em escala <span class="math inline">\(\sqrt{n}\)</span>) de <span class="math inline">\(\hat{p}_n\)</span>, ou seja, o valor de <span class="math inline">\(p(1-p)\)</span>?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Como <span class="math inline">\(\text{Var}(X_i) = p(1-p)\)</span> para <span class="math inline">\(X_i \sim \text{Bernoulli}(p)\)</span>, pelo TCL a variância assintótica de <span class="math inline">\(\hat{p}_n = \bar{X}_n\)</span> é <span class="math inline">\(p(1-p)\)</span>.</p>
+<p>Substituindo <span class="math inline">\(p = 0.3\)</span>:
+<span class="math display">\[p(1-p) = 0.3 \times 0.7 = 0.21\]</span></p>
+<p>A variância de <span class="math inline">\(\hat{p}_n\)</span> para <span class="math inline">\(n\)</span> fixo é <span class="math inline">\(p(1-p)/n = 0.0021\)</span>.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.063
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.147
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.0021
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+0.21
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.09
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q04 : Cap2_Cap2S1Q4 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_i \overset{\text{iid}}{\sim} \text{Bernoulli}(p)\)</span> com <span class="math inline">\(p = 0.2\)</span> e <span class="math inline">\(n = 200\)</span>. O estimador <span class="math inline">\(\hat{p}_n = \bar{X}_n\)</span> satisfaz o TCL: <span class="math inline">\(\sqrt{n}(\hat{p}_n - p) \xrightarrow{D} N(0, p(1-p))\)</span>. Qual é a variância assintótica (em escala <span class="math inline">\(\sqrt{n}\)</span>) de <span class="math inline">\(\hat{p}_n\)</span>, ou seja, o valor de <span class="math inline">\(p(1-p)\)</span>?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Como <span class="math inline">\(\text{Var}(X_i) = p(1-p)\)</span> para <span class="math inline">\(X_i \sim \text{Bernoulli}(p)\)</span>, pelo TCL a variância assintótica de <span class="math inline">\(\hat{p}_n = \bar{X}_n\)</span> é <span class="math inline">\(p(1-p)\)</span>.</p>
+<p>Substituindo <span class="math inline">\(p = 0.2\)</span>:
+<span class="math display">\[p(1-p) = 0.2 \times 0.8 = 0.16\]</span></p>
+<p>A variância de <span class="math inline">\(\hat{p}_n\)</span> para <span class="math inline">\(n\)</span> fixo é <span class="math inline">\(p(1-p)/n = 8 &amp;times; 10&lt;sup&gt;-4&lt;/sup&gt;\)</span>.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+8 × 10<sup>-4</sup>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.04
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+0.16
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.128
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.032
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap2/Exercise 05</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q05 : Cap2_Cap2S1Q5 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Para estimar a média <span class="math inline">\(\mu\)</span> de uma população com desvio padrão <span class="math inline">\(\sigma = 3\)</span>, deseja-se uma margem de erro máxima <span class="math inline">\(E = 0.1\)</span> com confiança 95% (<span class="math inline">\(z_{0.975} = 1.96\)</span>). Usando a fórmula <span class="math inline">\(n \geq \left(\dfrac{z\sigma}{E}\right)^2\)</span>, qual é o tamanho amostral mínimo necessário?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Substituindo os valores:
+<span class="math display">\[n \geq \left(\frac{z\sigma}{E}\right)^2 = \left(\frac{1.96 \times 3}{0.1}\right)^2 = \left(\frac{5.88}{0.1}\right)^2 = (58.8)^2 = 3457.44\]</span></p>
+<p>Arredondando para cima (pois <span class="math inline">\(n\)</span> deve ser inteiro e satisfazer a desigualdade): <span class="math inline">\(n_{\min} = 3458\)</span>.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+59
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+3458
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+3457
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+346
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+1
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q05 : Cap2_Cap2S1Q5 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Para estimar a média <span class="math inline">\(\mu\)</span> de uma população com desvio padrão <span class="math inline">\(\sigma = 1\)</span>, deseja-se uma margem de erro máxima <span class="math inline">\(E = 1\)</span> com confiança 95% (<span class="math inline">\(z_{0.975} = 1.96\)</span>). Usando a fórmula <span class="math inline">\(n \geq \left(\dfrac{z\sigma}{E}\right)^2\)</span>, qual é o tamanho amostral mínimo necessário?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Substituindo os valores:
+<span class="math display">\[n \geq \left(\frac{z\sigma}{E}\right)^2 = \left(\frac{1.96 \times 1}{1}\right)^2 = \left(\frac{1.96}{1}\right)^2 = (1.96)^2 = 3.8416\]</span></p>
+<p>Arredondando para cima (pois <span class="math inline">\(n\)</span> deve ser inteiro e satisfazer a desigualdade): <span class="math inline">\(n_{\min} = 4\)</span>.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+2
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+5
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+5
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+4
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+3
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap2/Exercise 06</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q06 : Cap2_Cap2S1Q6 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_i \overset{\text{iid}}{\sim} \text{Poisson}(\lambda)\)</span> com <span class="math inline">\(\lambda = 10\)</span> e <span class="math inline">\(n = 36\)</span>. Sabe-se que <span class="math inline">\(E(X_i) = \text{Var}(X_i) = \lambda\)</span>. Pelo TCL, <span class="math inline">\(\sqrt{n}(\bar{X}_n - \lambda) \xrightarrow{D} N(0, V)\)</span> onde <span class="math inline">\(V\)</span> é a variância assintótica (em escala <span class="math inline">\(\sqrt{n}\)</span>). Qual é o valor de <span class="math inline">\(V\)</span>?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Para <span class="math inline">\(X_i \overset{\text{iid}}{\sim} \text{Poisson}(\lambda)\)</span>, temos <span class="math inline">\(\text{Var}(X_i) = \lambda\)</span>. Pelo TCL:
+<span class="math display">\[\sqrt{n}(\bar{X}_n - \lambda) \xrightarrow{D} N(0, \lambda)\]</span></p>
+<p>A variância assintótica (em escala <span class="math inline">\(\sqrt{n}\)</span>) é <span class="math inline">\(V = \lambda = 10\)</span>.</p>
+<p>Note que a variância de <span class="math inline">\(\bar{X}_n\)</span> para <span class="math inline">\(n\)</span> fixo é <span class="math inline">\(\lambda/n = 0.2778\)</span>, mas a variância assintótica da quantidade padronizada <span class="math inline">\(\sqrt{n}(\bar{X}_n - \lambda)\)</span> é <span class="math inline">\(\lambda\)</span>.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.2778
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.1
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+100
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+10
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+3.1623
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q06 : Cap2_Cap2S1Q6 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_i \overset{\text{iid}}{\sim} \text{Poisson}(\lambda)\)</span> com <span class="math inline">\(\lambda = 4\)</span> e <span class="math inline">\(n = 49\)</span>. Sabe-se que <span class="math inline">\(E(X_i) = \text{Var}(X_i) = \lambda\)</span>. Pelo TCL, <span class="math inline">\(\sqrt{n}(\bar{X}_n - \lambda) \xrightarrow{D} N(0, V)\)</span> onde <span class="math inline">\(V\)</span> é a variância assintótica (em escala <span class="math inline">\(\sqrt{n}\)</span>). Qual é o valor de <span class="math inline">\(V\)</span>?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Para <span class="math inline">\(X_i \overset{\text{iid}}{\sim} \text{Poisson}(\lambda)\)</span>, temos <span class="math inline">\(\text{Var}(X_i) = \lambda\)</span>. Pelo TCL:
+<span class="math display">\[\sqrt{n}(\bar{X}_n - \lambda) \xrightarrow{D} N(0, \lambda)\]</span></p>
+<p>A variância assintótica (em escala <span class="math inline">\(\sqrt{n}\)</span>) é <span class="math inline">\(V = \lambda = 4\)</span>.</p>
+<p>Note que a variância de <span class="math inline">\(\bar{X}_n\)</span> para <span class="math inline">\(n\)</span> fixo é <span class="math inline">\(\lambda/n = 0.0816\)</span>, mas a variância assintótica da quantidade padronizada <span class="math inline">\(\sqrt{n}(\bar{X}_n - \lambda)\)</span> é <span class="math inline">\(\lambda\)</span>.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+4
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.0816
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+2
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+16
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.25
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap2/Exercise 07</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q07 : Cap2_Cap2S1Q7 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_i \overset{\text{iid}}{\sim} \text{Exp}(\theta)\)</span> com <span class="math inline">\(\theta = 2\)</span>, de modo que <span class="math inline">\(E(X_i) = 1/\theta = 0.5\)</span> e <span class="math inline">\(\text{Var}(X_i) = 1/\theta^2 = 0.25\)</span>. Pelo TCL, qual é a distribuição <strong>limite</strong> de</p>
+<p><span class="math display">\[Z_n = \frac{\sqrt{n}(\bar{X}_n - 1/\theta)}{1/\theta}?\]</span></p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Pelo TCL, <span class="math inline">\(\frac{\sqrt{n}(\bar{X}_n - \mu)}{\sigma} \xrightarrow{D} N(0,1)\)</span> onde <span class="math inline">\(\mu = 1/\theta\)</span> e <span class="math inline">\(\sigma = 1/\theta\)</span>. Portanto:
+<span class="math display">\[Z_n = \frac{\sqrt{n}(\bar{X}_n - 1/\theta)}{1/\theta} \xrightarrow{D} N(0,1)\]</span></p>
+<p>O TCL se aplica a qualquer distribuição com média e variância finitas, independentemente da forma (aqui, exponencial). A distribuição limite é sempre <span class="math inline">\(N(0,1)\)</span> após a padronização adequada.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(t_{35}\)</span> (<span class="math inline">\(t\)</span> de Student com <span class="math inline">\(n-1\)</span> graus de liberdade).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(N(1/2,\, 1/4)\)</span> (a própria distribuição de <span class="math inline">\(X_i\)</span>, não o limite padronizado).
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(N(0,1)\)</span> (normal padrão, pelo TCL).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(\chi^2_1\)</span> (qui-quadrado com 1 grau de liberdade).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(\text{Exp}(2)\)</span> (a distribuição original não é preservada na padronização).
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q07 : Cap2_Cap2S1Q7 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_i \overset{\text{iid}}{\sim} \text{Exp}(\theta)\)</span> com <span class="math inline">\(\theta = 4\)</span>, de modo que <span class="math inline">\(E(X_i) = 1/\theta = 0.25\)</span> e <span class="math inline">\(\text{Var}(X_i) = 1/\theta^2 = 0.0625\)</span>. Pelo TCL, qual é a distribuição <strong>limite</strong> de</p>
+<p><span class="math display">\[Z_n = \frac{\sqrt{n}(\bar{X}_n - 1/\theta)}{1/\theta}?\]</span></p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Pelo TCL, <span class="math inline">\(\frac{\sqrt{n}(\bar{X}_n - \mu)}{\sigma} \xrightarrow{D} N(0,1)\)</span> onde <span class="math inline">\(\mu = 1/\theta\)</span> e <span class="math inline">\(\sigma = 1/\theta\)</span>. Portanto:
+<span class="math display">\[Z_n = \frac{\sqrt{n}(\bar{X}_n - 1/\theta)}{1/\theta} \xrightarrow{D} N(0,1)\]</span></p>
+<p>O TCL se aplica a qualquer distribuição com média e variância finitas, independentemente da forma (aqui, exponencial). A distribuição limite é sempre <span class="math inline">\(N(0,1)\)</span> após a padronização adequada.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(\chi^2_1\)</span> (qui-quadrado com 1 grau de liberdade).
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(N(0,1)\)</span> (normal padrão, pelo TCL).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(\text{Exp}(4)\)</span> (a distribuição original não é preservada na padronização).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(t_{48}\)</span> (<span class="math inline">\(t\)</span> de Student com <span class="math inline">\(n-1\)</span> graus de liberdade).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(N(1/4,\, 1/16)\)</span> (a própria distribuição de <span class="math inline">\(X_i\)</span>, não o limite padronizado).
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap2/Exercise 08</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q08 : Cap2_Cap2S1Q8 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Pelo TCL, para <span class="math inline">\(n\)</span> grande, <span class="math inline">\(\bar{X}_n\)</span> tem distribuição aproximadamente <span class="math inline">\(N\!\left(\mu, \sigma^2/n\right) = N\!\left(7, 0.04\right)\)</span> quando <span class="math inline">\(\mu = 7\)</span>, <span class="math inline">\(\sigma = 4\)</span> e <span class="math inline">\(n = 400\)</span>. Qual afirmação sobre essa aproximação é <strong>correta</strong>?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>A afirmação correta é que a qualidade da aproximação normal melhora com <span class="math inline">\(n\)</span>, e a taxa de convergência depende da assimetria e curtose da distribuição original (Teorema de Berry-Esseen formaliza isso).</p>
+<p>O critério empírico “<span class="math inline">\(n \geq 30\)</span>” não tem respaldo teórico universal: para distribuições muito assimétricas ou com caudas pesadas, são necessários <span class="math inline">\(n\)</span> muito maiores. A aproximação não é exata para nenhuma distribuição não-normal (apenas para normais, onde <span class="math inline">\(\bar{X}_n\)</span> é exatamente normal para qualquer <span class="math inline">\(n\)</span>).</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+O TCL garante exatidão da aproximação normal para todo <span class="math inline">\(n\)</span>, independentemente da distribuição.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+A aproximação é exata quando a distribuição original é exponencial.
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+A aproximação melhora à medida que <span class="math inline">\(n\)</span> aumenta, e a taxa de convergência depende do grau de não-normalidade da distribuição original.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+A aproximação é exata para qualquer <span class="math inline">\(n \geq 30\)</span>, independentemente da distribuição original.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+A aproximação normal só é válida para distribuições simétricas.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q08 : Cap2_Cap2S1Q8 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Pelo TCL, para <span class="math inline">\(n\)</span> grande, <span class="math inline">\(\bar{X}_n\)</span> tem distribuição aproximadamente <span class="math inline">\(N\!\left(\mu, \sigma^2/n\right) = N\!\left(3, 0.04\right)\)</span> quando <span class="math inline">\(\mu = 3\)</span>, <span class="math inline">\(\sigma = 4\)</span> e <span class="math inline">\(n = 400\)</span>. Qual afirmação sobre essa aproximação é <strong>correta</strong>?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>A afirmação correta é que a qualidade da aproximação normal melhora com <span class="math inline">\(n\)</span>, e a taxa de convergência depende da assimetria e curtose da distribuição original (Teorema de Berry-Esseen formaliza isso).</p>
+<p>O critério empírico “<span class="math inline">\(n \geq 30\)</span>” não tem respaldo teórico universal: para distribuições muito assimétricas ou com caudas pesadas, são necessários <span class="math inline">\(n\)</span> muito maiores. A aproximação não é exata para nenhuma distribuição não-normal (apenas para normais, onde <span class="math inline">\(\bar{X}_n\)</span> é exatamente normal para qualquer <span class="math inline">\(n\)</span>).</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+A aproximação melhora à medida que <span class="math inline">\(n\)</span> aumenta, e a taxa de convergência depende do grau de não-normalidade da distribuição original.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+O TCL garante exatidão da aproximação normal para todo <span class="math inline">\(n\)</span>, independentemente da distribuição.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+A aproximação normal só é válida para distribuições simétricas.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+A aproximação é exata para qualquer <span class="math inline">\(n \geq 30\)</span>, independentemente da distribuição original.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+A aproximação é exata quando a distribuição original é exponencial.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap2/Exercise 09</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q09 : Cap2_Cap2S1Q9 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Se <span class="math inline">\(\sqrt{n}(\bar{X}_n - \mu) \xrightarrow{D} N(0, \sigma^2)\)</span> com <span class="math inline">\(\sigma^2 = 5\)</span> e <span class="math inline">\(n = 25\)</span>, então a variância assintótica de <span class="math inline">\(\bar{X}_n\)</span> é <span class="math inline">\(\sigma^2/n\)</span>. Qual é o valor numérico de <span class="math inline">\(\sigma^2/n\)</span>?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>A variância assintótica de <span class="math inline">\(\bar{X}_n\)</span> se obtém dividindo a variância assintótica (em escala <span class="math inline">\(\sqrt{n}\)</span>) por <span class="math inline">\(n\)</span>:
+<span class="math display">\[\text{VarAss}(\bar{X}_n) = \frac{\sigma^2}{n} = \frac{5}{25} = 0.2\]</span></p>
+<p>Alternativamente: <span class="math inline">\(\sqrt{n}(\bar{X}_n - \mu) \xrightarrow{D} N(0,\sigma^2)\)</span> significa que <span class="math inline">\(\bar{X}_n \approx N(\mu, \sigma^2/n)\)</span> para <span class="math inline">\(n\)</span> grande.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+0.2
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+1
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+1
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.2083
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+125
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q09 : Cap2_Cap2S1Q9 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Se <span class="math inline">\(\sqrt{n}(\bar{X}_n - \mu) \xrightarrow{D} N(0, \sigma^2)\)</span> com <span class="math inline">\(\sigma^2 = 4\)</span> e <span class="math inline">\(n = 49\)</span>, então a variância assintótica de <span class="math inline">\(\bar{X}_n\)</span> é <span class="math inline">\(\sigma^2/n\)</span>. Qual é o valor numérico de <span class="math inline">\(\sigma^2/n\)</span>?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>A variância assintótica de <span class="math inline">\(\bar{X}_n\)</span> se obtém dividindo a variância assintótica (em escala <span class="math inline">\(\sqrt{n}\)</span>) por <span class="math inline">\(n\)</span>:
+<span class="math display">\[\text{VarAss}(\bar{X}_n) = \frac{\sigma^2}{n} = \frac{4}{49} = 0.0816\]</span></p>
+<p>Alternativamente: <span class="math inline">\(\sqrt{n}(\bar{X}_n - \mu) \xrightarrow{D} N(0,\sigma^2)\)</span> significa que <span class="math inline">\(\bar{X}_n \approx N(\mu, \sigma^2/n)\)</span> para <span class="math inline">\(n\)</span> grande.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.0833
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.5714
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+0.0816
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+196
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.3265
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap2/Exercise 10</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q10 : Cap2_Cap2S1Q10 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_i \overset{\text{iid}}{\sim}\)</span> alguma distribuição com <span class="math inline">\(\mu = 7\)</span> e <span class="math inline">\(\sigma^2 = 2\)</span>. Pelo TCL, a soma <span class="math inline">\(S_n = \sum_{i=1}^n X_i\)</span> tem distribuição aproximada <span class="math inline">\(N(n\mu, n\sigma^2) = N(700, 200)\)</span> para <span class="math inline">\(n = 100\)</span>. Qual é a <strong>média</strong> de <span class="math inline">\(S_n\)</span>?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Como <span class="math inline">\(X_i\)</span> são iid com <span class="math inline">\(E(X_i) = \mu\)</span>:
+<span class="math display">\[E(S_n) = E\!\left(\sum_{i=1}^n X_i\right) = n\mu = 100 \times 7 = 700\]</span></p>
+<p>A variância é <span class="math inline">\(\text{Var}(S_n) = n\sigma^2 = 100 \times 2 = 200\)</span>.</p>
+<p>Note que a média de <span class="math inline">\(\bar{X}_n = S_n/n\)</span> é <span class="math inline">\(\mu = 7\)</span> (não <span class="math inline">\(n\mu\)</span>).</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+7
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+70
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+700
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+900
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+200
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q10 : Cap2_Cap2S1Q10 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_i \overset{\text{iid}}{\sim}\)</span> alguma distribuição com <span class="math inline">\(\mu = 5\)</span> e <span class="math inline">\(\sigma^2 = 6\)</span>. Pelo TCL, a soma <span class="math inline">\(S_n = \sum_{i=1}^n X_i\)</span> tem distribuição aproximada <span class="math inline">\(N(n\mu, n\sigma^2) = N(125, 150)\)</span> para <span class="math inline">\(n = 25\)</span>. Qual é a <strong>média</strong> de <span class="math inline">\(S_n\)</span>?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Como <span class="math inline">\(X_i\)</span> são iid com <span class="math inline">\(E(X_i) = \mu\)</span>:
+<span class="math display">\[E(S_n) = E\!\left(\sum_{i=1}^n X_i\right) = n\mu = 25 \times 5 = 125\]</span></p>
+<p>A variância é <span class="math inline">\(\text{Var}(S_n) = n\sigma^2 = 25 \times 6 = 150\)</span>.</p>
+<p>Note que a média de <span class="math inline">\(\bar{X}_n = S_n/n\)</span> é <span class="math inline">\(\mu = 5\)</span> (não <span class="math inline">\(n\mu\)</span>).</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+5
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+25
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+125
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+150
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+275
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap2/Exercise 11</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q11 : Cap2_Cap2S2Q1 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Suponha que <span class="math inline">\(\sqrt{n}(\bar{X}_n - \mu) \xrightarrow{D} N(0, \sigma^2)\)</span> e que <span class="math inline">\(g : \mathbb{R} \to \mathbb{R}\)</span> é diferenciável com <span class="math inline">\(g&#39;(\mu) \neq 0\)</span>. O <strong>Método Delta</strong> (Delta Method) afirma que:</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>O Método Delta é obtido por expansão de Taylor de primeira ordem: <span class="math inline">\(g(\bar{X}_n) \approx g(\mu) + g&#39;(\mu)(\bar{X}_n - \mu)\)</span>, portanto:
+<span class="math display">\[\sqrt{n}(g(\bar{X}_n) - g(\mu)) \approx g&#39;(\mu)\sqrt{n}(\bar{X}_n - \mu) \xrightarrow{D} N(0,\, [g&#39;(\mu)]^2\sigma^2)\]</span></p>
+<p>A variância assintótica é <span class="math inline">\([g&#39;(\mu)]^2\sigma^2\)</span>, com <span class="math inline">\(g&#39;(\mu)\)</span> elevado ao <strong>quadrado</strong>. Os erros comuns são: não elevar ao quadrado, confundir <span class="math inline">\(g(\mu)\)</span> com <span class="math inline">\(g&#39;(\mu)\)</span>, ou omitir a escala <span class="math inline">\(\sqrt{n}\)</span>.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(\sqrt{n}(g(\bar{X}_n) - g(\mu)) \xrightarrow{D} N(0,\, [g(\mu)]^2 \sigma^2)\)</span> (usando <span class="math inline">\(g(\mu)\)</span> em vez de <span class="math inline">\(g&#39;(\mu)\)</span>).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(\sqrt{n}(g(\bar{X}_n) - g(\mu)) \xrightarrow{D} N(0,\, g&#39;(\mu)\, \sigma^2)\)</span> (sem elevar ao quadrado).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(\sqrt{n}(g(\bar{X}_n) - g(\mu)) \xrightarrow{D} N(0,\, [g&#39;(\mu)\,\sigma]^2/n)\)</span> (variância dividida por <span class="math inline">\(n\)</span> erroneamente).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(g(\bar{X}_n) \xrightarrow{D} N(g(\mu),\, [g&#39;(\mu)]^2 \sigma^2)\)</span> (sem escala <span class="math inline">\(\sqrt{n}\)</span>, variância não dividida por <span class="math inline">\(n\)</span>).
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(\sqrt{n}(g(\bar{X}_n) - g(\mu)) \xrightarrow{D} N(0,\, [g&#39;(\mu)]^2 \sigma^2)\)</span>.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q11 : Cap2_Cap2S2Q1 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Suponha que <span class="math inline">\(\sqrt{n}(\bar{X}_n - \mu) \xrightarrow{D} N(0, \sigma^2)\)</span> e que <span class="math inline">\(g : \mathbb{R} \to \mathbb{R}\)</span> é diferenciável com <span class="math inline">\(g&#39;(\mu) \neq 0\)</span>. O <strong>Método Delta</strong> (Delta Method) afirma que:</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>O Método Delta é obtido por expansão de Taylor de primeira ordem: <span class="math inline">\(g(\bar{X}_n) \approx g(\mu) + g&#39;(\mu)(\bar{X}_n - \mu)\)</span>, portanto:
+<span class="math display">\[\sqrt{n}(g(\bar{X}_n) - g(\mu)) \approx g&#39;(\mu)\sqrt{n}(\bar{X}_n - \mu) \xrightarrow{D} N(0,\, [g&#39;(\mu)]^2\sigma^2)\]</span></p>
+<p>A variância assintótica é <span class="math inline">\([g&#39;(\mu)]^2\sigma^2\)</span>, com <span class="math inline">\(g&#39;(\mu)\)</span> elevado ao <strong>quadrado</strong>. Os erros comuns são: não elevar ao quadrado, confundir <span class="math inline">\(g(\mu)\)</span> com <span class="math inline">\(g&#39;(\mu)\)</span>, ou omitir a escala <span class="math inline">\(\sqrt{n}\)</span>.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(\sqrt{n}(g(\bar{X}_n) - g(\mu)) \xrightarrow{D} N(0,\, [g(\mu)]^2 \sigma^2)\)</span> (usando <span class="math inline">\(g(\mu)\)</span> em vez de <span class="math inline">\(g&#39;(\mu)\)</span>).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(g(\bar{X}_n) \xrightarrow{D} N(g(\mu),\, [g&#39;(\mu)]^2 \sigma^2)\)</span> (sem escala <span class="math inline">\(\sqrt{n}\)</span>, variância não dividida por <span class="math inline">\(n\)</span>).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(\sqrt{n}(g(\bar{X}_n) - g(\mu)) \xrightarrow{D} N(0,\, g&#39;(\mu)\, \sigma^2)\)</span> (sem elevar ao quadrado).
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(\sqrt{n}(g(\bar{X}_n) - g(\mu)) \xrightarrow{D} N(0,\, [g&#39;(\mu)]^2 \sigma^2)\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(\sqrt{n}(g(\bar{X}_n) - g(\mu)) \xrightarrow{D} N(0,\, [g&#39;(\mu)\,\sigma]^2/n)\)</span> (variância dividida por <span class="math inline">\(n\)</span> erroneamente).
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap2/Exercise 12</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q12 : Cap2_Cap2S2Q2 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(\bar{X}_n\)</span> com variância assintótica <span class="math inline">\(\sigma^2/n\)</span> onde <span class="math inline">\(\sigma^2 = 5\)</span>. Considere a transformação <span class="math inline">\(g(x) = \sqrt{x}\)</span> com derivada <span class="math inline">\(g&#39;(x) = \dfrac{1}{2\sqrt{x}}\)</span>. Pelo Método Delta com <span class="math inline">\(\mu = 4\)</span>, a variância assintótica (em escala <span class="math inline">\(\sqrt{n}\)</span>) de <span class="math inline">\(g(\bar{X}_n) = \sqrt{\bar{X}_n}\)</span> é:
+<span class="math display">\[[g&#39;(\mu)]^2 \sigma^2 = \frac{\sigma^2}{4\mu}\]</span></p>
+<p>Calcule <span class="math inline">\(\sigma^2/(4\mu)\)</span> para <span class="math inline">\(\mu = 4\)</span> e <span class="math inline">\(\sigma^2 = 5\)</span>.</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Temos <span class="math inline">\(g&#39;(\mu) = \dfrac{1}{2\sqrt{\mu}} = \dfrac{1}{2\sqrt{4}} = \dfrac{1}{4}\)</span>.</p>
+<p>Portanto:
+<span class="math display">\[[g&#39;(\mu)]^2 \sigma^2 = \left(\frac{1}{2\sqrt{4}}\right)^2 \times 5 = \frac{5}{4 \times 4} = \frac{5}{16} = 0.3125\]</span></p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+80
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+1.25
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.625
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+1.25
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+0.3125
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q12 : Cap2_Cap2S2Q2 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(\bar{X}_n\)</span> com variância assintótica <span class="math inline">\(\sigma^2/n\)</span> onde <span class="math inline">\(\sigma^2 = 2\)</span>. Considere a transformação <span class="math inline">\(g(x) = \sqrt{x}\)</span> com derivada <span class="math inline">\(g&#39;(x) = \dfrac{1}{2\sqrt{x}}\)</span>. Pelo Método Delta com <span class="math inline">\(\mu = 4\)</span>, a variância assintótica (em escala <span class="math inline">\(\sqrt{n}\)</span>) de <span class="math inline">\(g(\bar{X}_n) = \sqrt{\bar{X}_n}\)</span> é:
+<span class="math display">\[[g&#39;(\mu)]^2 \sigma^2 = \frac{\sigma^2}{4\mu}\]</span></p>
+<p>Calcule <span class="math inline">\(\sigma^2/(4\mu)\)</span> para <span class="math inline">\(\mu = 4\)</span> e <span class="math inline">\(\sigma^2 = 2\)</span>.</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Temos <span class="math inline">\(g&#39;(\mu) = \dfrac{1}{2\sqrt{\mu}} = \dfrac{1}{2\sqrt{4}} = \dfrac{1}{4}\)</span>.</p>
+<p>Portanto:
+<span class="math display">\[[g&#39;(\mu)]^2 \sigma^2 = \left(\frac{1}{2\sqrt{4}}\right)^2 \times 2 = \frac{2}{4 \times 4} = \frac{2}{16} = 0.125\]</span></p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.25
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+0.125
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.5
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.5
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+32
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap2/Exercise 13</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q13 : Cap2_Cap2S2Q3 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(\bar{X}_n\)</span> com variância assintótica <span class="math inline">\(\sigma^2/n\)</span> onde <span class="math inline">\(\sigma^2 = 9\)</span>. Considere a transformação <span class="math inline">\(g(x) = \log(x)\)</span> com derivada <span class="math inline">\(g&#39;(x) = 1/x\)</span>. Pelo Método Delta com <span class="math inline">\(\mu = 6\)</span>, a variância assintótica (em escala <span class="math inline">\(\sqrt{n}\)</span>) de <span class="math inline">\(\log(\bar{X}_n)\)</span> é <span class="math inline">\([g&#39;(\mu)]^2\sigma^2 = \sigma^2/\mu^2\)</span>. Calcule <span class="math inline">\(\sigma^2/\mu^2\)</span> para os valores dados.</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Temos <span class="math inline">\(g&#39;(\mu) = 1/\mu = 1/6\)</span>. Portanto:
+<span class="math display">\[[g&#39;(\mu)]^2\sigma^2 = \frac{1}{\mu^2}\,\sigma^2 = \frac{9}{6^2} = \frac{9}{36} = 0.25\]</span></p>
+<p>Note que <span class="math inline">\(g&#39;(\mu) = 1/\mu\)</span> (não <span class="math inline">\(1/\mu^2\)</span> nem <span class="math inline">\(1/(2\mu)\)</span>). O quadrado de <span class="math inline">\(1/\mu\)</span> é <span class="math inline">\(1/\mu^2\)</span>.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.125
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+1.5
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+324
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+1.5
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+0.25
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q13 : Cap2_Cap2S2Q3 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(\bar{X}_n\)</span> com variância assintótica <span class="math inline">\(\sigma^2/n\)</span> onde <span class="math inline">\(\sigma^2 = 5\)</span>. Considere a transformação <span class="math inline">\(g(x) = \log(x)\)</span> com derivada <span class="math inline">\(g&#39;(x) = 1/x\)</span>. Pelo Método Delta com <span class="math inline">\(\mu = 4\)</span>, a variância assintótica (em escala <span class="math inline">\(\sqrt{n}\)</span>) de <span class="math inline">\(\log(\bar{X}_n)\)</span> é <span class="math inline">\([g&#39;(\mu)]^2\sigma^2 = \sigma^2/\mu^2\)</span>. Calcule <span class="math inline">\(\sigma^2/\mu^2\)</span> para os valores dados.</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Temos <span class="math inline">\(g&#39;(\mu) = 1/\mu = 1/4\)</span>. Portanto:
+<span class="math display">\[[g&#39;(\mu)]^2\sigma^2 = \frac{1}{\mu^2}\,\sigma^2 = \frac{5}{4^2} = \frac{5}{16} = 0.3125\]</span></p>
+<p>Note que <span class="math inline">\(g&#39;(\mu) = 1/\mu\)</span> (não <span class="math inline">\(1/\mu^2\)</span> nem <span class="math inline">\(1/(2\mu)\)</span>). O quadrado de <span class="math inline">\(1/\mu\)</span> é <span class="math inline">\(1/\mu^2\)</span>.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+1.25
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+80
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+1.25
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+0.3125
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.1562
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap2/Exercise 14</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q14 : Cap2_Cap2S2Q4 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(\bar{X}_n\)</span> com variância assintótica <span class="math inline">\(\sigma^2/n\)</span> onde <span class="math inline">\(\sigma^2 = 5\)</span>. Considere a transformação <span class="math inline">\(g(x) = x^2\)</span> com derivada <span class="math inline">\(g&#39;(x) = 2x\)</span>. Pelo Método Delta com <span class="math inline">\(\mu = 5\)</span>, a variância assintótica (em escala <span class="math inline">\(\sqrt{n}\)</span>) de <span class="math inline">\(\bar{X}_n^2\)</span> é <span class="math inline">\([g&#39;(\mu)]^2\sigma^2 = 4\mu^2\sigma^2\)</span>. Calcule <span class="math inline">\(4\mu^2\sigma^2\)</span> para os valores dados.</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Temos <span class="math inline">\(g&#39;(\mu) = 2\mu = 2 \times 5 = 10\)</span>. Portanto:
+<span class="math display">\[[g&#39;(\mu)]^2\sigma^2 = (2\mu)^2\sigma^2 = 4\mu^2\sigma^2 = 4 \times 5^2 \times 5 = 4 \times 25 \times 5 = 500\]</span></p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+50
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+250
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+100
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+20
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+500
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q14 : Cap2_Cap2S2Q4 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(\bar{X}_n\)</span> com variância assintótica <span class="math inline">\(\sigma^2/n\)</span> onde <span class="math inline">\(\sigma^2 = 1\)</span>. Considere a transformação <span class="math inline">\(g(x) = x^2\)</span> com derivada <span class="math inline">\(g&#39;(x) = 2x\)</span>. Pelo Método Delta com <span class="math inline">\(\mu = 5\)</span>, a variância assintótica (em escala <span class="math inline">\(\sqrt{n}\)</span>) de <span class="math inline">\(\bar{X}_n^2\)</span> é <span class="math inline">\([g&#39;(\mu)]^2\sigma^2 = 4\mu^2\sigma^2\)</span>. Calcule <span class="math inline">\(4\mu^2\sigma^2\)</span> para os valores dados.</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Temos <span class="math inline">\(g&#39;(\mu) = 2\mu = 2 \times 5 = 10\)</span>. Portanto:
+<span class="math display">\[[g&#39;(\mu)]^2\sigma^2 = (2\mu)^2\sigma^2 = 4\mu^2\sigma^2 = 4 \times 5^2 \times 1 = 4 \times 25 \times 1 = 100\]</span></p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+10
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+20
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+100
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+101
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+50
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap2/Exercise 15</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q15 : Cap2_Cap2S2Q5 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(\bar{X}_n\)</span> com variância assintótica <span class="math inline">\(\sigma^2/n\)</span> onde <span class="math inline">\(\sigma^2 = 4\)</span>. Considere a transformação <span class="math inline">\(g(x) = e^x\)</span> com derivada <span class="math inline">\(g&#39;(x) = e^x\)</span>. Pelo Método Delta com <span class="math inline">\(\mu = 1\)</span>, a variância assintótica (em escala <span class="math inline">\(\sqrt{n}\)</span>) de <span class="math inline">\(e^{\bar{X}_n}\)</span> é <span class="math inline">\([g&#39;(\mu)]^2\sigma^2 = e^{2\mu}\sigma^2\)</span>. Calcule <span class="math inline">\(e^{2\mu}\sigma^2\)</span> para os valores dados.</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Temos <span class="math inline">\(g&#39;(\mu) = e^\mu = e^{1} = 2.7183\)</span>. Portanto:
+<span class="math display">\[[g&#39;(\mu)]^2\sigma^2 = (e^\mu)^2\sigma^2 = e^{2\mu}\sigma^2 = e^{2} \times 4 = 7.3891 \times 4 = 29.5562\]</span></p>
+<p>Note que <span class="math inline">\(e^{2\mu} \neq 2e^\mu\)</span> (não se multiplica o expoente por 2, eleva-se à potência 2).</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+1.8473
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+21.7463
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+29.5562
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+118.2249
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+10.8731
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q15 : Cap2_Cap2S2Q5 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(\bar{X}_n\)</span> com variância assintótica <span class="math inline">\(\sigma^2/n\)</span> onde <span class="math inline">\(\sigma^2 = 1\)</span>. Considere a transformação <span class="math inline">\(g(x) = e^x\)</span> com derivada <span class="math inline">\(g&#39;(x) = e^x\)</span>. Pelo Método Delta com <span class="math inline">\(\mu = 1\)</span>, a variância assintótica (em escala <span class="math inline">\(\sqrt{n}\)</span>) de <span class="math inline">\(e^{\bar{X}_n}\)</span> é <span class="math inline">\([g&#39;(\mu)]^2\sigma^2 = e^{2\mu}\sigma^2\)</span>. Calcule <span class="math inline">\(e^{2\mu}\sigma^2\)</span> para os valores dados.</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Temos <span class="math inline">\(g&#39;(\mu) = e^\mu = e^{1} = 2.7183\)</span>. Portanto:
+<span class="math display">\[[g&#39;(\mu)]^2\sigma^2 = (e^\mu)^2\sigma^2 = e^{2\mu}\sigma^2 = e^{2} \times 1 = 7.3891 \times 1 = 7.3891\]</span></p>
+<p>Note que <span class="math inline">\(e^{2\mu} \neq 2e^\mu\)</span> (não se multiplica o expoente por 2, eleva-se à potência 2).</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+7.3891
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+8.12801
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+2.7183
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+8.12801
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+5.4366
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap2/Exercise 16</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q16 : Cap2_Cap2S2Q6 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(\bar{X}_n\)</span> com variância assintótica <span class="math inline">\(\sigma^2/n\)</span> onde <span class="math inline">\(\sigma^2 = 6\)</span>. Considere a transformação <span class="math inline">\(g(x) = 1/x\)</span> com derivada <span class="math inline">\(g&#39;(x) = -1/x^2\)</span>. Pelo Método Delta com <span class="math inline">\(\mu = 4\)</span>, a variância assintótica (em escala <span class="math inline">\(\sqrt{n}\)</span>) de <span class="math inline">\(1/\bar{X}_n\)</span> é <span class="math inline">\([g&#39;(\mu)]^2\sigma^2 = \sigma^2/\mu^4\)</span>. Calcule <span class="math inline">\(\sigma^2/\mu^4\)</span>.</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Temos <span class="math inline">\(g&#39;(\mu) = -1/\mu^2\)</span>, portanto <span class="math inline">\([g&#39;(\mu)]^2 = 1/\mu^4\)</span>. A variância assintótica é:
+<span class="math display">\[[g&#39;(\mu)]^2\sigma^2 = \frac{\sigma^2}{\mu^4} = \frac{6}{4^4} = \frac{6}{256} = 0.023438\]</span></p>
+<p>Note que <span class="math inline">\([g&#39;(\mu)]^2 = (-1/\mu^2)^2 = 1/\mu^4\)</span> (não <span class="math inline">\(1/\mu^2\)</span>), pois elevamos ao quadrado.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.09375
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+6.51 × 10<sup>-4</sup>
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+0.023438
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.375
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+1536
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q16 : Cap2_Cap2S2Q6 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(\bar{X}_n\)</span> com variância assintótica <span class="math inline">\(\sigma^2/n\)</span> onde <span class="math inline">\(\sigma^2 = 2\)</span>. Considere a transformação <span class="math inline">\(g(x) = 1/x\)</span> com derivada <span class="math inline">\(g&#39;(x) = -1/x^2\)</span>. Pelo Método Delta com <span class="math inline">\(\mu = 5\)</span>, a variância assintótica (em escala <span class="math inline">\(\sqrt{n}\)</span>) de <span class="math inline">\(1/\bar{X}_n\)</span> é <span class="math inline">\([g&#39;(\mu)]^2\sigma^2 = \sigma^2/\mu^4\)</span>. Calcule <span class="math inline">\(\sigma^2/\mu^4\)</span>.</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Temos <span class="math inline">\(g&#39;(\mu) = -1/\mu^2\)</span>, portanto <span class="math inline">\([g&#39;(\mu)]^2 = 1/\mu^4\)</span>. A variância assintótica é:
+<span class="math display">\[[g&#39;(\mu)]^2\sigma^2 = \frac{\sigma^2}{\mu^4} = \frac{2}{5^4} = \frac{2}{625} = 0.0032\]</span></p>
+<p>Note que <span class="math inline">\([g&#39;(\mu)]^2 = (-1/\mu^2)^2 = 1/\mu^4\)</span> (não <span class="math inline">\(1/\mu^2\)</span>), pois elevamos ao quadrado.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+8 × 10<sup>-4</sup>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.08
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.016
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+1250
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+0.0032
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap2/Exercise 17</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q17 : Cap2_Cap2S2Q7 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Pelo Método Delta com <span class="math inline">\(g(x) = \sqrt{x}\)</span>, o intervalo de confiança assintótico de 95% para <span class="math inline">\(\sqrt{\mu}\)</span> é <span class="math inline">\(\sqrt{\hat{\mu}} \pm\)</span> (margem de erro). Qual é a margem de erro correta usando <span class="math inline">\(\hat{\mu} = 2\)</span>, <span class="math inline">\(\hat{\sigma} = 1.4142\)</span> e <span class="math inline">\(n = 100\)</span>?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Pelo Método Delta, <span class="math inline">\(\sqrt{n}(\sqrt{\bar{X}_n} - \sqrt{\mu}) \xrightarrow{D} N(0, [g&#39;(\mu)]^2\sigma^2) = N\!\left(0, \frac{\sigma^2}{4\mu}\right)\)</span>.</p>
+<p>O desvio padrão assintótico de <span class="math inline">\(\sqrt{\bar{X}_n}\)</span> é <span class="math inline">\(\dfrac{\sigma}{2\sqrt{\mu}\sqrt{n}}\)</span>, estimado por <span class="math inline">\(\dfrac{\hat{\sigma}}{2\sqrt{\hat{\mu}}\sqrt{n}}\)</span>.</p>
+<p>A margem de erro a 95% é:
+<span class="math display">\[1{,}96 \cdot \frac{\hat{\sigma}}{2\sqrt{\hat{\mu}}\,\sqrt{n}} = 1{,}96 \cdot \frac{1.4142}{2\sqrt{2} \cdot \sqrt{100}} = 0.098\]</span></p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(\dfrac{1{,}96}{g&#39;(\hat{\mu}) \cdot n} = \dfrac{1{,}96}{0.3536 \cdot 100} = 0.0554\)</span> (fórmula incorreta).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(1{,}96 \cdot \dfrac{\hat{\sigma}^2}{4\hat{\mu}\,n} = 0.0049\)</span> (variância, não desvio padrão).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(1{,}96 \cdot \dfrac{\hat{\sigma}}{\sqrt{n}} = 1{,}96 \cdot \dfrac{1.4142}{\sqrt{100}} = 0.2772\)</span> (sem o fator <span class="math inline">\(g&#39;\)</span>).
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(1{,}96 \cdot \dfrac{\hat{\sigma}}{2\sqrt{\hat{\mu}}\,\sqrt{n}} = 1{,}96 \cdot \dfrac{1.4142}{2\sqrt{2} \cdot \sqrt{100}} = 0.098\)</span>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(1{,}96 \cdot \hat{\sigma} \cdot g&#39;(\hat{\mu}) = 1{,}96 \cdot 1.4142 \cdot 0.3536 = 0.98\)</span> (sem dividir por <span class="math inline">\(\sqrt{n}\)</span>).
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q17 : Cap2_Cap2S2Q7 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Pelo Método Delta com <span class="math inline">\(g(x) = \sqrt{x}\)</span>, o intervalo de confiança assintótico de 95% para <span class="math inline">\(\sqrt{\mu}\)</span> é <span class="math inline">\(\sqrt{\hat{\mu}} \pm\)</span> (margem de erro). Qual é a margem de erro correta usando <span class="math inline">\(\hat{\mu} = 5\)</span>, <span class="math inline">\(\hat{\sigma} = 1.4142\)</span> e <span class="math inline">\(n = 100\)</span>?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Pelo Método Delta, <span class="math inline">\(\sqrt{n}(\sqrt{\bar{X}_n} - \sqrt{\mu}) \xrightarrow{D} N(0, [g&#39;(\mu)]^2\sigma^2) = N\!\left(0, \frac{\sigma^2}{4\mu}\right)\)</span>.</p>
+<p>O desvio padrão assintótico de <span class="math inline">\(\sqrt{\bar{X}_n}\)</span> é <span class="math inline">\(\dfrac{\sigma}{2\sqrt{\mu}\sqrt{n}}\)</span>, estimado por <span class="math inline">\(\dfrac{\hat{\sigma}}{2\sqrt{\hat{\mu}}\sqrt{n}}\)</span>.</p>
+<p>A margem de erro a 95% é:
+<span class="math display">\[1{,}96 \cdot \frac{\hat{\sigma}}{2\sqrt{\hat{\mu}}\,\sqrt{n}} = 1{,}96 \cdot \frac{1.4142}{2\sqrt{5} \cdot \sqrt{100}} = 0.062\]</span></p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(1{,}96 \cdot \hat{\sigma} \cdot g&#39;(\hat{\mu}) = 1{,}96 \cdot 1.4142 \cdot 0.2236 = 0.6198\)</span> (sem dividir por <span class="math inline">\(\sqrt{n}\)</span>).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(1{,}96 \cdot \dfrac{\hat{\sigma}^2}{4\hat{\mu}\,n} = 0.002\)</span> (variância, não desvio padrão).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(1{,}96 \cdot \dfrac{\hat{\sigma}}{\sqrt{n}} = 1{,}96 \cdot \dfrac{1.4142}{\sqrt{100}} = 0.2772\)</span> (sem o fator <span class="math inline">\(g&#39;\)</span>).
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(1{,}96 \cdot \dfrac{\hat{\sigma}}{2\sqrt{\hat{\mu}}\,\sqrt{n}} = 1{,}96 \cdot \dfrac{1.4142}{2\sqrt{5} \cdot \sqrt{100}} = 0.062\)</span>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(\dfrac{1{,}96}{g&#39;(\hat{\mu}) \cdot n} = \dfrac{1{,}96}{0.2236 \cdot 100} = 0.0877\)</span> (fórmula incorreta).
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap2/Exercise 18</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q18 : Cap2_Cap2S2Q8 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(\hat{p}_n \sim \text{Bernoulli}(p)\)</span> (proporção amostral) com <span class="math inline">\(p = 0.5\)</span> e <span class="math inline">\(n = 400\)</span>. Para a transformação logit <span class="math inline">\(g(p) = \log\!\left(\dfrac{p}{1-p}\right)\)</span> com derivada <span class="math inline">\(g&#39;(p) = \dfrac{1}{p(1-p)}\)</span>, pelo Método Delta a variância assintótica (em escala <span class="math inline">\(\sqrt{n}\)</span>) de <span class="math inline">\(\text{logit}(\hat{p}_n)\)</span> é:
+<span class="math display">\[[g&#39;(p)]^2 \cdot p(1-p) = \frac{1}{p(1-p)}\]</span></p>
+<p>Calcule <span class="math inline">\(1/[p(1-p)]\)</span> para <span class="math inline">\(p = 0.5\)</span>.</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Temos <span class="math inline">\(g&#39;(p) = 1/[p(1-p)]\)</span> e <span class="math inline">\(\text{Var}_{\text{ass}}(\hat{p}_n) = p(1-p)\)</span> (em escala <span class="math inline">\(\sqrt{n}\)</span>). Pelo Método Delta:
+<span class="math display">\[[g&#39;(p)]^2 \cdot p(1-p) = \frac{1}{[p(1-p)]^2} \cdot p(1-p) = \frac{1}{p(1-p)}\]</span></p>
+<p>Substituindo <span class="math inline">\(p = 0.5\)</span>:
+<span class="math display">\[\frac{1}{p(1-p)} = \frac{1}{0.5 \times 0.5} = \frac{1}{0.25} = 4\]</span></p>
+<p>A propriedade <span class="math inline">\(\text{logit}(\hat{p}) \approx N(\text{logit}(p), 1/[np(1-p)])\)</span> é útil para construir ICs com melhor comportamento para <span class="math inline">\(p\)</span> próximo de 0 ou 1.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+16.1
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.25
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+16
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+1
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+4
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q18 : Cap2_Cap2S2Q8 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(\hat{p}_n \sim \text{Bernoulli}(p)\)</span> (proporção amostral) com <span class="math inline">\(p = 0.6\)</span> e <span class="math inline">\(n = 400\)</span>. Para a transformação logit <span class="math inline">\(g(p) = \log\!\left(\dfrac{p}{1-p}\right)\)</span> com derivada <span class="math inline">\(g&#39;(p) = \dfrac{1}{p(1-p)}\)</span>, pelo Método Delta a variância assintótica (em escala <span class="math inline">\(\sqrt{n}\)</span>) de <span class="math inline">\(\text{logit}(\hat{p}_n)\)</span> é:
+<span class="math display">\[[g&#39;(p)]^2 \cdot p(1-p) = \frac{1}{p(1-p)}\]</span></p>
+<p>Calcule <span class="math inline">\(1/[p(1-p)]\)</span> para <span class="math inline">\(p = 0.6\)</span>.</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Temos <span class="math inline">\(g&#39;(p) = 1/[p(1-p)]\)</span> e <span class="math inline">\(\text{Var}_{\text{ass}}(\hat{p}_n) = p(1-p)\)</span> (em escala <span class="math inline">\(\sqrt{n}\)</span>). Pelo Método Delta:
+<span class="math display">\[[g&#39;(p)]^2 \cdot p(1-p) = \frac{1}{[p(1-p)]^2} \cdot p(1-p) = \frac{1}{p(1-p)}\]</span></p>
+<p>Substituindo <span class="math inline">\(p = 0.6\)</span>:
+<span class="math display">\[\frac{1}{p(1-p)} = \frac{1}{0.6 \times 0.4} = \frac{1}{0.24} = 4.1667\]</span></p>
+<p>A propriedade <span class="math inline">\(\text{logit}(\hat{p}) \approx N(\text{logit}(p), 1/[np(1-p)])\)</span> é útil para construir ICs com melhor comportamento para <span class="math inline">\(p\)</span> próximo de 0 ou 1.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+17.4611
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+17.3611
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+4.1667
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.24
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.96
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap2/Exercise 19</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q19 : Cap2_Cap2S2Q9 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>O Método Delta de primeira ordem requer que <span class="math inline">\(g&#39;(\mu) \neq 0\)</span> no ponto de expansão <span class="math inline">\(\mu\)</span>. Por que essa condição é necessária?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Quando <span class="math inline">\(g&#39;(\mu) = 0\)</span>, o método delta de primeira ordem produz variância assintótica <span class="math inline">\([g&#39;(\mu)]^2\sigma^2 = 0\)</span>, o que é degenerado e não informativo. Nesse caso, a taxa de convergência é diferente da usual <span class="math inline">\(\sqrt{n}\)</span> e é necessário o método delta de segunda ordem:</p>
+<p><span class="math display">\[n(g(\bar{X}_n) - g(\mu)) \xrightarrow{D} \frac{g&#39;&#39;(\mu)}{2}\sigma^2\chi^2_1\]</span></p>
+<p>(quando <span class="math inline">\(g&#39;(\mu) = 0\)</span> e <span class="math inline">\(g&#39;&#39;(\mu) \neq 0\)</span>).</p>
+<p>Note que <span class="math inline">\(g&#39;(\mu) = 0\)</span> não implica que <span class="math inline">\(g\)</span> não seja diferenciável — pelo contrário, <span class="math inline">\(g\)</span> é diferenciável, mas a derivada se anula. Também não implica que <span class="math inline">\(g\)</span> seja não-invertível ou que <span class="math inline">\(g(\bar{X}_n)\)</span> divirja.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Se <span class="math inline">\(g&#39;(\mu) = 0\)</span>, a variância assintótica de <span class="math inline">\(g(\bar{X}_n)\)</span> torna-se infinita.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Se <span class="math inline">\(g&#39;(\mu) = 0\)</span>, a transformação <span class="math inline">\(g\)</span> não é invertível em <span class="math inline">\(\mu\)</span> e portanto não faz sentido aplicar o método.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Se <span class="math inline">\(g&#39;(\mu) = 0\)</span>, <span class="math inline">\(g(\bar{X}_n)\)</span> não converge em nenhum sentido estocástico.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Se <span class="math inline">\(g&#39;(\mu) = 0\)</span>, o método delta não pode ser aplicado pois <span class="math inline">\(g\)</span> não é diferenciável nesse ponto.
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+Se <span class="math inline">\(g&#39;(\mu) = 0\)</span>, o método delta de primeira ordem dá variância assintótica zero, sendo necessário usar o método delta de segunda ordem.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q19 : Cap2_Cap2S2Q9 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>O Método Delta de primeira ordem requer que <span class="math inline">\(g&#39;(\mu) \neq 0\)</span> no ponto de expansão <span class="math inline">\(\mu\)</span>. Por que essa condição é necessária?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Quando <span class="math inline">\(g&#39;(\mu) = 0\)</span>, o método delta de primeira ordem produz variância assintótica <span class="math inline">\([g&#39;(\mu)]^2\sigma^2 = 0\)</span>, o que é degenerado e não informativo. Nesse caso, a taxa de convergência é diferente da usual <span class="math inline">\(\sqrt{n}\)</span> e é necessário o método delta de segunda ordem:</p>
+<p><span class="math display">\[n(g(\bar{X}_n) - g(\mu)) \xrightarrow{D} \frac{g&#39;&#39;(\mu)}{2}\sigma^2\chi^2_1\]</span></p>
+<p>(quando <span class="math inline">\(g&#39;(\mu) = 0\)</span> e <span class="math inline">\(g&#39;&#39;(\mu) \neq 0\)</span>).</p>
+<p>Note que <span class="math inline">\(g&#39;(\mu) = 0\)</span> não implica que <span class="math inline">\(g\)</span> não seja diferenciável — pelo contrário, <span class="math inline">\(g\)</span> é diferenciável, mas a derivada se anula. Também não implica que <span class="math inline">\(g\)</span> seja não-invertível ou que <span class="math inline">\(g(\bar{X}_n)\)</span> divirja.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Se <span class="math inline">\(g&#39;(\mu) = 0\)</span>, a transformação <span class="math inline">\(g\)</span> não é invertível em <span class="math inline">\(\mu\)</span> e portanto não faz sentido aplicar o método.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Se <span class="math inline">\(g&#39;(\mu) = 0\)</span>, a variância assintótica de <span class="math inline">\(g(\bar{X}_n)\)</span> torna-se infinita.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Se <span class="math inline">\(g&#39;(\mu) = 0\)</span>, <span class="math inline">\(g(\bar{X}_n)\)</span> não converge em nenhum sentido estocástico.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Se <span class="math inline">\(g&#39;(\mu) = 0\)</span>, o método delta não pode ser aplicado pois <span class="math inline">\(g\)</span> não é diferenciável nesse ponto.
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+Se <span class="math inline">\(g&#39;(\mu) = 0\)</span>, o método delta de primeira ordem dá variância assintótica zero, sendo necessário usar o método delta de segunda ordem.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap2/Exercise 20</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q20 : Cap2_Cap2S2Q10 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(\bar{X}_n\)</span> com variância assintótica <span class="math inline">\(\sigma^2/n\)</span> onde <span class="math inline">\(\sigma^2 = 2\)</span>. Para <span class="math inline">\(g(x) = \sqrt{x}\)</span>, a variância assintótica de <span class="math inline">\(\sqrt{\bar{X}_n}\)</span> é <span class="math inline">\(\sigma^2/(4\mu n)\)</span>. Com <span class="math inline">\(\mu = 9\)</span>, qual é a razão entre a variância assintótica de <span class="math inline">\(\sqrt{\bar{X}_n}\)</span> e a de <span class="math inline">\(\bar{X}_n\)</span>?</p>
+<p><span class="math display">\[\frac{\text{VarAss}(\sqrt{\bar{X}_n})}{\text{VarAss}(\bar{X}_n)} = \frac{\sigma^2/(4\mu n)}{\sigma^2/n} = \frac{1}{4\mu}\]</span></p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>A razão é independente de <span class="math inline">\(\sigma^2\)</span> e de <span class="math inline">\(n\)</span>:
+<span class="math display">\[\frac{\text{VarAss}(\sqrt{\bar{X}_n})}{\text{VarAss}(\bar{X}_n)} = \frac{\sigma^2/(4\mu n)}{\sigma^2/n} = \frac{1}{4\mu} = \frac{1}{4 \times 9} = \frac{1}{36} = 0.0278\]</span></p>
+<p>Isso mostra que a transformação raiz quadrada reduz a variância relativa por um fator de <span class="math inline">\(1/(4\mu)\)</span> em relação à média original. Para <span class="math inline">\(\mu\)</span> grande, a variância assintótica de <span class="math inline">\(\sqrt{\bar{X}_n}\)</span> é muito menor que a de <span class="math inline">\(\bar{X}_n\)</span> (em termos relativos).</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.0139
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+36
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+0.0278
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.0556
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+2.25
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q20 : Cap2_Cap2S2Q10 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(\bar{X}_n\)</span> com variância assintótica <span class="math inline">\(\sigma^2/n\)</span> onde <span class="math inline">\(\sigma^2 = 3\)</span>. Para <span class="math inline">\(g(x) = \sqrt{x}\)</span>, a variância assintótica de <span class="math inline">\(\sqrt{\bar{X}_n}\)</span> é <span class="math inline">\(\sigma^2/(4\mu n)\)</span>. Com <span class="math inline">\(\mu = 9\)</span>, qual é a razão entre a variância assintótica de <span class="math inline">\(\sqrt{\bar{X}_n}\)</span> e a de <span class="math inline">\(\bar{X}_n\)</span>?</p>
+<p><span class="math display">\[\frac{\text{VarAss}(\sqrt{\bar{X}_n})}{\text{VarAss}(\bar{X}_n)} = \frac{\sigma^2/(4\mu n)}{\sigma^2/n} = \frac{1}{4\mu}\]</span></p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>A razão é independente de <span class="math inline">\(\sigma^2\)</span> e de <span class="math inline">\(n\)</span>:
+<span class="math display">\[\frac{\text{VarAss}(\sqrt{\bar{X}_n})}{\text{VarAss}(\bar{X}_n)} = \frac{\sigma^2/(4\mu n)}{\sigma^2/n} = \frac{1}{4\mu} = \frac{1}{4 \times 9} = \frac{1}{36} = 0.0278\]</span></p>
+<p>Isso mostra que a transformação raiz quadrada reduz a variância relativa por um fator de <span class="math inline">\(1/(4\mu)\)</span> em relação à média original. Para <span class="math inline">\(\mu\)</span> grande, a variância assintótica de <span class="math inline">\(\sqrt{\bar{X}_n}\)</span> é muito menor que a de <span class="math inline">\(\bar{X}_n\)</span> (em termos relativos).</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+2.25
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.0556
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+0.0278
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+36
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.0093
+</p>]]></text>
+</answer>
+</question>
+
+</quiz>

@@ -1,0 +1,46 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+## Choices textuais
+all_choices <- c(
+  "A distribuicao condicional $(X_1,\\ldots,X_n) \\mid T = t$ nao depende de $\\theta$.",
+  "$T$ e nao-viesada para $\\theta$, isto e, $E_\\theta(T) = \\theta$ para todo $\\theta$.",
+  "A variancia de $T$ e minima entre todos os estimadores de $\\theta$.",
+  "A distribuicao de $T$ e da forma $N(\\theta, \\sigma^2/n)$ assintoticamente, pelo Teorema Central do Limite.",
+  "$T$ e suficiente se e somente se $T = (X_{(1)}, X_{(n)})$ (estatisticas de ordem extremas)."
+)
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+O conceito de **estatistica suficiente** e central na teoria da estimacao pontual. Seja $X_1, \ldots, X_n$ uma amostra aleatoria com distribuicao parametrizada por $\theta$ e seja $T = T(X_1, \ldots, X_n)$ uma estatistica.
+
+Qual das seguintes opcoes define **corretamente** o que significa $T$ ser suficiente para $\theta$?
+
+$T$ e suficiente para $\theta$ se:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+A definicao correta: $T$ e suficiente para $\theta$ se a distribuicao condicional $(X_1, \ldots, X_n) \mid T = t$ **nao depende de $\theta$**.
+
+Interpretacao: dado o valor de $T$, a amostra nao contem informacao adicional sobre $\theta$. Em outras palavras, $T$ captura toda a informacao relevante sobre $\theta$ contida na amostra.
+
+As demais opcoes descrevem outras propriedades (nao-viesamento, variancia minima, distribuicao assintótica, forma especifica) que sao independentes da suficiencia.
+
+Meta-information
+================
+exname: Cap4S4Q1_definicao_suficiencia
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

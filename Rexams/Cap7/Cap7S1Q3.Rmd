@@ -1,0 +1,42 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+all_choices <- c(
+  "$\\sqrt{n}(g(\\hat{\\boldsymbol{\\theta}}) - g(\\boldsymbol{\\theta})) \\xrightarrow{D} N(0, \\nabla g(\\boldsymbol{\\theta})^\\top \\Sigma \\nabla g(\\boldsymbol{\\theta}))$.",
+  "$\\sqrt{n}(g(\\hat{\\boldsymbol{\\theta}}) - g(\\boldsymbol{\\theta})) \\xrightarrow{D} N(0, \\|\\nabla g(\\boldsymbol{\\theta})\\|^2 \\|\\Sigma\\|)$, usando normas matriciais.",
+  "$\\sqrt{n}(g(\\hat{\\boldsymbol{\\theta}}) - g(\\boldsymbol{\\theta})) \\xrightarrow{D} N_k(0, g'(\\boldsymbol{\\theta})\\Sigma g'(\\boldsymbol{\\theta}))$ como distribuição $k$-dimensional.",
+  "$g(\\hat{\\boldsymbol{\\theta}}) \\xrightarrow{P} g(\\boldsymbol{\\theta})$ mas sem distribuição assintótica normal conhecida para $g$ não-linear.",
+  "$\\sqrt{n}(g(\\hat{\\boldsymbol{\\theta}}) - g(\\boldsymbol{\\theta})) \\xrightarrow{D} N(0, \\text{tr}(\\Sigma)\\|g'(\\boldsymbol{\\theta})\\|^2)$."
+)
+
+perm <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+Seja $\sqrt{n}(\hat{\boldsymbol{\theta}} - \boldsymbol{\theta}) \xrightarrow{D} N_k(\mathbf{0}, \Sigma)$ e $g:\mathbb{R}^k \to \mathbb{R}$ uma função diferenciável com gradiente $\nabla g(\boldsymbol{\theta})$ não-nulo. O **Método Delta Multivariado** afirma que:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+O Método Delta Multivariado (versão $\mathbb{R}^k \to \mathbb{R}$) estabelece:
+$$\sqrt{n}(g(\hat{\boldsymbol{\theta}}) - g(\boldsymbol{\theta})) \xrightarrow{D} N\!\left(0,\; \nabla g(\boldsymbol{\theta})^\top \Sigma\, \nabla g(\boldsymbol{\theta})\right).$$
+
+A variância assintótica é a **forma quadrática** $\nabla g^\top \Sigma \nabla g$, onde $\nabla g$ é o vetor gradiente $k \times 1$ e $\Sigma$ é a matriz de covariâncias assintótica. O resultado transforma uma distribuição $k$-dimensional em uma distribuição escalar normal, com variância que captura a projeção da incerteza de $\hat{\boldsymbol{\theta}}$ ao longo da direção do gradiente de $g$.
+
+Meta-information
+================
+exname: Cap7S1Q3_delta_method_multi
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

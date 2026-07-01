@@ -1,0 +1,51 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+## Choices textuais
+all_choices <- c(
+  "$\\sum_{i=1}^n T(X_i)$ --- a soma da funcao $T$ avaliada em cada observacao e a estatistica suficiente natural.",
+  "O vetor de observacoes $(X_1, \\ldots, X_n)$ completo, que nunca pode ser reduzido sem perda de informacao.",
+  "A estatistica de ordem $(X_{(1)}, \\ldots, X_{(n)})$, que preserva toda a informacao por simetria.",
+  "Apenas a media $\\bar{X}_n$, independente da forma de $T(x)$, pois a media e sempre suficiente.",
+  "O maximo $X_{(n)}$ para qualquer membro da familia exponencial, pelo teorema de Neyman-Fisher."
+)
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+Para a **familia exponencial** uniparametrica com densidade:
+$$f(x; \theta) = \exp\!\big\{c(\theta)\,T(x) - d(\theta)\big\}\,h(x),$$
+a verossimilhanca conjunta de $n$ observacoes iid e:
+$$L(\theta; \mathbf{x}) = \exp\!\left\{c(\theta)\sum_{i=1}^n T(x_i) - n\,d(\theta)\right\}\prod_{i=1}^n h(x_i).$$
+
+Pelo criterio de Neyman-Fisher, qual e a **estatistica suficiente natural** para $\theta$?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+Pela fatoracao de Neyman-Fisher, a verossimilhanca conjunta depende da amostra apenas atraves de $\sum_{i=1}^n T(X_i)$. Portanto, a **estatistica suficiente natural** e:
+$$T_n = \sum_{i=1}^n T(X_i).$$
+
+Exemplos:
+
+- Poisson($\lambda$): $T(x) = x$, suficiente: $\sum X_i$.
+- Bernoulli($p$): $T(x) = x$, suficiente: $\sum X_i$.
+- Exponencial($\theta$): $T(x) = x$, suficiente: $\sum X_i$.
+- Normal($\mu$, $\sigma^2$ fixo): $T(x) = x$, suficiente: $\sum X_i$ (ou $\bar{X}$).
+
+Meta-information
+================
+exname: Cap4S3Q3_suficiencia_familia_exponencial
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

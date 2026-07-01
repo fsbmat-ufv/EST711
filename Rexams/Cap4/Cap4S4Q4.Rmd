@@ -1,0 +1,52 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+## Parametros
+lambda <- sample(c(2, 3, 4, 5), 1)
+n      <- sample(c(25, 50, 100), 1)
+sum_x  <- n * lambda + sample(-5:5, 1)
+
+## Choices textuais
+all_choices <- c(
+  "$\\sum_{i=1}^n X_i$ --- pois $L(\\lambda) = \\lambda^{\\sum x_i} e^{-n\\lambda} / \\prod x_i!$ depende da amostra apenas atraves de $\\sum X_i$.",
+  "$\\bar{X}_n$ --- mas apenas se a distribuicao for simetrica; a Poisson e assimetrica para $\\lambda$ pequeno.",
+  "$X_{(n)} = \\max\\{X_i\\}$ --- pois o maximo e sempre suficiente para a distribuicao de Poisson.",
+  "$\\prod X_i$ (produto das observacoes) --- pois a verossimilhanca envolve $\\lambda^{\\sum x_i} = (\\lambda^{\\prod x_i})^{1/n}$.",
+  "Nenhuma estatistica real reduz a amostra sem perda de informacao sobre $\\lambda$ na distribuicao de Poisson."
+)
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+Seja $X_i \overset{\text{iid}}{\sim} \text{Poisson}(\lambda)$ com $n = `r n`$. A verossimilhanca conjunta e:
+$$L(\lambda; x_1,\ldots,x_n) = \frac{\lambda^{\sum x_i}\,e^{-n\lambda}}{\prod_{i=1}^n x_i!}.$$
+
+Pelo **Criterio de Fatoracao de Neyman-Fisher**, qual e a estatistica suficiente para $\lambda$?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+Fatorando a verossimilhanca:
+$$L(\lambda; \mathbf{x}) = \underbrace{\lambda^{\sum x_i}\,e^{-n\lambda}}_{g(\sum x_i,\,\lambda)} \cdot \underbrace{\left(\prod_{i=1}^n x_i!\right)^{-1}}_{h(\mathbf{x})}.$$
+
+A verossimilhanca depende da amostra apenas atraves de $T = \sum_{i=1}^n X_i$. Portanto, a estatistica suficiente para $\lambda$ e:
+$$T = \sum_{i=1}^n X_i.$$
+
+Note que $\bar{X} = T/n$ e equivalentemente suficiente, mas a alternativa listada coloca uma restricao incorreta sobre simetria. A suficiencia de $\sum X_i$ vale para qualquer $\lambda > 0$.
+
+Meta-information
+================
+exname: Cap4S4Q4_suficiencia_Poisson
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

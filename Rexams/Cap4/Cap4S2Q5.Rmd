@@ -1,0 +1,59 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+## Parametros
+theta <- sample(c(1, 2, 3, 4, 5), 1)
+n     <- sample(c(25, 36, 50, 100), 1)
+
+## Para Exp(theta): I(theta) = 1/theta^2
+## LICR = 1/(n * I(theta)) = theta^2/n
+correct <- round(theta^2 / n, 4)
+w1 <- round(1 / (n * theta^2), 4)
+w2 <- round(theta^2 * n, 4)
+w3 <- round(theta / n, 4)
+w4 <- round(n / theta^2, 4)
+
+all_vals <- c(correct, w1, w2, w3, w4)
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+O **Limite Inferior de Cramer-Rao** (LICR) para a variancia de qualquer estimador nao-viesado de $\theta$ e:
+$$\text{LICR}(\theta) = \frac{1}{n \cdot I(\theta)},$$
+onde $I(\theta)$ e a informacao de Fisher de uma unica observacao.
+
+Para $X_i \overset{\text{iid}}{\sim} \text{Exp}(\theta)$, tem-se $I(\theta) = 1/\theta^2$. Com $\theta = `r theta`$ e $n = `r n`$, qual e o LICR para estimadores nao-viesados de $\theta$?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+Com $I(\theta) = 1/\theta^2$:
+$$\text{LICR}(\theta) = \frac{1}{n \cdot I(\theta)} = \frac{1}{n \cdot (1/\theta^2)} = \frac{\theta^2}{n}.$$
+
+Para $\theta = `r theta`$ e $n = `r n`$:
+$$\text{LICR} = \frac{`r theta`^2}{`r n`} = \frac{`r theta^2`}{`r n`} = `r correct`.$$
+
+Nota: o estimador $\bar{X}$ e nao-viesado para $1/\theta$ neste modelo, e $1/\bar{X}$ e o EMV de $\theta$. O LICR indica a menor variancia possivel para qualquer estimador nao-viesado de $\theta$.
+
+Meta-information
+================
+exname: Cap4S2Q5_LICR_Exponencial
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

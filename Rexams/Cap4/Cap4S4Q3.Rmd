@@ -1,0 +1,51 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+## Parametros (usados no enunciado)
+n <- sample(c(10, 25, 50, 100), 1)
+p <- sample(c(0.2, 0.4, 0.6, 0.8), 1)
+
+## Choices textuais
+all_choices <- c(
+  "$\\sum_{i=1}^n X_i$ (equivalentemente, $\\bar{X}_n$).",
+  "$X_1$ (primeira observacao da amostra).",
+  "$\\max\\{X_i\\}$ (maximo da amostra).",
+  "$(X_{(1)}, X_{(n)})$ (minimo e maximo da amostra).",
+  "Apenas o vetor completo $(X_1,\\ldots,X_n)$; nenhuma reducao e possivel para a Bernoulli."
+)
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+Seja $X_i \overset{\text{iid}}{\sim} \text{Bernoulli}(p)$ com $n = `r n`$. A verossimilhanca conjunta e:
+$$L(p; x_1,\ldots,x_n) = p^{\sum x_i}(1-p)^{n-\sum x_i}.$$
+
+Pelo **Criterio de Fatoracao de Neyman-Fisher**, identificamos:
+$$g\!\left(\sum x_i,\, p\right) = p^{\sum x_i}(1-p)^{n-\sum x_i}, \qquad h(x_1,\ldots,x_n) = 1.$$
+
+Qual estatistica e suficiente para $p$?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+Pelo Criterio de Fatoracao, a verossimilhanca depende da amostra apenas atraves de $\sum_{i=1}^n X_i$ (o numero total de sucessos). Portanto, a estatistica suficiente para $p$ e:
+$$T = \sum_{i=1}^n X_i \equiv n\bar{X}_n.$$
+
+Intuitivamente: para a distribuicao Bernoulli, a unica informacao sobre $p$ contida na amostra e o numero de sucessos. Dado esse numero, a ordem das observacoes (quais $X_i$ sao 1 e quais sao 0) nao contem informacao adicional sobre $p$.
+
+Meta-information
+================
+exname: Cap4S4Q3_suficiencia_Bernoulli
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

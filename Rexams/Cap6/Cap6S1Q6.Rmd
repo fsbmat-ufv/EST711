@@ -1,0 +1,40 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Choices textuais
+all_choices <- c(
+  "O Erro Tipo II ($\\beta$) tende a aumentar, pois torna-se mais dificil rejeitar $H_0$, reduzindo o poder.",
+  "O Erro Tipo II tambem diminui, pois ambos os erros sao controlados pelo mesmo parametro $\\alpha$.",
+  "O Erro Tipo II fica inalterado, pois os dois tipos de erro sao independentes entre si.",
+  "O poder do teste aumenta, pois controlamos melhor o Erro Tipo I ao reduzir $\\alpha$.",
+  "Nao ha relacao entre $\\alpha$ e $\\beta$ quando o tamanho amostral e fixo."
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+Mantendo o tamanho amostral $n$ fixo, o que ocorre ao diminuirmos $\alpha$ (o nivel de significancia)?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+Existe um trade-off fundamental: com $n$ fixo, reduzir $\alpha$ (tornar o teste mais conservador, exigindo mais evidencia para rejeitar $H_0$) implica aumentar $\beta$ (maior probabilidade de nao rejeitar $H_0$ falsa), ou seja, menor poder. Para reduzir ambos $\alpha$ e $\beta$ simultaneamente, e necessario aumentar $n$.
+
+Meta-information
+================
+exname: Cap6S1Q6_tradeoff_alpha_beta
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

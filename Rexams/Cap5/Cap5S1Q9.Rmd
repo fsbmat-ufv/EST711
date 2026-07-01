@@ -1,0 +1,51 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parametros
+n          <- sample(c(100, 200, 400, 500), 1)
+E_desejado <- 0.05
+
+## Respostas: tamanho amostral conservador (p=0.5)
+correct <- ceiling((1.96 / (2 * E_desejado))^2)
+w1 <- ceiling((1.96 * 0.5 / E_desejado)^2) %/% 4
+w2 <- ceiling(1.96^2 / (4 * E_desejado^2)) + 50
+w3 <- ceiling(1.96^2 * 0.5 * (1 - 0.5) / E_desejado^2) + 10
+w4 <- ceiling(1 / (4 * E_desejado^2))
+
+all_vals <- c(correct, w1, w2, w3, w4)
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+Quando a proporcao $p$ e desconhecida, o tamanho amostral conservador para um IC 95% com margem de erro maxima $E = `r E_desejado`$ usa $p = 0{,}5$ (valor que maximiza $p(1-p) = 0{,}25$). A formula conservadora e $n \geq \left(\frac{1{,}96}{2E}\right)^2$. O valor minimo de $n$ e:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+$n \geq \left(\frac{1{,}96}{2 \times `r E_desejado`}\right)^2 = \left(\frac{1{,}96}{`r 2*E_desejado`}\right)^2 = `r (1.96/(2*E_desejado))^2`$, logo $n = `r correct`$.
+
+Note que $\left(\frac{1{,}96}{2E}\right)^2 = \frac{1{,}96^2 \times 0{,}25}{E^2}$, que coincide com a formula geral avaliada em $p=0{,}5$.
+
+Meta-information
+================
+exname: Cap5S1Q9_conservador_proporcao
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

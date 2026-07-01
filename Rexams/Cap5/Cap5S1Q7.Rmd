@@ -1,0 +1,56 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parametros
+xbar1   <- round(runif(1, 3, 8), 2)
+xbar2   <- round(runif(1, 1, 5), 2)
+sigma1  <- sample(c(1, 2, 3), 1)
+sigma2_v <- sample(c(1, 2, 3), 1)
+n1      <- sample(c(36, 49, 64), 1)
+n2      <- sample(c(36, 49, 64), 1)
+
+## Respostas: erro padrao de Xbar1 - Xbar2
+correct <- round(sqrt(sigma1^2 / n1 + sigma2_v^2 / n2), 4)
+w1 <- round(abs(sqrt(sigma1^2 / n1) - sqrt(sigma2_v^2 / n2)), 4)
+w2 <- round((sigma1 + sigma2_v) / sqrt(n1 + n2), 4)
+w3 <- round(sqrt((sigma1^2 + sigma2_v^2) / (n1 + n2)), 4)
+w4 <- round(sqrt(sigma1^2 * n1 + sigma2_v^2 * n2), 4)
+
+all_vals <- c(correct, w1, w2, w3, w4)
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+Duas populacoes independentes tem desvios padrao conhecidos. Dados: $\bar{X}_1 = `r xbar1`$, $\sigma_1 = `r sigma1`$, $n_1 = `r n1`$; $\bar{X}_2 = `r xbar2`$, $\sigma_2 = `r sigma2_v`$, $n_2 = `r n2`$. O erro padrao de $\bar{X}_1 - \bar{X}_2$ e:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+Para amostras independentes, $\text{Var}(\bar{X}_1 - \bar{X}_2) = \sigma_1^2/n_1 + \sigma_2^2/n_2$, portanto o erro padrao e:
+$$\sqrt{\frac{`r sigma1`^2}{`r n1`} + \frac{`r sigma2_v`^2}{`r n2`}} = `r correct`.$$
+
+Erros comuns: subtrair as variancias; somar os desvios antes de dividir; dividir pela soma dos tamanhos.
+
+Meta-information
+================
+exname: Cap5S1Q7_IC_dif_medias
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

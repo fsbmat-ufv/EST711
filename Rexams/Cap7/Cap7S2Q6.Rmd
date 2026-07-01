@@ -1,0 +1,65 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+mu0  <- sample(c(4, 6, 8), 1)
+n    <- sample(c(25, 36, 49, 64), 1)
+xbar <- round(runif(1, mu0 - 1, mu0 + 2), 2)
+s2   <- round(runif(1, 1, 9), 2)
+
+t_val   <- round(sqrt(n) * (xbar - mu0) / sqrt(s2), 4)
+lrt_val <- round(n * log(1 + t_val^2 / (n - 1)), 4)
+
+correct <- lrt_val
+w1      <- round(t_val^2, 4)
+w2      <- round(n * log(1 + t_val^2 / n), 4)
+w3      <- round(lrt_val / 2, 4)
+w4      <- round(2 * n * log(1 + abs(t_val) / (n - 1)), 4)
+
+all_vals <- c(correct, w1, w2, w3, w4)
+
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+Para $X_i \overset{\text{iid}}{\sim} N(\mu, \sigma^2)$ com $\sigma^2$ **desconhecido**, testamos $H_0: \mu = `r mu0`$.
+
+O TRV tem estatística:
+$$-2\log\Lambda_n = n\log\!\left(1 + \frac{T^2}{n-1}\right) \xrightarrow{D} \chi^2_1,$$
+onde $T = \sqrt{n}(\bar{X} - \mu_0)/S$ é a estatística $t$ de Student.
+
+Com $\bar{X} = `r xbar`$, $S^2 = `r s2`$, $n = `r n`$ (portanto $T = `r t_val`$), qual é o valor observado de $-2\log\Lambda_n$?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+**Passo 1:** calcular $T$:
+$$T = \frac{\sqrt{`r n`}\,(`r xbar` - `r mu0`)}{\sqrt{`r s2`}} = `r t_val`.$$
+
+**Passo 2:** calcular $-2\log\Lambda_n$:
+$$-2\log\Lambda_n = `r n` \times \log\!\left(1 + \frac{`r t_val`^2}{`r n` - 1}\right) = `r n` \times \log\!\left(1 + \frac{`r round(t_val^2,4)`}{`r n-1`}\right) = `r lrt_val`.$$
+
+**Nota:** $T^2 = `r round(t_val^2,4)`$ seria a estatística do teste $t$ ao quadrado (para $\alpha$ dado, seria comparada com $F_{1,n-1}$), mas **não** é o valor do TRV. O TRV usa o logaritmo conforme a fórmula acima.
+
+Meta-information
+================
+exname: Cap7S2Q6_TRV_normal_sigma_desconhecido
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

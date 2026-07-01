@@ -1,0 +1,46 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Alternativas (textuais) — questão puramente conceitual
+all_choices <- c(
+  "$F_{X_n}(x) \\to F_X(x)$ para todo $x$ que seja ponto de continuidade de $F_X$ (conjunto $C(F_X)$).",
+  "$F_{X_n}(x) \\to F_X(x)$ para todo $x \\in \\mathbb{R}$, incluindo pontos de descontinuidade de $F_X$.",
+  "$P(X_n = x) \\to P(X = x)$ para todo $x \\in \\mathbb{R}$.",
+  "$E(X_n) \\to E(X)$ e $\\text{Var}(X_n) \\to \\text{Var}(X)$.",
+  "$X_n - X \\xrightarrow{P} 0$, ou seja, a diferença converge em probabilidade a zero."
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+
+Seja $(X_n)_{n \geq 1}$ uma sequência de variáveis aleatórias e $X$ uma variável aleatória com função de distribuição acumulada $F_X$. Qual afirmação define **corretamente** a convergência em distribuição $X_n \xrightarrow{D} X$?
+
+Answerlist
+----------
+
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+
+A definição correta de convergência em distribuição (também chamada de convergência fraca) é: $X_n \xrightarrow{D} X$ se e somente se $F_{X_n}(x) \to F_X(x)$ para todo $x \in C(F_X)$, onde $C(F_X)$ é o conjunto dos pontos de continuidade de $F_X$.
+
+A restrição aos pontos de continuidade é fundamental: se $F_X$ for descontínua em $x_0$ (como ocorre em distribuições discretas), não se exige convergência pontual em $x_0$. As demais alternativas exigem convergência em todos os pontos (mais forte do que o necessário), confundem com convergência de momentos ou com convergência em probabilidade.
+
+Meta-information
+================
+exname: Cap1S2Q1_def_conv_distribuicao
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE
+```

@@ -1,0 +1,59 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parametros
+p0     <- sample(c(0.3, 0.4, 0.5, 0.6), 1)
+n      <- sample(c(50, 100, 200), 1)
+sum_x  <- round(n * p0) + sample(-5:5, 1)
+sum_x  <- max(1, min(n - 1, sum_x))   # garantir interior
+p_hat  <- round(sum_x / n, 4)
+
+## Estatistica TRV para Bernoulli
+lrts <- round(2 * (sum_x * log(p_hat / p0) + (n - sum_x) * log((1 - p_hat) / (1 - p0))), 4)
+
+## Respostas
+correct <- lrts
+w1 <- round(n * (p_hat - p0)^2 / (p0 * (1 - p0)), 4)   # Pearson
+w2 <- round(2 * n * (p_hat - p0), 4)
+w3 <- round(lrts + 1, 4)
+w4 <- round(lrts / 2, 4)
+
+all_vals <- c(correct, w1, w2, w3, w4)
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+Para $X_i \overset{\text{iid}}{\sim} \text{Bernoulli}(p)$, testando $H_0:p = `r p0`$ com $n = `r n`$, $\sum X_i = `r sum_x`$ e $\hat{p} = `r p_hat`$. A estatistica TRV e:
+$$-2\log\Lambda = 2\left[\sum X_i\log\!\left(\frac{\hat{p}}{p_0}\right) + (n-\sum X_i)\log\!\left(\frac{1-\hat{p}}{1-p_0}\right)\right]$$
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+$-2\log\Lambda = 2\left[`r sum_x` \times \log(`r p_hat`/`r p0`) + `r n-sum_x` \times \log(`r round(1-p_hat,4)`/`r round(1-p0,4)`)\right]$
+$= 2\left[`r round(sum_x*log(p_hat/p0),4)` + `r round((n-sum_x)*log((1-p_hat)/(1-p0)),4)`\right] = `r lrts`$.
+
+A aproximacao de Pearson seria $n(\hat{p}-p_0)^2/(p_0(1-p_0)) = `r w1`$ (diferente do TRV exato).
+
+Meta-information
+================
+exname: Cap6S5Q8_TRV_Bernoulli
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

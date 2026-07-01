@@ -1,0 +1,53 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parâmetros aleatórios
+theta <- sample(1:5, 1)
+n_val <- sample(c(36, 49, 64, 100), 1)
+
+## Alternativas (textuais)
+all_choices <- c(
+  "$N(0,1)$ (normal padrão, pelo TCL).",
+  paste0("$N(1/", theta, ",\\, 1/", theta^2, ")$ (a própria distribuição de $X_i$, não o limite padronizado)."),
+  paste0("$\\text{Exp}(", theta, ")$ (a distribuição original não é preservada na padronização)."),
+  "$\\chi^2_1$ (qui-quadrado com 1 grau de liberdade).",
+  paste0("$t_{", n_val - 1, "}$ ($t$ de Student com $n-1$ graus de liberdade).")
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+
+Seja $X_i \overset{\text{iid}}{\sim} \text{Exp}(\theta)$ com $\theta = `r theta`$, de modo que $E(X_i) = 1/\theta = `r round(1/theta,4)`$ e $\text{Var}(X_i) = 1/\theta^2 = `r round(1/theta^2,4)`$. Pelo TCL, qual é a distribuição **limite** de
+
+$$Z_n = \frac{\sqrt{n}(\bar{X}_n - 1/\theta)}{1/\theta}?$$
+
+Answerlist
+----------
+
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+
+Pelo TCL, $\frac{\sqrt{n}(\bar{X}_n - \mu)}{\sigma} \xrightarrow{D} N(0,1)$ onde $\mu = 1/\theta$ e $\sigma = 1/\theta$. Portanto:
+$$Z_n = \frac{\sqrt{n}(\bar{X}_n - 1/\theta)}{1/\theta} \xrightarrow{D} N(0,1)$$
+
+O TCL se aplica a qualquer distribuição com média e variância finitas, independentemente da forma (aqui, exponencial). A distribuição limite é sempre $N(0,1)$ após a padronização adequada.
+
+Meta-information
+================
+exname: Cap2S1Q7_TCL_exponencial
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE
+```

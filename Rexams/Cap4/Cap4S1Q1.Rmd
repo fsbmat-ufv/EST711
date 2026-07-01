@@ -1,0 +1,64 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+## Parametros
+mu    <- sample(2:8, 1)
+n     <- sample(c(10, 25, 50, 100), 1)
+c_val <- sample(c(0.9, 1.1, 1.5, 0.5), 1)
+
+## Resposta correta e alternativas incorretas
+correct <- round((c_val - 1) * mu, 4)
+w1 <- round(c_val * mu, 4)
+w2 <- round((1 - c_val) * mu, 4)
+w3 <- round(c_val * mu - mu^2, 4)
+w4 <- round((c_val - 1) / mu, 4)
+
+## Garantir unicidade
+all_vals <- c(correct, w1, w2, w3, w4)
+if (length(unique(all_vals)) < 5) {
+  w4 <- w4 + 0.001
+}
+
+all_vals <- c(correct, w1, w2, w3, w4)
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+Seja $X_1, X_2, \ldots, X_n$ uma amostra aleatória de uma distribuição com média $\mu$ e $n = `r n`$. Considere o estimador $T_n = `r c_val` \cdot \bar{X}_n$ para estimar $\mu$, onde $\bar{X}_n$ é a média amostral.
+
+O **vício** (viés) de $T_n$ é definido como $B(T_n) = E(T_n) - \mu$. Como $E(\bar{X}_n) = \mu$, temos $E(T_n) = `r c_val` \mu$, e portanto:
+
+$$B(T_n) = `r c_val`\,\mu - \mu = (`r c_val` - 1)\mu.$$
+
+Para $\mu = `r mu`$, o vício de $T_n$ é:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+O vício de $T_n = `r c_val`\bar{X}_n$ como estimador de $\mu$ é:
+$$B(T_n) = E(T_n) - \mu = `r c_val`\mu - \mu = (`r c_val` - 1)\mu.$$
+Para $\mu = `r mu`$:
+$$B(T_n) = (`r c_val` - 1) \times `r mu` = `r correct`.$$
+
+Meta-information
+================
+exname: Cap4S1Q1_vicio_estimador
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

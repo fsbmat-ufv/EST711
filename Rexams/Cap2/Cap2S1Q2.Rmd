@@ -1,0 +1,68 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parâmetros aleatórios
+mu    <- sample(c(5, 10, 15, 20), 1)
+sigma <- sample(1:4, 1)
+n     <- sample(c(36, 49, 64, 100), 1)
+delta <- sample(c(0.3, 0.5, 0.7, 1.0), 1)
+x_val <- mu + delta
+
+## Resposta correta
+correct <- round((x_val - mu) / (sigma / sqrt(n)), 4)
+
+## Alternativas incorretas plausíveis
+w1 <- round((x_val - mu) * sqrt(n) / sigma^2, 4)
+w2 <- round((x_val - mu) / sigma, 4)
+w3 <- round((x_val - mu) * n / sigma, 4)
+w4 <- round(sqrt(n) * (x_val - mu) * sigma, 4)
+
+## Garantir unicidade
+w_list <- c(w1, w2, w3, w4)
+for (i in seq_along(w_list)) {
+  if (w_list[i] == correct) w_list[i] <- correct + 0.1
+}
+
+## Embaralhamento
+all_vals <- c(correct, w_list[1], w_list[2], w_list[3], w_list[4])
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+
+Seja $X_i \overset{\text{iid}}{\sim}$ alguma distribuição com $\mu = `r mu`$ e $\sigma = `r sigma`$, e $n = `r n`$. Para calcular $P(\bar{X}_n > `r x_val`)$ usando a aproximação normal do TCL, devemos padronizar: $z = (\bar{x} - \mu) / (\sigma/\sqrt{n})$. Qual é o valor de $z$ correspondente a $\bar{x} = `r x_val`$?
+
+Answerlist
+----------
+
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+
+A padronização pelo TCL é:
+$$z = \frac{\bar{x} - \mu}{\sigma/\sqrt{n}} = \frac{`r x_val` - `r mu`}{`r sigma`/\sqrt{`r n`}} = \frac{`r x_val - mu`}{`r round(sigma/sqrt(n),4)`} = `r correct`$$
+
+Erros comuns: dividir por $\sigma^2$ em vez de $\sigma$, ou esquecer o $\sqrt{n}$ no denominador.
+
+Meta-information
+================
+exname: Cap2S1Q2_TCL_padronizacao
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE
+```

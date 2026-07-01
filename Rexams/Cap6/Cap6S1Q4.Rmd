@@ -1,0 +1,42 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Choices textuais
+all_choices <- c(
+  "O subconjunto do espaco amostral tal que, se a amostra cair em $\\mathcal{C}$, $H_0$ e rejeitada.",
+  "O conjunto de valores do parametro compativeis com $H_0$.",
+  "O intervalo de confianca para o parametro sob $H_0$.",
+  "O conjunto de valores do p-valor que levam a rejeicao de $H_0$.",
+  "O espaco amostral complementar ao espaco parametrico de $H_0$."
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+A regiao critica $\mathcal{C}$ de um teste de hipoteses e definida como:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+A regiao critica (ou regiao de rejeicao) e um subconjunto do espaco amostral: se a amostra observada pertencer a $\mathcal{C}$, rejeita-se $H_0$. O nivel do teste e $\alpha = P_{\theta_0}(\mathbf{X} \in \mathcal{C})$.
+
+As demais opcoes confundem regiao critica com espaco parametrico, intervalo de confianca, ou p-valor.
+
+Meta-information
+================
+exname: Cap6S1Q4_regiao_critica
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

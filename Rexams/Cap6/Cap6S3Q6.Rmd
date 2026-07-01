@@ -1,0 +1,52 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parametros
+theta0 <- sample(c(1, 2, 3), 1)
+n      <- sample(c(15, 20, 25), 1)
+alpha  <- 0.05
+
+## Para X_i ~ Exp(theta0), sum Xi ~ Gamma(n, rate=theta0)
+## UMP para H0: theta >= theta0 vs H1: theta < theta0 rejeita quando sum Xi > k
+## P(sum Xi > k | theta0) = alpha => k = qgamma(1-alpha, n, rate=theta0)
+correct <- round(qgamma(1 - alpha, n, rate = theta0), 4)
+w1 <- round(qgamma(alpha, n, rate = theta0), 4)
+w2 <- round(n / theta0 + qnorm(1 - alpha) * sqrt(n) / theta0, 4)
+w3 <- round(n / theta0, 4)
+w4 <- round(qgamma(1 - alpha, n, rate = 1 / theta0), 4)
+
+all_vals <- c(correct, w1, w2, w3, w4)
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+Para $X_i \overset{\text{iid}}{\sim} \text{Exp}(\theta)$ com $\sum X_i \sim \text{Gamma}(n, \theta)$ sob $H_0:\theta = \theta_0$, o teste UMP para $H_0:\theta \geq `r theta0`$ vs. $H_1:\theta < `r theta0`$ rejeita $H_0$ quando $\sum X_i > k$, com $P_{\theta_0}(\sum X_i > k) = \alpha = 0{,}05$. O valor de $k$ e:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+$\sum X_i \sim \text{Gamma}(n, \theta_0)$ sob $H_0:\theta = \theta_0 = `r theta0`$. O quantil $k$ satisfaz $P(\text{Gamma}(`r n`, `r theta0`) > k) = 0{,}05$, ou seja, $k = \text{qgamma}(0{,}95, `r n`, \text{rate} = `r theta0`) = `r correct`$.
+
+Meta-information
+================
+exname: Cap6S3Q6_UMP_exponencial_taxa
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

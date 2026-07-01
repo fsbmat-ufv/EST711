@@ -1,0 +1,51 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parametros
+E     <- sample(c(0.1, 0.2, 0.5, 1.0), 1)
+sigma <- sample(c(1, 2, 3, 4), 1)
+
+## Respostas
+correct <- ceiling((1.96 * sigma / E)^2)
+w1 <- ceiling(1.96 * sigma / E)
+w2 <- ceiling((1.645 * sigma / E)^2)
+w3 <- ceiling((1.96 * E / sigma)^2)
+w4 <- floor((1.96 * sigma / E)^2)
+
+all_vals <- c(correct, w1, w2, w3, w4)
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+Para estimar $\mu$ com margem de erro maxima $E = `r E`$ e confianca 95% ($z_{0{,}975} = 1{,}96$), com desvio padrao $\sigma = `r sigma`$ conhecido, o tamanho amostral minimo necessario e $n \geq \left(\frac{1{,}96\,\sigma}{E}\right)^2$. O valor de $n$ e:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+$n \geq \left(\frac{1{,}96 \times `r sigma`}{`r E`}\right)^2 = `r (1.96*sigma/E)^2`$, logo $n = `r correct`$ (teto da expressao).
+
+Erros comuns: nao elevar ao quadrado; usar $z_{0{,}95}=1{,}645$; inverter $E$ e $\sigma$; ou usar o piso em vez do teto.
+
+Meta-information
+================
+exname: Cap5S1Q3_tamanho_amostral
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

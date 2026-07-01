@@ -1,0 +1,43 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Choices textuais
+all_choices <- c(
+  "O MM iguala momentos amostrais a momentos teóricos; o MV maximiza a função de verossimilhança. Para muitas distribuições, os dois coincdem, mas em geral o EMV tem melhores propriedades assintóticas.",
+  "O MM usa todos os dados igualmente, enquanto o MV pondera cada observação pela sua verossimilhança.",
+  "O MM é sempre mais eficiente que o MV para amostras pequenas.",
+  "O MM maximiza a log-verossimilhança, enquanto o MV minimiza a soma de quadrados.",
+  "Ambos os métodos sempre produzem os mesmos estimadores para qualquer distribuição."
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+
+Qual afirmação descreve corretamente a diferença entre o método dos momentos (MM) e o método da máxima verossimilhança (MV)?
+
+Answerlist
+----------
+
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+
+O método dos momentos (MM) é baseado em igualar momentos populacionais a momentos amostrais. O método da máxima verossimilhança (MV) maximiza $L(\theta; \mathbf{x}) = \prod f(x_i; \theta)$. Embora para algumas distribuições (como Poisson e Normal) os dois métodos produzam estimadores idênticos, em geral divergem. O EMV possui melhores propriedades assintóticas: é consistente, assintoticamente normal e assintoticamente eficiente (atinge o limite de Cramér-Rao). O MM é computacionalmente mais simples, mas pode ser menos eficiente.
+
+Meta-information
+================
+exname: Cap3S1Q8_emm_vs_emv
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

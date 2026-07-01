@@ -1,0 +1,47 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+all_choices <- c(
+  "Nível $\\alpha^* = \\alpha/m$ para cada teste individual, garantindo que a probabilidade de pelo menos uma rejeição falsa (FWER) não exceda $\\alpha$.",
+  "Nível $\\alpha^* = \\alpha \\cdot m$ para cada teste, compensando a redução de poder estatístico nos testes individuais.",
+  "Nível $\\alpha^* = 1-(1-\\alpha)^m$, que é a probabilidade de ao menos uma rejeição quando todos os $H_{0j}$ são verdadeiros.",
+  "Rejeitar $H_{0j}$ quando o p-valor$_j \\leq \\alpha$ para **todos** os $j$ simultaneamente — exige consenso entre todos os testes.",
+  "Nível $\\alpha^* = \\alpha/\\sqrt{m}$, que é a correção de Šidák para testes correlacionados positivamente."
+)
+
+perm <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+No contexto de **testes múltiplos simultâneos** $H_{0j}$, $j = 1, \ldots, m$, o problema do **nível de significância inflado** (ou inflação do erro tipo I) é controlado pela **Correção de Bonferroni**. Como funciona essa correção?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+A **Correção de Bonferroni** usa nível $\alpha^* = \alpha/m$ em cada teste individual. Isso garante:
+$$\text{FWER} = P(\text{ao menos uma rejeição falsa}) \leq \sum_{j=1}^m P(\text{rejeitar } H_{0j} | H_{0j} \text{ verdadeira}) = m \cdot \frac{\alpha}{m} = \alpha.$$
+
+**Comparação com as alternativas:**
+- Opção 3 ($1-(1-\alpha)^m$): é o FWER **sem** correção, quando os $m$ testes são independentes — o nível real que queremos controlar.
+- Opção 4 (exigir consenso): equivale a testar a interseção $\bigcap_j H_{0j}$, um critério muito conservador.
+- Correção de Šidák: $\alpha^* = 1-(1-\alpha)^{1/m}$ (não $\alpha/\sqrt{m}$) — válida para testes independentes e levemente menos conservadora que Bonferroni.
+
+**Limitação:** Bonferroni é conservadora (controla o FWER, mas pode ser excessivamente restritiva). Para controlar a FDR (false discovery rate), usa-se o procedimento de Benjamini-Hochberg.
+
+Meta-information
+================
+exname: Cap7S2Q10_testes_multiplos_bonferroni
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

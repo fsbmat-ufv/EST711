@@ -1,0 +1,46 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parametros
+p0 <- sample(c(0.3, 0.4, 0.5), 1)
+p1 <- p0 + sample(c(0.2, 0.3), 1)
+if (p1 > 0.9) p1 <- 0.8
+
+## Choices textuais
+razao_val <- round(p1 * (1 - p0) / (p0 * (1 - p1)), 4)
+all_choices <- c(
+  paste0("$\\frac{p_1/p_0}{(1-p_1)/(1-p_0)} = \\frac{p_1(1-p_0)}{p_0(1-p_1)} = ", razao_val, " > 1$ quando $p_1 > p_0$, entao a razao e maior para $x=1$ que para $x=0$."),
+  paste0("A razao e crescente porque $p_1 > p_0$ implica $f(x;p_1) > f(x;p_0)$ para todo $x$."),
+  "A razao e crescente em $x$ apenas para $x \\in (0,1)$ continuo, nao para valores inteiros.",
+  "A razao de verossimilhanca e sempre crescente em $x$ para qualquer par $(\\theta_1, \\theta_2)$.",
+  "A razao e crescente porque Bernoulli pertence a familia exponencial e $c(p) = \\log(p/(1-p))$ e crescente em $p$ (condicao suficiente, nao explicacao direta da razao)."
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+Para $X \sim \text{Bernoulli}(p)$ com $p_1 = `r p1` > p_0 = `r p0`$, a razao de verossimilhanca e $f(x;p_1)/f(x;p_0) = (p_1/p_0)^x((1-p_1)/(1-p_0))^{1-x}$. Essa razao e crescente em $x$ porque:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+A razao para $x=1$ e $p_1/p_0$ e para $x=0$ e $(1-p_1)/(1-p_0)$. A razao entre elas e $p_1(1-p_0)/(p_0(1-p_1)) = `r razao_val` > 1$ quando $p_1 > p_0$. Portanto a razao e estritamente crescente em $x$ (maior para $x=1$ que para $x=0$), confirmando a MLR.
+
+Meta-information
+================
+exname: Cap6S4Q6_MLR_Bernoulli
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

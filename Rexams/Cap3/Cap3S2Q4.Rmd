@@ -1,0 +1,69 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parâmetros aleatórios
+theta <- sample(c(1, 2, 3, 4, 5), 1)
+n     <- sample(c(25, 36, 50, 100), 1)
+sum_x <- round(n / theta + runif(1, -2, 2), 2)
+## Garantir sum_x > 0
+sum_x <- max(sum_x, 0.1)
+
+## Resposta correta
+correct <- round(n / sum_x, 4)
+
+## Alternativas incorretas plausíveis
+w1 <- round(sum_x / n, 4)
+w2 <- round(n^2 / sum_x^2, 4)
+w3 <- round(sum_x / n + 0.5, 4)
+w4 <- round(n / sum_x + 1 / n, 4)
+
+## Garantir unicidade
+if (w1 == correct) w1 <- round(sum_x / n + 0.01, 4)
+if (w2 == correct) w2 <- round(n^2 / sum_x^2 + 0.1, 4)
+if (w3 == correct) w3 <- round(sum_x / n + 1, 4)
+if (w4 == correct) w4 <- round(n / sum_x + 2 / n, 4)
+if (w2 == w1)      w2 <- round(n^2 / sum_x^2 - 0.1, 4)
+if (w3 == w1 || w3 == w2) w3 <- round(sum_x / n + 0.3, 4)
+if (w4 == w1 || w4 == w2 || w4 == w3) w4 <- round(n / sum_x - 1 / n, 4)
+
+## Embaralhamento SEMPRE
+all_vals <- c(correct, w1, w2, w3, w4)
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+
+Seja $X_i \overset{\text{iid}}{\sim} \text{Exp}(\theta)$ com função de densidade $f(x;\theta) = \theta e^{-\theta x}$, $x > 0$. A log-verossimilhança é $\ell(\theta) = n\log\theta - \theta\sum X_i$, e o EMV é $\hat{\theta}_{MV} = n/\sum X_i$. Com $n = `r n`$ e $\sum_{i=1}^n X_i = `r sum_x`$, calcule $\hat{\theta}_{MV}$.
+
+Answerlist
+----------
+
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+
+A equação de verossimilhança é:
+$$\frac{d\ell}{d\theta} = \frac{n}{\theta} - \sum X_i = 0 \implies \hat{\theta}_{MV} = \frac{n}{\sum X_i} = \frac{`r n`}{`r sum_x`} = `r correct`.$$
+Note que $\hat{\theta}_{MV} = 1/\bar{X}$, e que $\sum X_i / n = \bar{X} = 1/\hat{\theta}_{MV}$ é o estimador de $E(X) = 1/\theta$, não de $\theta$.
+
+Meta-information
+================
+exname: Cap3S2Q4_emv_exponencial
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

@@ -1,0 +1,44 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parametros
+alpha  <- sample(c(0.01, 0.05, 0.10), 1)
+theta0 <- sample(c(2, 4, 6, 8), 1)
+
+## Choices textuais
+all_choices <- c(
+  paste0("$\\alpha = P_{\\theta_0}[(\\mathbf{X}) \\in \\mathcal{C}]$ --- a probabilidade de rejeitar $H_0$ quando $\\theta = ", theta0, "$."),
+  "$\\alpha = \\max_{\\theta \\in \\Omega_1} P_\\theta[(\\mathbf{X}) \\in \\mathcal{C}]$ --- maximo sobre a hipotese alternativa.",
+  "$\\alpha = P[(\\mathbf{X}) \\in \\mathcal{C}]$ marginalizando sobre $\\theta$ com distribuicao a priori.",
+  paste0("$\\alpha = P_{\\theta_0}[(\\mathbf{X}) \\notin \\mathcal{C}]$ --- a probabilidade de NAO rejeitar $H_0$ quando $\\theta = ", theta0, "$."),
+  paste0("$\\alpha = 1 - P_{\\theta_0}[(\\mathbf{X}) \\in \\mathcal{C}]$ --- o complemento da probabilidade de rejeicao sob $\\theta_0 = ", theta0, "$.")
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+O nivel de significancia de um teste $H_0:\theta = `r theta0`$ vs. $H_1:\theta \neq `r theta0`$ com regiao critica $\mathcal{C}$ e definido como:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+O nivel de significancia e a probabilidade de rejeitar $H_0$ quando ela e verdadeira: $\alpha = P_{\theta_0}[\mathbf{X} \in \mathcal{C}]$. Para hipoteses simples, isso e direto. Para $H_0$ composta, seria $\alpha = \sup_{\theta \in \Omega_0} P_\theta[\mathbf{X} \in \mathcal{C}]$ (opcao 2 esta errada pois maximiza sobre $\Omega_1$).
+
+Meta-information
+================
+exname: Cap6S1Q7_nivel_significancia
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

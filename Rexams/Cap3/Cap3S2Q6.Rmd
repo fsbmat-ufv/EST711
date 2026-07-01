@@ -1,0 +1,65 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parâmetros aleatórios
+theta <- sample(c(3, 4, 5, 6, 8, 10), 1)
+n     <- sample(c(10, 25, 50, 100), 1)
+x_max <- round(theta * runif(1, 0.8, 0.99), 4)
+
+## Resposta correta
+correct <- x_max
+
+## Alternativas incorretas plausíveis
+w1 <- round(x_max * n / (n - 1), 4)
+w2 <- round(2 * x_max / n, 4)
+w3 <- round(x_max + 1 / n, 4)
+w4 <- round(x_max * (1 + 1 / n), 4)
+
+## Garantir unicidade
+if (w1 == correct) w1 <- round(x_max * (n + 1) / (n - 1), 4)
+if (w2 == correct) w2 <- round(x_max * 2 / (n + 1), 4)
+if (w3 == correct) w3 <- round(x_max + 2 / n, 4)
+if (w4 == correct) w4 <- round(x_max * (1 + 2 / n), 4)
+if (w1 == w2)      w2 <- round(x_max / 2, 4)
+if (w3 == w1 || w3 == w2) w3 <- round(x_max + 0.1, 4)
+if (w4 == w1 || w4 == w2 || w4 == w3) w4 <- round(x_max * 1.05, 4)
+
+## Embaralhamento SEMPRE
+all_vals <- c(correct, w1, w2, w3, w4)
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+
+Seja $X_i \overset{\text{iid}}{\sim} U(0, \theta)$ com $f(x;\theta) = 1/\theta$ para $0 \leq x \leq \theta$. A verossimilhança é $L(\theta) = \theta^{-n}$ para $\theta \geq x_{(n)} = \max\{X_i\}$, e $L(\theta) = 0$ para $\theta < x_{(n)}$. Como $L$ é decrescente em $\theta$, ela é maximizada pelo menor valor compatível: $\hat{\theta}_{MV} = X_{(n)}$. Com $n = `r n`$ e $X_{(n)} = `r x_max`$, qual é o EMV de $\theta$?
+
+Answerlist
+----------
+
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+
+A verossimilhança $L(\theta) = \theta^{-n} \cdot \mathbf{1}(\theta \geq x_{(n)})$ é estritamente decrescente em $\theta$ para $\theta \geq x_{(n)}$. Portanto, o máximo ocorre no ponto de fronteira $\hat{\theta}_{MV} = x_{(n)} = `r correct`$. Note que $\hat{\theta}_{MV}$ é viesado: $E(X_{(n)}) = \frac{n}{n+1}\theta < \theta$. O estimador não-viesado seria $\frac{n+1}{n}X_{(n)}$.
+
+Meta-information
+================
+exname: Cap3S2Q6_emv_uniforme_max
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

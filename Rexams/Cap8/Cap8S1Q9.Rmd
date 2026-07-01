@@ -1,0 +1,28 @@
+```{r, echo=FALSE, results="hide"}
+starts <- sample(c(5, 10, 20, 30), 1)
+k <- sample(2:4, 1)
+```
+
+Question
+========
+Ao ajustar uma mistura com `r k` componentes, o pesquisador executa o EM a partir de `r starts` inicializações distintas. Qual é a principal justificativa estatística para essa estratégia?
+
+Answerlist
+----------
+* A log-verossimilhança pode ter máximos locais; comparar as soluções reduz a dependência de uma única inicialização.
+* Cada inicialização transforma automaticamente um máximo local no máximo global.
+* O EM exige exatamente uma inicialização para cada observação da amostra.
+* A média aritmética dos parâmetros obtidos é sempre o estimador de máxima verossimilhança.
+* Múltiplas inicializações tornam identificáveis todos os modelos de mistura, inclusive os mal especificados.
+
+Solution
+========
+O EM é monotônico, mas pode convergir para diferentes pontos estacionários. Rodar o algoritmo com vários valores iniciais e reter uma solução admissível com maior log-verossimilhança observada é uma proteção prática contra uma escolha inicial desfavorável. Isso não constitui prova de que o máximo global foi encontrado.
+
+Meta-information
+================
+exname: Cap8S1Q9_inicializacao_maximos_locais
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

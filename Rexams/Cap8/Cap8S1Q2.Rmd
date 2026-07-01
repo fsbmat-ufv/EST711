@@ -1,0 +1,30 @@
+```{r, echo=FALSE, results="hide"}
+cenario <- sample(c("rótulos de componentes não observados",
+                    "tempos de falha parcialmente censurados",
+                    "respostas ausentes sob o modelo especificado"), 1)
+iter <- sample(2:8, 1)
+```
+
+Question
+========
+Considere um problema com `r cenario`. Sejam $\mathbf X$ os dados observados, $\mathbf Z$ os dados latentes e $\boldsymbol\theta^{(`r iter`)}$ o valor corrente do parâmetro. O que é calculado no passo E do algoritmo EM?
+
+Answerlist
+----------
+* $Q(\boldsymbol\theta\mid\boldsymbol\theta^{(`r iter`)})=E_{\boldsymbol\theta^{(`r iter`)}}[\ell_c(\boldsymbol\theta;\mathbf X,\mathbf Z)\mid\mathbf X]$.
+* O valor de $\boldsymbol\theta$ que maximiza diretamente $\ell_c(\boldsymbol\theta;\mathbf X,\mathbf Z)$, tratando $\mathbf Z$ como observado.
+* A esperança incondicional de $\ell(\boldsymbol\theta;\mathbf X)$ sob qualquer distribuição para $\mathbf Z$.
+* A integral da verossimilhança observada em relação ao parâmetro $\boldsymbol\theta$.
+* A matriz hessiana da log-verossimilhança observada, sem usar $\mathbf Z$.
+
+Solution
+========
+No passo E calcula-se a esperança condicional da log-verossimilhança dos dados completos, condicionada nos dados observados e usando o valor corrente do parâmetro para a distribuição de $\mathbf Z$. No passo M, maximiza-se essa função em relação a $\boldsymbol\theta$.
+
+Meta-information
+================
+exname: Cap8S1Q2_passo_E
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

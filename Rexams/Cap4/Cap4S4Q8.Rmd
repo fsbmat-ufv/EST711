@@ -1,0 +1,47 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+## Choices textuais
+all_choices <- c(
+  "Sua distribuicao nao depende de $\\theta$ --- ou seja, nao contem informacao sobre $\\theta$.",
+  "E independente de toda estatistica suficiente para $\\theta$.",
+  "Tem variancia zero para todo $\\theta$, sendo portanto uma constante.",
+  "E suficiente para um subconjunto do espaco parametrico $\\Omega$.",
+  "E nao-viesada e consistente para $\\theta$."
+)
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+Na teoria da suficiencia, o conceito de **estatistica ancilar** e o dual da suficiencia.
+
+Uma estatistica $A = A(X_1, \ldots, X_n)$ e dita **ancilar** para $\theta$ se:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+Uma estatistica $A$ e **ancilar** para $\theta$ se sua distribuicao **nao depende de $\theta$**, ou seja, $A$ nao contem informacao sobre $\theta$.
+
+Exemplos:
+
+- Para $X_i \sim N(\mu, \sigma^2)$ com $\sigma^2$ desconhecido: a amplitude $R = X_{(n)} - X_{(1)}$ e ancilar para $\mu$ (sua distribuicao depende de $\sigma^2$ mas nao de $\mu$, em certos contextos).
+- O indice $I = \mathbf{1}(X_1 > \bar{X})$ pode ser ancilar para parametros de localizacao.
+
+Nota importante: a condicao de anciaridade e sobre a **distribuicao** de $A$, nao sobre sua independencia de outras estatisticas. O **Principio da Condicionalidade** sugere realizar inferencia condicionada ao valor da estatistica ancilar.
+
+Meta-information
+================
+exname: Cap4S4Q8_estatistica_ancilar
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

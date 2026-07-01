@@ -1,0 +1,48 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Alternativas (textuais) — questão puramente conceitual
+all_choices <- c(
+  "$X_n \\xrightarrow{P} c$ (convergência em distribuição para constante implica convergência em probabilidade).",
+  "$X_n \\xrightarrow{a.s.} c$ (convergência quase certa para $c$, sempre).",
+  "Nada mais pode ser concluído além da própria convergência em distribuição.",
+  "$\\text{Var}(X_n) \\to 0$ mas $X_n$ não necessariamente converge em probabilidade para $c$.",
+  "$E(X_n) \\to c$ mas não há convergência em probabilidade para $c$."
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+
+Seja $(X_n)$ uma sequência de variáveis aleatórias tal que $X_n \xrightarrow{D} c$ para alguma constante $c \in \mathbb{R}$. O que mais podemos concluir sobre a convergência de $X_n$?
+
+Answerlist
+----------
+
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+
+Quando o limite em distribuição é uma **constante** $c$ (variável degenerada), a convergência em distribuição é equivalente à convergência em probabilidade: $X_n \xrightarrow{D} c \Leftrightarrow X_n \xrightarrow{P} c$.
+
+Isso é um caso especial importante: a equivalência entre convergência em probabilidade e em distribuição vale **somente** quando o limite é uma constante. Em geral (limite não-constante), convergência em distribuição é mais fraca.
+
+Convergência quase certa não é garantida pela convergência em distribuição, mesmo quando o limite é uma constante.
+
+Meta-information
+================
+exname: Cap1S2Q6_conv_distribuicao_constante
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE
+```

@@ -1,0 +1,42 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Choices textuais
+all_choices <- c(
+  "Equivalentes --- rejeitar o TRV para $-2\\log\\Lambda > c$ e equivalente a rejeitar $|T| > t_{n-1,\\,\\alpha/2}$, pois $-2\\log\\Lambda$ e funcao monotonica crescente de $T^2$.",
+  "Sempre diferentes: o TRV usa $\\chi^2_1$ e o teste $t$ usa $t_{n-1}$, levando a decisoes distintas.",
+  "Equivalentes apenas assintoticamente; para amostras pequenas, o TRV e mais conservador que o teste $t$.",
+  "O teste $t$ e sempre mais poderoso que o TRV para $n < 30$.",
+  "O TRV e exato enquanto o teste $t$ e apenas assintoticamente valido para normais."
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+Para $X_i \overset{\text{iid}}{\sim} N(\mu,\sigma^2)$ com $\sigma^2$ desconhecido, testando $H_0:\mu = \mu_0$ vs. $H_1:\mu \neq \mu_0$, o TRV e o teste $t$ sao:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+Como $-2\log\Lambda = n\log(1 + T^2/(n-1))$ e uma funcao estritamente crescente de $T^2$, as regioes criticas $\{-2\log\Lambda > c\}$ e $\{|T| > k\}$ sao identicas para os valores criticos correspondentes. Portanto os dois testes sao exatamente equivalentes (mesma decisao para qualquer amostra).
+
+O teste $t$ e exato (nao apenas assintótico) para dados normais. O TRV para este caso tambem e exato via a equivalencia com o teste $t$.
+
+Meta-information
+================
+exname: Cap6S5Q7_TRV_vs_teste_t
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

@@ -1,0 +1,40 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Choices textuais
+all_choices <- c(
+  "UMP de tamanho $\\alpha$ para $H_0:\\theta \\leq \\theta_0$ vs. $H_1:\\theta > \\theta_0$.",
+  "O unico teste nao-viesado de tamanho $\\alpha$ para hipoteses unilaterais com MLR.",
+  "O teste mais poderoso apenas para alternativas simples $\\theta = \\theta_1$ (hipotese simples).",
+  "UMP de tamanho $\\alpha$ para qualquer tipo de hipotese alternativa, incluindo bilateral.",
+  "O teste de razao de verossimilhanca generalizada (TRVG) de tamanho $\\alpha$."
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+O Teorema de Karlin-Rubin afirma que, se a familia tem MLR crescente em $T$, entao o teste que rejeita $H_0:\theta \leq \theta_0$ quando $T > k$ (com $k$ tal que o nivel seja $\alpha$) e:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+O Teorema de Karlin-Rubin garante que o teste baseado em $T > k$ e UMP para hipoteses UNILATERAIS $H_0:\theta \leq \theta_0$ vs. $H_1:\theta > \theta_0$. Esse resultado e mais forte que o Lema de NP (que cobre apenas hipoteses simples vs. simples), pois $H_0$ e composta ($\theta \leq \theta_0$). O resultado NAO vale para hipoteses bilaterais.
+
+Meta-information
+================
+exname: Cap6S4Q3_Karlin_Rubin_enunciado
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

@@ -1,0 +1,40 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Choices textuais
+all_choices <- c(
+  "O teste mais poderoso contra $\\theta_1 > \\theta_0$ usa regiao critica unilateral direita, mas o mais poderoso contra $\\theta_1 < \\theta_0$ usa regiao esquerda. Nenhuma regiao e simultaneamente otima para ambos os lados.",
+  "A hipotese bilateral nao pode ser testada usando o Lema de Neyman-Pearson.",
+  "Para hipoteses bilaterais, o Erro Tipo I e sempre maior que $\\alpha$, qualquer que seja o teste.",
+  "O poder de qualquer teste bilateral e sempre menor que 0{,}5, independente de $n$.",
+  "Hipoteses bilaterais requerem amostras infinitas para ter poder adequado."
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+Para $H_0:\theta = \theta_0$ vs. $H_1:\theta \neq \theta_0$ (hipotese alternativa bilateral), um teste UMP geralmente NAO existe porque:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+Para $\theta_1 > \theta_0$, o teste MP tem regiao critica unilateral a direita (rejeita para $T$ grande). Para $\theta_1 < \theta_0$, o teste MP tem regiao unilateral a esquerda (rejeita para $T$ pequeno). Como essas regioes sao diferentes, nao existe um unico teste que seja simultaneamente MP para todo $\theta_1 \neq \theta_0$. Busca-se entao o teste UMPU (nao-viesado).
+
+Meta-information
+================
+exname: Cap6S3Q3_UMP_nao_existe_bilateral
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

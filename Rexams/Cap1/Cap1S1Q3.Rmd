@@ -1,0 +1,70 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parâmetros aleatórios
+mu      <- sample(2:8, 1)
+sigma2  <- sample(1:9, 1)
+n       <- sample(c(25, 36, 49, 64), 1)
+epsilon <- sample(c(0.1, 0.2, 0.5, 1.0), 1)
+
+## Resposta correta
+correct <- round(sigma2 / (n * epsilon^2), 4)
+
+## Alternativas incorretas plausíveis
+w1 <- round(sigma2 / (n * epsilon), 4)
+w2 <- round(sigma2 / epsilon^2, 4)
+w3 <- round(n * sigma2 / epsilon^2, 4)
+w4 <- round(sqrt(sigma2 / n) / epsilon, 4)
+
+## Garantir que nenhum w coincide com correct
+w_list <- c(w1, w2, w3, w4)
+w_list[w_list == correct] <- correct + 0.001
+
+## Embaralhamento
+all_vals <- c(correct, w_list[1], w_list[2], w_list[3], w_list[4])
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+
+Seja $X_1, \ldots, X_n$ uma amostra iid com média $\mu = `r mu`$ e variância $\sigma^2 = `r sigma2`$, e $n = `r n`$. Usando a desigualdade de Chebyshev, qual é o limite superior para $P(|\bar{X}_n - \mu| \geq \varepsilon)$ com $\varepsilon = `r epsilon`$?
+
+$$P(|\bar{X}_n - \mu| \geq \varepsilon) \leq \frac{\sigma^2}{n\varepsilon^2}$$
+
+Answerlist
+----------
+
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+
+Pela desigualdade de Chebyshev aplicada a $\bar{X}_n$, que tem variância $\sigma^2/n$:
+
+$$P(|\bar{X}_n - \mu| \geq \varepsilon) \leq \frac{\text{Var}(\bar{X}_n)}{\varepsilon^2} = \frac{\sigma^2/n}{\varepsilon^2} = \frac{\sigma^2}{n\varepsilon^2}$$
+
+Substituindo $\sigma^2 = `r sigma2`$, $n = `r n`$ e $\varepsilon = `r epsilon`$:
+
+$$\frac{`r sigma2`}{`r n` \times `r epsilon`^2} = \frac{`r sigma2`}{`r n * epsilon^2`} = `r correct`$$
+
+Meta-information
+================
+exname: Cap1S1Q3_chebyshev_consistencia
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE
+```

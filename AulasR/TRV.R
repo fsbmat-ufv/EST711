@@ -31,7 +31,7 @@ LR <- -2 * log(Lambda)
 # ---- Gráfico ----
 plot(theta_seq, loglik, type = "l", lwd = 2, col = "blue",
      main = "Função de Log-Verossimilhança e Teste da Razão de Verossimilhança",
-     xlab = expression(theta), ylab = expression(ell(theta)))
+     xlab = expression(theta), ylab = expression(ell(theta)), ylim = c(-100,max(loglik)+15))
 
 # Marcar pontos importantes
 abline(v = theta_hat, col = "red", lwd = 2, lty = 2)

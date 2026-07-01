@@ -1,0 +1,44 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+all_choices <- c(
+  "$L_P(\\theta_1) = \\sup_{\\boldsymbol{\\lambda}} L(\\theta_1, \\boldsymbol{\\lambda})$ — a verossimilhança maximizada sobre os parâmetros de perturbação.",
+  "$L_P(\\theta_1) = \\int L(\\theta_1, \\boldsymbol{\\lambda})\\, \\pi(\\boldsymbol{\\lambda})\\, d\\boldsymbol{\\lambda}$ — marginalização bayesiana com prior $\\pi(\\boldsymbol{\\lambda})$.",
+  "$L_P(\\theta_1) = L(\\theta_1, \\hat{\\boldsymbol{\\lambda}})$ onde $\\hat{\\boldsymbol{\\lambda}}$ é fixado em seu EMV incondicional, ignorando a dependência em $\\theta_1$.",
+  "$L_P(\\theta_1) = L(\\theta_1, \\boldsymbol{\\lambda}_0)$ para algum $\\boldsymbol{\\lambda}_0$ fixado a priori e independente dos dados.",
+  "$L_P(\\theta_1) = \\min_{\\boldsymbol{\\lambda}} L(\\theta_1, \\boldsymbol{\\lambda})$ — mínimo sobre os parâmetros de perturbação."
+)
+
+perm <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+Seja $\boldsymbol{\theta} = (\theta_1, \boldsymbol{\lambda})$ onde $\theta_1$ é o **parâmetro de interesse** e $\boldsymbol{\lambda}$ são os **parâmetros de perturbação** (nuisance parameters). A **verossimilhança de perfil** (profile likelihood) para $\theta_1$ é definida como:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+A **verossimilhança de perfil** é definida como:
+$$L_P(\theta_1) = \sup_{\boldsymbol{\lambda}} L(\theta_1, \boldsymbol{\lambda}).$$
+
+Para cada valor fixado de $\theta_1$, maximiza-se a verossimilhança sobre todos os valores possíveis de $\boldsymbol{\lambda}$. Isso elimina os parâmetros de perturbação do problema. O estimador condicional $\hat{\boldsymbol{\lambda}}(\theta_1) = \arg\max_{\boldsymbol{\lambda}} L(\theta_1, \boldsymbol{\lambda})$ depende de $\theta_1$.
+
+**Distinção importante:** fixar $\hat{\boldsymbol{\lambda}}$ no EMV incondicional (opção 3) produz a **verossimilhança concentrada** ou **estimativa plug-in**, que difere da verossimilhança de perfil verdadeira por não capturar como $\hat{\boldsymbol{\lambda}}$ varia com $\theta_1$.
+
+Meta-information
+================
+exname: Cap7S1Q6_verossimilhanca_perfil
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

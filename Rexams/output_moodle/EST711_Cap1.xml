@@ -1,0 +1,3038 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap1/Exercise 01</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q01 : Cap1_Cap1S1Q1 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(T_n\)</span> um estimador de <span class="math inline">\(\theta\)</span> baseado em uma amostra de tamanho <span class="math inline">\(n\)</span>.
+Qual das afirmações abaixo define <strong>corretamente</strong> a convergência em probabilidade <span class="math inline">\(T_n \xrightarrow{P} \theta\)</span>?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>A definição correta de convergência em probabilidade é:
+para todo <span class="math inline">\(\varepsilon &gt; 0\)</span>, <span class="math inline">\(P(|T_n - \theta| \geq \varepsilon) \to 0\)</span> quando <span class="math inline">\(n \to \infty\)</span>.</p>
+<p>Equivalentemente, <span class="math inline">\(P(|T_n - \theta| &lt; \varepsilon) \to 1\)</span>, mas a definição padrão usa a probabilidade do evento <span class="math inline">\(\{|T_n - \theta| \geq \varepsilon\}\)</span> ir a zero. As demais alternativas confundem o sentido da desigualdade, trocam por convergência quase certa (mais forte), ou usam <span class="math inline">\(P(|T_n - \theta| = 0)\)</span>, que não é a definição correta.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(P(|T_n - \theta| \geq \varepsilon) \to 0\)</span> quando <span class="math inline">\(n \to \infty\)</span>, para todo <span class="math inline">\(\varepsilon &gt; 0\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(P(|\theta - T_n| \leq \varepsilon) \to 0\)</span> quando <span class="math inline">\(n \to \infty\)</span>, para todo <span class="math inline">\(\varepsilon &gt; 0\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(T_n \to \theta\)</span> quase certamente (com probabilidade 1).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(P(|T_n - \theta| &lt; \varepsilon) \to 0\)</span> quando <span class="math inline">\(n \to \infty\)</span>, para todo <span class="math inline">\(\varepsilon &gt; 0\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(P(|T_n - \theta| = 0) \to 1\)</span> quando <span class="math inline">\(n \to \infty\)</span>.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q01 : Cap1_Cap1S1Q1 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(T_n\)</span> um estimador de <span class="math inline">\(\theta\)</span> baseado em uma amostra de tamanho <span class="math inline">\(n\)</span>.
+Qual das afirmações abaixo define <strong>corretamente</strong> a convergência em probabilidade <span class="math inline">\(T_n \xrightarrow{P} \theta\)</span>?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>A definição correta de convergência em probabilidade é:
+para todo <span class="math inline">\(\varepsilon &gt; 0\)</span>, <span class="math inline">\(P(|T_n - \theta| \geq \varepsilon) \to 0\)</span> quando <span class="math inline">\(n \to \infty\)</span>.</p>
+<p>Equivalentemente, <span class="math inline">\(P(|T_n - \theta| &lt; \varepsilon) \to 1\)</span>, mas a definição padrão usa a probabilidade do evento <span class="math inline">\(\{|T_n - \theta| \geq \varepsilon\}\)</span> ir a zero. As demais alternativas confundem o sentido da desigualdade, trocam por convergência quase certa (mais forte), ou usam <span class="math inline">\(P(|T_n - \theta| = 0)\)</span>, que não é a definição correta.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(P(|\theta - T_n| \leq \varepsilon) \to 0\)</span> quando <span class="math inline">\(n \to \infty\)</span>, para todo <span class="math inline">\(\varepsilon &gt; 0\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(P(|T_n - \theta| &lt; \varepsilon) \to 0\)</span> quando <span class="math inline">\(n \to \infty\)</span>, para todo <span class="math inline">\(\varepsilon &gt; 0\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(T_n \to \theta\)</span> quase certamente (com probabilidade 1).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(P(|T_n - \theta| = 0) \to 1\)</span> quando <span class="math inline">\(n \to \infty\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(P(|T_n - \theta| \geq \varepsilon) \to 0\)</span> quando <span class="math inline">\(n \to \infty\)</span>, para todo <span class="math inline">\(\varepsilon &gt; 0\)</span>.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap1/Exercise 02</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q02 : Cap1_Cap1S1Q2 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_1, X_2, \ldots, X_n\)</span> uma sequência de variáveis aleatórias iid com <span class="math inline">\(E(X_i) = 8\)</span> e <span class="math inline">\(\text{Var}(X_i) = 5\)</span>. Defina a média amostral <span class="math inline">\(\bar{X}_n = \frac{1}{n}\sum_{i=1}^n X_i\)</span>.</p>
+<p>Pela Lei Fraca dos Grandes Números (LFGN), qual é o limite em probabilidade de <span class="math inline">\(\bar{X}_n\)</span> quando <span class="math inline">\(n \to \infty\)</span>?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Pela Lei Fraca dos Grandes Números, se <span class="math inline">\(E(X_i) = \mu\)</span> e <span class="math inline">\(\text{Var}(X_i) = \sigma^2 &lt; \infty\)</span>, então <span class="math inline">\(\bar{X}_n \xrightarrow{P} \mu = 8\)</span>.</p>
+<p>Isso segue pois <span class="math inline">\(E(\bar{X}_n) = \mu\)</span> e <span class="math inline">\(\text{Var}(\bar{X}_n) = \sigma^2/n \to 0\)</span>, portanto pela desigualdade de Chebyshev, <span class="math inline">\(P(|\bar{X}_n - \mu| \geq \varepsilon) \leq \sigma^2/(n\varepsilon^2) \to 0\)</span>.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+13
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+5
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+200
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.32
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+8
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q02 : Cap1_Cap1S1Q2 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_1, X_2, \ldots, X_n\)</span> uma sequência de variáveis aleatórias iid com <span class="math inline">\(E(X_i) = 2\)</span> e <span class="math inline">\(\text{Var}(X_i) = 9\)</span>. Defina a média amostral <span class="math inline">\(\bar{X}_n = \frac{1}{n}\sum_{i=1}^n X_i\)</span>.</p>
+<p>Pela Lei Fraca dos Grandes Números (LFGN), qual é o limite em probabilidade de <span class="math inline">\(\bar{X}_n\)</span> quando <span class="math inline">\(n \to \infty\)</span>?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Pela Lei Fraca dos Grandes Números, se <span class="math inline">\(E(X_i) = \mu\)</span> e <span class="math inline">\(\text{Var}(X_i) = \sigma^2 &lt; \infty\)</span>, então <span class="math inline">\(\bar{X}_n \xrightarrow{P} \mu = 2\)</span>.</p>
+<p>Isso segue pois <span class="math inline">\(E(\bar{X}_n) = \mu\)</span> e <span class="math inline">\(\text{Var}(\bar{X}_n) = \sigma^2/n \to 0\)</span>, portanto pela desigualdade de Chebyshev, <span class="math inline">\(P(|\bar{X}_n - \mu| \geq \varepsilon) \leq \sigma^2/(n\varepsilon^2) \to 0\)</span>.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+9
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+128
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+2
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+11
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.0312
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap1/Exercise 03</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q03 : Cap1_Cap1S1Q3 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_1, \ldots, X_n\)</span> uma amostra iid com média <span class="math inline">\(\mu = 7\)</span> e variância <span class="math inline">\(\sigma^2 = 1\)</span>, e <span class="math inline">\(n = 49\)</span>. Usando a desigualdade de Chebyshev, qual é o limite superior para <span class="math inline">\(P(|\bar{X}_n - \mu| \geq \varepsilon)\)</span> com <span class="math inline">\(\varepsilon = 0.2\)</span>?</p>
+<p><span class="math display">\[P(|\bar{X}_n - \mu| \geq \varepsilon) \leq \frac{\sigma^2}{n\varepsilon^2}\]</span></p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Pela desigualdade de Chebyshev aplicada a <span class="math inline">\(\bar{X}_n\)</span>, que tem variância <span class="math inline">\(\sigma^2/n\)</span>:</p>
+<p><span class="math display">\[P(|\bar{X}_n - \mu| \geq \varepsilon) \leq \frac{\text{Var}(\bar{X}_n)}{\varepsilon^2} = \frac{\sigma^2/n}{\varepsilon^2} = \frac{\sigma^2}{n\varepsilon^2}\]</span></p>
+<p>Substituindo <span class="math inline">\(\sigma^2 = 1\)</span>, <span class="math inline">\(n = 49\)</span> e <span class="math inline">\(\varepsilon = 0.2\)</span>:</p>
+<p><span class="math display">\[\frac{1}{49 \times 0.2^2} = \frac{1}{1.96} = 0.5102\]</span></p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+25
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+0.5102
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.7143
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.102
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+1225
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q03 : Cap1_Cap1S1Q3 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_1, \ldots, X_n\)</span> uma amostra iid com média <span class="math inline">\(\mu = 2\)</span> e variância <span class="math inline">\(\sigma^2 = 9\)</span>, e <span class="math inline">\(n = 36\)</span>. Usando a desigualdade de Chebyshev, qual é o limite superior para <span class="math inline">\(P(|\bar{X}_n - \mu| \geq \varepsilon)\)</span> com <span class="math inline">\(\varepsilon = 0.5\)</span>?</p>
+<p><span class="math display">\[P(|\bar{X}_n - \mu| \geq \varepsilon) \leq \frac{\sigma^2}{n\varepsilon^2}\]</span></p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Pela desigualdade de Chebyshev aplicada a <span class="math inline">\(\bar{X}_n\)</span>, que tem variância <span class="math inline">\(\sigma^2/n\)</span>:</p>
+<p><span class="math display">\[P(|\bar{X}_n - \mu| \geq \varepsilon) \leq \frac{\text{Var}(\bar{X}_n)}{\varepsilon^2} = \frac{\sigma^2/n}{\varepsilon^2} = \frac{\sigma^2}{n\varepsilon^2}\]</span></p>
+<p>Substituindo <span class="math inline">\(\sigma^2 = 9\)</span>, <span class="math inline">\(n = 36\)</span> e <span class="math inline">\(\varepsilon = 0.5\)</span>:</p>
+<p><span class="math display">\[\frac{9}{36 \times 0.5^2} = \frac{9}{9} = 1\]</span></p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+1296
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+36
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+1
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+1.001
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.5
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap1/Exercise 04</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q04 : Cap1_Cap1S1Q4 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_1, X_2, \ldots, X_n \overset{\text{iid}}{\sim} U(0, \theta)\)</span> com <span class="math inline">\(\theta = 5\)</span>, e defina o estimador <span class="math inline">\(Y_n = \max\{X_1, \ldots, X_n\}\)</span> (o máximo amostral).</p>
+<p>Qual é o limite em probabilidade de <span class="math inline">\(Y_n\)</span> quando <span class="math inline">\(n \to \infty\)</span>?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Para <span class="math inline">\(X_i \overset{\text{iid}}{\sim} U(0,\theta)\)</span>, o máximo amostral <span class="math inline">\(Y_n = \max\{X_1,\ldots,X_n\}\)</span> é o estimador de máxima verossimilhança de <span class="math inline">\(\theta\)</span>.</p>
+<p>A função de distribuição acumulada de <span class="math inline">\(Y_n\)</span> é <span class="math inline">\(F_{Y_n}(y) = (y/\theta)^n\)</span> para <span class="math inline">\(0 \leq y \leq \theta\)</span>.</p>
+<p>Para qualquer <span class="math inline">\(\varepsilon &gt; 0\)</span>:
+<span class="math display">\[P(|Y_n - \theta| \geq \varepsilon) = P(Y_n \leq \theta - \varepsilon) = \left(\frac{\theta - \varepsilon}{\theta}\right)^n \to 0\]</span></p>
+<p>portanto <span class="math inline">\(Y_n \xrightarrow{P} \theta = 5\)</span>.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(0\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(5\)</span> (o próprio parâmetro <span class="math inline">\(\theta\)</span>).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(2\theta = 10\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(5/2 = 2.5\)</span> (metade de <span class="math inline">\(\theta\)</span>).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(\theta/n = 5/10 = 0.5\)</span>.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q04 : Cap1_Cap1S1Q4 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_1, X_2, \ldots, X_n \overset{\text{iid}}{\sim} U(0, \theta)\)</span> com <span class="math inline">\(\theta = 3\)</span>, e defina o estimador <span class="math inline">\(Y_n = \max\{X_1, \ldots, X_n\}\)</span> (o máximo amostral).</p>
+<p>Qual é o limite em probabilidade de <span class="math inline">\(Y_n\)</span> quando <span class="math inline">\(n \to \infty\)</span>?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Para <span class="math inline">\(X_i \overset{\text{iid}}{\sim} U(0,\theta)\)</span>, o máximo amostral <span class="math inline">\(Y_n = \max\{X_1,\ldots,X_n\}\)</span> é o estimador de máxima verossimilhança de <span class="math inline">\(\theta\)</span>.</p>
+<p>A função de distribuição acumulada de <span class="math inline">\(Y_n\)</span> é <span class="math inline">\(F_{Y_n}(y) = (y/\theta)^n\)</span> para <span class="math inline">\(0 \leq y \leq \theta\)</span>.</p>
+<p>Para qualquer <span class="math inline">\(\varepsilon &gt; 0\)</span>:
+<span class="math display">\[P(|Y_n - \theta| \geq \varepsilon) = P(Y_n \leq \theta - \varepsilon) = \left(\frac{\theta - \varepsilon}{\theta}\right)^n \to 0\]</span></p>
+<p>portanto <span class="math inline">\(Y_n \xrightarrow{P} \theta = 3\)</span>.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(3\)</span> (o próprio parâmetro <span class="math inline">\(\theta\)</span>).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(2\theta = 6\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(0\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(\theta/n = 3/25 = 0.12\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(3/2 = 1.5\)</span> (metade de <span class="math inline">\(\theta\)</span>).
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap1/Exercise 05</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q05 : Cap1_Cap1S1Q5 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_1, \ldots, X_n\)</span> uma amostra iid com <span class="math inline">\(\text{Var}(X_i) = \sigma^2 = 16\)</span> e tamanho de amostra <span class="math inline">\(n = 36\)</span>. Qual é a variância da média amostral <span class="math inline">\(\bar{X}_n\)</span>?</p>
+<p><span class="math display">\[\text{Var}(\bar{X}_n) = \frac{\sigma^2}{n}\]</span></p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Como <span class="math inline">\(X_1, \ldots, X_n\)</span> são iid, temos:
+<span class="math display">\[\text{Var}(\bar{X}_n) = \text{Var}\left(\frac{1}{n}\sum_{i=1}^n X_i\right) = \frac{1}{n^2}\sum_{i=1}^n \text{Var}(X_i) = \frac{n\sigma^2}{n^2} = \frac{\sigma^2}{n}\]</span></p>
+<p>Substituindo <span class="math inline">\(\sigma^2 = 16\)</span> e <span class="math inline">\(n = 36\)</span>:
+<span class="math display">\[\text{Var}(\bar{X}_n) = \frac{16}{36} = 0.4444\]</span></p>
+<p>Note que <span class="math inline">\(\text{Var}(\bar{X}_n) \to 0\)</span> conforme <span class="math inline">\(n \to \infty\)</span>, o que é uma condição suficiente para consistência (quando combinado com não-viés).</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+0.4444
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+576
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.4571
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.4324
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.6667
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q05 : Cap1_Cap1S1Q5 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_1, \ldots, X_n\)</span> uma amostra iid com <span class="math inline">\(\text{Var}(X_i) = \sigma^2 = 8\)</span> e tamanho de amostra <span class="math inline">\(n = 36\)</span>. Qual é a variância da média amostral <span class="math inline">\(\bar{X}_n\)</span>?</p>
+<p><span class="math display">\[\text{Var}(\bar{X}_n) = \frac{\sigma^2}{n}\]</span></p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Como <span class="math inline">\(X_1, \ldots, X_n\)</span> são iid, temos:
+<span class="math display">\[\text{Var}(\bar{X}_n) = \text{Var}\left(\frac{1}{n}\sum_{i=1}^n X_i\right) = \frac{1}{n^2}\sum_{i=1}^n \text{Var}(X_i) = \frac{n\sigma^2}{n^2} = \frac{\sigma^2}{n}\]</span></p>
+<p>Substituindo <span class="math inline">\(\sigma^2 = 8\)</span> e <span class="math inline">\(n = 36\)</span>:
+<span class="math display">\[\text{Var}(\bar{X}_n) = \frac{8}{36} = 0.2222\]</span></p>
+<p>Note que <span class="math inline">\(\text{Var}(\bar{X}_n) \to 0\)</span> conforme <span class="math inline">\(n \to \infty\)</span>, o que é uma condição suficiente para consistência (quando combinado com não-viés).</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+288
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.2162
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.4714
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+0.2222
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.2286
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap1/Exercise 06</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q06 : Cap1_Cap1S1Q6 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(T_n \xrightarrow{P} \theta\)</span> e <span class="math inline">\(g : \mathbb{R} \to \mathbb{R}\)</span> uma função contínua em <span class="math inline">\(\theta\)</span>. O que podemos concluir sobre <span class="math inline">\(g(T_n)\)</span>?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Este é o Teorema do Mapeamento Contínuo (Continuous Mapping Theorem) para convergência em probabilidade: se <span class="math inline">\(T_n \xrightarrow{P} \theta\)</span> e <span class="math inline">\(g\)</span> é contínua em <span class="math inline">\(\theta\)</span>, então <span class="math inline">\(g(T_n) \xrightarrow{P} g(\theta)\)</span>.</p>
+<p>A convergência em probabilidade é preservada por transformações contínuas. Note que o resultado não garante convergência quase certa (que é mais forte), e a convergência em distribuição já estaria implícita pela hierarquia das convergências (<span class="math inline">\(P \Rightarrow D\)</span>).</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(g(T_n) \to g(\theta)\)</span> quase certamente, mas não necessariamente em probabilidade.
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(g(T_n) \xrightarrow{P} g(\theta)\)</span> (convergência em probabilidade é preservada por funções contínuas).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(g(T_n) \xrightarrow{a.s.} g(\theta)\)</span> (convergência quase certa, mais forte do que o garantido).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(g(T_n) \xrightarrow{D} g(\theta)\)</span>, mas não necessariamente em probabilidade.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Nada pode ser concluído sobre <span class="math inline">\(g(T_n)\)</span> sem hipóteses adicionais sobre <span class="math inline">\(g\)</span>.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q06 : Cap1_Cap1S1Q6 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(T_n \xrightarrow{P} \theta\)</span> e <span class="math inline">\(g : \mathbb{R} \to \mathbb{R}\)</span> uma função contínua em <span class="math inline">\(\theta\)</span>. O que podemos concluir sobre <span class="math inline">\(g(T_n)\)</span>?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Este é o Teorema do Mapeamento Contínuo (Continuous Mapping Theorem) para convergência em probabilidade: se <span class="math inline">\(T_n \xrightarrow{P} \theta\)</span> e <span class="math inline">\(g\)</span> é contínua em <span class="math inline">\(\theta\)</span>, então <span class="math inline">\(g(T_n) \xrightarrow{P} g(\theta)\)</span>.</p>
+<p>A convergência em probabilidade é preservada por transformações contínuas. Note que o resultado não garante convergência quase certa (que é mais forte), e a convergência em distribuição já estaria implícita pela hierarquia das convergências (<span class="math inline">\(P \Rightarrow D\)</span>).</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(g(T_n) \xrightarrow{a.s.} g(\theta)\)</span> (convergência quase certa, mais forte do que o garantido).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(g(T_n) \to g(\theta)\)</span> quase certamente, mas não necessariamente em probabilidade.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(g(T_n) \xrightarrow{D} g(\theta)\)</span>, mas não necessariamente em probabilidade.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Nada pode ser concluído sobre <span class="math inline">\(g(T_n)\)</span> sem hipóteses adicionais sobre <span class="math inline">\(g\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(g(T_n) \xrightarrow{P} g(\theta)\)</span> (convergência em probabilidade é preservada por funções contínuas).
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap1/Exercise 07</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q07 : Cap1_Cap1S1Q7 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Sejam <span class="math inline">\(X_n\)</span> e <span class="math inline">\(Y_n\)</span> sequências de variáveis aleatórias tais que <span class="math inline">\(X_n \xrightarrow{P} 3\)</span> e <span class="math inline">\(Y_n \xrightarrow{P} 3\)</span>. Pelo Teorema de Slutsky (ou pelas propriedades da convergência em probabilidade), qual é o limite em probabilidade de <span class="math inline">\(X_n + Y_n\)</span>?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>A convergência em probabilidade é preservada por operações aritméticas: se <span class="math inline">\(X_n \xrightarrow{P} a\)</span> e <span class="math inline">\(Y_n \xrightarrow{P} b\)</span>, então <span class="math inline">\(X_n + Y_n \xrightarrow{P} a + b\)</span>.</p>
+<p>Portanto <span class="math inline">\(X_n + Y_n \xrightarrow{P} 3 + 3 = 6\)</span>.</p>
+<p>De forma análoga, <span class="math inline">\(X_n \cdot Y_n \xrightarrow{P} 9\)</span> e <span class="math inline">\(X_n / Y_n \xrightarrow{P} 1\)</span> (desde que <span class="math inline">\(b \neq 0\)</span>).</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+1
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+6
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+9
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+7
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q07 : Cap1_Cap1S1Q7 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Sejam <span class="math inline">\(X_n\)</span> e <span class="math inline">\(Y_n\)</span> sequências de variáveis aleatórias tais que <span class="math inline">\(X_n \xrightarrow{P} 6\)</span> e <span class="math inline">\(Y_n \xrightarrow{P} 2\)</span>. Pelo Teorema de Slutsky (ou pelas propriedades da convergência em probabilidade), qual é o limite em probabilidade de <span class="math inline">\(X_n + Y_n\)</span>?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>A convergência em probabilidade é preservada por operações aritméticas: se <span class="math inline">\(X_n \xrightarrow{P} a\)</span> e <span class="math inline">\(Y_n \xrightarrow{P} b\)</span>, então <span class="math inline">\(X_n + Y_n \xrightarrow{P} a + b\)</span>.</p>
+<p>Portanto <span class="math inline">\(X_n + Y_n \xrightarrow{P} 6 + 2 = 8\)</span>.</p>
+<p>De forma análoga, <span class="math inline">\(X_n \cdot Y_n \xrightarrow{P} 12\)</span> e <span class="math inline">\(X_n / Y_n \xrightarrow{P} 3\)</span> (desde que <span class="math inline">\(b \neq 0\)</span>).</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+9
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+8
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+12
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+3
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+4
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap1/Exercise 08</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q08 : Cap1_Cap1S1Q8 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_1, \ldots, X_n\)</span> uma amostra iid com <span class="math inline">\(E(X_i) = 6\)</span> e <span class="math inline">\(\text{Var}(X_i) = \sigma^2 = 3\)</span>, com <span class="math inline">\(n = 64\)</span>. Considere a variância amostral não-viesada:
+<span class="math display">\[S^2_n = \frac{1}{n-1}\sum_{i=1}^n (X_i - \bar{X}_n)^2\]</span></p>
+<p>Qual é o limite em probabilidade de <span class="math inline">\(S^2_n\)</span> quando <span class="math inline">\(n \to \infty\)</span>?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>A variância amostral <span class="math inline">\(S^2_n\)</span> é um estimador consistente de <span class="math inline">\(\sigma^2\)</span>, ou seja, <span class="math inline">\(S^2_n \xrightarrow{P} \sigma^2 = 3\)</span>.</p>
+<p>Isso pode ser visto pois <span class="math inline">\(S^2_n = \frac{n}{n-1}\left(\frac{1}{n}\sum X_i^2 - \bar{X}_n^2\right)\)</span> e pela LGN <span class="math inline">\(\frac{1}{n}\sum X_i^2 \xrightarrow{P} E(X^2) = \sigma^2 + \mu^2\)</span> e <span class="math inline">\(\bar{X}_n^2 \xrightarrow{P} \mu^2\)</span>, portanto <span class="math inline">\(S^2_n \xrightarrow{P} \sigma^2 + \mu^2 - \mu^2 = \sigma^2\)</span>.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+2.9538
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+3
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.0469
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+1.7321
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+3.0476
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q08 : Cap1_Cap1S1Q8 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_1, \ldots, X_n\)</span> uma amostra iid com <span class="math inline">\(E(X_i) = 2\)</span> e <span class="math inline">\(\text{Var}(X_i) = \sigma^2 = 2\)</span>, com <span class="math inline">\(n = 36\)</span>. Considere a variância amostral não-viesada:
+<span class="math display">\[S^2_n = \frac{1}{n-1}\sum_{i=1}^n (X_i - \bar{X}_n)^2\]</span></p>
+<p>Qual é o limite em probabilidade de <span class="math inline">\(S^2_n\)</span> quando <span class="math inline">\(n \to \infty\)</span>?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>A variância amostral <span class="math inline">\(S^2_n\)</span> é um estimador consistente de <span class="math inline">\(\sigma^2\)</span>, ou seja, <span class="math inline">\(S^2_n \xrightarrow{P} \sigma^2 = 2\)</span>.</p>
+<p>Isso pode ser visto pois <span class="math inline">\(S^2_n = \frac{n}{n-1}\left(\frac{1}{n}\sum X_i^2 - \bar{X}_n^2\right)\)</span> e pela LGN <span class="math inline">\(\frac{1}{n}\sum X_i^2 \xrightarrow{P} E(X^2) = \sigma^2 + \mu^2\)</span> e <span class="math inline">\(\bar{X}_n^2 \xrightarrow{P} \mu^2\)</span>, portanto <span class="math inline">\(S^2_n \xrightarrow{P} \sigma^2 + \mu^2 - \mu^2 = \sigma^2\)</span>.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+2
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.0556
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+1.4142
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+2.0571
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+1.9459
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap1/Exercise 09</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q09 : Cap1_Cap1S1Q9 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(T_n\)</span> um estimador de <span class="math inline">\(\theta\)</span> tal que o erro quadrático médio satisfaz <span class="math inline">\(\text{EQM}(T_n) = E[(T_n - \theta)^2] \to 0\)</span> quando <span class="math inline">\(n \to \infty\)</span>. O que se pode concluir?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Se <span class="math inline">\(\text{EQM}(T_n) = E[(T_n - \theta)^2] \to 0\)</span>, então <span class="math inline">\(T_n \xrightarrow{P} \theta\)</span> (consistência em probabilidade).</p>
+<p>Isso segue diretamente da desigualdade de Markov: para qualquer <span class="math inline">\(\varepsilon &gt; 0\)</span>,
+<span class="math display">\[P(|T_n - \theta| \geq \varepsilon) = P((T_n - \theta)^2 \geq \varepsilon^2) \leq \frac{E[(T_n-\theta)^2]}{\varepsilon^2} = \frac{\text{EQM}(T_n)}{\varepsilon^2} \to 0.\]</span></p>
+<p>Note que: (i) EQM <span class="math inline">\(\to 0\)</span> não implica convergência quase certa; (ii) EQM <span class="math inline">\(\to 0\)</span> não implica não-viés para <span class="math inline">\(n\)</span> fixo (pode haver viés que vai a zero); (iii) EQM <span class="math inline">\(\to 0\)</span> não diz nada sobre variância mínima.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(T_n \xrightarrow{a.s.} \theta\)</span> (convergência quase certa).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(\text{EQM}(T_n) \to 0\)</span> não implica nenhuma forma de convergência estocástica de <span class="math inline">\(T_n\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(T_n\)</span> tem variância mínima entre todos os estimadores de <span class="math inline">\(\theta\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(T_n\)</span> é não-viesado, ou seja, <span class="math inline">\(E(T_n) = \theta\)</span> para todo <span class="math inline">\(n\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(T_n \xrightarrow{P} \theta\)</span> (consistência em probabilidade).
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q09 : Cap1_Cap1S1Q9 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(T_n\)</span> um estimador de <span class="math inline">\(\theta\)</span> tal que o erro quadrático médio satisfaz <span class="math inline">\(\text{EQM}(T_n) = E[(T_n - \theta)^2] \to 0\)</span> quando <span class="math inline">\(n \to \infty\)</span>. O que se pode concluir?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Se <span class="math inline">\(\text{EQM}(T_n) = E[(T_n - \theta)^2] \to 0\)</span>, então <span class="math inline">\(T_n \xrightarrow{P} \theta\)</span> (consistência em probabilidade).</p>
+<p>Isso segue diretamente da desigualdade de Markov: para qualquer <span class="math inline">\(\varepsilon &gt; 0\)</span>,
+<span class="math display">\[P(|T_n - \theta| \geq \varepsilon) = P((T_n - \theta)^2 \geq \varepsilon^2) \leq \frac{E[(T_n-\theta)^2]}{\varepsilon^2} = \frac{\text{EQM}(T_n)}{\varepsilon^2} \to 0.\]</span></p>
+<p>Note que: (i) EQM <span class="math inline">\(\to 0\)</span> não implica convergência quase certa; (ii) EQM <span class="math inline">\(\to 0\)</span> não implica não-viés para <span class="math inline">\(n\)</span> fixo (pode haver viés que vai a zero); (iii) EQM <span class="math inline">\(\to 0\)</span> não diz nada sobre variância mínima.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(T_n \xrightarrow{a.s.} \theta\)</span> (convergência quase certa).
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(T_n \xrightarrow{P} \theta\)</span> (consistência em probabilidade).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(T_n\)</span> tem variância mínima entre todos os estimadores de <span class="math inline">\(\theta\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(T_n\)</span> é não-viesado, ou seja, <span class="math inline">\(E(T_n) = \theta\)</span> para todo <span class="math inline">\(n\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(\text{EQM}(T_n) \to 0\)</span> não implica nenhuma forma de convergência estocástica de <span class="math inline">\(T_n\)</span>.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap1/Exercise 10</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q10 : Cap1_Cap1S1Q10 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_1, X_2, \ldots, X_n \overset{\text{iid}}{\sim} \text{Bernoulli}(p)\)</span> com <span class="math inline">\(p = 0.4\)</span> e <span class="math inline">\(n = 100\)</span>. O estimador <span class="math inline">\(\hat{p}_n = \bar{X}_n = \frac{1}{n}\sum_{i=1}^n X_i\)</span> é a proporção amostral. Qual é o limite em probabilidade de <span class="math inline">\(\hat{p}_n\)</span> quando <span class="math inline">\(n \to \infty\)</span>?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Pela Lei Fraca dos Grandes Números, como <span class="math inline">\(E(X_i) = p\)</span> e <span class="math inline">\(\text{Var}(X_i) = p(1-p) &lt; \infty\)</span>, temos:
+<span class="math display">\[\hat{p}_n = \bar{X}_n \xrightarrow{P} E(X_i) = p = 0.4\]</span></p>
+<p>A variância <span class="math inline">\(p(1-p) = 0.24\)</span> e <span class="math inline">\(p(1-p)/n = 0.0024\)</span> são características da distribuição de <span class="math inline">\(\hat{p}_n\)</span> para <span class="math inline">\(n\)</span> fixo, não o seu limite em probabilidade.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.45
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.24
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.2
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+0.4
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.0024
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q10 : Cap1_Cap1S1Q10 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_1, X_2, \ldots, X_n \overset{\text{iid}}{\sim} \text{Bernoulli}(p)\)</span> com <span class="math inline">\(p = 0.7\)</span> e <span class="math inline">\(n = 200\)</span>. O estimador <span class="math inline">\(\hat{p}_n = \bar{X}_n = \frac{1}{n}\sum_{i=1}^n X_i\)</span> é a proporção amostral. Qual é o limite em probabilidade de <span class="math inline">\(\hat{p}_n\)</span> quando <span class="math inline">\(n \to \infty\)</span>?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Pela Lei Fraca dos Grandes Números, como <span class="math inline">\(E(X_i) = p\)</span> e <span class="math inline">\(\text{Var}(X_i) = p(1-p) &lt; \infty\)</span>, temos:
+<span class="math display">\[\hat{p}_n = \bar{X}_n \xrightarrow{P} E(X_i) = p = 0.7\]</span></p>
+<p>A variância <span class="math inline">\(p(1-p) = 0.21\)</span> e <span class="math inline">\(p(1-p)/n = 0.0011\)</span> são características da distribuição de <span class="math inline">\(\hat{p}_n\)</span> para <span class="math inline">\(n\)</span> fixo, não o seu limite em probabilidade.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.0011
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+0.7
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.21
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.35
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.75
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap1/Exercise 11</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q11 : Cap1_Cap1S2Q1 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\((X_n)_{n \geq 1}\)</span> uma sequência de variáveis aleatórias e <span class="math inline">\(X\)</span> uma variável aleatória com função de distribuição acumulada <span class="math inline">\(F_X\)</span>. Qual afirmação define <strong>corretamente</strong> a convergência em distribuição <span class="math inline">\(X_n \xrightarrow{D} X\)</span>?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>A definição correta de convergência em distribuição (também chamada de convergência fraca) é: <span class="math inline">\(X_n \xrightarrow{D} X\)</span> se e somente se <span class="math inline">\(F_{X_n}(x) \to F_X(x)\)</span> para todo <span class="math inline">\(x \in C(F_X)\)</span>, onde <span class="math inline">\(C(F_X)\)</span> é o conjunto dos pontos de continuidade de <span class="math inline">\(F_X\)</span>.</p>
+<p>A restrição aos pontos de continuidade é fundamental: se <span class="math inline">\(F_X\)</span> for descontínua em <span class="math inline">\(x_0\)</span> (como ocorre em distribuições discretas), não se exige convergência pontual em <span class="math inline">\(x_0\)</span>. As demais alternativas exigem convergência em todos os pontos (mais forte do que o necessário), confundem com convergência de momentos ou com convergência em probabilidade.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(X_n - X \xrightarrow{P} 0\)</span>, ou seja, a diferença converge em probabilidade a zero.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(F_{X_n}(x) \to F_X(x)\)</span> para todo <span class="math inline">\(x \in \mathbb{R}\)</span>, incluindo pontos de descontinuidade de <span class="math inline">\(F_X\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(F_{X_n}(x) \to F_X(x)\)</span> para todo <span class="math inline">\(x\)</span> que seja ponto de continuidade de <span class="math inline">\(F_X\)</span> (conjunto <span class="math inline">\(C(F_X)\)</span>).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(E(X_n) \to E(X)\)</span> e <span class="math inline">\(\text{Var}(X_n) \to \text{Var}(X)\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(P(X_n = x) \to P(X = x)\)</span> para todo <span class="math inline">\(x \in \mathbb{R}\)</span>.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q11 : Cap1_Cap1S2Q1 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\((X_n)_{n \geq 1}\)</span> uma sequência de variáveis aleatórias e <span class="math inline">\(X\)</span> uma variável aleatória com função de distribuição acumulada <span class="math inline">\(F_X\)</span>. Qual afirmação define <strong>corretamente</strong> a convergência em distribuição <span class="math inline">\(X_n \xrightarrow{D} X\)</span>?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>A definição correta de convergência em distribuição (também chamada de convergência fraca) é: <span class="math inline">\(X_n \xrightarrow{D} X\)</span> se e somente se <span class="math inline">\(F_{X_n}(x) \to F_X(x)\)</span> para todo <span class="math inline">\(x \in C(F_X)\)</span>, onde <span class="math inline">\(C(F_X)\)</span> é o conjunto dos pontos de continuidade de <span class="math inline">\(F_X\)</span>.</p>
+<p>A restrição aos pontos de continuidade é fundamental: se <span class="math inline">\(F_X\)</span> for descontínua em <span class="math inline">\(x_0\)</span> (como ocorre em distribuições discretas), não se exige convergência pontual em <span class="math inline">\(x_0\)</span>. As demais alternativas exigem convergência em todos os pontos (mais forte do que o necessário), confundem com convergência de momentos ou com convergência em probabilidade.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(F_{X_n}(x) \to F_X(x)\)</span> para todo <span class="math inline">\(x\)</span> que seja ponto de continuidade de <span class="math inline">\(F_X\)</span> (conjunto <span class="math inline">\(C(F_X)\)</span>).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(X_n - X \xrightarrow{P} 0\)</span>, ou seja, a diferença converge em probabilidade a zero.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(F_{X_n}(x) \to F_X(x)\)</span> para todo <span class="math inline">\(x \in \mathbb{R}\)</span>, incluindo pontos de descontinuidade de <span class="math inline">\(F_X\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(E(X_n) \to E(X)\)</span> e <span class="math inline">\(\text{Var}(X_n) \to \text{Var}(X)\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(P(X_n = x) \to P(X = x)\)</span> para todo <span class="math inline">\(x \in \mathbb{R}\)</span>.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap1/Exercise 12</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q12 : Cap1_Cap1S2Q2 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_1, X_2, \ldots\)</span> uma sequência de variáveis aleatórias iid com <span class="math inline">\(E(X_i) = 6\)</span> e <span class="math inline">\(\text{Var}(X_i) = 1\)</span>. Defina a estatística padronizada:
+<span class="math display">\[Z_n = \frac{\sqrt{n}(\bar{X}_n - 6)}{\sqrt{1}}\]</span></p>
+<p>Pelo Teorema Central do Limite, qual é a distribuição <strong>limite</strong> de <span class="math inline">\(Z_n\)</span> quando <span class="math inline">\(n \to \infty\)</span>?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>O TCL (Teorema Central do Limite) afirma que, se <span class="math inline">\(X_i\)</span> são iid com média <span class="math inline">\(\mu\)</span> e variância <span class="math inline">\(\sigma^2 &lt; \infty\)</span>, então:
+<span class="math display">\[Z_n = \frac{\sqrt{n}(\bar{X}_n - \mu)}{\sigma} \xrightarrow{D} N(0,1)\]</span></p>
+<p>A distribuição limite é sempre <span class="math inline">\(N(0,1)\)</span>, independentemente da distribuição original. Note que <span class="math inline">\(N(\mu, \sigma^2/n)\)</span> é a distribuição <strong>aproximada</strong> de <span class="math inline">\(\bar{X}_n\)</span>, não de <span class="math inline">\(Z_n\)</span>.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(N(6,\, 1)\)</span> (a distribuição original).
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(N(0,1)\)</span> (normal padrão).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(N\!\left(6,\, \frac{1}{25}\right)\)</span> (distribuição exata de <span class="math inline">\(\bar{X}_n\)</span>, não o limite de <span class="math inline">\(Z_n\)</span>).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(N\!\left(0,\, \frac{1}{25}\right) = N(0,\, 0.04)\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(t_{24}\)</span> (distribuição <span class="math inline">\(t\)</span> de Student com <span class="math inline">\(n-1\)</span> graus de liberdade).
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q12 : Cap1_Cap1S2Q2 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_1, X_2, \ldots\)</span> uma sequência de variáveis aleatórias iid com <span class="math inline">\(E(X_i) = 6\)</span> e <span class="math inline">\(\text{Var}(X_i) = 9\)</span>. Defina a estatística padronizada:
+<span class="math display">\[Z_n = \frac{\sqrt{n}(\bar{X}_n - 6)}{\sqrt{9}}\]</span></p>
+<p>Pelo Teorema Central do Limite, qual é a distribuição <strong>limite</strong> de <span class="math inline">\(Z_n\)</span> quando <span class="math inline">\(n \to \infty\)</span>?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>O TCL (Teorema Central do Limite) afirma que, se <span class="math inline">\(X_i\)</span> são iid com média <span class="math inline">\(\mu\)</span> e variância <span class="math inline">\(\sigma^2 &lt; \infty\)</span>, então:
+<span class="math display">\[Z_n = \frac{\sqrt{n}(\bar{X}_n - \mu)}{\sigma} \xrightarrow{D} N(0,1)\]</span></p>
+<p>A distribuição limite é sempre <span class="math inline">\(N(0,1)\)</span>, independentemente da distribuição original. Note que <span class="math inline">\(N(\mu, \sigma^2/n)\)</span> é a distribuição <strong>aproximada</strong> de <span class="math inline">\(\bar{X}_n\)</span>, não de <span class="math inline">\(Z_n\)</span>.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(N\!\left(6,\, \frac{9}{64}\right)\)</span> (distribuição exata de <span class="math inline">\(\bar{X}_n\)</span>, não o limite de <span class="math inline">\(Z_n\)</span>).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(N\!\left(0,\, \frac{9}{64}\right) = N(0,\, 0.1406)\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(t_{63}\)</span> (distribuição <span class="math inline">\(t\)</span> de Student com <span class="math inline">\(n-1\)</span> graus de liberdade).
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(N(0,1)\)</span> (normal padrão).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(N(6,\, 9)\)</span> (a distribuição original).
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap1/Exercise 13</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q13 : Cap1_Cap1S2Q3 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X \sim \text{Bin}(n, p)\)</span> com <span class="math inline">\(n = 500\)</span> e <span class="math inline">\(p = 0.02\)</span>, de modo que <span class="math inline">\(\lambda = np = 10\)</span>. Qual distribuição melhor aproxima <span class="math inline">\(X\)</span> no regime <span class="math inline">\(n \to \infty\)</span> e <span class="math inline">\(p \to 0\)</span> com <span class="math inline">\(np = \lambda\)</span> fixo?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Este é o Teorema de Poisson (aproximação de Poisson à Binomial): quando <span class="math inline">\(n \to \infty\)</span> e <span class="math inline">\(p \to 0\)</span> com <span class="math inline">\(np = \lambda\)</span> fixo, a distribuição <span class="math inline">\(\text{Bin}(n,p)\)</span> converge em distribuição para <span class="math inline">\(\text{Poisson}(\lambda)\)</span>.</p>
+<p>Para <span class="math inline">\(n = 500\)</span> e <span class="math inline">\(p = 0.02\)</span>, temos <span class="math inline">\(\lambda = np = 10\)</span>, e a aproximação é <span class="math inline">\(X \approx \text{Poisson}(10)\)</span>. A aproximação normal é adequada para grandes <span class="math inline">\(n\)</span> e <span class="math inline">\(p\)</span> não muito pequeno, mas não é o regime correto aqui (eventos raros).</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(\text{Exp}(1/10)\)</span> (exponencial com taxa <span class="math inline">\(1/\lambda\)</span>).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(N(10,\, 10)\)</span> (normal com mesma média e variância).
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(\text{Poisson}(\lambda) = \text{Poisson}(10)\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(N(np, np(1-p)) = N(10,\, 9.8)\)</span> (aproximação normal direta).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(\text{Bin}(n, np/n) = \text{Bin}(500,\, 0.02)\)</span> (a própria distribuição original).
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q13 : Cap1_Cap1S2Q3 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X \sim \text{Bin}(n, p)\)</span> com <span class="math inline">\(n = 500\)</span> e <span class="math inline">\(p = 0.02\)</span>, de modo que <span class="math inline">\(\lambda = np = 10\)</span>. Qual distribuição melhor aproxima <span class="math inline">\(X\)</span> no regime <span class="math inline">\(n \to \infty\)</span> e <span class="math inline">\(p \to 0\)</span> com <span class="math inline">\(np = \lambda\)</span> fixo?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Este é o Teorema de Poisson (aproximação de Poisson à Binomial): quando <span class="math inline">\(n \to \infty\)</span> e <span class="math inline">\(p \to 0\)</span> com <span class="math inline">\(np = \lambda\)</span> fixo, a distribuição <span class="math inline">\(\text{Bin}(n,p)\)</span> converge em distribuição para <span class="math inline">\(\text{Poisson}(\lambda)\)</span>.</p>
+<p>Para <span class="math inline">\(n = 500\)</span> e <span class="math inline">\(p = 0.02\)</span>, temos <span class="math inline">\(\lambda = np = 10\)</span>, e a aproximação é <span class="math inline">\(X \approx \text{Poisson}(10)\)</span>. A aproximação normal é adequada para grandes <span class="math inline">\(n\)</span> e <span class="math inline">\(p\)</span> não muito pequeno, mas não é o regime correto aqui (eventos raros).</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(\text{Poisson}(\lambda) = \text{Poisson}(10)\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(N(np, np(1-p)) = N(10,\, 9.8)\)</span> (aproximação normal direta).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(\text{Exp}(1/10)\)</span> (exponencial com taxa <span class="math inline">\(1/\lambda\)</span>).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(\text{Bin}(n, np/n) = \text{Bin}(500,\, 0.02)\)</span> (a própria distribuição original).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(N(10,\, 10)\)</span> (normal com mesma média e variância).
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap1/Exercise 14</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q14 : Cap1_Cap1S2Q4 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Considere as diferentes noções de convergência para sequências de variáveis aleatórias. Qual das relações abaixo é <strong>verdadeira</strong> em geral?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>A hierarquia das convergências é: convergência quase certa (<span class="math inline">\(a.s.\)</span>) <span class="math inline">\(\Rightarrow\)</span> convergência em probabilidade (<span class="math inline">\(P\)</span>) <span class="math inline">\(\Rightarrow\)</span> convergência em distribuição (<span class="math inline">\(D\)</span>). Portanto, <span class="math inline">\(X_n \xrightarrow{P} X\)</span> implica <span class="math inline">\(X_n \xrightarrow{D} X\)</span>.</p>
+<p>A recíproca é falsa em geral: convergência em distribuição não implica convergência em probabilidade (exceto quando o limite <span class="math inline">\(X\)</span> é uma constante). Por exemplo, <span class="math inline">\(X_n = -X \sim N(0,1)\)</span> converge em distribuição para <span class="math inline">\(N(0,1)\)</span> mas não em probabilidade para <span class="math inline">\(X\)</span> se <span class="math inline">\(X \sim N(0,1)\)</span> independente de <span class="math inline">\(X_n\)</span>.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Se <span class="math inline">\(X_n \xrightarrow{D} X\)</span>, então <span class="math inline">\(X_n \xrightarrow{P} X\)</span> (sempre, para qualquer <span class="math inline">\(X\)</span>).
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+Se <span class="math inline">\(X_n \xrightarrow{P} X\)</span>, então <span class="math inline">\(X_n \xrightarrow{D} X\)</span> (convergência em probabilidade implica em distribuição).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+As convergências em probabilidade e em distribuição são sempre equivalentes entre si.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Se <span class="math inline">\(X_n \xrightarrow{D} X\)</span>, então <span class="math inline">\(X_n \xrightarrow{a.s.} X\)</span> (convergência em distribuição implica quase certa).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Convergência em distribuição implica convergência em probabilidade quando a variância limite é finita.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q14 : Cap1_Cap1S2Q4 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Considere as diferentes noções de convergência para sequências de variáveis aleatórias. Qual das relações abaixo é <strong>verdadeira</strong> em geral?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>A hierarquia das convergências é: convergência quase certa (<span class="math inline">\(a.s.\)</span>) <span class="math inline">\(\Rightarrow\)</span> convergência em probabilidade (<span class="math inline">\(P\)</span>) <span class="math inline">\(\Rightarrow\)</span> convergência em distribuição (<span class="math inline">\(D\)</span>). Portanto, <span class="math inline">\(X_n \xrightarrow{P} X\)</span> implica <span class="math inline">\(X_n \xrightarrow{D} X\)</span>.</p>
+<p>A recíproca é falsa em geral: convergência em distribuição não implica convergência em probabilidade (exceto quando o limite <span class="math inline">\(X\)</span> é uma constante). Por exemplo, <span class="math inline">\(X_n = -X \sim N(0,1)\)</span> converge em distribuição para <span class="math inline">\(N(0,1)\)</span> mas não em probabilidade para <span class="math inline">\(X\)</span> se <span class="math inline">\(X \sim N(0,1)\)</span> independente de <span class="math inline">\(X_n\)</span>.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Se <span class="math inline">\(X_n \xrightarrow{D} X\)</span>, então <span class="math inline">\(X_n \xrightarrow{a.s.} X\)</span> (convergência em distribuição implica quase certa).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Convergência em distribuição implica convergência em probabilidade quando a variância limite é finita.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+As convergências em probabilidade e em distribuição são sempre equivalentes entre si.
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+Se <span class="math inline">\(X_n \xrightarrow{P} X\)</span>, então <span class="math inline">\(X_n \xrightarrow{D} X\)</span> (convergência em probabilidade implica em distribuição).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Se <span class="math inline">\(X_n \xrightarrow{D} X\)</span>, então <span class="math inline">\(X_n \xrightarrow{P} X\)</span> (sempre, para qualquer <span class="math inline">\(X\)</span>).
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap1/Exercise 15</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q15 : Cap1_Cap1S2Q5 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_n \xrightarrow{D} X\)</span> e <span class="math inline">\(Y_n \xrightarrow{P} c = 5\)</span> (uma constante). Pelo Teorema de Slutsky, qual é a distribuição limite de <span class="math inline">\(X_n + Y_n\)</span>?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Pelo Teorema de Slutsky: se <span class="math inline">\(X_n \xrightarrow{D} X\)</span> e <span class="math inline">\(Y_n \xrightarrow{P} c\)</span> (constante), então <span class="math inline">\(X_n + Y_n \xrightarrow{D} X + c\)</span>.</p>
+<p>A chave é que <span class="math inline">\(Y_n\)</span> deve convergir em <strong>probabilidade</strong> para uma <strong>constante</strong> <span class="math inline">\(c\)</span>. O resultado garante que a distribuição limite de <span class="math inline">\(X_n + Y_n\)</span> é a distribuição de <span class="math inline">\(X\)</span> deslocada por <span class="math inline">\(c = 5\)</span>. Se <span class="math inline">\(c\)</span> fosse uma variável aleatória (não constante), o resultado não valeria em geral.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(X\)</span> (sem alteração na distribuição limite).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(5X\)</span> (distribuição de <span class="math inline">\(X\)</span> escalada por <span class="math inline">\(c\)</span>).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(X + 5\)</span>, mas apenas se <span class="math inline">\(X \sim N(0,1)\)</span>; caso contrário não há resultado geral.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(X \cdot 5\)</span> (produto, mesmo resultado de escala).
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(X + 5\)</span> (a distribuição de <span class="math inline">\(X\)</span> deslocada por <span class="math inline">\(c = 5\)</span>).
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q15 : Cap1_Cap1S2Q5 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_n \xrightarrow{D} X\)</span> e <span class="math inline">\(Y_n \xrightarrow{P} c = 3\)</span> (uma constante). Pelo Teorema de Slutsky, qual é a distribuição limite de <span class="math inline">\(X_n + Y_n\)</span>?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Pelo Teorema de Slutsky: se <span class="math inline">\(X_n \xrightarrow{D} X\)</span> e <span class="math inline">\(Y_n \xrightarrow{P} c\)</span> (constante), então <span class="math inline">\(X_n + Y_n \xrightarrow{D} X + c\)</span>.</p>
+<p>A chave é que <span class="math inline">\(Y_n\)</span> deve convergir em <strong>probabilidade</strong> para uma <strong>constante</strong> <span class="math inline">\(c\)</span>. O resultado garante que a distribuição limite de <span class="math inline">\(X_n + Y_n\)</span> é a distribuição de <span class="math inline">\(X\)</span> deslocada por <span class="math inline">\(c = 3\)</span>. Se <span class="math inline">\(c\)</span> fosse uma variável aleatória (não constante), o resultado não valeria em geral.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(X + 3\)</span>, mas apenas se <span class="math inline">\(X \sim N(0,1)\)</span>; caso contrário não há resultado geral.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(3X\)</span> (distribuição de <span class="math inline">\(X\)</span> escalada por <span class="math inline">\(c\)</span>).
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(X + 3\)</span> (a distribuição de <span class="math inline">\(X\)</span> deslocada por <span class="math inline">\(c = 3\)</span>).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(X\)</span> (sem alteração na distribuição limite).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(X \cdot 3\)</span> (produto, mesmo resultado de escala).
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap1/Exercise 16</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q16 : Cap1_Cap1S2Q6 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\((X_n)\)</span> uma sequência de variáveis aleatórias tal que <span class="math inline">\(X_n \xrightarrow{D} c\)</span> para alguma constante <span class="math inline">\(c \in \mathbb{R}\)</span>. O que mais podemos concluir sobre a convergência de <span class="math inline">\(X_n\)</span>?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Quando o limite em distribuição é uma <strong>constante</strong> <span class="math inline">\(c\)</span> (variável degenerada), a convergência em distribuição é equivalente à convergência em probabilidade: <span class="math inline">\(X_n \xrightarrow{D} c \Leftrightarrow X_n \xrightarrow{P} c\)</span>.</p>
+<p>Isso é um caso especial importante: a equivalência entre convergência em probabilidade e em distribuição vale <strong>somente</strong> quando o limite é uma constante. Em geral (limite não-constante), convergência em distribuição é mais fraca.</p>
+<p>Convergência quase certa não é garantida pela convergência em distribuição, mesmo quando o limite é uma constante.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(X_n \xrightarrow{P} c\)</span> (convergência em distribuição para constante implica convergência em probabilidade).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(X_n \xrightarrow{a.s.} c\)</span> (convergência quase certa para <span class="math inline">\(c\)</span>, sempre).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Nada mais pode ser concluído além da própria convergência em distribuição.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(E(X_n) \to c\)</span> mas não há convergência em probabilidade para <span class="math inline">\(c\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(\text{Var}(X_n) \to 0\)</span> mas <span class="math inline">\(X_n\)</span> não necessariamente converge em probabilidade para <span class="math inline">\(c\)</span>.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q16 : Cap1_Cap1S2Q6 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\((X_n)\)</span> uma sequência de variáveis aleatórias tal que <span class="math inline">\(X_n \xrightarrow{D} c\)</span> para alguma constante <span class="math inline">\(c \in \mathbb{R}\)</span>. O que mais podemos concluir sobre a convergência de <span class="math inline">\(X_n\)</span>?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Quando o limite em distribuição é uma <strong>constante</strong> <span class="math inline">\(c\)</span> (variável degenerada), a convergência em distribuição é equivalente à convergência em probabilidade: <span class="math inline">\(X_n \xrightarrow{D} c \Leftrightarrow X_n \xrightarrow{P} c\)</span>.</p>
+<p>Isso é um caso especial importante: a equivalência entre convergência em probabilidade e em distribuição vale <strong>somente</strong> quando o limite é uma constante. Em geral (limite não-constante), convergência em distribuição é mais fraca.</p>
+<p>Convergência quase certa não é garantida pela convergência em distribuição, mesmo quando o limite é uma constante.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Nada mais pode ser concluído além da própria convergência em distribuição.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(X_n \xrightarrow{a.s.} c\)</span> (convergência quase certa para <span class="math inline">\(c\)</span>, sempre).
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(X_n \xrightarrow{P} c\)</span> (convergência em distribuição para constante implica convergência em probabilidade).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(\text{Var}(X_n) \to 0\)</span> mas <span class="math inline">\(X_n\)</span> não necessariamente converge em probabilidade para <span class="math inline">\(c\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(E(X_n) \to c\)</span> mas não há convergência em probabilidade para <span class="math inline">\(c\)</span>.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap1/Exercise 17</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q17 : Cap1_Cap1S2Q7 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_n \xrightarrow{D} X\)</span> e <span class="math inline">\(g : \mathbb{R} \to \mathbb{R}\)</span> uma função contínua. O que podemos concluir sobre <span class="math inline">\(g(X_n)\)</span>?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>O Teorema do Mapeamento Contínuo (CMT) para convergência em distribuição afirma: se <span class="math inline">\(X_n \xrightarrow{D} X\)</span> e <span class="math inline">\(g\)</span> é contínua (exceto possivelmente em um conjunto de probabilidade zero sob <span class="math inline">\(X\)</span>), então <span class="math inline">\(g(X_n) \xrightarrow{D} g(X)\)</span>.</p>
+<p>Este resultado vale para qualquer função contínua <span class="math inline">\(g\)</span>, não apenas para funções lineares. Contudo, a convergência em distribuição de <span class="math inline">\(g(X_n)\)</span> não garante convergência em probabilidade de <span class="math inline">\(g(X_n)\)</span> para <span class="math inline">\(g(X)\)</span> (que é mais forte).</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(g(X_n) \xrightarrow{D} g(X)\)</span> (o Teorema do Mapeamento Contínuo vale para convergência em distribuição).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(g(X_n) \xrightarrow{P} g(X)\)</span> (convergência em probabilidade, que é mais forte).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(g(X_n) \xrightarrow{a.s.} g(X)\)</span> (convergência quase certa).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(g(X_n) \xrightarrow{D} g(X)\)</span> apenas se <span class="math inline">\(g\)</span> for linear ou afim.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Nenhuma conclusão pode ser tirada sobre <span class="math inline">\(g(X_n)\)</span> sem hipóteses adicionais sobre a derivada de <span class="math inline">\(g\)</span>.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q17 : Cap1_Cap1S2Q7 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_n \xrightarrow{D} X\)</span> e <span class="math inline">\(g : \mathbb{R} \to \mathbb{R}\)</span> uma função contínua. O que podemos concluir sobre <span class="math inline">\(g(X_n)\)</span>?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>O Teorema do Mapeamento Contínuo (CMT) para convergência em distribuição afirma: se <span class="math inline">\(X_n \xrightarrow{D} X\)</span> e <span class="math inline">\(g\)</span> é contínua (exceto possivelmente em um conjunto de probabilidade zero sob <span class="math inline">\(X\)</span>), então <span class="math inline">\(g(X_n) \xrightarrow{D} g(X)\)</span>.</p>
+<p>Este resultado vale para qualquer função contínua <span class="math inline">\(g\)</span>, não apenas para funções lineares. Contudo, a convergência em distribuição de <span class="math inline">\(g(X_n)\)</span> não garante convergência em probabilidade de <span class="math inline">\(g(X_n)\)</span> para <span class="math inline">\(g(X)\)</span> (que é mais forte).</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(g(X_n) \xrightarrow{P} g(X)\)</span> (convergência em probabilidade, que é mais forte).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Nenhuma conclusão pode ser tirada sobre <span class="math inline">\(g(X_n)\)</span> sem hipóteses adicionais sobre a derivada de <span class="math inline">\(g\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(g(X_n) \xrightarrow{a.s.} g(X)\)</span> (convergência quase certa).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(g(X_n) \xrightarrow{D} g(X)\)</span> apenas se <span class="math inline">\(g\)</span> for linear ou afim.
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(g(X_n) \xrightarrow{D} g(X)\)</span> (o Teorema do Mapeamento Contínuo vale para convergência em distribuição).
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap1/Exercise 18</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q18 : Cap1_Cap1S2Q8 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_i \overset{\text{iid}}{\sim}\)</span> alguma distribuição com média <span class="math inline">\(\mu = 7\)</span> e desvio padrão <span class="math inline">\(\sigma = 4\)</span> (variância <span class="math inline">\(\sigma^2 = 16\)</span>). Para <span class="math inline">\(n = 36\)</span>, o TCL garante que <span class="math inline">\(\bar{X}_n\)</span> é aproximadamente <span class="math inline">\(N(\mu, \sigma^2/n)\)</span>. Qual é o valor de <span class="math inline">\(\sigma^2/n\)</span>?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>A variância da distribuição aproximada de <span class="math inline">\(\bar{X}_n\)</span> pelo TCL é:
+<span class="math display">\[\frac{\sigma^2}{n} = \frac{16}{36} = 0.4444\]</span></p>
+<p>Note que <span class="math inline">\(\sigma^2/n\)</span> é a variância de <span class="math inline">\(\bar{X}_n\)</span> (exata, não apenas assintótica), e o desvio padrão de <span class="math inline">\(\bar{X}_n\)</span> é <span class="math inline">\(\sigma/\sqrt{n} = 4/\sqrt{36} = 0.6667\)</span>.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.4571
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+0.4444
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.1111
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.6667
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+576
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q18 : Cap1_Cap1S2Q8 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X_i \overset{\text{iid}}{\sim}\)</span> alguma distribuição com média <span class="math inline">\(\mu = 3\)</span> e desvio padrão <span class="math inline">\(\sigma = 1\)</span> (variância <span class="math inline">\(\sigma^2 = 1\)</span>). Para <span class="math inline">\(n = 36\)</span>, o TCL garante que <span class="math inline">\(\bar{X}_n\)</span> é aproximadamente <span class="math inline">\(N(\mu, \sigma^2/n)\)</span>. Qual é o valor de <span class="math inline">\(\sigma^2/n\)</span>?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>A variância da distribuição aproximada de <span class="math inline">\(\bar{X}_n\)</span> pelo TCL é:
+<span class="math display">\[\frac{\sigma^2}{n} = \frac{1}{36} = 0.0278\]</span></p>
+<p>Note que <span class="math inline">\(\sigma^2/n\)</span> é a variância de <span class="math inline">\(\bar{X}_n\)</span> (exata, não apenas assintótica), e o desvio padrão de <span class="math inline">\(\bar{X}_n\)</span> é <span class="math inline">\(\sigma/\sqrt{n} = 1/\sqrt{36} = 0.1667\)</span>.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+36
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.0378
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.1667
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.0286
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+0.0278
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap1/Exercise 19</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q19 : Cap1_Cap1S2Q9 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X \sim \text{Bin}(n, p)\)</span> com <span class="math inline">\(n = 100\)</span> e <span class="math inline">\(p = 0.3\)</span>. Pelo TCL, <span class="math inline">\(X\)</span> pode ser aproximado por uma normal com média <span class="math inline">\(E(X) = np = 30\)</span> e desvio padrão <span class="math inline">\(\sqrt{np(1-p)}\)</span>. Qual é o valor de <span class="math inline">\(\sqrt{np(1-p)}\)</span>?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>O desvio padrão de <span class="math inline">\(X \sim \text{Bin}(n,p)\)</span> é <span class="math inline">\(\sqrt{np(1-p)}\)</span>. Substituindo:
+<span class="math display">\[\sqrt{np(1-p)} = \sqrt{100 \times 0.3 \times 0.7} = \sqrt{21} = 4.5826\]</span></p>
+<p>Pela aproximação normal, <span class="math inline">\(X \approx N(np, np(1-p)) = N(30, 21)\)</span>, com desvio padrão <span class="math inline">\(4.5826\)</span>.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+45.8258
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+5.4772
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+2.1
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.4583
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+4.5826
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q19 : Cap1_Cap1S2Q9 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X \sim \text{Bin}(n, p)\)</span> com <span class="math inline">\(n = 200\)</span> e <span class="math inline">\(p = 0.7\)</span>. Pelo TCL, <span class="math inline">\(X\)</span> pode ser aproximado por uma normal com média <span class="math inline">\(E(X) = np = 140\)</span> e desvio padrão <span class="math inline">\(\sqrt{np(1-p)}\)</span>. Qual é o valor de <span class="math inline">\(\sqrt{np(1-p)}\)</span>?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>O desvio padrão de <span class="math inline">\(X \sim \text{Bin}(n,p)\)</span> é <span class="math inline">\(\sqrt{np(1-p)}\)</span>. Substituindo:
+<span class="math display">\[\sqrt{np(1-p)} = \sqrt{200 \times 0.7 \times 0.3} = \sqrt{42} = 6.4807\]</span></p>
+<p>Pela aproximação normal, <span class="math inline">\(X \approx N(np, np(1-p)) = N(140, 42)\)</span>, com desvio padrão <span class="math inline">\(6.4807\)</span>.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.4583
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+2.9698
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+6.4807
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+11.8322
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+91.6515
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/EST711_Cap1/Exercise 20</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R1 Q20 : Cap1_Cap1S2Q10 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X \sim N(0,1)\)</span> e defina a sequência <span class="math inline">\(X_n = (-1)^n X\)</span> para <span class="math inline">\(n = 1, 2, 3, \ldots\)</span>. Qual afirmação sobre a convergência de <span class="math inline">\(X_n\)</span> é <strong>verdadeira</strong>?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Como <span class="math inline">\(X \sim N(0,1)\)</span>, temos <span class="math inline">\(-X \sim N(0,1)\)</span> (a normal padrão é simétrica). Portanto, <span class="math inline">\(X_n = (-1)^n X\)</span> tem distribuição <span class="math inline">\(N(0,1)\)</span> para todo <span class="math inline">\(n\)</span>, e trivialmente <span class="math inline">\(X_n \xrightarrow{D} N(0,1) = X\)</span> em distribuição.</p>
+<p>No entanto, <span class="math inline">\(X_n\)</span> <strong>não</strong> converge em probabilidade para <span class="math inline">\(X\)</span>: para <span class="math inline">\(n\)</span> par, <span class="math inline">\(X_n = X\)</span>, mas para <span class="math inline">\(n\)</span> ímpar, <span class="math inline">\(X_n = -X\)</span>. Temos <span class="math inline">\(P(|X_n - X| &gt; \varepsilon) = P(2|X| &gt; \varepsilon) \not \to 0\)</span>.</p>
+<p>Este é o exemplo clássico que mostra que convergência em distribuição <span class="math inline">\(\not \Rightarrow\)</span> convergência em probabilidade quando o limite não é uma constante.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(X_n \xrightarrow{P} X\)</span> pois a distribuição é simétrica e o valor médio não muda.
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(X_n \xrightarrow{D} N(0,1)\)</span> pois <span class="math inline">\(X\)</span> e <span class="math inline">\(-X\)</span> têm a mesma distribuição <span class="math inline">\(N(0,1)\)</span>, mas <span class="math inline">\(X_n\)</span> não converge em probabilidade para <span class="math inline">\(X\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(X_n\)</span> não tem limite em nenhum sentido de convergência estocástica.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(X_n \xrightarrow{a.s.} X\)</span> pois cada realização alterna entre <span class="math inline">\(x\)</span> e <span class="math inline">\(-x\)</span> de forma controlada.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(X_n \xrightarrow{P} 0\)</span> pois as oscilações entre <span class="math inline">\(+x\)</span> e <span class="math inline">\(-x\)</span> se cancelam em média.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q20 : Cap1_Cap1S2Q10 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Seja <span class="math inline">\(X \sim N(0,1)\)</span> e defina a sequência <span class="math inline">\(X_n = (-1)^n X\)</span> para <span class="math inline">\(n = 1, 2, 3, \ldots\)</span>. Qual afirmação sobre a convergência de <span class="math inline">\(X_n\)</span> é <strong>verdadeira</strong>?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Como <span class="math inline">\(X \sim N(0,1)\)</span>, temos <span class="math inline">\(-X \sim N(0,1)\)</span> (a normal padrão é simétrica). Portanto, <span class="math inline">\(X_n = (-1)^n X\)</span> tem distribuição <span class="math inline">\(N(0,1)\)</span> para todo <span class="math inline">\(n\)</span>, e trivialmente <span class="math inline">\(X_n \xrightarrow{D} N(0,1) = X\)</span> em distribuição.</p>
+<p>No entanto, <span class="math inline">\(X_n\)</span> <strong>não</strong> converge em probabilidade para <span class="math inline">\(X\)</span>: para <span class="math inline">\(n\)</span> par, <span class="math inline">\(X_n = X\)</span>, mas para <span class="math inline">\(n\)</span> ímpar, <span class="math inline">\(X_n = -X\)</span>. Temos <span class="math inline">\(P(|X_n - X| &gt; \varepsilon) = P(2|X| &gt; \varepsilon) \not \to 0\)</span>.</p>
+<p>Este é o exemplo clássico que mostra que convergência em distribuição <span class="math inline">\(\not \Rightarrow\)</span> convergência em probabilidade quando o limite não é uma constante.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(X_n \xrightarrow{a.s.} X\)</span> pois cada realização alterna entre <span class="math inline">\(x\)</span> e <span class="math inline">\(-x\)</span> de forma controlada.
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(X_n \xrightarrow{D} N(0,1)\)</span> pois <span class="math inline">\(X\)</span> e <span class="math inline">\(-X\)</span> têm a mesma distribuição <span class="math inline">\(N(0,1)\)</span>, mas <span class="math inline">\(X_n\)</span> não converge em probabilidade para <span class="math inline">\(X\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(X_n \xrightarrow{P} X\)</span> pois a distribuição é simétrica e o valor médio não muda.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(X_n\)</span> não tem limite em nenhum sentido de convergência estocástica.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(X_n \xrightarrow{P} 0\)</span> pois as oscilações entre <span class="math inline">\(+x\)</span> e <span class="math inline">\(-x\)</span> se cancelam em média.
+</p>]]></text>
+</answer>
+</question>
+
+</quiz>

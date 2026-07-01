@@ -1,0 +1,63 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+## Parametros
+sigma2 <- sample(c(1, 2, 4, 9, 16), 1)
+n      <- sample(c(10, 25, 50, 100), 1)
+
+## Resposta correta e alternativas incorretas
+correct <- round(sigma2 * (n - 1) / n, 4)
+w1 <- round(sigma2, 4)
+w2 <- round(sigma2 * n / (n - 1), 4)
+w3 <- round(sigma2 / (n - 1), 4)
+w4 <- round(sigma2 * (n + 1) / n, 4)
+
+## Garantir unicidade (n>1 sempre, mas verificar)
+vals <- c(correct, w1, w2, w3, w4)
+if (length(unique(vals)) < 5) w3 <- w3 + 0.0001
+
+all_vals <- c(correct, w1, w2, w3, w4)
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+Seja $X_1, X_2, \ldots, X_n$ uma amostra aleatória com média $\mu$ e variância $\sigma^2 = `r sigma2`$, e $n = `r n`$.
+
+Sabe-se que $S^2 = \dfrac{1}{n-1}\displaystyle\sum_{i=1}^n (X_i - \bar{X})^2$ é não-viesado para $\sigma^2$, isto é, $E(S^2) = \sigma^2$.
+
+O estimador de máxima verossimilhança (EMV) da variância, no caso Normal, é $\tilde{\sigma}^2 = \dfrac{1}{n}\displaystyle\sum_{i=1}^n (X_i - \bar{X})^2$.
+
+Qual é o valor esperado de $\tilde{\sigma}^2$?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+Como $S^2 = \dfrac{1}{n-1}\displaystyle\sum(X_i - \bar{X})^2$ e $E(S^2) = \sigma^2$, temos:
+$$\tilde{\sigma}^2 = \frac{n-1}{n} S^2.$$
+Portanto:
+$$E(\tilde{\sigma}^2) = \frac{n-1}{n}\,\sigma^2 = \frac{`r n`-1}{`r n`} \times `r sigma2` = `r correct`.$$
+
+O EMV $\tilde{\sigma}^2$ é um estimador **viesado** de $\sigma^2$ (subestima $\sigma^2$).
+
+Meta-information
+================
+exname: Cap4S1Q3_naoviesamento_S2
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

@@ -1,0 +1,49 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+## Choices textuais
+all_choices <- c(
+  "$\\text{Var}(\\phi(T)) \\leq \\text{Var}(W)$ para todo $\\theta$, e $\\phi(T)$ e nao-viesado --- portanto e ao menos tao bom quanto $W$ em termos de EQM.",
+  "$\\phi(T)$ tem maior variancia que $W$ em geral, pois a esperanca condicional pode ser mais dispersa que o estimador original.",
+  "$E[W|T]$ e sempre igual a $W$ quando $T$ e suficiente, portanto Rao-Blackwell nao altera o estimador nesse caso.",
+  "Rao-Blackwell exige que $T$ seja a estatistica de ordem completa $(X_{(1)},\\ldots,X_{(n)})$, nao uma estatistica qualquer.",
+  "$\\phi(T)$ e sempre o ENVVUM, sem necessidade de completude de $T$, apenas de suficiencia."
+)
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+O **Teorema de Rao-Blackwell** e uma ferramenta para melhorar estimadores usando estatisticas suficientes.
+
+Seja $W$ um estimador nao-viesado de $g(\theta)$ e $T$ uma estatistica suficiente para $\theta$. Defina $\phi(T) = E[W \mid T]$.
+
+Qual das seguintes afirmacoes sobre $\phi(T)$ e **correta**?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+O Teorema de Rao-Blackwell garante:
+
+1. $E[\phi(T)] = E[E[W|T]] = E[W] = g(\theta)$: $\phi(T)$ e **nao-viesado**.
+2. $\text{Var}(\phi(T)) \leq \text{Var}(W)$ para todo $\theta$: pela desigualdade da variancia total, $\text{Var}(W) = \text{Var}(E[W|T]) + E[\text{Var}(W|T)] \geq \text{Var}(\phi(T))$.
+
+Portanto $\phi(T)$ e ao menos tao bom quanto $W$.
+
+Importante: Rao-Blackwell **nao** garante que $\phi(T)$ seja o ENVVUM --- para isso e necessario que $T$ seja **completa** (Theorema de Lehmann-Scheffe). O teorema vale para qualquer estatistica suficiente $T$, nao apenas a estatistica de ordem.
+
+Meta-information
+================
+exname: Cap4S3Q8_Rao_Blackwell_ENVVUM
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

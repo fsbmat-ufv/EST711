@@ -1,0 +1,33 @@
+```{r, echo=FALSE, results="hide"}
+k <- sample(2:5, 1)
+n <- sample(c(50, 100, 200), 1)
+```
+
+Question
+========
+Em um modelo com `r k` classes latentes e amostra de tamanho `r n`, a justificativa usual da monotonicidade do EM usa a desigualdade de Jensen. Qual afirmação sobre o limite inferior variacional (ELBO) é correta?
+
+Answerlist
+----------
+* Para uma distribuição auxiliar $q(\mathbf Z)$, a log-verossimilhança observada é a ELBO somada a $KL\{q(\mathbf Z)\|p(\mathbf Z\mid\mathbf X,\boldsymbol\theta)\}$.
+* A ELBO é sempre maior que a log-verossimilhança observada, pois Jensen inverte a desigualdade para o logaritmo.
+* O passo E maximiza a ELBO escolhendo $q(\mathbf Z)$ igual à distribuição marginal de $\mathbf Z$, sem condicionar em $\mathbf X$.
+* O termo de divergência de Kullback-Leibler pode ser negativo, permitindo que a ELBO ultrapasse a log-verossimilhança.
+* A decomposição variacional só existe quando os dados latentes são normalmente distribuídos.
+
+Solution
+========
+Vale a decomposição
+$$
+\ell(\boldsymbol\theta;\mathbf X)=\operatorname{ELBO}(q,\boldsymbol\theta)
++KL\{q(\mathbf Z)\|p(\mathbf Z\mid\mathbf X,\boldsymbol\theta)\}.
+$$
+Como a divergência KL é não negativa, a ELBO é um limite inferior. No passo E, escolher $q$ como a distribuição condicional corrente dos dados latentes anula a divergência nesse ponto.
+
+Meta-information
+================
+exname: Cap8S1Q7_ELBO_Jensen
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

@@ -1,0 +1,51 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parametros
+p_hat <- sample(c(0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8), 1)
+n     <- sample(c(100, 200, 400), 1)
+
+## Erro padrao de arcsin(sqrt(p_hat)): 1/(2*sqrt(n))
+correct <- round(1 / (2 * sqrt(n)), 4)
+w1 <- round(sqrt(p_hat * (1 - p_hat) / n), 4)
+w2 <- round(2 / (2 * sqrt(n)), 4)          # dobro do correto
+w3 <- round(1 / (4 * n), 4)                # sem raiz
+w4 <- round(asin(sqrt(p_hat)) / sqrt(n), 4)
+
+all_vals <- c(correct, w1, w2, w3, w4)
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+A transformacao estabilizadora de variancia $g(\hat{p}) = \arcsin(\sqrt{\hat{p}})$ tem variancia assintótica $1/(4n)$, independente de $p$. Com $\hat{p} = `r p_hat`$ e $n = `r n`$, o erro padrao de $g(\hat{p})$ e:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+$\text{EP}(g(\hat{p})) = \sqrt{1/(4n)} = 1/(2\sqrt{n}) = 1/(2\sqrt{`r n`}) = `r correct`$.
+
+Note que o erro padrao nao depende de $\hat{p}$ (esta e justamente a propriedade da transformacao estabilizadora): ao contrario do EP original $\sqrt{\hat{p}(1-\hat{p})/n}$, que depende de $\hat{p}$.
+
+Meta-information
+================
+exname: Cap5S2Q9_transf_estabilizadora
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

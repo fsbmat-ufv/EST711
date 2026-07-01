@@ -1,0 +1,46 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Alternativas (textuais) — questão puramente conceitual
+all_choices <- c(
+  "$g(T_n) \\xrightarrow{P} g(\\theta)$ (convergência em probabilidade é preservada por funções contínuas).",
+  "$g(T_n) \\xrightarrow{a.s.} g(\\theta)$ (convergência quase certa, mais forte do que o garantido).",
+  "$g(T_n) \\to g(\\theta)$ quase certamente, mas não necessariamente em probabilidade.",
+  "$g(T_n) \\xrightarrow{D} g(\\theta)$, mas não necessariamente em probabilidade.",
+  "Nada pode ser concluído sobre $g(T_n)$ sem hipóteses adicionais sobre $g$."
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+
+Seja $T_n \xrightarrow{P} \theta$ e $g : \mathbb{R} \to \mathbb{R}$ uma função contínua em $\theta$. O que podemos concluir sobre $g(T_n)$?
+
+Answerlist
+----------
+
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+
+Este é o Teorema do Mapeamento Contínuo (Continuous Mapping Theorem) para convergência em probabilidade: se $T_n \xrightarrow{P} \theta$ e $g$ é contínua em $\theta$, então $g(T_n) \xrightarrow{P} g(\theta)$.
+
+A convergência em probabilidade é preservada por transformações contínuas. Note que o resultado não garante convergência quase certa (que é mais forte), e a convergência em distribuição já estaria implícita pela hierarquia das convergências ($P \Rightarrow D$).
+
+Meta-information
+================
+exname: Cap1S1Q6_mapeamento_continuo_prob
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE
+```

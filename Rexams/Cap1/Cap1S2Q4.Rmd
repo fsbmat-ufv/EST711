@@ -1,0 +1,46 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Alternativas (textuais) — questão puramente conceitual
+all_choices <- c(
+  "Se $X_n \\xrightarrow{P} X$, então $X_n \\xrightarrow{D} X$ (convergência em probabilidade implica em distribuição).",
+  "Se $X_n \\xrightarrow{D} X$, então $X_n \\xrightarrow{P} X$ (sempre, para qualquer $X$).",
+  "Se $X_n \\xrightarrow{D} X$, então $X_n \\xrightarrow{a.s.} X$ (convergência em distribuição implica quase certa).",
+  "Convergência em distribuição implica convergência em probabilidade quando a variância limite é finita.",
+  "As convergências em probabilidade e em distribuição são sempre equivalentes entre si."
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+
+Considere as diferentes noções de convergência para sequências de variáveis aleatórias. Qual das relações abaixo é **verdadeira** em geral?
+
+Answerlist
+----------
+
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+
+A hierarquia das convergências é: convergência quase certa ($a.s.$) $\Rightarrow$ convergência em probabilidade ($P$) $\Rightarrow$ convergência em distribuição ($D$). Portanto, $X_n \xrightarrow{P} X$ implica $X_n \xrightarrow{D} X$.
+
+A recíproca é falsa em geral: convergência em distribuição não implica convergência em probabilidade (exceto quando o limite $X$ é uma constante). Por exemplo, $X_n = -X \sim N(0,1)$ converge em distribuição para $N(0,1)$ mas não em probabilidade para $X$ se $X \sim N(0,1)$ independente de $X_n$.
+
+Meta-information
+================
+exname: Cap1S2Q4_hierarquia_convergencias
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE
+```

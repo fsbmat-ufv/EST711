@@ -1,0 +1,45 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parametros
+lambda0 <- sample(c(3, 4, 5), 1)
+n       <- sample(c(15, 20, 25), 1)
+alpha   <- 0.05
+
+## Choices textuais
+all_choices <- c(
+  paste0("$\\sum X_i > k$, onde $k$ e o menor inteiro tal que $P(\\text{Pois}(", n*lambda0, ") > k) \\leq \\alpha$."),
+  paste0("$\\bar{X} > \\lambda_0 + z_{1-\\alpha}/\\sqrt{n} = ", round(lambda0 + qnorm(1-alpha)/sqrt(n),4), "$ (aproximacao normal)."),
+  "$\\sum X_i < k$ para valores pequenos (distribuicao Poisson e simetrica).",
+  paste0("$|\\sum X_i - n\\lambda_0| > k$ (regiao bilateral centrada em $n\\lambda_0 = ", n*lambda0, "$)."),
+  paste0("$\\sum X_i > n\\lambda_0 = ", n*lambda0, "$ exatamente, sem ajuste por $\\alpha$.")
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+Para $X_i \overset{\text{iid}}{\sim} \text{Poisson}(\lambda)$, o teste UMP de tamanho $\alpha$ para $H_0:\lambda \leq `r lambda0`$ vs. $H_1:\lambda > `r lambda0`$ rejeita $H_0$ quando:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+A familia Poisson tem MLR crescente em $\sum X_i$. Pelo Teorema de Karlin-Rubin, o UMP rejeita $H_0$ quando $\sum X_i > k$, onde $k$ satisfaz $P(\text{Poisson}(n\lambda_0) > k) \leq \alpha$ (com $n\lambda_0 = `r n*lambda0`$). A Poisson e assimetrica, nao simetrica, portanto a regiao nao e bilateral.
+
+Meta-information
+================
+exname: Cap6S3Q4_UMP_Poisson
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

@@ -1,0 +1,47 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+all_choices <- c(
+  "A estatística $R_n = \\mathbf{s}_n(\\boldsymbol{\\theta}_0)^\\top I_n(\\boldsymbol{\\theta}_0)^{-1} \\mathbf{s}_n(\\boldsymbol{\\theta}_0)$, onde $\\mathbf{s}_n(\\boldsymbol{\\theta}_0) = \\frac{\\partial \\ell}{\\partial \\boldsymbol{\\theta}}\\big|_{\\boldsymbol{\\theta}_0}$ é o vetor score avaliado em $\\boldsymbol{\\theta}_0$.",
+  "A estatística $R_n = \\mathbf{s}_n(\\hat{\\boldsymbol{\\theta}})^\\top I_n(\\hat{\\boldsymbol{\\theta}})^{-1} \\mathbf{s}_n(\\hat{\\boldsymbol{\\theta}})$ — o score avaliado no EMV irrestrito.",
+  "O gradiente da log-verossimilhança avaliado no EMV $\\hat{\\boldsymbol{\\theta}}$, que é sempre zero pela condição de primeira ordem.",
+  "A segunda derivada (negativa) da log-verossimilhança avaliada em $\\boldsymbol{\\theta}_0$, sem o vetor score.",
+  "$n$ vezes o quadrado do score escalar dividido pela informação de Fisher — válido apenas para $k=1$ parâmetro."
+)
+
+perm <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+O **Teste de Score** (também chamado de Teste de Rao ou Teste do Multiplicador de Lagrange) para $H_0: \boldsymbol{\theta} = \boldsymbol{\theta}_0$ tem como vantagem não exigir a estimação do modelo completo. Qual das alternativas descreve corretamente sua estatística?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+O **Teste de Score** usa a estatística:
+$$R_n = \mathbf{s}_n(\boldsymbol{\theta}_0)^\top I_n(\boldsymbol{\theta}_0)^{-1} \mathbf{s}_n(\boldsymbol{\theta}_0) \xrightarrow{D} \chi^2_k \text{ sob } H_0,$$
+onde $\mathbf{s}_n(\boldsymbol{\theta}_0) = \frac{\partial \ell_n(\boldsymbol{\theta})}{\partial \boldsymbol{\theta}}\big|_{\boldsymbol{\theta}_0}$ é o vetor **score** avaliado em $\boldsymbol{\theta}_0$.
+
+**Propriedade chave:** tudo é avaliado em $\boldsymbol{\theta}_0$ (valor sob $H_0$), sem necessidade de calcular o EMV irrestrito $\hat{\boldsymbol{\theta}}$. Isso é vantajoso quando o modelo completo é difícil de otimizar.
+
+**Erros comuns:**
+- Avaliar o score no EMV $\hat{\boldsymbol{\theta}}$ (opção 2): esse score é identicamente zero pela condição de otimalidade.
+- Confundir com a hessiana: a segunda derivada entra em $I_n$ (informação observada), mas o score é a primeira derivada.
+
+Meta-information
+================
+exname: Cap7S2Q3_teste_score_rao
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

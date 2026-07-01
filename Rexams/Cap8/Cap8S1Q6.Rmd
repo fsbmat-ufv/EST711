@@ -1,0 +1,43 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  y <- sample(0:9, 6, replace = TRUE)
+  tau <- sample(c(0.1, 0.3, 0.5, 0.7, 0.9), 6, replace = TRUE)
+  correct <- sum(tau * y)/sum(tau)
+  vals <- round(c(correct, mean(y), sum(tau * y)/length(y),
+                  sum((1 - tau) * y)/sum(1 - tau), var(y)), 2)
+  if (length(unique(vals)) == 5L) break
+}
+y_txt <- paste(y, collapse = ", ")
+tau_txt <- paste(sprintf("%.1f", tau), collapse = ", ")
+opts <- sprintf("$%.2f$", vals)
+```
+
+Question
+========
+Considere uma mistura de duas distribuições de Poisson. Para as contagens
+$\mathbf y=(`r y_txt`)$, o passo E forneceu responsabilidades
+$\boldsymbol\tau=(`r tau_txt`)$ para o primeiro componente. Qual é a atualização de $\lambda_1$ no passo M?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+Maximizar a log-verossimilhança completa esperada da Poisson produz a média ponderada
+$$
+\lambda_1^{(t+1)}=\frac{\sum_i\tau_i y_i}{\sum_i\tau_i}
+=`r sprintf('%.2f', correct)`.
+$$
+
+Meta-information
+================
+exname: Cap8S1Q6_atualizacao_taxa_poisson
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

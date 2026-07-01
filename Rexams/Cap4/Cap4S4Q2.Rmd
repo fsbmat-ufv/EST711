@@ -1,0 +1,54 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+## Choices textuais
+all_choices <- c(
+  "$L(\\theta; x_1,\\ldots,x_n) = g(T(x),\\theta) \\cdot h(x_1,\\ldots,x_n)$ para funcoes $g$ (dependendo da amostra apenas via $T$) e $h$ (independente de $\\theta$).",
+  "$L(\\theta; x) = g(T(x)) \\cdot h(\\theta)$, completamente separavel em funcao da amostra e funcao do parametro.",
+  "$L(\\theta; x) = g(\\theta) + h(T(x))$, como uma soma de uma funcao do parametro e uma funcao de $T$.",
+  "$L(\\theta; x)$ pode ser escrita apenas em funcao de $T(x)$ e $\\theta$, sem necessidade de um fator $h$ adicional.",
+  "A condicao e que $\\frac{\\partial}{\\partial\\theta}\\log L = 0$ dependa da amostra apenas via $T(x)$, sem outro requisito."
+)
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+O **Criterio de Fatoracao de Neyman-Fisher** e o metodo pratico para verificar suficiencia.
+
+Qual das seguintes opcoes enuncia **corretamente** o Criterio de Fatoracao de Neyman-Fisher?
+
+$T = T(X_1, \ldots, X_n)$ e suficiente para $\theta$ se e somente se a verossimilhanca pode ser escrita como:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+O Criterio de Fatoracao afirma: $T$ e suficiente para $\theta$ se e somente se:
+$$L(\theta; x_1,\ldots,x_n) = g(T(\mathbf{x}),\theta) \cdot h(x_1,\ldots,x_n),$$
+onde:
+
+- $g$ depende da amostra **apenas atraves de $T$** e pode depender de $\theta$.
+- $h$ depende da amostra mas **nao depende de $\theta$**.
+
+As demais alternativas sao incorretas:
+
+- A fatoracao $g(T) \cdot h(\theta)$ seria totalmente separavel, mas $g$ deve depender de $\theta$ tambem.
+- A fatoracao em soma nao e valida (deve ser produto).
+- O fator $h$ e necessario (por exemplo, $\prod x_i!$ na Poisson).
+- A condicao da score nao e equivalente ao criterio de fatoracao.
+
+Meta-information
+================
+exname: Cap4S4Q2_criterio_fatoracao_Neyman_Fisher
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

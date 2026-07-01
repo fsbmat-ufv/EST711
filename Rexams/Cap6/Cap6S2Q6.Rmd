@@ -1,0 +1,40 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Choices textuais
+all_choices <- c(
+  "O mais poderoso entre todos os testes de tamanho $\\alpha$ para hipoteses simples vs. simples.",
+  "O mais poderoso entre todos os testes possiveis, incluindo testes para hipoteses compostas.",
+  "O unico teste nao-viesado de tamanho $\\alpha$ para hipoteses simples vs. simples.",
+  "O unico teste de tamanho exatamente $\\alpha$ para qualquer distribuicao.",
+  "O teste com menor erro quadratico medio da estatistica de teste."
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+O Lema de Neyman-Pearson garante que o teste baseado na razao de verossimilhancas $\Lambda = L(\theta_1)/L(\theta_0)$ e:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+O Lema de NP garante optimalidade NO SENTIDO DE MAXIMIZAR O PODER para hipoteses SIMPLES vs. SIMPLES ($H_0:\theta=\theta_0$ vs. $H_1:\theta=\theta_1$). Para hipoteses compostas, e necessario o Teorema de Karlin-Rubin ou outros resultados. O lema nao garante unicidade do teste nao-viesado nem minimo EQM da estatistica.
+
+Meta-information
+================
+exname: Cap6S2Q6_NP_optimalidade
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

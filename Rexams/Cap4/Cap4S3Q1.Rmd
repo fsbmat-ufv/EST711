@@ -1,0 +1,49 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+## Choices textuais
+all_choices <- c(
+  "$U(0,\\theta)$ --- pois o suporte depende de $\\theta$ e a funcao nao tem a forma fatoravel $\\exp\\{c(\\theta)T(x) - d(\\theta)\\}h(x)$ com suporte fixo.",
+  "$\\text{Bernoulli}(p)$ --- pertence a familia exponencial com parametro natural $\\eta = \\log(p/(1-p))$ (logito de $p$).",
+  "$\\text{Poisson}(\\lambda)$ --- pertence a familia exponencial com parametro natural $\\eta = \\log\\lambda$.",
+  "$\\text{Exponencial}(\\theta)$ --- pertence a familia exponencial com parametro natural $\\eta = -\\theta$.",
+  "$N(\\mu, \\sigma^2)$ com $\\sigma^2$ fixo --- pertence a familia exponencial com parametro natural $\\eta = \\mu/\\sigma^2$."
+)
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+A **familia exponencial** de distribuicoes uniparametrica tem a forma:
+$$f(x; \theta) = \exp\{c(\theta)T(x) - d(\theta)\}\,h(x),$$
+onde o suporte de $X$ deve ser independente de $\theta$.
+
+Qual das seguintes distribuicoes **nao** pertence a familia exponencial de 1 parametro?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+A distribuicao $U(0, \theta)$ (uniforme no intervalo $(0, \theta)$) **nao** pertence a familia exponencial porque seu suporte $(0, \theta)$ **depende do parametro** $\theta$. A representacao na forma exponencial exige que o suporte seja fixo (independente do parametro).
+
+As demais distribuicoes pertencem a familia exponencial de 1 parametro:
+
+- $\text{Bernoulli}(p)$: $P(x;p) = \exp\{x\log(p/(1-p)) + \log(1-p)\}$, com $\eta = \log(p/(1-p))$.
+- $\text{Poisson}(\lambda)$: $f(x;\lambda) = \exp\{x\log\lambda - \lambda - \log(x!)\}$, com $\eta = \log\lambda$.
+- $\text{Exp}(\theta)$: $f(x;\theta) = \exp\{-\theta x + \log\theta\}$, com $\eta = -\theta$.
+- $N(\mu,\sigma^2)$ ($\sigma^2$ fixo): forma exponencial com $\eta = \mu/\sigma^2$.
+
+Meta-information
+================
+exname: Cap4S3Q1_reconhecer_familia_exponencial
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

@@ -1,0 +1,46 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+## Choices textuais
+all_choices <- c(
+  "Um estimador com vicio nao nulo pode ter EQM menor que um estimador nao-viesado se sua variancia for suficientemente menor que o quadrado do vicio do outro.",
+  "Estimadores nao-viesados sempre tem menor EQM que estimadores com vicio, pois EQM = Var + vicio^2 e o vicio^2 so pode aumentar o EQM.",
+  "O EQM e minimizado apenas por estimadores nao-viesados; estimadores viesados nunca podem ser otimos em termos de EQM.",
+  "O EQM e sempre igual a variancia do estimador, independentemente do vicio.",
+  "Aumentar o vicio de um estimador nunca pode reduzir seu EQM, pois o vicio contribui positivamente para o EQM."
+)
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+O **tradeoff vicio-variancia** (bias-variance tradeoff) e um conceito fundamental na avaliacao de estimadores. Considere a decomposicao do EQM:
+$$\text{EQM}(T) = \text{Var}(T) + [B(T)]^2.$$
+
+Sobre o tradeoff entre vicio e variancia no contexto da estimacao pontual, qual afirmacao e **correta**?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+A afirmacao correta e: um estimador com vicio nao nulo pode ter EQM menor que um estimador nao-viesado se sua variancia for suficientemente menor.
+
+Exemplo: se $T_1$ e nao-viesado com $\text{Var}(T_1) = 10$ e $T_2$ tem $B(T_2) = 1$ mas $\text{Var}(T_2) = 1$, entao:
+$$\text{EQM}(T_1) = 10 > \text{EQM}(T_2) = 1 + 1 = 2.$$
+
+Portanto, $T_2$ (viesado) tem EQM menor que $T_1$ (nao-viesado). Isso mostra que o criterio de minimo EQM nao coincide necessariamente com o criterio de nao-viesamento.
+
+Meta-information
+================
+exname: Cap4S1Q8_EQM_vicio_variancia_tradeoff
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

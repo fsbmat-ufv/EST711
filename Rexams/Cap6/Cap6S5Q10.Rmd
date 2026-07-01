@@ -1,0 +1,62 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parametros
+n <- sample(c(50, 100, 200), 1)
+
+## obs: 3 primeiras categorias, 4a derivada
+obs1 <- sample(c(10, 15, 20), 1)
+obs2 <- sample(c(10, 15, 20), 1)
+obs3 <- sample(c(10, 15, 20), 1)
+obs4 <- n - obs1 - obs2 - obs3
+## garantir obs4 > 0
+while (obs4 <= 0) {
+  obs1 <- sample(c(8, 10, 12), 1)
+  obs2 <- sample(c(8, 10, 12), 1)
+  obs3 <- sample(c(8, 10, 12), 1)
+  obs4 <- n - obs1 - obs2 - obs3
+}
+
+## Graus de liberdade do TRV: modelo irrestrito tem 3 param livres (4-1),
+## H0 tem 0 param livres => r = 3
+correct <- 3L
+w1 <- 4L
+w2 <- 2L
+w3 <- 1L
+w4 <- as.integer(n - 4)
+
+all_vals <- c(correct, w1, w2, w3, w4)
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+Um dado de 4 faces e suspeito de ser vicioso. Testamos $H_0$: todas as 4 faces tem probabilidade $p_j = 0{,}25$, $j=1,2,3,4$. Com $n = `r n`$ lancamentos (frequencias observadas: `r obs1`, `r obs2`, `r obs3`, `r obs4`), o TRV tem distribuicao assintotica $\chi^2_?$ pois o modelo irrestrito tem 3 parametros livres (probabilidades somando 1, com 1 restricao) e $H_0$ impoe 3 restricoes adicionais. Os graus de liberdade sao:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+O modelo irrestrito para 4 categorias tem $4 - 1 = 3$ parametros livres (as probabilidades somam 1). $H_0$ especifica todos os 4 valores, ficando com 0 parametros livres. O numero de restricoes e $r = 3 - 0 = 3$, portanto $-2\log\Lambda \xrightarrow{D} \chi^2_3$.
+
+Meta-information
+================
+exname: Cap6S5Q10_TRV_graus_liberdade_dado
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

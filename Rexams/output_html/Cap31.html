@@ -1,0 +1,564 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+<title>Exam 1</title>
+<style type="text/css">
+body{font-family: Arial, Helvetica, Sans;}
+</style>
+<meta charset="utf-8" />
+</head>
+
+<body>
+<h2>Exam 1</h2>
+
+<ol>
+<li>
+<h4>Question</h4>
+<p>Seja <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mi>i</mi></msub><mover><mo>∼</mo><mtext mathvariant="normal">iid</mtext></mover><mi>N</mi><mo stretchy="false" form="prefix">(</mo><mi>μ</mi><mo>,</mo><msubsup><mi>σ</mi><mn>0</mn><mn>2</mn></msubsup><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">X_i \overset{\text{iid}}{\sim} N(\mu, \sigma_0^2)</annotation></semantics></math> com <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>σ</mi><mn>0</mn><mn>2</mn></msubsup><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\sigma_0^2 = 1</annotation></semantics></math> conhecido. Com base em uma amostra de tamanho <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">n = 100</annotation></semantics></math>, o estimador de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math> pelo método dos momentos é:</p>
+<br/>
+<ol type="a">
+<li>
+o momento amostral de maior ordem disponível.
+</li>
+<li>
+o momento de segunda ordem <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>m</mi><mn>2</mn></msub><mo>=</mo><mfrac><mn>1</mn><mi>n</mi></mfrac><mo>∑</mo><msubsup><mi>X</mi><mi>i</mi><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">m_2 = \frac{1}{n}\sum X_i^2</annotation></semantics></math>.
+</li>
+<li>
+o estimador que minimiza <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>X</mi><mi>i</mi></msub><mo>−</mo><mi>θ</mi><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\sum (X_i - \theta)^2</annotation></semantics></math>.
+</li>
+<li>
+o primeiro momento amostral <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>m</mi><mn>1</mn></msub><mo>=</mo><msub><mover><mi>X</mi><mo accent="true">‾</mo></mover><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">m_1 = \bar{X}_n</annotation></semantics></math>, que iguala o momento teórico <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>μ</mi><mn>1</mn></msub><mo>=</mo><mi>μ</mi></mrow><annotation encoding="application/x-tex">\mu_1 = \mu</annotation></semantics></math>.
+</li>
+<li>
+a mediana amostral, pois é mais robusta que a média.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>O método dos momentos consiste em igualar os momentos teóricos da distribuição aos momentos amostrais. Para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>∼</mo><mi>N</mi><mo stretchy="false" form="prefix">(</mo><mi>μ</mi><mo>,</mo><msubsup><mi>σ</mi><mn>0</mn><mn>2</mn></msubsup><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">X \sim N(\mu, \sigma_0^2)</annotation></semantics></math>, o primeiro momento teórico é <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>μ</mi><mn>1</mn></msub><mo>=</mo><mi>E</mi><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>μ</mi></mrow><annotation encoding="application/x-tex">\mu_1 = E(X) = \mu</annotation></semantics></math>. Igualando ao primeiro momento amostral <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>m</mi><mn>1</mn></msub><mo>=</mo><msub><mover><mi>X</mi><mo accent="true">‾</mo></mover><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">m_1 = \bar{X}_n</annotation></semantics></math>, obtemos <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover><mi>μ</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>M</mi></mrow></msub><mo>=</mo><msub><mover><mi>X</mi><mo accent="true">‾</mo></mover><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">\hat{\mu}_{MM} = \bar{X}_n</annotation></semantics></math>. Não é necessário usar momentos de ordem superior nem <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi>σ</mi><mn>0</mn><mn>2</mn></msubsup><annotation encoding="application/x-tex">\sigma_0^2</annotation></semantics></math>, pois o parâmetro de interesse <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math> já aparece no primeiro momento.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Seja <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mi>i</mi></msub><mover><mo>∼</mo><mtext mathvariant="normal">iid</mtext></mover><mtext mathvariant="normal">Poisson</mtext><mo stretchy="false" form="prefix">(</mo><mi>λ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">X_i \overset{\text{iid}}{\sim} \text{Poisson}(\lambda)</annotation></semantics></math>. Como <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>λ</mi></mrow><annotation encoding="application/x-tex">E(X) = \lambda</annotation></semantics></math>, o estimador pelo método dos momentos é <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover><mi>λ</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>M</mi></mrow></msub><mo>=</mo><msub><mover><mi>X</mi><mo accent="true">‾</mo></mover><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">\hat{\lambda}_{MM} = \bar{X}_n</annotation></semantics></math>. Dado que <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>64</mn></mrow><annotation encoding="application/x-tex">n = 64</annotation></semantics></math> e a soma <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mn>64</mn></msubsup><msub><mi>X</mi><mi>i</mi></msub><mo>=</mo><mn>386</mn></mrow><annotation encoding="application/x-tex">\sum_{i=1}^{64} X_i = 386</annotation></semantics></math>, calcule <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mover><mi>λ</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>M</mi></mrow></msub><annotation encoding="application/x-tex">\hat{\lambda}_{MM}</annotation></semantics></math>.</p>
+<br/>
+<ol type="a">
+<li>
+5.937
+</li>
+<li>
+6.0312
+</li>
+<li>
+6.5312
+</li>
+<li>
+6.0469
+</li>
+<li>
+6.0156
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mi>i</mi></msub><mover><mo>∼</mo><mtext mathvariant="normal">iid</mtext></mover><mtext mathvariant="normal">Poisson</mtext><mo stretchy="false" form="prefix">(</mo><mi>λ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">X_i \overset{\text{iid}}{\sim} \text{Poisson}(\lambda)</annotation></semantics></math>, temos <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>λ</mi></mrow><annotation encoding="application/x-tex">E(X) = \lambda</annotation></semantics></math>. O método dos momentos iguala o primeiro momento teórico ao amostral: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>=</mo><msub><mi>m</mi><mn>1</mn></msub><mo>=</mo><msub><mover><mi>X</mi><mo accent="true">‾</mo></mover><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">\lambda = m_1 = \bar{X}_n</annotation></semantics></math>. Portanto:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover><mi>λ</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>M</mi></mrow></msub><mo>=</mo><msub><mover><mi>X</mi><mo accent="true">‾</mo></mover><mi>n</mi></msub><mo>=</mo><mfrac><mrow><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msub><mi>X</mi><mi>i</mi></msub></mrow><mi>n</mi></mfrac><mo>=</mo><mfrac><mn>386</mn><mn>64</mn></mfrac><mo>=</mo><mn>6.0312</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">\hat{\lambda}_{MM} = \bar{X}_n = \frac{\sum_{i=1}^n X_i}{n} = \frac{386}{64} = 6.0312.</annotation></semantics></math></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Seja <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mi>i</mi></msub><mover><mo>∼</mo><mtext mathvariant="normal">iid</mtext></mover><mtext mathvariant="normal">Exp</mtext><mo stretchy="false" form="prefix">(</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">X_i \overset{\text{iid}}{\sim} \text{Exp}(\theta)</annotation></semantics></math> com função de densidade <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>;</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>θ</mi><msup><mi>e</mi><mrow><mi>−</mi><mi>θ</mi><mi>x</mi></mrow></msup></mrow><annotation encoding="application/x-tex">f(x;\theta) = \theta e^{-\theta x}</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x &gt; 0</annotation></semantics></math>, de modo que <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>1</mn><mi>/</mi><mi>θ</mi></mrow><annotation encoding="application/x-tex">E(X) = 1/\theta</annotation></semantics></math>. O estimador pelo método dos momentos obtém <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>θ</mi><mo accent="true">̂</mo></mover><annotation encoding="application/x-tex">\hat{\theta}</annotation></semantics></math> igualando <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>m</mi><mn>1</mn></msub><mo>=</mo><mover><mi>X</mi><mo accent="true">‾</mo></mover><mo>=</mo><mn>1</mn><mi>/</mi><mover><mi>θ</mi><mo accent="true">̂</mo></mover></mrow><annotation encoding="application/x-tex">m_1 = \bar{X} = 1/\hat{\theta}</annotation></semantics></math>, resultando em <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover><mi>θ</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>M</mi></mrow></msub><mo>=</mo><mi>n</mi><mi>/</mi><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\hat{\theta}_{MM} = n/\sum X_i</annotation></semantics></math>. Dado <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>50</mn></mrow><annotation encoding="application/x-tex">n = 50</annotation></semantics></math> e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mn>50</mn></msubsup><msub><mi>X</mi><mi>i</mi></msub><mo>=</mo><mn>12.02</mn></mrow><annotation encoding="application/x-tex">\sum_{i=1}^{50} X_i = 12.02</annotation></semantics></math>, calcule <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mover><mi>θ</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>M</mi></mrow></msub><annotation encoding="application/x-tex">\hat{\theta}_{MM}</annotation></semantics></math>.</p>
+<br/>
+<ol type="a">
+<li>
+0.2404
+</li>
+<li>
+17.3034
+</li>
+<li>
+4.1797
+</li>
+<li>
+4.1597
+</li>
+<li>
+0.0832
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mi>i</mi></msub><mo>∼</mo><mtext mathvariant="normal">Exp</mtext><mo stretchy="false" form="prefix">(</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">X_i \sim \text{Exp}(\theta)</annotation></semantics></math>, o primeiro momento teórico é <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>μ</mi><mn>1</mn></msub><mo>=</mo><mi>E</mi><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>1</mn><mi>/</mi><mi>θ</mi></mrow><annotation encoding="application/x-tex">\mu_1 = E(X) = 1/\theta</annotation></semantics></math>. Igualando ao momento amostral <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>m</mi><mn>1</mn></msub><mo>=</mo><mover><mi>X</mi><mo accent="true">‾</mo></mover></mrow><annotation encoding="application/x-tex">m_1 = \bar{X}</annotation></semantics></math>:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>X</mi><mo accent="true">‾</mo></mover><mo>=</mo><mfrac><mn>1</mn><mover><mi>θ</mi><mo accent="true">̂</mo></mover></mfrac><mo>⟹</mo><msub><mover><mi>θ</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>M</mi></mrow></msub><mo>=</mo><mfrac><mn>1</mn><mover><mi>X</mi><mo accent="true">‾</mo></mover></mfrac><mo>=</mo><mfrac><mi>n</mi><mrow><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msub><mi>X</mi><mi>i</mi></msub></mrow></mfrac><mo>=</mo><mfrac><mn>50</mn><mn>12.02</mn></mfrac><mo>=</mo><mn>4.1597</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">\bar{X} = \frac{1}{\hat{\theta}} \implies \hat{\theta}_{MM} = \frac{1}{\bar{X}} = \frac{n}{\sum_{i=1}^n X_i} = \frac{50}{12.02} = 4.1597.</annotation></semantics></math></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Seja <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mi>i</mi></msub><mover><mo>∼</mo><mtext mathvariant="normal">iid</mtext></mover><mtext mathvariant="normal">Bernoulli</mtext><mo stretchy="false" form="prefix">(</mo><mi>p</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">X_i \overset{\text{iid}}{\sim} \text{Bernoulli}(p)</annotation></semantics></math> com <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>p</mi></mrow><annotation encoding="application/x-tex">E(X) = p</annotation></semantics></math>. O estimador pelo método dos momentos iguala o primeiro momento amostral ao teórico: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover><mi>p</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>M</mi></mrow></msub><mo>=</mo><mover><mi>X</mi><mo accent="true">‾</mo></mover><mo>=</mo><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub><mi>/</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">\hat{p}_{MM} = \bar{X} = \sum X_i / n</annotation></semantics></math>. Com <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">n = 100</annotation></semantics></math> e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mn>100</mn></msubsup><msub><mi>X</mi><mi>i</mi></msub><mo>=</mo><mn>47</mn></mrow><annotation encoding="application/x-tex">\sum_{i=1}^{100} X_i = 47</annotation></semantics></math>, calcule <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mover><mi>p</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>M</mi></mrow></msub><annotation encoding="application/x-tex">\hat{p}_{MM}</annotation></semantics></math>.</p>
+<br/>
+<ol type="a">
+<li>
+0.52
+</li>
+<li>
+0.47
+</li>
+<li>
+0.2209
+</li>
+<li>
+0.4653
+</li>
+<li>
+0.53
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mi>i</mi></msub><mo>∼</mo><mtext mathvariant="normal">Bernoulli</mtext><mo stretchy="false" form="prefix">(</mo><mi>p</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">X_i \sim \text{Bernoulli}(p)</annotation></semantics></math>, temos <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>p</mi></mrow><annotation encoding="application/x-tex">E(X) = p</annotation></semantics></math>. O método dos momentos iguala <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>m</mi><mn>1</mn></msub><mo>=</mo><mover><mi>X</mi><mo accent="true">‾</mo></mover></mrow><annotation encoding="application/x-tex">m_1 = \bar{X}</annotation></semantics></math> a <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>μ</mi><mn>1</mn></msub><mo>=</mo><mi>p</mi></mrow><annotation encoding="application/x-tex">\mu_1 = p</annotation></semantics></math>, obtendo:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover><mi>p</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>M</mi></mrow></msub><mo>=</mo><mover><mi>X</mi><mo accent="true">‾</mo></mover><mo>=</mo><mfrac><mrow><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msub><mi>X</mi><mi>i</mi></msub></mrow><mi>n</mi></mfrac><mo>=</mo><mfrac><mn>47</mn><mn>100</mn></mfrac><mo>=</mo><mn>0.47</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">\hat{p}_{MM} = \bar{X} = \frac{\sum_{i=1}^n X_i}{n} = \frac{47}{100} = 0.47.</annotation></semantics></math></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Seja <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mi>i</mi></msub><mover><mo>∼</mo><mtext mathvariant="normal">iid</mtext></mover><mi>U</mi><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">X_i \overset{\text{iid}}{\sim} U(0, \theta)</annotation></semantics></math> com <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>θ</mi><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">E(X) = \theta/2</annotation></semantics></math>. O estimador pelo método dos momentos iguala <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>X</mi><mo accent="true">‾</mo></mover><mo>=</mo><mover><mi>θ</mi><mo accent="true">̂</mo></mover><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">\bar{X} = \hat{\theta}/2</annotation></semantics></math>, resultando em <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover><mi>θ</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>M</mi></mrow></msub><mo>=</mo><mn>2</mn><mover><mi>X</mi><mo accent="true">‾</mo></mover></mrow><annotation encoding="application/x-tex">\hat{\theta}_{MM} = 2\bar{X}</annotation></semantics></math>. Com <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>36</mn></mrow><annotation encoding="application/x-tex">n = 36</annotation></semantics></math> e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>X</mi><mo accent="true">‾</mo></mover><mo>=</mo><mn>4.34</mn></mrow><annotation encoding="application/x-tex">\bar{X} = 4.34</annotation></semantics></math>, calcule <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mover><mi>θ</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>M</mi></mrow></msub><annotation encoding="application/x-tex">\hat{\theta}_{MM}</annotation></semantics></math>.</p>
+<br/>
+<ol type="a">
+<li>
+9.68
+</li>
+<li>
+8.68
+</li>
+<li>
+2.17
+</li>
+<li>
+4.34
+</li>
+<li>
+13.02
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mi>i</mi></msub><mo>∼</mo><mi>U</mi><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">X_i \sim U(0, \theta)</annotation></semantics></math>, o primeiro momento teórico é <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>μ</mi><mn>1</mn></msub><mo>=</mo><mi>E</mi><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>θ</mi><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">\mu_1 = E(X) = \theta/2</annotation></semantics></math>. O método dos momentos iguala <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>m</mi><mn>1</mn></msub><mo>=</mo><mover><mi>X</mi><mo accent="true">‾</mo></mover></mrow><annotation encoding="application/x-tex">m_1 = \bar{X}</annotation></semantics></math> a <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>μ</mi><mn>1</mn></msub><mo>=</mo><mi>θ</mi><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">\mu_1 = \theta/2</annotation></semantics></math>:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>X</mi><mo accent="true">‾</mo></mover><mo>=</mo><mfrac><mover><mi>θ</mi><mo accent="true">̂</mo></mover><mn>2</mn></mfrac><mo>⟹</mo><msub><mover><mi>θ</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>M</mi></mrow></msub><mo>=</mo><mn>2</mn><mover><mi>X</mi><mo accent="true">‾</mo></mover><mo>=</mo><mn>2</mn><mo>×</mo><mn>4.34</mn><mo>=</mo><mn>8.68</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">\bar{X} = \frac{\hat{\theta}}{2} \implies \hat{\theta}_{MM} = 2\bar{X} = 2 \times 4.34 = 8.68.</annotation></semantics></math></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Seja <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>∼</mo><mtext mathvariant="normal">Gama</mtext><mo stretchy="false" form="prefix">(</mo><mi>α</mi><mo>,</mo><mi>β</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">X \sim \text{Gama}(\alpha, \beta)</annotation></semantics></math> com <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>α</mi><mi>/</mi><mi>β</mi></mrow><annotation encoding="application/x-tex">E(X) = \alpha/\beta</annotation></semantics></math> e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">Var</mtext><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>α</mi><mi>/</mi><msup><mi>β</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\text{Var}(X) = \alpha/\beta^2</annotation></semantics></math>. O método dos momentos resolve o sistema <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>X</mi><mo accent="true">‾</mo></mover><mo>=</mo><mover><mi>α</mi><mo accent="true">̂</mo></mover><mi>/</mi><mover><mi>β</mi><mo accent="true">̂</mo></mover></mrow><annotation encoding="application/x-tex">\bar{X} = \hat{\alpha}/\hat{\beta}</annotation></semantics></math> e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mover><mi>σ</mi><mo accent="true">̂</mo></mover><mn>2</mn></msup><mo>=</mo><mover><mi>α</mi><mo accent="true">̂</mo></mover><mi>/</mi><msup><mover><mi>β</mi><mo accent="true">̂</mo></mover><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\hat{\sigma}^2 = \hat{\alpha}/\hat{\beta}^2</annotation></semantics></math>. Dividindo a segunda equação pela primeira: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover><mi>β</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>M</mi></mrow></msub><mo>=</mo><mover><mi>X</mi><mo accent="true">‾</mo></mover><mi>/</mi><msup><mover><mi>σ</mi><mo accent="true">̂</mo></mover><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\hat{\beta}_{MM} = \bar{X}/\hat{\sigma}^2</annotation></semantics></math>. Com <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>X</mi><mo accent="true">‾</mo></mover><mo>=</mo><mn>1.87</mn></mrow><annotation encoding="application/x-tex">\bar{X} = 1.87</annotation></semantics></math> e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mover><mi>σ</mi><mo accent="true">̂</mo></mover><mn>2</mn></msup><mo>=</mo><mn>0.83</mn></mrow><annotation encoding="application/x-tex">\hat{\sigma}^2 = 0.83</annotation></semantics></math>, calcule <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mover><mi>β</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>M</mi></mrow></msub><annotation encoding="application/x-tex">\hat{\beta}_{MM}</annotation></semantics></math>.</p>
+<br/>
+<ol type="a">
+<li>
+3.253
+</li>
+<li>
+4.2131
+</li>
+<li>
+0.4439
+</li>
+<li>
+2.253
+</li>
+<li>
+0.2374
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Das equações do método dos momentos:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>X</mi><mo accent="true">‾</mo></mover><mo>=</mo><mfrac><mover><mi>α</mi><mo accent="true">̂</mo></mover><mover><mi>β</mi><mo accent="true">̂</mo></mover></mfrac><mo>,</mo><mspace width="1.0em"></mspace><msup><mover><mi>σ</mi><mo accent="true">̂</mo></mover><mn>2</mn></msup><mo>=</mo><mfrac><mover><mi>α</mi><mo accent="true">̂</mo></mover><msup><mover><mi>β</mi><mo accent="true">̂</mo></mover><mn>2</mn></msup></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">\bar{X} = \frac{\hat{\alpha}}{\hat{\beta}}, \quad \hat{\sigma}^2 = \frac{\hat{\alpha}}{\hat{\beta}^2}.</annotation></semantics></math>
+Dividindo: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mover><mi>σ</mi><mo accent="true">̂</mo></mover><mn>2</mn></msup><mi>/</mi><mover><mi>X</mi><mo accent="true">‾</mo></mover><mo>=</mo><mn>1</mn><mi>/</mi><mover><mi>β</mi><mo accent="true">̂</mo></mover></mrow><annotation encoding="application/x-tex">\hat{\sigma}^2 / \bar{X} = 1/\hat{\beta}</annotation></semantics></math>, logo <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover><mi>β</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>M</mi></mrow></msub><mo>=</mo><mover><mi>X</mi><mo accent="true">‾</mo></mover><mi>/</mi><msup><mover><mi>σ</mi><mo accent="true">̂</mo></mover><mn>2</mn></msup><mo>=</mo><mn>1.87</mn><mi>/</mi><mn>0.83</mn><mo>=</mo><mn>2.253</mn></mrow><annotation encoding="application/x-tex">\hat{\beta}_{MM} = \bar{X}/\hat{\sigma}^2 = 1.87/0.83 = 2.253</annotation></semantics></math>. Em seguida, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover><mi>α</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>M</mi></mrow></msub><mo>=</mo><mover><mi>X</mi><mo accent="true">‾</mo></mover><mo>⋅</mo><msub><mover><mi>β</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>M</mi></mrow></msub><mo>=</mo><mn>4.2131</mn></mrow><annotation encoding="application/x-tex">\hat{\alpha}_{MM} = \bar{X} \cdot \hat{\beta}_{MM} = 4.2131</annotation></semantics></math>.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Qual propriedade geralmente garante que estimadores pelo método dos momentos (EMM) são consistentes?</p>
+<br/>
+<ol type="a">
+<li>
+Os EMM são sempre não-viesados, o que implica consistência.
+</li>
+<li>
+Os EMM são consistentes apenas se a distribuição for simétrica.
+</li>
+<li>
+Pela Lei dos Grandes Números, os momentos amostrais <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>m</mi><mi>k</mi></msub><mo>=</mo><mfrac><mn>1</mn><mi>n</mi></mfrac><mo>∑</mo><msubsup><mi>X</mi><mi>i</mi><mi>k</mi></msubsup></mrow><annotation encoding="application/x-tex">m_k = \frac{1}{n}\sum X_i^k</annotation></semantics></math> convergem em probabilidade para os momentos teóricos <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>μ</mi><mi>k</mi></msub><annotation encoding="application/x-tex">\mu_k</annotation></semantics></math>. Se os parâmetros são funções contínuas dos momentos, os EMM são consistentes.
+</li>
+<li>
+Os EMM minimizam o erro quadrático médio, garantindo consistência.
+</li>
+<li>
+A consistência dos EMM segue apenas para distribuições da família exponencial.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>A consistência dos EMM é garantida pela Lei dos Grandes Números (LGN): para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>X</mi><mi>i</mi></msub><annotation encoding="application/x-tex">X_i</annotation></semantics></math> i.i.d. com <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo stretchy="false" form="prefix">|</mo><msup><mi>X</mi><mi>k</mi></msup><mo stretchy="false" form="prefix">|</mo><mo>&lt;</mo><mi>∞</mi></mrow><annotation encoding="application/x-tex">E|X^k| &lt; \infty</annotation></semantics></math>, temos <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>m</mi><mi>k</mi></msub><mo>=</mo><mfrac><mn>1</mn><mi>n</mi></mfrac><mo>∑</mo><msubsup><mi>X</mi><mi>i</mi><mi>k</mi></msubsup><mover><mo>→</mo><mi>P</mi></mover><msub><mi>μ</mi><mi>k</mi></msub><mo>=</mo><mi>E</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>X</mi><mi>k</mi></msup><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">m_k = \frac{1}{n}\sum X_i^k \xrightarrow{P} \mu_k = E(X^k)</annotation></semantics></math>. Se <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>θ</mi><mo accent="true">̂</mo></mover><mo>=</mo><mi>g</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>m</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>m</mi><mi>k</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\hat{\theta} = g(m_1, \ldots, m_k)</annotation></semantics></math> e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>g</mi><annotation encoding="application/x-tex">g</annotation></semantics></math> é uma função contínua, então pelo teorema de mapeamento contínuo <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>θ</mi><mo accent="true">̂</mo></mover><mover><mo>→</mo><mi>P</mi></mover><mi>g</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>μ</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>μ</mi><mi>k</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>θ</mi></mrow><annotation encoding="application/x-tex">\hat{\theta} \xrightarrow{P} g(\mu_1, \ldots, \mu_k) = \theta</annotation></semantics></math>. Não-viesamento não implica consistência em geral; e a LGN não exige simetria nem família exponencial.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Qual afirmação descreve corretamente a diferença entre o método dos momentos (MM) e o método da máxima verossimilhança (MV)?</p>
+<br/>
+<ol type="a">
+<li>
+O MM maximiza a log-verossimilhança, enquanto o MV minimiza a soma de quadrados.
+</li>
+<li>
+O MM usa todos os dados igualmente, enquanto o MV pondera cada observação pela sua verossimilhança.
+</li>
+<li>
+O MM iguala momentos amostrais a momentos teóricos; o MV maximiza a função de verossimilhança. Para muitas distribuições, os dois coincdem, mas em geral o EMV tem melhores propriedades assintóticas.
+</li>
+<li>
+O MM é sempre mais eficiente que o MV para amostras pequenas.
+</li>
+<li>
+Ambos os métodos sempre produzem os mesmos estimadores para qualquer distribuição.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>O método dos momentos (MM) é baseado em igualar momentos populacionais a momentos amostrais. O método da máxima verossimilhança (MV) maximiza <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo stretchy="false" form="prefix">(</mo><mi>θ</mi><mo>;</mo><mi>𝐱</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo>∏</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo>;</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">L(\theta; \mathbf{x}) = \prod f(x_i; \theta)</annotation></semantics></math>. Embora para algumas distribuições (como Poisson e Normal) os dois métodos produzam estimadores idênticos, em geral divergem. O EMV possui melhores propriedades assintóticas: é consistente, assintoticamente normal e assintoticamente eficiente (atinge o limite de Cramér-Rao). O MM é computacionalmente mais simples, mas pode ser menos eficiente.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Seja <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mi>i</mi></msub><mover><mo>∼</mo><mtext mathvariant="normal">iid</mtext></mover><mi>N</mi><mo stretchy="false" form="prefix">(</mo><mi>μ</mi><mo>,</mo><msup><mi>σ</mi><mn>2</mn></msup><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">X_i \overset{\text{iid}}{\sim} N(\mu, \sigma^2)</annotation></semantics></math> com ambos os parâmetros desconhecidos. Com <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>36</mn></mrow><annotation encoding="application/x-tex">n = 36</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><msub><mi>X</mi><mi>i</mi></msub><mo>=</mo><mn>288.12</mn></mrow><annotation encoding="application/x-tex">\sum_{i=1}^n X_i = 288.12</annotation></semantics></math> e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><msubsup><mi>X</mi><mi>i</mi><mn>2</mn></msubsup><mo>=</mo><mn>2627.82</mn></mrow><annotation encoding="application/x-tex">\sum_{i=1}^n X_i^2 = 2627.82</annotation></semantics></math>, os EMM são <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover><mi>μ</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>M</mi></mrow></msub><mo>=</mo><mover><mi>X</mi><mo accent="true">‾</mo></mover><mo>=</mo><mn>8.0033</mn></mrow><annotation encoding="application/x-tex">\hat{\mu}_{MM} = \bar{X} = 8.0033</annotation></semantics></math> e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mover><mi>σ</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>M</mi></mrow><mn>2</mn></msubsup><mo>=</mo><mfrac><mn>1</mn><mi>n</mi></mfrac><mo>∑</mo><msubsup><mi>X</mi><mi>i</mi><mn>2</mn></msubsup><mo>−</mo><msup><mover><mi>X</mi><mo accent="true">‾</mo></mover><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\hat{\sigma}^2_{MM} = \frac{1}{n}\sum X_i^2 - \bar{X}^2</annotation></semantics></math>. Calcule <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mover><mi>σ</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>M</mi></mrow><mn>2</mn></msubsup><annotation encoding="application/x-tex">\hat{\sigma}^2_{MM}</annotation></semantics></math>.</p>
+<br/>
+<ol type="a">
+<li>
+8.4422
+</li>
+<li>
+9.1971
+</li>
+<li>
+8.9422
+</li>
+<li>
+72.995
+</li>
+<li>
+8.97
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Os dois primeiros momentos teóricos da <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo stretchy="false" form="prefix">(</mo><mi>μ</mi><mo>,</mo><msup><mi>σ</mi><mn>2</mn></msup><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">N(\mu, \sigma^2)</annotation></semantics></math> são <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>μ</mi><mn>1</mn></msub><mo>=</mo><mi>μ</mi></mrow><annotation encoding="application/x-tex">\mu_1 = \mu</annotation></semantics></math> e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>μ</mi><mn>2</mn></msub><mo>=</mo><msup><mi>μ</mi><mn>2</mn></msup><mo>+</mo><msup><mi>σ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\mu_2 = \mu^2 + \sigma^2</annotation></semantics></math>. O método dos momentos iguala <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>m</mi><mn>1</mn></msub><mo>=</mo><mover><mi>X</mi><mo accent="true">‾</mo></mover><mo>=</mo><mn>8.0033</mn></mrow><annotation encoding="application/x-tex">m_1 = \bar{X} = 8.0033</annotation></semantics></math> e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>m</mi><mn>2</mn></msub><mo>=</mo><mo>∑</mo><msubsup><mi>X</mi><mi>i</mi><mn>2</mn></msubsup><mi>/</mi><mi>n</mi><mo>=</mo><mn>72.995</mn></mrow><annotation encoding="application/x-tex">m_2 = \sum X_i^2/n = 72.995</annotation></semantics></math>. De <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mover><mi>σ</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>M</mi></mrow><mn>2</mn></msubsup><mo>=</mo><msub><mi>m</mi><mn>2</mn></msub><mo>−</mo><msubsup><mi>m</mi><mn>1</mn><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">\hat{\sigma}^2_{MM} = m_2 - m_1^2</annotation></semantics></math>:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mover><mi>σ</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>M</mi></mrow><mn>2</mn></msubsup><mo>=</mo><mfrac><mn>2627.82</mn><mn>36</mn></mfrac><mo>−</mo><mo stretchy="false" form="prefix">(</mo><mn>8.0033</mn><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup><mo>=</mo><mn>72.995</mn><mo>−</mo><mn>64.0528</mn><mo>=</mo><mn>8.9422</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">\hat{\sigma}^2_{MM} = \frac{2627.82}{36} - (8.0033)^2 = 72.995 - 64.0528 = 8.9422.</annotation></semantics></math></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mi>i</mi></msub><mover><mo>∼</mo><mtext mathvariant="normal">iid</mtext></mover><mtext mathvariant="normal">Poisson</mtext><mo stretchy="false" form="prefix">(</mo><mi>λ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">X_i \overset{\text{iid}}{\sim} \text{Poisson}(\lambda)</annotation></semantics></math>, por que o estimador do método dos momentos (EMM) e o estimador de máxima verossimilhança (EMV) são iguais?</p>
+<br/>
+<ol type="a">
+<li>
+Porque o EMV e o EMM são sempre idênticos para distribuições com suporte em <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mi>…</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{0, 1, 2, \ldots\}</annotation></semantics></math>.
+</li>
+<li>
+Porque <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>λ</mi></mrow><annotation encoding="application/x-tex">E(X) = \lambda</annotation></semantics></math>, logo o EMM é <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover><mi>λ</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>M</mi></mrow></msub><mo>=</mo><mover><mi>X</mi><mo accent="true">‾</mo></mover></mrow><annotation encoding="application/x-tex">\hat{\lambda}_{MM} = \bar{X}</annotation></semantics></math>. A log-verossimilhança <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℓ</mi><mo stretchy="false" form="prefix">(</mo><mi>λ</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mi>λ</mi><mo>−</mo><mi>n</mi><mi>λ</mi><mo>+</mo><mtext mathvariant="normal">const</mtext></mrow><annotation encoding="application/x-tex">\ell(\lambda) = \sum X_i \log\lambda - n\lambda + \text{const}</annotation></semantics></math> também tem máximo em <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover><mi>λ</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>V</mi></mrow></msub><mo>=</mo><mover><mi>X</mi><mo accent="true">‾</mo></mover></mrow><annotation encoding="application/x-tex">\hat{\lambda}_{MV} = \bar{X}</annotation></semantics></math>. Ambos coincidem.
+</li>
+<li>
+Porque a Poisson é uma distribuição simétrica, o que garante a igualdade entre MM e MV.
+</li>
+<li>
+Porque a distribuição de Poisson pertence à família exponencial, e nessa família os dois métodos sempre coincidem.
+</li>
+<li>
+Por coincidência particular; em geral, o MM e o MV são sempre diferentes para qualquer distribuição.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mi>i</mi></msub><mo>∼</mo><mtext mathvariant="normal">Poisson</mtext><mo stretchy="false" form="prefix">(</mo><mi>λ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">X_i \sim \text{Poisson}(\lambda)</annotation></semantics></math>: (i) o EMM iguala <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>μ</mi><mn>1</mn></msub><mo>=</mo><mi>E</mi><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>λ</mi></mrow><annotation encoding="application/x-tex">\mu_1 = E(X) = \lambda</annotation></semantics></math> a <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>m</mi><mn>1</mn></msub><mo>=</mo><mover><mi>X</mi><mo accent="true">‾</mo></mover></mrow><annotation encoding="application/x-tex">m_1 = \bar{X}</annotation></semantics></math>, obtendo <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover><mi>λ</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>M</mi></mrow></msub><mo>=</mo><mover><mi>X</mi><mo accent="true">‾</mo></mover></mrow><annotation encoding="application/x-tex">\hat{\lambda}_{MM} = \bar{X}</annotation></semantics></math>; (ii) a log-verossimilhança é <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℓ</mi><mo stretchy="false" form="prefix">(</mo><mi>λ</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub><mo stretchy="false" form="postfix">)</mo><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mi>λ</mi><mo>−</mo><mi>n</mi><mi>λ</mi><mo>+</mo><mtext mathvariant="normal">const</mtext></mrow><annotation encoding="application/x-tex">\ell(\lambda) = (\sum X_i)\log\lambda - n\lambda + \text{const}</annotation></semantics></math>, e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mi>ℓ</mi><mi>/</mi><mi>d</mi><mi>λ</mi><mo>=</mo><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub><mi>/</mi><mi>λ</mi><mo>−</mo><mi>n</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">d\ell/d\lambda = \sum X_i/\lambda - n = 0</annotation></semantics></math> implica <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover><mi>λ</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>V</mi></mrow></msub><mo>=</mo><mover><mi>X</mi><mo accent="true">‾</mo></mover></mrow><annotation encoding="application/x-tex">\hat{\lambda}_{MV} = \bar{X}</annotation></semantics></math>. A coincidência não ocorre para todos os membros da família exponencial (por exemplo, para a Gama com dois parâmetros os dois métodos também coincidem, mas isso precisa de verificação caso a caso). O argumento correto é a derivação direta de ambos os estimadores.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Seja <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mi>i</mi></msub><mover><mo>∼</mo><mtext mathvariant="normal">iid</mtext></mover><mi>N</mi><mo stretchy="false" form="prefix">(</mo><mi>μ</mi><mo>,</mo><mn>16</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">X_i \overset{\text{iid}}{\sim} N(\mu, 16)</annotation></semantics></math> com <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>σ</mi><mn>0</mn><mn>2</mn></msubsup><mo>=</mo><mn>16</mn></mrow><annotation encoding="application/x-tex">\sigma_0^2 = 16</annotation></semantics></math> conhecido. A log-verossimilhança é <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℓ</mi><mo stretchy="false" form="prefix">(</mo><mi>μ</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>−</mi><mfrac><mn>1</mn><mrow><mn>2</mn><msubsup><mi>σ</mi><mn>0</mn><mn>2</mn></msubsup></mrow></mfrac><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><mo stretchy="false" form="prefix">(</mo><msub><mi>X</mi><mi>i</mi></msub><mo>−</mo><mi>μ</mi><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup><mo>+</mo><mtext mathvariant="normal">const</mtext></mrow><annotation encoding="application/x-tex">\ell(\mu) = -\frac{1}{2\sigma_0^2}\sum_{i=1}^n (X_i - \mu)^2 + \text{const}</annotation></semantics></math>. Com <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>25</mn></mrow><annotation encoding="application/x-tex">n = 25</annotation></semantics></math> e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><msub><mi>X</mi><mi>i</mi></msub><mo>=</mo><mn>199.4</mn></mrow><annotation encoding="application/x-tex">\sum_{i=1}^n X_i = 199.4</annotation></semantics></math>, calcule o EMV <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover><mi>μ</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>V</mi></mrow></msub><mo>=</mo><mover><mi>X</mi><mo accent="true">‾</mo></mover></mrow><annotation encoding="application/x-tex">\hat{\mu}_{MV} = \bar{X}</annotation></semantics></math>.</p>
+<br/>
+<ol type="a">
+<li>
+7.3852
+</li>
+<li>
+8.276
+</li>
+<li>
+8.616
+</li>
+<li>
+7.676
+</li>
+<li>
+7.976
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Derivando <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℓ</mi><mo stretchy="false" form="prefix">(</mo><mi>μ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\ell(\mu)</annotation></semantics></math> em relação a <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math> e igualando a zero:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi>d</mi><mi>ℓ</mi></mrow><mrow><mi>d</mi><mi>μ</mi></mrow></mfrac><mo>=</mo><mfrac><mn>1</mn><msubsup><mi>σ</mi><mn>0</mn><mn>2</mn></msubsup></mfrac><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mo stretchy="false" form="prefix">(</mo><msub><mi>X</mi><mi>i</mi></msub><mo>−</mo><mi>μ</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>0</mn><mo>⟹</mo><msub><mover><mi>μ</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>V</mi></mrow></msub><mo>=</mo><mover><mi>X</mi><mo accent="true">‾</mo></mover><mo>=</mo><mfrac><mrow><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub></mrow><mi>n</mi></mfrac><mo>=</mo><mfrac><mn>199.4</mn><mn>25</mn></mfrac><mo>=</mo><mn>7.976</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">\frac{d\ell}{d\mu} = \frac{1}{\sigma_0^2}\sum_{i=1}^n (X_i - \mu) = 0 \implies \hat{\mu}_{MV} = \bar{X} = \frac{\sum X_i}{n} = \frac{199.4}{25} = 7.976.</annotation></semantics></math>
+O valor de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>σ</mi><mn>0</mn><mn>2</mn></msubsup><mo>=</mo><mn>16</mn></mrow><annotation encoding="application/x-tex">\sigma_0^2 = 16</annotation></semantics></math> não influencia o EMV de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math> quando <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>σ</mi><mn>2</mn></msup><annotation encoding="application/x-tex">\sigma^2</annotation></semantics></math> é conhecido.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Seja <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mi>i</mi></msub><mover><mo>∼</mo><mtext mathvariant="normal">iid</mtext></mover><mi>N</mi><mo stretchy="false" form="prefix">(</mo><mn>4</mn><mo>,</mo><msup><mi>σ</mi><mn>2</mn></msup><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">X_i \overset{\text{iid}}{\sim} N(4, \sigma^2)</annotation></semantics></math> com <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">\mu = 4</annotation></semantics></math> conhecido. O EMV de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>σ</mi><mn>2</mn></msup><annotation encoding="application/x-tex">\sigma^2</annotation></semantics></math> é <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mover><mi>σ</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>V</mi></mrow><mn>2</mn></msubsup><mo>=</mo><mfrac><mn>1</mn><mi>n</mi></mfrac><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><mo stretchy="false" form="prefix">(</mo><msub><mi>X</mi><mi>i</mi></msub><mo>−</mo><mn>4</mn><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\hat{\sigma}^2_{MV} = \frac{1}{n}\sum_{i=1}^n (X_i - 4)^2</annotation></semantics></math>. Dado <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>50</mn></mrow><annotation encoding="application/x-tex">n = 50</annotation></semantics></math> e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><mo stretchy="false" form="prefix">(</mo><msub><mi>X</mi><mi>i</mi></msub><mo>−</mo><mn>4</mn><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup><mo>=</mo><mn>198.77</mn></mrow><annotation encoding="application/x-tex">\sum_{i=1}^n (X_i - 4)^2 = 198.77</annotation></semantics></math>, calcule <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mover><mi>σ</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>V</mi></mrow><mn>2</mn></msubsup><annotation encoding="application/x-tex">\hat{\sigma}^2_{MV}</annotation></semantics></math>.</p>
+<br/>
+<ol type="a">
+<li>
+4.0565
+</li>
+<li>
+3.9754
+</li>
+<li>
+1.9938
+</li>
+<li>
+4.9754
+</li>
+<li>
+3.8975
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>A log-verossimilhança para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>σ</mi><mn>2</mn></msup><annotation encoding="application/x-tex">\sigma^2</annotation></semantics></math> com <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math> conhecido é <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℓ</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>σ</mi><mn>2</mn></msup><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>−</mi><mfrac><mi>n</mi><mn>2</mn></mfrac><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><msup><mi>σ</mi><mn>2</mn></msup><mo>−</mo><mfrac><mn>1</mn><mrow><mn>2</mn><msup><mi>σ</mi><mn>2</mn></msup></mrow></mfrac><mo>∑</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>X</mi><mi>i</mi></msub><mo>−</mo><mn>4</mn><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\ell(\sigma^2) = -\frac{n}{2}\log\sigma^2 - \frac{1}{2\sigma^2}\sum(X_i - 4)^2</annotation></semantics></math>. Derivando e igualando a zero:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi>d</mi><mi>ℓ</mi></mrow><mrow><mi>d</mi><msup><mi>σ</mi><mn>2</mn></msup></mrow></mfrac><mo>=</mo><mi>−</mi><mfrac><mi>n</mi><mrow><mn>2</mn><msup><mi>σ</mi><mn>2</mn></msup></mrow></mfrac><mo>+</mo><mfrac><mrow><mo>∑</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>X</mi><mi>i</mi></msub><mo>−</mo><mn>4</mn><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup></mrow><mrow><mn>2</mn><mo stretchy="false" form="prefix">(</mo><msup><mi>σ</mi><mn>2</mn></msup><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup></mrow></mfrac><mo>=</mo><mn>0</mn><mo>⟹</mo><msubsup><mover><mi>σ</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>V</mi></mrow><mn>2</mn></msubsup><mo>=</mo><mfrac><mrow><mo>∑</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>X</mi><mi>i</mi></msub><mo>−</mo><mn>4</mn><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup></mrow><mi>n</mi></mfrac><mo>=</mo><mfrac><mn>198.77</mn><mn>50</mn></mfrac><mo>=</mo><mn>3.9754</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">\frac{d\ell}{d\sigma^2} = -\frac{n}{2\sigma^2} + \frac{\sum(X_i - 4)^2}{2(\sigma^2)^2} = 0 \implies \hat{\sigma}^2_{MV} = \frac{\sum(X_i - 4)^2}{n} = \frac{198.77}{50} = 3.9754.</annotation></semantics></math>
+Note que o divisor é <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>, não <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n-1</annotation></semantics></math> (como na variância amostral não viesada <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>S</mi><mn>2</mn></msup><annotation encoding="application/x-tex">S^2</annotation></semantics></math>).</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Seja <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mi>i</mi></msub><mover><mo>∼</mo><mtext mathvariant="normal">iid</mtext></mover><mtext mathvariant="normal">Poisson</mtext><mo stretchy="false" form="prefix">(</mo><mi>λ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">X_i \overset{\text{iid}}{\sim} \text{Poisson}(\lambda)</annotation></semantics></math>. A log-verossimilhança é <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℓ</mi><mo stretchy="false" form="prefix">(</mo><mi>λ</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><msub><mi>X</mi><mi>i</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mi>λ</mi><mo>−</mo><mi>n</mi><mi>λ</mi><mo>+</mo><mtext mathvariant="normal">const</mtext></mrow><annotation encoding="application/x-tex">\ell(\lambda) = \left(\sum_{i=1}^n X_i\right)\log\lambda - n\lambda + \text{const}</annotation></semantics></math>. Derivando e igualando a zero obtém-se <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover><mi>λ</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>V</mi></mrow></msub><mo>=</mo><mover><mi>X</mi><mo accent="true">‾</mo></mover></mrow><annotation encoding="application/x-tex">\hat{\lambda}_{MV} = \bar{X}</annotation></semantics></math>. Com <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">n = 100</annotation></semantics></math> e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><msub><mi>X</mi><mi>i</mi></msub><mo>=</mo><mn>302</mn></mrow><annotation encoding="application/x-tex">\sum_{i=1}^n X_i = 302</annotation></semantics></math>, calcule <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mover><mi>λ</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>V</mi></mrow></msub><annotation encoding="application/x-tex">\hat{\lambda}_{MV}</annotation></semantics></math>.</p>
+<br/>
+<ol type="a">
+<li>
+3.02
+</li>
+<li>
+20.4913
+</li>
+<li>
+3.52
+</li>
+<li>
+1.1053
+</li>
+<li>
+3.0505
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>A equação de verossimilhança é:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi>d</mi><mi>ℓ</mi></mrow><mrow><mi>d</mi><mi>λ</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub></mrow><mi>λ</mi></mfrac><mo>−</mo><mi>n</mi><mo>=</mo><mn>0</mn><mo>⟹</mo><msub><mover><mi>λ</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>V</mi></mrow></msub><mo>=</mo><mfrac><mrow><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub></mrow><mi>n</mi></mfrac><mo>=</mo><mfrac><mn>302</mn><mn>100</mn></mfrac><mo>=</mo><mn>3.02</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">\frac{d\ell}{d\lambda} = \frac{\sum X_i}{\lambda} - n = 0 \implies \hat{\lambda}_{MV} = \frac{\sum X_i}{n} = \frac{302}{100} = 3.02.</annotation></semantics></math>
+A segunda derivada <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>d</mi><mn>2</mn></msup><mi>ℓ</mi><mi>/</mi><mi>d</mi><msup><mi>λ</mi><mn>2</mn></msup><mo>=</mo><mi>−</mi><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub><mi>/</mi><msup><mi>λ</mi><mn>2</mn></msup><mo>&lt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">d^2\ell/d\lambda^2 = -\sum X_i / \lambda^2 &lt; 0</annotation></semantics></math> confirma que é um máximo.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Seja <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mi>i</mi></msub><mover><mo>∼</mo><mtext mathvariant="normal">iid</mtext></mover><mtext mathvariant="normal">Exp</mtext><mo stretchy="false" form="prefix">(</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">X_i \overset{\text{iid}}{\sim} \text{Exp}(\theta)</annotation></semantics></math> com função de densidade <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>;</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>θ</mi><msup><mi>e</mi><mrow><mi>−</mi><mi>θ</mi><mi>x</mi></mrow></msup></mrow><annotation encoding="application/x-tex">f(x;\theta) = \theta e^{-\theta x}</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x &gt; 0</annotation></semantics></math>. A log-verossimilhança é <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℓ</mi><mo stretchy="false" form="prefix">(</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>n</mi><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mi>θ</mi><mo>−</mo><mi>θ</mi><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\ell(\theta) = n\log\theta - \theta\sum X_i</annotation></semantics></math>, e o EMV é <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover><mi>θ</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>V</mi></mrow></msub><mo>=</mo><mi>n</mi><mi>/</mi><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\hat{\theta}_{MV} = n/\sum X_i</annotation></semantics></math>. Com <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>50</mn></mrow><annotation encoding="application/x-tex">n = 50</annotation></semantics></math> e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><msub><mi>X</mi><mi>i</mi></msub><mo>=</mo><mn>16.67</mn></mrow><annotation encoding="application/x-tex">\sum_{i=1}^n X_i = 16.67</annotation></semantics></math>, calcule <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mover><mi>θ</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>V</mi></mrow></msub><annotation encoding="application/x-tex">\hat{\theta}_{MV}</annotation></semantics></math>.</p>
+<br/>
+<ol type="a">
+<li>
+0.3334
+</li>
+<li>
+8.9964
+</li>
+<li>
+2.9994
+</li>
+<li>
+3.0194
+</li>
+<li>
+0.8334
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>A equação de verossimilhança é:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi>d</mi><mi>ℓ</mi></mrow><mrow><mi>d</mi><mi>θ</mi></mrow></mfrac><mo>=</mo><mfrac><mi>n</mi><mi>θ</mi></mfrac><mo>−</mo><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub><mo>=</mo><mn>0</mn><mo>⟹</mo><msub><mover><mi>θ</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>V</mi></mrow></msub><mo>=</mo><mfrac><mi>n</mi><mrow><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub></mrow></mfrac><mo>=</mo><mfrac><mn>50</mn><mn>16.67</mn></mfrac><mo>=</mo><mn>2.9994</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">\frac{d\ell}{d\theta} = \frac{n}{\theta} - \sum X_i = 0 \implies \hat{\theta}_{MV} = \frac{n}{\sum X_i} = \frac{50}{16.67} = 2.9994.</annotation></semantics></math>
+Note que <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover><mi>θ</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>V</mi></mrow></msub><mo>=</mo><mn>1</mn><mi>/</mi><mover><mi>X</mi><mo accent="true">‾</mo></mover></mrow><annotation encoding="application/x-tex">\hat{\theta}_{MV} = 1/\bar{X}</annotation></semantics></math>, e que <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub><mi>/</mi><mi>n</mi><mo>=</mo><mover><mi>X</mi><mo accent="true">‾</mo></mover><mo>=</mo><mn>1</mn><mi>/</mi><msub><mover><mi>θ</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>V</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\sum X_i / n = \bar{X} = 1/\hat{\theta}_{MV}</annotation></semantics></math> é o estimador de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>1</mn><mi>/</mi><mi>θ</mi></mrow><annotation encoding="application/x-tex">E(X) = 1/\theta</annotation></semantics></math>, não de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>θ</mi><annotation encoding="application/x-tex">\theta</annotation></semantics></math>.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Seja <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mi>i</mi></msub><mover><mo>∼</mo><mtext mathvariant="normal">iid</mtext></mover><mtext mathvariant="normal">Bernoulli</mtext><mo stretchy="false" form="prefix">(</mo><mi>p</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">X_i \overset{\text{iid}}{\sim} \text{Bernoulli}(p)</annotation></semantics></math>. A log-verossimilhança é <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℓ</mi><mo stretchy="false" form="prefix">(</mo><mi>p</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mi>p</mi><mo>+</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo>−</mo><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>p</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\ell(p) = \left(\sum X_i\right)\log p + \left(n - \sum X_i\right)\log(1-p)</annotation></semantics></math>. O EMV é <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover><mi>p</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>V</mi></mrow></msub><mo>=</mo><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub><mi>/</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">\hat{p}_{MV} = \sum X_i / n</annotation></semantics></math>. Com <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">n = 100</annotation></semantics></math> e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><msub><mi>X</mi><mi>i</mi></msub><mo>=</mo><mn>33</mn></mrow><annotation encoding="application/x-tex">\sum_{i=1}^n X_i = 33</annotation></semantics></math>, calcule <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mover><mi>p</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>V</mi></mrow></msub><annotation encoding="application/x-tex">\hat{p}_{MV}</annotation></semantics></math>.</p>
+<br/>
+<ol type="a">
+<li>
+0.3301
+</li>
+<li>
+0.33
+</li>
+<li>
+0.2211
+</li>
+<li>
+0.3333
+</li>
+<li>
+0.67
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>A equação de verossimilhança é:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi>d</mi><mi>ℓ</mi></mrow><mrow><mi>d</mi><mi>p</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub></mrow><mi>p</mi></mfrac><mo>−</mo><mfrac><mrow><mi>n</mi><mo>−</mo><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub></mrow><mrow><mn>1</mn><mo>−</mo><mi>p</mi></mrow></mfrac><mo>=</mo><mn>0</mn><mo>⟹</mo><msub><mover><mi>p</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>V</mi></mrow></msub><mo>=</mo><mfrac><mrow><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub></mrow><mi>n</mi></mfrac><mo>=</mo><mfrac><mn>33</mn><mn>100</mn></mfrac><mo>=</mo><mn>0.33</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">\frac{d\ell}{dp} = \frac{\sum X_i}{p} - \frac{n - \sum X_i}{1-p} = 0 \implies \hat{p}_{MV} = \frac{\sum X_i}{n} = \frac{33}{100} = 0.33.</annotation></semantics></math>
+A alternativa <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mi>u</mi><mi>m</mi><mi>_</mi><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo>+</mo><mn>2</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(sum\_x + 1)/(n + 2)</annotation></semantics></math> é o estimador de Bayes com prior <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">Beta</mtext><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\text{Beta}(1,1)</annotation></semantics></math>, e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>−</mo><mover><mi>p</mi><mo accent="true">̂</mo></mover></mrow><annotation encoding="application/x-tex">1 - \hat{p}</annotation></semantics></math> seria o EMV de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>1</mn><mo>−</mo><mi>p</mi></mrow><annotation encoding="application/x-tex">q = 1 - p</annotation></semantics></math>, não de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Seja <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mi>i</mi></msub><mover><mo>∼</mo><mtext mathvariant="normal">iid</mtext></mover><mi>U</mi><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">X_i \overset{\text{iid}}{\sim} U(0, \theta)</annotation></semantics></math> com <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>;</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>1</mn><mi>/</mi><mi>θ</mi></mrow><annotation encoding="application/x-tex">f(x;\theta) = 1/\theta</annotation></semantics></math> para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>x</mi><mo>≤</mo><mi>θ</mi></mrow><annotation encoding="application/x-tex">0 \leq x \leq \theta</annotation></semantics></math>. A verossimilhança é <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo stretchy="false" form="prefix">(</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msup><mi>θ</mi><mrow><mi>−</mi><mi>n</mi></mrow></msup></mrow><annotation encoding="application/x-tex">L(\theta) = \theta^{-n}</annotation></semantics></math> para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi><mo>≥</mo><msub><mi>x</mi><mrow><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo stretchy="false" form="postfix">)</mo></mrow></msub><mo>=</mo><mrow><mi mathvariant="normal">max</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">{</mo><msub><mi>X</mi><mi>i</mi></msub><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\theta \geq x_{(n)} = \max\{X_i\}</annotation></semantics></math>, e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo stretchy="false" form="prefix">(</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">L(\theta) = 0</annotation></semantics></math> para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi><mo>&lt;</mo><msub><mi>x</mi><mrow><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo stretchy="false" form="postfix">)</mo></mrow></msub></mrow><annotation encoding="application/x-tex">\theta &lt; x_{(n)}</annotation></semantics></math>. Como <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math> é decrescente em <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>θ</mi><annotation encoding="application/x-tex">\theta</annotation></semantics></math>, ela é maximizada pelo menor valor compatível: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover><mi>θ</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>V</mi></mrow></msub><mo>=</mo><msub><mi>X</mi><mrow><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo stretchy="false" form="postfix">)</mo></mrow></msub></mrow><annotation encoding="application/x-tex">\hat{\theta}_{MV} = X_{(n)}</annotation></semantics></math>. Com <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>25</mn></mrow><annotation encoding="application/x-tex">n = 25</annotation></semantics></math> e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mrow><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo stretchy="false" form="postfix">)</mo></mrow></msub><mo>=</mo><mn>4.9159</mn></mrow><annotation encoding="application/x-tex">X_{(n)} = 4.9159</annotation></semantics></math>, qual é o EMV de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>θ</mi><annotation encoding="application/x-tex">\theta</annotation></semantics></math>?</p>
+<br/>
+<ol type="a">
+<li>
+4.9159
+</li>
+<li>
+5.1125
+</li>
+<li>
+5.1207
+</li>
+<li>
+4.9559
+</li>
+<li>
+0.3933
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>A verossimilhança <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo stretchy="false" form="prefix">(</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msup><mi>θ</mi><mrow><mi>−</mi><mi>n</mi></mrow></msup><mo>⋅</mo><mn>𝟏</mn><mo stretchy="false" form="prefix">(</mo><mi>θ</mi><mo>≥</mo><msub><mi>x</mi><mrow><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo stretchy="false" form="postfix">)</mo></mrow></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">L(\theta) = \theta^{-n} \cdot \mathbf{1}(\theta \geq x_{(n)})</annotation></semantics></math> é estritamente decrescente em <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>θ</mi><annotation encoding="application/x-tex">\theta</annotation></semantics></math> para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi><mo>≥</mo><msub><mi>x</mi><mrow><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo stretchy="false" form="postfix">)</mo></mrow></msub></mrow><annotation encoding="application/x-tex">\theta \geq x_{(n)}</annotation></semantics></math>. Portanto, o máximo ocorre no ponto de fronteira <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover><mi>θ</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>V</mi></mrow></msub><mo>=</mo><msub><mi>x</mi><mrow><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo stretchy="false" form="postfix">)</mo></mrow></msub><mo>=</mo><mn>4.9159</mn></mrow><annotation encoding="application/x-tex">\hat{\theta}_{MV} = x_{(n)} = 4.9159</annotation></semantics></math>. Note que <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mover><mi>θ</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>V</mi></mrow></msub><annotation encoding="application/x-tex">\hat{\theta}_{MV}</annotation></semantics></math> é viesado: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>X</mi><mrow><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo stretchy="false" form="postfix">)</mo></mrow></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><mi>n</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></mfrac><mi>θ</mi><mo>&lt;</mo><mi>θ</mi></mrow><annotation encoding="application/x-tex">E(X_{(n)}) = \frac{n}{n+1}\theta &lt; \theta</annotation></semantics></math>. O estimador não-viesado seria <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mi>n</mi></mfrac><msub><mi>X</mi><mrow><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo stretchy="false" form="postfix">)</mo></mrow></msub></mrow><annotation encoding="application/x-tex">\frac{n+1}{n}X_{(n)}</annotation></semantics></math>.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Qual propriedade do EMV é enunciada por: “Se <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>θ</mi><mo accent="true">̂</mo></mover><annotation encoding="application/x-tex">\hat{\theta}</annotation></semantics></math> é o EMV de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>θ</mi><annotation encoding="application/x-tex">\theta</annotation></semantics></math>, então <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mover><mi>θ</mi><mo accent="true">̂</mo></mover><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">g(\hat{\theta})</annotation></semantics></math> é o EMV de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">g(\theta)</annotation></semantics></math>”?</p>
+<br/>
+<ol type="a">
+<li>
+Propriedade de invariância (ou equivariância) do EMV: se <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>θ</mi><mo accent="true">̂</mo></mover><annotation encoding="application/x-tex">\hat{\theta}</annotation></semantics></math> é o EMV de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>θ</mi><annotation encoding="application/x-tex">\theta</annotation></semantics></math>, então <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mover><mi>θ</mi><mo accent="true">̂</mo></mover><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">g(\hat{\theta})</annotation></semantics></math> é o EMV de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">g(\theta)</annotation></semantics></math>, para qualquer função <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>g</mi><annotation encoding="application/x-tex">g</annotation></semantics></math>.
+</li>
+<li>
+Suficiência: o EMV é sempre função de estatísticas suficientes para o parâmetro.
+</li>
+<li>
+Não-viesamento: o EMV é não-viesado para qualquer transformação <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">g(\theta)</annotation></semantics></math>.
+</li>
+<li>
+Consistência: o EMV converge em probabilidade para o verdadeiro parâmetro à medida que <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>→</mo><mi>∞</mi></mrow><annotation encoding="application/x-tex">n \to \infty</annotation></semantics></math>.
+</li>
+<li>
+Eficiência assintótica: o EMV atinge o limite de Cramér-Rao assintoticamente.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>A propriedade descrita é a invariância (ou equivariância) do EMV. Formalmente: se <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>θ</mi><mo accent="true">̂</mo></mover><annotation encoding="application/x-tex">\hat{\theta}</annotation></semantics></math> maximiza <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo stretchy="false" form="prefix">(</mo><mi>θ</mi><mo>;</mo><mi>𝐱</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">L(\theta; \mathbf{x})</annotation></semantics></math> e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>g</mi><annotation encoding="application/x-tex">g</annotation></semantics></math> é uma função (não necessariamente bijetora), então o EMV de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">g(\theta)</annotation></semantics></math> é <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mover><mi>θ</mi><mo accent="true">̂</mo></mover><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">g(\hat{\theta})</annotation></semantics></math>. Por exemplo, se <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mover><mi>σ</mi><mo accent="true">̂</mo></mover><mn>2</mn></msup><annotation encoding="application/x-tex">\hat{\sigma}^2</annotation></semantics></math> é o EMV de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>σ</mi><mn>2</mn></msup><annotation encoding="application/x-tex">\sigma^2</annotation></semantics></math>, então <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>σ</mi><mo accent="true">̂</mo></mover><mo>=</mo><msqrt><msup><mover><mi>σ</mi><mo accent="true">̂</mo></mover><mn>2</mn></msup></msqrt></mrow><annotation encoding="application/x-tex">\hat{\sigma} = \sqrt{\hat{\sigma}^2}</annotation></semantics></math> é o EMV de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>σ</mi><annotation encoding="application/x-tex">\sigma</annotation></semantics></math>. As demais propriedades listadas (consistência, eficiência assintótica, suficiência) são propriedades reais do EMV sob condições de regularidade, mas não descrevem a invariância.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Seja <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mi>i</mi></msub><mover><mo>∼</mo><mtext mathvariant="normal">iid</mtext></mover><mi>N</mi><mo stretchy="false" form="prefix">(</mo><mi>μ</mi><mo>,</mo><msup><mi>σ</mi><mn>2</mn></msup><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">X_i \overset{\text{iid}}{\sim} N(\mu, \sigma^2)</annotation></semantics></math> com ambos os parâmetros desconhecidos. Com <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>36</mn></mrow><annotation encoding="application/x-tex">n = 36</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>X</mi><mo accent="true">‾</mo></mover><mo>=</mo><mn>7.9878</mn></mrow><annotation encoding="application/x-tex">\bar{X} = 7.9878</annotation></semantics></math> e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><msubsup><mi>X</mi><mi>i</mi><mn>2</mn></msubsup><mo>=</mo><mn>2627.1</mn></mrow><annotation encoding="application/x-tex">\sum_{i=1}^n X_i^2 = 2627.1</annotation></semantics></math>. O EMV de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>σ</mi><mn>2</mn></msup><annotation encoding="application/x-tex">\sigma^2</annotation></semantics></math> é <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mover><mi>σ</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>V</mi></mrow><mn>2</mn></msubsup><mo>=</mo><mfrac><mn>1</mn><mi>n</mi></mfrac><mo>∑</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>X</mi><mi>i</mi></msub><mo>−</mo><mover><mi>X</mi><mo accent="true">‾</mo></mover><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup><mo>=</mo><mfrac><mrow><mo>∑</mo><msubsup><mi>X</mi><mi>i</mi><mn>2</mn></msubsup></mrow><mi>n</mi></mfrac><mo>−</mo><msup><mover><mi>X</mi><mo accent="true">‾</mo></mover><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\hat{\sigma}^2_{MV} = \frac{1}{n}\sum(X_i - \bar{X})^2 = \frac{\sum X_i^2}{n} - \bar{X}^2</annotation></semantics></math>. Calcule <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mover><mi>σ</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>V</mi></mrow><mn>2</mn></msubsup><annotation encoding="application/x-tex">\hat{\sigma}^2_{MV}</annotation></semantics></math>.</p>
+<br/>
+<ol type="a">
+<li>
+9.1701
+</li>
+<li>
+72.975
+</li>
+<li>
+9.4321
+</li>
+<li>
+11.2551
+</li>
+<li>
+9.1978
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Usando a identidade <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>X</mi><mi>i</mi></msub><mo>−</mo><mover><mi>X</mi><mo accent="true">‾</mo></mover><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup><mo>=</mo><mo>∑</mo><msubsup><mi>X</mi><mi>i</mi><mn>2</mn></msubsup><mo>−</mo><mi>n</mi><msup><mover><mi>X</mi><mo accent="true">‾</mo></mover><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\sum(X_i - \bar{X})^2 = \sum X_i^2 - n\bar{X}^2</annotation></semantics></math>:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mover><mi>σ</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>V</mi></mrow><mn>2</mn></msubsup><mo>=</mo><mfrac><mrow><mo>∑</mo><msubsup><mi>X</mi><mi>i</mi><mn>2</mn></msubsup></mrow><mi>n</mi></mfrac><mo>−</mo><msup><mover><mi>X</mi><mo accent="true">‾</mo></mover><mn>2</mn></msup><mo>=</mo><mfrac><mn>2627.1</mn><mn>36</mn></mfrac><mo>−</mo><mo stretchy="false" form="prefix">(</mo><mn>7.9878</mn><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup><mo>=</mo><mn>72.975</mn><mo>−</mo><mn>63.8049</mn><mo>=</mo><mn>9.1701</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">\hat{\sigma}^2_{MV} = \frac{\sum X_i^2}{n} - \bar{X}^2 = \frac{2627.1}{36} - (7.9878)^2 = 72.975 - 63.8049 = 9.1701.</annotation></semantics></math>
+O divisor do EMV é <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math> (não <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n-1</annotation></semantics></math>): este estimador é viesado, com <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo stretchy="false" form="prefix">(</mo><msubsup><mover><mi>σ</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>V</mi></mrow><mn>2</mn></msubsup><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><mi>n</mi></mfrac><msup><mi>σ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">E(\hat{\sigma}^2_{MV}) = \frac{n-1}{n}\sigma^2</annotation></semantics></math>.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>O EMV de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>σ</mi><mn>2</mn></msup><annotation encoding="application/x-tex">\sigma^2</annotation></semantics></math> na distribuição Normal é <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mover><mi>σ</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>V</mi></mrow><mn>2</mn></msubsup><mo>=</mo><mfrac><mn>1</mn><mi>n</mi></mfrac><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><mo stretchy="false" form="prefix">(</mo><msub><mi>X</mi><mi>i</mi></msub><mo>−</mo><mover><mi>X</mi><mo accent="true">‾</mo></mover><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\hat{\sigma}^2_{MV} = \frac{1}{n}\sum_{i=1}^n (X_i - \bar{X})^2</annotation></semantics></math>. Para uma amostra de tamanho <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>50</mn></mrow><annotation encoding="application/x-tex">n = 50</annotation></semantics></math>, qual é o vício deste estimador?</p>
+<br/>
+<ol type="a">
+<li>
+O EMV de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>σ</mi><mn>2</mn></msup><annotation encoding="application/x-tex">\sigma^2</annotation></semantics></math> é viesado apenas para amostras pequenas, sendo não-viesado para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>≥</mo><mn>30</mn></mrow><annotation encoding="application/x-tex">n \geq 30</annotation></semantics></math>.
+</li>
+<li>
+O EMV de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>σ</mi><mn>2</mn></msup><annotation encoding="application/x-tex">\sigma^2</annotation></semantics></math> é não-viesado, pois o método da máxima verossimilhança sempre produz estimadores não-viesados.
+</li>
+<li>
+O vício é <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><msup><mi>σ</mi><mn>2</mn></msup><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">-\sigma^2/(n-1)</annotation></semantics></math>, pois o denominador correto seria <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n-1</annotation></semantics></math> para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>50</mn></mrow><annotation encoding="application/x-tex">n = 50</annotation></semantics></math>.
+</li>
+<li>
+O vício é <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><msup><mi>σ</mi><mn>2</mn></msup><mi>/</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">+\sigma^2/n</annotation></semantics></math>, pois o EMV tende a superestimar a variância populacional.
+</li>
+<li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo stretchy="false" form="prefix">(</mo><msubsup><mover><mi>σ</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>V</mi></mrow><mn>2</mn></msubsup><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><mi>n</mi></mfrac><msup><mi>σ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">E(\hat{\sigma}^2_{MV}) = \frac{n-1}{n}\sigma^2</annotation></semantics></math>, portanto o vício é <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo stretchy="false" form="prefix">(</mo><msubsup><mover><mi>σ</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>V</mi></mrow><mn>2</mn></msubsup><mo stretchy="false" form="postfix">)</mo><mo>−</mo><msup><mi>σ</mi><mn>2</mn></msup><mo>=</mo><mi>−</mi><mfrac><msup><mi>σ</mi><mn>2</mn></msup><mi>n</mi></mfrac></mrow><annotation encoding="application/x-tex">E(\hat{\sigma}^2_{MV}) - \sigma^2 = -\frac{\sigma^2}{n}</annotation></semantics></math>. Para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>50</mn></mrow><annotation encoding="application/x-tex">n = 50</annotation></semantics></math>, o vício é <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><msup><mi>σ</mi><mn>2</mn></msup><mi>/</mi><mn>50</mn></mrow><annotation encoding="application/x-tex">-\sigma^2/50</annotation></semantics></math>.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Sabe-se que <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><msup><mi>S</mi><mn>2</mn></msup></mrow><msup><mi>σ</mi><mn>2</mn></msup></mfrac><mo>∼</mo><msubsup><mi>χ</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">\frac{(n-1)S^2}{\sigma^2} \sim \chi^2_{n-1}</annotation></semantics></math>, onde <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>S</mi><mn>2</mn></msup><mo>=</mo><mfrac><mn>1</mn><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></mfrac><mo>∑</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>X</mi><mi>i</mi></msub><mo>−</mo><mover><mi>X</mi><mo accent="true">‾</mo></mover><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">S^2 = \frac{1}{n-1}\sum(X_i-\bar{X})^2</annotation></semantics></math>. Portanto <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>S</mi><mn>2</mn></msup><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msup><mi>σ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">E(S^2) = \sigma^2</annotation></semantics></math>. Como <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mover><mi>σ</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>V</mi></mrow><mn>2</mn></msubsup><mo>=</mo><mfrac><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><mi>n</mi></mfrac><msup><mi>S</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\hat{\sigma}^2_{MV} = \frac{n-1}{n}S^2</annotation></semantics></math>, temos:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo stretchy="false" form="prefix">(</mo><msubsup><mover><mi>σ</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>V</mi></mrow><mn>2</mn></msubsup><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><mi>n</mi></mfrac><msup><mi>σ</mi><mn>2</mn></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">E(\hat{\sigma}^2_{MV}) = \frac{n-1}{n}\sigma^2.</annotation></semantics></math>
+O vício é <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo stretchy="false" form="prefix">(</mo><msubsup><mover><mi>σ</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>V</mi></mrow><mn>2</mn></msubsup><mo stretchy="false" form="postfix">)</mo><mo>−</mo><msup><mi>σ</mi><mn>2</mn></msup><mo>=</mo><mi>−</mi><mfrac><msup><mi>σ</mi><mn>2</mn></msup><mi>n</mi></mfrac></mrow><annotation encoding="application/x-tex">E(\hat{\sigma}^2_{MV}) - \sigma^2 = -\frac{\sigma^2}{n}</annotation></semantics></math>, que é negativo (subestimação). Para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>50</mn></mrow><annotation encoding="application/x-tex">n = 50</annotation></semantics></math>, o vício é <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><msup><mi>σ</mi><mn>2</mn></msup><mi>/</mi><mn>50</mn></mrow><annotation encoding="application/x-tex">-\sigma^2/50</annotation></semantics></math>. O EMV é assintoticamente não-viesado (o vício <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\to 0</annotation></semantics></math> quando <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>→</mo><mi>∞</mi></mrow><annotation encoding="application/x-tex">n \to \infty</annotation></semantics></math>), mas é viesado para todo <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math> finito.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mi>i</mi></msub><mover><mo>∼</mo><mtext mathvariant="normal">iid</mtext></mover><mtext mathvariant="normal">Poisson</mtext><mo stretchy="false" form="prefix">(</mo><mi>λ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">X_i \overset{\text{iid}}{\sim} \text{Poisson}(\lambda)</annotation></semantics></math>, o score (derivada da log-verossimilhança) é <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi>d</mi><mi>ℓ</mi></mrow><mrow><mi>d</mi><mi>λ</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub></mrow><mi>λ</mi></mfrac><mo>−</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">\frac{d\ell}{d\lambda} = \frac{\sum X_i}{\lambda} - n</annotation></semantics></math>. Com <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>25</mn></mrow><annotation encoding="application/x-tex">n = 25</annotation></semantics></math> e <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><msub><mi>X</mi><mi>i</mi></msub><mo>=</mo><mn>99</mn></mrow><annotation encoding="application/x-tex">\sum_{i=1}^n X_i = 99</annotation></semantics></math>, qual das alternativas descreve corretamente a equação de verossimilhança e sua solução?</p>
+<br/>
+<ol type="a">
+<li>
+A log-verossimilhança da Poisson é maximizada em <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover><mi>λ</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>V</mi></mrow></msub><mo>=</mo><mi>n</mi><mi>/</mi><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub><mo>=</mo><mn>0.2525</mn></mrow><annotation encoding="application/x-tex">\hat{\lambda}_{MV} = n/\sum X_i = 0.2525</annotation></semantics></math>.
+</li>
+<li>
+A equação de verossimilhança resulta em <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover><mi>λ</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>V</mi></mrow></msub><mo>=</mo><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub><mo>=</mo><mn>99</mn></mrow><annotation encoding="application/x-tex">\hat{\lambda}_{MV} = \sum X_i = 99</annotation></semantics></math>.
+</li>
+<li>
+A equação de verossimilhança <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi>d</mi><mi>ℓ</mi></mrow><mrow><mi>d</mi><mi>λ</mi></mrow></mfrac><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\frac{d\ell}{d\lambda} = 0</annotation></semantics></math> resulta em <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover><mi>λ</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>V</mi></mrow></msub><mo>=</mo><mover><mi>X</mi><mo accent="true">‾</mo></mover><mo>=</mo><mn>3.96</mn></mrow><annotation encoding="application/x-tex">\hat{\lambda}_{MV} = \bar{X} = 3.96</annotation></semantics></math>.
+</li>
+<li>
+O score para Poisson é <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>ℓ</mi><mo>′</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>λ</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub><mo>⋅</mo><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mi>λ</mi><mo>−</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">\ell&#39;(\lambda) = \sum X_i \cdot \log\lambda - n</annotation></semantics></math>, e a equação de verossimilhança não possui solução fechada.
+</li>
+<li>
+A equação de verossimilhança é resolvida por <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover><mi>λ</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>V</mi></mrow></msub><mo>=</mo><mn>1</mn><mi>/</mi><mover><mi>X</mi><mo accent="true">‾</mo></mover><mo>=</mo><mn>0.2525</mn></mrow><annotation encoding="application/x-tex">\hat{\lambda}_{MV} = 1/\bar{X} = 0.2525</annotation></semantics></math>.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>A log-verossimilhança para <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mi>i</mi></msub><mo>∼</mo><mtext mathvariant="normal">Poisson</mtext><mo stretchy="false" form="prefix">(</mo><mi>λ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">X_i \sim \text{Poisson}(\lambda)</annotation></semantics></math> é:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℓ</mi><mo stretchy="false" form="prefix">(</mo><mi>λ</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msub><mi>X</mi><mi>i</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mi>λ</mi><mo>−</mo><mi>n</mi><mi>λ</mi><mo>+</mo><mtext mathvariant="normal">const</mtext><mi>.</mi></mrow><annotation encoding="application/x-tex">\ell(\lambda) = \left(\sum_{i=1}^n X_i\right)\log\lambda - n\lambda + \text{const}.</annotation></semantics></math>
+O score é <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>ℓ</mi><mo>′</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>λ</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub><mi>/</mi><mi>λ</mi><mo>−</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">\ell&#39;(\lambda) = \sum X_i/\lambda - n</annotation></semantics></math>. Igualando a zero:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub></mrow><mi>λ</mi></mfrac><mo>−</mo><mi>n</mi><mo>=</mo><mn>0</mn><mo>⟹</mo><msub><mover><mi>λ</mi><mo accent="true">̂</mo></mover><mrow><mi>M</mi><mi>V</mi></mrow></msub><mo>=</mo><mfrac><mrow><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub></mrow><mi>n</mi></mfrac><mo>=</mo><mfrac><mn>99</mn><mn>25</mn></mfrac><mo>=</mo><mn>3.96</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">\frac{\sum X_i}{\lambda} - n = 0 \implies \hat{\lambda}_{MV} = \frac{\sum X_i}{n} = \frac{99}{25} = 3.96.</annotation></semantics></math>
+A segunda derivada <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>ℓ</mi><mo>″</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>λ</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>−</mi><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub><mi>/</mi><msup><mi>λ</mi><mn>2</mn></msup><mo>&lt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\ell&#39;&#39;(\lambda) = -\sum X_i/\lambda^2 &lt; 0</annotation></semantics></math> confirma que é máximo. O score correto é <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub><mi>/</mi><mi>λ</mi><mo>−</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">\sum X_i/\lambda - n</annotation></semantics></math>, não <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msub><mi>X</mi><mi>i</mi></msub><mo>⋅</mo><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mi>λ</mi><mo>−</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">\sum X_i \cdot \log\lambda - n</annotation></semantics></math>.</p>
+<br/>
+</li>
+</ol>
+
+</body>
+</html>

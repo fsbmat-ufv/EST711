@@ -1,0 +1,46 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+all_choices <- c(
+  "$W_n = n(\\boldsymbol{A}\\hat{\\boldsymbol{\\theta}} - \\mathbf{b})^\\top [\\boldsymbol{A}\\hat{I}^{-1}(\\hat{\\boldsymbol{\\theta}})\\boldsymbol{A}^\\top]^{-1} (\\boldsymbol{A}\\hat{\\boldsymbol{\\theta}} - \\mathbf{b}) \\xrightarrow{D} \\chi^2_r$.",
+  "$W_n = n\\|\\boldsymbol{A}\\hat{\\boldsymbol{\\theta}} - \\mathbf{b}\\|^2 \\xrightarrow{D} \\chi^2_r$, usando apenas a norma euclidiana ao quadrado.",
+  "$W_n = n(\\boldsymbol{A}\\hat{\\boldsymbol{\\theta}} - \\mathbf{b})^\\top \\hat{I}(\\hat{\\boldsymbol{\\theta}}) (\\boldsymbol{A}\\hat{\\boldsymbol{\\theta}} - \\mathbf{b}) \\xrightarrow{D} \\chi^2_r$, usando $\\hat{I}$ em vez de $\\hat{I}^{-1}$.",
+  "$W_n = \\sqrt{n}(\\hat{\\boldsymbol{\\theta}} - \\boldsymbol{\\theta}_0)^\\top \\hat{I}(\\hat{\\boldsymbol{\\theta}}) \\sqrt{n}(\\hat{\\boldsymbol{\\theta}} - \\boldsymbol{\\theta}_0) \\xrightarrow{D} \\chi^2_k$, sem incorporar a restrição linear $\\boldsymbol{A}$.",
+  "$W_n = n(\\boldsymbol{A}\\hat{\\boldsymbol{\\theta}} - \\mathbf{b})^\\top (\\boldsymbol{A}\\boldsymbol{A}^\\top)^{-1} (\\boldsymbol{A}\\hat{\\boldsymbol{\\theta}} - \\mathbf{b}) \\xrightarrow{D} \\chi^2_r$, ignorando a informação de Fisher."
+)
+
+perm <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+O **Teste de Wald Multivariado** testa $H_0: \boldsymbol{A}\boldsymbol{\theta} = \mathbf{b}$, onde $\boldsymbol{A}$ é uma matriz $r \times k$ de posto pleno por linhas. Qual das alternativas abaixo apresenta corretamente a estatística de Wald e sua distribuição assintótica sob $H_0$?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+A estatística de Wald para $H_0: \boldsymbol{A}\boldsymbol{\theta} = \mathbf{b}$ é:
+$$W_n = n(\boldsymbol{A}\hat{\boldsymbol{\theta}} - \mathbf{b})^\top \left[\boldsymbol{A}\,\hat{I}^{-1}(\hat{\boldsymbol{\theta}})\,\boldsymbol{A}^\top\right]^{-1} (\boldsymbol{A}\hat{\boldsymbol{\theta}} - \mathbf{b}) \xrightarrow{D} \chi^2_r.$$
+
+**Intuição:** Pelo Método Delta, $\sqrt{n}(\boldsymbol{A}\hat{\boldsymbol{\theta}} - \mathbf{b}) \xrightarrow{D} N_r(\mathbf{0}, \boldsymbol{A} I^{-1} \boldsymbol{A}^\top)$ sob $H_0$. A forma quadrática com a inversa dessa matriz de covariâncias produz uma $\chi^2_r$.
+
+**Erros comuns:**
+- Usar $\hat{I}$ sem inverter: a ponderação seria pela informação (não pela variância), produzindo resultado incorreto.
+- Ignorar $\boldsymbol{A}$ na normalização: a estatística não captura a estrutura da hipótese linear.
+
+Meta-information
+================
+exname: Cap7S2Q2_teste_wald_multi
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

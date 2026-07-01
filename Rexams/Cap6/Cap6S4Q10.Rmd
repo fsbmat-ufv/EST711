@@ -1,0 +1,40 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Choices textuais
+all_choices <- c(
+  "Hipoteses unilaterais ($H_0:\\theta \\leq \\theta_0$ vs. $H_1:\\theta > \\theta_0$) quando a familia tem MLR em alguma estatistica $T$. O resultado vale mesmo que $H_0$ seja composta.",
+  "Quaisquer hipoteses (simples ou compostas), bilaterais ou unilaterais, desde que a familia tenha MLR.",
+  "Apenas hipoteses simples ($H_0:\\theta=\\theta_0$ vs. $H_1:\\theta=\\theta_1$) com MLR (Lema de NP).",
+  "Hipoteses unilaterais para qualquer familia parametrica, independente de possuir MLR.",
+  "Hipoteses bilaterais quando a familia exponencial tem dois parametros naturais."
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+Para quais classes de problemas o Teorema de Karlin-Rubin garante a existencia de um teste UMP?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+O Teorema de Karlin-Rubin garante UMP para hipoteses UNILATERAIS (compostas ou simples) quando a familia tem MLR. O ponto crucial e que $H_0:\theta \leq \theta_0$ e uma hipotese composta, e ainda assim o teste UMP existe. Para hipoteses bilaterais, o resultado nao se aplica diretamente. A exigencia de MLR e essencial (opcao 4 esta errada).
+
+Meta-information
+================
+exname: Cap6S4Q10_KR_generalizacao
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

@@ -1,0 +1,42 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Choices textuais
+all_choices <- c(
+  "Para todo $\\theta_1 > \\theta_2$, a razao $f(x;\\theta_1)/f(x;\\theta_2)$ e funcao nao-decrescente de $T(x)$.",
+  "A log-verossimilhanca $\\ell(\\theta;x)$ e crescente em $\\theta$ para todo $x$ fixo.",
+  "O EMV $\\hat{\\theta}(x)$ e crescente em $T(x)$ para todo $x$.",
+  "A funcao de distribuicao $F(x;\\theta)$ e monotonica em $\\theta$ para todo $x$ fixo.",
+  "A razao $f(x;\\theta_1)/f(x;\\theta_2)$ e maior que 1 para todo $x$, quando $\\theta_1 > \\theta_2$."
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+A familia $\{f(x;\theta):\theta \in \Omega\}$ tem razao de verossimilhanca monotonica (MLR) CRESCENTE em $T(x)$ se:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+A definicao formal de MLR crescente em $T(x)$: para todo $\theta_1 > \theta_2$, a razao $f(x;\theta_1)/f(x;\theta_2)$ e funcao nao-decrescente de $T(x)$. Isso garante que valores maiores de $T$ evidenciam $\theta$ maior, permitindo o Teorema de Karlin-Rubin.
+
+As demais opcoes descrevem propriedades diferentes: monotonicidade da log-verossimilhanca em $\theta$; monotonicidade do EMV; monotonicidade da FDA (que seria monotonicidade estocastica); ou magnitude absoluta da razao.
+
+Meta-information
+================
+exname: Cap6S4Q1_def_MLR
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

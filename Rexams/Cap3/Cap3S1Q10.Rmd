@@ -1,0 +1,43 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Choices textuais
+all_choices <- c(
+  "Porque $E(X) = \\lambda$, logo o EMM é $\\hat{\\lambda}_{MM} = \\bar{X}$. A log-verossimilhança $\\ell(\\lambda) = \\sum X_i \\log\\lambda - n\\lambda + \\text{const}$ também tem máximo em $\\hat{\\lambda}_{MV} = \\bar{X}$. Ambos coincidem.",
+  "Porque a distribuição de Poisson pertence à família exponencial, e nessa família os dois métodos sempre coincidem.",
+  "Porque o EMV e o EMM são sempre idênticos para distribuições com suporte em $\\{0, 1, 2, \\ldots\\}$.",
+  "Porque a Poisson é uma distribuição simétrica, o que garante a igualdade entre MM e MV.",
+  "Por coincidência particular; em geral, o MM e o MV são sempre diferentes para qualquer distribuição."
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+
+Para $X_i \overset{\text{iid}}{\sim} \text{Poisson}(\lambda)$, por que o estimador do método dos momentos (EMM) e o estimador de máxima verossimilhança (EMV) são iguais?
+
+Answerlist
+----------
+
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+
+Para $X_i \sim \text{Poisson}(\lambda)$: (i) o EMM iguala $\mu_1 = E(X) = \lambda$ a $m_1 = \bar{X}$, obtendo $\hat{\lambda}_{MM} = \bar{X}$; (ii) a log-verossimilhança é $\ell(\lambda) = (\sum X_i)\log\lambda - n\lambda + \text{const}$, e $d\ell/d\lambda = \sum X_i/\lambda - n = 0$ implica $\hat{\lambda}_{MV} = \bar{X}$. A coincidência não ocorre para todos os membros da família exponencial (por exemplo, para a Gama com dois parâmetros os dois métodos também coincidem, mas isso precisa de verificação caso a caso). O argumento correto é a derivação direta de ambos os estimadores.
+
+Meta-information
+================
+exname: Cap3S1Q10_emm_emv_poisson_coincidencia
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

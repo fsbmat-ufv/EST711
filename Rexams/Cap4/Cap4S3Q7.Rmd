@@ -1,0 +1,53 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+## Choices textuais
+all_choices <- c(
+  "$\\sum X_i$ --- pois $f(x;\\beta) = \\frac{\\beta^\\alpha}{\\Gamma(\\alpha)}x^{\\alpha-1}e^{-\\beta x}$ tem $T(x) = x$ e $c(\\beta) = -\\beta$ na forma exponencial.",
+  "$\\sum \\log X_i$ --- pois a Gama tem componente $x^{\\alpha-1}$ que introduz $\\log x$ como estatistica suficiente.",
+  "$\\sum X_i^2$ --- pois o segundo momento amostrals e necessario para estimar o parametro de escala $\\beta$.",
+  "$X_{(1)} = \\min\\{X_i\\}$ --- pois a Gama e uma distribuicao de valores positivos com minimo informativo.",
+  "$(\\sum X_i,\\, \\sum X_i^2)$ simultaneamente --- pois a Gama e biparametrica e requer duas estatisticas suficientes."
+)
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+Seja $X \sim \text{Gama}(\alpha, \beta)$ com $\alpha$ conhecido e $\beta$ desconhecido, com densidade:
+$$f(x; \beta) = \frac{\beta^\alpha}{\Gamma(\alpha)}\,x^{\alpha-1}\,e^{-\beta x}, \quad x > 0.$$
+
+Escrevendo na forma da familia exponencial com $\alpha$ fixo:
+$$f(x; \beta) = \exp\!\big\{-\beta x + \alpha\log\beta - \log\Gamma(\alpha)\big\} \cdot x^{\alpha-1}.$$
+
+Qual e a estatistica suficiente natural para $\beta$?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+Identificando com a forma exponencial $\exp\{c(\beta)T(x) - d(\beta)\}h(x)$:
+
+- $c(\beta) = -\beta$ (parametro natural $\eta = -\beta$).
+- $T(x) = x$ (funcao de $x$).
+- $d(\beta) = -\alpha\log\beta + \log\Gamma(\alpha)$ (normalizacao).
+- $h(x) = x^{\alpha-1}$ (parte dependente de $x$, mas nao de $\beta$, pois $\alpha$ e fixo).
+
+Portanto, a estatistica suficiente natural para $\beta$ e $\sum_{i=1}^n X_i$.
+
+Nota: se $\alpha$ tambem fosse desconhecido, a familia seria biparametrica com estatistica suficiente $(\sum X_i, \sum \log X_i)$.
+
+Meta-information
+================
+exname: Cap4S3Q7_Gama_familia_exponencial
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

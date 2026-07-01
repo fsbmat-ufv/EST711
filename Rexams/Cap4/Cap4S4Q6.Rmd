@@ -1,0 +1,52 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+## Parametros
+theta <- sample(c(3, 5, 8, 10), 1)
+n     <- sample(c(10, 25, 50), 1)
+x_max <- round(theta * runif(1, 0.7, 0.99), 4)
+
+## Choices textuais
+all_choices <- c(
+  "A verossimilhanca $L(\\theta) = \\theta^{-n}\\mathbf{1}(\\theta \\geq X_{(n)})$ depende da amostra apenas atraves de $X_{(n)}$.",
+  "$X_{(n)}$ e suficiente porque e o EMV de $\\theta$ para a uniforme, e todo EMV e suficiente.",
+  "$X_{(n)}$ e suficiente porque tem menor variancia entre todos os estimadores de $\\theta$.",
+  "$X_{(n)}$ e suficiente apenas assintoticamente, para $n$ grande, pois a uniforme nao pertence a familia exponencial.",
+  "$X_{(n)}$ e suficiente porque a distribuicao uniforme pertence a familia exponencial de 1 parametro."
+)
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+Para $X_i \overset{\text{iid}}{\sim} U(0, \theta)$, a verossimilhanca conjunta e:
+$$L(\theta; x_1,\ldots,x_n) = \theta^{-n}\,\mathbf{1}(\theta \geq x_{(n)}),$$
+onde $x_{(n)} = \max\{x_1, \ldots, x_n\} = `r x_max`$ e $\theta = `r theta`$ (desconhecido).
+
+Pelo Criterio de Fatoracao, $X_{(n)}$ e a estatistica suficiente para $\theta$. Por que $X_{(n)}$ e suficiente?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+A resposta correta e: a verossimilhanca $L(\theta) = \theta^{-n}\mathbf{1}(\theta \geq X_{(n)})$ depende da amostra **apenas atraves de $X_{(n)}$**.
+
+Identificando os fatores no Criterio de Neyman-Fisher:
+$$L(\theta;\mathbf{x}) = \underbrace{\theta^{-n}\,\mathbf{1}(\theta \geq x_{(n)})}_{g(x_{(n)},\,\theta)} \cdot \underbrace{1}_{h(\mathbf{x})}.$$
+
+As outras alternativas sao incorretas: nem todo EMV e suficiente (embora aqui seja); suficiencia nao implica variancia minima; a suficiencia de $X_{(n)}$ vale para qualquer $n$; a uniforme **nao** pertence a familia exponencial (suporte depende de $\theta$).
+
+Meta-information
+================
+exname: Cap4S4Q6_Xn_suficiente_Uniforme
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

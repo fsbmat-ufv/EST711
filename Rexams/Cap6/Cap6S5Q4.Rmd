@@ -1,0 +1,57 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parametros
+lambda0 <- sample(c(3, 4, 5), 1)
+n       <- sample(c(25, 36, 50), 1)
+sum_x   <- n * lambda0 + sample(-5:5, 1)
+xbar    <- round(sum_x / n, 4)
+
+## Estatistica TRV para Poisson
+## -2 log Lambda = 2 * [sum_x * log(xbar/lambda0) - n*(xbar - lambda0)]
+lrts <- round(2 * (sum_x * log(xbar / lambda0) - n * (xbar - lambda0)), 4)
+
+## Respostas
+correct <- lrts
+w1 <- round(2 * (sum_x * log(lambda0 / xbar) - n * (lambda0 - xbar)), 4)
+w2 <- round(n * (xbar - lambda0)^2 / lambda0, 4)
+w3 <- round(2 * n * (xbar - lambda0) / lambda0, 4)
+w4 <- round(sum_x * log(xbar / lambda0), 4)
+
+all_vals <- c(correct, w1, w2, w3, w4)
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+Para $X_i \overset{\text{iid}}{\sim} \text{Poisson}(\lambda)$, testando $H_0:\lambda = `r lambda0`$. O EMV e $\hat{\lambda} = \bar{X} = `r xbar`$ (com $n = `r n`$ e $\sum X_i = `r sum_x`$). A estatistica TRV e $-2\log\Lambda = 2\left[\sum X_i\log(\hat{\lambda}/\lambda_0) - n(\hat{\lambda}-\lambda_0)\right]$:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+$-2\log\Lambda = 2\left[`r sum_x` \times \log(`r xbar`/`r lambda0`) - `r n` \times (`r xbar` - `r lambda0`)\right] = 2\left[`r round(sum_x*log(xbar/lambda0),4)` - `r round(n*(xbar-lambda0),4)`\right] = `r lrts`$.
+
+A aproximacao qui-quadrado de Pearson seria $n(\bar{X}-\lambda_0)^2/\lambda_0$ (opcao 3), que difere do TRV exato.
+
+Meta-information
+================
+exname: Cap6S5Q4_TRV_Poisson
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

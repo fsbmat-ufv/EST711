@@ -1,0 +1,54 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+## Parametros (usados no enunciado para contextualizar)
+mu     <- sample(2:8, 1)
+sigma2 <- sample(c(1, 4, 9), 1)
+
+## Choices textuais
+all_choices <- c(
+  "$\\bar{X}$ tem variancia $\\sigma^2/n < \\sigma^2 = \\text{Var}(X_1)$, portanto $\\bar{X}$ e mais eficiente que $X_1$ como estimador de $\\mu$.",
+  "Ambos tem a mesma variancia, pois ambos sao nao-viesados para $\\mu$ e estimadores nao-viesados sempre tem variancias iguais.",
+  "$X_1$ e mais eficiente pois nao sofre a influencia das outras observacoes, sendo assim independente de possiveis erros de medicao.",
+  "$\\bar{X}$ e menos eficiente que $X_1$ pois a media amostral introduz vicio de ordem $1/n$ ao combinar multiplas observacoes.",
+  "A eficiencia relativa depende do tamanho amostral: para $n < 10$, $X_1$ e mais eficiente; para $n \\geq 10$, $\\bar{X}$ e mais eficiente."
+)
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+Seja $X_1, \ldots, X_n$ uma amostra aleatoria iid com media $\mu = `r mu`$ e variancia $\sigma^2 = `r sigma2`$.
+
+Considere dois estimadores de $\mu$:
+
+- $T_1 = X_1$ (primeira observacao da amostra).
+- $T_2 = \bar{X}_n = \dfrac{1}{n}\displaystyle\sum_{i=1}^n X_i$ (media amostral).
+
+Ambos sao nao-viesados para $\mu$, pois $E(X_1) = \mu$ e $E(\bar{X}_n) = \mu$. Qual afirmacao sobre a eficiencia desses estimadores e **correta**?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+As variancias sao:
+$$\text{Var}(X_1) = \sigma^2 = `r sigma2`, \qquad \text{Var}(\bar{X}_n) = \frac{\sigma^2}{n} = \frac{`r sigma2`}{n}.$$
+
+Como $\sigma^2/n < \sigma^2$ para qualquer $n > 1$, a media amostral $\bar{X}_n$ tem **sempre** variancia menor que $X_1$. Portanto, $\bar{X}_n$ e mais eficiente que $X_1$ para qualquer $n > 1$.
+
+A eficiencia relativa e $e(X_1, \bar{X}_n) = \dfrac{\sigma^2/n}{\sigma^2} = \dfrac{1}{n} < 1$, confirmando a superioridade de $\bar{X}_n$.
+
+Meta-information
+================
+exname: Cap4S1Q9_vicio_X1_estimador_mu
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

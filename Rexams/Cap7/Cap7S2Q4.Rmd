@@ -1,0 +1,49 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+all_choices <- c(
+  "Assintoticamente equivalentes sob $H_0$: todos têm distribuição $\\chi^2_r$ e são assintoticamente iguais em primeira ordem. Podem diferir em amostras finitas.",
+  "Sempre numericamente idênticos para qualquer tamanho amostral $n$, produzindo exatamente os mesmos p-valores.",
+  "O TRV é sempre mais poderoso que Wald e Score para amostras finitas, sendo a escolha ótima em qualquer situação.",
+  "O teste de Score é sempre mais conservador que o de Wald, independente do modelo ou tamanho amostral.",
+  "São equivalentes apenas quando a hipótese é simples ($r = 1$); para $r > 1$ têm distribuições asintóticas distintas."
+)
+
+perm <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+Na teoria assintótica, os três grandes testes de hipóteses — **Wald (W)**, **Razão de Verossimilhanças (TRV/LRT)** e **Score/Rao (S)** — são frequentemente utilizados para testar $H_0: \boldsymbol{\theta} \in \Omega_0$. Como se relacionam esses três testes?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+Os três testes (Wald, TRV e Score) são **assintoticamente equivalentes** em primeira ordem:
+- Todos têm distribuição $\chi^2_r$ sob $H_0$ (pelo Teorema de Wilks e análogos).
+- Diferem por termos de ordem $O_p(n^{-1})$: para amostras finitas, podem dar resultados ligeiramente diferentes.
+- Nenhum domina os outros em poder para amostras finitas em geral — a escolha depende da conveniência computacional.
+
+**Comparação prática:**
+- **Wald:** requer apenas o EMV irrestrito $\hat{\boldsymbol{\theta}}$.
+- **Score/Rao:** requer apenas estimativas sob $H_0$ (útil quando o modelo restrito é fácil).
+- **TRV:** requer o EMV tanto restrito quanto irrestrito, mas é invariante a reparametrizações.
+
+A equivalência assintótica vale para qualquer $r \geq 1$ (não apenas $r=1$).
+
+Meta-information
+================
+exname: Cap7S2Q4_equiv_tres_testes
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

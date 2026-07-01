@@ -1,0 +1,68 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parâmetros aleatórios
+mu     <- sample(2:8, 1)
+sigma2 <- sample(1:9, 1)
+n      <- sample(c(25, 36, 64, 100), 1)
+
+## Resposta correta
+correct <- sigma2
+
+## Alternativas incorretas plausíveis
+w1 <- round(sigma2 * n / (n - 1), 4)
+w2 <- round(sqrt(sigma2), 4)
+w3 <- round(sigma2 / n, 4)
+w4 <- round(sigma2 * n / (n + 1), 4)
+
+## Garantir unicidade
+w_list <- c(w1, w2, w3, w4)
+for (i in seq_along(w_list)) {
+  if (w_list[i] == correct) w_list[i] <- correct + 0.5
+}
+
+## Embaralhamento
+all_vals <- c(correct, w_list[1], w_list[2], w_list[3], w_list[4])
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+
+Seja $X_1, \ldots, X_n$ uma amostra iid com $E(X_i) = `r mu`$ e $\text{Var}(X_i) = \sigma^2 = `r sigma2`$, com $n = `r n`$. Considere a variância amostral não-viesada:
+$$S^2_n = \frac{1}{n-1}\sum_{i=1}^n (X_i - \bar{X}_n)^2$$
+
+Qual é o limite em probabilidade de $S^2_n$ quando $n \to \infty$?
+
+Answerlist
+----------
+
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+
+A variância amostral $S^2_n$ é um estimador consistente de $\sigma^2$, ou seja, $S^2_n \xrightarrow{P} \sigma^2 = `r sigma2`$.
+
+Isso pode ser visto pois $S^2_n = \frac{n}{n-1}\left(\frac{1}{n}\sum X_i^2 - \bar{X}_n^2\right)$ e pela LGN $\frac{1}{n}\sum X_i^2 \xrightarrow{P} E(X^2) = \sigma^2 + \mu^2$ e $\bar{X}_n^2 \xrightarrow{P} \mu^2$, portanto $S^2_n \xrightarrow{P} \sigma^2 + \mu^2 - \mu^2 = \sigma^2$.
+
+Meta-information
+================
+exname: Cap1S1Q8_consistencia_S2
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE
+```

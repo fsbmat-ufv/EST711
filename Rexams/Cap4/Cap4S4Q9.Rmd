@@ -1,0 +1,58 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+## Parametros
+sigma2 <- sample(c(1, 4, 9), 1)
+n      <- sample(c(25, 36, 50, 100), 1)
+mu_true <- sample(2:8, 1)
+sum_x  <- round(n * mu_true + rnorm(1, 0, 2), 2)
+
+## Choices textuais
+all_choices <- c(
+  "$\\sum X_i$ (ou equivalentemente $\\bar{X}$).",
+  "$\\sum X_i^2$ --- pois a log-verossimilhanca envolve o termo $\\sum x_i^2$.",
+  "$\\sum (X_i - \\mu)^2$ --- que quantifica a dispersao em torno de $\\mu$.",
+  "$(X_1, X_n)$ --- o primeiro e o ultimo elemento da amostra.",
+  "$n$ (tamanho amostral) --- pois determina a precisao do estimador."
+)
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+Para $X_i \overset{\text{iid}}{\sim} N(\mu, `r sigma2`)$ com $\sigma^2 = `r sigma2`$ fixo, a log-verossimilhanca e:
+$$\ell(\mu; \mathbf{x}) = -\frac{n}{2}\log(2\pi \cdot `r sigma2`) - \frac{1}{2 \cdot `r sigma2`}\sum_{i=1}^n(x_i - \mu)^2.$$
+
+Expandindo: $\sum(x_i - \mu)^2 = \sum x_i^2 - 2\mu\sum x_i + n\mu^2$. Portanto:
+$$\ell(\mu; \mathbf{x}) \propto -\frac{n}{2 \cdot `r sigma2`}\mu^2 + \frac{\mu}{`r sigma2`}\sum x_i + \text{constante em }\mu.$$
+
+Com $n = `r n`$ e $\displaystyle\sum X_i = `r sum_x`$, qual e a **estatistica suficiente** para $\mu$?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+Da expansao da log-verossimilhanca, ela depende da amostra apenas atraves de $\sum X_i$ (ou equivalentemente $\bar{X}$). Portanto, a estatistica suficiente para $\mu$ e:
+$$T = \sum_{i=1}^n X_i.$$
+
+As demais alternativas sao incorretas:
+
+- $\sum X_i^2$ aparece na expansao, mas como constante em $\mu$ (nao contem informacao sobre $\mu$).
+- $\sum (X_i - \mu)^2$ depende do proprio parametro $\mu$ e portanto **nao e uma estatistica** (nao e uma funcao apenas da amostra).
+- $(X_1, X_n)$ perdem a maior parte da informacao sobre $\mu$.
+- $n$ e fixo e nao carrega informacao sobre $\mu$.
+
+Meta-information
+================
+exname: Cap4S4Q9_suficiencia_Normal_mu
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

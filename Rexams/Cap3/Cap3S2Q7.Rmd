@@ -1,0 +1,43 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Choices textuais
+all_choices <- c(
+  "Propriedade de invariância (ou equivariância) do EMV: se $\\hat{\\theta}$ é o EMV de $\\theta$, então $g(\\hat{\\theta})$ é o EMV de $g(\\theta)$, para qualquer função $g$.",
+  "Consistência: o EMV converge em probabilidade para o verdadeiro parâmetro à medida que $n \\to \\infty$.",
+  "Eficiência assintótica: o EMV atinge o limite de Cramér-Rao assintoticamente.",
+  "Suficiência: o EMV é sempre função de estatísticas suficientes para o parâmetro.",
+  "Não-viesamento: o EMV é não-viesado para qualquer transformação $g(\\theta)$."
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+
+Qual propriedade do EMV é enunciada por: "Se $\hat{\theta}$ é o EMV de $\theta$, então $g(\hat{\theta})$ é o EMV de $g(\theta)$"?
+
+Answerlist
+----------
+
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+
+A propriedade descrita é a invariância (ou equivariância) do EMV. Formalmente: se $\hat{\theta}$ maximiza $L(\theta; \mathbf{x})$ e $g$ é uma função (não necessariamente bijetora), então o EMV de $g(\theta)$ é $g(\hat{\theta})$. Por exemplo, se $\hat{\sigma}^2$ é o EMV de $\sigma^2$, então $\hat{\sigma} = \sqrt{\hat{\sigma}^2}$ é o EMV de $\sigma$. As demais propriedades listadas (consistência, eficiência assintótica, suficiência) são propriedades reais do EMV sob condições de regularidade, mas não descrevem a invariância.
+
+Meta-information
+================
+exname: Cap3S2Q7_emv_invariancia
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

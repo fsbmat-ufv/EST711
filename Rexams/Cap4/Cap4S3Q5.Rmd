@@ -1,0 +1,63 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+## Parametros
+lambda <- sample(c(1, 2, 3, 4, 5), 1)
+
+## Parametro natural da Poisson: eta = log(lambda)
+correct <- round(log(lambda), 4)
+w1 <- round(lambda, 4)
+w2 <- round(exp(lambda), 4)
+w3 <- round(1 / lambda, 4)
+w4 <- round(-log(lambda), 4)
+
+## Garantir unicidade (exp(lambda) >> 1, entao provavelmente unico)
+all_vals <- c(correct, w1, w2, w3, w4)
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+A distribuicao $X \sim \text{Poisson}(\lambda)$ pode ser escrita na forma da familia exponencial:
+$$P(X = x; \lambda) = \frac{e^{-\lambda}\lambda^x}{x!} = \exp\!\big\{x\,\log\lambda - \lambda - \log(x!)\big\}.$$
+
+Identificando com a forma canônica $\exp\{c(\theta)T(x) - d(\theta)\}h(x)$, temos:
+
+- $T(x) = x$ (funcao de $x$).
+- $c(\lambda) = \log\lambda$ (parametro natural $\eta = \log\lambda$).
+- $d(\lambda) = \lambda$ (funcao normalizadora).
+- $h(x) = 1/x!$ (parte dependente apenas de $x$).
+
+Para $\lambda = `r lambda`$, qual e o valor do parametro natural $\eta = \log\lambda$?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+O parametro natural da Poisson($\lambda$) e:
+$$\eta = \log\lambda = \log(`r lambda`) = `r correct`.$$
+
+A estatistica suficiente natural para uma amostra de tamanho $n$ e $T = \sum_{i=1}^n X_i$ (equivalente a $n\bar{X}$).
+
+Para $\lambda = 1$: $\eta = 0$. Para $\lambda > 1$: $\eta > 0$. Para $\lambda < 1$: $\eta < 0$.
+
+Meta-information
+================
+exname: Cap4S3Q5_Poisson_familia_exponencial
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

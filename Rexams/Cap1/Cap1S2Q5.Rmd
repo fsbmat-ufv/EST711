@@ -1,0 +1,49 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parâmetros aleatórios
+c_val <- sample(2:7, 1)
+
+## Alternativas (textuais)
+all_choices <- c(
+  paste0("$X + ", c_val, "$ (a distribuição de $X$ deslocada por $c = ", c_val, "$)."),
+  "$X$ (sem alteração na distribuição limite).",
+  paste0("$", c_val, "X$ (distribuição de $X$ escalada por $c$)."),
+  paste0("$X \\cdot ", c_val, "$ (produto, mesmo resultado de escala)."),
+  paste0("$X + ", c_val, "$, mas apenas se $X \\sim N(0,1)$; caso contrário não há resultado geral.")
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+
+Seja $X_n \xrightarrow{D} X$ e $Y_n \xrightarrow{P} c = `r c_val`$ (uma constante). Pelo Teorema de Slutsky, qual é a distribuição limite de $X_n + Y_n$?
+
+Answerlist
+----------
+
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+
+Pelo Teorema de Slutsky: se $X_n \xrightarrow{D} X$ e $Y_n \xrightarrow{P} c$ (constante), então $X_n + Y_n \xrightarrow{D} X + c$.
+
+A chave é que $Y_n$ deve convergir em **probabilidade** para uma **constante** $c$. O resultado garante que a distribuição limite de $X_n + Y_n$ é a distribuição de $X$ deslocada por $c = `r c_val`$. Se $c$ fosse uma variável aleatória (não constante), o resultado não valeria em geral.
+
+Meta-information
+================
+exname: Cap1S2Q5_slutsky_distribuicao
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE
+```

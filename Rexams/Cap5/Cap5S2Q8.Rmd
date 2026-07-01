@@ -1,0 +1,61 @@
+﻿```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Parametros
+s2_1 <- sample(c(1, 2, 4), 1)
+s2_2 <- sample(c(1, 2, 4), 1)
+n1   <- sample(c(10, 15, 20), 1)
+n2   <- sample(c(10, 15, 20), 1)
+
+gl1     <- n1 - 1
+gl2     <- n2 - 1
+F_obs   <- round(s2_1 / s2_2, 4)
+f_lower <- round(qf(0.025, gl1, gl2), 4)
+f_upper <- round(qf(0.975, gl1, gl2), 4)
+
+## Limite inferior do IC 95% para sigma1^2/sigma2^2
+correct <- round(F_obs / f_upper, 4)
+w1 <- round(F_obs / f_lower, 4)
+w2 <- round(F_obs * f_upper, 4)
+w3 <- round(F_obs * f_lower, 4)
+w4 <- round((1 / F_obs) / f_upper, 4)
+
+all_vals <- c(correct, w1, w2, w3, w4)
+# Garante cinco alternativas numericamente distintas após a parametrização.
+integer_choices <- all(abs(all_vals - round(all_vals)) < sqrt(.Machine$double.eps))
+choice_step <- if (integer_choices) 1 else max(1e-4, max(abs(all_vals), na.rm = TRUE) * 0.01)
+while (anyDuplicated(all_vals)) {
+  duplicate_position <- which(duplicated(all_vals))[1]
+  all_vals[duplicate_position] <- max(all_vals, na.rm = TRUE) + choice_step
+}
+choices <- sample(all_vals)
+sol_pos <- which(choices == correct)
+sol_str <- paste(as.integer(seq_along(choices) == sol_pos), collapse = "")
+```
+
+Question
+========
+Para amostras normais independentes, $F = (S_1^2/S_2^2)\cdot(\sigma_2^2/\sigma_1^2) \sim F_{n_1-1,\,n_2-1}$. Com $n_1 = `r n1`$, $n_2 = `r n2`$, $S_1^2 = `r s2_1`$, $S_2^2 = `r s2_2`$, temos $F_{\text{obs}} = S_1^2/S_2^2 = `r F_obs`$, $F_{`r gl1`,`r gl2`,\,0{,}025} = `r f_lower`$ e $F_{`r gl1`,`r gl2`,\,0{,}975} = `r f_upper`$. O limite inferior do IC 95% para $\sigma_1^2/\sigma_2^2$ e:
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+O IC 95% para $\sigma_1^2/\sigma_2^2$ e $\left(F_{\text{obs}}/F_{0{,}975},\; F_{\text{obs}}/F_{0{,}025}\right)$.
+
+O limite inferior e $F_{\text{obs}}/f_{\text{upper}} = `r F_obs`/`r f_upper` = `r correct`$.
+
+Nota: divide-se pelo quantil SUPERIOR para obter o limite INFERIOR, analogamente ao IC qui-quadrado.
+
+Meta-information
+================
+exname: Cap5S2Q8_IC_razao_variancias_F
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE

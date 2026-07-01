@@ -1,0 +1,40 @@
+```{r, echo=FALSE, results="hide"}
+set.seed(sample.int(.Machine$integer.max, 1))
+
+## Choices textuais
+all_choices <- c(
+  "Se o procedimento fosse repetido muitas vezes com amostras diferentes, 95\\% dos intervalos construidos conteriam o verdadeiro valor de $\\mu$.",
+  "O verdadeiro valor de $\\mu$ esta no intervalo com probabilidade 95\\%.",
+  "95\\% das observacoes da amostra estao dentro do intervalo.",
+  "O intervalo captura $\\mu$ em exatamente 95\\% das amostras de qualquer tamanho $n$.",
+  "O IC 95\\% e sempre mais estreito que o IC 90\\% para a mesma amostra."
+)
+
+perm    <- sample(length(all_choices))
+choices <- all_choices[perm]
+sol_pos <- which(perm == 1)
+sol_str <- paste(as.integer(seq_along(perm) == sol_pos), collapse = "")
+```
+
+Question
+========
+Qual das afirmacoes a seguir representa a interpretacao CORRETA de um intervalo de confianca 95% para $\mu$?
+
+Answerlist
+----------
+* `r choices[1]`
+* `r choices[2]`
+* `r choices[3]`
+* `r choices[4]`
+* `r choices[5]`
+
+Solution
+========
+A interpretacao correta e frequentista: se repetissemos o procedimento muitas vezes, 95% dos intervalos gerados conteriam $\mu$. O parametro $\mu$ e fixo (nao aleatorio), portanto nao faz sentido dizer que ele esta no intervalo com probabilidade 95%. Tambem e errado dizer que 95% das observacoes estao no intervalo (confunde IC com intervalo de predicao). A condicao "qualquer tamanho $n$" e incorreta pois o IC e assintoticamente valido via TCL apenas para $n$ grande. O IC 95% e MAIS LARGO que o IC 90%, nao mais estreito.
+
+Meta-information
+================
+exname: Cap5S1Q5_interpretacao_IC
+extype: schoice
+exsolution: `r sol_str`
+exshuffle: FALSE
