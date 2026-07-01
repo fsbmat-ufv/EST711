@@ -1,0 +1,38 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  k <- sample(3:6,1)
+  p <- sample(seq(0.04,0.18,0.01),k,replace=TRUE)
+  bound <- min(1,sum(p))
+  vals <- round(c(bound,max(p),prod(p),mean(p),max(0,1-sum(p))),4)
+  if (length(unique(vals)) == 5L) break
+}
+p_txt <- paste(sprintf("%.2f",p),collapse=", ")
+opts <- sprintf("$%.4f$",vals)
+```
+
+Question
+========
+Para `r k` eventos, as probabilidades individuais são `r p_txt`. Sem informação sobre interseções, qual limite superior é garantido por Boole para $P(\bigcup_iA_i)$?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+A desigualdade de Boole fornece
+$$P\left(\bigcup_iA_i\right)\leq\sum_iP(A_i).$$
+Como uma probabilidade não excede 1, o limite é
+$\min\{1,\sum_iP(A_i)\}=`r sprintf("%.4f",bound)`$.
+
+Meta-information
+================
+exname: Cap1S3Q7_desigualdade_Boole
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

@@ -1,0 +1,30 @@
+```{r, echo=FALSE, results="hide"}
+limiar <- sample(1:4,1)
+```
+
+Question
+========
+Considere $f(x)=1/x^2$ para $x>1$ e zero caso contrário. Qual afirmação sobre $E(X)$ é correta?
+
+Answerlist
+----------
+* A esperança não existe como número finito, pois $\int_1^\infty x/x^2\,dx=\infty$.
+* A esperança vale 1, pois a densidade integra 1.
+* A esperança vale 2, pela simetria da densidade.
+* A esperança é zero, pois a cauda tende a zero.
+* A esperança existe somente após restringir o cálculo a $X>`r limiar`$.
+
+Solution
+========
+Embora $f$ seja uma densidade, o primeiro momento absoluto diverge:
+$$E|X|=\int_1^\infty\frac1x\,dx=\infty.$$
+Normalização da densidade não garante existência da média.
+
+Meta-information
+================
+exname: Cap1S8Q8_esperanca_inexistente
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+
+

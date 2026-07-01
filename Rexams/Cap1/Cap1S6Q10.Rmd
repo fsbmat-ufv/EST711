@@ -1,0 +1,36 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  p <- sample(setdiff(seq(0.10,0.90,0.05),0.5),1)
+  valor <- sample(c(0,1),1)
+  ans <- if(valor==1) p else 1-p
+  vals <- round(c(ans,1-ans,p*(1-p),p^2,(1-p)^2),3)
+  if (length(unique(vals)) == 5L) break
+}
+opts <- sprintf("$%.3f$",vals)
+```
+
+Question
+========
+Para $X=\mathbf{1}_A$ com $P(A)=`r p`$, qual é $p_X(`r valor`)$?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+A indicadora tem distribuição Bernoulli:
+$P(X=1)=p$ e $P(X=0)=1-p$. Assim,
+$p_X(`r valor`)=`r sprintf("%.3f",ans)`$.
+
+Meta-information
+================
+exname: Cap1S6Q10_indicadora_Bernoulli
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

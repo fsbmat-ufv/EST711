@@ -1,0 +1,36 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  a <- sample(2:6,1); k <- sample(1:4,1); x <- runif(1,0.2*a,0.8*a)
+  ans <- (x/a)^(k+1)
+  vals <- round(c(ans,(x/a)^k,x/a,1-ans,(k+1)*x^k/a^(k+1)),4)
+  if (length(unique(vals)) == 5L) break
+}
+opts <- sprintf("$%.4f$",vals)
+```
+
+Question
+========
+Uma variável tem densidade $f(x)=(`r k+1`)x^{`r k`}/`r a^(k+1)`$ em $(0,`r a`)$. Qual é $F_X(`r sprintf("%.2f",x)`)$?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+Para $0<x<a$,
+$$F_X(x)=\int_0^x\frac{(k+1)t^k}{a^{k+1}}dt
+=\left(\frac{x}{a}\right)^{k+1}.$$
+No ponto informado, isso vale `r sprintf("%.4f",ans)`.
+
+Meta-information
+================
+exname: Cap1S7Q3_FDA_continua
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

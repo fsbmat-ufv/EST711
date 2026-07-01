@@ -1,0 +1,28 @@
+```{r, echo=FALSE, results="hide"}
+a <- sample(-5:0,1); b <- a+sample(2:7,1)
+```
+
+Question
+========
+Sabe-se que $P(`r a`\leq X\leq`r b`)=1$. Qual afirmação sobre a FDA é necessariamente verdadeira?
+
+Answerlist
+----------
+* $F_X(x)=0$ para $x<`r a`$ e $F_X(x)=1$ para $x\geq`r b`$.
+* $F_X(x)=1$ para $x<`r a`$ e $F_X(x)=0$ para $x>`r b`$.
+* $F_X$ deve ser linear entre `r a` e `r b`.
+* $F_X(`r a`)=0$ e $F_X(`r b`)=0$.
+* $X$ deve ser uniformemente distribuída nesse intervalo.
+
+Solution
+========
+Não há massa abaixo de `r a`, logo $F_X(x)=0$ para $x<`r a`$. Toda a massa já foi acumulada em `r b`, então $F_X(x)=1$ para $x\geq`r b`$. Isso não determina a forma da distribuição dentro do intervalo.
+
+Meta-information
+================
+exname: Cap1S5Q7_suporte_e_FDA
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+
+

@@ -1,0 +1,29 @@
+```{r, echo=FALSE, results="hide"}
+contexto <- sample(c("um experimento físico", "uma pesquisa amostral",
+                     "um mecanismo aleatório"), 1)
+```
+
+Question
+========
+Ao modelar `r contexto`, uma função $P$ é definida sobre os eventos de um espaço amostral $\Omega$. Qual condição faz parte dos axiomas de probabilidade?
+
+Answerlist
+----------
+* Para eventos dois a dois disjuntos $A_1,A_2,\ldots$, vale $P(\bigcup_i A_i)=\sum_iP(A_i)$.
+* Para quaisquer eventos $A$ e $B$, vale sempre $P(A\cup B)=P(A)+P(B)$.
+* Todo evento não vazio deve ter probabilidade estritamente positiva.
+* Se $A\subset B$, então $P(A)>P(B)$.
+* A probabilidade do espaço amostral pode assumir qualquer constante positiva.
+
+Solution
+========
+Os axiomas exigem não negatividade, $P(\Omega)=1$ e aditividade enumerável para eventos dois a dois disjuntos. Para eventos que se sobrepõem, a interseção precisa ser descontada. Eventos não vazios podem ter probabilidade zero.
+
+Meta-information
+================
+exname: Cap1S3Q1_axiomas_probabilidade
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+
+

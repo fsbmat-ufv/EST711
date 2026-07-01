@@ -1,0 +1,35 @@
+```{r, echo=FALSE, results="hide"}
+n_obs <- sample(7:16, 1)
+n_cens <- sample(2:6, 1)
+a <- sample(seq(0.5, 2.0, 0.1), 1)
+```
+
+Question
+========
+Sejam $X_1,\ldots,X_{`r n_obs`}\sim N(\theta,1)$ observações completas. Além delas, `r n_cens` unidades foram censuradas à direita no ponto $a=`r sprintf("%.1f", a)`$, de modo que apenas se sabe que cada valor censurado excede $a$. Desprezando fatores que não dependem de $\theta$, qual é a verossimilhança dos dados observados?
+
+Answerlist
+----------
+* $\left[1-\Phi(a-\theta)\right]^{`r n_cens`}\displaystyle\prod_{i=1}^{`r n_obs`}\phi(X_i-\theta)$.
+* $\left[\Phi(a-\theta)\right]^{`r n_cens`}\displaystyle\prod_{i=1}^{`r n_obs`}\phi(X_i-\theta)$.
+* $\displaystyle\prod_{i=1}^{`r n_obs`}\phi(X_i-\theta)$, pois observações censuradas não contribuem para a verossimilhança.
+* $\left[1-\Phi(a)\right]^{`r n_cens`}\displaystyle\prod_{i=1}^{`r n_obs`}\phi(X_i)$.
+* $\left[\phi(a-\theta)\right]^{`r n_cens`}\displaystyle\prod_{i=1}^{`r n_obs`}\Phi(X_i-\theta)$.
+
+Solution
+========
+Cada observação completa contribui com a densidade $\phi(X_i-\theta)$. Para uma unidade censurada à direita, o evento observado é $Z>a$, cuja probabilidade é
+$$P_\theta(Z>a)=1-\Phi(a-\theta).$$
+Pela independência, as contribuições são multiplicadas, produzindo
+$$
+L(\theta)=\left[1-\Phi(a-\theta)\right]^{n_{\mathrm{cens}}}
+\prod_{i=1}^{n_{\mathrm{obs}}}\phi(X_i-\theta).
+$$
+
+Meta-information
+================
+exname: Cap8S2Q3_verossimilhanca_censurada
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

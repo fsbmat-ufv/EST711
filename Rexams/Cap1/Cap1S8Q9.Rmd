@@ -1,0 +1,34 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  p <- sample(seq(0.15,0.75,0.05),1); ans <- 1/p
+  vals <- round(c(ans,p,1-p,p/(1-p),(1-p)/p),4)
+  if (length(unique(vals)) == 5L) break
+}
+opts <- sprintf("$%.4f$",vals)
+```
+
+Question
+========
+Uma variável geométrica $X$ conta tentativas até o primeiro sucesso, com probabilidade $p=`r p`$. Usando $E(X)=\sum_{k\geq0}P(X>k)$, qual é $E(X)$?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+Como $P(X>k)=(1-p)^k$,
+$$E(X)=\sum_{k=0}^{\infty}(1-p)^k=\frac1p
+=`r sprintf("%.4f",ans)`.$$
+
+Meta-information
+================
+exname: Cap1S8Q9_formula_caudas
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

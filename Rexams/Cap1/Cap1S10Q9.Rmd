@@ -1,0 +1,36 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  x <- sample(1:12,4,replace=TRUE)
+  am <- mean(x); gm <- prod(x)^(1/length(x)); hm <- length(x)/sum(1/x)
+  vals <- round(c(hm,gm,am,mean(1/x),sum(x)),4)
+  if (length(unique(x)) > 1L && length(unique(vals)) == 5L) break
+}
+opts <- sprintf("$%.4f$",vals)
+xt <- paste(x,collapse=", ")
+```
+
+Question
+========
+Para os números positivos $(`r xt`)$, qual é a média harmônica?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+A média harmônica é
+$$HM=\frac{n}{\sum_i1/x_i}=`r sprintf("%.4f",hm)`.$$
+Além disso, Jensen permite estabelecer $HM\leq GM\leq AM$; aqui $GM=`r sprintf("%.4f",gm)`$ e $AM=`r sprintf("%.4f",am)`$.
+
+Meta-information
+================
+exname: Cap1S10Q9_medias_harmonica_geometrica
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

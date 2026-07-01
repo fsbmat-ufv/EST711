@@ -1,0 +1,44 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  mulheres <- sample(6:10, 1)
+  homens <- sample(6:10, 1)
+  m <- sample(4:6, 1)
+  r <- sample(1:(m-1), 1)
+  if (r <= mulheres && m-r <= homens) {
+    ans <- choose(mulheres,r)*choose(homens,m-r)/choose(mulheres+homens,m)
+    vals <- round(c(ans, choose(mulheres,r)/choose(mulheres+homens,m),
+                    choose(mulheres+homens-r,m-r)/choose(mulheres+homens,m),
+                    r/m, 1-ans), 4)
+    if (length(unique(vals)) == 5L) break
+  }
+}
+opts <- sprintf("$%.4f$", vals)
+```
+
+Question
+========
+Uma comissão de `r m` pessoas é escolhida uniformemente, sem reposição, entre `r mulheres` mulheres e `r homens` homens. Qual é a probabilidade de a comissão conter exatamente `r r` mulheres?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+Há $\binom{`r mulheres+homens`}{`r m`}$ comissões possíveis. As favoráveis escolhem `r r` mulheres e `r m-r` homens:
+$$P=\frac{\binom{`r mulheres`}{`r r`}\binom{`r homens`}{`r m-r`}}
+{\binom{`r mulheres+homens`}{`r m`}}
+=`r sprintf("%.4f", ans)`.$$
+
+Meta-information
+================
+exname: Cap1S3Q5_regra_combinacoes
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+
+

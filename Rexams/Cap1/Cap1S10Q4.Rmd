@@ -1,0 +1,36 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  mu <- sample(seq(-3,5,0.5),1); sigma <- sample(seq(0.5,4,0.5),1)
+  k <- sample(seq(1.5,4,0.5),1); bound <- 1/k^2
+  vals <- round(c(bound,1/k,1-bound,k^2,sigma^2/k^2),4)
+  if (length(unique(vals)) == 5L) break
+}
+opts <- sprintf("$%.4f$",vals)
+```
+
+Question
+========
+Uma variável tem média `r mu` e desvio-padrão `r sigma`. Pelo limite de Chebyshev, qual é o limite superior para $P(|X-\mu|\geq`r k`\sigma)$?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+Chebyshev afirma
+$$P(|X-\mu|\geq k\sigma)\leq\frac1{k^2}
+=`r sprintf("%.4f",bound)`.$$
+O limite independe dos valores específicos de $\mu$ e $\sigma$.
+
+Meta-information
+================
+exname: Cap1S10Q4_desigualdade_Chebyshev
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

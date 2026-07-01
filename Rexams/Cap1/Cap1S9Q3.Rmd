@@ -1,0 +1,29 @@
+```{r, echo=FALSE, results="hide"}
+mu <- sample(seq(-5,5,0.5),1); sigma <- sample(seq(0.5,4,0.5),1)
+```
+
+Question
+========
+Para $Z=(X-`r mu`)/`r sigma`$, sabendo que $E(X)=`r mu`$ e $\operatorname{DP}(X)=`r sigma`$, quais são $E(Z)$ e $\operatorname{Var}(Z)$?
+
+Answerlist
+----------
+* $E(Z)=0$ e $\operatorname{Var}(Z)=1$.
+* $E(Z)=`r mu`$ e $\operatorname{Var}(Z)=`r sigma`$.
+* $E(Z)=1$ e $\operatorname{Var}(Z)=0$.
+* $E(Z)=0$ e $\operatorname{Var}(Z)=`r sigma^2`$.
+* $E(Z)=`r mu/sigma`$ e $\operatorname{Var}(Z)=1/`r sigma^2`$.
+
+Solution
+========
+Pela linearidade, $E(Z)=[E(X)-\mu]/\sigma=0$. Além disso,
+$\operatorname{Var}(Z)=\operatorname{Var}(X)/\sigma^2=1$.
+
+Meta-information
+================
+exname: Cap1S9Q3_padronizacao_momentos
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+
+

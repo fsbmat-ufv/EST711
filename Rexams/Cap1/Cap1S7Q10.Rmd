@@ -1,0 +1,29 @@
+```{r, echo=FALSE, results="hide"}
+x0 <- sample(seq(-3,3,0.5),1); dens <- sample(seq(0.1,1.5,0.1),1)
+```
+
+Question
+========
+Uma variável $X$ é absolutamente contínua e sua densidade em $x_0=`r x0`$ vale $f_X(x_0)=`r dens`$. Qual é $P(X=x_0)$?
+
+Answerlist
+----------
+* $0$.
+* `r dens`.
+* $1-`r dens`$.
+* $F_X(x_0)$.
+* Não pode ser determinada sem integrar sobre toda a reta.
+
+Solution
+========
+Em distribuições absolutamente contínuas, conjuntos com um único ponto têm probabilidade zero. O valor da densidade não é uma probabilidade pontual:
+$$P(X=x_0)=\int_{x_0}^{x_0}f_X(x)\,dx=0.$$
+
+Meta-information
+================
+exname: Cap1S7Q10_probabilidade_pontual_continua
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+
+

@@ -1,0 +1,37 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  n <- sample(18:35,1)
+  pd <- prod((365-seq(0,n-1))/365)
+  ans <- 1-pd
+  vals <- round(c(ans,pd,choose(n,2)/365,1-(364/365)^n,n/365),4)
+  if(length(unique(vals))==5L) break
+}
+opts <- sprintf("$%.4f$",vals)
+```
+
+Question
+========
+Supondo 365 dias equiprováveis e ignorando anos bissextos, qual é a probabilidade de haver ao menos duas pessoas com o mesmo aniversário em um grupo de `r n` pessoas?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+Pelo complemento,
+$$P(\text{coincidência})=1-\prod_{j=0}^{`r n-1`}\frac{365-j}{365}
+=`r sprintf("%.4f",ans)`.$$
+
+Meta-information
+================
+exname: Cap1S3Q6_problema_aniversarios
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+
+

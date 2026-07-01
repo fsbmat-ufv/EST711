@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+<title>Exam 1</title>
+<style type="text/css">
+body{font-family: Arial, Helvetica, Sans;}
+</style>
+<meta charset="utf-8" />
+<script type="text/javascript"   src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script>
+</head>
+
+<body>
+<h2>Exam 1</h2>
+
+<ol>
+<li>
+<h4>Question</h4>
+<p>Ao ajustar um modelo com dados censurados pelo algoritmo EM, usa-se tolerância 1e-04 e cada passo M maximiza a função construída no passo E. Qual propriedade descreve corretamente a sequência de log-verossimilhanças observadas produzida pelo EM?</p>
+<br/>
+<ol type="a">
+<li>
+Ela permanece constante desde a primeira iteração, independentemente dos valores iniciais.
+</li>
+<li>
+Ela aumenta estritamente em toda iteração e, por isso, sempre converge ao máximo global.
+</li>
+<li>
+Ela é monotônica somente quando não há variáveis latentes no modelo.
+</li>
+<li>
+Ela pode diminuir livremente, pois apenas a verossimilhança dos dados completos é relevante.
+</li>
+<li>
+Ela não diminui a cada iteração, embora isso não garanta convergência ao máximo global.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>O passo E constrói uma função auxiliar minorante da log-verossimilhança observada no ponto corrente, e o passo M maximiza essa função. Portanto, o EM satisfaz
+<span class="math display">\[
+\ell(\boldsymbol\theta^{(t+1)};\mathbf{x})\geq
+\ell(\boldsymbol\theta^{(t)};\mathbf{x}).
+\]</span>
+A monotonicidade não elimina máximos locais nem pontos de sela; por isso, diferentes inicializações podem levar a soluções distintas.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Uma amostra provém de <span class="math inline">\(N(\theta,1)\)</span>. Foram observados 13 valores, com média 0.6, e outros 3 valores sofreram censura à direita em <span class="math inline">\(a=1.5\)</span> (para cada um deles, sabe-se apenas que <span class="math inline">\(Z&gt;a\)</span>). Se <span class="math inline">\(\theta^{(t)}=0.1\)</span>, qual é a atualização <span class="math inline">\(\theta^{(t+1)}\)</span> do algoritmo EM?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(0.769\)</span>
+</li>
+<li>
+<span class="math inline">\(0.854\)</span>
+</li>
+<li>
+<span class="math inline">\(2.454\)</span>
+</li>
+<li>
+<span class="math inline">\(0.506\)</span>
+</li>
+<li>
+<span class="math inline">\(0.159\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Condicionalmente a <span class="math inline">\(Z&gt;a\)</span> e ao valor corrente, a média de cada observação censurada é
+<span class="math display">\[
+E(Z\mid Z&gt;a,\theta^{(t)})=\theta^{(t)}+
+\frac{\phi(a-\theta^{(t)})}{1-\Phi(a-\theta^{(t)})}.
+\]</span>
+O passo M calcula a média dos valores observados e dos valores censurados imputados por suas esperanças condicionais. Assim,
+<span class="math display">\[
+\theta^{(t+1)}=
+\frac{13(0.6)+3\left[0.1+
+\dfrac{\phi(1.4)}{1-\Phi(1.4)}\right]}
+{16}=0.854.
+\]</span></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Na iteração 11 do ajuste de um modelo de classes latentes, um algoritmo generalizado EM (GEM) não maximiza exatamente <span class="math inline">\(Q(\theta\mid\theta^{(t)})\)</span>, mas encontra <span class="math inline">\(\theta^{(t+1)}\)</span> tal que
+<span class="math display">\[
+Q(\theta^{(t+1)}\mid\theta^{(t)})-
+Q(\theta^{(t)}\mid\theta^{(t)})=0.008&gt;0.
+\]</span>
+Qual conclusão é justificada pela definição de GEM?</p>
+<br/>
+<ol type="a">
+<li>
+O novo parâmetro é necessariamente o máximo global da verossimilhança observada.
+</li>
+<li>
+O algoritmo deixa de ser EM porque somente a maximização exata de <span class="math inline">\(Q\)</span> preserva a monotonicidade.
+</li>
+<li>
+O aumento de <span class="math inline">\(Q\)</span> garante que todas as coordenadas do parâmetro mudem na mesma direção.
+</li>
+<li>
+A log-verossimilhança observada não diminui, embora o passo M não tenha encontrado necessariamente o máximo global de <span class="math inline">\(Q\)</span>.
+</li>
+<li>
+A log-verossimilhança observada aumenta exatamente 0.008, pois seu incremento coincide com o incremento de <span class="math inline">\(Q\)</span>.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>No GEM, exige-se apenas que o passo de atualização aumente, ou ao menos não diminua, a função auxiliar:
+<span class="math display">\[
+Q(\theta^{(t+1)}\mid\theta^{(t)})\geq
+Q(\theta^{(t)}\mid\theta^{(t)}).
+\]</span>
+Pelo mesmo argumento de minorização usado no EM, isso implica
+<span class="math inline">\(\ell(\theta^{(t+1)})\geq\ell(\theta^{(t)})\)</span>. O incremento de <span class="math inline">\(Q\)</span> não é, em geral, igual ao incremento da log-verossimilhança observada e não garante máximo global.</p>
+<br/>
+</li>
+</ol>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+```{r, echo=FALSE, results="hide"}
+n <- sample(20:80, 1)
+componente <- sample(c("classe", "subpopulação", "componente"), 1)
+```
+
+Question
+========
+Considere uma mistura de duas densidades, $f(x)=(1-\pi)f_1(x)+\pi f_2(x)$, observada em uma amostra de tamanho `r n`. Por que introduzir indicadores latentes de pertencimento ao `r componente` transforma o problema em uma forma conveniente para o algoritmo EM?
+
+Answerlist
+----------
+* A log-verossimilhança completa torna-se uma soma ponderada de $\log f_1(x_i)$ e $\log f_2(x_i)$; no passo E, os indicadores são substituídos por suas probabilidades condicionais.
+* A introdução dos indicadores elimina os parâmetros desconhecidos e torna desnecessário o passo M.
+* A verossimilhança observada passa a ser o produto $\prod_i[f_1(x_i)f_2(x_i)]$, independentemente de $\pi$.
+* Os indicadores são observados diretamente após a primeira iteração e deixam de possuir incerteza condicional.
+* O procedimento converte exatamente qualquer mistura em um único modelo Normal, sem perda de informação.
+
+Solution
+========
+Com $W_i=1$ para o componente 2 e $W_i=0$ para o componente 1, a contribuição completa é
+$$
+(1-W_i)\{\log(1-\pi)+\log f_1(x_i)\}
++W_i\{\log\pi+\log f_2(x_i)\}.
+$$
+Essa expressão é linear nos indicadores. O passo E usa $E(W_i\mid x_i,\theta^{(t)})$, as responsabilidades, e o passo M maximiza a soma ponderada resultante. Isso contorna diretamente os logaritmos de somas presentes na verossimilhança observada.
+
+Meta-information
+================
+exname: Cap8S2Q10_dados_completos_mistura
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

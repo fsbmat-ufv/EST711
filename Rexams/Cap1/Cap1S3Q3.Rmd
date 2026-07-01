@@ -1,0 +1,41 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  n <- sample(seq(80, 160, 10), 1)
+  n_a <- sample(25:60, 1)
+  n_b <- sample(25:60, 1)
+  n_ab <- sample(8:min(n_a, n_b, n_a + n_b - 5), 1)
+  n_union <- n_a + n_b - n_ab
+  if (n_union <= n) break
+}
+vals <- round(c(n_union/n, (n_a+n_b)/n, n_ab/n,
+                (n-n_union)/n, (n_a+n_b+n_ab)/n), 3)
+opts <- sprintf("$%.3f$", vals)
+```
+
+Question
+========
+Em uma população de `r n` unidades, `r n_a` satisfazem $A$, `r n_b` satisfazem $B$ e `r n_ab` satisfazem ambos. Selecionando uma unidade ao acaso, qual é $P(A\cup B)$?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+Pela fórmula da adição,
+$$P(A\cup B)=P(A)+P(B)-P(A\cap B)
+=\frac{`r n_a`+`r n_b`-`r n_ab`}{`r n`}
+=`r sprintf("%.3f", n_union/n)`.$$
+
+Meta-information
+================
+exname: Cap1S3Q3_regra_adicao
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+
+

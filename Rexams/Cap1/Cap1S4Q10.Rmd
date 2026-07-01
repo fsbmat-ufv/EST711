@@ -1,0 +1,35 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  p <- sample(seq(0.15,0.65,0.05),1); k <- sample(2:7,1)
+  ans <- (1-p)^(k-1)*p
+  vals <- round(c(ans,(1-p)^k,p^k,1-(1-p)^k,k*p),4)
+  if (length(unique(vals)) == 5L) break
+}
+opts <- sprintf("$%.4f$",vals)
+```
+
+Question
+========
+Ensaios de Bernoulli independentes têm probabilidade de sucesso $p=`r p`$. Qual é a probabilidade de o primeiro sucesso ocorrer exatamente no ensaio `r k`?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+São necessários `r k-1` fracassos seguidos de um sucesso:
+$$P(X=`r k`)=(1-p)^{`r k-1`}p
+=`r sprintf("%.4f",ans)`.$$
+
+Meta-information
+================
+exname: Cap1S4Q10_primeiro_sucesso
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

@@ -1,0 +1,35 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  tipo <- sample(c("série","paralelo"),1)
+  p1 <- sample(seq(0.80,0.98,0.02),1); p2 <- sample(seq(0.80,0.98,0.02),1)
+  ans <- if(tipo=="série") p1*p2 else 1-(1-p1)*(1-p2)
+  vals <- round(c(ans, p1, p2, 1-p1*p2, (1-p1)*(1-p2)), 4)
+  if(length(unique(vals))==5L) break
+}
+opts <- sprintf("$%.4f$",vals)
+```
+
+Question
+========
+Dois componentes independentes têm confiabilidades `r p1` e `r p2`. O sistema é do tipo `r tipo`. Qual é sua confiabilidade?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+`r if(tipo=="série") "Em série, ambos precisam funcionar e as probabilidades são multiplicadas." else "Em paralelo, o sistema falha apenas quando ambos os componentes falham."`
+A confiabilidade é `r sprintf("%.4f",ans)`.
+
+Meta-information
+================
+exname: Cap1S4Q9_confiabilidade_sistemas
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

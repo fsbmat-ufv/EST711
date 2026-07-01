@@ -1,0 +1,35 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  a <- sample(2:5,1); k <- sample(1:4,1); c0 <- (k+1)/a^(k+1)
+  vals <- round(c(c0,1/a,a/(k+1),(k+1)/a^k,1/a^(k+1)),5)
+  if (length(unique(vals)) == 5L) break
+}
+opts <- sprintf("$%.5f$",vals)
+```
+
+Question
+========
+Uma função é dada por $f(x)=c x^{`r k`}$ para $0<x<`r a`$ e zero fora desse intervalo. Qual valor de $c$ torna $f$ uma densidade?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+A normalização exige
+$$1=c\int_0^{`r a`}x^{`r k`}dx
+=c\frac{`r a`^{`r k+1`}}{`r k+1`}.$$
+Logo, $c=(`r k+1`)/`r a`^{`r k+1`}=`r sprintf("%.5f",c0)`$.
+
+Meta-information
+================
+exname: Cap1S7Q1_normalizacao_densidade
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

@@ -1,0 +1,35 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  fl <- sample(seq(0.10,0.60,0.05),1); jump <- sample(seq(0.10,0.35,0.05),1)
+  fx <- fl+jump; x0 <- sample(-2:4,1)
+  vals <- round(c(jump,fx,fl,1-fx,fx+fl),3)
+  if (fx <= 1 && length(unique(vals)) == 5L) break
+}
+opts <- sprintf("$%.3f$",vals)
+```
+
+Question
+========
+Uma FDA satisfaz $F_X(`r x0`^-)=`r fl`$ e $F_X(`r x0`)=`r fx`$. Qual é $P(X=`r x0`)$?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+A probabilidade pontual é o tamanho do salto:
+$$P(X=x_0)=F_X(x_0)-F_X(x_0^-)
+=`r fx`-`r fl`=`r jump`.$$
+
+Meta-information
+================
+exname: Cap1S5Q3_salto_FDA
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

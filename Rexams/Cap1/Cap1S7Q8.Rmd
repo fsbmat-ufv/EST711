@@ -1,0 +1,35 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  w <- sample(seq(0.20,0.80,0.05),1); p1 <- sample(seq(0.10,0.70,0.05),1)
+  p2 <- sample(seq(0.10,0.70,0.05),1); ans <- w*p1+(1-w)*p2
+  vals <- round(c(ans,(p1+p2)/2,w*p1,p1*p2,1-ans),4)
+  if (p1 != p2 && length(unique(vals)) == 5L) break
+}
+opts <- sprintf("$%.4f$",vals)
+```
+
+Question
+========
+Uma distribuição é mistura de $f_1$ e $f_2$ com pesos `r w` e `r 1-w`. Para certo conjunto $A$, $P_1(A)=`r p1`$ e $P_2(A)=`r p2`$. Qual é $P(A)$ na mistura?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+Probabilidades também se combinam pelos pesos da mistura:
+$$P(A)=`r w`(`r p1`)+`r 1-w`(`r p2`)
+=`r sprintf("%.4f",ans)`.$$
+
+Meta-information
+================
+exname: Cap1S7Q8_mistura_continua
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

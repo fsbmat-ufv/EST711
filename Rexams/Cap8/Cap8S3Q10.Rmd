@@ -1,0 +1,57 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  k <- 3L
+  nk <- sample(15:60, k, replace = TRUE)
+  alpha <- sample(2:5, k, replace = TRUE)
+  if (all(alpha == 2L)) next
+  j <- sample(seq_len(k), 1)
+  n <- sum(nk)
+  den_map <- n + sum(alpha) - k
+  pi_map <- (nk[j] + alpha[j] - 1)/den_map
+  vals <- round(c(pi_map,
+                  nk[j]/n,
+                  (nk[j] + alpha[j])/(n + sum(alpha)),
+                  (nk[j] + alpha[j] - 1)/(n + sum(alpha)),
+                  (nk[j] + 1)/(n + k)), 4)
+  if (length(unique(vals)) == 5L) break
+}
+opts <- sprintf("$%.4f$", vals)
+nk_txt <- paste(nk, collapse = ", ")
+alpha_txt <- paste(alpha, collapse = ", ")
+```
+
+Question
+========
+Em um MAP-EM para uma mistura de `r k` componentes, os tamanhos efetivos do passo E são $N=(`r nk_txt`)$ e a priori dos pesos é $\operatorname{Dirichlet}(`r alpha_txt`)$. Considerando um máximo interior, a atualização é
+$$
+\pi_j^{(t+1)}=\frac{N_j+\alpha_j-1}
+{n+\sum_{h=1}^{k}\alpha_h-k}.
+$$
+Qual é a atualização do peso $\pi_{`r j`}$?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+Temos $n=\sum_jN_j=`r n`$ e
+$\sum_j\alpha_j=`r sum(alpha)`$. Portanto,
+$$
+\pi_{`r j`}^{(t+1)}=
+\frac{`r nk[j]`+`r alpha[j]`-1}
+{`r n`+`r sum(alpha)`-`r k`}
+=`r sprintf("%.4f", pi_map)`.
+$$
+A atualização de máxima verossimilhança seria apenas $N_{`r j`}/n$; os termos da priori funcionam como pseudocontagens no MAP.
+
+Meta-information
+================
+exname: Cap8S3Q10_MAP_EM_pesos
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE

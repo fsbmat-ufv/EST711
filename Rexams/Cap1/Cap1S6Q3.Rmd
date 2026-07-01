@@ -1,0 +1,35 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  p <- sample(seq(0.15,0.65,0.05),1); x <- sample(2:8,1)
+  ans <- (1-p)^(x-1)*p
+  vals <- round(c(ans,(1-p)^x,p^x,1-(1-p)^x,(1-p)*p^(x-1)),5)
+  if (length(unique(vals)) == 5L) break
+}
+opts <- sprintf("$%.5f$",vals)
+```
+
+Question
+========
+Se $X$ é o número de tentativas independentes até o primeiro sucesso, com probabilidade de sucesso $p=`r p`$, calcule $P(X=`r x`)$.
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+Para o primeiro sucesso ocorrer na tentativa `r x`, devem ocorrer `r x-1` fracassos e então um sucesso:
+$$P(X=`r x`)=(1-p)^{`r x-1`}p
+=`r sprintf("%.5f",ans)`.$$
+
+Meta-information
+================
+exname: Cap1S6Q3_pmf_geometrica
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

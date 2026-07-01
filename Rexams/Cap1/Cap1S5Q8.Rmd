@@ -1,0 +1,28 @@
+```{r, echo=FALSE, results="hide"}
+x0 <- sample(-3:4,1)
+```
+
+Question
+========
+Para uma FDA $F_X$ e um ponto $x_0=`r x0`$, qual relação de continuidade é sempre válida?
+
+Answerlist
+----------
+* $\lim_{h\downarrow0}F_X(x_0+h)=F_X(x_0)$.
+* $\lim_{h\downarrow0}F_X(x_0-h)=F_X(x_0)$.
+* $F_X$ é derivável em $x_0$.
+* $F_X(x_0^-)=F_X(x_0)$, mesmo quando há massa em $x_0$.
+* $\lim_{x\to x_0}F_X(x)=0$.
+
+Solution
+========
+Toda FDA é contínua à direita. A continuidade à esquerda pode falhar quando existe massa pontual, pois então $F_X(x_0)-F_X(x_0^-)=P(X=x_0)>0$.
+
+Meta-information
+================
+exname: Cap1S5Q8_continuidade_direita_FDA
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+
+

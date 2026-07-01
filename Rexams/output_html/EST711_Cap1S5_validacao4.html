@@ -1,0 +1,289 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+<title>Exam 4</title>
+<style type="text/css">
+body{font-family: Arial, Helvetica, Sans;}
+</style>
+<meta charset="utf-8" />
+<script type="text/javascript"   src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script>
+</head>
+
+<body>
+<h2>Exam 4</h2>
+
+<ol>
+<li>
+<h4>Question</h4>
+<p>Qual conjunto de propriedades é necessário para que <span class="math inline">\(F_X\)</span> seja uma função de distribuição acumulada em <span class="math inline">\(\mathbb{R}\)</span>?</p>
+<br/>
+<ol type="a">
+<li>
+Ser estritamente crescente, contínua e possuir derivada positiva em todos os pontos.
+</li>
+<li>
+Ser simétrica em torno de zero e limitada por uma densidade.
+</li>
+<li>
+Ser não decrescente, contínua à direita, com limites 0 em <span class="math inline">\(-\infty\)</span> e 1 em <span class="math inline">\(+\infty\)</span>.
+</li>
+<li>
+Ser não crescente, contínua à esquerda e integrar 1.
+</li>
+<li>
+Assumir apenas os valores 0 e 1.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Uma FDA é não decrescente e contínua à direita, com
+<span class="math inline">\(\lim_{x\to-\infty}F(x)=0\)</span> e <span class="math inline">\(\lim_{x\to\infty}F(x)=1\)</span>.
+Ela pode ter saltos, trechos constantes e não precisa possuir densidade.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Para uma variável aleatória contínua, <span class="math inline">\(F_X(-2)=0.3\)</span> e <span class="math inline">\(F_X(0)=0.55\)</span>. Qual é <span class="math inline">\(P(-2&lt;X\leq0)\)</span>?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(0.850\)</span>
+</li>
+<li>
+<span class="math inline">\(0.550\)</span>
+</li>
+<li>
+<span class="math inline">\(0.750\)</span>
+</li>
+<li>
+<span class="math inline">\(0.250\)</span>
+</li>
+<li>
+<span class="math inline">\(0.300\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p><span class="math display">\[P(a&lt;X\leq b)=F_X(b)-F_X(a)
+=0.55-0.3=0.250.\]</span></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Uma FDA satisfaz <span class="math inline">\(F_X(1^-)=0.6\)</span> e <span class="math inline">\(F_X(1)=0.75\)</span>. Qual é <span class="math inline">\(P(X=1)\)</span>?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(0.150\)</span>
+</li>
+<li>
+<span class="math inline">\(0.750\)</span>
+</li>
+<li>
+<span class="math inline">\(0.250\)</span>
+</li>
+<li>
+<span class="math inline">\(0.600\)</span>
+</li>
+<li>
+<span class="math inline">\(1.350\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>A probabilidade pontual é o tamanho do salto:
+<span class="math display">\[P(X=x_0)=F_X(x_0)-F_X(x_0^-)
+=0.75-0.6=0.15.\]</span></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Uma variável discreta tem suporte <span class="math inline">\((0, 1, 2)\)</span> e probabilidades correspondentes <span class="math inline">\((0.500, 0.143, 0.357)\)</span>. Qual é o tamanho do salto de <span class="math inline">\(F_X\)</span> em <span class="math inline">\(x=1\)</span>?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(0.857\)</span>
+</li>
+<li>
+<span class="math inline">\(0.333\)</span>
+</li>
+<li>
+<span class="math inline">\(0.143\)</span>
+</li>
+<li>
+<span class="math inline">\(0.500\)</span>
+</li>
+<li>
+<span class="math inline">\(0.643\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>O salto da FDA em um ponto é exatamente sua massa:
+<span class="math display">\[F_X(x)-F_X(x^-)=P(X=x)=0.143.\]</span></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Na definição formal de variável aleatória, como em X é o número de sucessos, qual condição conecta a aplicação <span class="math inline">\(X:\Omega\to\mathbb{R}\)</span> aos eventos?</p>
+<br/>
+<ol type="a">
+<li>
+A imagem de <span class="math inline">\(X\)</span> deve conter todos os números reais.
+</li>
+<li>
+Para todo conjunto boreliano <span class="math inline">\(B\)</span>, a pré-imagem <span class="math inline">\(\{\omega:X(\omega)\in B\}\)</span> deve ser um evento.
+</li>
+<li>
+Para todo <span class="math inline">\(\omega\)</span>, o valor <span class="math inline">\(X(\omega)\)</span> deve ser uma probabilidade entre 0 e 1.
+</li>
+<li>
+Cada evento deve ser levado por <span class="math inline">\(X\)</span> a um único valor com probabilidade positiva.
+</li>
+<li>
+A aplicação <span class="math inline">\(X\)</span> deve ser injetiva em todo espaço amostral.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>A mensurabilidade exige que a pré-imagem de qualquer conjunto boreliano seja um evento ao qual <span class="math inline">\(P\)</span> possa ser aplicado. Os valores de uma variável aleatória são números reais, não probabilidades.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Uma distribuição mista possui um salto da FDA em <span class="math inline">\(x=2\)</span>, de <span class="math inline">\(F_X(x^-)=0.25\)</span> para <span class="math inline">\(F_X(x)=0.4\)</span>. Qual massa discreta está concentrada nesse ponto?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(0.150\)</span>
+</li>
+<li>
+<span class="math inline">\(0.250\)</span>
+</li>
+<li>
+<span class="math inline">\(0.850\)</span>
+</li>
+<li>
+<span class="math inline">\(0.650\)</span>
+</li>
+<li>
+<span class="math inline">\(0.400\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Mesmo em uma distribuição mista, a massa pontual é o salto:
+<span class="math display">\[P(X=2)=0.4-0.25=0.15.\]</span></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Sabe-se que <span class="math inline">\(P(-2\leq X\leq4)=1\)</span>. Qual afirmação sobre a FDA é necessariamente verdadeira?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(F_X\)</span> deve ser linear entre -2 e 4.
+</li>
+<li>
+<span class="math inline">\(F_X(-2)=0\)</span> e <span class="math inline">\(F_X(4)=0\)</span>.
+</li>
+<li>
+<span class="math inline">\(X\)</span> deve ser uniformemente distribuída nesse intervalo.
+</li>
+<li>
+<span class="math inline">\(F_X(x)=0\)</span> para <span class="math inline">\(x&lt;-2\)</span> e <span class="math inline">\(F_X(x)=1\)</span> para <span class="math inline">\(x\geq4\)</span>.
+</li>
+<li>
+<span class="math inline">\(F_X(x)=1\)</span> para <span class="math inline">\(x&lt;-2\)</span> e <span class="math inline">\(F_X(x)=0\)</span> para <span class="math inline">\(x&gt;4\)</span>.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Não há massa abaixo de -2, logo <span class="math inline">\(F_X(x)=0\)</span> para <span class="math inline">\(x&lt;-2\)</span>. Toda a massa já foi acumulada em 4, então <span class="math inline">\(F_X(x)=1\)</span> para <span class="math inline">\(x\geq4\)</span>. Isso não determina a forma da distribuição dentro do intervalo.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Para uma FDA <span class="math inline">\(F_X\)</span> e um ponto <span class="math inline">\(x_0=3\)</span>, qual relação de continuidade é sempre válida?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(\lim_{h\downarrow0}F_X(x_0+h)=F_X(x_0)\)</span>.
+</li>
+<li>
+<span class="math inline">\(F_X\)</span> é derivável em <span class="math inline">\(x_0\)</span>.
+</li>
+<li>
+<span class="math inline">\(F_X(x_0^-)=F_X(x_0)\)</span>, mesmo quando há massa em <span class="math inline">\(x_0\)</span>.
+</li>
+<li>
+<span class="math inline">\(\lim_{x\to x_0}F_X(x)=0\)</span>.
+</li>
+<li>
+<span class="math inline">\(\lim_{h\downarrow0}F_X(x_0-h)=F_X(x_0)\)</span>.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Toda FDA é contínua à direita. A continuidade à esquerda pode falhar quando existe massa pontual, pois então <span class="math inline">\(F_X(x_0)-F_X(x_0^-)=P(X=x_0)&gt;0\)</span>.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Se <span class="math inline">\(X=\mathbf{1}_A\)</span>, com <span class="math inline">\(P(A)=0.8\)</span>, qual é <span class="math inline">\(F_X(-2)\)</span>?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(0.200\)</span>
+</li>
+<li>
+<span class="math inline">\(0.000\)</span>
+</li>
+<li>
+<span class="math inline">\(0.800\)</span>
+</li>
+<li>
+<span class="math inline">\(0.500\)</span>
+</li>
+<li>
+<span class="math inline">\(0.160\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>A indicadora vale 0 com probabilidade <span class="math inline">\(1-p\)</span> e 1 com probabilidade <span class="math inline">\(p\)</span>. Portanto,
+<span class="math inline">\(F_X(x)=0\)</span> se <span class="math inline">\(x&lt;0\)</span>, <span class="math inline">\(F_X(x)=1-p\)</span> se <span class="math inline">\(0\leq x&lt;1\)</span>, e <span class="math inline">\(F_X(x)=1\)</span> se <span class="math inline">\(x\geq1\)</span>. Para o valor fornecido, o resultado é 0.000.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Para certo <span class="math inline">\(x=-1\)</span>, sabe-se que <span class="math inline">\(F_X(x)=0.2\)</span>. Qual é <span class="math inline">\(P(X&gt;x)\)</span>?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(0.960\)</span>
+</li>
+<li>
+<span class="math inline">\(0.200\)</span>
+</li>
+<li>
+<span class="math inline">\(0.833\)</span>
+</li>
+<li>
+<span class="math inline">\(0.160\)</span>
+</li>
+<li>
+<span class="math inline">\(0.800\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Como <span class="math inline">\(F_X(x)=P(X\leq x)\)</span>,
+<span class="math display">\[P(X&gt;x)=1-F_X(x)=1-0.2=0.800.\]</span></p>
+<br/>
+</li>
+</ol>
+
+</body>
+</html>

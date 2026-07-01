@@ -1,0 +1,28 @@
+```{r, echo=FALSE, results="hide"}
+k <- sample(2:4, 1)
+nomes <- sample(c("A e B", "1 e 2", "baixo e alto"), 1)
+```
+
+Question
+========
+Ao ajustar por EM uma mistura de `r k` distribuições da mesma família, duas execuções fornecem a mesma densidade ajustada e a mesma log-verossimilhança, mas trocam entre si os rótulos dos componentes `r nomes`. Qual é a interpretação correta?
+
+Answerlist
+----------
+* Trata-se de não identificabilidade por permutação dos rótulos; sem restrições adicionais, as duas parametrizações representam o mesmo modelo de mistura.
+* Uma das execuções necessariamente está errada, pois o EM produz uma rotulagem única em qualquer mistura finita.
+* A troca de rótulos prova que a sequência de log-verossimilhanças diminuiu em alguma iteração.
+* Os componentes devem ser somados, pois rótulos diferentes sempre indicam distribuições idênticas.
+* O fenômeno desaparece apenas aumentando indefinidamente o tamanho da amostra, sem impor qualquer convenção de identificação.
+
+Solution
+========
+A densidade da mistura não muda quando se permutam simultaneamente pesos e parâmetros dos componentes. Esse fenômeno é conhecido como troca de rótulos. Uma convenção, como ordenar as médias, pode selecionar uma representação, mas não altera a densidade ajustada.
+
+Meta-information
+================
+exname: Cap8S2Q8_troca_rotulos_mistura
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

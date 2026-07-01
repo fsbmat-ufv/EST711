@@ -1,0 +1,29 @@
+```{r, echo=FALSE, results="hide"}
+p <- sample(2:5, 1)
+tipo <- sample(c("um autovalor positivo", "dois autovalores positivos"), 1)
+norma_score <- sample(c(1e-7, 5e-8, 1e-8), 1)
+```
+
+Question
+========
+Um EM com `r p` parâmetros convergiu para $\widehat\theta$, com norma do escore observado igual a `r format(norma_score, scientific = TRUE)`. Contudo, a Hessiana observada em $\widehat\theta$ possui `r tipo`. Qual diagnóstico é mais adequado?
+
+Answerlist
+----------
+* O ponto é aproximadamente estacionário, mas não é um máximo local estrito; pode ser um ponto de sela ou mínimo, devendo-se investigar outras inicializações.
+* A pequena norma do escore prova que $\widehat\theta$ é o máximo global da verossimilhança.
+* Todo ponto fixo do EM possui Hessiana negativa definida, de modo que os autovalores positivos são apenas erro de arredondamento.
+* A presença de autovalores positivos indica que a log-verossimilhança observada deve ter diminuído em todas as iterações.
+* O diagnóstico depende apenas do número de iterações, não da curvatura da log-verossimilhança.
+
+Solution
+========
+Escore próximo de zero indica apenas estacionariedade aproximada. Para um máximo local estrito no interior do espaço paramétrico, a Hessiana da log-verossimilhança deve ser negativa definida. Autovalores positivos revelam direções de curvatura ascendente, compatíveis com sela ou mínimo. A monotonicidade do EM não exclui convergência para pontos estacionários indesejáveis.
+
+Meta-information
+================
+exname: Cap8S3Q9_diagnostico_ponto_estacionario
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

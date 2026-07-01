@@ -1,0 +1,41 @@
+```{r, echo=FALSE, results="hide"}
+modelo <- sample(c("uma mistura finita", "um modelo com dados censurados",
+                   "um modelo de classes latentes"), 1)
+iteracao <- sample(3:20, 1)
+ganho <- sample(c(0.002, 0.008, 0.015, 0.040), 1)
+```
+
+Question
+========
+Na iteração `r iteracao` do ajuste de `r modelo`, um algoritmo generalizado EM (GEM) não maximiza exatamente $Q(\theta\mid\theta^{(t)})$, mas encontra $\theta^{(t+1)}$ tal que
+$$
+Q(\theta^{(t+1)}\mid\theta^{(t)})-
+Q(\theta^{(t)}\mid\theta^{(t)})=`r sprintf("%.3f", ganho)`>0.
+$$
+Qual conclusão é justificada pela definição de GEM?
+
+Answerlist
+----------
+* A log-verossimilhança observada não diminui, embora o passo M não tenha encontrado necessariamente o máximo global de $Q$.
+* A log-verossimilhança observada aumenta exatamente `r sprintf("%.3f", ganho)`, pois seu incremento coincide com o incremento de $Q$.
+* O algoritmo deixa de ser EM porque somente a maximização exata de $Q$ preserva a monotonicidade.
+* O novo parâmetro é necessariamente o máximo global da verossimilhança observada.
+* O aumento de $Q$ garante que todas as coordenadas do parâmetro mudem na mesma direção.
+
+Solution
+========
+No GEM, exige-se apenas que o passo de atualização aumente, ou ao menos não diminua, a função auxiliar:
+$$
+Q(\theta^{(t+1)}\mid\theta^{(t)})\geq
+Q(\theta^{(t)}\mid\theta^{(t)}).
+$$
+Pelo mesmo argumento de minorização usado no EM, isso implica
+$\ell(\theta^{(t+1)})\geq\ell(\theta^{(t)})$. O incremento de $Q$ não é, em geral, igual ao incremento da log-verossimilhança observada e não garante máximo global.
+
+Meta-information
+================
+exname: Cap8S3Q1_EM_generalizado
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

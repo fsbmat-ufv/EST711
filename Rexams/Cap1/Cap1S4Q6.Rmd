@@ -1,0 +1,32 @@
+```{r, echo=FALSE, results="hide"}
+contexto <- sample(c("falha de componentes","respostas de indivíduos",
+                     "resultados de ensaios"),1)
+```
+
+Question
+========
+Se $A$ e $B$ são eventos independentes em um estudo de `r contexto`, qual afirmação é necessariamente verdadeira?
+
+Answerlist
+----------
+* $A^c$ e $B^c$ também são independentes.
+* $A$ e $B$ são necessariamente disjuntos.
+* $P(A\cup B)=P(A)+P(B)$.
+* $P(A\mid B)=P(B\mid A)$ para quaisquer marginais.
+* Exatamente um dos eventos deve ocorrer.
+
+Solution
+========
+Temos
+$$P(A^c\cap B^c)=1-P(A)-P(B)+P(A)P(B)
+=P(A^c)P(B^c),$$
+logo os complementos são independentes. Independência não significa disjunção.
+
+Meta-information
+================
+exname: Cap1S4Q6_complementos_independentes
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+
+

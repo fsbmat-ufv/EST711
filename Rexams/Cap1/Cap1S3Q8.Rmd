@@ -1,0 +1,30 @@
+```{r, echo=FALSE, results="hide"}
+exemplo <- sample(c("A_n = {X <= n}", "A_n = {|X| <= n}",
+                    "A_n = {primeiro sucesso ocorre até n}"), 1)
+```
+
+Question
+========
+Considere eventos crescentes $A_1\subseteq A_2\subseteq\cdots$, por exemplo `r exemplo`. Qual propriedade é correta?
+
+Answerlist
+----------
+* $P(\bigcup_{n=1}^{\infty}A_n)=\lim_{n\to\infty}P(A_n)$.
+* $P(\bigcup_{n=1}^{\infty}A_n)=\prod_{n=1}^{\infty}P(A_n)$.
+* $P(\bigcup_{n=1}^{\infty}A_n)=\lim_{n\to\infty}[1-P(A_n)]$.
+* $P(\bigcap_{n=1}^{\infty}A_n)=\sum_{n=1}^{\infty}P(A_n)$.
+* A igualdade com o limite exige que os $A_n$ sejam disjuntos.
+
+Solution
+========
+A probabilidade é contínua por baixo:
+$$P\left(\bigcup_{n=1}^{\infty}A_n\right)=\lim_{n\to\infty}P(A_n).$$
+A condição necessária aqui é a monotonicidade crescente, não a disjunção.
+
+Meta-information
+================
+exname: Cap1S3Q8_continuidade_probabilidade
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

@@ -1,0 +1,29 @@
+```{r, echo=FALSE, results="hide"}
+funcao <- sample(c("exp(x)", "x^2", "-log(x)"), 1)
+```
+
+Question
+========
+Se $\phi$ é convexa, como a função `r funcao` em seu domínio, e as esperanças existem, qual é a desigualdade de Jensen?
+
+Answerlist
+----------
+* $\phi(E[X])\leq E[\phi(X)]$.
+* $\phi(E[X])\geq E[\phi(X)]$.
+* $E[\phi(X)]=\phi(X)$ quase certamente.
+* $E[\phi(X)]\leq E(X)$.
+* $\phi(E[X])=E(X)\phi(1)$.
+
+Solution
+========
+Para funções convexas,
+$$\phi(E[X])\leq E[\phi(X)].$$
+O sentido se inverte para funções côncavas.
+
+Meta-information
+================
+exname: Cap1S10Q7_desigualdade_Jensen
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

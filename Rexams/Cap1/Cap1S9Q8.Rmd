@@ -1,0 +1,28 @@
+```{r, echo=FALSE, results="hide"}
+t <- sample(c(0.1,0.2,0.5,1),1)
+```
+
+Question
+========
+Para $X$ com distribuição de Cauchy padrão, o que ocorre com $M_X(t)=E(e^{tX})$?
+
+Answerlist
+----------
+* A fgm não existe em nenhuma vizinhança aberta de zero.
+* A fgm existe e vale $e^{t^2/2}$.
+* A fgm existe apenas em $t=`r t`$ e vale 1.
+* A fgm é $1/(1-t)$ para $t<1$.
+* A fgm coincide com a FDA da Cauchy.
+
+Solution
+========
+As caudas da Cauchy são pesadas demais para que $E(e^{tX})$ seja finita em ambos os lados de zero. A distribuição existe, mas não possui fgm. A função característica, por outro lado, sempre existe.
+
+Meta-information
+================
+exname: Cap1S9Q8_Cauchy_sem_fgm
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+
+

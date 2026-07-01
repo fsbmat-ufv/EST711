@@ -1,0 +1,35 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  w <- sample(seq(0.15,0.85,0.05),1); mu1 <- sample(seq(-2,3,0.5),1)
+  mu2 <- sample(seq(4,10,0.5),1); ans <- w*mu1+(1-w)*mu2
+  vals <- round(c(ans,(mu1+mu2)/2,w*mu1,mu1+mu2,1-ans),3)
+  if (length(unique(vals)) == 5L) break
+}
+opts <- sprintf("$%.3f$",vals)
+```
+
+Question
+========
+Uma mistura escolhe a população 1 com probabilidade `r w` e a população 2 com probabilidade `r 1-w`. As médias são $\mu_1=`r mu1`$ e $\mu_2=`r mu2`$. Qual é a média da mistura?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+Pela esperança total,
+$$E(X)=`r w`\mu_1+`r 1-w`\mu_2
+=`r sprintf("%.3f",ans)`.$$
+
+Meta-information
+================
+exname: Cap1S8Q10_esperanca_mistura
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

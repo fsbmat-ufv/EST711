@@ -1,0 +1,28 @@
+```{r, echo=FALSE, results="hide"}
+h <- sample(c(0.2,0.5,1,2),1)
+```
+
+Question
+========
+Duas variáveis $X$ e $Y$ têm fgms finitas e iguais para todo $t\in(-`r h`,`r h`)$. O que se conclui?
+
+Answerlist
+----------
+* $X$ e $Y$ têm a mesma distribuição.
+* $X=Y$ para todo resultado do experimento.
+* $X$ e $Y$ são independentes.
+* Apenas suas médias são iguais; as distribuições podem ser quaisquer.
+* Suas densidades devem ser normais.
+
+Solution
+========
+A unicidade da fgm afirma que fgms iguais em uma vizinhança de zero determinam a mesma distribuição. Isso não implica igualdade ponto a ponto nem independência.
+
+Meta-information
+================
+exname: Cap1S9Q7_unicidade_fgm
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+
+

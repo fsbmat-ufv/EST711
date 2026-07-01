@@ -1,0 +1,38 @@
+```{r, echo=FALSE, results="hide"}
+lado <- sample(c("direita", "esquerda"), 1)
+a <- sample(seq(-1.0, 1.5, 0.1), 1)
+theta_t <- sample(seq(-0.5, 1.0, 0.1), 1)
+if (lado == "direita") {
+  evento <- "$Z>a$"
+  suporte <- "$z>a$"
+  normalizador <- "$1-\\Phi(a-\\theta^{(t)})$"
+} else {
+  evento <- "$Z<a$"
+  suporte <- "$z<a$"
+  normalizador <- "$\\Phi(a-\\theta^{(t)})$"
+}
+```
+
+Question
+========
+Uma observação $Z\sim N(\theta,1)$ foi censurada à `r lado` em $a=`r sprintf("%.1f", a)`$, portanto o evento observado é `r evento`. No passo E, com $\theta^{(t)}=`r sprintf("%.1f", theta_t)`$, qual distribuição deve ser usada para calcular esperanças envolvendo $Z$?
+
+Answerlist
+----------
+* A distribuição $N(\theta^{(t)},1)$ condicionada ao evento de censura, com suporte `r suporte`.
+* A distribuição $N(\theta,1)$ não truncada, mantendo $\theta$ como argumento livre do passo M.
+* Uma distribuição uniforme no intervalo determinado pelo ponto de censura.
+* Uma massa pontual em $a$, pois todo valor censurado deve ser substituído pelo limite de censura.
+* A distribuição $N(0,1)$ condicionada ao evento oposto ao observado.
+
+Solution
+========
+O passo E usa a distribuição condicional dos dados ausentes dados os dados observados e o parâmetro corrente. Aqui, ela tem densidade proporcional a $\phi(z-\theta^{(t)})$ no suporte `r suporte`, com constante normalizadora `r normalizador`. Substituir todos os valores por $a$ ignora a incerteza criada pela censura.
+
+Meta-information
+================
+exname: Cap8S2Q7_normal_truncada_passo_E
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

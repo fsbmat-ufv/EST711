@@ -1,0 +1,35 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  xv <- 0:4; raw <- sample(1:8,5,replace=TRUE); pr <- raw/sum(raw)
+  k <- sample(0:3,1); ans <- sum(pr[xv<=k])
+  vals <- round(c(ans,pr[k+1],sum(pr[xv<k]),1-ans,sum(pr[xv>=k])),4)
+  if (length(unique(vals)) == 5L) break
+}
+opts <- sprintf("$%.4f$",vals); ptxt <- paste(sprintf("%.3f",pr),collapse=", ")
+```
+
+Question
+========
+Uma variável tem suporte $(0,1,2,3,4)$ e pmf correspondente $(`r ptxt`)$. Qual é $F_X(`r k`)$?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+A FDA acumula todas as massas até `r k`:
+$$F_X(`r k`)=\sum_{x\leq`r k`}p_X(x)
+=`r sprintf("%.4f",ans)`.$$
+
+Meta-information
+================
+exname: Cap1S6Q4_FDA_discreta
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

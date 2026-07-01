@@ -1,0 +1,34 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  a <- sample(c(2,3,4),1); b <- sample(-3:3,1); x0 <- sample(-2:4,1)
+  px <- sample(seq(0.10,0.70,0.05),1); y0 <- a*x0+b
+  vals <- round(c(px,1-px,px/a,a*px,px/(a+1)),3)
+  if (length(unique(vals)) == 5L) break
+}
+opts <- sprintf("$%.3f$",vals)
+```
+
+Question
+========
+Para a transformação injetiva $Y=`r a`X+`r b`$, sabe-se que $P(X=`r x0`)=`r px`$. Qual é $P(Y=`r y0`)$?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+Como a transformação é injetiva, $Y=`r y0`$ ocorre exatamente quando $X=`r x0`$. Em transformações discretas não aparece fator jacobiano:
+$$P(Y=`r y0`)=`r px`.$$
+
+Meta-information
+================
+exname: Cap1S6Q7_transformacao_injetiva_discreta
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

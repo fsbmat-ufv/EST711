@@ -1,0 +1,291 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+<title>Exam 5</title>
+<style type="text/css">
+body{font-family: Arial, Helvetica, Sans;}
+</style>
+<meta charset="utf-8" />
+<script type="text/javascript"   src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script>
+</head>
+
+<body>
+<h2>Exam 5</h2>
+
+<ol>
+<li>
+<h4>Question</h4>
+<p>Se <span class="math inline">\(E(X)=-1.5\)</span> e <span class="math inline">\(E(X^2)=4.25\)</span>, qual é <span class="math inline">\(\operatorname{Var}(X)\)</span>?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(2.000\)</span>
+</li>
+<li>
+<span class="math inline">\(2.062\)</span>
+</li>
+<li>
+<span class="math inline">\(5.750\)</span>
+</li>
+<li>
+<span class="math inline">\(2.250\)</span>
+</li>
+<li>
+<span class="math inline">\(6.500\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p><span class="math display">\[\operatorname{Var}(X)=E(X^2)-[E(X)]^2
+=4.25-(-1.5)^2=2.000.\]</span></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Se <span class="math inline">\(\operatorname{Var}(X)=3\)</span>, qual é <span class="math inline">\(\operatorname{Var}(-3X+-4)\)</span>?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(48.000\)</span>
+</li>
+<li>
+<span class="math inline">\(-9.000\)</span>
+</li>
+<li>
+<span class="math inline">\(27.000\)</span>
+</li>
+<li>
+<span class="math inline">\(23.000\)</span>
+</li>
+<li>
+<span class="math inline">\(-13.000\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Somar uma constante não altera a variância, e multiplicar por <span class="math inline">\(a\)</span> multiplica a variância por <span class="math inline">\(a^2\)</span>:
+<span class="math display">\[\operatorname{Var}(aX+b)=a^2\operatorname{Var}(X)
+=27.000.\]</span></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Para <span class="math inline">\(Z=(X-5)/4\)</span>, sabendo que <span class="math inline">\(E(X)=5\)</span> e <span class="math inline">\(\operatorname{DP}(X)=4\)</span>, quais são <span class="math inline">\(E(Z)\)</span> e <span class="math inline">\(\operatorname{Var}(Z)\)</span>?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(E(Z)=5\)</span> e <span class="math inline">\(\operatorname{Var}(Z)=4\)</span>.
+</li>
+<li>
+<span class="math inline">\(E(Z)=0\)</span> e <span class="math inline">\(\operatorname{Var}(Z)=1\)</span>.
+</li>
+<li>
+<span class="math inline">\(E(Z)=1.25\)</span> e <span class="math inline">\(\operatorname{Var}(Z)=1/16\)</span>.
+</li>
+<li>
+<span class="math inline">\(E(Z)=0\)</span> e <span class="math inline">\(\operatorname{Var}(Z)=16\)</span>.
+</li>
+<li>
+<span class="math inline">\(E(Z)=1\)</span> e <span class="math inline">\(\operatorname{Var}(Z)=0\)</span>.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Pela linearidade, <span class="math inline">\(E(Z)=[E(X)-\mu]/\sigma=0\)</span>. Além disso,
+<span class="math inline">\(\operatorname{Var}(Z)=\operatorname{Var}(X)/\sigma^2=1\)</span>.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Qual é a definição correta da função geradora de momentos de <span class="math inline">\(Y\)</span>?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(M(t)=\log E(e^{tX})\)</span>, sem qualquer condição de existência.
+</li>
+<li>
+<span class="math inline">\(M(t)=E(e^{-tX})\)</span> somente para <span class="math inline">\(t&gt;0\)</span>.
+</li>
+<li>
+<span class="math inline">\(M(t)=P(X\leq t)\)</span>.
+</li>
+<li>
+<span class="math inline">\(M(t)=E(e^{tX})\)</span>, desde que exista em algum intervalo aberto contendo <span class="math inline">\(0\)</span>.
+</li>
+<li>
+<span class="math inline">\(M(t)=E(t^X)\)</span> apenas para inteiros positivos <span class="math inline">\(t\)</span>.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>A fgm é <span class="math inline">\(M_X(t)=E(e^{tX})\)</span> e deve ser finita em uma vizinhança aberta de zero. Essa condição permite derivá-la em zero para obter momentos.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Uma variável tem fgm <span class="math inline">\(M(t)=\exp\{-2t+3t^2/2\}\)</span>. Qual é sua variância?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(6.000\)</span>
+</li>
+<li>
+<span class="math inline">\(1.732\)</span>
+</li>
+<li>
+<span class="math inline">\(-2.000\)</span>
+</li>
+<li>
+<span class="math inline">\(3.000\)</span>
+</li>
+<li>
+<span class="math inline">\(7.000\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p><span class="math inline">\(M&#39;(0)=\mu=-2\)</span> e <span class="math inline">\(M&#39;&#39;(0)=\mu^2+3\)</span>. Logo,
+<span class="math display">\[\operatorname{Var}(X)=M&#39;&#39;(0)-[M&#39;(0)]^2=3.\]</span></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Se <span class="math inline">\(X\sim\operatorname{Bernoulli}(0.15)\)</span>, qual é sua fgm?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(M_X(t)=e^{0.15t}\)</span>.
+</li>
+<li>
+<span class="math inline">\(M_X(t)=(1-0.15+0.15t)\)</span>.
+</li>
+<li>
+<span class="math inline">\(M_X(t)=0.15e^t\)</span>.
+</li>
+<li>
+<span class="math inline">\(M_X(t)=1-0.15+0.15e^t\)</span>.
+</li>
+<li>
+<span class="math inline">\(M_X(t)=0.15+(1-0.15)e^t\)</span>.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Como <span class="math inline">\(X\)</span> vale 0 com probabilidade <span class="math inline">\(1-p\)</span> e 1 com probabilidade <span class="math inline">\(p\)</span>,
+<span class="math display">\[M_X(t)=E(e^{tX})=(1-p)e^0+pe^t=1-p+pe^t.\]</span></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Duas variáveis <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> têm fgms finitas e iguais para todo <span class="math inline">\(t\in(-0.2,0.2)\)</span>. O que se conclui?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> têm a mesma distribuição.
+</li>
+<li>
+<span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> são independentes.
+</li>
+<li>
+Apenas suas médias são iguais; as distribuições podem ser quaisquer.
+</li>
+<li>
+<span class="math inline">\(X=Y\)</span> para todo resultado do experimento.
+</li>
+<li>
+Suas densidades devem ser normais.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>A unicidade da fgm afirma que fgms iguais em uma vizinhança de zero determinam a mesma distribuição. Isso não implica igualdade ponto a ponto nem independência.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Para <span class="math inline">\(X\)</span> com distribuição de Cauchy padrão, o que ocorre com <span class="math inline">\(M_X(t)=E(e^{tX})\)</span>?</p>
+<br/>
+<ol type="a">
+<li>
+A fgm existe e vale <span class="math inline">\(e^{t^2/2}\)</span>.
+</li>
+<li>
+A fgm é <span class="math inline">\(1/(1-t)\)</span> para <span class="math inline">\(t&lt;1\)</span>.
+</li>
+<li>
+A fgm coincide com a FDA da Cauchy.
+</li>
+<li>
+A fgm não existe em nenhuma vizinhança aberta de zero.
+</li>
+<li>
+A fgm existe apenas em <span class="math inline">\(t=0.5\)</span> e vale 1.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>As caudas da Cauchy são pesadas demais para que <span class="math inline">\(E(e^{tX})\)</span> seja finita em ambos os lados de zero. A distribuição existe, mas não possui fgm. A função característica, por outro lado, sempre existe.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Na série de Maclaurin de uma fgm, o coeficiente de <span class="math inline">\(t^{4}\)</span> é 0.5417. Qual é <span class="math inline">\(E(X^{4})\)</span>?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(13.0000\)</span>
+</li>
+<li>
+<span class="math inline">\(3.2500\)</span>
+</li>
+<li>
+<span class="math inline">\(312.0000\)</span>
+</li>
+<li>
+<span class="math inline">\(28561.0000\)</span>
+</li>
+<li>
+<span class="math inline">\(0.5417\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>A expansão é
+<span class="math display">\[M(t)=\sum_{j=0}^{\infty}\frac{E(X^j)}{j!}t^j.\]</span>
+Logo, <span class="math inline">\(E(X^{4})=4!\,(0.5417)
+=13.0000\)</span>.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Uma mistura tem peso 0.65, médias <span class="math inline">\(\mu_1=-1\)</span>, <span class="math inline">\(\mu_2=7.5\)</span> e variâncias <span class="math inline">\(\sigma_1^2=2.5\)</span>, <span class="math inline">\(\sigma_2^2=4\)</span>. Qual é a variância da mistura?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(3.025\)</span>
+</li>
+<li>
+<span class="math inline">\(3.901\)</span>
+</li>
+<li>
+<span class="math inline">\(19.462\)</span>
+</li>
+<li>
+<span class="math inline">\(3.250\)</span>
+</li>
+<li>
+<span class="math inline">\(23.363\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Com <span class="math inline">\(\mu=w\mu_1+(1-w)\mu_2\)</span>, a variância total é
+<span class="math display">\[w[\sigma_1^2+(\mu_1-\mu)^2]+(1-w)[\sigma_2^2+(\mu_2-\mu)^2]
+=19.462.\]</span></p>
+<br/>
+</li>
+</ol>
+
+</body>
+</html>

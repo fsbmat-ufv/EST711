@@ -1,0 +1,35 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  k <- sample(seq(1.1,1.7,0.1),1)
+  exact <- max(0,1-k/sqrt(3)); cheb <- 1/k^2
+  vals <- round(c(exact,cheb,1-cheb,k/sqrt(3),1/k),4)
+  if (length(unique(vals)) == 5L) break
+}
+opts <- sprintf("$%.4f$",vals)
+```
+
+Question
+========
+Se $X\sim U(-\sqrt3,\sqrt3)$, então $E(X)=0$ e $\operatorname{Var}(X)=1$. Para $k=`r k`$, qual é o valor exato de $P(|X|\geq k)$?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+O comprimento total do suporte é $2\sqrt3$, e o intervalo central $(-k,k)$ tem comprimento $2k$. Logo,
+$$P(|X|\geq k)=1-\frac{k}{\sqrt3}
+=`r sprintf("%.4f",exact)`.$$
+Chebyshev daria apenas o limite superior $1/k^2=`r sprintf("%.4f",cheb)`$.
+
+Meta-information
+================
+exname: Cap1S10Q6_exato_vs_Chebyshev
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE

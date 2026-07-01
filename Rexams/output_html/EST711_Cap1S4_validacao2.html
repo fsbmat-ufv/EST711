@@ -1,0 +1,300 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+<title>Exam 2</title>
+<style type="text/css">
+body{font-family: Arial, Helvetica, Sans;}
+</style>
+<meta charset="utf-8" />
+<script type="text/javascript"   src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script>
+</head>
+
+<body>
+<h2>Exam 2</h2>
+
+<ol>
+<li>
+<h4>Question</h4>
+<p>Em 90 registros, 61 apresentam <span class="math inline">\(B\)</span> e 51 apresentam simultaneamente <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span>. Qual é <span class="math inline">\(P(A\mid B)\)</span>?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(0.8361\)</span>
+</li>
+<li>
+<span class="math inline">\(0.6778\)</span>
+</li>
+<li>
+<span class="math inline">\(0.1639\)</span>
+</li>
+<li>
+<span class="math inline">\(0.5667\)</span>
+</li>
+<li>
+<span class="math inline">\(0.3222\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p><span class="math display">\[P(A\mid B)=\frac{P(A\cap B)}{P(B)}
+=\frac{51}{61}=0.8361.\]</span></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Se <span class="math inline">\(P(A)=0.55\)</span> e <span class="math inline">\(P(B\mid A)=0.75\)</span>, qual é <span class="math inline">\(P(A\cap B)\)</span>?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(0.4125\)</span>
+</li>
+<li>
+<span class="math inline">\(0.7500\)</span>
+</li>
+<li>
+<span class="math inline">\(1.3636\)</span>
+</li>
+<li>
+<span class="math inline">\(1.3000\)</span>
+</li>
+<li>
+<span class="math inline">\(0.1375\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Pela regra da multiplicação,
+<span class="math display">\[P(A\cap B)=P(A)P(B\mid A)
+=(0.55)(0.75)=0.4125.\]</span></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Três máquinas produzem proporções 0.15, 0.35, 0.50 dos itens, com probabilidades de defeito 0.08, 0.09, 0.04. Qual é a probabilidade de um item escolhido ao acaso ser defeituoso?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(0.0700\)</span>
+</li>
+<li>
+<span class="math inline">\(0.0228\)</span>
+</li>
+<li>
+<span class="math inline">\(0.2100\)</span>
+</li>
+<li>
+<span class="math inline">\(0.9365\)</span>
+</li>
+<li>
+<span class="math inline">\(0.0635\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Pela probabilidade total,
+<span class="math display">\[P(D)=\sum_{j=1}^3P(M_j)P(D\mid M_j)
+=0.0635.\]</span></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Uma condição tem prevalência 0.07. Um teste possui sensibilidade 0.98 e especificidade 0.95. Qual é <span class="math inline">\(P(\text{condição}\mid\text{positivo})\)</span>?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(0.9500\)</span>
+</li>
+<li>
+<span class="math inline">\(0.4040\)</span>
+</li>
+<li>
+<span class="math inline">\(0.5960\)</span>
+</li>
+<li>
+<span class="math inline">\(0.0700\)</span>
+</li>
+<li>
+<span class="math inline">\(0.9800\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Pelo teorema de Bayes,
+<span class="math display">\[P(C\mid+)=\frac{P(+\mid C)P(C)}
+{P(+\mid C)P(C)+P(+\mid C^c)P(C^c)}
+=0.5960.\]</span></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Eventos <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span> são independentes, com <span class="math inline">\(P(A)=0.8\)</span> e <span class="math inline">\(P(B)=0.35\)</span>. Quanto vale <span class="math inline">\(P(A\cap B)\)</span>?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(0.3500\)</span>
+</li>
+<li>
+<span class="math inline">\(0.7200\)</span>
+</li>
+<li>
+<span class="math inline">\(2.2857\)</span>
+</li>
+<li>
+<span class="math inline">\(0.2800\)</span>
+</li>
+<li>
+<span class="math inline">\(1.1500\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>A independência implica
+<span class="math display">\[P(A\cap B)=P(A)P(B)=(0.8)(0.35)
+=0.2800.\]</span></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Se <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span> são eventos independentes em um estudo de resultados de ensaios, qual afirmação é necessariamente verdadeira?</p>
+<br/>
+<ol type="a">
+<li>
+Exatamente um dos eventos deve ocorrer.
+</li>
+<li>
+<span class="math inline">\(A^c\)</span> e <span class="math inline">\(B^c\)</span> também são independentes.
+</li>
+<li>
+<span class="math inline">\(P(A\mid B)=P(B\mid A)\)</span> para quaisquer marginais.
+</li>
+<li>
+<span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span> são necessariamente disjuntos.
+</li>
+<li>
+<span class="math inline">\(P(A\cup B)=P(A)+P(B)\)</span>.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Temos
+<span class="math display">\[P(A^c\cap B^c)=1-P(A)-P(B)+P(A)P(B)
+=P(A^c)P(B^c),\]</span>
+logo os complementos são independentes. Independência não significa disjunção.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Em duas moedas honestas lançadas uma vez, seja <span class="math inline">\(A=\)</span> “cara no primeiro resultado”, <span class="math inline">\(B=\)</span> “cara no segundo” e <span class="math inline">\(C=\)</span> “os resultados são iguais”. Como se classificam esses eventos?</p>
+<br/>
+<ol type="a">
+<li>
+São mutuamente independentes.
+</li>
+<li>
+Nenhum par é independente.
+</li>
+<li>
+Apenas <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span> são independentes.
+</li>
+<li>
+São independentes dois a dois, mas não mutuamente independentes.
+</li>
+<li>
+São mutuamente exclusivos.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Cada evento tem probabilidade <span class="math inline">\(1/2\)</span> e cada interseção de dois tem probabilidade <span class="math inline">\(1/4\)</span>. Porém,
+<span class="math display">\[P(A\cap B\cap C)=\frac14\neq\frac18=P(A)P(B)P(C).\]</span>
+Logo, independência aos pares não implica independência mútua.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Uma urna contém 6 bolas vermelhas e 4 azuis. Duas são retiradas sem reposição. Dado que a primeira foi vermelha, qual é a probabilidade de a segunda também ser vermelha?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(0.5556\)</span>
+</li>
+<li>
+<span class="math inline">\(0.6667\)</span>
+</li>
+<li>
+<span class="math inline">\(0.4444\)</span>
+</li>
+<li>
+<span class="math inline">\(0.5000\)</span>
+</li>
+<li>
+<span class="math inline">\(0.6000\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Restam 5 vermelhas entre 9 bolas. Assim,
+<span class="math display">\[P(V_2\mid V_1)=\frac{5}{9}
+=0.5556.\]</span></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Dois componentes independentes têm confiabilidades 0.84 e 0.94. O sistema é do tipo paralelo. Qual é sua confiabilidade?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(0.9904\)</span>
+</li>
+<li>
+<span class="math inline">\(0.8400\)</span>
+</li>
+<li>
+<span class="math inline">\(0.0096\)</span>
+</li>
+<li>
+<span class="math inline">\(0.9400\)</span>
+</li>
+<li>
+<span class="math inline">\(0.2104\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Em paralelo, o sistema falha apenas quando ambos os componentes falham.
+A confiabilidade é 0.9904.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Ensaios de Bernoulli independentes têm probabilidade de sucesso <span class="math inline">\(p=0.4\)</span>. Qual é a probabilidade de o primeiro sucesso ocorrer exatamente no ensaio 2?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(0.1600\)</span>
+</li>
+<li>
+<span class="math inline">\(0.3600\)</span>
+</li>
+<li>
+<span class="math inline">\(0.8000\)</span>
+</li>
+<li>
+<span class="math inline">\(0.2400\)</span>
+</li>
+<li>
+<span class="math inline">\(0.6400\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>São necessários 1 fracassos seguidos de um sucesso:
+<span class="math display">\[P(X=2)=(1-p)^{1}p
+=0.2400.\]</span></p>
+<br/>
+</li>
+</ol>
+
+</body>
+</html>

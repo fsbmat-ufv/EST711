@@ -1,0 +1,36 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  a <- sample(2:6,1); y <- runif(1,0.1*a^2,0.9*a^2)
+  ans <- sqrt(y)/a
+  vals <- round(c(ans,y/a^2,2*sqrt(y)/a,1-ans,1/(2*a*sqrt(y))),4)
+  if (length(unique(vals)) == 5L) break
+}
+opts <- sprintf("$%.4f$",vals)
+```
+
+Question
+========
+Se $X\sim U(-`r a`,`r a`)$ e $Y=X^2$, qual é $F_Y(`r sprintf("%.3f",y)`)$?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+Para $0<y<a^2$,
+$$F_Y(y)=P(-\sqrt y\leq X\leq\sqrt y)
+=\frac{2\sqrt y}{2a}=\frac{\sqrt y}{a}.$$
+No ponto indicado, o valor é `r sprintf("%.4f",ans)`.
+
+Meta-information
+================
+exname: Cap1S7Q7_transformacao_nao_monotona
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

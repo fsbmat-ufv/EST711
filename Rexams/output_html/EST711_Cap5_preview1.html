@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+<title>Exam 1</title>
+<style type="text/css">
+body{font-family: Arial, Helvetica, Sans;}
+</style>
+<meta charset="utf-8" />
+<script type="text/javascript"   src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script>
+</head>
+
+<body>
+<h2>Exam 1</h2>
+
+<ol>
+<li>
+<h4>Question</h4>
+<p>Seja <span class="math inline">\(X_i \overset{\text{iid}}{\sim}\)</span> uma distribuição com desvio padrão <span class="math inline">\(\sigma = 1\)</span> conhecido. Com <span class="math inline">\(n = 36\)</span> observações e média amostral <span class="math inline">\(\bar{X} = 5.81\)</span>, o intervalo de confiança 95% para <span class="math inline">\(\mu\)</span> via Teorema Central do Limite é <span class="math inline">\(\bar{X} \pm 1{,}96\,\sigma/\sqrt{n}\)</span>. A margem de erro desse intervalo é:</p>
+<br/>
+<ol type="a">
+<li>
+0.0544
+</li>
+<li>
+11.8776
+</li>
+<li>
+11.76
+</li>
+<li>
+0.2742
+</li>
+<li>
+0.3267
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>A margem de erro do IC 95% via TCL com <span class="math inline">\(\sigma\)</span> conhecido é <span class="math inline">\(z_{0{,}975}\,\sigma/\sqrt{n} = 1{,}96 \times 1 / \sqrt{36} = 0.3267\)</span>.</p>
+<p>Os erros comuns são: usar <span class="math inline">\(z_{0{,}95}=1{,}645\)</span> em vez de <span class="math inline">\(1{,}96\)</span>; usar <span class="math inline">\(\sigma^2\)</span> em vez de <span class="math inline">\(\sigma\)</span>; dividir por <span class="math inline">\(n\)</span> em vez de <span class="math inline">\(\sqrt{n}\)</span>; ou multiplicar por <span class="math inline">\(\sqrt{n}\)</span> em vez de dividir.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Em inferencia estatistica, uma quantidade pivotal <span class="math inline">\(Q(X_1,\ldots,X_n;\theta)\)</span> e definida como:</p>
+<br/>
+<ol type="a">
+<li>
+Uma estatistica suficiente minima para <span class="math inline">\(\theta\)</span>.
+</li>
+<li>
+Uma funcao da amostra e do parametro cuja distribuicao nao depende de <span class="math inline">\(\theta\)</span>.
+</li>
+<li>
+O estimador de maxima verossimilhanca de <span class="math inline">\(\theta\)</span> padronizado pela informacao de Fisher.
+</li>
+<li>
+Qualquer estatistica com distribuicao conhecida, independente da amostra e do parametro.
+</li>
+<li>
+Uma estatistica anciliar que e independente do parametro <span class="math inline">\(\theta\)</span>.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Uma quantidade pivotal e uma funcao da amostra e do parametro desconhecido cuja distribuicao e completamente conhecida (nao depende de <span class="math inline">\(\theta\)</span>). Exemplos classicos: <span class="math inline">\(Z = \sqrt{n}(\bar{X}-\mu)/\sigma \sim N(0,1)\)</span> e <span class="math inline">\(T = \sqrt{n}(\bar{X}-\mu)/S \sim t_{n-1}\)</span>.</p>
+<p>Ela nao precisa ser suficiente (opcao 2), nem e o EMV padronizado (opcao 3). Uma estatistica anciliar (opcao 5) tem distribuicao que nao depende de <span class="math inline">\(\theta\)</span>, mas nao contem o parametro na sua definicao - e diferente de quantidade pivotal.</p>
+<br/>
+</li>
+</ol>
+
+</body>
+</html>

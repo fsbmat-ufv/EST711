@@ -1,0 +1,36 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  m <- sample(2:6,1); momento <- sample(seq(1,20,0.5),1)
+  coef <- momento/factorial(m)
+  vals <- round(c(momento,coef,factorial(m)*momento,momento^m,momento/m),4)
+  if (length(unique(vals)) == 5L) break
+}
+opts <- sprintf("$%.4f$",vals)
+```
+
+Question
+========
+Na série de Maclaurin de uma fgm, o coeficiente de $t^{`r m`}$ é `r sprintf("%.4f",coef)`. Qual é $E(X^{`r m`})$?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+A expansão é
+$$M(t)=\sum_{j=0}^{\infty}\frac{E(X^j)}{j!}t^j.$$
+Logo, $E(X^{`r m`})=`r m`!\,(`r sprintf("%.4f",coef)`)
+=`r sprintf("%.4f",momento)`$.
+
+Meta-information
+================
+exname: Cap1S9Q9_Maclaurin_momentos
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

@@ -1,0 +1,56 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  n_obs <- sample(9:20, 1)
+  n_cens <- sample(2:7, 1)
+  xbar <- sample(seq(-0.2, 1.0, 0.1), 1)
+  a <- sample(seq(-1.2, 0.2, 0.1), 1)
+  theta_old <- sample(seq(-0.1, 0.9, 0.1), 1)
+  z <- a - theta_old
+  mills_left <- dnorm(z)/pnorm(z)
+  n <- n_obs + n_cens
+  theta_new <- (n_obs * xbar + n_cens * (theta_old - mills_left))/n
+  vals <- round(c(theta_new,
+                  (n_obs * xbar + n_cens * theta_old)/n,
+                  (n_obs * xbar + n_cens * (theta_old + mills_left))/n,
+                  (n_obs * xbar + n_cens * a)/n,
+                  xbar - mills_left), 3)
+  if (length(unique(vals)) == 5L) break
+}
+opts <- sprintf("$%.3f$", vals)
+```
+
+Question
+========
+Considere dados de uma distribuição $N(\theta,1)$. Há `r n_obs` observações completas, cuja média é `r sprintf("%.1f", xbar)`, e `r n_cens` observações censuradas à esquerda em $a=`r sprintf("%.1f", a)`$, isto é, sabe-se que $Z<a$. Partindo de $\theta^{(t)}=`r sprintf("%.1f", theta_old)`$, determine $\theta^{(t+1)}$.
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+Para censura à esquerda,
+$$
+E(Z\mid Z<a,\theta^{(t)})=\theta^{(t)}-
+\frac{\phi(a-\theta^{(t)})}{\Phi(a-\theta^{(t)})}.
+$$
+Logo,
+$$
+\theta^{(t+1)}=
+\frac{n_{\mathrm{obs}}\bar x+n_{\mathrm{cens}}
+E(Z\mid Z<a,\theta^{(t)})}{n_{\mathrm{obs}}+n_{\mathrm{cens}}}
+=`r sprintf("%.3f", theta_new)`.
+$$
+O sinal negativo na razão de Mills é essencial: os valores censurados estão abaixo de $a$.
+
+Meta-information
+================
+exname: Cap8S2Q2_EM_censura_esquerda
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

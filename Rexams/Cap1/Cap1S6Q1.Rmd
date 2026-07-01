@@ -1,0 +1,31 @@
+```{r, echo=FALSE, results="hide"}
+m <- sample(3:9,1); c0 <- 2/(m*(m+1))
+vals <- c(c0,1/m,1/(m+1),m/(m+1),1/(m*(m+1)))
+opts <- sprintf("$%.5f$",vals)
+```
+
+Question
+========
+Uma variável discreta tem $p_X(x)=c\,x$ para $x=1,\ldots,`r m`$. Qual valor normaliza a pmf?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+Deve valer
+$$1=\sum_{x=1}^{`r m`}cx=c\frac{`r m`(`r m+1`)}2,$$
+portanto $c=2/[`r m`(`r m+1`)]=`r sprintf("%.5f",c0)`$.
+
+Meta-information
+================
+exname: Cap1S6Q1_normalizacao_pmf
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

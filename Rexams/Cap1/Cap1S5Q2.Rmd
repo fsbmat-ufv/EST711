@@ -1,0 +1,34 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  fa <- sample(seq(0.05,0.45,0.05),1); fb <- sample(seq(fa+0.10,0.95,0.05),1)
+  ans <- fb-fa; vals <- round(c(ans,fb,fa,1-ans,fa+fb),3)
+  if(length(unique(vals))==5L) break
+}
+a <- sample(-3:1,1); b <- a+sample(1:4,1); opts <- sprintf("$%.3f$",vals)
+```
+
+Question
+========
+Para uma variável aleatória contínua, $F_X(`r a`)=`r fa`$ e $F_X(`r b`)=`r fb`$. Qual é $P(`r a`<X\leq`r b`)$?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+$$P(a<X\leq b)=F_X(b)-F_X(a)
+=`r fb`-`r fa`=`r sprintf("%.3f",ans)`.$$
+
+Meta-information
+================
+exname: Cap1S5Q2_intervalo_pela_FDA
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+
+

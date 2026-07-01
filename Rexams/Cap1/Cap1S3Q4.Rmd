@@ -1,0 +1,45 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  p1 <- sample(seq(0.35, 0.60, 0.05), 1)
+  p2 <- sample(seq(0.30, 0.55, 0.05), 1)
+  p3 <- sample(seq(0.25, 0.50, 0.05), 1)
+  p12 <- sample(seq(0.08, 0.18, 0.02), 1)
+  p13 <- sample(seq(0.06, 0.16, 0.02), 1)
+  p23 <- sample(seq(0.05, 0.15, 0.02), 1)
+  p123 <- sample(seq(0.01, 0.05, 0.01), 1)
+  ans <- p1+p2+p3-p12-p13-p23+p123
+  vals <- round(c(ans, p1+p2+p3, ans-p123, ans+p12+p13+p23, 1-ans), 3)
+  if (ans > 0 && ans < 1 && length(unique(vals)) == 5L) break
+}
+opts <- sprintf("$%.3f$", vals)
+```
+
+Question
+========
+Para três eventos, são conhecidas as probabilidades
+$$(P(A),P(B),P(C))=(`r p1`,`r p2`,`r p3`),$$
+$$(P(A\cap B),P(A\cap C),P(B\cap C))=(`r p12`,`r p13`,`r p23`)$$
+e $P(A\cap B\cap C)=`r p123`$. Calcule $P(A\cup B\cup C)$.
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+A inclusão-exclusão fornece
+$$P(A\cup B\cup C)=\sum P(A_i)-\sum P(A_i\cap A_j)+P(A\cap B\cap C)
+=`r sprintf("%.3f", ans)`.$$
+
+Meta-information
+================
+exname: Cap1S3Q4_inclusao_exclusao
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+
+

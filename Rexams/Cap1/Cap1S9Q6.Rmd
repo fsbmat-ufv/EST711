@@ -1,0 +1,29 @@
+```{r, echo=FALSE, results="hide"}
+p <- sample(seq(0.10,0.90,0.05),1)
+```
+
+Question
+========
+Se $X\sim\operatorname{Bernoulli}(`r p`)$, qual é sua fgm?
+
+Answerlist
+----------
+* $M_X(t)=1-`r p`+`r p`e^t$.
+* $M_X(t)=`r p`+(1-`r p`)e^t$.
+* $M_X(t)=e^{`r p`t}$.
+* $M_X(t)=`r p`e^t$.
+* $M_X(t)=(1-`r p`+`r p`t)$.
+
+Solution
+========
+Como $X$ vale 0 com probabilidade $1-p$ e 1 com probabilidade $p$,
+$$M_X(t)=E(e^{tX})=(1-p)e^0+pe^t=1-p+pe^t.$$
+
+Meta-information
+================
+exname: Cap1S9Q6_fgm_Bernoulli
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+
+

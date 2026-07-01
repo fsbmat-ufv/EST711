@@ -1,0 +1,35 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  xv <- -2:2; raw <- sample(1:9,5,replace=TRUE); pr <- raw/sum(raw)
+  y <- sample(1:2,1); ans <- sum(pr[abs(xv)==y])
+  vals <- round(c(ans,pr[xv==y],pr[xv==-y],sum(pr[abs(xv)<=y]),1-ans),4)
+  if (length(unique(vals)) == 5L) break
+}
+opts <- sprintf("$%.4f$",vals); ptxt <- paste(sprintf("%.3f",pr),collapse=", ")
+```
+
+Question
+========
+Uma variável tem suporte $(-2,-1,0,1,2)$ e probabilidades $(`r ptxt`)$. Se $Y=|X|$, qual é $P(Y=`r y`)$?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+As pré-imagens de $Y=`r y`$ são $X=-`r y`$ e $X=`r y`$. Logo,
+$$P(Y=`r y`)=P(X=-`r y`)+P(X=`r y`)
+=`r sprintf("%.4f",ans)`.$$
+
+Meta-information
+================
+exname: Cap1S6Q6_transformacao_valor_absoluto
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

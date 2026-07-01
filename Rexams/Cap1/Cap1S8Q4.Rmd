@@ -1,0 +1,34 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  mu <- sample(seq(-3,5,0.5),1); a <- sample(c(-3,-2,2,3,4),1); b <- sample(-5:5,1)
+  ans <- a*mu+b; vals <- round(c(ans,a*mu,a*(mu+b),mu+b,a^2*mu+b),3)
+  if (length(unique(vals)) == 5L) break
+}
+opts <- sprintf("$%.3f$",vals)
+```
+
+Question
+========
+Se $E(X)=`r mu`$, qual é $E(`r a`X+`r b`)$?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+A linearidade fornece
+$$E(aX+b)=aE(X)+b=(`r a`)(`r mu`)+`r b`
+=`r sprintf("%.3f",ans)`.$$
+
+Meta-information
+================
+exname: Cap1S8Q4_linearidade_esperanca
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

@@ -1,0 +1,36 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  a <- sample(2:8,1); k <- sample(1:4,1); p <- sample(seq(0.10,0.90,0.05),1)
+  q <- a*p^(1/(k+1))
+  vals <- round(c(q,a*p,a*(1-p)^(1/(k+1)),p/a,a*p^(k+1)),4)
+  if (length(unique(vals)) == 5L) break
+}
+opts <- sprintf("$%.4f$",vals)
+```
+
+Question
+========
+Se $F_X(x)=(x/`r a`)^{`r k+1`}$ para $0<x<`r a`$, qual é o quantil de ordem $p=`r p`$?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+Resolve-se $F_X(q_p)=p$:
+$$\left(\frac{q_p}{`r a`}\right)^{`r k+1`}=`r p`,
+\qquad q_p=`r a`\,p^{1/`r k+1`}
+=`r sprintf("%.4f",q)`.$$
+
+Meta-information
+================
+exname: Cap1S7Q4_quantile_continuo
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

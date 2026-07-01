@@ -1,0 +1,29 @@
+```{r, echo=FALSE, results="hide"}
+m <- sample(c(50, 100, 250, 500), 1)
+contexto <- sample(c("efeitos aleatórios", "variáveis latentes contínuas",
+                     "dados ausentes de alta dimensão"), 1)
+```
+
+Question
+========
+Em um modelo com `r contexto`, a esperança do passo E não possui forma fechada. Um MCEM aproxima $Q$ usando `r m` simulações condicionais em cada iteração. Qual afirmação é correta?
+
+Answerlist
+----------
+* O erro de Monte Carlo pode produzir oscilações na log-verossimilhança; aumentar adaptativamente o número de simulações ajuda a tornar as atualizações mais precisas perto da convergência.
+* A aproximação de Monte Carlo preserva monotonicidade exata para qualquer número positivo de simulações.
+* O número de simulações deve diminuir perto da convergência para aumentar a precisão do passo E.
+* O MCEM elimina a necessidade de maximizar a função aproximada no passo M.
+* As simulações devem ser geradas da distribuição marginal dos dados ausentes, ignorando os dados observados e o parâmetro corrente.
+
+Solution
+========
+O MCEM usa amostras da distribuição condicional dos dados ausentes dados os observados, sob $\theta^{(t)}$, para aproximar $Q$. Como essa aproximação contém erro aleatório, a monotonicidade pode falhar em uma realização finita. Um esquema comum aumenta o esforço de Monte Carlo quando o algoritmo se aproxima da solução.
+
+Meta-information
+================
+exname: Cap8S3Q3_Monte_Carlo_EM
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

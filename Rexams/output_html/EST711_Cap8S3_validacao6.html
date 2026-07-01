@@ -1,0 +1,371 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+<title>Exam 6</title>
+<style type="text/css">
+body{font-family: Arial, Helvetica, Sans;}
+</style>
+<meta charset="utf-8" />
+<script type="text/javascript"   src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script>
+</head>
+
+<body>
+<h2>Exam 6</h2>
+
+<ol>
+<li>
+<h4>Question</h4>
+<p>Na iteração 11 do ajuste de uma mistura finita, um algoritmo generalizado EM (GEM) não maximiza exatamente <span class="math inline">\(Q(\theta\mid\theta^{(t)})\)</span>, mas encontra <span class="math inline">\(\theta^{(t+1)}\)</span> tal que
+<span class="math display">\[
+Q(\theta^{(t+1)}\mid\theta^{(t)})-
+Q(\theta^{(t)}\mid\theta^{(t)})=0.040&gt;0.
+\]</span>
+Qual conclusão é justificada pela definição de GEM?</p>
+<br/>
+<ol type="a">
+<li>
+O algoritmo deixa de ser EM porque somente a maximização exata de <span class="math inline">\(Q\)</span> preserva a monotonicidade.
+</li>
+<li>
+O novo parâmetro é necessariamente o máximo global da verossimilhança observada.
+</li>
+<li>
+A log-verossimilhança observada não diminui, embora o passo M não tenha encontrado necessariamente o máximo global de <span class="math inline">\(Q\)</span>.
+</li>
+<li>
+A log-verossimilhança observada aumenta exatamente 0.040, pois seu incremento coincide com o incremento de <span class="math inline">\(Q\)</span>.
+</li>
+<li>
+O aumento de <span class="math inline">\(Q\)</span> garante que todas as coordenadas do parâmetro mudem na mesma direção.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>No GEM, exige-se apenas que o passo de atualização aumente, ou ao menos não diminua, a função auxiliar:
+<span class="math display">\[
+Q(\theta^{(t+1)}\mid\theta^{(t)})\geq
+Q(\theta^{(t)}\mid\theta^{(t)}).
+\]</span>
+Pelo mesmo argumento de minorização usado no EM, isso implica
+<span class="math inline">\(\ell(\theta^{(t+1)})\geq\ell(\theta^{(t)})\)</span>. O incremento de <span class="math inline">\(Q\)</span> não é, em geral, igual ao incremento da log-verossimilhança observada e não garante máximo global.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Em um modelo com médias, variâncias e pesos, o passo M conjunto é difícil. Decide-se aplicar o algoritmo ECM, dividindo o parâmetro em 2. Qual descrição caracteriza corretamente uma iteração ECM?</p>
+<br/>
+<ol type="a">
+<li>
+Maximiza-se a verossimilhança observada separadamente em cada bloco, sem utilizar a função <span class="math inline">\(Q\)</span>.
+</li>
+<li>
+Realizam-se 2 passos E independentes e usa-se apenas aquele que produzir a maior imputação dos dados ausentes.
+</li>
+<li>
+Substitui-se o passo E por classificações determinísticas, transformando todas as responsabilidades em zero ou um.
+</li>
+<li>
+Sorteia-se um bloco por iteração e aceita-se qualquer atualização, mesmo que <span class="math inline">\(Q\)</span> diminua.
+</li>
+<li>
+Após um único passo E, realizam-se maximizações condicionais sucessivas de <span class="math inline">\(Q\)</span>, atualizando cada bloco com os demais fixados nos valores mais recentes.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>O ECM substitui a maximização conjunta do passo M por uma sequência de passos CM (conditional maximization). Cada passo maximiza <span class="math inline">\(Q\)</span> em um bloco, mantendo os demais fixos, e usa os valores já atualizados naquela iteração. Se cada passo CM não diminui <span class="math inline">\(Q\)</span>, preserva-se a propriedade de subida do EM.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Em um modelo com efeitos aleatórios, a esperança do passo E não possui forma fechada. Um MCEM aproxima <span class="math inline">\(Q\)</span> usando 100 simulações condicionais em cada iteração. Qual afirmação é correta?</p>
+<br/>
+<ol type="a">
+<li>
+A aproximação de Monte Carlo preserva monotonicidade exata para qualquer número positivo de simulações.
+</li>
+<li>
+O MCEM elimina a necessidade de maximizar a função aproximada no passo M.
+</li>
+<li>
+O número de simulações deve diminuir perto da convergência para aumentar a precisão do passo E.
+</li>
+<li>
+O erro de Monte Carlo pode produzir oscilações na log-verossimilhança; aumentar adaptativamente o número de simulações ajuda a tornar as atualizações mais precisas perto da convergência.
+</li>
+<li>
+As simulações devem ser geradas da distribuição marginal dos dados ausentes, ignorando os dados observados e o parâmetro corrente.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>O MCEM usa amostras da distribuição condicional dos dados ausentes dados os observados, sob <span class="math inline">\(\theta^{(t)}\)</span>, para aproximar <span class="math inline">\(Q\)</span>. Como essa aproximação contém erro aleatório, a monotonicidade pode falhar em uma realização finita. Um esquema comum aumenta o esforço de Monte Carlo quando o algoritmo se aproxima da solução.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Três log-verossimilhanças observadas consecutivas de um EM são
+<span class="math display">\[
+\ell^{(t-2)}=-85.000,\qquad
+\ell^{(t-1)}=-82.000,\qquad
+\ell^{(t)}=-80.200.
+\]</span>
+Usando a aceleração de Aitken
+<span class="math display">\[
+a^{(t)}=\frac{\ell^{(t)}-\ell^{(t-1)}}
+{\ell^{(t-1)}-\ell^{(t-2)}},\qquad
+\ell_\infty^{(t)}=\ell^{(t-1)}+
+\frac{\ell^{(t)}-\ell^{(t-1)}}{1-a^{(t)}},
+\]</span>
+qual é a estimativa de <span class="math inline">\(\ell_\infty^{(t)}\)</span>?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(-74.500\)</span>
+</li>
+<li>
+<span class="math inline">\(-75.700\)</span>
+</li>
+<li>
+<span class="math inline">\(-77.500\)</span>
+</li>
+<li>
+<span class="math inline">\(-79.120\)</span>
+</li>
+<li>
+<span class="math inline">\(-80.200\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Neste caso,
+<span class="math display">\[
+a^{(t)}=\frac{1.800}
+{3.000}=0.600.
+\]</span>
+Logo,
+<span class="math display">\[
+\ell_\infty^{(t)}=-82.000+
+\frac{1.800}
+{1-0.600}=-77.500.
+\]</span></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Perto de um ponto fixo escalar do EM, a taxa local de contração pode ser aproximada pela fração de informação ausente
+<span class="math display">\[r=\frac{I_{\rm mis}}{I_{\rm com}}.\]</span>
+Em certo ajuste, <span class="math inline">\(I_{\rm com}=60.0\)</span>, <span class="math inline">\(I_{\rm mis}=15.0\)</span> e o erro inicial em relação ao ponto fixo é 1.2. Pela aproximação linear, qual será o módulo do erro após 3 iterações?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(0.0188\)</span>
+</li>
+<li>
+<span class="math inline">\(0.3000\)</span>
+</li>
+<li>
+<span class="math inline">\(0.9000\)</span>
+</li>
+<li>
+<span class="math inline">\(0.6857\)</span>
+</li>
+<li>
+<span class="math inline">\(0.5063\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>A fração de informação ausente é
+<span class="math display">\[
+r=\frac{15.0}{60.0}
+=0.25.
+\]</span>
+Na aproximação linear, <span class="math inline">\(|e_k|\approx r^k|e_0|\)</span>. Portanto,
+<span class="math display">\[
+|e_{3}|\approx (0.25)^{3}
+(1.2)=0.0188.
+\]</span>
+Quanto maior a fração de informação ausente, mais lenta tende a ser a convergência do EM.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Em um problema escalar com dados incompletos, a informação completa estimada é <span class="math inline">\(I_{\rm com}=65\)</span> e a informação ausente é <span class="math inline">\(I_{\rm mis}=15\)</span>. Usando o princípio da informação ausente, qual é o erro-padrão aproximado do estimador de máxima verossimilhança?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(7.0711\)</span>
+</li>
+<li>
+<span class="math inline">\(0.1118\)</span>
+</li>
+<li>
+<span class="math inline">\(0.1414\)</span>
+</li>
+<li>
+<span class="math inline">\(0.1240\)</span>
+</li>
+<li>
+<span class="math inline">\(0.2582\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>A informação observada é a diferença entre a informação completa e a ausente:
+<span class="math display">\[
+I_{\rm obs}=I_{\rm com}-I_{\rm mis}=65-15=50.
+\]</span>
+Assim, a variância assintótica é aproximadamente <span class="math inline">\(I_{\rm obs}^{-1}\)</span> e
+<span class="math display">\[
+\operatorname{EP}(\widehat\theta)\approx
+\frac{1}{\sqrt{I_{\rm obs}}}=
+\frac{1}{\sqrt{50}}=0.1414.
+\]</span>
+Usar <span class="math inline">\(I_{\rm com}\)</span> sozinho subestimaria a incerteza por ignorar a informação perdida.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Em um modelo de dimensão 1 com efeitos aleatórios não observados, deseja-se estimar a informação observada após a convergência do EM. Se <span class="math inline">\(S_c(\theta)\)</span> e <span class="math inline">\(H_c(\theta)\)</span> são, respectivamente, o escore e a Hessiana da log-verossimilhança completa, qual é a identidade de Louis, condicionalmente aos dados observados?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(I_{\rm obs}(\theta)=E[-H_c(\theta)\mid X]+\operatorname{Var}[S_c(\theta)\mid X]\)</span>.
+</li>
+<li>
+<span class="math inline">\(I_{\rm obs}(\theta)=E[-H_c(\theta)\mid X]-\operatorname{Var}[S_c(\theta)\mid X]\)</span>.
+</li>
+<li>
+<span class="math inline">\(I_{\rm obs}(\theta)=-H_c(\theta)\)</span> avaliada após substituir todos os dados ausentes por suas médias, sem termo de correção.
+</li>
+<li>
+<span class="math inline">\(I_{\rm obs}(\theta)=\operatorname{Var}[S_c(\theta)\mid X]-E[-H_c(\theta)\mid X]\)</span>.
+</li>
+<li>
+<span class="math inline">\(I_{\rm obs}(\theta)=E[S_c(\theta)\mid X]E[S_c(\theta)\mid X]^\top\)</span>.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>A identidade de Louis expressa o princípio
+<span class="math display">\[
+\text{informação observada}=
+\text{informação completa esperada}-
+\text{informação ausente}.
+\]</span>
+Condicionalmente aos dados observados,
+<span class="math display">\[
+I_{\rm obs}(\theta)=E[-H_c(\theta)\mid X]
+-\operatorname{Var}[S_c(\theta)\mid X].
+\]</span>
+A variabilidade condicional do escore completo mede a informação perdida pelas variáveis não observadas.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Um ajuste EM usa o critério de parada
+<span class="math display">\[
+d^{(t)}=\frac{|\ell^{(t+1)}-\ell^{(t)}|}{1+|\ell^{(t)}|}
+\leq \varepsilon.
+\]</span>
+Nesta iteração, <span class="math inline">\(\ell^{(t)}=-292.000000\)</span>, <span class="math inline">\(\ell^{(t+1)}=-291.707000\)</span> e <span class="math inline">\(\varepsilon=5e-04\)</span>. Qual avaliação está correta?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(d=2.93e-01\)</span>, usando apenas o incremento absoluto; o algoritmo para.
+</li>
+<li>
+<span class="math inline">\(d=1.00e-03\)</span>; apesar disso, o algoritmo deveria parar.
+</li>
+<li>
+<span class="math inline">\(d=0\)</span>, pois a log-verossimilhança aumentou; o algoritmo para.
+</li>
+<li>
+<span class="math inline">\(d=1\)</span>, pois se divide o incremento por ele mesmo; o algoritmo continua.
+</li>
+<li>
+<span class="math inline">\(d=1.00e-03\)</span>; portanto, o critério não é satisfeito e o algoritmo continuaria.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>O incremento absoluto é 0.293000, mas o critério é relativo à escala da log-verossimilhança:
+<span class="math display">\[
+d^{(t)}=\frac{0.293000}
+{1+|-292.000000|}
+=1.00e-03.
+\]</span>
+Como <span class="math inline">\(d^{(t)}&gt;\varepsilon\)</span>, o critério não é satisfeito e o algoritmo continuaria.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Um EM com 4 parâmetros convergiu para <span class="math inline">\(\widehat\theta\)</span>, com norma do escore observado igual a 5e-08. Contudo, a Hessiana observada em <span class="math inline">\(\widehat\theta\)</span> possui dois autovalores positivos. Qual diagnóstico é mais adequado?</p>
+<br/>
+<ol type="a">
+<li>
+O diagnóstico depende apenas do número de iterações, não da curvatura da log-verossimilhança.
+</li>
+<li>
+A pequena norma do escore prova que <span class="math inline">\(\widehat\theta\)</span> é o máximo global da verossimilhança.
+</li>
+<li>
+Todo ponto fixo do EM possui Hessiana negativa definida, de modo que os autovalores positivos são apenas erro de arredondamento.
+</li>
+<li>
+A presença de autovalores positivos indica que a log-verossimilhança observada deve ter diminuído em todas as iterações.
+</li>
+<li>
+O ponto é aproximadamente estacionário, mas não é um máximo local estrito; pode ser um ponto de sela ou mínimo, devendo-se investigar outras inicializações.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Escore próximo de zero indica apenas estacionariedade aproximada. Para um máximo local estrito no interior do espaço paramétrico, a Hessiana da log-verossimilhança deve ser negativa definida. Autovalores positivos revelam direções de curvatura ascendente, compatíveis com sela ou mínimo. A monotonicidade do EM não exclui convergência para pontos estacionários indesejáveis.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Em um MAP-EM para uma mistura de 3 componentes, os tamanhos efetivos do passo E são <span class="math inline">\(N=(24, 24, 47)\)</span> e a priori dos pesos é <span class="math inline">\(\operatorname{Dirichlet}(5, 2, 2)\)</span>. Considerando um máximo interior, a atualização é
+<span class="math display">\[
+\pi_j^{(t+1)}=\frac{N_j+\alpha_j-1}
+{n+\sum_{h=1}^{k}\alpha_h-k}.
+\]</span>
+Qual é a atualização do peso <span class="math inline">\(\pi_{3}\)</span>?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(0.4712\)</span>
+</li>
+<li>
+<span class="math inline">\(0.4615\)</span>
+</li>
+<li>
+<span class="math inline">\(0.4752\)</span>
+</li>
+<li>
+<span class="math inline">\(0.4947\)</span>
+</li>
+<li>
+<span class="math inline">\(0.4898\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Temos <span class="math inline">\(n=\sum_jN_j=95\)</span> e
+<span class="math inline">\(\sum_j\alpha_j=9\)</span>. Portanto,
+<span class="math display">\[
+\pi_{3}^{(t+1)}=
+\frac{47+2-1}
+{95+9-3}
+=0.4752.
+\]</span>
+A atualização de máxima verossimilhança seria apenas <span class="math inline">\(N_{3}/n\)</span>; os termos da priori funcionam como pseudocontagens no MAP.</p>
+<br/>
+</li>
+</ol>
+
+</body>
+</html>

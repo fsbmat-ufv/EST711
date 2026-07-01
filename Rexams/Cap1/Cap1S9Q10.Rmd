@@ -1,0 +1,37 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  w <- sample(seq(0.20,0.80,0.05),1); mu1 <- sample(seq(-2,2,0.5),1)
+  mu2 <- sample(seq(3,8,0.5),1); v1 <- sample(seq(0.5,3,0.5),1); v2 <- sample(seq(0.5,4,0.5),1)
+  mu <- w*mu1+(1-w)*mu2
+  ans <- w*(v1+(mu1-mu)^2)+(1-w)*(v2+(mu2-mu)^2)
+  vals <- round(c(ans,w*v1+(1-w)*v2,(v1+v2)/2,mu^2,ans+mu^2),3)
+  if (length(unique(vals)) == 5L) break
+}
+opts <- sprintf("$%.3f$",vals)
+```
+
+Question
+========
+Uma mistura tem peso `r w`, médias $\mu_1=`r mu1`$, $\mu_2=`r mu2`$ e variâncias $\sigma_1^2=`r v1`$, $\sigma_2^2=`r v2`$. Qual é a variância da mistura?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+Com $\mu=w\mu_1+(1-w)\mu_2$, a variância total é
+$$w[\sigma_1^2+(\mu_1-\mu)^2]+(1-w)[\sigma_2^2+(\mu_2-\mu)^2]
+=`r sprintf("%.3f",ans)`.$$
+
+Meta-information
+================
+exname: Cap1S9Q10_variancia_mistura
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

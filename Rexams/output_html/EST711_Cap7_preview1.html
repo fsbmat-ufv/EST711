@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+<title>Exam 1</title>
+<style type="text/css">
+body{font-family: Arial, Helvetica, Sans;}
+</style>
+<meta charset="utf-8" />
+<script type="text/javascript"   src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script>
+</head>
+
+<body>
+<h2>Exam 1</h2>
+
+<ol>
+<li>
+<h4>Question</h4>
+<p>Sob condições de regularidade (Cramér), o Estimador de Máxima Verossimilhança <span class="math inline">\(\hat{\boldsymbol{\theta}}_n\)</span> para <span class="math inline">\(\boldsymbol{\theta} \in \mathbb{R}^k\)</span> tem distribuição <strong>assintótica</strong>. Qual das alternativas abaixo descreve corretamente essa distribuição?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(n(\hat{\boldsymbol{\theta}}_n - \boldsymbol{\theta}) \xrightarrow{D} N_k(\mathbf{0}, I(\boldsymbol{\theta})^{-1})\)</span>, com fator <span class="math inline">\(n\)</span> em vez de <span class="math inline">\(\sqrt{n}\)</span>.
+</li>
+<li>
+<span class="math inline">\(\sqrt{n}(\hat{\boldsymbol{\theta}}_n - \boldsymbol{\theta}) \xrightarrow{D} N_k(\mathbf{0}, I(\boldsymbol{\theta}))\)</span>, sem inversão da matriz de informação.
+</li>
+<li>
+<span class="math inline">\(\sqrt{n}(\hat{\boldsymbol{\theta}}_n - \boldsymbol{\theta}) \xrightarrow{D} N_k(\mathbf{0}, I(\boldsymbol{\theta})^{-1})\)</span>, onde <span class="math inline">\(I(\boldsymbol{\theta})\)</span> é a matriz de informação de Fisher.
+</li>
+<li>
+<span class="math inline">\(\sqrt{n}\hat{\boldsymbol{\theta}}_n \xrightarrow{D} N_k(\boldsymbol{\theta}, I(\boldsymbol{\theta})^{-1})\)</span>, centrando em <span class="math inline">\(\boldsymbol{\theta}\)</span> e não em zero.
+</li>
+<li>
+O EMV multivariado não tem distribuição assintótica conhecida no caso geral.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>A distribuição assintótica correta do EMV multivariado é:
+<span class="math display">\[\sqrt{n}(\hat{\boldsymbol{\theta}}_n - \boldsymbol{\theta}) \xrightarrow{D} N_k(\mathbf{0}, I(\boldsymbol{\theta})^{-1}),\]</span>
+onde <span class="math inline">\(I(\boldsymbol{\theta})\)</span> é a matriz de informação de Fisher <span class="math inline">\(k \times k\)</span> avaliada no verdadeiro valor do parâmetro. A fatoração é <span class="math inline">\(\sqrt{n}\)</span> (não <span class="math inline">\(n\)</span>), o desvio é centrado em zero, e a matriz de covariâncias assintótica é a <strong>inversa</strong> de <span class="math inline">\(I(\boldsymbol{\theta})\)</span>, não a própria <span class="math inline">\(I(\boldsymbol{\theta})\)</span>.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>No <strong>Teste da Razão de Verossimilhanças (TRV)</strong>, testamos <span class="math inline">\(H_0: \boldsymbol{\theta} \in \Omega_0\)</span> versus <span class="math inline">\(H_1: \boldsymbol{\theta} \in \Omega\)</span>, onde <span class="math inline">\(\Omega_0 \subset \Omega\)</span>, com <span class="math inline">\(\dim(\Omega_0) = 2\)</span> e <span class="math inline">\(\dim(\Omega) = 5\)</span>.</p>
+<p>Pelo <strong>Teorema de Wilks</strong>, sob <span class="math inline">\(H_0\)</span>:
+<span class="math display">\[-2\log\Lambda_n \xrightarrow{D} \chi^2_r.\]</span></p>
+<p>Quantos <strong>graus de liberdade</strong> <span class="math inline">\(r\)</span> tem essa distribuição assintótica?</p>
+<br/>
+<ol type="a">
+<li>
+3
+</li>
+<li>
+2
+</li>
+<li>
+5
+</li>
+<li>
+4
+</li>
+<li>
+8
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Pelo Teorema de Wilks, os graus de liberdade do TRV são a <strong>diferença de dimensão</strong> entre o espaço paramétrico irrestrito e o espaço sob <span class="math inline">\(H_0\)</span>:
+<span class="math display">\[r = \dim(\Omega) - \dim(\Omega_0) = 5 - 2 = 3.\]</span></p>
+<p>Intuitivamente, <span class="math inline">\(r\)</span> é o número de restrições impostas por <span class="math inline">\(H_0\)</span> sobre <span class="math inline">\(\boldsymbol{\theta}\)</span>. Os outros valores (<span class="math inline">\(5\)</span>, <span class="math inline">\(2\)</span>, <span class="math inline">\(8\)</span>, <span class="math inline">\(4\)</span>) correspondem a erros comuns: usar a dimensão total do modelo (<span class="math inline">\(5\)</span>), a dimensão do modelo restrito (<span class="math inline">\(2\)</span>), a soma (<span class="math inline">\(8\)</span>) ou <span class="math inline">\(p-1\)</span> (<span class="math inline">\(4\)</span>).</p>
+<br/>
+</li>
+</ol>
+
+</body>
+</html>

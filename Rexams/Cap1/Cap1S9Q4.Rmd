@@ -1,0 +1,28 @@
+```{r, echo=FALSE, results="hide"}
+nome <- sample(c("$X$","$Y$","$T$"),1)
+```
+
+Question
+========
+Qual é a definição correta da função geradora de momentos de `r nome`?
+
+Answerlist
+----------
+* $M(t)=E(e^{tX})$, desde que exista em algum intervalo aberto contendo $0$.
+* $M(t)=E(t^X)$ apenas para inteiros positivos $t$.
+* $M(t)=E(e^{-tX})$ somente para $t>0$.
+* $M(t)=\log E(e^{tX})$, sem qualquer condição de existência.
+* $M(t)=P(X\leq t)$.
+
+Solution
+========
+A fgm é $M_X(t)=E(e^{tX})$ e deve ser finita em uma vizinhança aberta de zero. Essa condição permite derivá-la em zero para obter momentos.
+
+Meta-information
+================
+exname: Cap1S9Q4_definicao_fgm
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+
+

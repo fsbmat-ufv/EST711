@@ -1,0 +1,37 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  pa <- sample(seq(0.55,0.90,0.05),1)
+  pb <- sample(seq(0.55,0.90,0.05),1)
+  lower <- pa+pb-1
+  vals <- round(c(lower,pa*pb,min(pa,pb),1-pa-pb,1-lower),3)
+  if(length(unique(vals))==5L) break
+}
+opts <- sprintf("$%.3f$",vals)
+```
+
+Question
+========
+Sabe-se apenas que $P(A)=`r pa`$ e $P(B)=`r pb`$. Qual é o limite inferior de Bonferroni para $P(A\cap B)$?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+Como $P(A\cup B)\leq1$,
+$$P(A\cap B)\geq P(A)+P(B)-1
+=`r sprintf("%.3f",lower)`.$$
+
+Meta-information
+================
+exname: Cap1S3Q10_Bonferroni_intersecao
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+
+

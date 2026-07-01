@@ -1,0 +1,33 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  mu <- sample(seq(-2,3,0.5),1); v <- sample(seq(0.5,6,0.5),1)
+  vals <- round(c(v,v+mu^2,mu,sqrt(v),2*v),3)
+  if (length(unique(vals)) == 5L) break
+}
+opts <- sprintf("$%.3f$",vals)
+```
+
+Question
+========
+Uma variável tem fgm $M(t)=\exp\{`r mu`t+`r v`t^2/2\}$. Qual é sua variância?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+$M'(0)=\mu=`r mu`$ e $M''(0)=\mu^2+`r v`$. Logo,
+$$\operatorname{Var}(X)=M''(0)-[M'(0)]^2=`r v`.$$
+
+Meta-information
+================
+exname: Cap1S9Q5_momentos_pela_fgm
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

@@ -1,0 +1,49 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  i_com <- sample(seq(60, 180, 5), 1)
+  i_mis <- sample(seq(10, i_com - 15, 5), 1)
+  i_obs <- i_com - i_mis
+  se <- 1/sqrt(i_obs)
+  vals <- round(c(se,
+                  1/sqrt(i_com),
+                  1/sqrt(i_mis),
+                  sqrt(i_obs),
+                  1/sqrt(i_com + i_mis)), 4)
+  if (length(unique(vals)) == 5L) break
+}
+opts <- sprintf("$%.4f$", vals)
+```
+
+Question
+========
+Em um problema escalar com dados incompletos, a informação completa estimada é $I_{\rm com}=`r i_com`$ e a informação ausente é $I_{\rm mis}=`r i_mis`$. Usando o princípio da informação ausente, qual é o erro-padrão aproximado do estimador de máxima verossimilhança?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+A informação observada é a diferença entre a informação completa e a ausente:
+$$
+I_{\rm obs}=I_{\rm com}-I_{\rm mis}=`r i_com`-`r i_mis`=`r i_obs`.
+$$
+Assim, a variância assintótica é aproximadamente $I_{\rm obs}^{-1}$ e
+$$
+\operatorname{EP}(\widehat\theta)\approx
+\frac{1}{\sqrt{I_{\rm obs}}}=
+\frac{1}{\sqrt{`r i_obs`}}=`r sprintf("%.4f", se)`.
+$$
+Usar $I_{\rm com}$ sozinho subestimaria a incerteza por ignorar a informação perdida.
+
+Meta-information
+================
+exname: Cap8S3Q6_erro_padrao_informacao_observada
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

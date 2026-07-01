@@ -1,0 +1,298 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+<title>Exam 1</title>
+<style type="text/css">
+body{font-family: Arial, Helvetica, Sans;}
+</style>
+<meta charset="utf-8" />
+<script type="text/javascript"   src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script>
+</head>
+
+<body>
+<h2>Exam 1</h2>
+
+<ol>
+<li>
+<h4>Question</h4>
+<p>Sabe-se que <span class="math inline">\(E(|X|^{7})&lt;\infty\)</span>. Qual conclusão é garantida?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(E(|X|^{6})&lt;\infty\)</span>.
+</li>
+<li>
+<span class="math inline">\(X\)</span> possui suporte limitado.
+</li>
+<li>
+A fgm de <span class="math inline">\(X\)</span> existe para todo <span class="math inline">\(t\)</span>.
+</li>
+<li>
+<span class="math inline">\(X\)</span> tem distribuição simétrica.
+</li>
+<li>
+<span class="math inline">\(E(|X|^{8})&lt;\infty\)</span>.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>A existência de um momento absoluto de ordem <span class="math inline">\(m\)</span> implica a existência de todos os momentos absolutos de ordens menores. Isso decorre de <span class="math inline">\(|x|^k\leq1+|x|^m\)</span> para <span class="math inline">\(k\leq m\)</span>.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Uma variável não negativa tem <span class="math inline">\(E(X)=19\)</span>. Pelo limite de Markov, qual é o maior valor garantido para <span class="math inline">\(P(X\geq36)\)</span>?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(1.8947\)</span>
+</li>
+<li>
+<span class="math inline">\(0.0147\)</span>
+</li>
+<li>
+<span class="math inline">\(0.5278\)</span>
+</li>
+<li>
+<span class="math inline">\(19.0000\)</span>
+</li>
+<li>
+<span class="math inline">\(0.4722\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>A desigualdade de Markov dá
+<span class="math display">\[P(X\geq c)\leq\frac{E(X)}c
+=\frac{19}{36}=0.5278.\]</span></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Sabe-se que <span class="math inline">\(E(X^2)=10\)</span>. Aplicando Markov a <span class="math inline">\(X^2\)</span>, qual limite superior se obtém para <span class="math inline">\(P(|X|\geq9)\)</span>?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(0.1235\)</span>
+</li>
+<li>
+<span class="math inline">\(0.3514\)</span>
+</li>
+<li>
+<span class="math inline">\(1.0000\)</span>
+</li>
+<li>
+<span class="math inline">\(10.0000\)</span>
+</li>
+<li>
+<span class="math inline">\(0.8765\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>O evento <span class="math inline">\(|X|\geq c\)</span> equivale a <span class="math inline">\(X^2\geq c^2\)</span>. Como <span class="math inline">\(X^2\geq0\)</span>,
+<span class="math display">\[P(|X|\geq c)\leq\frac{E(X^2)}{c^2}
+=0.1235.\]</span></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Uma variável tem média 0 e desvio-padrão 1.5. Pelo limite de Chebyshev, qual é o limite superior para <span class="math inline">\(P(|X-\mu|\geq1.5\sigma)\)</span>?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(2.2500\)</span>
+</li>
+<li>
+<span class="math inline">\(0.4444\)</span>
+</li>
+<li>
+<span class="math inline">\(0.5556\)</span>
+</li>
+<li>
+<span class="math inline">\(0.6667\)</span>
+</li>
+<li>
+<span class="math inline">\(1.0000\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Chebyshev afirma
+<span class="math display">\[P(|X-\mu|\geq k\sigma)\leq\frac1{k^2}
+=0.4444.\]</span>
+O limite independe dos valores específicos de <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\sigma\)</span>.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Sem supor uma família de distribuições, qual limite inferior Chebyshev garante para <span class="math inline">\(P(|X-\mu|&lt;2.5\sigma)\)</span>?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(0.6000\)</span>
+</li>
+<li>
+<span class="math inline">\(0.8400\)</span>
+</li>
+<li>
+<span class="math inline">\(0.7143\)</span>
+</li>
+<li>
+<span class="math inline">\(0.1600\)</span>
+</li>
+<li>
+<span class="math inline">\(0.4000\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Pelo complemento da forma usual de Chebyshev,
+<span class="math display">\[P(|X-\mu|&lt;k\sigma)\geq1-\frac1{k^2}
+=0.8400.\]</span></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Se <span class="math inline">\(X\sim U(-\sqrt3,\sqrt3)\)</span>, então <span class="math inline">\(E(X)=0\)</span> e <span class="math inline">\(\operatorname{Var}(X)=1\)</span>. Para <span class="math inline">\(k=1.2\)</span>, qual é o valor exato de <span class="math inline">\(P(|X|\geq k)\)</span>?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(0.6928\)</span>
+</li>
+<li>
+<span class="math inline">\(0.3072\)</span>
+</li>
+<li>
+<span class="math inline">\(0.8333\)</span>
+</li>
+<li>
+<span class="math inline">\(0.3056\)</span>
+</li>
+<li>
+<span class="math inline">\(0.6944\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>O comprimento total do suporte é <span class="math inline">\(2\sqrt3\)</span>, e o intervalo central <span class="math inline">\((-k,k)\)</span> tem comprimento <span class="math inline">\(2k\)</span>. Logo,
+<span class="math display">\[P(|X|\geq k)=1-\frac{k}{\sqrt3}
+=0.3072.\]</span>
+Chebyshev daria apenas o limite superior <span class="math inline">\(1/k^2=0.6944\)</span>.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Se <span class="math inline">\(\phi\)</span> é convexa, como a função -log(x) em seu domínio, e as esperanças existem, qual é a desigualdade de Jensen?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(\phi(E[X])\geq E[\phi(X)]\)</span>.
+</li>
+<li>
+<span class="math inline">\(\phi(E[X])=E(X)\phi(1)\)</span>.
+</li>
+<li>
+<span class="math inline">\(E[\phi(X)]\leq E(X)\)</span>.
+</li>
+<li>
+<span class="math inline">\(E[\phi(X)]=\phi(X)\)</span> quase certamente.
+</li>
+<li>
+<span class="math inline">\(\phi(E[X])\leq E[\phi(X)]\)</span>.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Para funções convexas,
+<span class="math display">\[\phi(E[X])\leq E[\phi(X)].\]</span>
+O sentido se inverte para funções côncavas.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Se <span class="math inline">\(E(X)=3.5\)</span>, qual limite inferior Jensen fornece para <span class="math inline">\(E(X^2)\)</span>? Considere <span class="math inline">\(\phi(x)=x^2\)</span>.</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(4.444\)</span>
+</li>
+<li>
+<span class="math inline">\(7.500\)</span>
+</li>
+<li>
+<span class="math inline">\(3.500\)</span>
+</li>
+<li>
+<span class="math inline">\(19.750\)</span>
+</li>
+<li>
+<span class="math inline">\(12.250\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Como <span class="math inline">\(x^2\)</span> é convexa,
+<span class="math display">\[[E(X)]^2\leq E(X^2).\]</span>
+Assim, <span class="math inline">\(E(X^2)\geq(3.5)^2=12.250\)</span>. O valor 19.75 foi usado apenas para gerar distratores plausíveis.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Para os números positivos <span class="math inline">\((7, 1, 1, 1)\)</span>, qual é a média harmônica?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(1.2727\)</span>
+</li>
+<li>
+<span class="math inline">\(0.7857\)</span>
+</li>
+<li>
+<span class="math inline">\(2.5000\)</span>
+</li>
+<li>
+<span class="math inline">\(1.6266\)</span>
+</li>
+<li>
+<span class="math inline">\(10.0000\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>A média harmônica é
+<span class="math display">\[HM=\frac{n}{\sum_i1/x_i}=1.2727.\]</span>
+Além disso, Jensen permite estabelecer <span class="math inline">\(HM\leq GM\leq AM\)</span>; aqui <span class="math inline">\(GM=1.6266\)</span> e <span class="math inline">\(AM=2.5000\)</span>.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Se <span class="math inline">\(\phi=exp(x)\)</span> é estritamente convexa e <span class="math inline">\(E[\phi(X)]&lt;\infty\)</span>, quando ocorre igualdade em Jensen, <span class="math inline">\(\phi(E[X])=E[\phi(X)]\)</span>?</p>
+<br/>
+<ol type="a">
+<li>
+Sempre que <span class="math inline">\(E(X)=0\)</span>.
+</li>
+<li>
+Somente quando <span class="math inline">\(X\)</span> é constante quase certamente.
+</li>
+<li>
+Somente quando <span class="math inline">\(\operatorname{Var}(X)=1\)</span>.
+</li>
+<li>
+Sempre que a distribuição de <span class="math inline">\(X\)</span> é simétrica.
+</li>
+<li>
+Para toda variável contínua.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Para uma função estritamente convexa, Jensen é estrita quando <span class="math inline">\(X\)</span> é não degenerada. A igualdade ocorre precisamente quando toda a massa de <span class="math inline">\(X\)</span> está concentrada em um único valor, isto é, quando <span class="math inline">\(X\)</span> é constante quase certamente.</p>
+<br/>
+</li>
+</ol>
+
+</body>
+</html>

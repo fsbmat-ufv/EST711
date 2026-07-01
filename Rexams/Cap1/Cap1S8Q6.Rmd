@@ -1,0 +1,33 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  p <- sample(setdiff(seq(0.05,0.95,0.05),0.5),1)
+  vals <- round(c(p,1-p,p^2,p*(1-p),1),3)
+  if (length(unique(vals)) == 5L) break
+}
+opts <- sprintf("$%.3f$",vals)
+```
+
+Question
+========
+Se $I_A=\mathbf{1}_A$ e $P(A)=`r p`$, qual é $E(I_A)$?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+A indicadora vale 1 em $A$ e 0 fora de $A$:
+$$E(I_A)=1P(A)+0P(A^c)=P(A)=`r p`.$$
+
+Meta-information
+================
+exname: Cap1S8Q6_esperanca_indicadora
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

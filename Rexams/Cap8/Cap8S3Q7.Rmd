@@ -1,0 +1,40 @@
+```{r, echo=FALSE, results="hide"}
+dimensao <- sample(1:4, 1)
+latente <- sample(c("indicadores de classe", "tempos censurados",
+                    "efeitos aleatórios"), 1)
+```
+
+Question
+========
+Em um modelo de dimensão `r dimensao` com `r latente` não observados, deseja-se estimar a informação observada após a convergência do EM. Se $S_c(\theta)$ e $H_c(\theta)$ são, respectivamente, o escore e a Hessiana da log-verossimilhança completa, qual é a identidade de Louis, condicionalmente aos dados observados?
+
+Answerlist
+----------
+* $I_{\rm obs}(\theta)=E[-H_c(\theta)\mid X]-\operatorname{Var}[S_c(\theta)\mid X]$.
+* $I_{\rm obs}(\theta)=E[-H_c(\theta)\mid X]+\operatorname{Var}[S_c(\theta)\mid X]$.
+* $I_{\rm obs}(\theta)=\operatorname{Var}[S_c(\theta)\mid X]-E[-H_c(\theta)\mid X]$.
+* $I_{\rm obs}(\theta)=E[S_c(\theta)\mid X]E[S_c(\theta)\mid X]^\top$.
+* $I_{\rm obs}(\theta)=-H_c(\theta)$ avaliada após substituir todos os dados ausentes por suas médias, sem termo de correção.
+
+Solution
+========
+A identidade de Louis expressa o princípio
+$$
+\text{informação observada}=
+\text{informação completa esperada}-
+\text{informação ausente}.
+$$
+Condicionalmente aos dados observados,
+$$
+I_{\rm obs}(\theta)=E[-H_c(\theta)\mid X]
+-\operatorname{Var}[S_c(\theta)\mid X].
+$$
+A variabilidade condicional do escore completo mede a informação perdida pelas variáveis não observadas.
+
+Meta-information
+================
+exname: Cap8S3Q7_identidade_Louis
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

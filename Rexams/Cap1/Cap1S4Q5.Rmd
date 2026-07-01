@@ -1,0 +1,34 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  pa <- sample(seq(0.20,0.80,0.05),1); pb <- sample(seq(0.20,0.80,0.05),1)
+  ans <- pa*pb; vals <- round(c(ans,pa+pb,pa/pb,min(pa,pb),1-ans),4)
+  if (length(unique(vals)) == 5L) break
+}
+opts <- sprintf("$%.4f$",vals)
+```
+
+Question
+========
+Eventos $A$ e $B$ são independentes, com $P(A)=`r pa`$ e $P(B)=`r pb`$. Quanto vale $P(A\cap B)$?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+A independência implica
+$$P(A\cap B)=P(A)P(B)=(`r pa`)(`r pb`)
+=`r sprintf("%.4f",ans)`.$$
+
+Meta-information
+================
+exname: Cap1S4Q5_criterio_independencia
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

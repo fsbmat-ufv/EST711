@@ -1,0 +1,36 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  a <- sample(2:5,1); pneg <- sample(seq(0.15,0.45,0.05),1)
+  pzero <- sample(seq(0.10,0.30,0.05),1); ppos <- 1-pneg-pzero
+  ans <- pneg+ppos
+  vals <- round(c(ans,ppos,pneg,pzero,ppos-pneg),3)
+  if (length(unique(vals)) == 5L) break
+}
+opts <- sprintf("$%.3f$",vals)
+```
+
+Question
+========
+Uma variável $X$ assume $-`r a`, $0$ e $`r a` com probabilidades `r pneg`, `r pzero` e `r sprintf("%.2f",ppos)`. Para $Y=X^2$, qual é $P(Y=`r a^2`)$?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+Os valores $X=-`r a`$ e $X=`r a`$ produzem o mesmo valor $Y=`r a^2`$. Portanto, somam-se as massas:
+$$P(Y=`r a^2`)=`r pneg`+`r sprintf("%.2f",ppos)`
+=`r sprintf("%.3f",ans)`.$$
+
+Meta-information
+================
+exname: Cap1S6Q5_transformacao_quadrado_discreta
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

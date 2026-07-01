@@ -1,0 +1,35 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  total <- sample(seq(80,160,10),1); b <- sample(30:70,1); ab <- sample(8:(b-5),1)
+  ans <- ab/b
+  vals <- round(c(ans, ab/total, b/total, (b-ab)/b,
+                  (total-b)/total), 4)
+  if(b<total && length(unique(vals))==5L) break
+}
+opts <- sprintf("$%.4f$",vals)
+```
+
+Question
+========
+Em `r total` registros, `r b` apresentam $B$ e `r ab` apresentam simultaneamente $A$ e $B$. Qual é $P(A\mid B)$?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+$$P(A\mid B)=\frac{P(A\cap B)}{P(B)}
+=\frac{`r ab`}{`r b`}=`r sprintf("%.4f",ans)`.$$
+
+Meta-information
+================
+exname: Cap1S4Q1_probabilidade_condicional
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

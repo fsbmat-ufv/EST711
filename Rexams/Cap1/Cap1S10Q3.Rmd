@@ -1,0 +1,35 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  ex2 <- sample(seq(2,25,1),1); c <- sample(6:15,1)
+  bound <- min(1,ex2/c^2)
+  vals <- round(c(bound,min(1,ex2/c),min(1,sqrt(ex2)/c),1-bound,ex2),4)
+  if (length(unique(vals)) == 5L) break
+}
+opts <- sprintf("$%.4f$",vals)
+```
+
+Question
+========
+Sabe-se que $E(X^2)=`r ex2`$. Aplicando Markov a $X^2$, qual limite superior se obtém para $P(|X|\geq`r c`)$?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+O evento $|X|\geq c$ equivale a $X^2\geq c^2$. Como $X^2\geq0$,
+$$P(|X|\geq c)\leq\frac{E(X^2)}{c^2}
+=`r sprintf("%.4f",bound)`.$$
+
+Meta-information
+================
+exname: Cap1S10Q3_Markov_segundo_momento
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

@@ -1,0 +1,35 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  mu <- sample(seq(-5,5,0.5),1); v <- sample(seq(0.5,8,0.5),1)
+  ex2 <- mu^2+v
+  vals <- round(c(mu^2,ex2,v,sqrt(ex2),abs(mu)),3)
+  if (length(unique(vals)) == 5L) break
+}
+opts <- sprintf("$%.3f$",vals)
+```
+
+Question
+========
+Se $E(X)=`r mu`$, qual limite inferior Jensen fornece para $E(X^2)$? Considere $\phi(x)=x^2$.
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+Como $x^2$ é convexa,
+$$[E(X)]^2\leq E(X^2).$$
+Assim, $E(X^2)\geq(`r mu`)^2=`r sprintf("%.3f",mu^2)`$. O valor `r ex2` foi usado apenas para gerar distratores plausíveis.
+
+Meta-information
+================
+exname: Cap1S10Q8_Jensen_segundo_momento
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

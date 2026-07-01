@@ -1,0 +1,30 @@
+```{r, echo=FALSE, results="hide"}
+blocos <- sample(2:4, 1)
+parametros <- sample(c("médias, variâncias e pesos",
+                       "parâmetros de regressão e dispersão",
+                       "probabilidades e parâmetros dos componentes"), 1)
+```
+
+Question
+========
+Em um modelo com `r parametros`, o passo M conjunto é difícil. Decide-se aplicar o algoritmo ECM, dividindo o parâmetro em `r blocos`. Qual descrição caracteriza corretamente uma iteração ECM?
+
+Answerlist
+----------
+* Após um único passo E, realizam-se maximizações condicionais sucessivas de $Q$, atualizando cada bloco com os demais fixados nos valores mais recentes.
+* Realizam-se `r blocos` passos E independentes e usa-se apenas aquele que produzir a maior imputação dos dados ausentes.
+* Maximiza-se a verossimilhança observada separadamente em cada bloco, sem utilizar a função $Q$.
+* Sorteia-se um bloco por iteração e aceita-se qualquer atualização, mesmo que $Q$ diminua.
+* Substitui-se o passo E por classificações determinísticas, transformando todas as responsabilidades em zero ou um.
+
+Solution
+========
+O ECM substitui a maximização conjunta do passo M por uma sequência de passos CM (conditional maximization). Cada passo maximiza $Q$ em um bloco, mantendo os demais fixos, e usa os valores já atualizados naquela iteração. Se cada passo CM não diminui $Q$, preserva-se a propriedade de subida do EM.
+
+Meta-information
+================
+exname: Cap8S3Q2_algoritmo_ECM
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

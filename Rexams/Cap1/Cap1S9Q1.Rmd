@@ -1,0 +1,33 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  mu <- sample(seq(-3,4,0.5),1); ex2 <- mu^2+sample(seq(1,12,0.5),1)
+  ans <- ex2-mu^2; vals <- round(c(ans,ex2+mu^2,sqrt(ex2),ex2-mu,mu^2),3)
+  if (length(unique(vals)) == 5L) break
+}
+opts <- sprintf("$%.3f$",vals)
+```
+
+Question
+========
+Se $E(X)=`r mu`$ e $E(X^2)=`r ex2`$, qual é $\operatorname{Var}(X)$?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+$$\operatorname{Var}(X)=E(X^2)-[E(X)]^2
+=`r ex2`-(`r mu`)^2=`r sprintf("%.3f",ans)`.$$
+
+Meta-information
+================
+exname: Cap1S9Q1_identidade_variancia
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

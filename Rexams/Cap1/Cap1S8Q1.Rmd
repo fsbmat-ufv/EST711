@@ -1,0 +1,33 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  x <- sort(sample(-3:6,4)); raw <- sample(1:8,4,replace=TRUE); p <- raw/sum(raw)
+  ans <- sum(x*p); vals <- round(c(ans,mean(x),sum(x),sum(p),sum(abs(x)*p)),4)
+  if (length(unique(vals)) == 5L) break
+}
+opts <- sprintf("$%.4f$",vals); xt <- paste(x,collapse=", "); pt <- paste(sprintf("%.3f",p),collapse=", ")
+```
+
+Question
+========
+Uma variável discreta assume valores $(`r xt`)$ com probabilidades $(`r pt`)$. Qual é $E(X)$?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+A esperança é a média ponderada:
+$$E(X)=\sum_xxp_X(x)=`r sprintf("%.4f",ans)`.$$
+
+Meta-information
+================
+exname: Cap1S8Q1_esperanca_discreta
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

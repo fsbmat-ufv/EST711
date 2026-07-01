@@ -1,0 +1,303 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+<title>Exam 4</title>
+<style type="text/css">
+body{font-family: Arial, Helvetica, Sans;}
+</style>
+<meta charset="utf-8" />
+<script type="text/javascript"   src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script>
+</head>
+
+<body>
+<h2>Exam 4</h2>
+
+<ol>
+<li>
+<h4>Question</h4>
+<p>Ao modelar uma pesquisa amostral, uma função <span class="math inline">\(P\)</span> é definida sobre os eventos de um espaço amostral <span class="math inline">\(\Omega\)</span>. Qual condição faz parte dos axiomas de probabilidade?</p>
+<br/>
+<ol type="a">
+<li>
+Para eventos dois a dois disjuntos <span class="math inline">\(A_1,A_2,\ldots\)</span>, vale <span class="math inline">\(P(\bigcup_i A_i)=\sum_iP(A_i)\)</span>.
+</li>
+<li>
+Para quaisquer eventos <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span>, vale sempre <span class="math inline">\(P(A\cup B)=P(A)+P(B)\)</span>.
+</li>
+<li>
+A probabilidade do espaço amostral pode assumir qualquer constante positiva.
+</li>
+<li>
+Se <span class="math inline">\(A\subset B\)</span>, então <span class="math inline">\(P(A)&gt;P(B)\)</span>.
+</li>
+<li>
+Todo evento não vazio deve ter probabilidade estritamente positiva.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Os axiomas exigem não negatividade, <span class="math inline">\(P(\Omega)=1\)</span> e aditividade enumerável para eventos dois a dois disjuntos. Para eventos que se sobrepõem, a interseção precisa ser descontada. Eventos não vazios podem ter probabilidade zero.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Em certo experimento, <span class="math inline">\(P(A)=0.48\)</span>. Qual é <span class="math inline">\(P(A^c)\)</span>?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(0.4800\)</span>
+</li>
+<li>
+<span class="math inline">\(0.2704\)</span>
+</li>
+<li>
+<span class="math inline">\(0.2304\)</span>
+</li>
+<li>
+<span class="math inline">\(0.6757\)</span>
+</li>
+<li>
+<span class="math inline">\(0.5200\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Como <span class="math inline">\(A\)</span> e <span class="math inline">\(A^c\)</span> são disjuntos e sua união é <span class="math inline">\(\Omega\)</span>,
+<span class="math display">\[P(A^c)=1-P(A)=1-0.48=0.5200.\]</span></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Em uma população de 80 unidades, 38 satisfazem <span class="math inline">\(A\)</span>, 53 satisfazem <span class="math inline">\(B\)</span> e 32 satisfazem ambos. Selecionando uma unidade ao acaso, qual é <span class="math inline">\(P(A\cup B)\)</span>?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(1.138\)</span>
+</li>
+<li>
+<span class="math inline">\(1.538\)</span>
+</li>
+<li>
+<span class="math inline">\(0.262\)</span>
+</li>
+<li>
+<span class="math inline">\(0.400\)</span>
+</li>
+<li>
+<span class="math inline">\(0.738\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Pela fórmula da adição,
+<span class="math display">\[P(A\cup B)=P(A)+P(B)-P(A\cap B)
+=\frac{38+53-32}{80}
+=0.738.\]</span></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Para três eventos, são conhecidas as probabilidades
+<span class="math display">\[(P(A),P(B),P(C))=(0.45,0.3,0.3),\]</span>
+<span class="math display">\[(P(A\cap B),P(A\cap C),P(B\cap C))=(0.12,0.06,0.05)\]</span>
+e <span class="math inline">\(P(A\cap B\cap C)=0.04\)</span>. Calcule <span class="math inline">\(P(A\cup B\cup C)\)</span>.</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(0.140\)</span>
+</li>
+<li>
+<span class="math inline">\(0.860\)</span>
+</li>
+<li>
+<span class="math inline">\(1.050\)</span>
+</li>
+<li>
+<span class="math inline">\(1.090\)</span>
+</li>
+<li>
+<span class="math inline">\(0.820\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>A inclusão-exclusão fornece
+<span class="math display">\[P(A\cup B\cup C)=\sum P(A_i)-\sum P(A_i\cap A_j)+P(A\cap B\cap C)
+=0.860.\]</span></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Uma comissão de 5 pessoas é escolhida uniformemente, sem reposição, entre 6 mulheres e 9 homens. Qual é a probabilidade de a comissão conter exatamente 2 mulheres?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(0.0050\)</span>
+</li>
+<li>
+<span class="math inline">\(0.0952\)</span>
+</li>
+<li>
+<span class="math inline">\(0.4000\)</span>
+</li>
+<li>
+<span class="math inline">\(0.4196\)</span>
+</li>
+<li>
+<span class="math inline">\(0.5804\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Há <span class="math inline">\(\binom{15}{5}\)</span> comissões possíveis. As favoráveis escolhem 2 mulheres e 3 homens:
+<span class="math display">\[P=\frac{\binom{6}{2}\binom{9}{3}}
+{\binom{15}{5}}
+=0.4196.\]</span></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Supondo 365 dias equiprováveis e ignorando anos bissextos, qual é a probabilidade de haver ao menos duas pessoas com o mesmo aniversário em um grupo de 24 pessoas?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(0.5383\)</span>
+</li>
+<li>
+<span class="math inline">\(0.7562\)</span>
+</li>
+<li>
+<span class="math inline">\(0.0637\)</span>
+</li>
+<li>
+<span class="math inline">\(0.4617\)</span>
+</li>
+<li>
+<span class="math inline">\(0.0658\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Pelo complemento,
+<span class="math display">\[P(\text{coincidência})=1-\prod_{j=0}^{23}\frac{365-j}{365}
+=0.5383.\]</span></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Para 3 eventos, as probabilidades individuais são 0.10, 0.06, 0.15. Sem informação sobre interseções, qual limite superior é garantido por Boole para <span class="math inline">\(P(\bigcup_iA_i)\)</span>?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(0.1500\)</span>
+</li>
+<li>
+<span class="math inline">\(0.1033\)</span>
+</li>
+<li>
+<span class="math inline">\(0.0009\)</span>
+</li>
+<li>
+<span class="math inline">\(0.6900\)</span>
+</li>
+<li>
+<span class="math inline">\(0.3100\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>A desigualdade de Boole fornece
+<span class="math display">\[P\left(\bigcup_iA_i\right)\leq\sum_iP(A_i).\]</span>
+Como uma probabilidade não excede 1, o limite é
+<span class="math inline">\(\min\{1,\sum_iP(A_i)\}=0.3100\)</span>.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Considere eventos crescentes <span class="math inline">\(A_1\subseteq A_2\subseteq\cdots\)</span>, por exemplo A_n = {X &lt;= n}. Qual propriedade é correta?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(P(\bigcap_{n=1}^{\infty}A_n)=\sum_{n=1}^{\infty}P(A_n)\)</span>.
+</li>
+<li>
+<span class="math inline">\(P(\bigcup_{n=1}^{\infty}A_n)=\lim_{n\to\infty}P(A_n)\)</span>.
+</li>
+<li>
+<span class="math inline">\(P(\bigcup_{n=1}^{\infty}A_n)=\lim_{n\to\infty}[1-P(A_n)]\)</span>.
+</li>
+<li>
+<span class="math inline">\(P(\bigcup_{n=1}^{\infty}A_n)=\prod_{n=1}^{\infty}P(A_n)\)</span>.
+</li>
+<li>
+A igualdade com o limite exige que os <span class="math inline">\(A_n\)</span> sejam disjuntos.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>A probabilidade é contínua por baixo:
+<span class="math display">\[P\left(\bigcup_{n=1}^{\infty}A_n\right)=\lim_{n\to\infty}P(A_n).\]</span>
+A condição necessária aqui é a monotonicidade crescente, não a disjunção.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Um dado honesto de 12 faces, numeradas de 1 a 12, é lançado. Qual é a probabilidade de o resultado ser pelo menos 10?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(0.2500\)</span>
+</li>
+<li>
+<span class="math inline">\(0.8333\)</span>
+</li>
+<li>
+<span class="math inline">\(0.7500\)</span>
+</li>
+<li>
+<span class="math inline">\(0.1000\)</span>
+</li>
+<li>
+<span class="math inline">\(0.1667\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Há 3 resultados favoráveis entre 12 equiprováveis. Logo,
+<span class="math display">\[P(X\geq 10)=\frac{3}{12}
+=0.2500.\]</span></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Sabe-se apenas que <span class="math inline">\(P(A)=0.85\)</span> e <span class="math inline">\(P(B)=0.85\)</span>. Qual é o limite inferior de Bonferroni para <span class="math inline">\(P(A\cap B)\)</span>?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(0.850\)</span>
+</li>
+<li>
+<span class="math inline">\(0.723\)</span>
+</li>
+<li>
+<span class="math inline">\(-0.700\)</span>
+</li>
+<li>
+<span class="math inline">\(0.300\)</span>
+</li>
+<li>
+<span class="math inline">\(0.700\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Como <span class="math inline">\(P(A\cup B)\leq1\)</span>,
+<span class="math display">\[P(A\cap B)\geq P(A)+P(B)-1
+=0.700.\]</span></p>
+<br/>
+</li>
+</ol>
+
+</body>
+</html>

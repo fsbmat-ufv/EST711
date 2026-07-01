@@ -1,0 +1,37 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  lados <- sample(c(6,8,10,12),1)
+  r <- sample(2:(lados-2),1)
+  fav <- lados-r+1
+  ans <- fav/lados
+  vals <- round(c(ans,(lados-r)/lados,r/lados,1/r,1-ans),4)
+  if (length(unique(vals)) == 5L) break
+}
+opts <- sprintf("$%.4f$",vals)
+```
+
+Question
+========
+Um dado honesto de `r lados` faces, numeradas de 1 a `r lados`, é lançado. Qual é a probabilidade de o resultado ser pelo menos `r r`?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+Há `r fav` resultados favoráveis entre `r lados` equiprováveis. Logo,
+$$P(X\geq `r r`)=\frac{`r fav`}{`r lados`}
+=`r sprintf("%.4f",ans)`.$$
+
+Meta-information
+================
+exname: Cap1S3Q9_espaco_equiprovavel
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

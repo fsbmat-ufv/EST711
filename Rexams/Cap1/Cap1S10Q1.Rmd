@@ -1,0 +1,28 @@
+```{r, echo=FALSE, results="hide"}
+m <- sample(3:8,1); k <- sample(1:(m-1),1)
+```
+
+Question
+========
+Sabe-se que $E(|X|^{`r m`})<\infty$. Qual conclusão é garantida?
+
+Answerlist
+----------
+* $E(|X|^{`r k`})<\infty$.
+* $E(|X|^{`r m+1`})<\infty$.
+* $X$ possui suporte limitado.
+* A fgm de $X$ existe para todo $t$.
+* $X$ tem distribuição simétrica.
+
+Solution
+========
+A existência de um momento absoluto de ordem $m$ implica a existência de todos os momentos absolutos de ordens menores. Isso decorre de $|x|^k\leq1+|x|^m$ para $k\leq m$.
+
+Meta-information
+================
+exname: Cap1S10Q1_existencia_momentos
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+
+

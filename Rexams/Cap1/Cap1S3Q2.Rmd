@@ -1,0 +1,31 @@
+```{r, echo=FALSE, results="hide"}
+p <- sample(seq(0.12, 0.88, 0.01), 1)
+vals <- c(1 - p, p, 1/(1 + p), p^2, (1 - p)^2)
+opts <- sprintf("$%.4f$", vals)
+```
+
+Question
+========
+Em certo experimento, $P(A)=`r sprintf("%.2f", p)`$. Qual é $P(A^c)$?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+Como $A$ e $A^c$ são disjuntos e sua união é $\Omega$,
+$$P(A^c)=1-P(A)=1-`r sprintf("%.2f", p)`=`r sprintf("%.4f", 1-p)`.$$
+
+Meta-information
+================
+exname: Cap1S3Q2_regra_complemento
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+
+

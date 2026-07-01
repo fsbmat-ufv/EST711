@@ -1,0 +1,54 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  i_com <- sample(seq(40, 120, 5), 1)
+  frac <- sample(seq(0.20, 0.80, 0.05), 1)
+  i_mis <- i_com * frac
+  i_obs <- i_com - i_mis
+  erro0 <- sample(seq(0.5, 2.0, 0.1), 1)
+  k <- sample(2:5, 1)
+  erro_k <- frac^k * erro0
+  vals <- round(c(erro_k,
+                  (1 - frac)^k * erro0,
+                  frac * erro0,
+                  i_obs/i_com * erro0,
+                  erro0/(1 + k * frac)), 4)
+  if (length(unique(vals)) == 5L) break
+}
+opts <- sprintf("$%.4f$", vals)
+```
+
+Question
+========
+Perto de um ponto fixo escalar do EM, a taxa local de contração pode ser aproximada pela fração de informação ausente
+$$r=\frac{I_{\rm mis}}{I_{\rm com}}.$$
+Em certo ajuste, $I_{\rm com}=`r sprintf("%.1f", i_com)`$, $I_{\rm mis}=`r sprintf("%.1f", i_mis)`$ e o erro inicial em relação ao ponto fixo é `r sprintf("%.1f", erro0)`. Pela aproximação linear, qual será o módulo do erro após `r k` iterações?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+A fração de informação ausente é
+$$
+r=\frac{`r sprintf("%.1f", i_mis)`}{`r sprintf("%.1f", i_com)`}
+=`r sprintf("%.2f", frac)`.
+$$
+Na aproximação linear, $|e_k|\approx r^k|e_0|$. Portanto,
+$$
+|e_{`r k`}|\approx (`r sprintf("%.2f", frac)`)^{`r k`}
+(`r sprintf("%.1f", erro0)`)=`r sprintf("%.4f", erro_k)`.
+$$
+Quanto maior a fração de informação ausente, mais lenta tende a ser a convergência do EM.
+
+Meta-information
+================
+exname: Cap8S3Q5_fracao_informacao_ausente
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

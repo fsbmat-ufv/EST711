@@ -1,0 +1,29 @@
+```{r, echo=FALSE, results="hide"}
+transformacao <- sample(c("X é o número de sucessos",
+                          "X é o tempo até uma falha",
+                          "X é uma medida observada"),1)
+```
+
+Question
+========
+Na definição formal de variável aleatória, como em `r transformacao`, qual condição conecta a aplicação $X:\Omega\to\mathbb{R}$ aos eventos?
+
+Answerlist
+----------
+* Para todo conjunto boreliano $B$, a pré-imagem $\{\omega:X(\omega)\in B\}$ deve ser um evento.
+* Para todo $\omega$, o valor $X(\omega)$ deve ser uma probabilidade entre 0 e 1.
+* A aplicação $X$ deve ser injetiva em todo espaço amostral.
+* A imagem de $X$ deve conter todos os números reais.
+* Cada evento deve ser levado por $X$ a um único valor com probabilidade positiva.
+
+Solution
+========
+A mensurabilidade exige que a pré-imagem de qualquer conjunto boreliano seja um evento ao qual $P$ possa ser aplicado. Os valores de uma variável aleatória são números reais, não probabilidades.
+
+Meta-information
+================
+exname: Cap1S5Q5_definicao_variavel_aleatoria
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

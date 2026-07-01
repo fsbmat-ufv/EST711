@@ -1,0 +1,64 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  ell0 <- -sample(80:250, 1)
+  delta <- sample(seq(0.8, 4.0, 0.2), 1)
+  aitken <- sample(seq(0.20, 0.80, 0.05), 1)
+  ell1 <- ell0 + delta
+  ell2 <- ell1 + aitken * delta
+  ell_inf <- ell1 + (ell2 - ell1)/(1 - aitken)
+  vals <- round(c(ell_inf,
+                  ell2,
+                  ell2 + (ell2 - ell1)/(1 - aitken),
+                  ell1 + (ell1 - ell0)/(1 - aitken),
+                  ell2 + aitken * (ell2 - ell1)), 3)
+  if (length(unique(vals)) == 5L) break
+}
+opts <- sprintf("$%.3f$", vals)
+```
+
+Question
+========
+Três log-verossimilhanças observadas consecutivas de um EM são
+$$
+\ell^{(t-2)}=`r sprintf("%.3f", ell0)`,\qquad
+\ell^{(t-1)}=`r sprintf("%.3f", ell1)`,\qquad
+\ell^{(t)}=`r sprintf("%.3f", ell2)`.
+$$
+Usando a aceleração de Aitken
+$$
+a^{(t)}=\frac{\ell^{(t)}-\ell^{(t-1)}}
+{\ell^{(t-1)}-\ell^{(t-2)}},\qquad
+\ell_\infty^{(t)}=\ell^{(t-1)}+
+\frac{\ell^{(t)}-\ell^{(t-1)}}{1-a^{(t)}},
+$$
+qual é a estimativa de $\ell_\infty^{(t)}$?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+Neste caso,
+$$
+a^{(t)}=\frac{`r sprintf("%.3f", ell2 - ell1)`}
+{`r sprintf("%.3f", ell1 - ell0)`}=`r sprintf("%.3f", aitken)`.
+$$
+Logo,
+$$
+\ell_\infty^{(t)}=`r sprintf("%.3f", ell1)`+
+\frac{`r sprintf("%.3f", ell2 - ell1)`}
+{1-`r sprintf("%.3f", aitken)`}=`r sprintf("%.3f", ell_inf)`.
+$$
+
+Meta-information
+================
+exname: Cap8S3Q4_aceleracao_Aitken
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

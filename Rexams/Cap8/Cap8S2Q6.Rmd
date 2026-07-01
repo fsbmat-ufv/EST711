@@ -1,0 +1,59 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  n_obs <- sample(6:14, 1)
+  n_mis <- sample(2:8, 1)
+  xbar <- sample(seq(-1, 2, 0.2), 1)
+  theta0 <- sample(seq(-1, 2, 0.2), 1)
+  if (abs(theta0 - xbar) < 0.5) next
+  k <- sample(2:5, 1)
+  rho <- n_mis/(n_obs + n_mis)
+  theta_k <- xbar + rho^k * (theta0 - xbar)
+  vals <- round(c(theta_k,
+                  xbar + rho * (theta0 - xbar),
+                  xbar + (1 - rho)^k * (theta0 - xbar),
+                  rho^k * theta0,
+                  xbar), 3)
+  if (length(unique(vals)) == 5L) break
+}
+opts <- sprintf("$%.3f$", vals)
+```
+
+Question
+========
+Para uma amostra de $N(\theta,1)$, `r n_obs` valores foram observados e têm média $\bar x=`r sprintf("%.1f", xbar)`$; outros `r n_mis` valores estão totalmente ausentes. A recorrência EM é
+$$
+\theta^{(t+1)}=\frac{n_{\rm obs}\bar x+n_{\rm mis}\theta^{(t)}}
+{n_{\rm obs}+n_{\rm mis}}.
+$$
+Partindo de $\theta^{(0)}=`r sprintf("%.1f", theta0)`$, qual é $\theta^{(`r k`)}$?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+Subtraindo o ponto fixo $\bar x$ dos dois lados,
+$$
+\theta^{(t+1)}-\bar x=\rho(\theta^{(t)}-\bar x),
+\qquad \rho=\frac{n_{\rm mis}}{n_{\rm obs}+n_{\rm mis}}
+=`r sprintf("%.3f", rho)`.
+$$
+Portanto,
+$$
+\theta^{(`r k`)}=\bar x+\rho^{`r k`}(\theta^{(0)}-\bar x)
+=`r sprintf("%.3f", theta_k)`.
+$$
+A sequência converge geometricamente para a média dos casos observados.
+
+Meta-information
+================
+exname: Cap8S2Q6_taxa_convergencia_EM
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

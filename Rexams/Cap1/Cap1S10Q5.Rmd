@@ -1,0 +1,34 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  k <- sample(seq(1.5,4,0.5),1); lower <- 1-1/k^2
+  vals <- round(c(lower,1/k^2,1-1/k,k/(k+1),1/k),4)
+  if (length(unique(vals)) == 5L) break
+}
+opts <- sprintf("$%.4f$",vals)
+```
+
+Question
+========
+Sem supor uma família de distribuições, qual limite inferior Chebyshev garante para $P(|X-\mu|<`r k`\sigma)$?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+Pelo complemento da forma usual de Chebyshev,
+$$P(|X-\mu|<k\sigma)\geq1-\frac1{k^2}
+=`r sprintf("%.4f",lower)`.$$
+
+Meta-information
+================
+exname: Cap1S10Q5_Chebyshev_intervalo_central
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

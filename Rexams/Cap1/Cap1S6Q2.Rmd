@@ -1,0 +1,36 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  n <- sample(5:12,1); p <- sample(seq(0.20,0.70,0.05),1); x <- sample(1:(n-1),1)
+  ans <- dbinom(x,n,p)
+  vals <- round(c(ans,p^x*(1-p)^(n-x),choose(n,x)*p^x,
+                  dbinom(x,n,1-p),1-ans),5)
+  if (length(unique(vals)) == 5L) break
+}
+opts <- sprintf("$%.5f$",vals)
+```
+
+Question
+========
+Em `r n` ensaios de Bernoulli independentes, com probabilidade de sucesso `r p`, qual é a probabilidade de exatamente `r x` sucessos?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+Para $X\sim\operatorname{Binomial}(`r n`,`r p`)$,
+$$P(X=`r x`)=\binom{`r n`}{`r x`}p^{`r x`}(1-p)^{`r n-x`}
+=`r sprintf("%.5f",ans)`.$$
+
+Meta-information
+================
+exname: Cap1S6Q2_pmf_binomial
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

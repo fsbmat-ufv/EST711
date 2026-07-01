@@ -1,0 +1,304 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+<title>Exam 5</title>
+<style type="text/css">
+body{font-family: Arial, Helvetica, Sans;}
+</style>
+<meta charset="utf-8" />
+<script type="text/javascript"   src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script>
+</head>
+
+<body>
+<h2>Exam 5</h2>
+
+<ol>
+<li>
+<h4>Question</h4>
+<p>Uma função é dada por <span class="math inline">\(f(x)=c x^{4}\)</span> para <span class="math inline">\(0&lt;x&lt;2\)</span> e zero fora desse intervalo. Qual valor de <span class="math inline">\(c\)</span> torna <span class="math inline">\(f\)</span> uma densidade?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(0.31250\)</span>
+</li>
+<li>
+<span class="math inline">\(0.50000\)</span>
+</li>
+<li>
+<span class="math inline">\(0.03125\)</span>
+</li>
+<li>
+<span class="math inline">\(0.15625\)</span>
+</li>
+<li>
+<span class="math inline">\(0.40000\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>A normalização exige
+<span class="math display">\[1=c\int_0^{2}x^{4}dx
+=c\frac{2^{5}}{5}.\]</span>
+Logo, <span class="math inline">\(c=(5)/2^{5}=0.15625\)</span>.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Se $f(x)=2x/16 para <span class="math inline">\(0&lt;x&lt;4\)</span>, qual é <span class="math inline">\(P(1.08&lt;X&lt;2.89)\)</span>?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(0.2242\)</span>
+</li>
+<li>
+<span class="math inline">\(0.4484\)</span>
+</li>
+<li>
+<span class="math inline">\(0.1129\)</span>
+</li>
+<li>
+<span class="math inline">\(0.4516\)</span>
+</li>
+<li>
+<span class="math inline">\(0.5516\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p><span class="math display">\[P(u&lt;X&lt;v)=\int_u^v\frac{2x}{a^2}dx
+=\frac{v^2-u^2}{a^2}
+=0.4484.\]</span></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Uma variável tem densidade <span class="math inline">\(f(x)=(4)x^{3}/625\)</span> em <span class="math inline">\((0,5)\)</span>. Qual é <span class="math inline">\(F_X(2.66)\)</span>?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(0.1205\)</span>
+</li>
+<li>
+<span class="math inline">\(0.9199\)</span>
+</li>
+<li>
+<span class="math inline">\(0.1506\)</span>
+</li>
+<li>
+<span class="math inline">\(0.0801\)</span>
+</li>
+<li>
+<span class="math inline">\(0.5321\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Para <span class="math inline">\(0&lt;x&lt;a\)</span>,
+<span class="math display">\[F_X(x)=\int_0^x\frac{(k+1)t^k}{a^{k+1}}dt
+=\left(\frac{x}{a}\right)^{k+1}.\]</span>
+No ponto informado, isso vale 0.0801.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Se <span class="math inline">\(F_X(x)=(x/7)^{4}\)</span> para <span class="math inline">\(0&lt;x&lt;7\)</span>, qual é o quantil de ordem <span class="math inline">\(p=0.45\)</span>?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(0.2870\)</span>
+</li>
+<li>
+<span class="math inline">\(6.0282\)</span>
+</li>
+<li>
+<span class="math inline">\(5.7333\)</span>
+</li>
+<li>
+<span class="math inline">\(3.1500\)</span>
+</li>
+<li>
+<span class="math inline">\(0.0643\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Resolve-se <span class="math inline">\(F_X(q_p)=p\)</span>:
+<span class="math display">\[\left(\frac{q_p}{7}\right)^{4}=0.45,
+\qquad q_p=7\,p^{1/4}
+=5.7333.\]</span></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Se <span class="math inline">\(X\)</span> tem densidade <span class="math inline">\(f_X\)</span> e <span class="math inline">\(Y=3X+2\)</span>, qual é a densidade de <span class="math inline">\(Y\)</span>?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(f_Y(y)=f_X(y-2)\)</span>.
+</li>
+<li>
+<span class="math inline">\(f_Y(y)=f_X((y+2)/3)\)</span>.
+</li>
+<li>
+<span class="math inline">\(f_Y(y)=\dfrac1{9}f_X(y/3-2)\)</span>.
+</li>
+<li>
+<span class="math inline">\(f_Y(y)=3f_X(3y+2)\)</span>.
+</li>
+<li>
+<span class="math inline">\(f_Y(y)=\dfrac1{3}f_X\!\left(\dfrac{y-2}{3}\right)\)</span>.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>A inversa é <span class="math inline">\(x=(y-2)/3\)</span> e seu jacobiano absoluto é <span class="math inline">\(1/3\)</span>. Portanto,
+<span class="math display">\[f_Y(y)=\frac1{3}f_X\left(\frac{y-2}{3}\right).\]</span></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Se <span class="math inline">\(X\sim U(0,4)\)</span> e <span class="math inline">\(Y=X^2\)</span>, qual é <span class="math inline">\(f_Y(12.624)\)</span>?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(1.77651\)</span>
+</li>
+<li>
+<span class="math inline">\(0.88826\)</span>
+</li>
+<li>
+<span class="math inline">\(0.00990\)</span>
+</li>
+<li>
+<span class="math inline">\(0.03518\)</span>
+</li>
+<li>
+<span class="math inline">\(0.07036\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>A inversa é <span class="math inline">\(x=\sqrt y\)</span> e <span class="math inline">\(|dx/dy|=1/(2\sqrt y)\)</span>. Assim,
+<span class="math display">\[f_Y(y)=\frac1{4}\frac1{2\sqrt y},
+\quad 0&lt;y&lt;16,\]</span>
+que no ponto dado vale 0.03518.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Se <span class="math inline">\(X\sim U(-4,4)\)</span> e <span class="math inline">\(Y=X^2\)</span>, qual é <span class="math inline">\(F_Y(2.156)\)</span>?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(0.0851\)</span>
+</li>
+<li>
+<span class="math inline">\(0.3670\)</span>
+</li>
+<li>
+<span class="math inline">\(0.7341\)</span>
+</li>
+<li>
+<span class="math inline">\(0.1347\)</span>
+</li>
+<li>
+<span class="math inline">\(0.6330\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Para <span class="math inline">\(0&lt;y&lt;a^2\)</span>,
+<span class="math display">\[F_Y(y)=P(-\sqrt y\leq X\leq\sqrt y)
+=\frac{2\sqrt y}{2a}=\frac{\sqrt y}{a}.\]</span>
+No ponto indicado, o valor é 0.3670.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Uma distribuição é mistura de <span class="math inline">\(f_1\)</span> e <span class="math inline">\(f_2\)</span> com pesos 0.35 e 0.65. Para certo conjunto <span class="math inline">\(A\)</span>, <span class="math inline">\(P_1(A)=0.45\)</span> e <span class="math inline">\(P_2(A)=0.7\)</span>. Qual é <span class="math inline">\(P(A)\)</span> na mistura?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(0.3875\)</span>
+</li>
+<li>
+<span class="math inline">\(0.1575\)</span>
+</li>
+<li>
+<span class="math inline">\(0.5750\)</span>
+</li>
+<li>
+<span class="math inline">\(0.6125\)</span>
+</li>
+<li>
+<span class="math inline">\(0.3150\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Probabilidades também se combinam pelos pesos da mistura:
+<span class="math display">\[P(A)=0.35(0.45)+0.65(0.7)
+=0.6125.\]</span></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Se <span class="math inline">\(U\sim U(0,1)\)</span> e <span class="math inline">\(Y=-\log(1-U)/1.5\)</span>, qual é a distribuição de <span class="math inline">\(Y\)</span>?</p>
+<br/>
+<ol type="a">
+<li>
+Normal com média <span class="math inline">\(1/1.5\)</span>.
+</li>
+<li>
+Gama com forma 1.5 e taxa 1.
+</li>
+<li>
+Uniforme em <span class="math inline">\((0,1/1.5)\)</span>.
+</li>
+<li>
+Exponencial com taxa <span class="math inline">\(1/1.5\)</span>, pois <span class="math inline">\(F_Y(y)=e^{-y/1.5}\)</span>.
+</li>
+<li>
+Exponencial com taxa 1.5, pois <span class="math inline">\(F_Y(y)=1-e^{-1.5y}\)</span> para <span class="math inline">\(y&gt;0\)</span>.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Para <span class="math inline">\(y&gt;0\)</span>,
+<span class="math display">\[P(Y\leq y)=P\{U\leq1-e^{-1.5y}\}
+=1-e^{-1.5y},\]</span>
+que é a FDA exponencial de taxa 1.5.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Uma variável <span class="math inline">\(X\)</span> é absolutamente contínua e sua densidade em <span class="math inline">\(x_0=-2\)</span> vale <span class="math inline">\(f_X(x_0)=0.4\)</span>. Qual é <span class="math inline">\(P(X=x_0)\)</span>?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(F_X(x_0)\)</span>.
+</li>
+<li>
+0.4.
+</li>
+<li>
+Não pode ser determinada sem integrar sobre toda a reta.
+</li>
+<li>
+<span class="math inline">\(0\)</span>.
+</li>
+<li>
+<span class="math inline">\(1-0.4\)</span>.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Em distribuições absolutamente contínuas, conjuntos com um único ponto têm probabilidade zero. O valor da densidade não é uma probabilidade pontual:
+<span class="math display">\[P(X=x_0)=\int_{x_0}^{x_0}f_X(x)\,dx=0.\]</span></p>
+<br/>
+</li>
+</ol>
+
+</body>
+</html>

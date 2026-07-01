@@ -1,0 +1,30 @@
+```{r, echo=FALSE, results="hide"}
+nome <- sample(c("$F_X$","$G$","$H$"),1)
+```
+
+Question
+========
+Qual conjunto de propriedades é necessário para que `r nome` seja uma função de distribuição acumulada em $\mathbb{R}$?
+
+Answerlist
+----------
+* Ser não decrescente, contínua à direita, com limites 0 em $-\infty$ e 1 em $+\infty$.
+* Ser estritamente crescente, contínua e possuir derivada positiva em todos os pontos.
+* Ser não crescente, contínua à esquerda e integrar 1.
+* Assumir apenas os valores 0 e 1.
+* Ser simétrica em torno de zero e limitada por uma densidade.
+
+Solution
+========
+Uma FDA é não decrescente e contínua à direita, com
+$\lim_{x\to-\infty}F(x)=0$ e $\lim_{x\to\infty}F(x)=1$.
+Ela pode ter saltos, trechos constantes e não precisa possuir densidade.
+
+Meta-information
+================
+exname: Cap1S5Q1_propriedades_FDA
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+
+

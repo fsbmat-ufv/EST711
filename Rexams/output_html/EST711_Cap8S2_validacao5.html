@@ -1,0 +1,353 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+<title>Exam 5</title>
+<style type="text/css">
+body{font-family: Arial, Helvetica, Sans;}
+</style>
+<meta charset="utf-8" />
+<script type="text/javascript"   src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script>
+</head>
+
+<body>
+<h2>Exam 5</h2>
+
+<ol>
+<li>
+<h4>Question</h4>
+<p>Uma amostra provém de <span class="math inline">\(N(\theta,1)\)</span>. Foram observados 16 valores, com média 0.1, e outros 7 valores sofreram censura à direita em <span class="math inline">\(a=1.3\)</span> (para cada um deles, sabe-se apenas que <span class="math inline">\(Z&gt;a\)</span>). Se <span class="math inline">\(\theta^{(t)}=0.2\)</span>, qual é a atualização <span class="math inline">\(\theta^{(t+1)}\)</span> do algoritmo EM?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(0.465\)</span>
+</li>
+<li>
+<span class="math inline">\(0.619\)</span>
+</li>
+<li>
+<span class="math inline">\(0.130\)</span>
+</li>
+<li>
+<span class="math inline">\(1.706\)</span>
+</li>
+<li>
+<span class="math inline">\(-0.358\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Condicionalmente a <span class="math inline">\(Z&gt;a\)</span> e ao valor corrente, a média de cada observação censurada é
+<span class="math display">\[
+E(Z\mid Z&gt;a,\theta^{(t)})=\theta^{(t)}+
+\frac{\phi(a-\theta^{(t)})}{1-\Phi(a-\theta^{(t)})}.
+\]</span>
+O passo M calcula a média dos valores observados e dos valores censurados imputados por suas esperanças condicionais. Assim,
+<span class="math display">\[
+\theta^{(t+1)}=
+\frac{16(0.1)+7\left[0.2+
+\dfrac{\phi(1.1)}{1-\Phi(1.1)}\right]}
+{23}=0.619.
+\]</span></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Considere dados de uma distribuição <span class="math inline">\(N(\theta,1)\)</span>. Há 11 observações completas, cuja média é 0.4, e 6 observações censuradas à esquerda em <span class="math inline">\(a=-1.1\)</span>, isto é, sabe-se que <span class="math inline">\(Z&lt;a\)</span>. Partindo de <span class="math inline">\(\theta^{(t)}=0.4\)</span>, determine <span class="math inline">\(\theta^{(t+1)}\)</span>.</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(-0.284\)</span>
+</li>
+<li>
+<span class="math inline">\(1.084\)</span>
+</li>
+<li>
+<span class="math inline">\(0.400\)</span>
+</li>
+<li>
+<span class="math inline">\(-1.539\)</span>
+</li>
+<li>
+<span class="math inline">\(-0.129\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Para censura à esquerda,
+<span class="math display">\[
+E(Z\mid Z&lt;a,\theta^{(t)})=\theta^{(t)}-
+\frac{\phi(a-\theta^{(t)})}{\Phi(a-\theta^{(t)})}.
+\]</span>
+Logo,
+<span class="math display">\[
+\theta^{(t+1)}=
+\frac{n_{\mathrm{obs}}\bar x+n_{\mathrm{cens}}
+E(Z\mid Z&lt;a,\theta^{(t)})}{n_{\mathrm{obs}}+n_{\mathrm{cens}}}
+=-0.284.
+\]</span>
+O sinal negativo na razão de Mills é essencial: os valores censurados estão abaixo de <span class="math inline">\(a\)</span>.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Sejam <span class="math inline">\(X_1,\ldots,X_{8}\sim N(\theta,1)\)</span> observações completas. Além delas, 4 unidades foram censuradas à direita no ponto <span class="math inline">\(a=0.7\)</span>, de modo que apenas se sabe que cada valor censurado excede <span class="math inline">\(a\)</span>. Desprezando fatores que não dependem de <span class="math inline">\(\theta\)</span>, qual é a verossimilhança dos dados observados?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(\displaystyle\prod_{i=1}^{8}\phi(X_i-\theta)\)</span>, pois observações censuradas não contribuem para a verossimilhança.
+</li>
+<li>
+<span class="math inline">\(\left[\phi(a-\theta)\right]^{4}\displaystyle\prod_{i=1}^{8}\Phi(X_i-\theta)\)</span>.
+</li>
+<li>
+<span class="math inline">\(\left[1-\Phi(a)\right]^{4}\displaystyle\prod_{i=1}^{8}\phi(X_i)\)</span>.
+</li>
+<li>
+<span class="math inline">\(\left[1-\Phi(a-\theta)\right]^{4}\displaystyle\prod_{i=1}^{8}\phi(X_i-\theta)\)</span>.
+</li>
+<li>
+<span class="math inline">\(\left[\Phi(a-\theta)\right]^{4}\displaystyle\prod_{i=1}^{8}\phi(X_i-\theta)\)</span>.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Cada observação completa contribui com a densidade <span class="math inline">\(\phi(X_i-\theta)\)</span>. Para uma unidade censurada à direita, o evento observado é <span class="math inline">\(Z&gt;a\)</span>, cuja probabilidade é
+<span class="math display">\[P_\theta(Z&gt;a)=1-\Phi(a-\theta).\]</span>
+Pela independência, as contribuições são multiplicadas, produzindo
+<span class="math display">\[
+L(\theta)=\left[1-\Phi(a-\theta)\right]^{n_{\mathrm{cens}}}
+\prod_{i=1}^{n_{\mathrm{obs}}}\phi(X_i-\theta).
+\]</span></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>No ajuste EM de uma mistura de duas Normais, os dados são <span class="math inline">\(\mathbf{x}=(4.0, 1.5, 4.5, 5.0, 3.5, 2.5, -1.0)\)</span> e as responsabilidades correntes pelo componente 2 são <span class="math inline">\(\boldsymbol\gamma=(0.50, 0.40, 0.60, 0.20, 0.40, 0.80, 0.30)\)</span>. Admitindo variância própria em cada componente, qual é a atualização de <span class="math inline">\((\sigma_2^2)^{(t+1)}\)</span>?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(3.926\)</span>
+</li>
+<li>
+<span class="math inline">\(2.706\)</span>
+</li>
+<li>
+<span class="math inline">\(4.310\)</span>
+</li>
+<li>
+<span class="math inline">\(1.643\)</span>
+</li>
+<li>
+<span class="math inline">\(2.699\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Primeiro atualiza-se a média do componente 2:
+<span class="math display">\[
+(\mu_2)^{(t+1)}=\frac{\sum_i\gamma_i x_i}{\sum_i\gamma_i}
+=2.938.
+\]</span>
+Em seguida, a maximização da verossimilhança completa esperada fornece
+<span class="math display">\[
+(\sigma_2^2)^{(t+1)}=
+\frac{\sum_i\gamma_i[x_i-(\mu_2)^{(t+1)}]^2}{\sum_i\gamma_i}
+=2.699.
+\]</span>
+O denominador é o tamanho efetivo <span class="math inline">\(\sum_i\gamma_i\)</span>, e não uma correção de não viesamento.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Em um problema genético multinomial, as frequências observadas nas quatro categorias são <span class="math inline">\((35, 21, 36, 43)\)</span>. Uma formulação com dados aumentados conduz à recorrência EM
+<span class="math display">\[
+\theta^{(t+1)}=
+\frac{x_1\theta^{(t)}+2x_4+x_4\theta^{(t)}}
+{n\theta^{(t)}+2(x_2+x_3+x_4)}.
+\]</span>
+Se <span class="math inline">\(\theta^{(t)}=0.15\)</span>, qual é o próximo valor?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(0.361\)</span>
+</li>
+<li>
+<span class="math inline">\(0.234\)</span>
+</li>
+<li>
+<span class="math inline">\(0.368\)</span>
+</li>
+<li>
+<span class="math inline">\(0.357\)</span>
+</li>
+<li>
+<span class="math inline">\(0.444\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Como <span class="math inline">\(n=135\)</span>, a substituição direta na recorrência dá
+<span class="math display">\[
+\theta^{(t+1)}=
+\frac{35(0.15)+2(43)+43(0.15)}
+{135(0.15)+2(21+36+43)}
+=0.444.
+\]</span></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Para uma amostra de <span class="math inline">\(N(\theta,1)\)</span>, 13 valores foram observados e têm média <span class="math inline">\(\bar x=0.6\)</span>; outros 8 valores estão totalmente ausentes. A recorrência EM é
+<span class="math display">\[
+\theta^{(t+1)}=\frac{n_{\rm obs}\bar x+n_{\rm mis}\theta^{(t)}}
+{n_{\rm obs}+n_{\rm mis}}.
+\]</span>
+Partindo de <span class="math inline">\(\theta^{(0)}=1.4\)</span>, qual é <span class="math inline">\(\theta^{(2)}\)</span>?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(0.716\)</span>
+</li>
+<li>
+<span class="math inline">\(0.600\)</span>
+</li>
+<li>
+<span class="math inline">\(0.907\)</span>
+</li>
+<li>
+<span class="math inline">\(0.203\)</span>
+</li>
+<li>
+<span class="math inline">\(0.905\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Subtraindo o ponto fixo <span class="math inline">\(\bar x\)</span> dos dois lados,
+<span class="math display">\[
+\theta^{(t+1)}-\bar x=\rho(\theta^{(t)}-\bar x),
+\qquad \rho=\frac{n_{\rm mis}}{n_{\rm obs}+n_{\rm mis}}
+=0.381.
+\]</span>
+Portanto,
+<span class="math display">\[
+\theta^{(2)}=\bar x+\rho^{2}(\theta^{(0)}-\bar x)
+=0.716.
+\]</span>
+A sequência converge geometricamente para a média dos casos observados.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Uma observação <span class="math inline">\(Z\sim N(\theta,1)\)</span> foi censurada à esquerda em <span class="math inline">\(a=-0.1\)</span>, portanto o evento observado é <span class="math inline">\(Z&lt;a\)</span>. No passo E, com <span class="math inline">\(\theta^{(t)}=0.5\)</span>, qual distribuição deve ser usada para calcular esperanças envolvendo <span class="math inline">\(Z\)</span>?</p>
+<br/>
+<ol type="a">
+<li>
+A distribuição <span class="math inline">\(N(\theta,1)\)</span> não truncada, mantendo <span class="math inline">\(\theta\)</span> como argumento livre do passo M.
+</li>
+<li>
+A distribuição <span class="math inline">\(N(0,1)\)</span> condicionada ao evento oposto ao observado.
+</li>
+<li>
+A distribuição <span class="math inline">\(N(\theta^{(t)},1)\)</span> condicionada ao evento de censura, com suporte <span class="math inline">\(z&lt;a\)</span>.
+</li>
+<li>
+Uma massa pontual em <span class="math inline">\(a\)</span>, pois todo valor censurado deve ser substituído pelo limite de censura.
+</li>
+<li>
+Uma distribuição uniforme no intervalo determinado pelo ponto de censura.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>O passo E usa a distribuição condicional dos dados ausentes dados os dados observados e o parâmetro corrente. Aqui, ela tem densidade proporcional a <span class="math inline">\(\phi(z-\theta^{(t)})\)</span> no suporte <span class="math inline">\(z&lt;a\)</span>, com constante normalizadora <span class="math inline">\(\Phi(a-\theta^{(t)})\)</span>. Substituir todos os valores por <span class="math inline">\(a\)</span> ignora a incerteza criada pela censura.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Ao ajustar por EM uma mistura de 2 distribuições da mesma família, duas execuções fornecem a mesma densidade ajustada e a mesma log-verossimilhança, mas trocam entre si os rótulos dos componentes baixo e alto. Qual é a interpretação correta?</p>
+<br/>
+<ol type="a">
+<li>
+A troca de rótulos prova que a sequência de log-verossimilhanças diminuiu em alguma iteração.
+</li>
+<li>
+Trata-se de não identificabilidade por permutação dos rótulos; sem restrições adicionais, as duas parametrizações representam o mesmo modelo de mistura.
+</li>
+<li>
+O fenômeno desaparece apenas aumentando indefinidamente o tamanho da amostra, sem impor qualquer convenção de identificação.
+</li>
+<li>
+Uma das execuções necessariamente está errada, pois o EM produz uma rotulagem única em qualquer mistura finita.
+</li>
+<li>
+Os componentes devem ser somados, pois rótulos diferentes sempre indicam distribuições idênticas.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>A densidade da mistura não muda quando se permutam simultaneamente pesos e parâmetros dos componentes. Esse fenômeno é conhecido como troca de rótulos. Uma convenção, como ordenar as médias, pode selecionar uma representação, mas não altera a densidade ajustada.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Em uma mistura de 4 Normais com variâncias livres, ajustada a 86 observações, um componente concentra-se em uma única observação <span class="math inline">\(x^*=1.8\)</span> e sua variância tende a zero. O que pode ocorrer com a verossimilhança e como esse problema costuma ser tratado?</p>
+<br/>
+<ol type="a">
+<li>
+A verossimilhança necessariamente converge a zero; deve-se aumentar o número de componentes.
+</li>
+<li>
+A monotonicidade do EM impede variâncias próximas de zero, dispensando qualquer restrição.
+</li>
+<li>
+A verossimilhança pode tornar-se ilimitada; restrições inferiores nas variâncias ou penalização ajudam a evitar a solução degenerada.
+</li>
+<li>
+Apenas os pesos da mistura causam degenerescência; fixar todos os pesos iguais resolve o problema em qualquer amostra.
+</li>
+<li>
+A solução é sempre um máximo global válido, pois maior verossimilhança garante boa separação dos componentes.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Quando a média de um componente coincide com uma observação e sua variância tende a zero, a densidade Normal nesse ponto pode crescer sem limite. Assim, misturas Gaussianas com variâncias irrestritas admitem singularidades da verossimilhança. Limites mínimos, penalizações ou modelos com estrutura de variância apropriada são formas usuais de regularização.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Considere uma mistura de duas densidades, <span class="math inline">\(f(x)=(1-\pi)f_1(x)+\pi f_2(x)\)</span>, observada em uma amostra de tamanho 70. Por que introduzir indicadores latentes de pertencimento ao classe transforma o problema em uma forma conveniente para o algoritmo EM?</p>
+<br/>
+<ol type="a">
+<li>
+A introdução dos indicadores elimina os parâmetros desconhecidos e torna desnecessário o passo M.
+</li>
+<li>
+A verossimilhança observada passa a ser o produto <span class="math inline">\(\prod_i[f_1(x_i)f_2(x_i)]\)</span>, independentemente de <span class="math inline">\(\pi\)</span>.
+</li>
+<li>
+O procedimento converte exatamente qualquer mistura em um único modelo Normal, sem perda de informação.
+</li>
+<li>
+Os indicadores são observados diretamente após a primeira iteração e deixam de possuir incerteza condicional.
+</li>
+<li>
+A log-verossimilhança completa torna-se uma soma ponderada de <span class="math inline">\(\log f_1(x_i)\)</span> e <span class="math inline">\(\log f_2(x_i)\)</span>; no passo E, os indicadores são substituídos por suas probabilidades condicionais.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Com <span class="math inline">\(W_i=1\)</span> para o componente 2 e <span class="math inline">\(W_i=0\)</span> para o componente 1, a contribuição completa é
+<span class="math display">\[
+(1-W_i)\{\log(1-\pi)+\log f_1(x_i)\}
++W_i\{\log\pi+\log f_2(x_i)\}.
+\]</span>
+Essa expressão é linear nos indicadores. O passo E usa <span class="math inline">\(E(W_i\mid x_i,\theta^{(t)})\)</span>, as responsabilidades, e o passo M maximiza a soma ponderada resultante. Isso contorna diretamente os logaritmos de somas presentes na verossimilhança observada.</p>
+<br/>
+</li>
+</ol>
+
+</body>
+</html>

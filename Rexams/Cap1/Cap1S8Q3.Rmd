@@ -1,0 +1,33 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  x <- sort(sample(-4:5,4)); raw <- sample(1:9,4,replace=TRUE); p <- raw/sum(raw)
+  ans <- sum(x^2*p); vals <- round(c(ans,sum(x*p)^2,sum(abs(x)*p),sum(x*p),var(x)),4)
+  if (length(unique(vals)) == 5L) break
+}
+opts <- sprintf("$%.4f$",vals); xt <- paste(x,collapse=", "); pt <- paste(sprintf("%.3f",p),collapse=", ")
+```
+
+Question
+========
+Para valores $(`r xt`)$ com probabilidades $(`r pt`)$, determine $E(X^2)$ sem obter a distribuição de $Y=X^2$.
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+Pela regra da esperança de uma função,
+$$E(X^2)=\sum_xx^2p_X(x)=`r sprintf("%.4f",ans)`.$$
+
+Meta-information
+================
+exname: Cap1S8Q3_LOTUS_discreta
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

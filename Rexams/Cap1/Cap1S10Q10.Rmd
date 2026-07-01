@@ -1,0 +1,27 @@
+```{r, echo=FALSE, results="hide"}
+phi <- sample(c("x^2", "exp(x)", "-log(x)"), 1)
+```
+
+Question
+========
+Se $\phi=`r phi`$ é estritamente convexa e $E[\phi(X)]<\infty$, quando ocorre igualdade em Jensen, $\phi(E[X])=E[\phi(X)]$?
+
+Answerlist
+----------
+* Somente quando $X$ é constante quase certamente.
+* Sempre que $E(X)=0$.
+* Sempre que a distribuição de $X$ é simétrica.
+* Para toda variável contínua.
+* Somente quando $\operatorname{Var}(X)=1$.
+
+Solution
+========
+Para uma função estritamente convexa, Jensen é estrita quando $X$ é não degenerada. A igualdade ocorre precisamente quando toda a massa de $X$ está concentrada em um único valor, isto é, quando $X$ é constante quase certamente.
+
+Meta-information
+================
+exname: Cap1S10Q10_igualdade_Jensen
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

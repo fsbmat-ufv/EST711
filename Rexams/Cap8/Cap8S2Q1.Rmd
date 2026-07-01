@@ -1,0 +1,55 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  n_obs <- sample(8:18, 1)
+  n_cens <- sample(2:7, 1)
+  xbar <- sample(seq(-0.4, 0.8, 0.1), 1)
+  a <- sample(seq(0.8, 1.8, 0.1), 1)
+  theta_old <- sample(seq(-0.2, 0.9, 0.1), 1)
+  z <- a - theta_old
+  mills <- dnorm(z)/(1 - pnorm(z))
+  n <- n_obs + n_cens
+  theta_new <- (n_obs * xbar + n_cens * (theta_old + mills))/n
+  vals <- round(c(theta_new,
+                  (n_obs * xbar + n_cens * theta_old)/n,
+                  xbar + mills,
+                  (n_obs * xbar + n_cens * (theta_old - mills))/n,
+                  (n_obs * xbar + n_cens * a)/n), 3)
+  if (length(unique(vals)) == 5L) break
+}
+opts <- sprintf("$%.3f$", vals)
+```
+
+Question
+========
+Uma amostra provém de $N(\theta,1)$. Foram observados `r n_obs` valores, com média `r sprintf("%.1f", xbar)`, e outros `r n_cens` valores sofreram censura à direita em $a=`r sprintf("%.1f", a)`$ (para cada um deles, sabe-se apenas que $Z>a$). Se $\theta^{(t)}=`r sprintf("%.1f", theta_old)`$, qual é a atualização $\theta^{(t+1)}$ do algoritmo EM?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+Condicionalmente a $Z>a$ e ao valor corrente, a média de cada observação censurada é
+$$
+E(Z\mid Z>a,\theta^{(t)})=\theta^{(t)}+
+\frac{\phi(a-\theta^{(t)})}{1-\Phi(a-\theta^{(t)})}.
+$$
+O passo M calcula a média dos valores observados e dos valores censurados imputados por suas esperanças condicionais. Assim,
+$$
+\theta^{(t+1)}=
+\frac{`r n_obs`(`r sprintf("%.1f", xbar)`)+`r n_cens`\left[`r sprintf("%.1f", theta_old)`+
+\dfrac{\phi(`r sprintf("%.1f", z)`)}{1-\Phi(`r sprintf("%.1f", z)`)}\right]}
+{`r n`}=`r sprintf("%.3f", theta_new)`.
+$$
+
+Meta-information
+================
+exname: Cap8S2Q1_EM_censura_direita
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

@@ -1,0 +1,29 @@
+```{r, echo=FALSE, results="hide"}
+a <- sample(c(2,3,4),1); b <- sample(-3:3,1)
+```
+
+Question
+========
+Se $X$ tem densidade $f_X$ e $Y=`r a`X+`r b`$, qual é a densidade de $Y$?
+
+Answerlist
+----------
+* $f_Y(y)=\dfrac1{`r a`}f_X\!\left(\dfrac{y-`r b`}{`r a`}\right)$.
+* $f_Y(y)=`r a`f_X(`r a`y+`r b`)$.
+* $f_Y(y)=f_X(y-`r b`)$.
+* $f_Y(y)=f_X((y+`r b`)/`r a`)$.
+* $f_Y(y)=\dfrac1{`r a^2`}f_X(y/`r a`-`r b`)$.
+
+Solution
+========
+A inversa é $x=(y-`r b`)/`r a`$ e seu jacobiano absoluto é $1/`r a`$. Portanto,
+$$f_Y(y)=\frac1{`r a`}f_X\left(\frac{y-`r b`}{`r a`}\right).$$
+
+Meta-information
+================
+exname: Cap1S7Q5_transformacao_linear_continua
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+
+

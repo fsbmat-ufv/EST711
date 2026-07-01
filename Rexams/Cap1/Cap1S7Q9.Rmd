@@ -1,0 +1,31 @@
+```{r, echo=FALSE, results="hide"}
+lambda <- sample(seq(0.5,3,0.5),1)
+```
+
+Question
+========
+Se $U\sim U(0,1)$ e $Y=-\log(1-U)/`r lambda`$, qual é a distribuição de $Y$?
+
+Answerlist
+----------
+* Exponencial com taxa `r lambda`, pois $F_Y(y)=1-e^{-`r lambda`y}$ para $y>0$.
+* Uniforme em $(0,1/`r lambda`)$.
+* Normal com média $1/`r lambda`$.
+* Exponencial com taxa $1/`r lambda`$, pois $F_Y(y)=e^{-y/`r lambda`}$.
+* Gama com forma `r lambda` e taxa 1.
+
+Solution
+========
+Para $y>0$,
+$$P(Y\leq y)=P\{U\leq1-e^{-`r lambda`y}\}
+=1-e^{-`r lambda`y},$$
+que é a FDA exponencial de taxa `r lambda`.
+
+Meta-information
+================
+exname: Cap1S7Q9_transformada_inversa_exponencial
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+
+

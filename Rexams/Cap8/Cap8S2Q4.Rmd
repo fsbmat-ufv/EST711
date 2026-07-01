@@ -1,0 +1,53 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  n <- sample(5:7, 1)
+  x <- sample(seq(-2, 5, 0.5), n, replace = FALSE)
+  gamma <- sample(seq(0.15, 0.90, 0.05), n, replace = TRUE)
+  mu_new <- sum(gamma * x)/sum(gamma)
+  var_new <- sum(gamma * (x - mu_new)^2)/sum(gamma)
+  vals <- round(c(var_new,
+                  sum(gamma * (x - mean(x))^2)/sum(gamma),
+                  sum(gamma * (x - mu_new)^2)/(sum(gamma) - 1),
+                  sqrt(var_new),
+                  var(x)), 3)
+  if (all(is.finite(vals)) && length(unique(vals)) == 5L) break
+}
+x_txt <- paste(sprintf("%.1f", x), collapse = ", ")
+g_txt <- paste(sprintf("%.2f", gamma), collapse = ", ")
+opts <- sprintf("$%.3f$", vals)
+```
+
+Question
+========
+No ajuste EM de uma mistura de duas Normais, os dados são $\mathbf{x}=(`r x_txt`)$ e as responsabilidades correntes pelo componente 2 são $\boldsymbol\gamma=(`r g_txt`)$. Admitindo variância própria em cada componente, qual é a atualização de $(\sigma_2^2)^{(t+1)}$?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+Primeiro atualiza-se a média do componente 2:
+$$
+(\mu_2)^{(t+1)}=\frac{\sum_i\gamma_i x_i}{\sum_i\gamma_i}
+=`r sprintf("%.3f", mu_new)`.
+$$
+Em seguida, a maximização da verossimilhança completa esperada fornece
+$$
+(\sigma_2^2)^{(t+1)}=
+\frac{\sum_i\gamma_i[x_i-(\mu_2)^{(t+1)}]^2}{\sum_i\gamma_i}
+=`r sprintf("%.3f", var_new)`.
+$$
+O denominador é o tamanho efetivo $\sum_i\gamma_i$, e não uma correção de não viesamento.
+
+Meta-information
+================
+exname: Cap8S2Q4_variancia_mistura_normal
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

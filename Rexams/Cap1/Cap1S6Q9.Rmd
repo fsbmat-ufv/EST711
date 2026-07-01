@@ -1,0 +1,37 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  lambda <- sample(seq(0.5,5,0.5),1); x <- sample(0:7,1)
+  ans <- lambda/(x+1)
+  vals <- round(c(ans,(x+1)/lambda,lambda/(x+2),lambda,x+1),4)
+  if (length(unique(vals)) == 5L) break
+}
+opts <- sprintf("$%.4f$",vals)
+```
+
+Question
+========
+Se $X\sim\operatorname{Poisson}(\lambda)$, com $\lambda=`r lambda`$, qual é a razão $p_X(`r x+1`)/p_X(`r x`)$?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+Pela pmf de Poisson,
+$$\frac{p(x+1)}{p(x)}
+=\frac{\lambda^{x+1}/(x+1)!}{\lambda^x/x!}
+=\frac{\lambda}{x+1}
+=`r sprintf("%.4f",ans)`.$$
+
+Meta-information
+================
+exname: Cap1S6Q9_recorrencia_Poisson
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

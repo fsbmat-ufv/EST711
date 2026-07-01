@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+<title>Exam 1</title>
+<style type="text/css">
+body{font-family: Arial, Helvetica, Sans;}
+</style>
+<meta charset="utf-8" />
+<script type="text/javascript"   src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script>
+</head>
+
+<body>
+<h2>Exam 1</h2>
+
+<ol>
+<li>
+<h4>Question</h4>
+<p>Seja <span class="math inline">\(X_1, X_2, \ldots\)</span> uma sequência de variáveis aleatórias iid com <span class="math inline">\(E(X_i) = \mu = 4\)</span> e <span class="math inline">\(\text{Var}(X_i) = \sigma^2 = 3\)</span> finita. Qual das afirmações abaixo enuncia <strong>corretamente</strong> o Teorema Central do Limite (TCL)?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(\dfrac{\bar{X}_n - \mu}{\sigma} \xrightarrow{D} N(0,1)\)</span> (sem o fator <span class="math inline">\(\sqrt{n}\)</span>).
+</li>
+<li>
+<span class="math inline">\(\sqrt{n}(\bar{X}_n - \mu) \xrightarrow{D} N(0,1)\)</span> (sem dividir por <span class="math inline">\(\sigma\)</span>).
+</li>
+<li>
+<span class="math inline">\(\dfrac{\sqrt{n}(\bar{X}_n - \mu)}{\sigma} \xrightarrow{D} N(0,1)\)</span>.
+</li>
+<li>
+<span class="math inline">\(\dfrac{\sqrt{n}(\bar{X}_n - \mu)}{\sigma^2} \xrightarrow{D} N(0,1)\)</span> (usando <span class="math inline">\(\sigma^2\)</span> em vez de <span class="math inline">\(\sigma\)</span>).
+</li>
+<li>
+<span class="math inline">\(\bar{X}_n \xrightarrow{D} N(\mu, \sigma^2)\)</span> para todo <span class="math inline">\(n\)</span> suficientemente grande.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>O TCL afirma que <span class="math inline">\(\dfrac{\sqrt{n}(\bar{X}_n - \mu)}{\sigma} \xrightarrow{D} N(0,1)\)</span>.</p>
+<p>Os erros comuns são: (i) esquecer o fator <span class="math inline">\(\sqrt{n}\)</span> (sem ele, <span class="math inline">\((\bar{X}_n - \mu)/\sigma\)</span> converge a 0 em probabilidade); (ii) usar <span class="math inline">\(\sigma^2\)</span> em vez de <span class="math inline">\(\sigma\)</span> no denominador; (iii) dizer que <span class="math inline">\(\bar{X}_n\)</span> converge em distribuição para <span class="math inline">\(N(\mu,\sigma^2)\)</span> — na verdade, é a estatística padronizada que converge para <span class="math inline">\(N(0,1)\)</span>.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Suponha que <span class="math inline">\(\sqrt{n}(\bar{X}_n - \mu) \xrightarrow{D} N(0, \sigma^2)\)</span> e que <span class="math inline">\(g : \mathbb{R} \to \mathbb{R}\)</span> é diferenciável com <span class="math inline">\(g&#39;(\mu) \neq 0\)</span>. O <strong>Método Delta</strong> (Delta Method) afirma que:</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(\sqrt{n}(g(\bar{X}_n) - g(\mu)) \xrightarrow{D} N(0,\, [g&#39;(\mu)]^2 \sigma^2)\)</span>.
+</li>
+<li>
+<span class="math inline">\(g(\bar{X}_n) \xrightarrow{D} N(g(\mu),\, [g&#39;(\mu)]^2 \sigma^2)\)</span> (sem escala <span class="math inline">\(\sqrt{n}\)</span>, variância não dividida por <span class="math inline">\(n\)</span>).
+</li>
+<li>
+<span class="math inline">\(\sqrt{n}(g(\bar{X}_n) - g(\mu)) \xrightarrow{D} N(0,\, [g(\mu)]^2 \sigma^2)\)</span> (usando <span class="math inline">\(g(\mu)\)</span> em vez de <span class="math inline">\(g&#39;(\mu)\)</span>).
+</li>
+<li>
+<span class="math inline">\(\sqrt{n}(g(\bar{X}_n) - g(\mu)) \xrightarrow{D} N(0,\, [g&#39;(\mu)\,\sigma]^2/n)\)</span> (variância dividida por <span class="math inline">\(n\)</span> erroneamente).
+</li>
+<li>
+<span class="math inline">\(\sqrt{n}(g(\bar{X}_n) - g(\mu)) \xrightarrow{D} N(0,\, g&#39;(\mu)\, \sigma^2)\)</span> (sem elevar ao quadrado).
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>O Método Delta é obtido por expansão de Taylor de primeira ordem: <span class="math inline">\(g(\bar{X}_n) \approx g(\mu) + g&#39;(\mu)(\bar{X}_n - \mu)\)</span>, portanto:
+<span class="math display">\[\sqrt{n}(g(\bar{X}_n) - g(\mu)) \approx g&#39;(\mu)\sqrt{n}(\bar{X}_n - \mu) \xrightarrow{D} N(0,\, [g&#39;(\mu)]^2\sigma^2)\]</span></p>
+<p>A variância assintótica é <span class="math inline">\([g&#39;(\mu)]^2\sigma^2\)</span>, com <span class="math inline">\(g&#39;(\mu)\)</span> elevado ao <strong>quadrado</strong>. Os erros comuns são: não elevar ao quadrado, confundir <span class="math inline">\(g(\mu)\)</span> com <span class="math inline">\(g&#39;(\mu)\)</span>, ou omitir a escala <span class="math inline">\(\sqrt{n}\)</span>.</p>
+<br/>
+</li>
+</ol>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  a <- sample(2:6,1); y <- runif(1,0.2*a^2,0.8*a^2)
+  ans <- 1/(2*a*sqrt(y))
+  vals <- round(c(ans,1/(a*sqrt(y)),sqrt(y)/a,1/(2*a*y),2*sqrt(y)/a),5)
+  if (length(unique(vals)) == 5L) break
+}
+opts <- sprintf("$%.5f$",vals)
+```
+
+Question
+========
+Se $X\sim U(0,`r a`)$ e $Y=X^2$, qual é $f_Y(`r sprintf("%.3f",y)`)$?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+A inversa é $x=\sqrt y$ e $|dx/dy|=1/(2\sqrt y)$. Assim,
+$$f_Y(y)=\frac1{`r a`}\frac1{2\sqrt y},
+\quad 0<y<`r a^2`,$$
+que no ponto dado vale `r sprintf("%.5f",ans)`.
+
+Meta-information
+================
+exname: Cap1S7Q6_transformacao_quadrado_monotona
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

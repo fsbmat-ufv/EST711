@@ -1,0 +1,34 @@
+```{r, echo=FALSE, results="hide"}
+w1 <- sample(seq(0.15,0.35,0.05),1); w2 <- sample(seq(0.25,0.45,0.05),1)
+w <- c(w1,w2,1-w1-w2); q <- sample(seq(0.02,0.12,0.01),3,replace=TRUE)
+ans <- sum(w*q); vals <- round(c(ans,mean(q),sum(q),sum(w^2*q),1-ans),4)
+opts <- sprintf("$%.4f$",vals); wtxt <- paste(sprintf("%.2f",w),collapse=", ")
+qtxt <- paste(sprintf("%.2f",q),collapse=", ")
+```
+
+Question
+========
+Três máquinas produzem proporções `r wtxt` dos itens, com probabilidades de defeito `r qtxt`. Qual é a probabilidade de um item escolhido ao acaso ser defeituoso?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+Pela probabilidade total,
+$$P(D)=\sum_{j=1}^3P(M_j)P(D\mid M_j)
+=`r sprintf("%.4f",ans)`.$$
+
+Meta-information
+================
+exname: Cap1S4Q3_probabilidade_total
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+
+

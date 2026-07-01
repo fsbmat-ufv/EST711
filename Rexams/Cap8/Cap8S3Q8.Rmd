@@ -1,0 +1,54 @@
+```{r, echo=FALSE, results="hide"}
+ell_old <- -sample(100:500, 1)
+tol <- sample(c(1e-3, 5e-4, 1e-4, 5e-5), 1)
+fator <- sample(c(0.2, 0.5, 2, 5), 1)
+delta <- fator * tol * (1 + abs(ell_old))
+ell_new <- ell_old + delta
+rel <- abs(ell_new - ell_old)/(1 + abs(ell_old))
+para <- rel <= tol
+decisao <- if (para) "o critério é satisfeito e o algoritmo pararia" else
+  "o critério não é satisfeito e o algoritmo continuaria"
+oposto <- if (para) "o algoritmo deveria continuar" else "o algoritmo deveria parar"
+opts <- c(
+  sprintf("$d=%.2e$; portanto, %s.", rel, decisao),
+  sprintf("$d=%.2e$; apesar disso, %s.", rel, oposto),
+  sprintf("$d=%.2e$, usando apenas o incremento absoluto; o algoritmo para.", abs(delta)),
+  "$d=1$, pois se divide o incremento por ele mesmo; o algoritmo continua.",
+  "$d=0$, pois a log-verossimilhança aumentou; o algoritmo para."
+)
+```
+
+Question
+========
+Um ajuste EM usa o critério de parada
+$$
+d^{(t)}=\frac{|\ell^{(t+1)}-\ell^{(t)}|}{1+|\ell^{(t)}|}
+\leq \varepsilon.
+$$
+Nesta iteração, $\ell^{(t)}=`r sprintf("%.6f", ell_old)`$, $\ell^{(t+1)}=`r sprintf("%.6f", ell_new)`$ e $\varepsilon=`r format(tol, scientific = TRUE)`$. Qual avaliação está correta?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+O incremento absoluto é `r sprintf("%.6f", abs(delta))`, mas o critério é relativo à escala da log-verossimilhança:
+$$
+d^{(t)}=\frac{`r sprintf("%.6f", abs(delta))`}
+{1+|`r sprintf("%.6f", ell_old)`|}
+=`r sprintf("%.2e", rel)`.
+$$
+Como $d^{(t)}`r if (para) "\\leq" else ">"`\varepsilon$, `r decisao`.
+
+Meta-information
+================
+exname: Cap8S3Q8_criterio_parada_relativo
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

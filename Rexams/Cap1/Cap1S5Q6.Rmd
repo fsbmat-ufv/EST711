@@ -1,0 +1,34 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  mass <- sample(seq(0.15,0.55,0.05),1); x0 <- sample(-1:2,1)
+  fl <- sample(seq(0.05,0.25,0.05),1); fx <- fl+mass
+  vals <- round(c(mass,fl,fx,1-mass,fx+fl),3)
+  if (fx <= 1 && length(unique(vals)) == 5L) break
+}
+opts <- sprintf("$%.3f$",vals)
+```
+
+Question
+========
+Uma distribuição mista possui um salto da FDA em $x=`r x0`$, de $F_X(x^-)=`r fl`$ para $F_X(x)=`r fx`$. Qual massa discreta está concentrada nesse ponto?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+Mesmo em uma distribuição mista, a massa pontual é o salto:
+$$P(X=`r x0`)=`r fx`-`r fl`=`r mass`.$$
+
+Meta-information
+================
+exname: Cap1S5Q6_distribuicao_mista
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

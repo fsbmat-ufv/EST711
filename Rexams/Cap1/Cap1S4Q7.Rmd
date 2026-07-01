@@ -1,0 +1,31 @@
+```{r, echo=FALSE, results="hide"}
+descricao <- sample(c("uma moeda honesta lançada duas vezes",
+                      "duas moedas honestas lançadas uma vez"),1)
+```
+
+Question
+========
+Em `r descricao`, seja $A=$ “cara no primeiro resultado”, $B=$ “cara no segundo” e $C=$ “os resultados são iguais”. Como se classificam esses eventos?
+
+Answerlist
+----------
+* São independentes dois a dois, mas não mutuamente independentes.
+* São mutuamente independentes.
+* Apenas $A$ e $B$ são independentes.
+* São mutuamente exclusivos.
+* Nenhum par é independente.
+
+Solution
+========
+Cada evento tem probabilidade $1/2$ e cada interseção de dois tem probabilidade $1/4$. Porém,
+$$P(A\cap B\cap C)=\frac14\neq\frac18=P(A)P(B)P(C).$$
+Logo, independência aos pares não implica independência mútua.
+
+Meta-information
+================
+exname: Cap1S4Q7_independencia_aos_pares
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+
+

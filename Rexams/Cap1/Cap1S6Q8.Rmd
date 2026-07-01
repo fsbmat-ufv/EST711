@@ -1,0 +1,39 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  N <- sample(18:30,1); K <- sample(5:10,1); n <- sample(4:7,1)
+  x <- sample(max(0,n-(N-K)):min(n,K),1)
+  ans <- dhyper(x,K,N-K,n)
+  vals <- round(c(ans,dbinom(x,n,K/N),choose(K,x)/choose(N,n),
+                  choose(K,x)*choose(N-K,n-x),1-ans),5)
+  if (length(unique(vals)) == 5L) break
+}
+opts <- sprintf("$%.5f$",vals)
+```
+
+Question
+========
+De `r N` itens, `r K` são especiais. Uma amostra de `r n` itens é retirada sem reposição. Qual é a probabilidade de obter exatamente `r x` itens especiais?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+A contagem é hipergeométrica:
+$$P(X=`r x`)=
+\frac{\binom{`r K`}{`r x`}\binom{`r N-K`}{`r n-x`}}
+{\binom{`r N`}{`r n`}}
+=`r sprintf("%.5f",ans)`.$$
+
+Meta-information
+================
+exname: Cap1S6Q8_pmf_hipergeometrica
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

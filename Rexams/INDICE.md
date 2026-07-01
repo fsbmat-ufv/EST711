@@ -2,20 +2,20 @@
 
 Índice gerado a partir dos arquivos `.Rmd` efetivamente presentes no projeto. Cada arquivo contém um exercício independente de múltipla escolha.
 
-**Total:** 200 questões em 8 capítulos.
+**Total:** 300 questões em 8 capítulos.
 
 ## Resumo
 
 | Capítulo | Tema | Seções | Questões |
 |---:|---|---:|---:|
-| 1 | Convergência em Probabilidade e em Distribuição | 2 | 20 |
+| 1 | Probabilidade, distribuições e convergência | 10 | 100 |
 | 2 | Teorema Central do Limite e Método Delta | 2 | 20 |
 | 3 | Métodos de Estimação Pontual | 2 | 20 |
 | 4 | Propriedades dos Estimadores, Informação e Suficiência | 4 | 40 |
 | 5 | Intervalos de Confiança | 2 | 20 |
 | 6 | Testes de Hipóteses | 5 | 50 |
 | 7 | Inferência no Caso Multiparamétrico | 2 | 20 |
-| 8 | Algoritmo EM | 1 | 10 |
+| 8 | Algoritmo EM | 3 | 30 |
 
 ## Convenção
 
@@ -52,6 +52,127 @@
 | Cap1S2Q8.Rmd | Normal padRao TCL | schoice |
 | Cap1S2Q9.Rmd | Padronizacao binomial | schoice |
 | Cap1S2Q10.Rmd | Convergência dist não prob | schoice |
+
+
+### Seção 3 — The Probability Set Function
+
+| Arquivo | Tema/conceito principal | Tipo |
+|---|---|---|
+| Cap1S3Q1.Rmd | Axiomas da probabilidade | schoice |
+| Cap1S3Q2.Rmd | Regra do complemento | schoice |
+| Cap1S3Q3.Rmd | Regra da adição | schoice |
+| Cap1S3Q4.Rmd | Inclusão-exclusão | schoice |
+| Cap1S3Q5.Rmd | Regra de combinações | schoice |
+| Cap1S3Q6.Rmd | Problema dos aniversários | schoice |
+| Cap1S3Q7.Rmd | Desigualdade de Boole | schoice |
+| Cap1S3Q8.Rmd | Continuidade da probabilidade | schoice |
+| Cap1S3Q9.Rmd | Espaço equiprovável | schoice |
+| Cap1S3Q10.Rmd | Limite de Bonferroni | schoice |
+
+### Seção 4 — Conditional Probability and Independence
+
+| Arquivo | Tema/conceito principal | Tipo |
+|---|---|---|
+| Cap1S4Q1.Rmd | Probabilidade condicional | schoice |
+| Cap1S4Q2.Rmd | Regra da multiplicação | schoice |
+| Cap1S4Q3.Rmd | Lei da probabilidade total | schoice |
+| Cap1S4Q4.Rmd | Teorema de Bayes | schoice |
+| Cap1S4Q5.Rmd | Critério de independência | schoice |
+| Cap1S4Q6.Rmd | Independência dos complementos | schoice |
+| Cap1S4Q7.Rmd | Independência aos pares | schoice |
+| Cap1S4Q8.Rmd | Amostragem sem reposição | schoice |
+| Cap1S4Q9.Rmd | Confiabilidade de sistemas | schoice |
+| Cap1S4Q10.Rmd | Primeiro sucesso | schoice |
+
+### Seção 5 — Random Variables
+
+| Arquivo | Tema/conceito principal | Tipo |
+|---|---|---|
+| Cap1S5Q1.Rmd | Propriedades da FDA | schoice |
+| Cap1S5Q2.Rmd | Probabilidade de intervalo pela FDA | schoice |
+| Cap1S5Q3.Rmd | Salto da FDA | schoice |
+| Cap1S5Q4.Rmd | Relação entre FDA e pmf | schoice |
+| Cap1S5Q5.Rmd | Definição de variável aleatória | schoice |
+| Cap1S5Q6.Rmd | Distribuição mista | schoice |
+| Cap1S5Q7.Rmd | Suporte e FDA | schoice |
+| Cap1S5Q8.Rmd | Continuidade à direita | schoice |
+| Cap1S5Q9.Rmd | FDA de uma indicadora | schoice |
+| Cap1S5Q10.Rmd | Função de sobrevivência | schoice |
+
+### Seção 6 — Discrete Random Variables e transformações
+
+| Arquivo | Tema/conceito principal | Tipo |
+|---|---|---|
+| Cap1S6Q1.Rmd | Normalização de pmf | schoice |
+| Cap1S6Q2.Rmd | Pmf binomial | schoice |
+| Cap1S6Q3.Rmd | Pmf geométrica | schoice |
+| Cap1S6Q4.Rmd | FDA discreta | schoice |
+| Cap1S6Q5.Rmd | Transformação quadrática discreta | schoice |
+| Cap1S6Q6.Rmd | Transformação por valor absoluto | schoice |
+| Cap1S6Q7.Rmd | Transformação injetiva discreta | schoice |
+| Cap1S6Q8.Rmd | Pmf hipergeométrica | schoice |
+| Cap1S6Q9.Rmd | Recorrência da Poisson | schoice |
+| Cap1S6Q10.Rmd | Indicadora Bernoulli | schoice |
+
+### Seção 7 — Continuous Random Variables e transformações
+
+| Arquivo | Tema/conceito principal | Tipo |
+|---|---|---|
+| Cap1S7Q1.Rmd | Normalização de densidade | schoice |
+| Cap1S7Q2.Rmd | Probabilidade por integração | schoice |
+| Cap1S7Q3.Rmd | FDA contínua | schoice |
+| Cap1S7Q4.Rmd | Quantil contínuo | schoice |
+| Cap1S7Q5.Rmd | Transformação linear contínua | schoice |
+| Cap1S7Q6.Rmd | Transformação quadrática monótona | schoice |
+| Cap1S7Q7.Rmd | Transformação não monótona | schoice |
+| Cap1S7Q8.Rmd | Mistura contínua | schoice |
+| Cap1S7Q9.Rmd | Transformada inversa exponencial | schoice |
+| Cap1S7Q10.Rmd | Probabilidade pontual contínua | schoice |
+
+### Seção 8 — Expectation of a Random Variable
+
+| Arquivo | Tema/conceito principal | Tipo |
+|---|---|---|
+| Cap1S8Q1.Rmd | Esperança discreta | schoice |
+| Cap1S8Q2.Rmd | Esperança contínua | schoice |
+| Cap1S8Q3.Rmd | Esperança de função discreta | schoice |
+| Cap1S8Q4.Rmd | Linearidade da esperança | schoice |
+| Cap1S8Q5.Rmd | Preço de jogo justo | schoice |
+| Cap1S8Q6.Rmd | Esperança de indicadora | schoice |
+| Cap1S8Q7.Rmd | Esperança de função exponencial | schoice |
+| Cap1S8Q8.Rmd | Inexistência da esperança | schoice |
+| Cap1S8Q9.Rmd | Fórmula das caudas | schoice |
+| Cap1S8Q10.Rmd | Esperança de mistura | schoice |
+
+### Seção 9 — Some Special Expectations
+
+| Arquivo | Tema/conceito principal | Tipo |
+|---|---|---|
+| Cap1S9Q1.Rmd | Identidade da variância | schoice |
+| Cap1S9Q2.Rmd | Variância de transformação linear | schoice |
+| Cap1S9Q3.Rmd | Padronização de momentos | schoice |
+| Cap1S9Q4.Rmd | Definição de fgm | schoice |
+| Cap1S9Q5.Rmd | Momentos pela fgm | schoice |
+| Cap1S9Q6.Rmd | Fgm Bernoulli | schoice |
+| Cap1S9Q7.Rmd | Unicidade da fgm | schoice |
+| Cap1S9Q8.Rmd | Cauchy sem fgm | schoice |
+| Cap1S9Q9.Rmd | Momentos pela série de Maclaurin | schoice |
+| Cap1S9Q10.Rmd | Variância de mistura | schoice |
+
+### Seção 10 — Important Inequalities
+
+| Arquivo | Tema/conceito principal | Tipo |
+|---|---|---|
+| Cap1S10Q1.Rmd | Existência de momentos inferiores | schoice |
+| Cap1S10Q2.Rmd | Desigualdade de Markov | schoice |
+| Cap1S10Q3.Rmd | Markov com segundo momento | schoice |
+| Cap1S10Q4.Rmd | Desigualdade de Chebyshev | schoice |
+| Cap1S10Q5.Rmd | Intervalo central de Chebyshev | schoice |
+| Cap1S10Q6.Rmd | Probabilidade exata versus Chebyshev | schoice |
+| Cap1S10Q7.Rmd | Desigualdade de Jensen | schoice |
+| Cap1S10Q8.Rmd | Jensen para segundo momento | schoice |
+| Cap1S10Q9.Rmd | Médias harmônica e geométrica | schoice |
+| Cap1S10Q10.Rmd | Igualdade em Jensen | schoice |
 
 ## Capítulo 2 — Teorema Central do Limite e Método Delta
 
@@ -337,6 +458,36 @@
 | Cap8S1Q9.Rmd | Inicialização máximos locais | schoice |
 | Cap8S1Q10.Rmd | Bernoulli dados ausentes | schoice |
 
+### Seção 2 — Aplicações do EM: censura e misturas
+
+| Arquivo | Tema/conceito principal | Tipo |
+|---|---|---|
+| Cap8S2Q1.Rmd | Atualização EM com censura à direita | schoice |
+| Cap8S2Q2.Rmd | Atualização EM com censura à esquerda | schoice |
+| Cap8S2Q3.Rmd | Verossimilhança de dados censurados | schoice |
+| Cap8S2Q4.Rmd | Atualização da variância em mistura Normal | schoice |
+| Cap8S2Q5.Rmd | Recorrência EM em modelo multinomial | schoice |
+| Cap8S2Q6.Rmd | Taxa geométrica de convergência do EM | schoice |
+| Cap8S2Q7.Rmd | Normal truncada no passo E | schoice |
+| Cap8S2Q8.Rmd | Troca de rótulos em misturas | schoice |
+| Cap8S2Q9.Rmd | Singularidade da verossimilhança em misturas | schoice |
+| Cap8S2Q10.Rmd | Dados completos e indicadores latentes | schoice |
+
+### Seção 3 — Extensões, convergência e inferência no EM
+
+| Arquivo | Tema/conceito principal | Tipo |
+|---|---|---|
+| Cap8S3Q1.Rmd | Algoritmo EM generalizado (GEM) | schoice |
+| Cap8S3Q2.Rmd | Maximização condicional no ECM | schoice |
+| Cap8S3Q3.Rmd | Aproximação de Monte Carlo no MCEM | schoice |
+| Cap8S3Q4.Rmd | Aceleração de Aitken | schoice |
+| Cap8S3Q5.Rmd | Fração de informação ausente e convergência | schoice |
+| Cap8S3Q6.Rmd | Erro-padrão pela informação observada | schoice |
+| Cap8S3Q7.Rmd | Identidade de Louis | schoice |
+| Cap8S3Q8.Rmd | Critério relativo de parada | schoice |
+| Cap8S3Q9.Rmd | Diagnóstico de ponto estacionário | schoice |
+| Cap8S3Q10.Rmd | Atualização MAP-EM dos pesos | schoice |
+
 ## Geração e validação
 
 - `gerar_moodle_EST711.R` descobre automaticamente os diretórios `CapN` e ordena os arquivos por seção e questão.
@@ -345,4 +496,4 @@
 - As prévias HTML usam a primeira questão de cada seção e são gravadas em `output_html/`.
 - O conversor padrão é `pandoc-mathjax`.
 
-*Atualizado em 30 de junho de 2026.*
+*Atualizado em 1º de julho de 2026.*

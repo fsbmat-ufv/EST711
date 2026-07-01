@@ -1,0 +1,33 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  fx <- sample(seq(0.10,0.90,0.05),1); x <- sample(-2:5,1)
+  vals <- round(c(1-fx,fx,1/(1+fx),fx*(1-fx),1-fx^2),3)
+  if (length(unique(vals)) == 5L) break
+}
+opts <- sprintf("$%.3f$",vals)
+```
+
+Question
+========
+Para certo $x=`r x`$, sabe-se que $F_X(x)=`r fx`$. Qual é $P(X>x)$?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+Como $F_X(x)=P(X\leq x)$,
+$$P(X>x)=1-F_X(x)=1-`r fx`=`r sprintf("%.3f",1-fx)`.$$
+
+Meta-information
+================
+exname: Cap1S5Q10_funcao_sobrevivencia
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

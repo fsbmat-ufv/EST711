@@ -1,0 +1,303 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+<title>Exam 5</title>
+<style type="text/css">
+body{font-family: Arial, Helvetica, Sans;}
+</style>
+<meta charset="utf-8" />
+<script type="text/javascript"   src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script>
+</head>
+
+<body>
+<h2>Exam 5</h2>
+
+<ol>
+<li>
+<h4>Question</h4>
+<p>Uma variável discreta tem <span class="math inline">\(p_X(x)=c\,x\)</span> para <span class="math inline">\(x=1,\ldots,7\)</span>. Qual valor normaliza a pmf?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(0.03571\)</span>
+</li>
+<li>
+<span class="math inline">\(0.87500\)</span>
+</li>
+<li>
+<span class="math inline">\(0.12500\)</span>
+</li>
+<li>
+<span class="math inline">\(0.14286\)</span>
+</li>
+<li>
+<span class="math inline">\(0.01786\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Deve valer
+<span class="math display">\[1=\sum_{x=1}^{7}cx=c\frac{7(8)}2,\]</span>
+portanto <span class="math inline">\(c=2/[7(8)]=0.03571\)</span>.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Em 12 ensaios de Bernoulli independentes, com probabilidade de sucesso 0.7, qual é a probabilidade de exatamente 3 sucessos?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(0.00149\)</span>
+</li>
+<li>
+<span class="math inline">\(0.00001\)</span>
+</li>
+<li>
+<span class="math inline">\(0.23970\)</span>
+</li>
+<li>
+<span class="math inline">\(0.99851\)</span>
+</li>
+<li>
+<span class="math inline">\(75.46000\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Para <span class="math inline">\(X\sim\operatorname{Binomial}(12,0.7)\)</span>,
+<span class="math display">\[P(X=3)=\binom{12}{3}p^{3}(1-p)^{9}
+=0.00149.\]</span></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Se <span class="math inline">\(X\)</span> é o número de tentativas independentes até o primeiro sucesso, com probabilidade de sucesso <span class="math inline">\(p=0.2\)</span>, calcule <span class="math inline">\(P(X=7)\)</span>.</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(0.20972\)</span>
+</li>
+<li>
+<span class="math inline">\(0.05243\)</span>
+</li>
+<li>
+<span class="math inline">\(0.00005\)</span>
+</li>
+<li>
+<span class="math inline">\(0.79028\)</span>
+</li>
+<li>
+<span class="math inline">\(0.00001\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Para o primeiro sucesso ocorrer na tentativa 7, devem ocorrer 6 fracassos e então um sucesso:
+<span class="math display">\[P(X=7)=(1-p)^{6}p
+=0.05243.\]</span></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Uma variável tem suporte <span class="math inline">\((0,1,2,3,4)\)</span> e pmf correspondente <span class="math inline">\((0.182, 0.364, 0.091, 0.136, 0.227)\)</span>. Qual é <span class="math inline">\(F_X(3)\)</span>?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(0.3636\)</span>
+</li>
+<li>
+<span class="math inline">\(0.7727\)</span>
+</li>
+<li>
+<span class="math inline">\(0.1364\)</span>
+</li>
+<li>
+<span class="math inline">\(0.2273\)</span>
+</li>
+<li>
+<span class="math inline">\(0.6364\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>A FDA acumula todas as massas até 3:
+<span class="math display">\[F_X(3)=\sum_{x\leq3}p_X(x)
+=0.7727.\]</span></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Uma variável <span class="math inline">\(X\)</span> assume $-5, <span class="math inline">\(0\)</span> e $5 com probabilidades 0.45, 0.2 e 0.35. Para <span class="math inline">\(Y=X^2\)</span>, qual é <span class="math inline">\(P(Y=25)\)</span>?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(0.450\)</span>
+</li>
+<li>
+<span class="math inline">\(0.800\)</span>
+</li>
+<li>
+<span class="math inline">\(-0.100\)</span>
+</li>
+<li>
+<span class="math inline">\(0.200\)</span>
+</li>
+<li>
+<span class="math inline">\(0.350\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Os valores <span class="math inline">\(X=-5\)</span> e <span class="math inline">\(X=5\)</span> produzem o mesmo valor <span class="math inline">\(Y=25\)</span>. Portanto, somam-se as massas:
+<span class="math display">\[P(Y=25)=0.45+0.35
+=0.800.\]</span></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Uma variável tem suporte <span class="math inline">\((-2,-1,0,1,2)\)</span> e probabilidades <span class="math inline">\((0.125, 0.167, 0.250, 0.167, 0.292)\)</span>. Se <span class="math inline">\(Y=|X|\)</span>, qual é <span class="math inline">\(P(Y=2)\)</span>?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(0.4167\)</span>
+</li>
+<li>
+<span class="math inline">\(0.1250\)</span>
+</li>
+<li>
+<span class="math inline">\(0.5833\)</span>
+</li>
+<li>
+<span class="math inline">\(1.0000\)</span>
+</li>
+<li>
+<span class="math inline">\(0.2917\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>As pré-imagens de <span class="math inline">\(Y=2\)</span> são <span class="math inline">\(X=-2\)</span> e <span class="math inline">\(X=2\)</span>. Logo,
+<span class="math display">\[P(Y=2)=P(X=-2)+P(X=2)
+=0.4167.\]</span></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Para a transformação injetiva <span class="math inline">\(Y=2X+1\)</span>, sabe-se que <span class="math inline">\(P(X=3)=0.6\)</span>. Qual é <span class="math inline">\(P(Y=7)\)</span>?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(0.400\)</span>
+</li>
+<li>
+<span class="math inline">\(0.600\)</span>
+</li>
+<li>
+<span class="math inline">\(0.300\)</span>
+</li>
+<li>
+<span class="math inline">\(0.200\)</span>
+</li>
+<li>
+<span class="math inline">\(1.200\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Como a transformação é injetiva, <span class="math inline">\(Y=7\)</span> ocorre exatamente quando <span class="math inline">\(X=3\)</span>. Em transformações discretas não aparece fator jacobiano:
+<span class="math display">\[P(Y=7)=0.6.\]</span></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>De 30 itens, 9 são especiais. Uma amostra de 6 itens é retirada sem reposição. Qual é a probabilidade de obter exatamente 5 itens especiais?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(0.00021\)</span>
+</li>
+<li>
+<span class="math inline">\(0.01021\)</span>
+</li>
+<li>
+<span class="math inline">\(0.99554\)</span>
+</li>
+<li>
+<span class="math inline">\(0.00446\)</span>
+</li>
+<li>
+<span class="math inline">\(2646.00000\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>A contagem é hipergeométrica:
+<span class="math display">\[P(X=5)=
+\frac{\binom{9}{5}\binom{21}{1}}
+{\binom{30}{6}}
+=0.00446.\]</span></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Se <span class="math inline">\(X\sim\operatorname{Poisson}(\lambda)\)</span>, com <span class="math inline">\(\lambda=4.5\)</span>, qual é a razão <span class="math inline">\(p_X(6)/p_X(5)\)</span>?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(6.0000\)</span>
+</li>
+<li>
+<span class="math inline">\(0.6429\)</span>
+</li>
+<li>
+<span class="math inline">\(4.5000\)</span>
+</li>
+<li>
+<span class="math inline">\(1.3333\)</span>
+</li>
+<li>
+<span class="math inline">\(0.7500\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Pela pmf de Poisson,
+<span class="math display">\[\frac{p(x+1)}{p(x)}
+=\frac{\lambda^{x+1}/(x+1)!}{\lambda^x/x!}
+=\frac{\lambda}{x+1}
+=0.7500.\]</span></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Para <span class="math inline">\(X=\mathbf{1}_A\)</span> com <span class="math inline">\(P(A)=0.65\)</span>, qual é <span class="math inline">\(p_X(0)\)</span>?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(0.423\)</span>
+</li>
+<li>
+<span class="math inline">\(0.650\)</span>
+</li>
+<li>
+<span class="math inline">\(0.350\)</span>
+</li>
+<li>
+<span class="math inline">\(0.122\)</span>
+</li>
+<li>
+<span class="math inline">\(0.227\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>A indicadora tem distribuição Bernoulli:
+<span class="math inline">\(P(X=1)=p\)</span> e <span class="math inline">\(P(X=0)=1-p\)</span>. Assim,
+<span class="math inline">\(p_X(0)=0.350\)</span>.</p>
+<br/>
+</li>
+</ol>
+
+</body>
+</html>

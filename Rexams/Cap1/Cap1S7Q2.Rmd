@@ -1,0 +1,35 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  a <- sample(2:6,1); u <- runif(1,0,a/2); v <- runif(1,a/2,a)
+  ans <- (v^2-u^2)/a^2
+  vals <- round(c(ans,(v-u)/a,(v-u)/a^2,(v^2-u^2)/(2*a^2),1-ans),4)
+  if (length(unique(vals)) == 5L) break
+}
+opts <- sprintf("$%.4f$",vals)
+```
+
+Question
+========
+Se $f(x)=2x/`r a^2` para $0<x<`r a`$, qual é $P(`r sprintf("%.2f",u)`<X<`r sprintf("%.2f",v)`)$?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+$$P(u<X<v)=\int_u^v\frac{2x}{a^2}dx
+=\frac{v^2-u^2}{a^2}
+=`r sprintf("%.4f",ans)`.$$
+
+Meta-information
+================
+exname: Cap1S7Q2_probabilidade_por_integral
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

@@ -1,0 +1,37 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  p <- sample(seq(0.10,0.40,0.05),3,replace=FALSE); p <- p/sum(p)
+  x <- sort(sample(-2:5,3)); j <- sample(1:3,1)
+  vals <- round(c(p[j],sum(p[1:j]),if(j==1) 0 else sum(p[1:(j-1)]),
+                  1-p[j],1/3),3)
+  if (length(unique(vals)) == 5L) break
+}
+p_txt <- paste(sprintf("%.3f",p),collapse=", ")
+x_txt <- paste(x,collapse=", ")
+opts <- sprintf("$%.3f$", vals)
+```
+
+Question
+========
+Uma variável discreta tem suporte $(`r x_txt`)$ e probabilidades correspondentes $(`r p_txt`)$. Qual é o tamanho do salto de $F_X$ em $x=`r x[j]`$?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+O salto da FDA em um ponto é exatamente sua massa:
+$$F_X(x)-F_X(x^-)=P(X=x)=`r sprintf("%.3f",p[j])`.$$
+
+Meta-information
+================
+exname: Cap1S5Q4_FDA_e_pmf
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

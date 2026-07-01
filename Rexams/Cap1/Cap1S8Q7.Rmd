@@ -1,0 +1,36 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  lambda <- sample(seq(0.5,4,0.5),1); t <- sample(seq(0.5,3,0.5),1)
+  ans <- lambda/(lambda+t)
+  vals <- round(c(ans,t/(lambda+t),lambda/t,1/(lambda+t),exp(-lambda*t)),4)
+  if (length(unique(vals)) == 5L) break
+}
+opts <- sprintf("$%.4f$",vals)
+```
+
+Question
+========
+Se $X$ tem densidade exponencial $f(x)=\lambda e^{-\lambda x}$, $x>0$, com $\lambda=`r lambda`$, qual é $E(e^{-`r t`X})$?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+Pela regra de transformação dentro da esperança,
+$$E(e^{-tX})=\int_0^\infty e^{-tx}\lambda e^{-\lambda x}dx
+=\frac{\lambda}{\lambda+t}
+=`r sprintf("%.4f",ans)`.$$
+
+Meta-information
+================
+exname: Cap1S8Q7_LOTUS_exponencial
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

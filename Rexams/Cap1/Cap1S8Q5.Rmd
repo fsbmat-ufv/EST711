@@ -1,0 +1,33 @@
+```{r, echo=FALSE, results="hide"}
+repeat {
+  premios <- sample(c(0,5,10,20,50),3); raw <- sample(1:8,3,replace=TRUE); p <- raw/sum(raw)
+  preco <- sum(premios*p); vals <- round(c(preco,mean(premios),max(premios),sum(premios),preco/2),2)
+  if (length(unique(vals)) == 5L) break
+}
+opts <- sprintf("$%.2f$",vals); vt <- paste(premios,collapse=", "); pt <- paste(sprintf("%.3f",p),collapse=", ")
+```
+
+Question
+========
+Um jogo paga $(`r vt`)$ unidades monetárias com probabilidades $(`r pt`)$. Qual preço torna o ganho líquido esperado do jogador igual a zero?
+
+Answerlist
+----------
+* `r opts[1]`
+* `r opts[2]`
+* `r opts[3]`
+* `r opts[4]`
+* `r opts[5]`
+
+Solution
+========
+Se $R$ é o prêmio e $c$ o preço, o ganho é $G=R-c$. Um jogo justo satisfaz $E(G)=E(R)-c=0$, logo
+$c=E(R)=`r sprintf("%.2f",preco)`$.
+
+Meta-information
+================
+exname: Cap1S8Q5_jogo_justo
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

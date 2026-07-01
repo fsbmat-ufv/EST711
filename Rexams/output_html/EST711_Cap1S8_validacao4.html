@@ -1,0 +1,297 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+<title>Exam 4</title>
+<style type="text/css">
+body{font-family: Arial, Helvetica, Sans;}
+</style>
+<meta charset="utf-8" />
+<script type="text/javascript"   src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script>
+</head>
+
+<body>
+<h2>Exam 4</h2>
+
+<ol>
+<li>
+<h4>Question</h4>
+<p>Uma variável discreta assume valores <span class="math inline">\((-2, 3, 4, 6)\)</span> com probabilidades <span class="math inline">\((0.235, 0.471, 0.176, 0.118)\)</span>. Qual é <span class="math inline">\(E(X)\)</span>?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(3.2941\)</span>
+</li>
+<li>
+<span class="math inline">\(2.7500\)</span>
+</li>
+<li>
+<span class="math inline">\(1.0000\)</span>
+</li>
+<li>
+<span class="math inline">\(2.3529\)</span>
+</li>
+<li>
+<span class="math inline">\(11.0000\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>A esperança é a média ponderada:
+<span class="math display">\[E(X)=\sum_xxp_X(x)=2.3529.\]</span></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Se $f(x)=(2)x^{1}/49 para <span class="math inline">\(0&lt;x&lt;7\)</span>, qual é <span class="math inline">\(E(X)\)</span>?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(3.5000\)</span>
+</li>
+<li>
+<span class="math inline">\(4.6667\)</span>
+</li>
+<li>
+<span class="math inline">\(0.6667\)</span>
+</li>
+<li>
+<span class="math inline">\(10.5000\)</span>
+</li>
+<li>
+<span class="math inline">\(2.3333\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p><span class="math display">\[E(X)=\int_0^{7}x\frac{(2)x^{1}}{49}dx
+=7\frac{2}{3}
+=4.6667.\]</span></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Para valores <span class="math inline">\((-1, 1, 2, 3)\)</span> com probabilidades <span class="math inline">\((0.286, 0.333, 0.238, 0.143)\)</span>, determine <span class="math inline">\(E(X^2)\)</span> sem obter a distribuição de <span class="math inline">\(Y=X^2\)</span>.</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(1.5238\)</span>
+</li>
+<li>
+<span class="math inline">\(2.9167\)</span>
+</li>
+<li>
+<span class="math inline">\(0.9070\)</span>
+</li>
+<li>
+<span class="math inline">\(0.9524\)</span>
+</li>
+<li>
+<span class="math inline">\(2.8571\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Pela regra da esperança de uma função,
+<span class="math display">\[E(X^2)=\sum_xx^2p_X(x)=2.8571.\]</span></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Se <span class="math inline">\(E(X)=-2.5\)</span>, qual é <span class="math inline">\(E(-3X+-5)\)</span>?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(2.500\)</span>
+</li>
+<li>
+<span class="math inline">\(-27.500\)</span>
+</li>
+<li>
+<span class="math inline">\(-7.500\)</span>
+</li>
+<li>
+<span class="math inline">\(7.500\)</span>
+</li>
+<li>
+<span class="math inline">\(22.500\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>A linearidade fornece
+<span class="math display">\[E(aX+b)=aE(X)+b=(-3)(-2.5)+-5
+=2.500.\]</span></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Um jogo paga <span class="math inline">\((10, 0, 20)\)</span> unidades monetárias com probabilidades <span class="math inline">\((0.368, 0.421, 0.211)\)</span>. Qual preço torna o ganho líquido esperado do jogador igual a zero?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(20.00\)</span>
+</li>
+<li>
+<span class="math inline">\(7.89\)</span>
+</li>
+<li>
+<span class="math inline">\(3.95\)</span>
+</li>
+<li>
+<span class="math inline">\(10.00\)</span>
+</li>
+<li>
+<span class="math inline">\(30.00\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Se <span class="math inline">\(R\)</span> é o prêmio e <span class="math inline">\(c\)</span> o preço, o ganho é <span class="math inline">\(G=R-c\)</span>. Um jogo justo satisfaz <span class="math inline">\(E(G)=E(R)-c=0\)</span>, logo
+<span class="math inline">\(c=E(R)=7.89\)</span>.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Se <span class="math inline">\(I_A=\mathbf{1}_A\)</span> e <span class="math inline">\(P(A)=0.05\)</span>, qual é <span class="math inline">\(E(I_A)\)</span>?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(0.048\)</span>
+</li>
+<li>
+<span class="math inline">\(0.003\)</span>
+</li>
+<li>
+<span class="math inline">\(0.050\)</span>
+</li>
+<li>
+<span class="math inline">\(1.000\)</span>
+</li>
+<li>
+<span class="math inline">\(0.950\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>A indicadora vale 1 em <span class="math inline">\(A\)</span> e 0 fora de <span class="math inline">\(A\)</span>:
+<span class="math display">\[E(I_A)=1P(A)+0P(A^c)=P(A)=0.05.\]</span></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Se <span class="math inline">\(X\)</span> tem densidade exponencial <span class="math inline">\(f(x)=\lambda e^{-\lambda x}\)</span>, <span class="math inline">\(x&gt;0\)</span>, com <span class="math inline">\(\lambda=3\)</span>, qual é <span class="math inline">\(E(e^{-0.5X})\)</span>?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(0.1429\)</span>
+</li>
+<li>
+<span class="math inline">\(0.2857\)</span>
+</li>
+<li>
+<span class="math inline">\(6.0000\)</span>
+</li>
+<li>
+<span class="math inline">\(0.8571\)</span>
+</li>
+<li>
+<span class="math inline">\(0.2231\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Pela regra de transformação dentro da esperança,
+<span class="math display">\[E(e^{-tX})=\int_0^\infty e^{-tx}\lambda e^{-\lambda x}dx
+=\frac{\lambda}{\lambda+t}
+=0.8571.\]</span></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Considere <span class="math inline">\(f(x)=1/x^2\)</span> para <span class="math inline">\(x&gt;1\)</span> e zero caso contrário. Qual afirmação sobre <span class="math inline">\(E(X)\)</span> é correta?</p>
+<br/>
+<ol type="a">
+<li>
+A esperança existe somente após restringir o cálculo a <span class="math inline">\(X&gt;2\)</span>.
+</li>
+<li>
+A esperança é zero, pois a cauda tende a zero.
+</li>
+<li>
+A esperança vale 1, pois a densidade integra 1.
+</li>
+<li>
+A esperança não existe como número finito, pois <span class="math inline">\(\int_1^\infty x/x^2\,dx=\infty\)</span>.
+</li>
+<li>
+A esperança vale 2, pela simetria da densidade.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Embora <span class="math inline">\(f\)</span> seja uma densidade, o primeiro momento absoluto diverge:
+<span class="math display">\[E|X|=\int_1^\infty\frac1x\,dx=\infty.\]</span>
+Normalização da densidade não garante existência da média.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Uma variável geométrica <span class="math inline">\(X\)</span> conta tentativas até o primeiro sucesso, com probabilidade <span class="math inline">\(p=0.4\)</span>. Usando <span class="math inline">\(E(X)=\sum_{k\geq0}P(X&gt;k)\)</span>, qual é <span class="math inline">\(E(X)\)</span>?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(0.6667\)</span>
+</li>
+<li>
+<span class="math inline">\(0.4000\)</span>
+</li>
+<li>
+<span class="math inline">\(1.5000\)</span>
+</li>
+<li>
+<span class="math inline">\(0.6000\)</span>
+</li>
+<li>
+<span class="math inline">\(2.5000\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Como <span class="math inline">\(P(X&gt;k)=(1-p)^k\)</span>,
+<span class="math display">\[E(X)=\sum_{k=0}^{\infty}(1-p)^k=\frac1p
+=2.5000.\]</span></p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Uma mistura escolhe a população 1 com probabilidade 0.8 e a população 2 com probabilidade 0.2. As médias são <span class="math inline">\(\mu_1=1\)</span> e <span class="math inline">\(\mu_2=9.5\)</span>. Qual é a média da mistura?</p>
+<br/>
+<ol type="a">
+<li>
+<span class="math inline">\(0.800\)</span>
+</li>
+<li>
+<span class="math inline">\(-1.700\)</span>
+</li>
+<li>
+<span class="math inline">\(5.250\)</span>
+</li>
+<li>
+<span class="math inline">\(2.700\)</span>
+</li>
+<li>
+<span class="math inline">\(10.500\)</span>
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Pela esperança total,
+<span class="math display">\[E(X)=0.8\mu_1+0.2\mu_2
+=2.700.\]</span></p>
+<br/>
+</li>
+</ol>
+
+</body>
+</html>

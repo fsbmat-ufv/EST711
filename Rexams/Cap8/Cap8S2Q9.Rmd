@@ -1,0 +1,29 @@
+```{r, echo=FALSE, results="hide"}
+n <- sample(30:120, 1)
+k <- sample(2:4, 1)
+x_star <- sample(seq(-2, 3, 0.1), 1)
+```
+
+Question
+========
+Em uma mistura de `r k` Normais com variâncias livres, ajustada a `r n` observações, um componente concentra-se em uma única observação $x^*=`r sprintf("%.1f", x_star)`$ e sua variância tende a zero. O que pode ocorrer com a verossimilhança e como esse problema costuma ser tratado?
+
+Answerlist
+----------
+* A verossimilhança pode tornar-se ilimitada; restrições inferiores nas variâncias ou penalização ajudam a evitar a solução degenerada.
+* A verossimilhança necessariamente converge a zero; deve-se aumentar o número de componentes.
+* A monotonicidade do EM impede variâncias próximas de zero, dispensando qualquer restrição.
+* Apenas os pesos da mistura causam degenerescência; fixar todos os pesos iguais resolve o problema em qualquer amostra.
+* A solução é sempre um máximo global válido, pois maior verossimilhança garante boa separação dos componentes.
+
+Solution
+========
+Quando a média de um componente coincide com uma observação e sua variância tende a zero, a densidade Normal nesse ponto pode crescer sem limite. Assim, misturas Gaussianas com variâncias irrestritas admitem singularidades da verossimilhança. Limites mínimos, penalizações ou modelos com estrutura de variância apropriada são formas usuais de regularização.
+
+Meta-information
+================
+exname: Cap8S2Q9_singularidade_mistura_normal
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE
+

@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+<title>Exam 1</title>
+<style type="text/css">
+body{font-family: Arial, Helvetica, Sans;}
+</style>
+<meta charset="utf-8" />
+<script type="text/javascript"   src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script>
+</head>
+
+<body>
+<h2>Exam 1</h2>
+
+<ol>
+<li>
+<h4>Question</h4>
+<p>Seja <span class="math inline">\(X_i \overset{\text{iid}}{\sim} N(\mu, \sigma_0^2)\)</span> com <span class="math inline">\(\sigma_0^2 = 9\)</span> conhecido. Com base em uma amostra de tamanho <span class="math inline">\(n = 64\)</span>, o estimador de <span class="math inline">\(\mu\)</span> pelo método dos momentos é:</p>
+<br/>
+<ol type="a">
+<li>
+o momento de segunda ordem <span class="math inline">\(m_2 = \frac{1}{n}\sum X_i^2\)</span>.
+</li>
+<li>
+o primeiro momento amostral <span class="math inline">\(m_1 = \bar{X}_n\)</span>, que iguala o momento teórico <span class="math inline">\(\mu_1 = \mu\)</span>.
+</li>
+<li>
+o momento amostral de maior ordem disponível.
+</li>
+<li>
+o estimador que minimiza <span class="math inline">\(\sum (X_i - \theta)^2\)</span>.
+</li>
+<li>
+a mediana amostral, pois é mais robusta que a média.
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>O método dos momentos consiste em igualar os momentos teóricos da distribuição aos momentos amostrais. Para <span class="math inline">\(X \sim N(\mu, \sigma_0^2)\)</span>, o primeiro momento teórico é <span class="math inline">\(\mu_1 = E(X) = \mu\)</span>. Igualando ao primeiro momento amostral <span class="math inline">\(m_1 = \bar{X}_n\)</span>, obtemos <span class="math inline">\(\hat{\mu}_{MM} = \bar{X}_n\)</span>. Não é necessário usar momentos de ordem superior nem <span class="math inline">\(\sigma_0^2\)</span>, pois o parâmetro de interesse <span class="math inline">\(\mu\)</span> já aparece no primeiro momento.</p>
+<br/>
+</li>
+<li>
+<h4>Question</h4>
+<p>Seja <span class="math inline">\(X_i \overset{\text{iid}}{\sim} N(\mu, 9)\)</span> com <span class="math inline">\(\sigma_0^2 = 9\)</span> conhecido. A log-verossimilhança é <span class="math inline">\(\ell(\mu) = -\frac{1}{2\sigma_0^2}\sum_{i=1}^n (X_i - \mu)^2 + \text{const}\)</span>. Com <span class="math inline">\(n = 36\)</span> e <span class="math inline">\(\sum_{i=1}^n X_i = 107.7\)</span>, calcule o EMV <span class="math inline">\(\hat{\mu}_{MV} = \bar{X}\)</span>.</p>
+<br/>
+<ol type="a">
+<li>
+3.2917
+</li>
+<li>
+2.6917
+</li>
+<li>
+2.9917
+</li>
+<li>
+3.2417
+</li>
+<li>
+2.8342
+</li>
+</ol>
+<br/>
+<h4>Solution</h4>
+<p>Derivando <span class="math inline">\(\ell(\mu)\)</span> em relação a <span class="math inline">\(\mu\)</span> e igualando a zero:
+<span class="math display">\[\frac{d\ell}{d\mu} = \frac{1}{\sigma_0^2}\sum_{i=1}^n (X_i - \mu) = 0 \implies \hat{\mu}_{MV} = \bar{X} = \frac{\sum X_i}{n} = \frac{107.7}{36} = 2.9917.\]</span>
+O valor de <span class="math inline">\(\sigma_0^2 = 9\)</span> não influencia o EMV de <span class="math inline">\(\mu\)</span> quando <span class="math inline">\(\sigma^2\)</span> é conhecido.</p>
+<br/>
+</li>
+</ol>
+
+</body>
+</html>
