@@ -16,20 +16,20 @@ body{font-family: Arial, Helvetica, Sans;}
 <ol>
 <li>
 <h4>Question</h4>
-<p>Seja <span class="math inline">\(X_1, X_2, \ldots\)</span> uma sequência de variáveis aleatórias iid com <span class="math inline">\(E(X_i) = \mu = 4\)</span> e <span class="math inline">\(\text{Var}(X_i) = \sigma^2 = 3\)</span> finita. Qual das afirmações abaixo enuncia <strong>corretamente</strong> o Teorema Central do Limite (TCL)?</p>
+<p>Seja <span class="math inline">\(X_1, X_2, \ldots\)</span> uma sequência de variáveis aleatórias iid com <span class="math inline">\(E(X_i) = \mu = 8\)</span> e <span class="math inline">\(\text{Var}(X_i) = \sigma^2 = 8\)</span> finita. Qual das afirmações abaixo enuncia <strong>corretamente</strong> o Teorema Central do Limite (TCL)?</p>
 <br/>
 <ol type="a">
-<li>
-<span class="math inline">\(\dfrac{\bar{X}_n - \mu}{\sigma} \xrightarrow{D} N(0,1)\)</span> (sem o fator <span class="math inline">\(\sqrt{n}\)</span>).
-</li>
-<li>
-<span class="math inline">\(\sqrt{n}(\bar{X}_n - \mu) \xrightarrow{D} N(0,1)\)</span> (sem dividir por <span class="math inline">\(\sigma\)</span>).
-</li>
 <li>
 <span class="math inline">\(\dfrac{\sqrt{n}(\bar{X}_n - \mu)}{\sigma} \xrightarrow{D} N(0,1)\)</span>.
 </li>
 <li>
 <span class="math inline">\(\dfrac{\sqrt{n}(\bar{X}_n - \mu)}{\sigma^2} \xrightarrow{D} N(0,1)\)</span> (usando <span class="math inline">\(\sigma^2\)</span> em vez de <span class="math inline">\(\sigma\)</span>).
+</li>
+<li>
+<span class="math inline">\(\dfrac{\bar{X}_n - \mu}{\sigma} \xrightarrow{D} N(0,1)\)</span> (sem o fator <span class="math inline">\(\sqrt{n}\)</span>).
+</li>
+<li>
+<span class="math inline">\(\sqrt{n}(\bar{X}_n - \mu) \xrightarrow{D} N(0,1)\)</span> (sem dividir por <span class="math inline">\(\sigma\)</span>).
 </li>
 <li>
 <span class="math inline">\(\bar{X}_n \xrightarrow{D} N(\mu, \sigma^2)\)</span> para todo <span class="math inline">\(n\)</span> suficientemente grande.
@@ -53,13 +53,13 @@ body{font-family: Arial, Helvetica, Sans;}
 <span class="math inline">\(g(\bar{X}_n) \xrightarrow{D} N(g(\mu),\, [g&#39;(\mu)]^2 \sigma^2)\)</span> (sem escala <span class="math inline">\(\sqrt{n}\)</span>, variância não dividida por <span class="math inline">\(n\)</span>).
 </li>
 <li>
-<span class="math inline">\(\sqrt{n}(g(\bar{X}_n) - g(\mu)) \xrightarrow{D} N(0,\, [g(\mu)]^2 \sigma^2)\)</span> (usando <span class="math inline">\(g(\mu)\)</span> em vez de <span class="math inline">\(g&#39;(\mu)\)</span>).
+<span class="math inline">\(\sqrt{n}(g(\bar{X}_n) - g(\mu)) \xrightarrow{D} N(0,\, g&#39;(\mu)\, \sigma^2)\)</span> (sem elevar ao quadrado).
 </li>
 <li>
 <span class="math inline">\(\sqrt{n}(g(\bar{X}_n) - g(\mu)) \xrightarrow{D} N(0,\, [g&#39;(\mu)\,\sigma]^2/n)\)</span> (variância dividida por <span class="math inline">\(n\)</span> erroneamente).
 </li>
 <li>
-<span class="math inline">\(\sqrt{n}(g(\bar{X}_n) - g(\mu)) \xrightarrow{D} N(0,\, g&#39;(\mu)\, \sigma^2)\)</span> (sem elevar ao quadrado).
+<span class="math inline">\(\sqrt{n}(g(\bar{X}_n) - g(\mu)) \xrightarrow{D} N(0,\, [g(\mu)]^2 \sigma^2)\)</span> (usando <span class="math inline">\(g(\mu)\)</span> em vez de <span class="math inline">\(g&#39;(\mu)\)</span>).
 </li>
 </ol>
 <br/>

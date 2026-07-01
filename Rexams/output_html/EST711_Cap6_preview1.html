@@ -29,10 +29,10 @@ Erro Tipo I: a probabilidade de rejeitar <span class="math inline">\(H_1\)</span
 Erro Tipo I: rejeitar <span class="math inline">\(H_0\)</span> quando ela e verdadeira. Erro Tipo II: nao rejeitar <span class="math inline">\(H_0\)</span> quando ela e falsa.
 </li>
 <li>
-Erro Tipo I: nao rejeitar <span class="math inline">\(H_0\)</span> quando ela e falsa. Erro Tipo II: rejeitar <span class="math inline">\(H_0\)</span> quando ela e verdadeira.
+Erro Tipo I: aceitar <span class="math inline">\(H_1\)</span> quando <span class="math inline">\(H_0\)</span> e falsa. Erro Tipo II: aceitar <span class="math inline">\(H_0\)</span> quando <span class="math inline">\(H_1\)</span> e verdadeira.
 </li>
 <li>
-Erro Tipo I: aceitar <span class="math inline">\(H_1\)</span> quando <span class="math inline">\(H_0\)</span> e falsa. Erro Tipo II: aceitar <span class="math inline">\(H_0\)</span> quando <span class="math inline">\(H_1\)</span> e verdadeira.
+Erro Tipo I: nao rejeitar <span class="math inline">\(H_0\)</span> quando ela e falsa. Erro Tipo II: rejeitar <span class="math inline">\(H_0\)</span> quando ela e verdadeira.
 </li>
 </ol>
 <br/>
@@ -46,19 +46,19 @@ Erro Tipo I: aceitar <span class="math inline">\(H_1\)</span> quando <span class
 <br/>
 <ol type="a">
 <li>
-A verossimilhanca marginal excede <span class="math inline">\(k \cdot \alpha\)</span> para alguma constante <span class="math inline">\(k\)</span>.
-</li>
-<li>
 A estatistica <span class="math inline">\(\bar{X}\)</span> excede o quantil <span class="math inline">\(z_{1-\alpha}\)</span> da distribuicao normal padrao.
 </li>
 <li>
-A razao de verossimilhancas <span class="math inline">\(\Lambda = L(\theta_1)/L(\theta_0)\)</span> excede uma constante <span class="math inline">\(k\)</span> escolhida tal que o tamanho do teste seja <span class="math inline">\(\alpha\)</span>.
+A log-verossimilhanca sob <span class="math inline">\(H_1\)</span> excede a log-verossimilhanca sob <span class="math inline">\(H_0\)</span> em pelo menos 1 unidade.
+</li>
+<li>
+A verossimilhanca marginal excede <span class="math inline">\(k \cdot \alpha\)</span> para alguma constante <span class="math inline">\(k\)</span>.
 </li>
 <li>
 O p-valor e menor que <span class="math inline">\(\alpha\)</span>, independente da razao de verossimilhancas.
 </li>
 <li>
-A log-verossimilhanca sob <span class="math inline">\(H_1\)</span> excede a log-verossimilhanca sob <span class="math inline">\(H_0\)</span> em pelo menos 1 unidade.
+A razao de verossimilhancas <span class="math inline">\(\Lambda = L(\theta_1)/L(\theta_0)\)</span> excede uma constante <span class="math inline">\(k\)</span> escolhida tal que o tamanho do teste seja <span class="math inline">\(\alpha\)</span>.
 </li>
 </ol>
 <br/>
@@ -75,6 +75,9 @@ A log-verossimilhanca sob <span class="math inline">\(H_1\)</span> excede a log-
 O teste que maximiza <span class="math inline">\(\alpha + (1-\beta)\)</span> sobre todos os testes possiveis.
 </li>
 <li>
+O teste que minimiza a probabilidade de Erro Tipo II para um unico valor alternativo de <span class="math inline">\(\theta\)</span>.
+</li>
+<li>
 O teste mais poderoso para hipoteses simples, estendido a hipoteses compostas por continuidade.
 </li>
 <li>
@@ -82,9 +85,6 @@ Um teste de tamanho <span class="math inline">\(\alpha\)</span> cuja funcao pode
 </li>
 <li>
 O teste com maior poder para o pior caso de <span class="math inline">\(\theta \in \Omega_1\)</span> (criterio minimax).
-</li>
-<li>
-O teste que minimiza a probabilidade de Erro Tipo II para um unico valor alternativo de <span class="math inline">\(\theta\)</span>.
 </li>
 </ol>
 <br/>
@@ -98,19 +98,19 @@ O teste que minimiza a probabilidade de Erro Tipo II para um unico valor alterna
 <br/>
 <ol type="a">
 <li>
-O EMV <span class="math inline">\(\hat{\theta}(x)\)</span> e crescente em <span class="math inline">\(T(x)\)</span> para todo <span class="math inline">\(x\)</span>.
-</li>
-<li>
 A razao <span class="math inline">\(f(x;\theta_1)/f(x;\theta_2)\)</span> e maior que 1 para todo <span class="math inline">\(x\)</span>, quando <span class="math inline">\(\theta_1 &gt; \theta_2\)</span>.
 </li>
 <li>
 Para todo <span class="math inline">\(\theta_1 &gt; \theta_2\)</span>, a razao <span class="math inline">\(f(x;\theta_1)/f(x;\theta_2)\)</span> e funcao nao-decrescente de <span class="math inline">\(T(x)\)</span>.
 </li>
 <li>
-A log-verossimilhanca <span class="math inline">\(\ell(\theta;x)\)</span> e crescente em <span class="math inline">\(\theta\)</span> para todo <span class="math inline">\(x\)</span> fixo.
+O EMV <span class="math inline">\(\hat{\theta}(x)\)</span> e crescente em <span class="math inline">\(T(x)\)</span> para todo <span class="math inline">\(x\)</span>.
 </li>
 <li>
 A funcao de distribuicao <span class="math inline">\(F(x;\theta)\)</span> e monotonica em <span class="math inline">\(\theta\)</span> para todo <span class="math inline">\(x\)</span> fixo.
+</li>
+<li>
+A log-verossimilhanca <span class="math inline">\(\ell(\theta;x)\)</span> e crescente em <span class="math inline">\(\theta\)</span> para todo <span class="math inline">\(x\)</span> fixo.
 </li>
 </ol>
 <br/>
@@ -125,19 +125,19 @@ A funcao de distribuicao <span class="math inline">\(F(x;\theta)\)</span> e mono
 <br/>
 <ol type="a">
 <li>
-<span class="math inline">\(\Lambda = \frac{\sup_{\theta \in \Omega} L(\theta;\mathbf{x})}{\sup_{\theta \in \Omega_0} L(\theta;\mathbf{x})}\)</span>, com a razao invertida em relacao a definicao padrao.
-</li>
-<li>
 <span class="math inline">\(\Lambda = \frac{L(\hat{\theta};\mathbf{x})}{L(\theta_0;\mathbf{x})}\)</span>, rejeitando quando <span class="math inline">\(\Lambda &gt; k\)</span> (razao de verossimilhancas simples).
-</li>
-<li>
-<span class="math inline">\(\Lambda = L(\hat{\theta}_1;\mathbf{x})/L(\hat{\theta}_0;\mathbf{x})\)</span>, onde <span class="math inline">\(\hat{\theta}_1\)</span> e o EMV irrestrito e <span class="math inline">\(\hat{\theta}_0\)</span> o EMV restrito a <span class="math inline">\(\Omega_0\)</span>.
 </li>
 <li>
 <span class="math inline">\(\Lambda = -2\log(L(\hat{\theta})/L(\theta_0))\)</span>, que tem distribuicao <span class="math inline">\(F\)</span> sob <span class="math inline">\(H_0\)</span>.
 </li>
 <li>
+<span class="math inline">\(\Lambda = \frac{\sup_{\theta \in \Omega} L(\theta;\mathbf{x})}{\sup_{\theta \in \Omega_0} L(\theta;\mathbf{x})}\)</span>, com a razao invertida em relacao a definicao padrao.
+</li>
+<li>
 <span class="math inline">\(\Lambda = \frac{\sup_{\theta \in \Omega_0} L(\theta;\mathbf{x})}{\sup_{\theta \in \Omega} L(\theta;\mathbf{x})}\)</span>, e <span class="math inline">\(H_0\)</span> e rejeitada quando <span class="math inline">\(\Lambda \leq k\)</span> (ou equivalentemente <span class="math inline">\(-2\log\Lambda \geq c\)</span>).
+</li>
+<li>
+<span class="math inline">\(\Lambda = L(\hat{\theta}_1;\mathbf{x})/L(\hat{\theta}_0;\mathbf{x})\)</span>, onde <span class="math inline">\(\hat{\theta}_1\)</span> e o EMV irrestrito e <span class="math inline">\(\hat{\theta}_0\)</span> o EMV restrito a <span class="math inline">\(\Omega_0\)</span>.
 </li>
 </ol>
 <br/>

@@ -21,19 +21,19 @@ Qual das afirmações abaixo define <strong>corretamente</strong> a convergênci
 <br/>
 <ol type="a">
 <li>
+<span class="math inline">\(P(|T_n - \theta| &lt; \varepsilon) \to 0\)</span> quando <span class="math inline">\(n \to \infty\)</span>, para todo <span class="math inline">\(\varepsilon &gt; 0\)</span>.
+</li>
+<li>
 <span class="math inline">\(P(|\theta - T_n| \leq \varepsilon) \to 0\)</span> quando <span class="math inline">\(n \to \infty\)</span>, para todo <span class="math inline">\(\varepsilon &gt; 0\)</span>.
+</li>
+<li>
+<span class="math inline">\(P(|T_n - \theta| \geq \varepsilon) \to 0\)</span> quando <span class="math inline">\(n \to \infty\)</span>, para todo <span class="math inline">\(\varepsilon &gt; 0\)</span>.
 </li>
 <li>
 <span class="math inline">\(P(|T_n - \theta| = 0) \to 1\)</span> quando <span class="math inline">\(n \to \infty\)</span>.
 </li>
 <li>
 <span class="math inline">\(T_n \to \theta\)</span> quase certamente (com probabilidade 1).
-</li>
-<li>
-<span class="math inline">\(P(|T_n - \theta| \geq \varepsilon) \to 0\)</span> quando <span class="math inline">\(n \to \infty\)</span>, para todo <span class="math inline">\(\varepsilon &gt; 0\)</span>.
-</li>
-<li>
-<span class="math inline">\(P(|T_n - \theta| &lt; \varepsilon) \to 0\)</span> quando <span class="math inline">\(n \to \infty\)</span>, para todo <span class="math inline">\(\varepsilon &gt; 0\)</span>.
 </li>
 </ol>
 <br/>
@@ -52,16 +52,16 @@ para todo <span class="math inline">\(\varepsilon &gt; 0\)</span>, <span class="
 <span class="math inline">\(E(X_n) \to E(X)\)</span> e <span class="math inline">\(\text{Var}(X_n) \to \text{Var}(X)\)</span>.
 </li>
 <li>
-<span class="math inline">\(F_{X_n}(x) \to F_X(x)\)</span> para todo <span class="math inline">\(x \in \mathbb{R}\)</span>, incluindo pontos de descontinuidade de <span class="math inline">\(F_X\)</span>.
-</li>
-<li>
-<span class="math inline">\(P(X_n = x) \to P(X = x)\)</span> para todo <span class="math inline">\(x \in \mathbb{R}\)</span>.
-</li>
-<li>
 <span class="math inline">\(F_{X_n}(x) \to F_X(x)\)</span> para todo <span class="math inline">\(x\)</span> que seja ponto de continuidade de <span class="math inline">\(F_X\)</span> (conjunto <span class="math inline">\(C(F_X)\)</span>).
 </li>
 <li>
+<span class="math inline">\(F_{X_n}(x) \to F_X(x)\)</span> para todo <span class="math inline">\(x \in \mathbb{R}\)</span>, incluindo pontos de descontinuidade de <span class="math inline">\(F_X\)</span>.
+</li>
+<li>
 <span class="math inline">\(X_n - X \xrightarrow{P} 0\)</span>, ou seja, a diferença converge em probabilidade a zero.
+</li>
+<li>
+<span class="math inline">\(P(X_n = x) \to P(X = x)\)</span> para todo <span class="math inline">\(x \in \mathbb{R}\)</span>.
 </li>
 </ol>
 <br/>
@@ -72,20 +72,20 @@ para todo <span class="math inline">\(\varepsilon &gt; 0\)</span>, <span class="
 </li>
 <li>
 <h4>Question</h4>
-<p>Ao modelar uma pesquisa amostral, uma função <span class="math inline">\(P\)</span> é definida sobre os eventos de um espaço amostral <span class="math inline">\(\Omega\)</span>. Qual condição faz parte dos axiomas de probabilidade?</p>
+<p>Ao modelar um experimento físico, uma função <span class="math inline">\(P\)</span> é definida sobre os eventos de um espaço amostral <span class="math inline">\(\Omega\)</span>. Qual condição faz parte dos axiomas de probabilidade?</p>
 <br/>
 <ol type="a">
 <li>
-A probabilidade do espaço amostral pode assumir qualquer constante positiva.
+Para quaisquer eventos <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span>, vale sempre <span class="math inline">\(P(A\cup B)=P(A)+P(B)\)</span>.
 </li>
 <li>
-Para quaisquer eventos <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span>, vale sempre <span class="math inline">\(P(A\cup B)=P(A)+P(B)\)</span>.
+Se <span class="math inline">\(A\subset B\)</span>, então <span class="math inline">\(P(A)&gt;P(B)\)</span>.
 </li>
 <li>
 Para eventos dois a dois disjuntos <span class="math inline">\(A_1,A_2,\ldots\)</span>, vale <span class="math inline">\(P(\bigcup_i A_i)=\sum_iP(A_i)\)</span>.
 </li>
 <li>
-Se <span class="math inline">\(A\subset B\)</span>, então <span class="math inline">\(P(A)&gt;P(B)\)</span>.
+A probabilidade do espaço amostral pode assumir qualquer constante positiva.
 </li>
 <li>
 Todo evento não vazio deve ter probabilidade estritamente positiva.
@@ -98,50 +98,50 @@ Todo evento não vazio deve ter probabilidade estritamente positiva.
 </li>
 <li>
 <h4>Question</h4>
-<p>Em 110 registros, 36 apresentam <span class="math inline">\(B\)</span> e 8 apresentam simultaneamente <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span>. Qual é <span class="math inline">\(P(A\mid B)\)</span>?</p>
+<p>Em 110 registros, 39 apresentam <span class="math inline">\(B\)</span> e 9 apresentam simultaneamente <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span>. Qual é <span class="math inline">\(P(A\mid B)\)</span>?</p>
 <br/>
 <ol type="a">
 <li>
-<span class="math inline">\(0.0727\)</span>
+<span class="math inline">\(0.2308\)</span>
 </li>
 <li>
-<span class="math inline">\(0.6727\)</span>
+<span class="math inline">\(0.6455\)</span>
 </li>
 <li>
-<span class="math inline">\(0.7778\)</span>
+<span class="math inline">\(0.3545\)</span>
 </li>
 <li>
-<span class="math inline">\(0.2222\)</span>
+<span class="math inline">\(0.0818\)</span>
 </li>
 <li>
-<span class="math inline">\(0.3273\)</span>
+<span class="math inline">\(0.7692\)</span>
 </li>
 </ol>
 <br/>
 <h4>Solution</h4>
 <p><span class="math display">\[P(A\mid B)=\frac{P(A\cap B)}{P(B)}
-=\frac{8}{36}=0.2222.\]</span></p>
+=\frac{9}{39}=0.2308.\]</span></p>
 <br/>
 </li>
 <li>
 <h4>Question</h4>
-<p>Qual conjunto de propriedades é necessário para que <span class="math inline">\(F_X\)</span> seja uma função de distribuição acumulada em <span class="math inline">\(\mathbb{R}\)</span>?</p>
+<p>Qual conjunto de propriedades é necessário para que <span class="math inline">\(H\)</span> seja uma função de distribuição acumulada em <span class="math inline">\(\mathbb{R}\)</span>?</p>
 <br/>
 <ol type="a">
+<li>
+Ser estritamente crescente, contínua e possuir derivada positiva em todos os pontos.
+</li>
 <li>
 Ser não decrescente, contínua à direita, com limites 0 em <span class="math inline">\(-\infty\)</span> e 1 em <span class="math inline">\(+\infty\)</span>.
 </li>
 <li>
-Ser simétrica em torno de zero e limitada por uma densidade.
-</li>
-<li>
-Ser estritamente crescente, contínua e possuir derivada positiva em todos os pontos.
+Ser não crescente, contínua à esquerda e integrar 1.
 </li>
 <li>
 Assumir apenas os valores 0 e 1.
 </li>
 <li>
-Ser não crescente, contínua à esquerda e integrar 1.
+Ser simétrica em torno de zero e limitada por uma densidade.
 </li>
 </ol>
 <br/>
@@ -157,19 +157,19 @@ Ela pode ter saltos, trechos constantes e não precisa possuir densidade.</p>
 <br/>
 <ol type="a">
 <li>
-<span class="math inline">\(0.90000\)</span>
-</li>
-<li>
-<span class="math inline">\(0.10000\)</span>
-</li>
-<li>
 <span class="math inline">\(0.11111\)</span>
 </li>
 <li>
 <span class="math inline">\(0.01111\)</span>
 </li>
 <li>
+<span class="math inline">\(0.90000\)</span>
+</li>
+<li>
 <span class="math inline">\(0.02222\)</span>
+</li>
+<li>
+<span class="math inline">\(0.10000\)</span>
 </li>
 </ol>
 <br/>
@@ -181,106 +181,106 @@ portanto <span class="math inline">\(c=2/[9(10)]=0.02222\)</span>.</p>
 </li>
 <li>
 <h4>Question</h4>
-<p>Uma função é dada por <span class="math inline">\(f(x)=c x^{4}\)</span> para <span class="math inline">\(0&lt;x&lt;4\)</span> e zero fora desse intervalo. Qual valor de <span class="math inline">\(c\)</span> torna <span class="math inline">\(f\)</span> uma densidade?</p>
+<p>Uma função é dada por <span class="math inline">\(f(x)=c x^{3}\)</span> para <span class="math inline">\(0&lt;x&lt;5\)</span> e zero fora desse intervalo. Qual valor de <span class="math inline">\(c\)</span> torna <span class="math inline">\(f\)</span> uma densidade?</p>
 <br/>
 <ol type="a">
 <li>
-<span class="math inline">\(0.25000\)</span>
+<span class="math inline">\(0.00160\)</span>
 </li>
 <li>
-<span class="math inline">\(0.01953\)</span>
+<span class="math inline">\(0.20000\)</span>
 </li>
 <li>
-<span class="math inline">\(0.80000\)</span>
+<span class="math inline">\(0.03200\)</span>
 </li>
 <li>
-<span class="math inline">\(0.00098\)</span>
+<span class="math inline">\(0.00640\)</span>
 </li>
 <li>
-<span class="math inline">\(0.00488\)</span>
+<span class="math inline">\(1.25000\)</span>
 </li>
 </ol>
 <br/>
 <h4>Solution</h4>
 <p>A normalização exige
-<span class="math display">\[1=c\int_0^{4}x^{4}dx
-=c\frac{4^{5}}{5}.\]</span>
-Logo, <span class="math inline">\(c=(5)/4^{5}=0.00488\)</span>.</p>
+<span class="math display">\[1=c\int_0^{5}x^{3}dx
+=c\frac{5^{4}}{4}.\]</span>
+Logo, <span class="math inline">\(c=(4)/5^{4}=0.00640\)</span>.</p>
 <br/>
 </li>
 <li>
 <h4>Question</h4>
-<p>Uma variável discreta assume valores <span class="math inline">\((-1, 0, 2, 6)\)</span> com probabilidades <span class="math inline">\((0.400, 0.050, 0.400, 0.150)\)</span>. Qual é <span class="math inline">\(E(X)\)</span>?</p>
+<p>Uma variável discreta assume valores <span class="math inline">\((-2, 1, 3, 5)\)</span> com probabilidades <span class="math inline">\((0.125, 0.188, 0.188, 0.500)\)</span>. Qual é <span class="math inline">\(E(X)\)</span>?</p>
 <br/>
 <ol type="a">
 <li>
-<span class="math inline">\(1.7500\)</span>
-</li>
-<li>
-<span class="math inline">\(2.1000\)</span>
+<span class="math inline">\(3.5000\)</span>
 </li>
 <li>
 <span class="math inline">\(7.0000\)</span>
 </li>
 <li>
+<span class="math inline">\(3.0000\)</span>
+</li>
+<li>
 <span class="math inline">\(1.0000\)</span>
 </li>
 <li>
-<span class="math inline">\(1.3000\)</span>
+<span class="math inline">\(1.7500\)</span>
 </li>
 </ol>
 <br/>
 <h4>Solution</h4>
 <p>A esperança é a média ponderada:
-<span class="math display">\[E(X)=\sum_xxp_X(x)=1.3000.\]</span></p>
+<span class="math display">\[E(X)=\sum_xxp_X(x)=3.0000.\]</span></p>
 <br/>
 </li>
 <li>
 <h4>Question</h4>
-<p>Se <span class="math inline">\(E(X)=-1.5\)</span> e <span class="math inline">\(E(X^2)=7.75\)</span>, qual é <span class="math inline">\(\operatorname{Var}(X)\)</span>?</p>
+<p>Se <span class="math inline">\(E(X)=-2\)</span> e <span class="math inline">\(E(X^2)=12\)</span>, qual é <span class="math inline">\(\operatorname{Var}(X)\)</span>?</p>
 <br/>
 <ol type="a">
 <li>
-<span class="math inline">\(2.784\)</span>
+<span class="math inline">\(3.464\)</span>
 </li>
 <li>
-<span class="math inline">\(5.500\)</span>
+<span class="math inline">\(14.000\)</span>
 </li>
 <li>
-<span class="math inline">\(10.000\)</span>
+<span class="math inline">\(4.000\)</span>
 </li>
 <li>
-<span class="math inline">\(2.250\)</span>
+<span class="math inline">\(16.000\)</span>
 </li>
 <li>
-<span class="math inline">\(9.250\)</span>
+<span class="math inline">\(8.000\)</span>
 </li>
 </ol>
 <br/>
 <h4>Solution</h4>
 <p><span class="math display">\[\operatorname{Var}(X)=E(X^2)-[E(X)]^2
-=7.75-(-1.5)^2=5.500.\]</span></p>
+=12-(-2)^2=8.000.\]</span></p>
 <br/>
 </li>
 <li>
 <h4>Question</h4>
-<p>Sabe-se que <span class="math inline">\(E(|X|^{7})&lt;\infty\)</span>. Qual conclusão é garantida?</p>
+<p>Sabe-se que <span class="math inline">\(E(|X|^{5})&lt;\infty\)</span>. Qual conclusão é garantida?</p>
 <br/>
 <ol type="a">
 <li>
-A fgm de <span class="math inline">\(X\)</span> existe para todo <span class="math inline">\(t\)</span>.
+<span class="math inline">\(X\)</span> possui suporte limitado.
 </li>
 <li>
-<span class="math inline">\(E(|X|^{2})&lt;\infty\)</span>.
+<span class="math inline">\(E(|X|^{4})&lt;\infty\)</span>.
+</li>
+<li>
+<span class="math inline">\(E(|X|^{6})&lt;\infty\)</span>.
 </li>
 <li>
 <span class="math inline">\(X\)</span> tem distribuição simétrica.
 </li>
 <li>
-<span class="math inline">\(X\)</span> possui suporte limitado.
-</li>
-<li>
-<span class="math inline">\(E(|X|^{8})&lt;\infty\)</span>.
+A fgm de <span class="math inline">\(X\)</span> existe para todo <span class="math inline">\(t\)</span>.
 </li>
 </ol>
 <br/>

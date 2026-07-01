@@ -38,7 +38,7 @@
 }
 </style>
 <p>
-<p>Ao ajustar um modelo com classes latentes pelo algoritmo EM, usa-se tolerância 1e-06 e cada passo M maximiza a função construída no passo E. Qual propriedade descreve corretamente a sequência de log-verossimilhanças observadas produzida pelo EM?</p>
+<p>Ao ajustar um modelo com classes latentes pelo algoritmo EM, usa-se tolerância 1e-04 e cada passo M maximiza a função construída no passo E. Qual propriedade descreve corretamente a sequência de log-verossimilhanças observadas produzida pelo EM?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
@@ -66,9 +66,9 @@ Ela permanece constante desde a primeira iteração, independentemente dos valor
 Ela aumenta estritamente em toda iteração e, por isso, sempre converge ao máximo global.
 </p>]]></text>
 </answer>
-<answer fraction="0" format="html">
+<answer fraction="100" format="html">
 <text><![CDATA[<p>
-Ela pode diminuir livremente, pois apenas a verossimilhança dos dados completos é relevante.
+Ela não diminui a cada iteração, embora isso não garanta convergência ao máximo global.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
@@ -76,9 +76,9 @@ Ela pode diminuir livremente, pois apenas a verossimilhança dos dados completos
 Ela é monotônica somente quando não há variáveis latentes no modelo.
 </p>]]></text>
 </answer>
-<answer fraction="100" format="html">
+<answer fraction="0" format="html">
 <text><![CDATA[<p>
-Ela não diminui a cada iteração, embora isso não garanta convergência ao máximo global.
+Ela pode diminuir livremente, pois apenas a verossimilhança dos dados completos é relevante.
 </p>]]></text>
 </answer>
 </question>
@@ -113,7 +113,7 @@ Ela não diminui a cada iteração, embora isso não garanta convergência ao m�
 }
 </style>
 <p>
-<p>Ao ajustar um modelo com classes latentes pelo algoritmo EM, usa-se tolerância 1e-04 e cada passo M maximiza a função construída no passo E. Qual propriedade descreve corretamente a sequência de log-verossimilhanças observadas produzida pelo EM?</p>
+<p>Ao ajustar um modelo com dados censurados pelo algoritmo EM, usa-se tolerância 1e-06 e cada passo M maximiza a função construída no passo E. Qual propriedade descreve corretamente a sequência de log-verossimilhanças observadas produzida pelo EM?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
@@ -133,17 +133,17 @@ A monotonicidade não elimina máximos locais nem pontos de sela; por isso, dife
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-Ela pode diminuir livremente, pois apenas a verossimilhança dos dados completos é relevante.
+Ela aumenta estritamente em toda iteração e, por isso, sempre converge ao máximo global.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-Ela aumenta estritamente em toda iteração e, por isso, sempre converge ao máximo global.
+Ela permanece constante desde a primeira iteração, independentemente dos valores iniciais.
 </p>]]></text>
 </answer>
-<answer fraction="100" format="html">
+<answer fraction="0" format="html">
 <text><![CDATA[<p>
-Ela não diminui a cada iteração, embora isso não garanta convergência ao máximo global.
+Ela pode diminuir livremente, pois apenas a verossimilhança dos dados completos é relevante.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
@@ -151,9 +151,9 @@ Ela não diminui a cada iteração, embora isso não garanta convergência ao m�
 Ela é monotônica somente quando não há variáveis latentes no modelo.
 </p>]]></text>
 </answer>
-<answer fraction="0" format="html">
+<answer fraction="100" format="html">
 <text><![CDATA[<p>
-Ela permanece constante desde a primeira iteração, independentemente dos valores iniciais.
+Ela não diminui a cada iteração, embora isso não garanta convergência ao máximo global.
 </p>]]></text>
 </answer>
 </question>
@@ -215,7 +215,7 @@ A esperança incondicional de <span class="math inline">\(\ell(\boldsymbol\theta
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-O valor de <span class="math inline">\(\boldsymbol\theta\)</span> que maximiza diretamente <span class="math inline">\(\ell_c(\boldsymbol\theta;\mathbf X,\mathbf Z)\)</span>, tratando <span class="math inline">\(\mathbf Z\)</span> como observado.
+A integral da verossimilhança observada em relação ao parâmetro <span class="math inline">\(\boldsymbol\theta\)</span>.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
@@ -225,7 +225,7 @@ A matriz hessiana da log-verossimilhança observada, sem usar <span class="math 
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-A integral da verossimilhança observada em relação ao parâmetro <span class="math inline">\(\boldsymbol\theta\)</span>.
+O valor de <span class="math inline">\(\boldsymbol\theta\)</span> que maximiza diretamente <span class="math inline">\(\ell_c(\boldsymbol\theta;\mathbf X,\mathbf Z)\)</span>, tratando <span class="math inline">\(\mathbf Z\)</span> como observado.
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
@@ -265,7 +265,7 @@ A integral da verossimilhança observada em relação ao parâmetro <span class=
 }
 </style>
 <p>
-<p>Considere um problema com rótulos de componentes não observados. Sejam <span class="math inline">\(\mathbf X\)</span> os dados observados, <span class="math inline">\(\mathbf Z\)</span> os dados latentes e <span class="math inline">\(\boldsymbol\theta^{(6)}\)</span> o valor corrente do parâmetro. O que é calculado no passo E do algoritmo EM?</p>
+<p>Considere um problema com rótulos de componentes não observados. Sejam <span class="math inline">\(\mathbf X\)</span> os dados observados, <span class="math inline">\(\mathbf Z\)</span> os dados latentes e <span class="math inline">\(\boldsymbol\theta^{(8)}\)</span> o valor corrente do parâmetro. O que é calculado no passo E do algoritmo EM?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
@@ -280,12 +280,12 @@ A integral da verossimilhança observada em relação ao parâmetro <span class=
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-A integral da verossimilhança observada em relação ao parâmetro <span class="math inline">\(\boldsymbol\theta\)</span>.
+A matriz hessiana da log-verossimilhança observada, sem usar <span class="math inline">\(\mathbf Z\)</span>.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-A matriz hessiana da log-verossimilhança observada, sem usar <span class="math inline">\(\mathbf Z\)</span>.
+A esperança incondicional de <span class="math inline">\(\ell(\boldsymbol\theta;\mathbf X)\)</span> sob qualquer distribuição para <span class="math inline">\(\mathbf Z\)</span>.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
@@ -293,14 +293,14 @@ A matriz hessiana da log-verossimilhança observada, sem usar <span class="math 
 O valor de <span class="math inline">\(\boldsymbol\theta\)</span> que maximiza diretamente <span class="math inline">\(\ell_c(\boldsymbol\theta;\mathbf X,\mathbf Z)\)</span>, tratando <span class="math inline">\(\mathbf Z\)</span> como observado.
 </p>]]></text>
 </answer>
-<answer fraction="100" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(Q(\boldsymbol\theta\mid\boldsymbol\theta^{(6)})=E_{\boldsymbol\theta^{(6)}}[\ell_c(\boldsymbol\theta;\mathbf X,\mathbf Z)\mid\mathbf X]\)</span>.
-</p>]]></text>
-</answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-A esperança incondicional de <span class="math inline">\(\ell(\boldsymbol\theta;\mathbf X)\)</span> sob qualquer distribuição para <span class="math inline">\(\mathbf Z\)</span>.
+A integral da verossimilhança observada em relação ao parâmetro <span class="math inline">\(\boldsymbol\theta\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(Q(\boldsymbol\theta\mid\boldsymbol\theta^{(8)})=E_{\boldsymbol\theta^{(8)}}[\ell_c(\boldsymbol\theta;\mathbf X,\mathbf Z)\mid\mathbf X]\)</span>.
 </p>]]></text>
 </answer>
 </question>
@@ -346,7 +346,7 @@ A esperança incondicional de <span class="math inline">\(\ell(\boldsymbol\theta
 <span class="math display">\[
 f(x)=\pi\,\phi(x;\mu_1,1)+(1-\pi)\,\phi(x;\mu_2,1).
 \]</span>
-Na iteração corrente, <span class="math inline">\(\pi=0.7\)</span>, <span class="math inline">\(\mu_1=-2\)</span> e <span class="math inline">\(\mu_2=2\)</span>. Para a observação <span class="math inline">\(x=-1\)</span>, qual é a responsabilidade do componente 1, <span class="math inline">\(P(Z=1\mid X=x)\)</span>?</p>
+Na iteração corrente, <span class="math inline">\(\pi=0.4\)</span>, <span class="math inline">\(\mu_1=-2\)</span> e <span class="math inline">\(\mu_2=1\)</span>. Para a observação <span class="math inline">\(x=0.5\)</span>, qual é a responsabilidade do componente 1, <span class="math inline">\(P(Z=1\mid X=x)\)</span>?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
@@ -355,7 +355,7 @@ Na iteração corrente, <span class="math inline">\(\pi=0.7\)</span>, <span clas
 <span class="math display">\[
 \tau=\frac{\pi\phi(x;\mu_1,1)}{\pi\phi(x;\mu_1,1)+(1-\pi)\phi(x;\mu_2,1)}.
 \]</span>
-Substituindo os valores fornecidos, obtém-se <span class="math inline">\(\tau=0.992\)</span>.</p>
+Substituindo os valores fornecidos, obtém-se <span class="math inline">\(\tau=0.032\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -363,29 +363,29 @@ Substituindo os valores fornecidos, obtém-se <span class="math inline">\(\tau=0
 <shuffleanswers>false</shuffleanswers>
 <single>true</single>
 <answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(0.019\)</span>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(0.968\)</span>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(0.047\)</span>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(0.400\)</span>
+</p>]]></text>
+</answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.992\)</span>
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(0.008\)</span>
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(0.687\)</span>
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(0.700\)</span>
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(0.982\)</span>
+<span class="math inline">\(0.032\)</span>
 </p>]]></text>
 </answer>
 </question>
@@ -424,7 +424,7 @@ Substituindo os valores fornecidos, obtém-se <span class="math inline">\(\tau=0
 <span class="math display">\[
 f(x)=\pi\,\phi(x;\mu_1,1)+(1-\pi)\,\phi(x;\mu_2,1).
 \]</span>
-Na iteração corrente, <span class="math inline">\(\pi=0.4\)</span>, <span class="math inline">\(\mu_1=-1\)</span> e <span class="math inline">\(\mu_2=2\)</span>. Para a observação <span class="math inline">\(x=-0.5\)</span>, qual é a responsabilidade do componente 1, <span class="math inline">\(P(Z=1\mid X=x)\)</span>?</p>
+Na iteração corrente, <span class="math inline">\(\pi=0.3\)</span>, <span class="math inline">\(\mu_1=-1\)</span> e <span class="math inline">\(\mu_2=1\)</span>. Para a observação <span class="math inline">\(x=-0.5\)</span>, qual é a responsabilidade do componente 1, <span class="math inline">\(P(Z=1\mid X=x)\)</span>?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
@@ -433,7 +433,7 @@ Na iteração corrente, <span class="math inline">\(\pi=0.4\)</span>, <span clas
 <span class="math display">\[
 \tau=\frac{\pi\phi(x;\mu_1,1)}{\pi\phi(x;\mu_1,1)+(1-\pi)\phi(x;\mu_2,1)}.
 \]</span>
-Substituindo os valores fornecidos, obtém-se <span class="math inline">\(\tau=0.931\)</span>.</p>
+Substituindo os valores fornecidos, obtém-se <span class="math inline">\(\tau=0.538\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -443,27 +443,27 @@ Substituindo os valores fornecidos, obtém-se <span class="math inline">\(\tau=0
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.953\)</span>
+<span class="math inline">\(0.731\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.931\)</span>
+<span class="math inline">\(0.538\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.069\)</span>
+<span class="math inline">\(0.219\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.400\)</span>
+<span class="math inline">\(0.300\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.381\)</span>
+<span class="math inline">\(0.462\)</span>
 </p>]]></text>
 </answer>
 </question>
@@ -507,7 +507,7 @@ Substituindo os valores fornecidos, obtém-se <span class="math inline">\(\tau=0
 <p>
 <p>No passo E de uma mistura com dois componentes, as responsabilidades do primeiro componente foram
 <span class="math display">\[
-(0.4, 0.8, 0.7, 0.4, 0.5).
+(0.8, 0.8, 0.9, 0.9, 0.8, 0.7, 0.5, 0.1).
 \]</span>
 Qual é a atualização de máxima verossimilhança para o peso <span class="math inline">\(\pi\)</span> desse componente no passo M?</p>
 </p>]]></text>
@@ -516,7 +516,7 @@ Qual é a atualização de máxima verossimilhança para o peso <span class="mat
 <text><![CDATA[<p>
 <p>O número esperado de observações no primeiro componente é <span class="math inline">\(\sum_i\tau_i\)</span>. Logo,
 <span class="math display">\[
-\pi^{(t+1)}=\frac{1}{n}\sum_{i=1}^n\tau_i=0.560.
+\pi^{(t+1)}=\frac{1}{n}\sum_{i=1}^n\tau_i=0.688.
 \]</span></p>
 </p>]]></text>
 </generalfeedback>
@@ -527,27 +527,27 @@ Qual é a atualização de máxima verossimilhança para o peso <span class="mat
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.467\)</span>
+<span class="math inline">\(0.800\)</span>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(0.786\)</span>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(0.611\)</span>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(0.312\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.560\)</span>
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(0.440\)</span>
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(0.700\)</span>
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(0.500\)</span>
+<span class="math inline">\(0.688\)</span>
 </p>]]></text>
 </answer>
 </question>
@@ -584,7 +584,7 @@ Qual é a atualização de máxima verossimilhança para o peso <span class="mat
 <p>
 <p>No passo E de uma mistura com dois componentes, as responsabilidades do primeiro componente foram
 <span class="math display">\[
-(0.7, 0.6, 0.6, 0.1, 0.1, 0.1, 0.8).
+(0.9, 0.1, 0.3, 0.3, 0.8).
 \]</span>
 Qual é a atualização de máxima verossimilhança para o peso <span class="math inline">\(\pi\)</span> desse componente no passo M?</p>
 </p>]]></text>
@@ -593,7 +593,7 @@ Qual é a atualização de máxima verossimilhança para o peso <span class="mat
 <text><![CDATA[<p>
 <p>O número esperado de observações no primeiro componente é <span class="math inline">\(\sum_i\tau_i\)</span>. Logo,
 <span class="math display">\[
-\pi^{(t+1)}=\frac{1}{n}\sum_{i=1}^n\tau_i=0.429.
+\pi^{(t+1)}=\frac{1}{n}\sum_{i=1}^n\tau_i=0.480.
 \]</span></p>
 </p>]]></text>
 </generalfeedback>
@@ -602,19 +602,14 @@ Qual é a atualização de máxima verossimilhança para o peso <span class="mat
 <shuffleanswers>false</shuffleanswers>
 <single>true</single>
 <answernumbering>abc</answernumbering>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(0.571\)</span>
-</p>]]></text>
-</answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.429\)</span>
+<span class="math inline">\(0.480\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.500\)</span>
+<span class="math inline">\(0.300\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
@@ -624,7 +619,12 @@ Qual é a atualização de máxima verossimilhança para o peso <span class="mat
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.375\)</span>
+<span class="math inline">\(0.400\)</span>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(0.520\)</span>
 </p>]]></text>
 </answer>
 </question>
@@ -667,8 +667,8 @@ Qual é a atualização de máxima verossimilhança para o peso <span class="mat
 </style>
 <p>
 <p>Em uma mistura de Normais com variâncias conhecidas, observam-se
-<span class="math inline">\(\mathbf x=(2, -2, 4, -3, 1)\)</span> e, para o primeiro componente, as responsabilidades são
-<span class="math inline">\(\boldsymbol\tau=(0.4, 0.2, 0.6, 0.8, 0.6)\)</span>. Qual é a atualização EM da média <span class="math inline">\(\mu_1\)</span>?</p>
+<span class="math inline">\(\mathbf x=(-1, 1, -2, 0, 4)\)</span> e, para o primeiro componente, as responsabilidades são
+<span class="math inline">\(\boldsymbol\tau=(0.4, 0.8, 0.6, 0.6, 0.8)\)</span>. Qual é a atualização EM da média <span class="math inline">\(\mu_1\)</span>?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
@@ -676,7 +676,7 @@ Qual é a atualização de máxima verossimilhança para o peso <span class="mat
 <p>A média do componente é atualizada pela média ponderada das observações:
 <span class="math display">\[
 \mu_1^{(t+1)}=\frac{\sum_i\tau_i x_i}{\sum_i\tau_i}
-=0.38.
+=0.75.
 \]</span></p>
 </p>]]></text>
 </generalfeedback>
@@ -685,29 +685,29 @@ Qual é a atualização de máxima verossimilhança para o peso <span class="mat
 <shuffleanswers>false</shuffleanswers>
 <single>true</single>
 <answernumbering>abc</answernumbering>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(0.75\)</span>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(0.48\)</span>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(0.00\)</span>
+</p>]]></text>
+</answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
 <span class="math inline">\(0.40\)</span>
 </p>]]></text>
 </answer>
-<answer fraction="100" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(0.38\)</span>
-</p>]]></text>
-</answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(1.00\)</span>
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(0.42\)</span>
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(0.20\)</span>
+<span class="math inline">\(-0.22\)</span>
 </p>]]></text>
 </answer>
 </question>
@@ -743,8 +743,8 @@ Qual é a atualização de máxima verossimilhança para o peso <span class="mat
 </style>
 <p>
 <p>Em uma mistura de Normais com variâncias conhecidas, observam-se
-<span class="math inline">\(\mathbf x=(-1, 5, 6, -3, 0)\)</span> e, para o primeiro componente, as responsabilidades são
-<span class="math inline">\(\boldsymbol\tau=(0.4, 0.4, 0.8, 0.6, 0.6)\)</span>. Qual é a atualização EM da média <span class="math inline">\(\mu_1\)</span>?</p>
+<span class="math inline">\(\mathbf x=(1, -2, 4, 0, 5)\)</span> e, para o primeiro componente, as responsabilidades são
+<span class="math inline">\(\boldsymbol\tau=(0.8, 0.2, 0.8, 0.4, 0.2)\)</span>. Qual é a atualização EM da média <span class="math inline">\(\mu_1\)</span>?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
@@ -752,7 +752,7 @@ Qual é a atualização de máxima verossimilhança para o peso <span class="mat
 <p>A média do componente é atualizada pela média ponderada das observações:
 <span class="math display">\[
 \mu_1^{(t+1)}=\frac{\sum_i\tau_i x_i}{\sum_i\tau_i}
-=1.64.
+=1.92.
 \]</span></p>
 </p>]]></text>
 </generalfeedback>
@@ -763,27 +763,27 @@ Qual é a atualização de máxima verossimilhança para o peso <span class="mat
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(1.40\)</span>
-</p>]]></text>
-</answer>
-<answer fraction="100" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(1.64\)</span>
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(0.00\)</span>
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
 <span class="math inline">\(0.92\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(1.09\)</span>
+<span class="math inline">\(1.00\)</span>
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(1.92\)</span>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(1.31\)</span>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(1.60\)</span>
 </p>]]></text>
 </answer>
 </question>
@@ -826,8 +826,8 @@ Qual é a atualização de máxima verossimilhança para o peso <span class="mat
 </style>
 <p>
 <p>Considere uma mistura de duas distribuições de Poisson. Para as contagens
-<span class="math inline">\(\mathbf y=(2, 0, 1, 2, 5, 9)\)</span>, o passo E forneceu responsabilidades
-<span class="math inline">\(\boldsymbol\tau=(0.1, 0.1, 0.3, 0.1, 0.7, 0.1)\)</span> para o primeiro componente. Qual é a atualização de <span class="math inline">\(\lambda_1\)</span> no passo M?</p>
+<span class="math inline">\(\mathbf y=(6, 2, 1, 5, 6, 7)\)</span>, o passo E forneceu responsabilidades
+<span class="math inline">\(\boldsymbol\tau=(0.5, 0.7, 0.7, 0.7, 0.9, 0.1)\)</span> para o primeiro componente. Qual é a atualização de <span class="math inline">\(\lambda_1\)</span> no passo M?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
@@ -835,7 +835,7 @@ Qual é a atualização de máxima verossimilhança para o peso <span class="mat
 <p>Maximizar a log-verossimilhança completa esperada da Poisson produz a média ponderada
 <span class="math display">\[
 \lambda_1^{(t+1)}=\frac{\sum_i\tau_i y_i}{\sum_i\tau_i}
-=3.64.
+=4.08.
 \]</span></p>
 </p>]]></text>
 </generalfeedback>
@@ -846,27 +846,27 @@ Qual é a atualização de máxima verossimilhança para o peso <span class="mat
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.85\)</span>
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(3.17\)</span>
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(3.02\)</span>
+<span class="math inline">\(5.12\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(3.64\)</span>
+<span class="math inline">\(4.08\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(10.97\)</span>
+<span class="math inline">\(2.45\)</span>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(5.90\)</span>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(4.50\)</span>
 </p>]]></text>
 </answer>
 </question>
@@ -902,8 +902,8 @@ Qual é a atualização de máxima verossimilhança para o peso <span class="mat
 </style>
 <p>
 <p>Considere uma mistura de duas distribuições de Poisson. Para as contagens
-<span class="math inline">\(\mathbf y=(1, 6, 5, 7, 4, 8)\)</span>, o passo E forneceu responsabilidades
-<span class="math inline">\(\boldsymbol\tau=(0.3, 0.9, 0.1, 0.5, 0.9, 0.5)\)</span> para o primeiro componente. Qual é a atualização de <span class="math inline">\(\lambda_1\)</span> no passo M?</p>
+<span class="math inline">\(\mathbf y=(5, 4, 9, 2, 3, 8)\)</span>, o passo E forneceu responsabilidades
+<span class="math inline">\(\boldsymbol\tau=(0.9, 0.5, 0.1, 0.1, 0.5, 0.7)\)</span> para o primeiro componente. Qual é a atualização de <span class="math inline">\(\lambda_1\)</span> no passo M?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
@@ -911,7 +911,7 @@ Qual é a atualização de máxima verossimilhança para o peso <span class="mat
 <p>Maximizar a log-verossimilhança completa esperada da Poisson produz a média ponderada
 <span class="math display">\[
 \lambda_1^{(t+1)}=\frac{\sum_i\tau_i y_i}{\sum_i\tau_i}
-=5.41.
+=5.25.
 \]</span></p>
 </p>]]></text>
 </generalfeedback>
@@ -922,27 +922,27 @@ Qual é a atualização de máxima verossimilhança para o peso <span class="mat
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(4.89\)</span>
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
 <span class="math inline">\(5.17\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(6.17\)</span>
-</p>]]></text>
-</answer>
-<answer fraction="100" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(5.41\)</span>
+<span class="math inline">\(5.09\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(2.88\)</span>
+<span class="math inline">\(2.45\)</span>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(7.77\)</span>
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(5.25\)</span>
 </p>]]></text>
 </answer>
 </question>
@@ -984,7 +984,7 @@ Qual é a atualização de máxima verossimilhança para o peso <span class="mat
 }
 </style>
 <p>
-<p>Em um modelo com 3 classes latentes e amostra de tamanho 100, a justificativa usual da monotonicidade do EM usa a desigualdade de Jensen. Qual afirmação sobre o limite inferior variacional (ELBO) é correta?</p>
+<p>Em um modelo com 3 classes latentes e amostra de tamanho 200, a justificativa usual da monotonicidade do EM usa a desigualdade de Jensen. Qual afirmação sobre o limite inferior variacional (ELBO) é correta?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
@@ -1004,12 +1004,12 @@ Como a divergência KL é não negativa, a ELBO é um limite inferior. No passo 
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-A decomposição variacional só existe quando os dados latentes são normalmente distribuídos.
+A ELBO é sempre maior que a log-verossimilhança observada, pois Jensen inverte a desigualdade para o logaritmo.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-O termo de divergência de Kullback-Leibler pode ser negativo, permitindo que a ELBO ultrapasse a log-verossimilhança.
+O passo E maximiza a ELBO escolhendo <span class="math inline">\(q(\mathbf Z)\)</span> igual à distribuição marginal de <span class="math inline">\(\mathbf Z\)</span>, sem condicionar em <span class="math inline">\(\mathbf X\)</span>.
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
@@ -1019,12 +1019,12 @@ Para uma distribuição auxiliar <span class="math inline">\(q(\mathbf Z)\)</spa
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-O passo E maximiza a ELBO escolhendo <span class="math inline">\(q(\mathbf Z)\)</span> igual à distribuição marginal de <span class="math inline">\(\mathbf Z\)</span>, sem condicionar em <span class="math inline">\(\mathbf X\)</span>.
+A decomposição variacional só existe quando os dados latentes são normalmente distribuídos.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-A ELBO é sempre maior que a log-verossimilhança observada, pois Jensen inverte a desigualdade para o logaritmo.
+O termo de divergência de Kullback-Leibler pode ser negativo, permitindo que a ELBO ultrapasse a log-verossimilhança.
 </p>]]></text>
 </answer>
 </question>
@@ -1059,7 +1059,7 @@ A ELBO é sempre maior que a log-verossimilhança observada, pois Jensen inverte
 }
 </style>
 <p>
-<p>Em um modelo com 4 classes latentes e amostra de tamanho 50, a justificativa usual da monotonicidade do EM usa a desigualdade de Jensen. Qual afirmação sobre o limite inferior variacional (ELBO) é correta?</p>
+<p>Em um modelo com 2 classes latentes e amostra de tamanho 100, a justificativa usual da monotonicidade do EM usa a desigualdade de Jensen. Qual afirmação sobre o limite inferior variacional (ELBO) é correta?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
@@ -1079,16 +1079,6 @@ Como a divergência KL é não negativa, a ELBO é um limite inferior. No passo 
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-O passo E maximiza a ELBO escolhendo <span class="math inline">\(q(\mathbf Z)\)</span> igual à distribuição marginal de <span class="math inline">\(\mathbf Z\)</span>, sem condicionar em <span class="math inline">\(\mathbf X\)</span>.
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-A ELBO é sempre maior que a log-verossimilhança observada, pois Jensen inverte a desigualdade para o logaritmo.
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
 O termo de divergência de Kullback-Leibler pode ser negativo, permitindo que a ELBO ultrapasse a log-verossimilhança.
 </p>]]></text>
 </answer>
@@ -1097,9 +1087,19 @@ O termo de divergência de Kullback-Leibler pode ser negativo, permitindo que a 
 A decomposição variacional só existe quando os dados latentes são normalmente distribuídos.
 </p>]]></text>
 </answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+O passo E maximiza a ELBO escolhendo <span class="math inline">\(q(\mathbf Z)\)</span> igual à distribuição marginal de <span class="math inline">\(\mathbf Z\)</span>, sem condicionar em <span class="math inline">\(\mathbf X\)</span>.
+</p>]]></text>
+</answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
 Para uma distribuição auxiliar <span class="math inline">\(q(\mathbf Z)\)</span>, a log-verossimilhança observada é a ELBO somada a <span class="math inline">\(KL\{q(\mathbf Z)\|p(\mathbf Z\mid\mathbf X,\boldsymbol\theta)\}\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+A ELBO é sempre maior que a log-verossimilhança observada, pois Jensen inverte a desigualdade para o logaritmo.
 </p>]]></text>
 </answer>
 </question>
@@ -1142,15 +1142,15 @@ Para uma distribuição auxiliar <span class="math inline">\(q(\mathbf Z)\)</spa
 </style>
 <p>
 <p>Um algoritmo EM usa o critério <span class="math inline">\(|\ell^{(t+1)}-\ell^{(t)}|&lt;\varepsilon\)</span>. Na iteração corrente,
-<span class="math inline">\(\ell^{(t)}=-135.000000\)</span>, <span class="math inline">\(\ell^{(t+1)}=-134.990000\)</span> e
-<span class="math inline">\(\varepsilon=1e-03\)</span>. Qual decisão segue exatamente esse critério?</p>
+<span class="math inline">\(\ell^{(t)}=-110.000000\)</span>, <span class="math inline">\(\ell^{(t+1)}=-109.997500\)</span> e
+<span class="math inline">\(\varepsilon=5e-04\)</span>. Qual decisão segue exatamente esse critério?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
 <p>O ganho é
 <span class="math display">\[
-|\ell^{(t+1)}-\ell^{(t)}|=1e-02.
+|\ell^{(t+1)}-\ell^{(t)}|=2.5e-03.
 \]</span>
 Ele é maior que a tolerância. Portanto, pelo critério declarado, deve-se continuar.</p>
 </p>]]></text>
@@ -1160,9 +1160,19 @@ Ele é maior que a tolerância. Portanto, pelo critério declarado, deve-se cont
 <shuffleanswers>false</shuffleanswers>
 <single>true</single>
 <answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Interromper: toda log-verossimilhança negativa indica convergência.
+</p>]]></text>
+</answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
 Continuar: o ganho absoluto de log-verossimilhança ainda excede a tolerância.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Interromper: basta que os parâmetros pertençam ao espaço paramétrico.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
@@ -1173,16 +1183,6 @@ Interromper: a log-verossimilhança aumentou, logo a convergência já foi ating
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
 Continuar: o EM só pode parar quando a log-verossimilhança for igual a zero.
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-Interromper: toda log-verossimilhança negativa indica convergência.
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-Interromper: basta que os parâmetros pertençam ao espaço paramétrico.
 </p>]]></text>
 </answer>
 </question>
@@ -1218,15 +1218,15 @@ Interromper: basta que os parâmetros pertençam ao espaço paramétrico.
 </style>
 <p>
 <p>Um algoritmo EM usa o critério <span class="math inline">\(|\ell^{(t+1)}-\ell^{(t)}|&lt;\varepsilon\)</span>. Na iteração corrente,
-<span class="math inline">\(\ell^{(t)}=-100.000000\)</span>, <span class="math inline">\(\ell^{(t+1)}=-99.999000\)</span> e
-<span class="math inline">\(\varepsilon=5e-04\)</span>. Qual decisão segue exatamente esse critério?</p>
+<span class="math inline">\(\ell^{(t)}=-115.000000\)</span>, <span class="math inline">\(\ell^{(t+1)}=-114.995000\)</span> e
+<span class="math inline">\(\varepsilon=1e-03\)</span>. Qual decisão segue exatamente esse critério?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
 <p>O ganho é
 <span class="math display">\[
-|\ell^{(t+1)}-\ell^{(t)}|=1e-03.
+|\ell^{(t+1)}-\ell^{(t)}|=5e-03.
 \]</span>
 Ele é maior que a tolerância. Portanto, pelo critério declarado, deve-se continuar.</p>
 </p>]]></text>
@@ -1236,16 +1236,6 @@ Ele é maior que a tolerância. Portanto, pelo critério declarado, deve-se cont
 <shuffleanswers>false</shuffleanswers>
 <single>true</single>
 <answernumbering>abc</answernumbering>
-<answer fraction="100" format="html">
-<text><![CDATA[<p>
-Continuar: o ganho absoluto de log-verossimilhança ainda excede a tolerância.
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-Interromper: basta que os parâmetros pertençam ao espaço paramétrico.
-</p>]]></text>
-</answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
 Continuar: o EM só pode parar quando a log-verossimilhança for igual a zero.
@@ -1256,9 +1246,19 @@ Continuar: o EM só pode parar quando a log-verossimilhança for igual a zero.
 Interromper: a log-verossimilhança aumentou, logo a convergência já foi atingida.
 </p>]]></text>
 </answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+Continuar: o ganho absoluto de log-verossimilhança ainda excede a tolerância.
+</p>]]></text>
+</answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
 Interromper: toda log-verossimilhança negativa indica convergência.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Interromper: basta que os parâmetros pertençam ao espaço paramétrico.
 </p>]]></text>
 </answer>
 </question>
@@ -1300,7 +1300,7 @@ Interromper: toda log-verossimilhança negativa indica convergência.
 }
 </style>
 <p>
-<p>Ao ajustar uma mistura com 4 componentes, o pesquisador executa o EM a partir de 5 inicializações distintas. Qual é a principal justificativa estatística para essa estratégia?</p>
+<p>Ao ajustar uma mistura com 3 componentes, o pesquisador executa o EM a partir de 10 inicializações distintas. Qual é a principal justificativa estatística para essa estratégia?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
@@ -1320,12 +1320,12 @@ O EM exige exatamente uma inicialização para cada observação da amostra.
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-A média aritmética dos parâmetros obtidos é sempre o estimador de máxima verossimilhança.
+Cada inicialização transforma automaticamente um máximo local no máximo global.
 </p>]]></text>
 </answer>
-<answer fraction="0" format="html">
+<answer fraction="100" format="html">
 <text><![CDATA[<p>
-Cada inicialização transforma automaticamente um máximo local no máximo global.
+A log-verossimilhança pode ter máximos locais; comparar as soluções reduz a dependência de uma única inicialização.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
@@ -1333,9 +1333,9 @@ Cada inicialização transforma automaticamente um máximo local no máximo glob
 Múltiplas inicializações tornam identificáveis todos os modelos de mistura, inclusive os mal especificados.
 </p>]]></text>
 </answer>
-<answer fraction="100" format="html">
+<answer fraction="0" format="html">
 <text><![CDATA[<p>
-A log-verossimilhança pode ter máximos locais; comparar as soluções reduz a dependência de uma única inicialização.
+A média aritmética dos parâmetros obtidos é sempre o estimador de máxima verossimilhança.
 </p>]]></text>
 </answer>
 </question>
@@ -1370,7 +1370,7 @@ A log-verossimilhança pode ter máximos locais; comparar as soluções reduz a 
 }
 </style>
 <p>
-<p>Ao ajustar uma mistura com 4 componentes, o pesquisador executa o EM a partir de 10 inicializações distintas. Qual é a principal justificativa estatística para essa estratégia?</p>
+<p>Ao ajustar uma mistura com 2 componentes, o pesquisador executa o EM a partir de 10 inicializações distintas. Qual é a principal justificativa estatística para essa estratégia?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
@@ -1388,6 +1388,16 @@ A log-verossimilhança pode ter máximos locais; comparar as soluções reduz a 
 O EM exige exatamente uma inicialização para cada observação da amostra.
 </p>]]></text>
 </answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+A log-verossimilhança pode ter máximos locais; comparar as soluções reduz a dependência de uma única inicialização.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Múltiplas inicializações tornam identificáveis todos os modelos de mistura, inclusive os mal especificados.
+</p>]]></text>
+</answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
 A média aritmética dos parâmetros obtidos é sempre o estimador de máxima verossimilhança.
@@ -1396,16 +1406,6 @@ A média aritmética dos parâmetros obtidos é sempre o estimador de máxima ve
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
 Cada inicialização transforma automaticamente um máximo local no máximo global.
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-Múltiplas inicializações tornam identificáveis todos os modelos de mistura, inclusive os mal especificados.
-</p>]]></text>
-</answer>
-<answer fraction="100" format="html">
-<text><![CDATA[<p>
-A log-verossimilhança pode ter máximos locais; comparar as soluções reduz a dependência de uma única inicialização.
 </p>]]></text>
 </answer>
 </question>
@@ -1447,7 +1447,7 @@ A log-verossimilhança pode ter máximos locais; comparar as soluções reduz a 
 }
 </style>
 <p>
-<p>Em uma amostra Bernoulli, 13 respostas foram observadas, com 10 sucessos, e 5 respostas estão ausentes de modo ignorável. Na iteração corrente do EM, <span class="math inline">\(p^{(t)}=0.55\)</span>. Tratando cada resposta ausente como dado latente, qual é <span class="math inline">\(p^{(t+1)}\)</span>?</p>
+<p>Em uma amostra Bernoulli, 17 respostas foram observadas, com 12 sucessos, e 3 respostas estão ausentes de modo ignorável. Na iteração corrente do EM, <span class="math inline">\(p^{(t)}=0.8\)</span>. Tratando cada resposta ausente como dado latente, qual é <span class="math inline">\(p^{(t+1)}\)</span>?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
@@ -1455,8 +1455,8 @@ A log-verossimilhança pode ter máximos locais; comparar as soluções reduz a 
 <p>No passo E, o número esperado de sucessos entre as respostas ausentes é <span class="math inline">\(m p^{(t)}\)</span>. O passo M divide o número esperado total de sucessos pelo tamanho total:
 <span class="math display">\[
 p^{(t+1)}=\frac{y+m p^{(t)}}{n_{\mathrm{obs}}+m}
-=\frac{10+5\times 0.55}{18}
-=0.708.
+=\frac{12+3\times 0.8}{20}
+=0.720.
 \]</span></p>
 </p>]]></text>
 </generalfeedback>
@@ -1467,27 +1467,27 @@ p^{(t+1)}=\frac{y+m p^{(t)}}{n_{\mathrm{obs}}+m}
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.556\)</span>
+<span class="math inline">\(0.640\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.681\)</span>
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(0.586\)</span>
+<span class="math inline">\(0.630\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.708\)</span>
+<span class="math inline">\(0.720\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.769\)</span>
+<span class="math inline">\(0.600\)</span>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(0.706\)</span>
 </p>]]></text>
 </answer>
 </question>
@@ -1522,7 +1522,7 @@ p^{(t+1)}=\frac{y+m p^{(t)}}{n_{\mathrm{obs}}+m}
 }
 </style>
 <p>
-<p>Em uma amostra Bernoulli, 25 respostas foram observadas, com 15 sucessos, e 4 respostas estão ausentes de modo ignorável. Na iteração corrente do EM, <span class="math inline">\(p^{(t)}=0.7\)</span>. Tratando cada resposta ausente como dado latente, qual é <span class="math inline">\(p^{(t+1)}\)</span>?</p>
+<p>Em uma amostra Bernoulli, 20 respostas foram observadas, com 14 sucessos, e 5 respostas estão ausentes de modo ignorável. Na iteração corrente do EM, <span class="math inline">\(p^{(t)}=0.8\)</span>. Tratando cada resposta ausente como dado latente, qual é <span class="math inline">\(p^{(t+1)}\)</span>?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
@@ -1530,8 +1530,8 @@ p^{(t+1)}=\frac{y+m p^{(t)}}{n_{\mathrm{obs}}+m}
 <p>No passo E, o número esperado de sucessos entre as respostas ausentes é <span class="math inline">\(m p^{(t)}\)</span>. O passo M divide o número esperado total de sucessos pelo tamanho total:
 <span class="math display">\[
 p^{(t+1)}=\frac{y+m p^{(t)}}{n_{\mathrm{obs}}+m}
-=\frac{15+4\times 0.7}{29}
-=0.614.
+=\frac{14+5\times 0.8}{25}
+=0.720.
 \]</span></p>
 </p>]]></text>
 </generalfeedback>
@@ -1540,29 +1540,29 @@ p^{(t+1)}=\frac{y+m p^{(t)}}{n_{\mathrm{obs}}+m}
 <shuffleanswers>false</shuffleanswers>
 <single>true</single>
 <answernumbering>abc</answernumbering>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(0.559\)</span>
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(0.541\)</span>
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(0.517\)</span>
-</p>]]></text>
-</answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.614\)</span>
+<span class="math inline">\(0.720\)</span>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(0.592\)</span>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(0.700\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
 <span class="math inline">\(0.600\)</span>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(0.560\)</span>
 </p>]]></text>
 </answer>
 </question>
@@ -1604,7 +1604,7 @@ p^{(t+1)}=\frac{y+m p^{(t)}}{n_{\mathrm{obs}}+m}
 }
 </style>
 <p>
-<p>Uma amostra provém de <span class="math inline">\(N(\theta,1)\)</span>. Foram observados 13 valores, com média -0.4, e outros 7 valores sofreram censura à direita em <span class="math inline">\(a=0.9\)</span> (para cada um deles, sabe-se apenas que <span class="math inline">\(Z&gt;a\)</span>). Se <span class="math inline">\(\theta^{(t)}=0.0\)</span>, qual é a atualização <span class="math inline">\(\theta^{(t+1)}\)</span> do algoritmo EM?</p>
+<p>Uma amostra provém de <span class="math inline">\(N(\theta,1)\)</span>. Foram observados 17 valores, com média -0.4, e outros 6 valores sofreram censura à direita em <span class="math inline">\(a=1.7\)</span> (para cada um deles, sabe-se apenas que <span class="math inline">\(Z&gt;a\)</span>). Se <span class="math inline">\(\theta^{(t)}=0.6\)</span>, qual é a atualização <span class="math inline">\(\theta^{(t+1)}\)</span> do algoritmo EM?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
@@ -1617,9 +1617,9 @@ E(Z\mid Z&gt;a,\theta^{(t)})=\theta^{(t)}+
 O passo M calcula a média dos valores observados e dos valores censurados imputados por suas esperanças condicionais. Assim,
 <span class="math display">\[
 \theta^{(t+1)}=
-\frac{13(-0.4)+7\left[0.0+
-\dfrac{\phi(0.9)}{1-\Phi(0.9)}\right]}
-{20}=0.246.
+\frac{17(-0.4)+6\left[0.6+
+\dfrac{\phi(1.1)}{1-\Phi(1.1)}\right]}
+{23}=0.280.
 \]</span></p>
 </p>]]></text>
 </generalfeedback>
@@ -1628,29 +1628,29 @@ O passo M calcula a média dos valores observados e dos valores censurados imput
 <shuffleanswers>false</shuffleanswers>
 <single>true</single>
 <answernumbering>abc</answernumbering>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(1.046\)</span>
-</p>]]></text>
-</answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.246\)</span>
+<span class="math inline">\(0.280\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(-0.260\)</span>
+<span class="math inline">\(0.148\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(-0.766\)</span>
+<span class="math inline">\(-0.558\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.055\)</span>
+<span class="math inline">\(1.206\)</span>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(-0.139\)</span>
 </p>]]></text>
 </answer>
 </question>
@@ -1685,7 +1685,7 @@ O passo M calcula a média dos valores observados e dos valores censurados imput
 }
 </style>
 <p>
-<p>Uma amostra provém de <span class="math inline">\(N(\theta,1)\)</span>. Foram observados 17 valores, com média -0.3, e outros 5 valores sofreram censura à direita em <span class="math inline">\(a=1.3\)</span> (para cada um deles, sabe-se apenas que <span class="math inline">\(Z&gt;a\)</span>). Se <span class="math inline">\(\theta^{(t)}=0.5\)</span>, qual é a atualização <span class="math inline">\(\theta^{(t+1)}\)</span> do algoritmo EM?</p>
+<p>Uma amostra provém de <span class="math inline">\(N(\theta,1)\)</span>. Foram observados 13 valores, com média 0.0, e outros 3 valores sofreram censura à direita em <span class="math inline">\(a=1.5\)</span> (para cada um deles, sabe-se apenas que <span class="math inline">\(Z&gt;a\)</span>). Se <span class="math inline">\(\theta^{(t)}=-0.2\)</span>, qual é a atualização <span class="math inline">\(\theta^{(t+1)}\)</span> do algoritmo EM?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
@@ -1698,9 +1698,9 @@ E(Z\mid Z&gt;a,\theta^{(t)})=\theta^{(t)}+
 O passo M calcula a média dos valores observados e dos valores censurados imputados por suas esperanças condicionais. Assim,
 <span class="math display">\[
 \theta^{(t+1)}=
-\frac{17(-0.3)+5\left[0.5+
-\dfrac{\phi(0.8)}{1-\Phi(0.8)}\right]}
-{22}=0.193.
+\frac{13(0.0)+3\left[-0.2+
+\dfrac{\phi(1.7)}{1-\Phi(1.7)}\right]}
+{16}=0.358.
 \]</span></p>
 </p>]]></text>
 </generalfeedback>
@@ -1711,27 +1711,27 @@ O passo M calcula a média dos valores observados e dos valores censurados imput
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(-0.429\)</span>
+<span class="math inline">\(-0.433\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(1.067\)</span>
+<span class="math inline">\(0.281\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(-0.118\)</span>
+<span class="math inline">\(2.110\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.193\)</span>
+<span class="math inline">\(0.358\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.064\)</span>
+<span class="math inline">\(-0.038\)</span>
 </p>]]></text>
 </answer>
 </question>
@@ -1773,7 +1773,7 @@ O passo M calcula a média dos valores observados e dos valores censurados imput
 }
 </style>
 <p>
-<p>Considere dados de uma distribuição <span class="math inline">\(N(\theta,1)\)</span>. Há 19 observações completas, cuja média é 0.7, e 4 observações censuradas à esquerda em <span class="math inline">\(a=-0.6\)</span>, isto é, sabe-se que <span class="math inline">\(Z&lt;a\)</span>. Partindo de <span class="math inline">\(\theta^{(t)}=0.7\)</span>, determine <span class="math inline">\(\theta^{(t+1)}\)</span>.</p>
+<p>Considere dados de uma distribuição <span class="math inline">\(N(\theta,1)\)</span>. Há 19 observações completas, cuja média é -0.1, e 3 observações censuradas à esquerda em <span class="math inline">\(a=0.2\)</span>, isto é, sabe-se que <span class="math inline">\(Z&lt;a\)</span>. Partindo de <span class="math inline">\(\theta^{(t)}=0.1\)</span>, determine <span class="math inline">\(\theta^{(t+1)}\)</span>.</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
@@ -1788,7 +1788,7 @@ Logo,
 \theta^{(t+1)}=
 \frac{n_{\mathrm{obs}}\bar x+n_{\mathrm{cens}}
 E(Z\mid Z&lt;a,\theta^{(t)})}{n_{\mathrm{obs}}+n_{\mathrm{cens}}}
-=0.392.
+=-0.173.
 \]</span>
 O sinal negativo na razão de Mills é essencial: os valores censurados estão abaixo de <span class="math inline">\(a\)</span>.</p>
 </p>]]></text>
@@ -1798,29 +1798,29 @@ O sinal negativo na razão de Mills é essencial: os valores censurados estão a
 <shuffleanswers>false</shuffleanswers>
 <single>true</single>
 <answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(0.028\)</span>
+</p>]]></text>
+</answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.392\)</span>
+<span class="math inline">\(-0.173\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(-1.070\)</span>
+<span class="math inline">\(-0.059\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.700\)</span>
+<span class="math inline">\(-0.073\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.474\)</span>
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(1.008\)</span>
+<span class="math inline">\(-0.835\)</span>
 </p>]]></text>
 </answer>
 </question>
@@ -1855,7 +1855,7 @@ O sinal negativo na razão de Mills é essencial: os valores censurados estão a
 }
 </style>
 <p>
-<p>Considere dados de uma distribuição <span class="math inline">\(N(\theta,1)\)</span>. Há 19 observações completas, cuja média é 0.1, e 7 observações censuradas à esquerda em <span class="math inline">\(a=0.1\)</span>, isto é, sabe-se que <span class="math inline">\(Z&lt;a\)</span>. Partindo de <span class="math inline">\(\theta^{(t)}=0.2\)</span>, determine <span class="math inline">\(\theta^{(t+1)}\)</span>.</p>
+<p>Considere dados de uma distribuição <span class="math inline">\(N(\theta,1)\)</span>. Há 10 observações completas, cuja média é 0.0, e 3 observações censuradas à esquerda em <span class="math inline">\(a=-0.9\)</span>, isto é, sabe-se que <span class="math inline">\(Z&lt;a\)</span>. Partindo de <span class="math inline">\(\theta^{(t)}=0.8\)</span>, determine <span class="math inline">\(\theta^{(t+1)}\)</span>.</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
@@ -1870,7 +1870,7 @@ Logo,
 \theta^{(t+1)}=
 \frac{n_{\mathrm{obs}}\bar x+n_{\mathrm{cens}}
 E(Z\mid Z&lt;a,\theta^{(t)})}{n_{\mathrm{obs}}+n_{\mathrm{cens}}}
-=-0.105.
+=-0.302.
 \]</span>
 O sinal negativo na razão de Mills é essencial: os valores censurados estão abaixo de <span class="math inline">\(a\)</span>.</p>
 </p>]]></text>
@@ -1882,27 +1882,27 @@ O sinal negativo na razão de Mills é essencial: os valores censurados estão a
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(-0.763\)</span>
+<span class="math inline">\(0.185\)</span>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(0.672\)</span>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(-0.208\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(-0.105\)</span>
+<span class="math inline">\(-0.302\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.100\)</span>
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(0.359\)</span>
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(0.127\)</span>
+<span class="math inline">\(-2.110\)</span>
 </p>]]></text>
 </answer>
 </question>
@@ -1944,7 +1944,7 @@ O sinal negativo na razão de Mills é essencial: os valores censurados estão a
 }
 </style>
 <p>
-<p>Sejam <span class="math inline">\(X_1,\ldots,X_{15}\sim N(\theta,1)\)</span> observações completas. Além delas, 5 unidades foram censuradas à direita no ponto <span class="math inline">\(a=0.9\)</span>, de modo que apenas se sabe que cada valor censurado excede <span class="math inline">\(a\)</span>. Desprezando fatores que não dependem de <span class="math inline">\(\theta\)</span>, qual é a verossimilhança dos dados observados?</p>
+<p>Sejam <span class="math inline">\(X_1,\ldots,X_{15}\sim N(\theta,1)\)</span> observações completas. Além delas, 3 unidades foram censuradas à direita no ponto <span class="math inline">\(a=0.6\)</span>, de modo que apenas se sabe que cada valor censurado excede <span class="math inline">\(a\)</span>. Desprezando fatores que não dependem de <span class="math inline">\(\theta\)</span>, qual é a verossimilhança dos dados observados?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
@@ -1963,29 +1963,29 @@ L(\theta)=\left[1-\Phi(a-\theta)\right]^{n_{\mathrm{cens}}}
 <shuffleanswers>false</shuffleanswers>
 <single>true</single>
 <answernumbering>abc</answernumbering>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(\left[1-\Phi(a)\right]^{5}\displaystyle\prod_{i=1}^{15}\phi(X_i)\)</span>.
-</p>]]></text>
-</answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(\left[1-\Phi(a-\theta)\right]^{5}\displaystyle\prod_{i=1}^{15}\phi(X_i-\theta)\)</span>.
+<span class="math inline">\(\left[1-\Phi(a-\theta)\right]^{3}\displaystyle\prod_{i=1}^{15}\phi(X_i-\theta)\)</span>.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(\left[\Phi(a-\theta)\right]^{5}\displaystyle\prod_{i=1}^{15}\phi(X_i-\theta)\)</span>.
+<span class="math inline">\(\left[1-\Phi(a)\right]^{3}\displaystyle\prod_{i=1}^{15}\phi(X_i)\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(\left[\phi(a-\theta)\right]^{3}\displaystyle\prod_{i=1}^{15}\Phi(X_i-\theta)\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(\left[\Phi(a-\theta)\right]^{3}\displaystyle\prod_{i=1}^{15}\phi(X_i-\theta)\)</span>.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
 <span class="math inline">\(\displaystyle\prod_{i=1}^{15}\phi(X_i-\theta)\)</span>, pois observações censuradas não contribuem para a verossimilhança.
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(\left[\phi(a-\theta)\right]^{5}\displaystyle\prod_{i=1}^{15}\Phi(X_i-\theta)\)</span>.
 </p>]]></text>
 </answer>
 </question>
@@ -2020,7 +2020,7 @@ L(\theta)=\left[1-\Phi(a-\theta)\right]^{n_{\mathrm{cens}}}
 }
 </style>
 <p>
-<p>Sejam <span class="math inline">\(X_1,\ldots,X_{9}\sim N(\theta,1)\)</span> observações completas. Além delas, 4 unidades foram censuradas à direita no ponto <span class="math inline">\(a=1.4\)</span>, de modo que apenas se sabe que cada valor censurado excede <span class="math inline">\(a\)</span>. Desprezando fatores que não dependem de <span class="math inline">\(\theta\)</span>, qual é a verossimilhança dos dados observados?</p>
+<p>Sejam <span class="math inline">\(X_1,\ldots,X_{15}\sim N(\theta,1)\)</span> observações completas. Além delas, 4 unidades foram censuradas à direita no ponto <span class="math inline">\(a=1.2\)</span>, de modo que apenas se sabe que cada valor censurado excede <span class="math inline">\(a\)</span>. Desprezando fatores que não dependem de <span class="math inline">\(\theta\)</span>, qual é a verossimilhança dos dados observados?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
@@ -2041,27 +2041,27 @@ L(\theta)=\left[1-\Phi(a-\theta)\right]^{n_{\mathrm{cens}}}
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(\left[\phi(a-\theta)\right]^{4}\displaystyle\prod_{i=1}^{9}\Phi(X_i-\theta)\)</span>.
+<span class="math inline">\(\left[1-\Phi(a)\right]^{4}\displaystyle\prod_{i=1}^{15}\phi(X_i)\)</span>.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(\left[\Phi(a-\theta)\right]^{4}\displaystyle\prod_{i=1}^{9}\phi(X_i-\theta)\)</span>.
+<span class="math inline">\(\left[\phi(a-\theta)\right]^{4}\displaystyle\prod_{i=1}^{15}\Phi(X_i-\theta)\)</span>.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(\displaystyle\prod_{i=1}^{9}\phi(X_i-\theta)\)</span>, pois observações censuradas não contribuem para a verossimilhança.
+<span class="math inline">\(\displaystyle\prod_{i=1}^{15}\phi(X_i-\theta)\)</span>, pois observações censuradas não contribuem para a verossimilhança.
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(\left[1-\Phi(a-\theta)\right]^{4}\displaystyle\prod_{i=1}^{9}\phi(X_i-\theta)\)</span>.
+<span class="math inline">\(\left[1-\Phi(a-\theta)\right]^{4}\displaystyle\prod_{i=1}^{15}\phi(X_i-\theta)\)</span>.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(\left[1-\Phi(a)\right]^{4}\displaystyle\prod_{i=1}^{9}\phi(X_i)\)</span>.
+<span class="math inline">\(\left[\Phi(a-\theta)\right]^{4}\displaystyle\prod_{i=1}^{15}\phi(X_i-\theta)\)</span>.
 </p>]]></text>
 </answer>
 </question>
@@ -2103,7 +2103,7 @@ L(\theta)=\left[1-\Phi(a-\theta)\right]^{n_{\mathrm{cens}}}
 }
 </style>
 <p>
-<p>No ajuste EM de uma mistura de duas Normais, os dados são <span class="math inline">\(\mathbf{x}=(-1.0, 3.5, 1.5, 0.5, -0.5, 2.5, 2.0)\)</span> e as responsabilidades correntes pelo componente 2 são <span class="math inline">\(\boldsymbol\gamma=(0.90, 0.30, 0.40, 0.35, 0.50, 0.15, 0.25)\)</span>. Admitindo variância própria em cada componente, qual é a atualização de <span class="math inline">\((\sigma_2^2)^{(t+1)}\)</span>?</p>
+<p>No ajuste EM de uma mistura de duas Normais, os dados são <span class="math inline">\(\mathbf{x}=(1.5, 4.5, 2.5, 1.0, 3.0)\)</span> e as responsabilidades correntes pelo componente 2 são <span class="math inline">\(\boldsymbol\gamma=(0.70, 0.20, 0.90, 0.30, 0.80)\)</span>. Admitindo variância própria em cada componente, qual é a atualização de <span class="math inline">\((\sigma_2^2)^{(t+1)}\)</span>?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
@@ -2111,13 +2111,13 @@ L(\theta)=\left[1-\Phi(a-\theta)\right]^{n_{\mathrm{cens}}}
 <p>Primeiro atualiza-se a média do componente 2:
 <span class="math display">\[
 (\mu_2)^{(t+1)}=\frac{\sum_i\gamma_i x_i}{\sum_i\gamma_i}
-=0.544.
+=2.379.
 \]</span>
 Em seguida, a maximização da verossimilhança completa esperada fornece
 <span class="math display">\[
 (\sigma_2^2)^{(t+1)}=
 \frac{\sum_i\gamma_i[x_i-(\mu_2)^{(t+1)}]^2}{\sum_i\gamma_i}
-=2.380.
+=0.804.
 \]</span>
 O denominador é o tamanho efetivo <span class="math inline">\(\sum_i\gamma_i\)</span>, e não uma correção de não viesamento.</p>
 </p>]]></text>
@@ -2129,27 +2129,27 @@ O denominador é o tamanho efetivo <span class="math inline">\(\sum_i\gamma_i\)<
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(2.655\)</span>
+<span class="math inline">\(1.228\)</span>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(1.875\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(2.380\)</span>
+<span class="math inline">\(0.804\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(3.666\)</span>
+<span class="math inline">\(0.897\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(2.829\)</span>
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(1.543\)</span>
+<span class="math inline">\(0.819\)</span>
 </p>]]></text>
 </answer>
 </question>
@@ -2184,7 +2184,7 @@ O denominador é o tamanho efetivo <span class="math inline">\(\sum_i\gamma_i\)<
 }
 </style>
 <p>
-<p>No ajuste EM de uma mistura de duas Normais, os dados são <span class="math inline">\(\mathbf{x}=(3.5, 0.5, -1.5, 4.0, -1.0)\)</span> e as responsabilidades correntes pelo componente 2 são <span class="math inline">\(\boldsymbol\gamma=(0.35, 0.75, 0.85, 0.25, 0.35)\)</span>. Admitindo variância própria em cada componente, qual é a atualização de <span class="math inline">\((\sigma_2^2)^{(t+1)}\)</span>?</p>
+<p>No ajuste EM de uma mistura de duas Normais, os dados são <span class="math inline">\(\mathbf{x}=(-1.5, 4.0, 1.0, -0.5, 3.5, 2.5)\)</span> e as responsabilidades correntes pelo componente 2 são <span class="math inline">\(\boldsymbol\gamma=(0.70, 0.35, 0.75, 0.45, 0.75, 0.60)\)</span>. Admitindo variância própria em cada componente, qual é a atualização de <span class="math inline">\((\sigma_2^2)^{(t+1)}\)</span>?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
@@ -2192,13 +2192,13 @@ O denominador é o tamanho efetivo <span class="math inline">\(\sum_i\gamma_i\)<
 <p>Primeiro atualiza-se a média do componente 2:
 <span class="math display">\[
 (\mu_2)^{(t+1)}=\frac{\sum_i\gamma_i x_i}{\sum_i\gamma_i}
-=0.382.
+=1.389.
 \]</span>
 Em seguida, a maximização da verossimilhança completa esperada fornece
 <span class="math display">\[
 (\sigma_2^2)^{(t+1)}=
 \frac{\sum_i\gamma_i[x_i-(\mu_2)^{(t+1)}]^2}{\sum_i\gamma_i}
-=4.065.
+=3.897.
 \]</span>
 O denominador é o tamanho efetivo <span class="math inline">\(\sum_i\gamma_i\)</span>, e não uma correção de não viesamento.</p>
 </p>]]></text>
@@ -2210,27 +2210,27 @@ O denominador é o tamanho efetivo <span class="math inline">\(\sum_i\gamma_i\)<
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(2.016\)</span>
+<span class="math inline">\(3.910\)</span>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(1.974\)</span>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(4.900\)</span>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(5.396\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(4.065\)</span>
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(6.425\)</span>
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(4.580\)</span>
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(6.687\)</span>
+<span class="math inline">\(3.897\)</span>
 </p>]]></text>
 </answer>
 </question>
@@ -2272,23 +2272,23 @@ O denominador é o tamanho efetivo <span class="math inline">\(\sum_i\gamma_i\)<
 }
 </style>
 <p>
-<p>Em um problema genético multinomial, as frequências observadas nas quatro categorias são <span class="math inline">\((37, 44, 25, 26)\)</span>. Uma formulação com dados aumentados conduz à recorrência EM
+<p>Em um problema genético multinomial, as frequências observadas nas quatro categorias são <span class="math inline">\((29, 17, 21, 29)\)</span>. Uma formulação com dados aumentados conduz à recorrência EM
 <span class="math display">\[
 \theta^{(t+1)}=
 \frac{x_1\theta^{(t)}+2x_4+x_4\theta^{(t)}}
 {n\theta^{(t)}+2(x_2+x_3+x_4)}.
 \]</span>
-Se <span class="math inline">\(\theta^{(t)}=0.55\)</span>, qual é o próximo valor?</p>
+Se <span class="math inline">\(\theta^{(t)}=0.15\)</span>, qual é o próximo valor?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>Como <span class="math inline">\(n=132\)</span>, a substituição direta na recorrência dá
+<p>Como <span class="math inline">\(n=96\)</span>, a substituição direta na recorrência dá
 <span class="math display">\[
 \theta^{(t+1)}=
-\frac{37(0.55)+2(26)+26(0.55)}
-{132(0.55)+2(44+25+26)}
-=0.330.
+\frac{29(0.15)+2(29)+29(0.15)}
+{96(0.15)+2(17+21+29)}
+=0.449.
 \]</span></p>
 </p>]]></text>
 </generalfeedback>
@@ -2299,27 +2299,27 @@ Se <span class="math inline">\(\theta^{(t)}=0.55\)</span>, qual é o próximo va
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.275\)</span>
+<span class="math inline">\(0.347\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.351\)</span>
+<span class="math inline">\(0.383\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.276\)</span>
+<span class="math inline">\(0.226\)</span>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(0.378\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.330\)</span>
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(0.373\)</span>
+<span class="math inline">\(0.449\)</span>
 </p>]]></text>
 </answer>
 </question>
@@ -2354,23 +2354,23 @@ Se <span class="math inline">\(\theta^{(t)}=0.55\)</span>, qual é o próximo va
 }
 </style>
 <p>
-<p>Em um problema genético multinomial, as frequências observadas nas quatro categorias são <span class="math inline">\((30, 17, 12, 21)\)</span>. Uma formulação com dados aumentados conduz à recorrência EM
+<p>Em um problema genético multinomial, as frequências observadas nas quatro categorias são <span class="math inline">\((35, 30, 15, 30)\)</span>. Uma formulação com dados aumentados conduz à recorrência EM
 <span class="math display">\[
 \theta^{(t+1)}=
 \frac{x_1\theta^{(t)}+2x_4+x_4\theta^{(t)}}
 {n\theta^{(t)}+2(x_2+x_3+x_4)}.
 \]</span>
-Se <span class="math inline">\(\theta^{(t)}=0.75\)</span>, qual é o próximo valor?</p>
+Se <span class="math inline">\(\theta^{(t)}=0.85\)</span>, qual é o próximo valor?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>Como <span class="math inline">\(n=80\)</span>, a substituição direta na recorrência dá
+<p>Como <span class="math inline">\(n=110\)</span>, a substituição direta na recorrência dá
 <span class="math display">\[
 \theta^{(t+1)}=
-\frac{30(0.75)+2(21)+21(0.75)}
-{80(0.75)+2(17+12+21)}
-=0.502.
+\frac{35(0.85)+2(30)+30(0.85)}
+{110(0.85)+2(30+15+30)}
+=0.473.
 \]</span></p>
 </p>]]></text>
 </generalfeedback>
@@ -2381,27 +2381,27 @@ Se <span class="math inline">\(\theta^{(t)}=0.75\)</span>, qual é o próximo va
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.400\)</span>
+<span class="math inline">\(0.543\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.506\)</span>
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(0.544\)</span>
+<span class="math inline">\(0.561\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.502\)</span>
+<span class="math inline">\(0.473\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.412\)</span>
+<span class="math inline">\(0.365\)</span>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(0.392\)</span>
 </p>]]></text>
 </answer>
 </question>
@@ -2443,12 +2443,12 @@ Se <span class="math inline">\(\theta^{(t)}=0.75\)</span>, qual é o próximo va
 }
 </style>
 <p>
-<p>Para uma amostra de <span class="math inline">\(N(\theta,1)\)</span>, 12 valores foram observados e têm média <span class="math inline">\(\bar x=-0.4\)</span>; outros 5 valores estão totalmente ausentes. A recorrência EM é
+<p>Para uma amostra de <span class="math inline">\(N(\theta,1)\)</span>, 9 valores foram observados e têm média <span class="math inline">\(\bar x=-0.6\)</span>; outros 8 valores estão totalmente ausentes. A recorrência EM é
 <span class="math display">\[
 \theta^{(t+1)}=\frac{n_{\rm obs}\bar x+n_{\rm mis}\theta^{(t)}}
 {n_{\rm obs}+n_{\rm mis}}.
 \]</span>
-Partindo de <span class="math inline">\(\theta^{(0)}=0.6\)</span>, qual é <span class="math inline">\(\theta^{(5)}\)</span>?</p>
+Partindo de <span class="math inline">\(\theta^{(0)}=1.6\)</span>, qual é <span class="math inline">\(\theta^{(5)}\)</span>?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
@@ -2457,12 +2457,12 @@ Partindo de <span class="math inline">\(\theta^{(0)}=0.6\)</span>, qual é <span
 <span class="math display">\[
 \theta^{(t+1)}-\bar x=\rho(\theta^{(t)}-\bar x),
 \qquad \rho=\frac{n_{\rm mis}}{n_{\rm obs}+n_{\rm mis}}
-=0.294.
+=0.471.
 \]</span>
 Portanto,
 <span class="math display">\[
 \theta^{(5)}=\bar x+\rho^{5}(\theta^{(0)}-\bar x)
-=-0.398.
+=-0.549.
 \]</span>
 A sequência converge geometricamente para a média dos casos observados.</p>
 </p>]]></text>
@@ -2472,29 +2472,29 @@ A sequência converge geometricamente para a média dos casos observados.</p>
 <shuffleanswers>false</shuffleanswers>
 <single>true</single>
 <answernumbering>abc</answernumbering>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(-0.106\)</span>
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(-0.225\)</span>
-</p>]]></text>
-</answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(-0.398\)</span>
+<span class="math inline">\(-0.549\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.001\)</span>
+<span class="math inline">\(-0.600\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(-0.400\)</span>
+<span class="math inline">\(0.037\)</span>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(0.435\)</span>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(-0.509\)</span>
 </p>]]></text>
 </answer>
 </question>
@@ -2529,12 +2529,12 @@ A sequência converge geometricamente para a média dos casos observados.</p>
 }
 </style>
 <p>
-<p>Para uma amostra de <span class="math inline">\(N(\theta,1)\)</span>, 14 valores foram observados e têm média <span class="math inline">\(\bar x=-0.8\)</span>; outros 7 valores estão totalmente ausentes. A recorrência EM é
+<p>Para uma amostra de <span class="math inline">\(N(\theta,1)\)</span>, 11 valores foram observados e têm média <span class="math inline">\(\bar x=0.8\)</span>; outros 6 valores estão totalmente ausentes. A recorrência EM é
 <span class="math display">\[
 \theta^{(t+1)}=\frac{n_{\rm obs}\bar x+n_{\rm mis}\theta^{(t)}}
 {n_{\rm obs}+n_{\rm mis}}.
 \]</span>
-Partindo de <span class="math inline">\(\theta^{(0)}=1.6\)</span>, qual é <span class="math inline">\(\theta^{(3)}\)</span>?</p>
+Partindo de <span class="math inline">\(\theta^{(0)}=1.8\)</span>, qual é <span class="math inline">\(\theta^{(2)}\)</span>?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
@@ -2543,12 +2543,12 @@ Partindo de <span class="math inline">\(\theta^{(0)}=1.6\)</span>, qual é <span
 <span class="math display">\[
 \theta^{(t+1)}-\bar x=\rho(\theta^{(t)}-\bar x),
 \qquad \rho=\frac{n_{\rm mis}}{n_{\rm obs}+n_{\rm mis}}
-=0.333.
+=0.353.
 \]</span>
 Portanto,
 <span class="math display">\[
-\theta^{(3)}=\bar x+\rho^{3}(\theta^{(0)}-\bar x)
-=-0.711.
+\theta^{(2)}=\bar x+\rho^{2}(\theta^{(0)}-\bar x)
+=0.925.
 \]</span>
 A sequência converge geometricamente para a média dos casos observados.</p>
 </p>]]></text>
@@ -2560,27 +2560,27 @@ A sequência converge geometricamente para a média dos casos observados.</p>
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(-0.800\)</span>
+<span class="math inline">\(0.800\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(-0.089\)</span>
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(0.059\)</span>
+<span class="math inline">\(1.153\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(-0.711\)</span>
+<span class="math inline">\(0.925\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.000\)</span>
+<span class="math inline">\(0.224\)</span>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(1.219\)</span>
 </p>]]></text>
 </answer>
 </question>
@@ -2622,12 +2622,12 @@ A sequência converge geometricamente para a média dos casos observados.</p>
 }
 </style>
 <p>
-<p>Uma observação <span class="math inline">\(Z\sim N(\theta,1)\)</span> foi censurada à esquerda em <span class="math inline">\(a=1.3\)</span>, portanto o evento observado é <span class="math inline">\(Z&lt;a\)</span>. No passo E, com <span class="math inline">\(\theta^{(t)}=0.5\)</span>, qual distribuição deve ser usada para calcular esperanças envolvendo <span class="math inline">\(Z\)</span>?</p>
+<p>Uma observação <span class="math inline">\(Z\sim N(\theta,1)\)</span> foi censurada à direita em <span class="math inline">\(a=1.5\)</span>, portanto o evento observado é <span class="math inline">\(Z&gt;a\)</span>. No passo E, com <span class="math inline">\(\theta^{(t)}=0.2\)</span>, qual distribuição deve ser usada para calcular esperanças envolvendo <span class="math inline">\(Z\)</span>?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>O passo E usa a distribuição condicional dos dados ausentes dados os dados observados e o parâmetro corrente. Aqui, ela tem densidade proporcional a <span class="math inline">\(\phi(z-\theta^{(t)})\)</span> no suporte <span class="math inline">\(z&lt;a\)</span>, com constante normalizadora <span class="math inline">\(\Phi(a-\theta^{(t)})\)</span>. Substituir todos os valores por <span class="math inline">\(a\)</span> ignora a incerteza criada pela censura.</p>
+<p>O passo E usa a distribuição condicional dos dados ausentes dados os dados observados e o parâmetro corrente. Aqui, ela tem densidade proporcional a <span class="math inline">\(\phi(z-\theta^{(t)})\)</span> no suporte <span class="math inline">\(z&gt;a\)</span>, com constante normalizadora <span class="math inline">\(1-\Phi(a-\theta^{(t)})\)</span>. Substituir todos os valores por <span class="math inline">\(a\)</span> ignora a incerteza criada pela censura.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -2637,17 +2637,7 @@ A sequência converge geometricamente para a média dos casos observados.</p>
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-A distribuição <span class="math inline">\(N(\theta,1)\)</span> não truncada, mantendo <span class="math inline">\(\theta\)</span> como argumento livre do passo M.
-</p>]]></text>
-</answer>
-<answer fraction="100" format="html">
-<text><![CDATA[<p>
-A distribuição <span class="math inline">\(N(\theta^{(t)},1)\)</span> condicionada ao evento de censura, com suporte <span class="math inline">\(z&lt;a\)</span>.
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-Uma distribuição uniforme no intervalo determinado pelo ponto de censura.
+Uma massa pontual em <span class="math inline">\(a\)</span>, pois todo valor censurado deve ser substituído pelo limite de censura.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
@@ -2657,7 +2647,17 @@ A distribuição <span class="math inline">\(N(0,1)\)</span> condicionada ao eve
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-Uma massa pontual em <span class="math inline">\(a\)</span>, pois todo valor censurado deve ser substituído pelo limite de censura.
+Uma distribuição uniforme no intervalo determinado pelo ponto de censura.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+A distribuição <span class="math inline">\(N(\theta,1)\)</span> não truncada, mantendo <span class="math inline">\(\theta\)</span> como argumento livre do passo M.
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+A distribuição <span class="math inline">\(N(\theta^{(t)},1)\)</span> condicionada ao evento de censura, com suporte <span class="math inline">\(z&gt;a\)</span>.
 </p>]]></text>
 </answer>
 </question>
@@ -2692,7 +2692,7 @@ Uma massa pontual em <span class="math inline">\(a\)</span>, pois todo valor cen
 }
 </style>
 <p>
-<p>Uma observação <span class="math inline">\(Z\sim N(\theta,1)\)</span> foi censurada à esquerda em <span class="math inline">\(a=1.4\)</span>, portanto o evento observado é <span class="math inline">\(Z&lt;a\)</span>. No passo E, com <span class="math inline">\(\theta^{(t)}=0.7\)</span>, qual distribuição deve ser usada para calcular esperanças envolvendo <span class="math inline">\(Z\)</span>?</p>
+<p>Uma observação <span class="math inline">\(Z\sim N(\theta,1)\)</span> foi censurada à esquerda em <span class="math inline">\(a=1.2\)</span>, portanto o evento observado é <span class="math inline">\(Z&lt;a\)</span>. No passo E, com <span class="math inline">\(\theta^{(t)}=0.9\)</span>, qual distribuição deve ser usada para calcular esperanças envolvendo <span class="math inline">\(Z\)</span>?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
@@ -2707,12 +2707,12 @@ Uma massa pontual em <span class="math inline">\(a\)</span>, pois todo valor cen
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-A distribuição <span class="math inline">\(N(0,1)\)</span> condicionada ao evento oposto ao observado.
+A distribuição <span class="math inline">\(N(\theta,1)\)</span> não truncada, mantendo <span class="math inline">\(\theta\)</span> como argumento livre do passo M.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-A distribuição <span class="math inline">\(N(\theta,1)\)</span> não truncada, mantendo <span class="math inline">\(\theta\)</span> como argumento livre do passo M.
+Uma distribuição uniforme no intervalo determinado pelo ponto de censura.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
@@ -2720,14 +2720,14 @@ A distribuição <span class="math inline">\(N(\theta,1)\)</span> não truncada,
 Uma massa pontual em <span class="math inline">\(a\)</span>, pois todo valor censurado deve ser substituído pelo limite de censura.
 </p>]]></text>
 </answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+A distribuição <span class="math inline">\(N(0,1)\)</span> condicionada ao evento oposto ao observado.
+</p>]]></text>
+</answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
 A distribuição <span class="math inline">\(N(\theta^{(t)},1)\)</span> condicionada ao evento de censura, com suporte <span class="math inline">\(z&lt;a\)</span>.
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-Uma distribuição uniforme no intervalo determinado pelo ponto de censura.
 </p>]]></text>
 </answer>
 </question>
@@ -2769,7 +2769,7 @@ Uma distribuição uniforme no intervalo determinado pelo ponto de censura.
 }
 </style>
 <p>
-<p>Ao ajustar por EM uma mistura de 4 distribuições da mesma família, duas execuções fornecem a mesma densidade ajustada e a mesma log-verossimilhança, mas trocam entre si os rótulos dos componentes baixo e alto. Qual é a interpretação correta?</p>
+<p>Ao ajustar por EM uma mistura de 3 distribuições da mesma família, duas execuções fornecem a mesma densidade ajustada e a mesma log-verossimilhança, mas trocam entre si os rótulos dos componentes A e B. Qual é a interpretação correta?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
@@ -2787,14 +2787,14 @@ Uma distribuição uniforme no intervalo determinado pelo ponto de censura.
 Os componentes devem ser somados, pois rótulos diferentes sempre indicam distribuições idênticas.
 </p>]]></text>
 </answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-Uma das execuções necessariamente está errada, pois o EM produz uma rotulagem única em qualquer mistura finita.
-</p>]]></text>
-</answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
 Trata-se de não identificabilidade por permutação dos rótulos; sem restrições adicionais, as duas parametrizações representam o mesmo modelo de mistura.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Uma das execuções necessariamente está errada, pois o EM produz uma rotulagem única em qualquer mistura finita.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
@@ -2839,7 +2839,7 @@ A troca de rótulos prova que a sequência de log-verossimilhanças diminuiu em 
 }
 </style>
 <p>
-<p>Ao ajustar por EM uma mistura de 2 distribuições da mesma família, duas execuções fornecem a mesma densidade ajustada e a mesma log-verossimilhança, mas trocam entre si os rótulos dos componentes baixo e alto. Qual é a interpretação correta?</p>
+<p>Ao ajustar por EM uma mistura de 4 distribuições da mesma família, duas execuções fornecem a mesma densidade ajustada e a mesma log-verossimilhança, mas trocam entre si os rótulos dos componentes 1 e 2. Qual é a interpretação correta?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
@@ -2852,6 +2852,16 @@ A troca de rótulos prova que a sequência de log-verossimilhanças diminuiu em 
 <shuffleanswers>false</shuffleanswers>
 <single>true</single>
 <answernumbering>abc</answernumbering>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+Trata-se de não identificabilidade por permutação dos rótulos; sem restrições adicionais, as duas parametrizações representam o mesmo modelo de mistura.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Os componentes devem ser somados, pois rótulos diferentes sempre indicam distribuições idênticas.
+</p>]]></text>
+</answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
 A troca de rótulos prova que a sequência de log-verossimilhanças diminuiu em alguma iteração.
@@ -2862,19 +2872,9 @@ A troca de rótulos prova que a sequência de log-verossimilhanças diminuiu em 
 O fenômeno desaparece apenas aumentando indefinidamente o tamanho da amostra, sem impor qualquer convenção de identificação.
 </p>]]></text>
 </answer>
-<answer fraction="100" format="html">
-<text><![CDATA[<p>
-Trata-se de não identificabilidade por permutação dos rótulos; sem restrições adicionais, as duas parametrizações representam o mesmo modelo de mistura.
-</p>]]></text>
-</answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
 Uma das execuções necessariamente está errada, pois o EM produz uma rotulagem única em qualquer mistura finita.
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-Os componentes devem ser somados, pois rótulos diferentes sempre indicam distribuições idênticas.
 </p>]]></text>
 </answer>
 </question>
@@ -2916,7 +2916,7 @@ Os componentes devem ser somados, pois rótulos diferentes sempre indicam distri
 }
 </style>
 <p>
-<p>Em uma mistura de 4 Normais com variâncias livres, ajustada a 96 observações, um componente concentra-se em uma única observação <span class="math inline">\(x^*=2.8\)</span> e sua variância tende a zero. O que pode ocorrer com a verossimilhança e como esse problema costuma ser tratado?</p>
+<p>Em uma mistura de 2 Normais com variâncias livres, ajustada a 111 observações, um componente concentra-se em uma única observação <span class="math inline">\(x^*=1.0\)</span> e sua variância tende a zero. O que pode ocorrer com a verossimilhança e como esse problema costuma ser tratado?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
@@ -2929,9 +2929,19 @@ Os componentes devem ser somados, pois rótulos diferentes sempre indicam distri
 <shuffleanswers>false</shuffleanswers>
 <single>true</single>
 <answernumbering>abc</answernumbering>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+A verossimilhança pode tornar-se ilimitada; restrições inferiores nas variâncias ou penalização ajudam a evitar a solução degenerada.
+</p>]]></text>
+</answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-A verossimilhança necessariamente converge a zero; deve-se aumentar o número de componentes.
+A solução é sempre um máximo global válido, pois maior verossimilhança garante boa separação dos componentes.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Apenas os pesos da mistura causam degenerescência; fixar todos os pesos iguais resolve o problema em qualquer amostra.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
@@ -2941,17 +2951,7 @@ A monotonicidade do EM impede variâncias próximas de zero, dispensando qualque
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-Apenas os pesos da mistura causam degenerescência; fixar todos os pesos iguais resolve o problema em qualquer amostra.
-</p>]]></text>
-</answer>
-<answer fraction="100" format="html">
-<text><![CDATA[<p>
-A verossimilhança pode tornar-se ilimitada; restrições inferiores nas variâncias ou penalização ajudam a evitar a solução degenerada.
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-A solução é sempre um máximo global válido, pois maior verossimilhança garante boa separação dos componentes.
+A verossimilhança necessariamente converge a zero; deve-se aumentar o número de componentes.
 </p>]]></text>
 </answer>
 </question>
@@ -2986,7 +2986,7 @@ A solução é sempre um máximo global válido, pois maior verossimilhança gar
 }
 </style>
 <p>
-<p>Em uma mistura de 4 Normais com variâncias livres, ajustada a 85 observações, um componente concentra-se em uma única observação <span class="math inline">\(x^*=-1.2\)</span> e sua variância tende a zero. O que pode ocorrer com a verossimilhança e como esse problema costuma ser tratado?</p>
+<p>Em uma mistura de 4 Normais com variâncias livres, ajustada a 37 observações, um componente concentra-se em uma única observação <span class="math inline">\(x^*=-2.0\)</span> e sua variância tende a zero. O que pode ocorrer com a verossimilhança e como esse problema costuma ser tratado?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
@@ -3006,22 +3006,22 @@ A solução é sempre um máximo global válido, pois maior verossimilhança gar
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-A verossimilhança necessariamente converge a zero; deve-se aumentar o número de componentes.
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
 Apenas os pesos da mistura causam degenerescência; fixar todos os pesos iguais resolve o problema em qualquer amostra.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-A monotonicidade do EM impede variâncias próximas de zero, dispensando qualquer restrição.
+A verossimilhança necessariamente converge a zero; deve-se aumentar o número de componentes.
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
 A verossimilhança pode tornar-se ilimitada; restrições inferiores nas variâncias ou penalização ajudam a evitar a solução degenerada.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+A monotonicidade do EM impede variâncias próximas de zero, dispensando qualquer restrição.
 </p>]]></text>
 </answer>
 </question>
@@ -3063,7 +3063,7 @@ A verossimilhança pode tornar-se ilimitada; restrições inferiores nas variân
 }
 </style>
 <p>
-<p>Considere uma mistura de duas densidades, <span class="math inline">\(f(x)=(1-\pi)f_1(x)+\pi f_2(x)\)</span>, observada em uma amostra de tamanho 32. Por que introduzir indicadores latentes de pertencimento ao componente transforma o problema em uma forma conveniente para o algoritmo EM?</p>
+<p>Considere uma mistura de duas densidades, <span class="math inline">\(f(x)=(1-\pi)f_1(x)+\pi f_2(x)\)</span>, observada em uma amostra de tamanho 22. Por que introduzir indicadores latentes de pertencimento ao componente transforma o problema em uma forma conveniente para o algoritmo EM?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
@@ -3083,12 +3083,12 @@ Essa expressão é linear nos indicadores. O passo E usa <span class="math inlin
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-Os indicadores são observados diretamente após a primeira iteração e deixam de possuir incerteza condicional.
+A introdução dos indicadores elimina os parâmetros desconhecidos e torna desnecessário o passo M.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-A introdução dos indicadores elimina os parâmetros desconhecidos e torna desnecessário o passo M.
+Os indicadores são observados diretamente após a primeira iteração e deixam de possuir incerteza condicional.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
@@ -3096,14 +3096,14 @@ A introdução dos indicadores elimina os parâmetros desconhecidos e torna desn
 A verossimilhança observada passa a ser o produto <span class="math inline">\(\prod_i[f_1(x_i)f_2(x_i)]\)</span>, independentemente de <span class="math inline">\(\pi\)</span>.
 </p>]]></text>
 </answer>
-<answer fraction="100" format="html">
-<text><![CDATA[<p>
-A log-verossimilhança completa torna-se uma soma ponderada de <span class="math inline">\(\log f_1(x_i)\)</span> e <span class="math inline">\(\log f_2(x_i)\)</span>; no passo E, os indicadores são substituídos por suas probabilidades condicionais.
-</p>]]></text>
-</answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
 O procedimento converte exatamente qualquer mistura em um único modelo Normal, sem perda de informação.
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+A log-verossimilhança completa torna-se uma soma ponderada de <span class="math inline">\(\log f_1(x_i)\)</span> e <span class="math inline">\(\log f_2(x_i)\)</span>; no passo E, os indicadores são substituídos por suas probabilidades condicionais.
 </p>]]></text>
 </answer>
 </question>
@@ -3138,7 +3138,7 @@ O procedimento converte exatamente qualquer mistura em um único modelo Normal, 
 }
 </style>
 <p>
-<p>Considere uma mistura de duas densidades, <span class="math inline">\(f(x)=(1-\pi)f_1(x)+\pi f_2(x)\)</span>, observada em uma amostra de tamanho 70. Por que introduzir indicadores latentes de pertencimento ao subpopulação transforma o problema em uma forma conveniente para o algoritmo EM?</p>
+<p>Considere uma mistura de duas densidades, <span class="math inline">\(f(x)=(1-\pi)f_1(x)+\pi f_2(x)\)</span>, observada em uma amostra de tamanho 33. Por que introduzir indicadores latentes de pertencimento ao subpopulação transforma o problema em uma forma conveniente para o algoritmo EM?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
@@ -3220,10 +3220,10 @@ A log-verossimilhança completa torna-se uma soma ponderada de <span class="math
 }
 </style>
 <p>
-<p>Na iteração 20 do ajuste de um modelo de classes latentes, um algoritmo generalizado EM (GEM) não maximiza exatamente <span class="math inline">\(Q(\theta\mid\theta^{(t)})\)</span>, mas encontra <span class="math inline">\(\theta^{(t+1)}\)</span> tal que
+<p>Na iteração 13 do ajuste de um modelo com dados censurados, um algoritmo generalizado EM (GEM) não maximiza exatamente <span class="math inline">\(Q(\theta\mid\theta^{(t)})\)</span>, mas encontra <span class="math inline">\(\theta^{(t+1)}\)</span> tal que
 <span class="math display">\[
 Q(\theta^{(t+1)}\mid\theta^{(t)})-
-Q(\theta^{(t)}\mid\theta^{(t)})=0.015&gt;0.
+Q(\theta^{(t)}\mid\theta^{(t)})=0.008&gt;0.
 \]</span>
 Qual conclusão é justificada pela definição de GEM?</p>
 </p>]]></text>
@@ -3246,12 +3246,12 @@ Pelo mesmo argumento de minorização usado no EM, isso implica
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-A log-verossimilhança observada aumenta exatamente 0.015, pois seu incremento coincide com o incremento de <span class="math inline">\(Q\)</span>.
+O algoritmo deixa de ser EM porque somente a maximização exata de <span class="math inline">\(Q\)</span> preserva a monotonicidade.
 </p>]]></text>
 </answer>
-<answer fraction="100" format="html">
+<answer fraction="0" format="html">
 <text><![CDATA[<p>
-A log-verossimilhança observada não diminui, embora o passo M não tenha encontrado necessariamente o máximo global de <span class="math inline">\(Q\)</span>.
+A log-verossimilhança observada aumenta exatamente 0.008, pois seu incremento coincide com o incremento de <span class="math inline">\(Q\)</span>.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
@@ -3261,12 +3261,12 @@ O aumento de <span class="math inline">\(Q\)</span> garante que todas as coorden
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-O algoritmo deixa de ser EM porque somente a maximização exata de <span class="math inline">\(Q\)</span> preserva a monotonicidade.
+O novo parâmetro é necessariamente o máximo global da verossimilhança observada.
 </p>]]></text>
 </answer>
-<answer fraction="0" format="html">
+<answer fraction="100" format="html">
 <text><![CDATA[<p>
-O novo parâmetro é necessariamente o máximo global da verossimilhança observada.
+A log-verossimilhança observada não diminui, embora o passo M não tenha encontrado necessariamente o máximo global de <span class="math inline">\(Q\)</span>.
 </p>]]></text>
 </answer>
 </question>
@@ -3301,10 +3301,10 @@ O novo parâmetro é necessariamente o máximo global da verossimilhança observ
 }
 </style>
 <p>
-<p>Na iteração 11 do ajuste de um modelo de classes latentes, um algoritmo generalizado EM (GEM) não maximiza exatamente <span class="math inline">\(Q(\theta\mid\theta^{(t)})\)</span>, mas encontra <span class="math inline">\(\theta^{(t+1)}\)</span> tal que
+<p>Na iteração 18 do ajuste de uma mistura finita, um algoritmo generalizado EM (GEM) não maximiza exatamente <span class="math inline">\(Q(\theta\mid\theta^{(t)})\)</span>, mas encontra <span class="math inline">\(\theta^{(t+1)}\)</span> tal que
 <span class="math display">\[
 Q(\theta^{(t+1)}\mid\theta^{(t)})-
-Q(\theta^{(t)}\mid\theta^{(t)})=0.002&gt;0.
+Q(\theta^{(t)}\mid\theta^{(t)})=0.008&gt;0.
 \]</span>
 Qual conclusão é justificada pela definição de GEM?</p>
 </p>]]></text>
@@ -3327,12 +3327,12 @@ Pelo mesmo argumento de minorização usado no EM, isso implica
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-O aumento de <span class="math inline">\(Q\)</span> garante que todas as coordenadas do parâmetro mudem na mesma direção.
+O novo parâmetro é necessariamente o máximo global da verossimilhança observada.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-O algoritmo deixa de ser EM porque somente a maximização exata de <span class="math inline">\(Q\)</span> preserva a monotonicidade.
+O aumento de <span class="math inline">\(Q\)</span> garante que todas as coordenadas do parâmetro mudem na mesma direção.
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
@@ -3342,12 +3342,12 @@ A log-verossimilhança observada não diminui, embora o passo M não tenha encon
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-O novo parâmetro é necessariamente o máximo global da verossimilhança observada.
+O algoritmo deixa de ser EM porque somente a maximização exata de <span class="math inline">\(Q\)</span> preserva a monotonicidade.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-A log-verossimilhança observada aumenta exatamente 0.002, pois seu incremento coincide com o incremento de <span class="math inline">\(Q\)</span>.
+A log-verossimilhança observada aumenta exatamente 0.008, pois seu incremento coincide com o incremento de <span class="math inline">\(Q\)</span>.
 </p>]]></text>
 </answer>
 </question>
@@ -3389,7 +3389,7 @@ A log-verossimilhança observada aumenta exatamente 0.002, pois seu incremento c
 }
 </style>
 <p>
-<p>Em um modelo com médias, variâncias e pesos, o passo M conjunto é difícil. Decide-se aplicar o algoritmo ECM, dividindo o parâmetro em 2. Qual descrição caracteriza corretamente uma iteração ECM?</p>
+<p>Em um modelo com probabilidades e parâmetros dos componentes, o passo M conjunto é difícil. Decide-se aplicar o algoritmo ECM, dividindo o parâmetro em 4. Qual descrição caracteriza corretamente uma iteração ECM?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
@@ -3404,27 +3404,27 @@ A log-verossimilhança observada aumenta exatamente 0.002, pois seu incremento c
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-Sorteia-se um bloco por iteração e aceita-se qualquer atualização, mesmo que <span class="math inline">\(Q\)</span> diminua.
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-Realizam-se 2 passos E independentes e usa-se apenas aquele que produzir a maior imputação dos dados ausentes.
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
 Substitui-se o passo E por classificações determinísticas, transformando todas as responsabilidades em zero ou um.
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-Maximiza-se a verossimilhança observada separadamente em cada bloco, sem utilizar a função <span class="math inline">\(Q\)</span>.
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
 Após um único passo E, realizam-se maximizações condicionais sucessivas de <span class="math inline">\(Q\)</span>, atualizando cada bloco com os demais fixados nos valores mais recentes.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Realizam-se 4 passos E independentes e usa-se apenas aquele que produzir a maior imputação dos dados ausentes.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Sorteia-se um bloco por iteração e aceita-se qualquer atualização, mesmo que <span class="math inline">\(Q\)</span> diminua.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Maximiza-se a verossimilhança observada separadamente em cada bloco, sem utilizar a função <span class="math inline">\(Q\)</span>.
 </p>]]></text>
 </answer>
 </question>
@@ -3459,7 +3459,7 @@ Após um único passo E, realizam-se maximizações condicionais sucessivas de <
 }
 </style>
 <p>
-<p>Em um modelo com parâmetros de regressão e dispersão, o passo M conjunto é difícil. Decide-se aplicar o algoritmo ECM, dividindo o parâmetro em 3. Qual descrição caracteriza corretamente uma iteração ECM?</p>
+<p>Em um modelo com parâmetros de regressão e dispersão, o passo M conjunto é difícil. Decide-se aplicar o algoritmo ECM, dividindo o parâmetro em 2. Qual descrição caracteriza corretamente uma iteração ECM?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
@@ -3474,7 +3474,7 @@ Após um único passo E, realizam-se maximizações condicionais sucessivas de <
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-Maximiza-se a verossimilhança observada separadamente em cada bloco, sem utilizar a função <span class="math inline">\(Q\)</span>.
+Substitui-se o passo E por classificações determinísticas, transformando todas as responsabilidades em zero ou um.
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
@@ -3484,7 +3484,7 @@ Após um único passo E, realizam-se maximizações condicionais sucessivas de <
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-Realizam-se 3 passos E independentes e usa-se apenas aquele que produzir a maior imputação dos dados ausentes.
+Realizam-se 2 passos E independentes e usa-se apenas aquele que produzir a maior imputação dos dados ausentes.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
@@ -3494,7 +3494,7 @@ Sorteia-se um bloco por iteração e aceita-se qualquer atualização, mesmo que
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-Substitui-se o passo E por classificações determinísticas, transformando todas as responsabilidades em zero ou um.
+Maximiza-se a verossimilhança observada separadamente em cada bloco, sem utilizar a função <span class="math inline">\(Q\)</span>.
 </p>]]></text>
 </answer>
 </question>
@@ -3510,76 +3510,6 @@ Substitui-se o passo E por classificações determinísticas, transformando toda
 <question type="multichoice">
 <name>
 <text> R1 Q23 : Cap8_Cap8S3Q3 </text>
-</name>
-<questiontext format="html">
-<text><![CDATA[
-<style type="text/css" rel="stylesheet">
-/* tables with alternating shading */
-.table_shade {
-    border-collapse: collapse;
-    border-spacing: 0;
-    border:1px solid #FFFFFF;
-    background-color: #FFFFFF;
-}
-.table_shade th {
-    border:1px solid #FFFFFF;
-    background: #D5D5D5;
-}
-.table_shade td {
-    border:1px solid #FFFFFF;
-}
-.table_shade .odd {
-    background: #EEEEEE;
-}
-.table_shade .even {
-    background: #FBFBFB;
-}
-</style>
-<p>
-<p>Em um modelo com dados ausentes de alta dimensão, a esperança do passo E não possui forma fechada. Um MCEM aproxima <span class="math inline">\(Q\)</span> usando 100 simulações condicionais em cada iteração. Qual afirmação é correta?</p>
-</p>]]></text>
-</questiontext>
-<generalfeedback format="html">
-<text><![CDATA[<p>
-<p>O MCEM usa amostras da distribuição condicional dos dados ausentes dados os observados, sob <span class="math inline">\(\theta^{(t)}\)</span>, para aproximar <span class="math inline">\(Q\)</span>. Como essa aproximação contém erro aleatório, a monotonicidade pode falhar em uma realização finita. Um esquema comum aumenta o esforço de Monte Carlo quando o algoritmo se aproxima da solução.</p>
-</p>]]></text>
-</generalfeedback>
-<penalty>0</penalty>
-<defaultgrade>1</defaultgrade>
-<shuffleanswers>false</shuffleanswers>
-<single>true</single>
-<answernumbering>abc</answernumbering>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-O MCEM elimina a necessidade de maximizar a função aproximada no passo M.
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-O número de simulações deve diminuir perto da convergência para aumentar a precisão do passo E.
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-As simulações devem ser geradas da distribuição marginal dos dados ausentes, ignorando os dados observados e o parâmetro corrente.
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-A aproximação de Monte Carlo preserva monotonicidade exata para qualquer número positivo de simulações.
-</p>]]></text>
-</answer>
-<answer fraction="100" format="html">
-<text><![CDATA[<p>
-O erro de Monte Carlo pode produzir oscilações na log-verossimilhança; aumentar adaptativamente o número de simulações ajuda a tornar as atualizações mais precisas perto da convergência.
-</p>]]></text>
-</answer>
-</question>
-
-
-<question type="multichoice">
-<name>
-<text> R2 Q23 : Cap8_Cap8S3Q3 </text>
 </name>
 <questiontext format="html">
 <text><![CDATA[
@@ -3636,12 +3566,82 @@ O número de simulações deve diminuir perto da convergência para aumentar a p
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
+O MCEM elimina a necessidade de maximizar a função aproximada no passo M.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
 A aproximação de Monte Carlo preserva monotonicidade exata para qualquer número positivo de simulações.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q23 : Cap8_Cap8S3Q3 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Em um modelo com efeitos aleatórios, a esperança do passo E não possui forma fechada. Um MCEM aproxima <span class="math inline">\(Q\)</span> usando 250 simulações condicionais em cada iteração. Qual afirmação é correta?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>O MCEM usa amostras da distribuição condicional dos dados ausentes dados os observados, sob <span class="math inline">\(\theta^{(t)}\)</span>, para aproximar <span class="math inline">\(Q\)</span>. Como essa aproximação contém erro aleatório, a monotonicidade pode falhar em uma realização finita. Um esquema comum aumenta o esforço de Monte Carlo quando o algoritmo se aproxima da solução.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+A aproximação de Monte Carlo preserva monotonicidade exata para qualquer número positivo de simulações.
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+O erro de Monte Carlo pode produzir oscilações na log-verossimilhança; aumentar adaptativamente o número de simulações ajuda a tornar as atualizações mais precisas perto da convergência.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+O número de simulações deve diminuir perto da convergência para aumentar a precisão do passo E.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
 O MCEM elimina a necessidade de maximizar a função aproximada no passo M.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+As simulações devem ser geradas da distribuição marginal dos dados ausentes, ignorando os dados observados e o parâmetro corrente.
 </p>]]></text>
 </answer>
 </question>
@@ -3685,9 +3685,9 @@ O MCEM elimina a necessidade de maximizar a função aproximada no passo M.
 <p>
 <p>Três log-verossimilhanças observadas consecutivas de um EM são
 <span class="math display">\[
-\ell^{(t-2)}=-84.000,\qquad
-\ell^{(t-1)}=-80.400,\qquad
-\ell^{(t)}=-78.060.
+\ell^{(t-2)}=-239.000,\qquad
+\ell^{(t-1)}=-236.600,\qquad
+\ell^{(t)}=-235.160.
 \]</span>
 Usando a aceleração de Aitken
 <span class="math display">\[
@@ -3703,14 +3703,14 @@ qual é a estimativa de <span class="math inline">\(\ell_\infty^{(t)}\)</span>?<
 <text><![CDATA[<p>
 <p>Neste caso,
 <span class="math display">\[
-a^{(t)}=\frac{2.340}
-{3.600}=0.650.
+a^{(t)}=\frac{1.440}
+{2.400}=0.600.
 \]</span>
 Logo,
 <span class="math display">\[
-\ell_\infty^{(t)}=-80.400+
-\frac{2.340}
-{1-0.650}=-73.714.
+\ell_\infty^{(t)}=-236.600+
+\frac{1.440}
+{1-0.600}=-233.000.
 \]</span></p>
 </p>]]></text>
 </generalfeedback>
@@ -3719,29 +3719,29 @@ Logo,
 <shuffleanswers>false</shuffleanswers>
 <single>true</single>
 <answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(-230.600\)</span>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(-235.160\)</span>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(-231.560\)</span>
+</p>]]></text>
+</answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(-73.714\)</span>
+<span class="math inline">\(-233.000\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(-76.539\)</span>
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(-78.060\)</span>
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(-71.374\)</span>
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(-70.114\)</span>
+<span class="math inline">\(-234.296\)</span>
 </p>]]></text>
 </answer>
 </question>
@@ -3778,9 +3778,9 @@ Logo,
 <p>
 <p>Três log-verossimilhanças observadas consecutivas de um EM são
 <span class="math display">\[
-\ell^{(t-2)}=-196.000,\qquad
-\ell^{(t-1)}=-193.600,\qquad
-\ell^{(t)}=-192.160.
+\ell^{(t-2)}=-181.000,\qquad
+\ell^{(t-1)}=-177.200,\qquad
+\ell^{(t)}=-175.300.
 \]</span>
 Usando a aceleração de Aitken
 <span class="math display">\[
@@ -3796,14 +3796,14 @@ qual é a estimativa de <span class="math inline">\(\ell_\infty^{(t)}\)</span>?<
 <text><![CDATA[<p>
 <p>Neste caso,
 <span class="math display">\[
-a^{(t)}=\frac{1.440}
-{2.400}=0.600.
+a^{(t)}=\frac{1.900}
+{3.800}=0.500.
 \]</span>
 Logo,
 <span class="math display">\[
-\ell_\infty^{(t)}=-193.600+
-\frac{1.440}
-{1-0.600}=-190.000.
+\ell_\infty^{(t)}=-177.200+
+\frac{1.900}
+{1-0.500}=-173.400.
 \]</span></p>
 </p>]]></text>
 </generalfeedback>
@@ -3812,29 +3812,29 @@ Logo,
 <shuffleanswers>false</shuffleanswers>
 <single>true</single>
 <answernumbering>abc</answernumbering>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(-188.560\)</span>
-</p>]]></text>
-</answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(-190.000\)</span>
+<span class="math inline">\(-173.400\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(-192.160\)</span>
+<span class="math inline">\(-169.600\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(-187.600\)</span>
+<span class="math inline">\(-174.350\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(-191.296\)</span>
+<span class="math inline">\(-171.500\)</span>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(-175.300\)</span>
 </p>]]></text>
 </answer>
 </question>
@@ -3878,20 +3878,20 @@ Logo,
 <p>
 <p>Perto de um ponto fixo escalar do EM, a taxa local de contração pode ser aproximada pela fração de informação ausente
 <span class="math display">\[r=\frac{I_{\rm mis}}{I_{\rm com}}.\]</span>
-Em certo ajuste, <span class="math inline">\(I_{\rm com}=55.0\)</span>, <span class="math inline">\(I_{\rm mis}=22.0\)</span> e o erro inicial em relação ao ponto fixo é 0.5. Pela aproximação linear, qual será o módulo do erro após 4 iterações?</p>
+Em certo ajuste, <span class="math inline">\(I_{\rm com}=50.0\)</span>, <span class="math inline">\(I_{\rm mis}=15.0\)</span> e o erro inicial em relação ao ponto fixo é 0.8. Pela aproximação linear, qual será o módulo do erro após 3 iterações?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
 <p>A fração de informação ausente é
 <span class="math display">\[
-r=\frac{22.0}{55.0}
-=0.40.
+r=\frac{15.0}{50.0}
+=0.30.
 \]</span>
 Na aproximação linear, <span class="math inline">\(|e_k|\approx r^k|e_0|\)</span>. Portanto,
 <span class="math display">\[
-|e_{4}|\approx (0.40)^{4}
-(0.5)=0.0128.
+|e_{3}|\approx (0.30)^{3}
+(0.8)=0.0216.
 \]</span>
 Quanto maior a fração de informação ausente, mais lenta tende a ser a convergência do EM.</p>
 </p>]]></text>
@@ -3903,27 +3903,27 @@ Quanto maior a fração de informação ausente, mais lenta tende a ser a conver
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.1923\)</span>
+<span class="math inline">\(0.4211\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.2000\)</span>
+<span class="math inline">\(0.2744\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.0648\)</span>
+<span class="math inline">\(0.2400\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.0128\)</span>
+<span class="math inline">\(0.0216\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.3000\)</span>
+<span class="math inline">\(0.5600\)</span>
 </p>]]></text>
 </answer>
 </question>
@@ -3960,20 +3960,20 @@ Quanto maior a fração de informação ausente, mais lenta tende a ser a conver
 <p>
 <p>Perto de um ponto fixo escalar do EM, a taxa local de contração pode ser aproximada pela fração de informação ausente
 <span class="math display">\[r=\frac{I_{\rm mis}}{I_{\rm com}}.\]</span>
-Em certo ajuste, <span class="math inline">\(I_{\rm com}=60.0\)</span>, <span class="math inline">\(I_{\rm mis}=27.0\)</span> e o erro inicial em relação ao ponto fixo é 1.2. Pela aproximação linear, qual será o módulo do erro após 3 iterações?</p>
+Em certo ajuste, <span class="math inline">\(I_{\rm com}=75.0\)</span>, <span class="math inline">\(I_{\rm mis}=15.0\)</span> e o erro inicial em relação ao ponto fixo é 1.0. Pela aproximação linear, qual será o módulo do erro após 3 iterações?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
 <p>A fração de informação ausente é
 <span class="math display">\[
-r=\frac{27.0}{60.0}
-=0.45.
+r=\frac{15.0}{75.0}
+=0.20.
 \]</span>
 Na aproximação linear, <span class="math inline">\(|e_k|\approx r^k|e_0|\)</span>. Portanto,
 <span class="math display">\[
-|e_{3}|\approx (0.45)^{3}
-(1.2)=0.1094.
+|e_{3}|\approx (0.20)^{3}
+(1.0)=0.0080.
 \]</span>
 Quanto maior a fração de informação ausente, mais lenta tende a ser a convergência do EM.</p>
 </p>]]></text>
@@ -3985,27 +3985,27 @@ Quanto maior a fração de informação ausente, mais lenta tende a ser a conver
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.5400\)</span>
+<span class="math inline">\(0.6250\)</span>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(0.8000\)</span>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(0.2000\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.1094\)</span>
+<span class="math inline">\(0.0080\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.1997\)</span>
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(0.6600\)</span>
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(0.5106\)</span>
+<span class="math inline">\(0.5120\)</span>
 </p>]]></text>
 </answer>
 </question>
@@ -4047,20 +4047,20 @@ Quanto maior a fração de informação ausente, mais lenta tende a ser a conver
 }
 </style>
 <p>
-<p>Em um problema escalar com dados incompletos, a informação completa estimada é <span class="math inline">\(I_{\rm com}=135\)</span> e a informação ausente é <span class="math inline">\(I_{\rm mis}=35\)</span>. Usando o princípio da informação ausente, qual é o erro-padrão aproximado do estimador de máxima verossimilhança?</p>
+<p>Em um problema escalar com dados incompletos, a informação completa estimada é <span class="math inline">\(I_{\rm com}=130\)</span> e a informação ausente é <span class="math inline">\(I_{\rm mis}=45\)</span>. Usando o princípio da informação ausente, qual é o erro-padrão aproximado do estimador de máxima verossimilhança?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
 <p>A informação observada é a diferença entre a informação completa e a ausente:
 <span class="math display">\[
-I_{\rm obs}=I_{\rm com}-I_{\rm mis}=135-35=100.
+I_{\rm obs}=I_{\rm com}-I_{\rm mis}=130-45=85.
 \]</span>
 Assim, a variância assintótica é aproximadamente <span class="math inline">\(I_{\rm obs}^{-1}\)</span> e
 <span class="math display">\[
 \operatorname{EP}(\widehat\theta)\approx
 \frac{1}{\sqrt{I_{\rm obs}}}=
-\frac{1}{\sqrt{100}}=0.1000.
+\frac{1}{\sqrt{85}}=0.1085.
 \]</span>
 Usar <span class="math inline">\(I_{\rm com}\)</span> sozinho subestimaria a incerteza por ignorar a informação perdida.</p>
 </p>]]></text>
@@ -4070,29 +4070,29 @@ Usar <span class="math inline">\(I_{\rm com}\)</span> sozinho subestimaria a inc
 <shuffleanswers>false</shuffleanswers>
 <single>true</single>
 <answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(9.2195\)</span>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(0.0877\)</span>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(0.0756\)</span>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(0.1491\)</span>
+</p>]]></text>
+</answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.1000\)</span>
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(0.1690\)</span>
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(10.0000\)</span>
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(0.0861\)</span>
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(0.0767\)</span>
+<span class="math inline">\(0.1085\)</span>
 </p>]]></text>
 </answer>
 </question>
@@ -4127,20 +4127,20 @@ Usar <span class="math inline">\(I_{\rm com}\)</span> sozinho subestimaria a inc
 }
 </style>
 <p>
-<p>Em um problema escalar com dados incompletos, a informação completa estimada é <span class="math inline">\(I_{\rm com}=100\)</span> e a informação ausente é <span class="math inline">\(I_{\rm mis}=40\)</span>. Usando o princípio da informação ausente, qual é o erro-padrão aproximado do estimador de máxima verossimilhança?</p>
+<p>Em um problema escalar com dados incompletos, a informação completa estimada é <span class="math inline">\(I_{\rm com}=90\)</span> e a informação ausente é <span class="math inline">\(I_{\rm mis}=55\)</span>. Usando o princípio da informação ausente, qual é o erro-padrão aproximado do estimador de máxima verossimilhança?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
 <p>A informação observada é a diferença entre a informação completa e a ausente:
 <span class="math display">\[
-I_{\rm obs}=I_{\rm com}-I_{\rm mis}=100-40=60.
+I_{\rm obs}=I_{\rm com}-I_{\rm mis}=90-55=35.
 \]</span>
 Assim, a variância assintótica é aproximadamente <span class="math inline">\(I_{\rm obs}^{-1}\)</span> e
 <span class="math display">\[
 \operatorname{EP}(\widehat\theta)\approx
 \frac{1}{\sqrt{I_{\rm obs}}}=
-\frac{1}{\sqrt{60}}=0.1291.
+\frac{1}{\sqrt{35}}=0.1690.
 \]</span>
 Usar <span class="math inline">\(I_{\rm com}\)</span> sozinho subestimaria a incerteza por ignorar a informação perdida.</p>
 </p>]]></text>
@@ -4150,29 +4150,29 @@ Usar <span class="math inline">\(I_{\rm com}\)</span> sozinho subestimaria a inc
 <shuffleanswers>false</shuffleanswers>
 <single>true</single>
 <answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(0.1348\)</span>
+</p>]]></text>
+</answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.1291\)</span>
+<span class="math inline">\(0.1690\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.0845\)</span>
+<span class="math inline">\(0.0830\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.1581\)</span>
+<span class="math inline">\(0.1054\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.1000\)</span>
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(7.7460\)</span>
+<span class="math inline">\(5.9161\)</span>
 </p>]]></text>
 </answer>
 </question>
@@ -4214,7 +4214,7 @@ Usar <span class="math inline">\(I_{\rm com}\)</span> sozinho subestimaria a inc
 }
 </style>
 <p>
-<p>Em um modelo de dimensão 3 com indicadores de classe não observados, deseja-se estimar a informação observada após a convergência do EM. Se <span class="math inline">\(S_c(\theta)\)</span> e <span class="math inline">\(H_c(\theta)\)</span> são, respectivamente, o escore e a Hessiana da log-verossimilhança completa, qual é a identidade de Louis, condicionalmente aos dados observados?</p>
+<p>Em um modelo de dimensão 1 com efeitos aleatórios não observados, deseja-se estimar a informação observada após a convergência do EM. Se <span class="math inline">\(S_c(\theta)\)</span> e <span class="math inline">\(H_c(\theta)\)</span> são, respectivamente, o escore e a Hessiana da log-verossimilhança completa, qual é a identidade de Louis, condicionalmente aos dados observados?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
@@ -4240,11 +4240,6 @@ A variabilidade condicional do escore completo mede a informação perdida pelas
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(I_{\rm obs}(\theta)=\operatorname{Var}[S_c(\theta)\mid X]-E[-H_c(\theta)\mid X]\)</span>.
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
 <span class="math inline">\(I_{\rm obs}(\theta)=-H_c(\theta)\)</span> avaliada após substituir todos os dados ausentes por suas médias, sem termo de correção.
 </p>]]></text>
 </answer>
@@ -4253,14 +4248,19 @@ A variabilidade condicional do escore completo mede a informação perdida pelas
 <span class="math inline">\(I_{\rm obs}(\theta)=E[S_c(\theta)\mid X]E[S_c(\theta)\mid X]^\top\)</span>.
 </p>]]></text>
 </answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(I_{\rm obs}(\theta)=E[-H_c(\theta)\mid X]+\operatorname{Var}[S_c(\theta)\mid X]\)</span>.
-</p>]]></text>
-</answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
 <span class="math inline">\(I_{\rm obs}(\theta)=E[-H_c(\theta)\mid X]-\operatorname{Var}[S_c(\theta)\mid X]\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(I_{\rm obs}(\theta)=\operatorname{Var}[S_c(\theta)\mid X]-E[-H_c(\theta)\mid X]\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(I_{\rm obs}(\theta)=E[-H_c(\theta)\mid X]+\operatorname{Var}[S_c(\theta)\mid X]\)</span>.
 </p>]]></text>
 </answer>
 </question>
@@ -4295,7 +4295,7 @@ A variabilidade condicional do escore completo mede a informação perdida pelas
 }
 </style>
 <p>
-<p>Em um modelo de dimensão 1 com indicadores de classe não observados, deseja-se estimar a informação observada após a convergência do EM. Se <span class="math inline">\(S_c(\theta)\)</span> e <span class="math inline">\(H_c(\theta)\)</span> são, respectivamente, o escore e a Hessiana da log-verossimilhança completa, qual é a identidade de Louis, condicionalmente aos dados observados?</p>
+<p>Em um modelo de dimensão 2 com indicadores de classe não observados, deseja-se estimar a informação observada após a convergência do EM. Se <span class="math inline">\(S_c(\theta)\)</span> e <span class="math inline">\(H_c(\theta)\)</span> são, respectivamente, o escore e a Hessiana da log-verossimilhança completa, qual é a identidade de Louis, condicionalmente aos dados observados?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
@@ -4319,9 +4319,19 @@ A variabilidade condicional do escore completo mede a informação perdida pelas
 <shuffleanswers>false</shuffleanswers>
 <single>true</single>
 <answernumbering>abc</answernumbering>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(I_{\rm obs}(\theta)=E[-H_c(\theta)\mid X]-\operatorname{Var}[S_c(\theta)\mid X]\)</span>.
+</p>]]></text>
+</answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
 <span class="math inline">\(I_{\rm obs}(\theta)=-H_c(\theta)\)</span> avaliada após substituir todos os dados ausentes por suas médias, sem termo de correção.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(I_{\rm obs}(\theta)=E[S_c(\theta)\mid X]E[S_c(\theta)\mid X]^\top\)</span>.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
@@ -4332,16 +4342,6 @@ A variabilidade condicional do escore completo mede a informação perdida pelas
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
 <span class="math inline">\(I_{\rm obs}(\theta)=\operatorname{Var}[S_c(\theta)\mid X]-E[-H_c(\theta)\mid X]\)</span>.
-</p>]]></text>
-</answer>
-<answer fraction="100" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(I_{\rm obs}(\theta)=E[-H_c(\theta)\mid X]-\operatorname{Var}[S_c(\theta)\mid X]\)</span>.
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(I_{\rm obs}(\theta)=E[S_c(\theta)\mid X]E[S_c(\theta)\mid X]^\top\)</span>.
 </p>]]></text>
 </answer>
 </question>
@@ -4388,16 +4388,16 @@ A variabilidade condicional do escore completo mede a informação perdida pelas
 d^{(t)}=\frac{|\ell^{(t+1)}-\ell^{(t)}|}{1+|\ell^{(t)}|}
 \leq \varepsilon.
 \]</span>
-Nesta iteração, <span class="math inline">\(\ell^{(t)}=-147.000000\)</span>, <span class="math inline">\(\ell^{(t+1)}=-146.996300\)</span> e <span class="math inline">\(\varepsilon=5e-05\)</span>. Qual avaliação está correta?</p>
+Nesta iteração, <span class="math inline">\(\ell^{(t)}=-417.000000\)</span>, <span class="math inline">\(\ell^{(t+1)}=-416.979100\)</span> e <span class="math inline">\(\varepsilon=1e-04\)</span>. Qual avaliação está correta?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>O incremento absoluto é 0.003700, mas o critério é relativo à escala da log-verossimilhança:
+<p>O incremento absoluto é 0.020900, mas o critério é relativo à escala da log-verossimilhança:
 <span class="math display">\[
-d^{(t)}=\frac{0.003700}
-{1+|-147.000000|}
-=2.50e-05.
+d^{(t)}=\frac{0.020900}
+{1+|-417.000000|}
+=5.00e-05.
 \]</span>
 Como <span class="math inline">\(d^{(t)}\leq\varepsilon\)</span>, o critério é satisfeito e o algoritmo pararia.</p>
 </p>]]></text>
@@ -4407,19 +4407,9 @@ Como <span class="math inline">\(d^{(t)}\leq\varepsilon\)</span>, o critério é
 <shuffleanswers>false</shuffleanswers>
 <single>true</single>
 <answernumbering>abc</answernumbering>
-<answer fraction="0" format="html">
+<answer fraction="100" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(d=2.50e-05\)</span>; apesar disso, o algoritmo deveria continuar.
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(d=3.70e-03\)</span>, usando apenas o incremento absoluto; o algoritmo para.
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(d=1\)</span>, pois se divide o incremento por ele mesmo; o algoritmo continua.
+<span class="math inline">\(d=5.00e-05\)</span>; portanto, o critério é satisfeito e o algoritmo pararia.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
@@ -4427,9 +4417,19 @@ Como <span class="math inline">\(d^{(t)}\leq\varepsilon\)</span>, o critério é
 <span class="math inline">\(d=0\)</span>, pois a log-verossimilhança aumentou; o algoritmo para.
 </p>]]></text>
 </answer>
-<answer fraction="100" format="html">
+<answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(d=2.50e-05\)</span>; portanto, o critério é satisfeito e o algoritmo pararia.
+<span class="math inline">\(d=5.00e-05\)</span>; apesar disso, o algoritmo deveria continuar.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(d=2.09e-02\)</span>, usando apenas o incremento absoluto; o algoritmo para.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(d=1\)</span>, pois se divide o incremento por ele mesmo; o algoritmo continua.
 </p>]]></text>
 </answer>
 </question>
@@ -4469,18 +4469,18 @@ Como <span class="math inline">\(d^{(t)}\leq\varepsilon\)</span>, o critério é
 d^{(t)}=\frac{|\ell^{(t+1)}-\ell^{(t)}|}{1+|\ell^{(t)}|}
 \leq \varepsilon.
 \]</span>
-Nesta iteração, <span class="math inline">\(\ell^{(t)}=-270.000000\)</span>, <span class="math inline">\(\ell^{(t+1)}=-268.645000\)</span> e <span class="math inline">\(\varepsilon=1e-03\)</span>. Qual avaliação está correta?</p>
+Nesta iteração, <span class="math inline">\(\ell^{(t)}=-296.000000\)</span>, <span class="math inline">\(\ell^{(t+1)}=-295.925750\)</span> e <span class="math inline">\(\varepsilon=5e-04\)</span>. Qual avaliação está correta?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>O incremento absoluto é 1.355000, mas o critério é relativo à escala da log-verossimilhança:
+<p>O incremento absoluto é 0.074250, mas o critério é relativo à escala da log-verossimilhança:
 <span class="math display">\[
-d^{(t)}=\frac{1.355000}
-{1+|-270.000000|}
-=5.00e-03.
+d^{(t)}=\frac{0.074250}
+{1+|-296.000000|}
+=2.50e-04.
 \]</span>
-Como <span class="math inline">\(d^{(t)}&gt;\varepsilon\)</span>, o critério não é satisfeito e o algoritmo continuaria.</p>
+Como <span class="math inline">\(d^{(t)}\leq\varepsilon\)</span>, o critério é satisfeito e o algoritmo pararia.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -4490,17 +4490,12 @@ Como <span class="math inline">\(d^{(t)}&gt;\varepsilon\)</span>, o critério n�
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(d=5.00e-03\)</span>; apesar disso, o algoritmo deveria parar.
+<span class="math inline">\(d=0\)</span>, pois a log-verossimilhança aumentou; o algoritmo para.
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(d=5.00e-03\)</span>; portanto, o critério não é satisfeito e o algoritmo continuaria.
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(d=0\)</span>, pois a log-verossimilhança aumentou; o algoritmo para.
+<span class="math inline">\(d=2.50e-04\)</span>; portanto, o critério é satisfeito e o algoritmo pararia.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
@@ -4510,7 +4505,12 @@ Como <span class="math inline">\(d^{(t)}&gt;\varepsilon\)</span>, o critério n�
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(d=1.35e+00\)</span>, usando apenas o incremento absoluto; o algoritmo para.
+<span class="math inline">\(d=7.42e-02\)</span>, usando apenas o incremento absoluto; o algoritmo para.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(d=2.50e-04\)</span>; apesar disso, o algoritmo deveria continuar.
 </p>]]></text>
 </answer>
 </question>
@@ -4552,7 +4552,7 @@ Como <span class="math inline">\(d^{(t)}&gt;\varepsilon\)</span>, o critério n�
 }
 </style>
 <p>
-<p>Um EM com 5 parâmetros convergiu para <span class="math inline">\(\widehat\theta\)</span>, com norma do escore observado igual a 1e-07. Contudo, a Hessiana observada em <span class="math inline">\(\widehat\theta\)</span> possui dois autovalores positivos. Qual diagnóstico é mais adequado?</p>
+<p>Um EM com 4 parâmetros convergiu para <span class="math inline">\(\widehat\theta\)</span>, com norma do escore observado igual a 1e-07. Contudo, a Hessiana observada em <span class="math inline">\(\widehat\theta\)</span> possui dois autovalores positivos. Qual diagnóstico é mais adequado?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
@@ -4567,17 +4567,17 @@ Como <span class="math inline">\(d^{(t)}&gt;\varepsilon\)</span>, o critério n�
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
+O diagnóstico depende apenas do número de iterações, não da curvatura da log-verossimilhança.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
 Todo ponto fixo do EM possui Hessiana negativa definida, de modo que os autovalores positivos são apenas erro de arredondamento.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-O diagnóstico depende apenas do número de iterações, não da curvatura da log-verossimilhança.
-</p>]]></text>
-</answer>
-<answer fraction="100" format="html">
-<text><![CDATA[<p>
-O ponto é aproximadamente estacionário, mas não é um máximo local estrito; pode ser um ponto de sela ou mínimo, devendo-se investigar outras inicializações.
+A presença de autovalores positivos indica que a log-verossimilhança observada deve ter diminuído em todas as iterações.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
@@ -4585,9 +4585,9 @@ O ponto é aproximadamente estacionário, mas não é um máximo local estrito; 
 A pequena norma do escore prova que <span class="math inline">\(\widehat\theta\)</span> é o máximo global da verossimilhança.
 </p>]]></text>
 </answer>
-<answer fraction="0" format="html">
+<answer fraction="100" format="html">
 <text><![CDATA[<p>
-A presença de autovalores positivos indica que a log-verossimilhança observada deve ter diminuído em todas as iterações.
+O ponto é aproximadamente estacionário, mas não é um máximo local estrito; pode ser um ponto de sela ou mínimo, devendo-se investigar outras inicializações.
 </p>]]></text>
 </answer>
 </question>
@@ -4622,7 +4622,7 @@ A presença de autovalores positivos indica que a log-verossimilhança observada
 }
 </style>
 <p>
-<p>Um EM com 2 parâmetros convergiu para <span class="math inline">\(\widehat\theta\)</span>, com norma do escore observado igual a 1e-07. Contudo, a Hessiana observada em <span class="math inline">\(\widehat\theta\)</span> possui um autovalor positivo. Qual diagnóstico é mais adequado?</p>
+<p>Um EM com 5 parâmetros convergiu para <span class="math inline">\(\widehat\theta\)</span>, com norma do escore observado igual a 5e-08. Contudo, a Hessiana observada em <span class="math inline">\(\widehat\theta\)</span> possui dois autovalores positivos. Qual diagnóstico é mais adequado?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
@@ -4635,11 +4635,6 @@ A presença de autovalores positivos indica que a log-verossimilhança observada
 <shuffleanswers>false</shuffleanswers>
 <single>true</single>
 <answernumbering>abc</answernumbering>
-<answer fraction="100" format="html">
-<text><![CDATA[<p>
-O ponto é aproximadamente estacionário, mas não é um máximo local estrito; pode ser um ponto de sela ou mínimo, devendo-se investigar outras inicializações.
-</p>]]></text>
-</answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
 A pequena norma do escore prova que <span class="math inline">\(\widehat\theta\)</span> é o máximo global da verossimilhança.
@@ -4647,7 +4642,12 @@ A pequena norma do escore prova que <span class="math inline">\(\widehat\theta\)
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-A presença de autovalores positivos indica que a log-verossimilhança observada deve ter diminuído em todas as iterações.
+O diagnóstico depende apenas do número de iterações, não da curvatura da log-verossimilhança.
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+O ponto é aproximadamente estacionário, mas não é um máximo local estrito; pode ser um ponto de sela ou mínimo, devendo-se investigar outras inicializações.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
@@ -4657,7 +4657,7 @@ Todo ponto fixo do EM possui Hessiana negativa definida, de modo que os autovalo
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-O diagnóstico depende apenas do número de iterações, não da curvatura da log-verossimilhança.
+A presença de autovalores positivos indica que a log-verossimilhança observada deve ter diminuído em todas as iterações.
 </p>]]></text>
 </answer>
 </question>
@@ -4699,25 +4699,25 @@ O diagnóstico depende apenas do número de iterações, não da curvatura da lo
 }
 </style>
 <p>
-<p>Em um MAP-EM para uma mistura de 3 componentes, os tamanhos efetivos do passo E são <span class="math inline">\(N=(17, 39, 36)\)</span> e a priori dos pesos é <span class="math inline">\(\operatorname{Dirichlet}(5, 4, 5)\)</span>. Considerando um máximo interior, a atualização é
+<p>Em um MAP-EM para uma mistura de 3 componentes, os tamanhos efetivos do passo E são <span class="math inline">\(N=(39, 45, 56)\)</span> e a priori dos pesos é <span class="math inline">\(\operatorname{Dirichlet}(5, 3, 4)\)</span>. Considerando um máximo interior, a atualização é
 <span class="math display">\[
 \pi_j^{(t+1)}=\frac{N_j+\alpha_j-1}
 {n+\sum_{h=1}^{k}\alpha_h-k}.
 \]</span>
-Qual é a atualização do peso <span class="math inline">\(\pi_{1}\)</span>?</p>
+Qual é a atualização do peso <span class="math inline">\(\pi_{2}\)</span>?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>Temos <span class="math inline">\(n=\sum_jN_j=92\)</span> e
-<span class="math inline">\(\sum_j\alpha_j=14\)</span>. Portanto,
+<p>Temos <span class="math inline">\(n=\sum_jN_j=140\)</span> e
+<span class="math inline">\(\sum_j\alpha_j=12\)</span>. Portanto,
 <span class="math display">\[
-\pi_{1}^{(t+1)}=
-\frac{17+5-1}
-{92+14-3}
-=0.2039.
+\pi_{2}^{(t+1)}=
+\frac{45+3-1}
+{140+12-3}
+=0.3154.
 \]</span>
-A atualização de máxima verossimilhança seria apenas <span class="math inline">\(N_{1}/n\)</span>; os termos da priori funcionam como pseudocontagens no MAP.</p>
+A atualização de máxima verossimilhança seria apenas <span class="math inline">\(N_{2}/n\)</span>; os termos da priori funcionam como pseudocontagens no MAP.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -4725,29 +4725,29 @@ A atualização de máxima verossimilhança seria apenas <span class="math inlin
 <shuffleanswers>false</shuffleanswers>
 <single>true</single>
 <answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(0.3158\)</span>
+</p>]]></text>
+</answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.2039\)</span>
+<span class="math inline">\(0.3154\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.1895\)</span>
+<span class="math inline">\(0.3217\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.1848\)</span>
+<span class="math inline">\(0.3214\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.2075\)</span>
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(0.1981\)</span>
+<span class="math inline">\(0.3092\)</span>
 </p>]]></text>
 </answer>
 </question>
@@ -4782,7 +4782,7 @@ A atualização de máxima verossimilhança seria apenas <span class="math inlin
 }
 </style>
 <p>
-<p>Em um MAP-EM para uma mistura de 3 componentes, os tamanhos efetivos do passo E são <span class="math inline">\(N=(42, 58, 34)\)</span> e a priori dos pesos é <span class="math inline">\(\operatorname{Dirichlet}(3, 4, 5)\)</span>. Considerando um máximo interior, a atualização é
+<p>Em um MAP-EM para uma mistura de 3 componentes, os tamanhos efetivos do passo E são <span class="math inline">\(N=(40, 21, 32)\)</span> e a priori dos pesos é <span class="math inline">\(\operatorname{Dirichlet}(3, 4, 3)\)</span>. Considerando um máximo interior, a atualização é
 <span class="math display">\[
 \pi_j^{(t+1)}=\frac{N_j+\alpha_j-1}
 {n+\sum_{h=1}^{k}\alpha_h-k}.
@@ -4792,13 +4792,13 @@ Qual é a atualização do peso <span class="math inline">\(\pi_{1}\)</span>?</p
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>Temos <span class="math inline">\(n=\sum_jN_j=134\)</span> e
-<span class="math inline">\(\sum_j\alpha_j=12\)</span>. Portanto,
+<p>Temos <span class="math inline">\(n=\sum_jN_j=93\)</span> e
+<span class="math inline">\(\sum_j\alpha_j=10\)</span>. Portanto,
 <span class="math display">\[
 \pi_{1}^{(t+1)}=
-\frac{42+3-1}
-{134+12-3}
-=0.3077.
+\frac{40+3-1}
+{93+10-3}
+=0.4200.
 \]</span>
 A atualização de máxima verossimilhança seria apenas <span class="math inline">\(N_{1}/n\)</span>; os termos da priori funcionam como pseudocontagens no MAP.</p>
 </p>]]></text>
@@ -4808,29 +4808,29 @@ A atualização de máxima verossimilhança seria apenas <span class="math inlin
 <shuffleanswers>false</shuffleanswers>
 <single>true</single>
 <answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(0.4271\)</span>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(0.4078\)</span>
+</p>]]></text>
+</answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.3077\)</span>
+<span class="math inline">\(0.4200\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.3014\)</span>
+<span class="math inline">\(0.4175\)</span>
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(0.3082\)</span>
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(0.3134\)</span>
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(0.3139\)</span>
+<span class="math inline">\(0.4301\)</span>
 </p>]]></text>
 </answer>
 </question>

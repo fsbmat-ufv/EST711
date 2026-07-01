@@ -58,16 +58,6 @@ onde <span class="math inline">\(I(\boldsymbol{\theta})\)</span> é a matriz de 
 <span class="math inline">\(\sqrt{n}\hat{\boldsymbol{\theta}}_n \xrightarrow{D} N_k(\boldsymbol{\theta}, I(\boldsymbol{\theta})^{-1})\)</span>, centrando em <span class="math inline">\(\boldsymbol{\theta}\)</span> e não em zero.
 </p>]]></text>
 </answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-O EMV multivariado não tem distribuição assintótica conhecida no caso geral.
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(n(\hat{\boldsymbol{\theta}}_n - \boldsymbol{\theta}) \xrightarrow{D} N_k(\mathbf{0}, I(\boldsymbol{\theta})^{-1})\)</span>, com fator <span class="math inline">\(n\)</span> em vez de <span class="math inline">\(\sqrt{n}\)</span>.
-</p>]]></text>
-</answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
 <span class="math inline">\(\sqrt{n}(\hat{\boldsymbol{\theta}}_n - \boldsymbol{\theta}) \xrightarrow{D} N_k(\mathbf{0}, I(\boldsymbol{\theta})^{-1})\)</span>, onde <span class="math inline">\(I(\boldsymbol{\theta})\)</span> é a matriz de informação de Fisher.
@@ -76,6 +66,16 @@ O EMV multivariado não tem distribuição assintótica conhecida no caso geral.
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
 <span class="math inline">\(\sqrt{n}(\hat{\boldsymbol{\theta}}_n - \boldsymbol{\theta}) \xrightarrow{D} N_k(\mathbf{0}, I(\boldsymbol{\theta}))\)</span>, sem inversão da matriz de informação.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(n(\hat{\boldsymbol{\theta}}_n - \boldsymbol{\theta}) \xrightarrow{D} N_k(\mathbf{0}, I(\boldsymbol{\theta})^{-1})\)</span>, com fator <span class="math inline">\(n\)</span> em vez de <span class="math inline">\(\sqrt{n}\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+O EMV multivariado não tem distribuição assintótica conhecida no caso geral.
 </p>]]></text>
 </answer>
 </question>
@@ -125,11 +125,6 @@ onde <span class="math inline">\(I(\boldsymbol{\theta})\)</span> é a matriz de 
 <shuffleanswers>false</shuffleanswers>
 <single>true</single>
 <answernumbering>abc</answernumbering>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(\sqrt{n}\hat{\boldsymbol{\theta}}_n \xrightarrow{D} N_k(\boldsymbol{\theta}, I(\boldsymbol{\theta})^{-1})\)</span>, centrando em <span class="math inline">\(\boldsymbol{\theta}\)</span> e não em zero.
-</p>]]></text>
-</answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
 <span class="math inline">\(\sqrt{n}(\hat{\boldsymbol{\theta}}_n - \boldsymbol{\theta}) \xrightarrow{D} N_k(\mathbf{0}, I(\boldsymbol{\theta})^{-1})\)</span>, onde <span class="math inline">\(I(\boldsymbol{\theta})\)</span> é a matriz de informação de Fisher.
@@ -143,6 +138,11 @@ O EMV multivariado não tem distribuição assintótica conhecida no caso geral.
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
 <span class="math inline">\(n(\hat{\boldsymbol{\theta}}_n - \boldsymbol{\theta}) \xrightarrow{D} N_k(\mathbf{0}, I(\boldsymbol{\theta})^{-1})\)</span>, com fator <span class="math inline">\(n\)</span> em vez de <span class="math inline">\(\sqrt{n}\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(\sqrt{n}\hat{\boldsymbol{\theta}}_n \xrightarrow{D} N_k(\boldsymbol{\theta}, I(\boldsymbol{\theta})^{-1})\)</span>, centrando em <span class="math inline">\(\boldsymbol{\theta}\)</span> e não em zero.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
@@ -210,17 +210,12 @@ O EMV multivariado não tem distribuição assintótica conhecida no caso geral.
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-0.5
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-0.0625
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
 0.0312
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.5
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
@@ -231,6 +226,11 @@ O EMV multivariado não tem distribuição assintótica conhecida no caso geral.
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
 4
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.0625
 </p>]]></text>
 </answer>
 </question>
@@ -286,17 +286,12 @@ O EMV multivariado não tem distribuição assintótica conhecida no caso geral.
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-0.0062
+0.0123
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
 0.2222
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-9
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
@@ -306,7 +301,12 @@ O EMV multivariado não tem distribuição assintótica conhecida no caso geral.
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-0.0123
+0.0062
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+9
 </p>]]></text>
 </answer>
 </question>
@@ -363,9 +363,14 @@ O EMV multivariado não tem distribuição assintótica conhecida no caso geral.
 <shuffleanswers>false</shuffleanswers>
 <single>true</single>
 <answernumbering>abc</answernumbering>
-<answer fraction="100" format="html">
+<answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(\sqrt{n}(g(\hat{\boldsymbol{\theta}}) - g(\boldsymbol{\theta})) \xrightarrow{D} N(0, \nabla g(\boldsymbol{\theta})^\top \Sigma \nabla g(\boldsymbol{\theta}))\)</span>.
+<span class="math inline">\(\sqrt{n}(g(\hat{\boldsymbol{\theta}}) - g(\boldsymbol{\theta})) \xrightarrow{D} N(0, \text{tr}(\Sigma)\|g&#39;(\boldsymbol{\theta})\|^2)\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(\sqrt{n}(g(\hat{\boldsymbol{\theta}}) - g(\boldsymbol{\theta})) \xrightarrow{D} N_k(0, g&#39;(\boldsymbol{\theta})\Sigma g&#39;(\boldsymbol{\theta}))\)</span> como distribuição <span class="math inline">\(k\)</span>-dimensional.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
@@ -378,14 +383,9 @@ O EMV multivariado não tem distribuição assintótica conhecida no caso geral.
 <span class="math inline">\(\sqrt{n}(g(\hat{\boldsymbol{\theta}}) - g(\boldsymbol{\theta})) \xrightarrow{D} N(0, \|\nabla g(\boldsymbol{\theta})\|^2 \|\Sigma\|)\)</span>, usando normas matriciais.
 </p>]]></text>
 </answer>
-<answer fraction="0" format="html">
+<answer fraction="100" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(\sqrt{n}(g(\hat{\boldsymbol{\theta}}) - g(\boldsymbol{\theta})) \xrightarrow{D} N(0, \text{tr}(\Sigma)\|g&#39;(\boldsymbol{\theta})\|^2)\)</span>.
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(\sqrt{n}(g(\hat{\boldsymbol{\theta}}) - g(\boldsymbol{\theta})) \xrightarrow{D} N_k(0, g&#39;(\boldsymbol{\theta})\Sigma g&#39;(\boldsymbol{\theta}))\)</span> como distribuição <span class="math inline">\(k\)</span>-dimensional.
+<span class="math inline">\(\sqrt{n}(g(\hat{\boldsymbol{\theta}}) - g(\boldsymbol{\theta})) \xrightarrow{D} N(0, \nabla g(\boldsymbol{\theta})^\top \Sigma \nabla g(\boldsymbol{\theta}))\)</span>.
 </p>]]></text>
 </answer>
 </question>
@@ -435,14 +435,9 @@ O EMV multivariado não tem distribuição assintótica conhecida no caso geral.
 <shuffleanswers>false</shuffleanswers>
 <single>true</single>
 <answernumbering>abc</answernumbering>
-<answer fraction="100" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(\sqrt{n}(g(\hat{\boldsymbol{\theta}}) - g(\boldsymbol{\theta})) \xrightarrow{D} N(0, \nabla g(\boldsymbol{\theta})^\top \Sigma \nabla g(\boldsymbol{\theta}))\)</span>.
-</p>]]></text>
-</answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(\sqrt{n}(g(\hat{\boldsymbol{\theta}}) - g(\boldsymbol{\theta})) \xrightarrow{D} N(0, \|\nabla g(\boldsymbol{\theta})\|^2 \|\Sigma\|)\)</span>, usando normas matriciais.
+<span class="math inline">\(\sqrt{n}(g(\hat{\boldsymbol{\theta}}) - g(\boldsymbol{\theta})) \xrightarrow{D} N_k(0, g&#39;(\boldsymbol{\theta})\Sigma g&#39;(\boldsymbol{\theta}))\)</span> como distribuição <span class="math inline">\(k\)</span>-dimensional.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
@@ -452,12 +447,17 @@ O EMV multivariado não tem distribuição assintótica conhecida no caso geral.
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(\sqrt{n}(g(\hat{\boldsymbol{\theta}}) - g(\boldsymbol{\theta})) \xrightarrow{D} N(0, \text{tr}(\Sigma)\|g&#39;(\boldsymbol{\theta})\|^2)\)</span>.
+<span class="math inline">\(\sqrt{n}(g(\hat{\boldsymbol{\theta}}) - g(\boldsymbol{\theta})) \xrightarrow{D} N(0, \|\nabla g(\boldsymbol{\theta})\|^2 \|\Sigma\|)\)</span>, usando normas matriciais.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(\sqrt{n}(g(\hat{\boldsymbol{\theta}}) - g(\boldsymbol{\theta})) \xrightarrow{D} N_k(0, g&#39;(\boldsymbol{\theta})\Sigma g&#39;(\boldsymbol{\theta}))\)</span> como distribuição <span class="math inline">\(k\)</span>-dimensional.
+<span class="math inline">\(\sqrt{n}(g(\hat{\boldsymbol{\theta}}) - g(\boldsymbol{\theta})) \xrightarrow{D} N(0, \text{tr}(\Sigma)\|g&#39;(\boldsymbol{\theta})\|^2)\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(\sqrt{n}(g(\hat{\boldsymbol{\theta}}) - g(\boldsymbol{\theta})) \xrightarrow{D} N(0, \nabla g(\boldsymbol{\theta})^\top \Sigma \nabla g(\boldsymbol{\theta}))\)</span>.
 </p>]]></text>
 </answer>
 </question>
@@ -473,6 +473,81 @@ O EMV multivariado não tem distribuição assintótica conhecida no caso geral.
 <question type="multichoice">
 <name>
 <text> R1 Q04 : Cap7_Cap7S1Q4 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Uma <strong>região de confiança elipsoidal</strong> assintótica de nível <span class="math inline">\(1-\alpha\)</span> para <span class="math inline">\(\boldsymbol{\theta} \in \mathbb{R}^k\)</span> baseada no EMV é:
+<span class="math display">\[\mathcal{C}_n = \left\{\boldsymbol{\theta} : n(\hat{\boldsymbol{\theta}} - \boldsymbol{\theta})^\top \hat{I}(\boldsymbol{\theta})\,(\hat{\boldsymbol{\theta}} - \boldsymbol{\theta}) \leq c\right\},\]</span>
+onde <span class="math inline">\(c = \chi^2_{k,\,1-\alpha}\)</span> é o quantil da qui-quadrado com <span class="math inline">\(k\)</span> graus de liberdade.</p>
+<p>Para <span class="math inline">\(k = 2\)</span> parâmetros e <span class="math inline">\(\alpha = 0.05\)</span>, qual é o valor crítico <span class="math inline">\(c = \chi^2_{2,\,0.95}\)</span>?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Pelo Teorema de Wilks, a estatística <span class="math inline">\(n(\hat{\boldsymbol{\theta}} - \boldsymbol{\theta})^\top \hat{I}(\boldsymbol{\theta})(\hat{\boldsymbol{\theta}} - \boldsymbol{\theta})\)</span> tem distribuição assintótica <span class="math inline">\(\chi^2_k\)</span> sob <span class="math inline">\(\boldsymbol{\theta}\)</span> verdadeiro. Para <span class="math inline">\(k = 2\)</span> e <span class="math inline">\(\alpha = 0.05\)</span>:
+<span class="math display">\[c = \chi^2_{2,\,0.95} = \texttt{qchisq(0.95, 2)} = 5.9915.\]</span></p>
+<p>Os demais valores correspondem a: <span class="math inline">\(\chi^2_{3,0.95} = 7.8147\)</span> (graus de liberdade errado), <span class="math inline">\(\chi^2_{2,0.05} = 0.1026\)</span> (quantil inferior), <span class="math inline">\(\chi^2_{1,0.95} = 3.8415\)</span> (graus de liberdade errado), e <span class="math inline">\(F_{2,34} = 3.2759\)</span> (distribuição errada).</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.1026
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+7.8147
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+3.8415
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+5.9915
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+3.2759
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q04 : Cap7_Cap7S1Q4 </text>
 </name>
 <questiontext format="html">
 <text><![CDATA[
@@ -519,17 +594,7 @@ onde <span class="math inline">\(c = \chi^2_{k,\,1-\alpha}\)</span> é o quantil
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-2.8068
-</p>]]></text>
-</answer>
-<answer fraction="100" format="html">
-<text><![CDATA[<p>
-7.8147
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-5.9915
+0.3518
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
@@ -539,82 +604,17 @@ onde <span class="math inline">\(c = \chi^2_{k,\,1-\alpha}\)</span> é o quantil
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-0.3518
-</p>]]></text>
-</answer>
-</question>
-
-
-<question type="multichoice">
-<name>
-<text> R2 Q04 : Cap7_Cap7S1Q4 </text>
-</name>
-<questiontext format="html">
-<text><![CDATA[
-<style type="text/css" rel="stylesheet">
-/* tables with alternating shading */
-.table_shade {
-    border-collapse: collapse;
-    border-spacing: 0;
-    border:1px solid #FFFFFF;
-    background-color: #FFFFFF;
-}
-.table_shade th {
-    border:1px solid #FFFFFF;
-    background: #D5D5D5;
-}
-.table_shade td {
-    border:1px solid #FFFFFF;
-}
-.table_shade .odd {
-    background: #EEEEEE;
-}
-.table_shade .even {
-    background: #FBFBFB;
-}
-</style>
-<p>
-<p>Uma <strong>região de confiança elipsoidal</strong> assintótica de nível <span class="math inline">\(1-\alpha\)</span> para <span class="math inline">\(\boldsymbol{\theta} \in \mathbb{R}^k\)</span> baseada no EMV é:
-<span class="math display">\[\mathcal{C}_n = \left\{\boldsymbol{\theta} : n(\hat{\boldsymbol{\theta}} - \boldsymbol{\theta})^\top \hat{I}(\boldsymbol{\theta})\,(\hat{\boldsymbol{\theta}} - \boldsymbol{\theta}) \leq c\right\},\]</span>
-onde <span class="math inline">\(c = \chi^2_{k,\,1-\alpha}\)</span> é o quantil da qui-quadrado com <span class="math inline">\(k\)</span> graus de liberdade.</p>
-<p>Para <span class="math inline">\(k = 2\)</span> parâmetros e <span class="math inline">\(\alpha = 0.05\)</span>, qual é o valor crítico <span class="math inline">\(c = \chi^2_{2,\,0.95}\)</span>?</p>
-</p>]]></text>
-</questiontext>
-<generalfeedback format="html">
-<text><![CDATA[<p>
-<p>Pelo Teorema de Wilks, a estatística <span class="math inline">\(n(\hat{\boldsymbol{\theta}} - \boldsymbol{\theta})^\top \hat{I}(\boldsymbol{\theta})(\hat{\boldsymbol{\theta}} - \boldsymbol{\theta})\)</span> tem distribuição assintótica <span class="math inline">\(\chi^2_k\)</span> sob <span class="math inline">\(\boldsymbol{\theta}\)</span> verdadeiro. Para <span class="math inline">\(k = 2\)</span> e <span class="math inline">\(\alpha = 0.05\)</span>:
-<span class="math display">\[c = \chi^2_{2,\,0.95} = \texttt{qchisq(0.95, 2)} = 5.9915.\]</span></p>
-<p>Os demais valores correspondem a: <span class="math inline">\(\chi^2_{3,0.95} = 7.8147\)</span> (graus de liberdade errado), <span class="math inline">\(\chi^2_{2,0.05} = 0.1026\)</span> (quantil inferior), <span class="math inline">\(\chi^2_{1,0.95} = 3.8415\)</span> (graus de liberdade errado), e <span class="math inline">\(F_{2,62} = 3.1453\)</span> (distribuição errada).</p>
-</p>]]></text>
-</generalfeedback>
-<penalty>0</penalty>
-<defaultgrade>1</defaultgrade>
-<shuffleanswers>false</shuffleanswers>
-<single>true</single>
-<answernumbering>abc</answernumbering>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-3.1453
+5.9915
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-0.1026
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-3.8415
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-7.8147
+2.8068
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-5.9915
+7.8147
 </p>]]></text>
 </answer>
 </question>
@@ -658,17 +658,17 @@ onde <span class="math inline">\(c = \chi^2_{k,\,1-\alpha}\)</span> é o quantil
 <p>
 <p>Para <span class="math inline">\(X_i \overset{\text{iid}}{\sim} N(\mu, \sigma^2)\)</span> com <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\sigma^2\)</span> ambos <strong>desconhecidos</strong>, os EMVs são <span class="math inline">\(\hat{\mu}_{MV} = \bar{X}\)</span> e <span class="math inline">\(\hat{\sigma}^2_{MV} = \frac{1}{n}\sum(X_i - \bar{X})^2\)</span>.</p>
 <p>A <strong>variância assintótica</strong> de <span class="math inline">\(\hat{\mu}_{MV}\)</span> é dada pela entrada <span class="math inline">\((1,1)\)</span> de <span class="math inline">\(I(\boldsymbol{\theta})^{-1}/n\)</span>, que é <span class="math inline">\(\sigma^2/n\)</span>.</p>
-<p>Com <span class="math inline">\(\sigma^2 = 9\)</span> e <span class="math inline">\(n = 49\)</span>, qual é a variância assintótica de <span class="math inline">\(\hat{\mu}_{MV}\)</span>?</p>
+<p>Com <span class="math inline">\(\sigma^2 = 1\)</span> e <span class="math inline">\(n = 49\)</span>, qual é a variância assintótica de <span class="math inline">\(\hat{\mu}_{MV}\)</span>?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
 <p>A matriz de informação de Fisher para <span class="math inline">\(N(\mu, \sigma^2)\)</span> é <span class="math inline">\(I(\boldsymbol{\theta}) = \text{diag}(1/\sigma^2,\, 1/(2\sigma^4))\)</span>. Sua inversa é <span class="math inline">\(I(\boldsymbol{\theta})^{-1} = \text{diag}(\sigma^2,\, 2\sigma^4)\)</span>.</p>
 <p>Para <span class="math inline">\(n\)</span> observações, a variância assintótica de <span class="math inline">\(\hat{\mu}_{MV}\)</span> é:
-<span class="math display">\[\text{Var}_{\text{assint}}(\hat{\mu}_{MV}) = \frac{\sigma^2}{n} = \frac{9}{49} = 0.1837.\]</span></p>
+<span class="math display">\[\text{Var}_{\text{assint}}(\hat{\mu}_{MV}) = \frac{\sigma^2}{n} = \frac{1}{49} = 0.0204.\]</span></p>
 <p>Notas:
-- <span class="math inline">\(\sigma^2/(n-1) = 0.1875\)</span> usaria divisão de Bessel (para <span class="math inline">\(S^2\)</span> não-viesado, não para variância assintótica do EMV).
-- <span class="math inline">\(2\sigma^4/n = 3.3061\)</span> é a variância assintótica de <span class="math inline">\(\hat{\sigma}^2_{MV}\)</span>, não de <span class="math inline">\(\hat{\mu}_{MV}\)</span>.</p>
+- <span class="math inline">\(\sigma^2/(n-1) = 0.0208\)</span> usaria divisão de Bessel (para <span class="math inline">\(S^2\)</span> não-viesado, não para variância assintótica do EMV).
+- <span class="math inline">\(2\sigma^4/n = 0.0408\)</span> é a variância assintótica de <span class="math inline">\(\hat{\sigma}^2_{MV}\)</span>, não de <span class="math inline">\(\hat{\mu}_{MV}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -676,29 +676,29 @@ onde <span class="math inline">\(c = \chi^2_{k,\,1-\alpha}\)</span> é o quantil
 <shuffleanswers>false</shuffleanswers>
 <single>true</single>
 <answernumbering>abc</answernumbering>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-0.1875
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-441
-</p>]]></text>
-</answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-0.1837
+0.0204
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-3.3061
+0.0208
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-0.0918
+0.0408
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+49
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.0102
 </p>]]></text>
 </answer>
 </question>
@@ -735,17 +735,17 @@ onde <span class="math inline">\(c = \chi^2_{k,\,1-\alpha}\)</span> é o quantil
 <p>
 <p>Para <span class="math inline">\(X_i \overset{\text{iid}}{\sim} N(\mu, \sigma^2)\)</span> com <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\sigma^2\)</span> ambos <strong>desconhecidos</strong>, os EMVs são <span class="math inline">\(\hat{\mu}_{MV} = \bar{X}\)</span> e <span class="math inline">\(\hat{\sigma}^2_{MV} = \frac{1}{n}\sum(X_i - \bar{X})^2\)</span>.</p>
 <p>A <strong>variância assintótica</strong> de <span class="math inline">\(\hat{\mu}_{MV}\)</span> é dada pela entrada <span class="math inline">\((1,1)\)</span> de <span class="math inline">\(I(\boldsymbol{\theta})^{-1}/n\)</span>, que é <span class="math inline">\(\sigma^2/n\)</span>.</p>
-<p>Com <span class="math inline">\(\sigma^2 = 4\)</span> e <span class="math inline">\(n = 100\)</span>, qual é a variância assintótica de <span class="math inline">\(\hat{\mu}_{MV}\)</span>?</p>
+<p>Com <span class="math inline">\(\sigma^2 = 9\)</span> e <span class="math inline">\(n = 64\)</span>, qual é a variância assintótica de <span class="math inline">\(\hat{\mu}_{MV}\)</span>?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
 <p>A matriz de informação de Fisher para <span class="math inline">\(N(\mu, \sigma^2)\)</span> é <span class="math inline">\(I(\boldsymbol{\theta}) = \text{diag}(1/\sigma^2,\, 1/(2\sigma^4))\)</span>. Sua inversa é <span class="math inline">\(I(\boldsymbol{\theta})^{-1} = \text{diag}(\sigma^2,\, 2\sigma^4)\)</span>.</p>
 <p>Para <span class="math inline">\(n\)</span> observações, a variância assintótica de <span class="math inline">\(\hat{\mu}_{MV}\)</span> é:
-<span class="math display">\[\text{Var}_{\text{assint}}(\hat{\mu}_{MV}) = \frac{\sigma^2}{n} = \frac{4}{100} = 0.04.\]</span></p>
+<span class="math display">\[\text{Var}_{\text{assint}}(\hat{\mu}_{MV}) = \frac{\sigma^2}{n} = \frac{9}{64} = 0.1406.\]</span></p>
 <p>Notas:
-- <span class="math inline">\(\sigma^2/(n-1) = 0.0404\)</span> usaria divisão de Bessel (para <span class="math inline">\(S^2\)</span> não-viesado, não para variância assintótica do EMV).
-- <span class="math inline">\(2\sigma^4/n = 0.32\)</span> é a variância assintótica de <span class="math inline">\(\hat{\sigma}^2_{MV}\)</span>, não de <span class="math inline">\(\hat{\mu}_{MV}\)</span>.</p>
+- <span class="math inline">\(\sigma^2/(n-1) = 0.1429\)</span> usaria divisão de Bessel (para <span class="math inline">\(S^2\)</span> não-viesado, não para variância assintótica do EMV).
+- <span class="math inline">\(2\sigma^4/n = 2.5312\)</span> é a variância assintótica de <span class="math inline">\(\hat{\sigma}^2_{MV}\)</span>, não de <span class="math inline">\(\hat{\mu}_{MV}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -755,27 +755,27 @@ onde <span class="math inline">\(c = \chi^2_{k,\,1-\alpha}\)</span> é o quantil
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-0.02
+0.0703
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-400
+2.5312
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-0.32
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-0.0404
+576
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-0.04
+0.1406
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.1429
 </p>]]></text>
 </answer>
 </question>
@@ -835,17 +835,17 @@ onde <span class="math inline">\(c = \chi^2_{k,\,1-\alpha}\)</span> é o quantil
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(L_P(\theta_1) = \int L(\theta_1, \boldsymbol{\lambda})\, \pi(\boldsymbol{\lambda})\, d\boldsymbol{\lambda}\)</span> — marginalização bayesiana com prior <span class="math inline">\(\pi(\boldsymbol{\lambda})\)</span>.
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
 <span class="math inline">\(L_P(\theta_1) = \min_{\boldsymbol{\lambda}} L(\theta_1, \boldsymbol{\lambda})\)</span> — mínimo sobre os parâmetros de perturbação.
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
 <span class="math inline">\(L_P(\theta_1) = \sup_{\boldsymbol{\lambda}} L(\theta_1, \boldsymbol{\lambda})\)</span> — a verossimilhança maximizada sobre os parâmetros de perturbação.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(L_P(\theta_1) = \int L(\theta_1, \boldsymbol{\lambda})\, \pi(\boldsymbol{\lambda})\, d\boldsymbol{\lambda}\)</span> — marginalização bayesiana com prior <span class="math inline">\(\pi(\boldsymbol{\lambda})\)</span>.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
@@ -906,16 +906,6 @@ onde <span class="math inline">\(c = \chi^2_{k,\,1-\alpha}\)</span> é o quantil
 <shuffleanswers>false</shuffleanswers>
 <single>true</single>
 <answernumbering>abc</answernumbering>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(L_P(\theta_1) = \min_{\boldsymbol{\lambda}} L(\theta_1, \boldsymbol{\lambda})\)</span> — mínimo sobre os parâmetros de perturbação.
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(L_P(\theta_1) = \int L(\theta_1, \boldsymbol{\lambda})\, \pi(\boldsymbol{\lambda})\, d\boldsymbol{\lambda}\)</span> — marginalização bayesiana com prior <span class="math inline">\(\pi(\boldsymbol{\lambda})\)</span>.
-</p>]]></text>
-</answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
 <span class="math inline">\(L_P(\theta_1) = \sup_{\boldsymbol{\lambda}} L(\theta_1, \boldsymbol{\lambda})\)</span> — a verossimilhança maximizada sobre os parâmetros de perturbação.
@@ -924,6 +914,16 @@ onde <span class="math inline">\(c = \chi^2_{k,\,1-\alpha}\)</span> é o quantil
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
 <span class="math inline">\(L_P(\theta_1) = L(\theta_1, \hat{\boldsymbol{\lambda}})\)</span> onde <span class="math inline">\(\hat{\boldsymbol{\lambda}}\)</span> é fixado em seu EMV incondicional, ignorando a dependência em <span class="math inline">\(\theta_1\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(L_P(\theta_1) = \int L(\theta_1, \boldsymbol{\lambda})\, \pi(\boldsymbol{\lambda})\, d\boldsymbol{\lambda}\)</span> — marginalização bayesiana com prior <span class="math inline">\(\pi(\boldsymbol{\lambda})\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(L_P(\theta_1) = \min_{\boldsymbol{\lambda}} L(\theta_1, \boldsymbol{\lambda})\)</span> — mínimo sobre os parâmetros de perturbação.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
@@ -989,16 +989,6 @@ no sentido de matrizes <strong>positivo-semidefinidas</strong> (PSD), onde <span
 <shuffleanswers>false</shuffleanswers>
 <single>true</single>
 <answernumbering>abc</answernumbering>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(\text{Cov}(\hat{\boldsymbol{\theta}}) = I_n(\boldsymbol{\theta})^{-1}\)</span> para o EMV, com igualdade exata para qualquer <span class="math inline">\(n\)</span> finito.
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(\text{Var}(\hat{\theta}_j) \geq [I_n(\boldsymbol{\theta})^{-1}]_{jj}\)</span> somente para os estimadores individuais, sem implicação sobre a matriz de covariância completa.
-</p>]]></text>
-</answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
 <span class="math inline">\(\text{Cov}(\hat{\boldsymbol{\theta}}) \geq I_n(\boldsymbol{\theta})^{-1}\)</span> no sentido de matrizes positivo-semidefinidas, onde <span class="math inline">\(I_n(\boldsymbol{\theta})\)</span> é a matriz de informação de Fisher para <span class="math inline">\(n\)</span> observações.
@@ -1011,7 +1001,17 @@ A variância de cada componente satisfaz <span class="math inline">\(\text{Var}(
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
+<span class="math inline">\(\text{Var}(\hat{\theta}_j) \geq [I_n(\boldsymbol{\theta})^{-1}]_{jj}\)</span> somente para os estimadores individuais, sem implicação sobre a matriz de covariância completa.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
 O limite de Cramér-Rao não se generaliza para o caso multiparamétrico; vale apenas para <span class="math inline">\(k = 1\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(\text{Cov}(\hat{\boldsymbol{\theta}}) = I_n(\boldsymbol{\theta})^{-1}\)</span> para o EMV, com igualdade exata para qualquer <span class="math inline">\(n\)</span> finito.
 </p>]]></text>
 </answer>
 </question>
@@ -1072,7 +1072,7 @@ no sentido de matrizes <strong>positivo-semidefinidas</strong> (PSD), onde <span
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(\text{Var}(\hat{\theta}_j) \geq [I_n(\boldsymbol{\theta})^{-1}]_{jj}\)</span> somente para os estimadores individuais, sem implicação sobre a matriz de covariância completa.
+A variância de cada componente satisfaz <span class="math inline">\(\text{Var}(\hat{\theta}_j) \geq 1/[I_n(\boldsymbol{\theta})]_{jj}\)</span>, usando a entrada diagonal de <span class="math inline">\(I_n\)</span> (não sua inversa).
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
@@ -1080,14 +1080,14 @@ no sentido de matrizes <strong>positivo-semidefinidas</strong> (PSD), onde <span
 O limite de Cramér-Rao não se generaliza para o caso multiparamétrico; vale apenas para <span class="math inline">\(k = 1\)</span>.
 </p>]]></text>
 </answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(\text{Var}(\hat{\theta}_j) \geq [I_n(\boldsymbol{\theta})^{-1}]_{jj}\)</span> somente para os estimadores individuais, sem implicação sobre a matriz de covariância completa.
+</p>]]></text>
+</answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
 <span class="math inline">\(\text{Cov}(\hat{\boldsymbol{\theta}}) \geq I_n(\boldsymbol{\theta})^{-1}\)</span> no sentido de matrizes positivo-semidefinidas, onde <span class="math inline">\(I_n(\boldsymbol{\theta})\)</span> é a matriz de informação de Fisher para <span class="math inline">\(n\)</span> observações.
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-A variância de cada componente satisfaz <span class="math inline">\(\text{Var}(\hat{\theta}_j) \geq 1/[I_n(\boldsymbol{\theta})]_{jj}\)</span>, usando a entrada diagonal de <span class="math inline">\(I_n\)</span> (não sua inversa).
 </p>]]></text>
 </answer>
 </question>
@@ -1129,7 +1129,7 @@ A variância de cada componente satisfaz <span class="math inline">\(\text{Var}(
 }
 </style>
 <p>
-<p>Para <span class="math inline">\(X \sim \text{Gama}(\alpha, \beta)\)</span> com função de densidade <span class="math inline">\(f(x) = \frac{\beta^\alpha}{\Gamma(\alpha)} x^{\alpha-1} e^{-\beta x}\)</span>, os EMVs <span class="math inline">\(\hat{\alpha}_{MV}\)</span> e <span class="math inline">\(\hat{\beta}_{MV}\)</span> são obtidos resolvendo o <strong>sistema de equações de score conjuntas</strong>. No verdadeiro valor <span class="math inline">\((\alpha, \beta) = (3, 1)\)</span>, qual afirmação sobre a variância assintótica de <span class="math inline">\(\hat{\beta}_{MV}\)</span> é <strong>correta</strong>?</p>
+<p>Para <span class="math inline">\(X \sim \text{Gama}(\alpha, \beta)\)</span> com função de densidade <span class="math inline">\(f(x) = \frac{\beta^\alpha}{\Gamma(\alpha)} x^{\alpha-1} e^{-\beta x}\)</span>, os EMVs <span class="math inline">\(\hat{\alpha}_{MV}\)</span> e <span class="math inline">\(\hat{\beta}_{MV}\)</span> são obtidos resolvendo o <strong>sistema de equações de score conjuntas</strong>. No verdadeiro valor <span class="math inline">\((\alpha, \beta) = (5, 3)\)</span>, qual afirmação sobre a variância assintótica de <span class="math inline">\(\hat{\beta}_{MV}\)</span> é <strong>correta</strong>?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
@@ -1150,12 +1150,7 @@ onde <span class="math inline">\(\psi&#39;(\alpha) = \sum_{k=0}^\infty \frac{1}{
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-A matriz de informação de Fisher da distribuição Gama é sempre diagonal, sem termos de covariância entre <span class="math inline">\(\alpha\)</span> e <span class="math inline">\(\beta\)</span>.
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-No caso Gama, os EMVs de <span class="math inline">\(\alpha\)</span> e <span class="math inline">\(\beta\)</span> são assintoticamente independentes, pois a distribuição pertence à família exponencial.
+A variância assintótica de <span class="math inline">\(\hat{\beta}_{MV}\)</span> é <span class="math inline">\(\beta^2/(\alpha \cdot n)\)</span> para qualquer <span class="math inline">\(n\)</span> grande.
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
@@ -1165,12 +1160,17 @@ No caso multiparamétrico, a variância assintótica de <span class="math inline
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-A variância assintótica de <span class="math inline">\(\hat{\beta}_{MV}\)</span> é <span class="math inline">\(\beta^2/(\alpha \cdot n)\)</span> para qualquer <span class="math inline">\(n\)</span> grande.
+A variância assintótica de <span class="math inline">\(\hat{\beta}_{MV}\)</span> é simplesmente <span class="math inline">\(1/I_{22}(\alpha,\beta)\)</span>, ignorando os termos fora da diagonal da matriz de informação.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-A variância assintótica de <span class="math inline">\(\hat{\beta}_{MV}\)</span> é simplesmente <span class="math inline">\(1/I_{22}(\alpha,\beta)\)</span>, ignorando os termos fora da diagonal da matriz de informação.
+No caso Gama, os EMVs de <span class="math inline">\(\alpha\)</span> e <span class="math inline">\(\beta\)</span> são assintoticamente independentes, pois a distribuição pertence à família exponencial.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+A matriz de informação de Fisher da distribuição Gama é sempre diagonal, sem termos de covariância entre <span class="math inline">\(\alpha\)</span> e <span class="math inline">\(\beta\)</span>.
 </p>]]></text>
 </answer>
 </question>
@@ -1205,7 +1205,7 @@ A variância assintótica de <span class="math inline">\(\hat{\beta}_{MV}\)</spa
 }
 </style>
 <p>
-<p>Para <span class="math inline">\(X \sim \text{Gama}(\alpha, \beta)\)</span> com função de densidade <span class="math inline">\(f(x) = \frac{\beta^\alpha}{\Gamma(\alpha)} x^{\alpha-1} e^{-\beta x}\)</span>, os EMVs <span class="math inline">\(\hat{\alpha}_{MV}\)</span> e <span class="math inline">\(\hat{\beta}_{MV}\)</span> são obtidos resolvendo o <strong>sistema de equações de score conjuntas</strong>. No verdadeiro valor <span class="math inline">\((\alpha, \beta) = (2, 1)\)</span>, qual afirmação sobre a variância assintótica de <span class="math inline">\(\hat{\beta}_{MV}\)</span> é <strong>correta</strong>?</p>
+<p>Para <span class="math inline">\(X \sim \text{Gama}(\alpha, \beta)\)</span> com função de densidade <span class="math inline">\(f(x) = \frac{\beta^\alpha}{\Gamma(\alpha)} x^{\alpha-1} e^{-\beta x}\)</span>, os EMVs <span class="math inline">\(\hat{\alpha}_{MV}\)</span> e <span class="math inline">\(\hat{\beta}_{MV}\)</span> são obtidos resolvendo o <strong>sistema de equações de score conjuntas</strong>. No verdadeiro valor <span class="math inline">\((\alpha, \beta) = (3, 3)\)</span>, qual afirmação sobre a variância assintótica de <span class="math inline">\(\hat{\beta}_{MV}\)</span> é <strong>correta</strong>?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
@@ -1224,21 +1224,6 @@ onde <span class="math inline">\(\psi&#39;(\alpha) = \sum_{k=0}^\infty \frac{1}{
 <shuffleanswers>false</shuffleanswers>
 <single>true</single>
 <answernumbering>abc</answernumbering>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-A matriz de informação de Fisher da distribuição Gama é sempre diagonal, sem termos de covariância entre <span class="math inline">\(\alpha\)</span> e <span class="math inline">\(\beta\)</span>.
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-No caso Gama, os EMVs de <span class="math inline">\(\alpha\)</span> e <span class="math inline">\(\beta\)</span> são assintoticamente independentes, pois a distribuição pertence à família exponencial.
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-A variância assintótica de <span class="math inline">\(\hat{\beta}_{MV}\)</span> é <span class="math inline">\(\beta^2/(\alpha \cdot n)\)</span> para qualquer <span class="math inline">\(n\)</span> grande.
-</p>]]></text>
-</answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
 No caso multiparamétrico, a variância assintótica de <span class="math inline">\(\hat{\beta}_{MV}\)</span> leva em conta a informação cruzada entre <span class="math inline">\(\hat{\alpha}\)</span> e <span class="math inline">\(\hat{\beta}\)</span>, dada pela matriz de informação inversa <span class="math inline">\(I(\alpha, \beta)^{-1}\)</span>.
@@ -1246,7 +1231,22 @@ No caso multiparamétrico, a variância assintótica de <span class="math inline
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
+A matriz de informação de Fisher da distribuição Gama é sempre diagonal, sem termos de covariância entre <span class="math inline">\(\alpha\)</span> e <span class="math inline">\(\beta\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
 A variância assintótica de <span class="math inline">\(\hat{\beta}_{MV}\)</span> é simplesmente <span class="math inline">\(1/I_{22}(\alpha,\beta)\)</span>, ignorando os termos fora da diagonal da matriz de informação.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+A variância assintótica de <span class="math inline">\(\hat{\beta}_{MV}\)</span> é <span class="math inline">\(\beta^2/(\alpha \cdot n)\)</span> para qualquer <span class="math inline">\(n\)</span> grande.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+No caso Gama, os EMVs de <span class="math inline">\(\alpha\)</span> e <span class="math inline">\(\beta\)</span> são assintoticamente independentes, pois a distribuição pertence à família exponencial.
 </p>]]></text>
 </answer>
 </question>
@@ -1293,16 +1293,16 @@ A variância assintótica de <span class="math inline">\(\hat{\beta}_{MV}\)</spa
 - <span class="math inline">\(\nabla g = (1/\sigma,\; -\mu/(2\sigma^3))^\top\)</span>
 - <span class="math inline">\(I^{-1} = \text{diag}(\sigma^2,\; 2\sigma^4)\)</span></p>
 <p><strong>Cálculo:</strong> o primeiro termo contribui <span class="math inline">\(\sigma^2 \cdot (1/\sigma)^2 = 1\)</span>; o segundo contribui <span class="math inline">\(2\sigma^4 \cdot (\mu/(2\sigma^3))^2 = \mu^2/(2\sigma^2)\)</span>.</p>
-<p>Com <span class="math inline">\(\mu = 5\)</span> e <span class="math inline">\(\sigma^2 = 1\)</span>, qual é a variância assintótica de <span class="math inline">\(\sqrt{n}\,\hat{g}_{MV}\)</span>?</p>
+<p>Com <span class="math inline">\(\mu = 8\)</span> e <span class="math inline">\(\sigma^2 = 1\)</span>, qual é a variância assintótica de <span class="math inline">\(\sqrt{n}\,\hat{g}_{MV}\)</span>?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
 <p>Aplicando o Método Delta Multivariado:
 <span class="math display">\[\text{Var}_{\text{assint}}(\sqrt{n}\,\hat{g}_{MV}) = \nabla g^\top I^{-1} \nabla g = 1 + \frac{\mu^2}{2\sigma^2}.\]</span></p>
-<p>Substituindo <span class="math inline">\(\mu = 5\)</span> e <span class="math inline">\(\sigma^2 = 1\)</span>:
-<span class="math display">\[1 + \frac{5^2}{2 \times 1} = 1 + \frac{25}{2} = 13.5.\]</span></p>
-<p>A variância assintótica de <span class="math inline">\(\hat{g}_{MV}\)</span> (sem o fator <span class="math inline">\(n\)</span>) seria <span class="math inline">\((13.5)/n\)</span>.</p>
+<p>Substituindo <span class="math inline">\(\mu = 8\)</span> e <span class="math inline">\(\sigma^2 = 1\)</span>:
+<span class="math display">\[1 + \frac{8^2}{2 \times 1} = 1 + \frac{64}{2} = 33.\]</span></p>
+<p>A variância assintótica de <span class="math inline">\(\hat{g}_{MV}\)</span> (sem o fator <span class="math inline">\(n\)</span>) seria <span class="math inline">\((33)/n\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -1312,27 +1312,27 @@ A variância assintótica de <span class="math inline">\(\hat{\beta}_{MV}\)</spa
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-12.5
+31
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-13.5
+33
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-26
+66
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-26.26
+65
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-11.5
+32
 </p>]]></text>
 </answer>
 </question>
@@ -1372,16 +1372,16 @@ A variância assintótica de <span class="math inline">\(\hat{\beta}_{MV}\)</spa
 - <span class="math inline">\(\nabla g = (1/\sigma,\; -\mu/(2\sigma^3))^\top\)</span>
 - <span class="math inline">\(I^{-1} = \text{diag}(\sigma^2,\; 2\sigma^4)\)</span></p>
 <p><strong>Cálculo:</strong> o primeiro termo contribui <span class="math inline">\(\sigma^2 \cdot (1/\sigma)^2 = 1\)</span>; o segundo contribui <span class="math inline">\(2\sigma^4 \cdot (\mu/(2\sigma^3))^2 = \mu^2/(2\sigma^2)\)</span>.</p>
-<p>Com <span class="math inline">\(\mu = 7\)</span> e <span class="math inline">\(\sigma^2 = 1\)</span>, qual é a variância assintótica de <span class="math inline">\(\sqrt{n}\,\hat{g}_{MV}\)</span>?</p>
+<p>Com <span class="math inline">\(\mu = 6\)</span> e <span class="math inline">\(\sigma^2 = 9\)</span>, qual é a variância assintótica de <span class="math inline">\(\sqrt{n}\,\hat{g}_{MV}\)</span>?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
 <p>Aplicando o Método Delta Multivariado:
 <span class="math display">\[\text{Var}_{\text{assint}}(\sqrt{n}\,\hat{g}_{MV}) = \nabla g^\top I^{-1} \nabla g = 1 + \frac{\mu^2}{2\sigma^2}.\]</span></p>
-<p>Substituindo <span class="math inline">\(\mu = 7\)</span> e <span class="math inline">\(\sigma^2 = 1\)</span>:
-<span class="math display">\[1 + \frac{7^2}{2 \times 1} = 1 + \frac{49}{2} = 25.5.\]</span></p>
-<p>A variância assintótica de <span class="math inline">\(\hat{g}_{MV}\)</span> (sem o fator <span class="math inline">\(n\)</span>) seria <span class="math inline">\((25.5)/n\)</span>.</p>
+<p>Substituindo <span class="math inline">\(\mu = 6\)</span> e <span class="math inline">\(\sigma^2 = 9\)</span>:
+<span class="math display">\[1 + \frac{6^2}{2 \times 9} = 1 + \frac{36}{18} = 3.\]</span></p>
+<p>A variância assintótica de <span class="math inline">\(\hat{g}_{MV}\)</span> (sem o fator <span class="math inline">\(n\)</span>) seria <span class="math inline">\((3)/n\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -1391,27 +1391,27 @@ A variância assintótica de <span class="math inline">\(\hat{\beta}_{MV}\)</spa
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-23.5
+1
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-25.5
+3
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-50.5
+5
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-50
+11
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-24.5
+2
 </p>]]></text>
 </answer>
 </question>
@@ -1473,17 +1473,17 @@ com divisão por <span class="math inline">\(n\)</span> (não por <span class="m
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(\hat{\mu}_1 = \text{mediana}(X_i)\)</span> e <span class="math inline">\(\hat{\mu}_2 = \text{mediana}(Y_i)\)</span> como estimadores robustos de localização.
+<span class="math inline">\(\hat{\mu}_1 = \bar{X}\)</span>, <span class="math inline">\(\hat{\mu}_2 = \bar{Y}\)</span> e <span class="math inline">\(\hat{\Sigma} = S\)</span> (covariância amostral com divisão por <span class="math inline">\(n-1\)</span>, não-viesada).
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(\hat{\mu}_1 = \bar{X}\)</span>, <span class="math inline">\(\hat{\mu}_2 = \bar{Y}\)</span> e <span class="math inline">\(\hat{\Sigma} = S\)</span> (covariância amostral com divisão por <span class="math inline">\(n-1\)</span>, não-viesada).
+Os EMVs da normal bivariada não têm forma fechada e exigem métodos numéricos iterativos.
 </p>]]></text>
 </answer>
-<answer fraction="100" format="html">
+<answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(\hat{\mu}_1 = \bar{X}\)</span>, <span class="math inline">\(\hat{\mu}_2 = \bar{Y}\)</span>, <span class="math inline">\(\hat{\sigma}_{jk} = \frac{1}{n}\sum_{i=1}^n (X_{ij}-\bar{X}_j)(X_{ik}-\bar{X}_k)\)</span> — matriz de covariâncias amostral com divisão por <span class="math inline">\(n\)</span>.
+<span class="math inline">\(\hat{\mu}_1 = \text{mediana}(X_i)\)</span> e <span class="math inline">\(\hat{\mu}_2 = \text{mediana}(Y_i)\)</span> como estimadores robustos de localização.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
@@ -1491,9 +1491,9 @@ com divisão por <span class="math inline">\(n\)</span> (não por <span class="m
 <span class="math inline">\(\hat{\boldsymbol{\mu}} = (X_1, Y_1)\)</span> (primeira observação como estimativa) e <span class="math inline">\(\hat{\Sigma}\)</span> estimada pelo método dos momentos.
 </p>]]></text>
 </answer>
-<answer fraction="0" format="html">
+<answer fraction="100" format="html">
 <text><![CDATA[<p>
-Os EMVs da normal bivariada não têm forma fechada e exigem métodos numéricos iterativos.
+<span class="math inline">\(\hat{\mu}_1 = \bar{X}\)</span>, <span class="math inline">\(\hat{\mu}_2 = \bar{Y}\)</span>, <span class="math inline">\(\hat{\sigma}_{jk} = \frac{1}{n}\sum_{i=1}^n (X_{ij}-\bar{X}_j)(X_{ik}-\bar{X}_k)\)</span> — matriz de covariâncias amostral com divisão por <span class="math inline">\(n\)</span>.
 </p>]]></text>
 </answer>
 </question>
@@ -1546,21 +1546,6 @@ com divisão por <span class="math inline">\(n\)</span> (não por <span class="m
 <shuffleanswers>false</shuffleanswers>
 <single>true</single>
 <answernumbering>abc</answernumbering>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(\hat{\boldsymbol{\mu}} = (X_1, Y_1)\)</span> (primeira observação como estimativa) e <span class="math inline">\(\hat{\Sigma}\)</span> estimada pelo método dos momentos.
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(\hat{\mu}_1 = \text{mediana}(X_i)\)</span> e <span class="math inline">\(\hat{\mu}_2 = \text{mediana}(Y_i)\)</span> como estimadores robustos de localização.
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-Os EMVs da normal bivariada não têm forma fechada e exigem métodos numéricos iterativos.
-</p>]]></text>
-</answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
 <span class="math inline">\(\hat{\mu}_1 = \bar{X}\)</span>, <span class="math inline">\(\hat{\mu}_2 = \bar{Y}\)</span>, <span class="math inline">\(\hat{\sigma}_{jk} = \frac{1}{n}\sum_{i=1}^n (X_{ij}-\bar{X}_j)(X_{ik}-\bar{X}_k)\)</span> — matriz de covariâncias amostral com divisão por <span class="math inline">\(n\)</span>.
@@ -1569,6 +1554,21 @@ Os EMVs da normal bivariada não têm forma fechada e exigem métodos numéricos
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
 <span class="math inline">\(\hat{\mu}_1 = \bar{X}\)</span>, <span class="math inline">\(\hat{\mu}_2 = \bar{Y}\)</span> e <span class="math inline">\(\hat{\Sigma} = S\)</span> (covariância amostral com divisão por <span class="math inline">\(n-1\)</span>, não-viesada).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(\hat{\boldsymbol{\mu}} = (X_1, Y_1)\)</span> (primeira observação como estimativa) e <span class="math inline">\(\hat{\Sigma}\)</span> estimada pelo método dos momentos.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Os EMVs da normal bivariada não têm forma fechada e exigem métodos numéricos iterativos.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(\hat{\mu}_1 = \text{mediana}(X_i)\)</span> e <span class="math inline">\(\hat{\mu}_2 = \text{mediana}(Y_i)\)</span> como estimadores robustos de localização.
 </p>]]></text>
 </answer>
 </question>
@@ -1610,7 +1610,7 @@ Os EMVs da normal bivariada não têm forma fechada e exigem métodos numéricos
 }
 </style>
 <p>
-<p>No <strong>Teste da Razão de Verossimilhanças (TRV)</strong>, testamos <span class="math inline">\(H_0: \boldsymbol{\theta} \in \Omega_0\)</span> versus <span class="math inline">\(H_1: \boldsymbol{\theta} \in \Omega\)</span>, onde <span class="math inline">\(\Omega_0 \subset \Omega\)</span>, com <span class="math inline">\(\dim(\Omega_0) = 1\)</span> e <span class="math inline">\(\dim(\Omega) = 3\)</span>.</p>
+<p>No <strong>Teste da Razão de Verossimilhanças (TRV)</strong>, testamos <span class="math inline">\(H_0: \boldsymbol{\theta} \in \Omega_0\)</span> versus <span class="math inline">\(H_1: \boldsymbol{\theta} \in \Omega\)</span>, onde <span class="math inline">\(\Omega_0 \subset \Omega\)</span>, com <span class="math inline">\(\dim(\Omega_0) = 2\)</span> e <span class="math inline">\(\dim(\Omega) = 3\)</span>.</p>
 <p>Pelo <strong>Teorema de Wilks</strong>, sob <span class="math inline">\(H_0\)</span>:
 <span class="math display">\[-2\log\Lambda_n \xrightarrow{D} \chi^2_r.\]</span></p>
 <p>Quantos <strong>graus de liberdade</strong> <span class="math inline">\(r\)</span> tem essa distribuição assintótica?</p>
@@ -1619,8 +1619,8 @@ Os EMVs da normal bivariada não têm forma fechada e exigem métodos numéricos
 <generalfeedback format="html">
 <text><![CDATA[<p>
 <p>Pelo Teorema de Wilks, os graus de liberdade do TRV são a <strong>diferença de dimensão</strong> entre o espaço paramétrico irrestrito e o espaço sob <span class="math inline">\(H_0\)</span>:
-<span class="math display">\[r = \dim(\Omega) - \dim(\Omega_0) = 3 - 1 = 2.\]</span></p>
-<p>Intuitivamente, <span class="math inline">\(r\)</span> é o número de restrições impostas por <span class="math inline">\(H_0\)</span> sobre <span class="math inline">\(\boldsymbol{\theta}\)</span>. Os outros valores (<span class="math inline">\(3\)</span>, <span class="math inline">\(1\)</span>, <span class="math inline">\(5\)</span>, <span class="math inline">\(2\)</span>) correspondem a erros comuns: usar a dimensão total do modelo (<span class="math inline">\(3\)</span>), a dimensão do modelo restrito (<span class="math inline">\(1\)</span>), a soma (<span class="math inline">\(5\)</span>) ou <span class="math inline">\(p-1\)</span> (<span class="math inline">\(2\)</span>).</p>
+<span class="math display">\[r = \dim(\Omega) - \dim(\Omega_0) = 3 - 2 = 1.\]</span></p>
+<p>Intuitivamente, <span class="math inline">\(r\)</span> é o número de restrições impostas por <span class="math inline">\(H_0\)</span> sobre <span class="math inline">\(\boldsymbol{\theta}\)</span>. Os outros valores (<span class="math inline">\(3\)</span>, <span class="math inline">\(2\)</span>, <span class="math inline">\(4\)</span>, <span class="math inline">\(2\)</span>) correspondem a erros comuns: usar a dimensão total do modelo (<span class="math inline">\(3\)</span>), a dimensão do modelo restrito (<span class="math inline">\(2\)</span>), a soma (<span class="math inline">\(4\)</span>) ou <span class="math inline">\(p-1\)</span> (<span class="math inline">\(2\)</span>).</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -1628,14 +1628,14 @@ Os EMVs da normal bivariada não têm forma fechada e exigem métodos numéricos
 <shuffleanswers>false</shuffleanswers>
 <single>true</single>
 <answernumbering>abc</answernumbering>
-<answer fraction="100" format="html">
+<answer fraction="0" format="html">
 <text><![CDATA[<p>
 2
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-6
+3
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
@@ -1645,10 +1645,10 @@ Os EMVs da normal bivariada não têm forma fechada e exigem métodos numéricos
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-3
+4
 </p>]]></text>
 </answer>
-<answer fraction="0" format="html">
+<answer fraction="100" format="html">
 <text><![CDATA[<p>
 1
 </p>]]></text>
@@ -1705,6 +1705,16 @@ Os EMVs da normal bivariada não têm forma fechada e exigem métodos numéricos
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
+6
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+3
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
 1
 </p>]]></text>
 </answer>
@@ -1716,16 +1726,6 @@ Os EMVs da normal bivariada não têm forma fechada e exigem métodos numéricos
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
 2
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-3
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-6
 </p>]]></text>
 </answer>
 </question>
@@ -1787,17 +1787,17 @@ Os EMVs da normal bivariada não têm forma fechada e exigem métodos numéricos
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
+<span class="math inline">\(W_n = n(\boldsymbol{A}\hat{\boldsymbol{\theta}} - \mathbf{b})^\top (\boldsymbol{A}\boldsymbol{A}^\top)^{-1} (\boldsymbol{A}\hat{\boldsymbol{\theta}} - \mathbf{b}) \xrightarrow{D} \chi^2_r\)</span>, ignorando a informação de Fisher.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
 <span class="math inline">\(W_n = n(\boldsymbol{A}\hat{\boldsymbol{\theta}} - \mathbf{b})^\top \hat{I}(\hat{\boldsymbol{\theta}}) (\boldsymbol{A}\hat{\boldsymbol{\theta}} - \mathbf{b}) \xrightarrow{D} \chi^2_r\)</span>, usando <span class="math inline">\(\hat{I}\)</span> em vez de <span class="math inline">\(\hat{I}^{-1}\)</span>.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(W_n = \sqrt{n}(\hat{\boldsymbol{\theta}} - \boldsymbol{\theta}_0)^\top \hat{I}(\hat{\boldsymbol{\theta}}) \sqrt{n}(\hat{\boldsymbol{\theta}} - \boldsymbol{\theta}_0) \xrightarrow{D} \chi^2_k\)</span>, sem incorporar a restrição linear <span class="math inline">\(\boldsymbol{A}\)</span>.
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(W_n = n(\boldsymbol{A}\hat{\boldsymbol{\theta}} - \mathbf{b})^\top (\boldsymbol{A}\boldsymbol{A}^\top)^{-1} (\boldsymbol{A}\hat{\boldsymbol{\theta}} - \mathbf{b}) \xrightarrow{D} \chi^2_r\)</span>, ignorando a informação de Fisher.
+<span class="math inline">\(W_n = n\|\boldsymbol{A}\hat{\boldsymbol{\theta}} - \mathbf{b}\|^2 \xrightarrow{D} \chi^2_r\)</span>, usando apenas a norma euclidiana ao quadrado.
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
@@ -1807,7 +1807,7 @@ Os EMVs da normal bivariada não têm forma fechada e exigem métodos numéricos
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(W_n = n\|\boldsymbol{A}\hat{\boldsymbol{\theta}} - \mathbf{b}\|^2 \xrightarrow{D} \chi^2_r\)</span>, usando apenas a norma euclidiana ao quadrado.
+<span class="math inline">\(W_n = \sqrt{n}(\hat{\boldsymbol{\theta}} - \boldsymbol{\theta}_0)^\top \hat{I}(\hat{\boldsymbol{\theta}}) \sqrt{n}(\hat{\boldsymbol{\theta}} - \boldsymbol{\theta}_0) \xrightarrow{D} \chi^2_k\)</span>, sem incorporar a restrição linear <span class="math inline">\(\boldsymbol{A}\)</span>.
 </p>]]></text>
 </answer>
 </question>
@@ -1862,6 +1862,11 @@ Os EMVs da normal bivariada não têm forma fechada e exigem métodos numéricos
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
+<span class="math inline">\(W_n = n(\boldsymbol{A}\hat{\boldsymbol{\theta}} - \mathbf{b})^\top (\boldsymbol{A}\boldsymbol{A}^\top)^{-1} (\boldsymbol{A}\hat{\boldsymbol{\theta}} - \mathbf{b}) \xrightarrow{D} \chi^2_r\)</span>, ignorando a informação de Fisher.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
 <span class="math inline">\(W_n = n(\boldsymbol{A}\hat{\boldsymbol{\theta}} - \mathbf{b})^\top \hat{I}(\hat{\boldsymbol{\theta}}) (\boldsymbol{A}\hat{\boldsymbol{\theta}} - \mathbf{b}) \xrightarrow{D} \chi^2_r\)</span>, usando <span class="math inline">\(\hat{I}\)</span> em vez de <span class="math inline">\(\hat{I}^{-1}\)</span>.
 </p>]]></text>
 </answer>
@@ -1872,17 +1877,12 @@ Os EMVs da normal bivariada não têm forma fechada e exigem métodos numéricos
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(W_n = n(\boldsymbol{A}\hat{\boldsymbol{\theta}} - \mathbf{b})^\top (\boldsymbol{A}\boldsymbol{A}^\top)^{-1} (\boldsymbol{A}\hat{\boldsymbol{\theta}} - \mathbf{b}) \xrightarrow{D} \chi^2_r\)</span>, ignorando a informação de Fisher.
+<span class="math inline">\(W_n = n\|\boldsymbol{A}\hat{\boldsymbol{\theta}} - \mathbf{b}\|^2 \xrightarrow{D} \chi^2_r\)</span>, usando apenas a norma euclidiana ao quadrado.
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
 <span class="math inline">\(W_n = n(\boldsymbol{A}\hat{\boldsymbol{\theta}} - \mathbf{b})^\top [\boldsymbol{A}\hat{I}^{-1}(\hat{\boldsymbol{\theta}})\boldsymbol{A}^\top]^{-1} (\boldsymbol{A}\hat{\boldsymbol{\theta}} - \mathbf{b}) \xrightarrow{D} \chi^2_r\)</span>.
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(W_n = n\|\boldsymbol{A}\hat{\boldsymbol{\theta}} - \mathbf{b}\|^2 \xrightarrow{D} \chi^2_r\)</span>, usando apenas a norma euclidiana ao quadrado.
 </p>]]></text>
 </answer>
 </question>
@@ -1945,17 +1945,17 @@ onde <span class="math inline">\(\mathbf{s}_n(\boldsymbol{\theta}_0) = \frac{\pa
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-A segunda derivada (negativa) da log-verossimilhança avaliada em <span class="math inline">\(\boldsymbol{\theta}_0\)</span>, sem o vetor score.
-</p>]]></text>
-</answer>
-<answer fraction="100" format="html">
-<text><![CDATA[<p>
-A estatística <span class="math inline">\(R_n = \mathbf{s}_n(\boldsymbol{\theta}_0)^\top I_n(\boldsymbol{\theta}_0)^{-1} \mathbf{s}_n(\boldsymbol{\theta}_0)\)</span>, onde <span class="math inline">\(\mathbf{s}_n(\boldsymbol{\theta}_0) = \frac{\partial \ell}{\partial \boldsymbol{\theta}}\big|_{\boldsymbol{\theta}_0}\)</span> é o vetor score avaliado em <span class="math inline">\(\boldsymbol{\theta}_0\)</span>.
+A estatística <span class="math inline">\(R_n = \mathbf{s}_n(\hat{\boldsymbol{\theta}})^\top I_n(\hat{\boldsymbol{\theta}})^{-1} \mathbf{s}_n(\hat{\boldsymbol{\theta}})\)</span> — o score avaliado no EMV irrestrito.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-A estatística <span class="math inline">\(R_n = \mathbf{s}_n(\hat{\boldsymbol{\theta}})^\top I_n(\hat{\boldsymbol{\theta}})^{-1} \mathbf{s}_n(\hat{\boldsymbol{\theta}})\)</span> — o score avaliado no EMV irrestrito.
+A segunda derivada (negativa) da log-verossimilhança avaliada em <span class="math inline">\(\boldsymbol{\theta}_0\)</span>, sem o vetor score.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+O gradiente da log-verossimilhança avaliado no EMV <span class="math inline">\(\hat{\boldsymbol{\theta}}\)</span>, que é sempre zero pela condição de primeira ordem.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
@@ -1963,9 +1963,9 @@ A estatística <span class="math inline">\(R_n = \mathbf{s}_n(\hat{\boldsymbol{\
 <span class="math inline">\(n\)</span> vezes o quadrado do score escalar dividido pela informação de Fisher — válido apenas para <span class="math inline">\(k=1\)</span> parâmetro.
 </p>]]></text>
 </answer>
-<answer fraction="0" format="html">
+<answer fraction="100" format="html">
 <text><![CDATA[<p>
-O gradiente da log-verossimilhança avaliado no EMV <span class="math inline">\(\hat{\boldsymbol{\theta}}\)</span>, que é sempre zero pela condição de primeira ordem.
+A estatística <span class="math inline">\(R_n = \mathbf{s}_n(\boldsymbol{\theta}_0)^\top I_n(\boldsymbol{\theta}_0)^{-1} \mathbf{s}_n(\boldsymbol{\theta}_0)\)</span>, onde <span class="math inline">\(\mathbf{s}_n(\boldsymbol{\theta}_0) = \frac{\partial \ell}{\partial \boldsymbol{\theta}}\big|_{\boldsymbol{\theta}_0}\)</span> é o vetor score avaliado em <span class="math inline">\(\boldsymbol{\theta}_0\)</span>.
 </p>]]></text>
 </answer>
 </question>
@@ -2021,7 +2021,17 @@ onde <span class="math inline">\(\mathbf{s}_n(\boldsymbol{\theta}_0) = \frac{\pa
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-A segunda derivada (negativa) da log-verossimilhança avaliada em <span class="math inline">\(\boldsymbol{\theta}_0\)</span>, sem o vetor score.
+<span class="math inline">\(n\)</span> vezes o quadrado do score escalar dividido pela informação de Fisher — válido apenas para <span class="math inline">\(k=1\)</span> parâmetro.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+A estatística <span class="math inline">\(R_n = \mathbf{s}_n(\hat{\boldsymbol{\theta}})^\top I_n(\hat{\boldsymbol{\theta}})^{-1} \mathbf{s}_n(\hat{\boldsymbol{\theta}})\)</span> — o score avaliado no EMV irrestrito.
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+A estatística <span class="math inline">\(R_n = \mathbf{s}_n(\boldsymbol{\theta}_0)^\top I_n(\boldsymbol{\theta}_0)^{-1} \mathbf{s}_n(\boldsymbol{\theta}_0)\)</span>, onde <span class="math inline">\(\mathbf{s}_n(\boldsymbol{\theta}_0) = \frac{\partial \ell}{\partial \boldsymbol{\theta}}\big|_{\boldsymbol{\theta}_0}\)</span> é o vetor score avaliado em <span class="math inline">\(\boldsymbol{\theta}_0\)</span>.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
@@ -2031,17 +2041,7 @@ O gradiente da log-verossimilhança avaliado no EMV <span class="math inline">\(
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-A estatística <span class="math inline">\(R_n = \mathbf{s}_n(\hat{\boldsymbol{\theta}})^\top I_n(\hat{\boldsymbol{\theta}})^{-1} \mathbf{s}_n(\hat{\boldsymbol{\theta}})\)</span> — o score avaliado no EMV irrestrito.
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(n\)</span> vezes o quadrado do score escalar dividido pela informação de Fisher — válido apenas para <span class="math inline">\(k=1\)</span> parâmetro.
-</p>]]></text>
-</answer>
-<answer fraction="100" format="html">
-<text><![CDATA[<p>
-A estatística <span class="math inline">\(R_n = \mathbf{s}_n(\boldsymbol{\theta}_0)^\top I_n(\boldsymbol{\theta}_0)^{-1} \mathbf{s}_n(\boldsymbol{\theta}_0)\)</span>, onde <span class="math inline">\(\mathbf{s}_n(\boldsymbol{\theta}_0) = \frac{\partial \ell}{\partial \boldsymbol{\theta}}\big|_{\boldsymbol{\theta}_0}\)</span> é o vetor score avaliado em <span class="math inline">\(\boldsymbol{\theta}_0\)</span>.
+A segunda derivada (negativa) da log-verossimilhança avaliada em <span class="math inline">\(\boldsymbol{\theta}_0\)</span>, sem o vetor score.
 </p>]]></text>
 </answer>
 </question>
@@ -2106,17 +2106,12 @@ A estatística <span class="math inline">\(R_n = \mathbf{s}_n(\boldsymbol{\theta
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-O TRV é sempre mais poderoso que Wald e Score para amostras finitas, sendo a escolha ótima em qualquer situação.
+São equivalentes apenas quando a hipótese é simples (<span class="math inline">\(r = 1\)</span>); para <span class="math inline">\(r &gt; 1\)</span> têm distribuições asintóticas distintas.
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
 Assintoticamente equivalentes sob <span class="math inline">\(H_0\)</span>: todos têm distribuição <span class="math inline">\(\chi^2_r\)</span> e são assintoticamente iguais em primeira ordem. Podem diferir em amostras finitas.
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-São equivalentes apenas quando a hipótese é simples (<span class="math inline">\(r = 1\)</span>); para <span class="math inline">\(r &gt; 1\)</span> têm distribuições asintóticas distintas.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
@@ -2127,6 +2122,11 @@ Sempre numericamente idênticos para qualquer tamanho amostral <span class="math
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
 O teste de Score é sempre mais conservador que o de Wald, independente do modelo ou tamanho amostral.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+O TRV é sempre mais poderoso que Wald e Score para amostras finitas, sendo a escolha ótima em qualquer situação.
 </p>]]></text>
 </answer>
 </question>
@@ -2184,17 +2184,17 @@ O teste de Score é sempre mais conservador que o de Wald, independente do model
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-O teste de Score é sempre mais conservador que o de Wald, independente do modelo ou tamanho amostral.
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
 O TRV é sempre mais poderoso que Wald e Score para amostras finitas, sendo a escolha ótima em qualquer situação.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
 São equivalentes apenas quando a hipótese é simples (<span class="math inline">\(r = 1\)</span>); para <span class="math inline">\(r &gt; 1\)</span> têm distribuições asintóticas distintas.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+Sempre numericamente idênticos para qualquer tamanho amostral <span class="math inline">\(n\)</span>, produzindo exatamente os mesmos p-valores.
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
@@ -2204,7 +2204,7 @@ Assintoticamente equivalentes sob <span class="math inline">\(H_0\)</span>: todo
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-Sempre numericamente idênticos para qualquer tamanho amostral <span class="math inline">\(n\)</span>, produzindo exatamente os mesmos p-valores.
+O teste de Score é sempre mais conservador que o de Wald, independente do modelo ou tamanho amostral.
 </p>]]></text>
 </answer>
 </question>
@@ -2220,80 +2220,6 @@ Sempre numericamente idênticos para qualquer tamanho amostral <span class="math
 <question type="multichoice">
 <name>
 <text> R1 Q15 : Cap7_Cap7S2Q5 </text>
-</name>
-<questiontext format="html">
-<text><![CDATA[
-<style type="text/css" rel="stylesheet">
-/* tables with alternating shading */
-.table_shade {
-    border-collapse: collapse;
-    border-spacing: 0;
-    border:1px solid #FFFFFF;
-    background-color: #FFFFFF;
-}
-.table_shade th {
-    border:1px solid #FFFFFF;
-    background: #D5D5D5;
-}
-.table_shade td {
-    border:1px solid #FFFFFF;
-}
-.table_shade .odd {
-    background: #EEEEEE;
-}
-.table_shade .even {
-    background: #FBFBFB;
-}
-</style>
-<p>
-<p>Para testar <strong>independência</strong> em uma tabela de contingência <span class="math inline">\(2 \times 3\)</span> com <span class="math inline">\(n = 300\)</span> observações, a estatística do TRV (ou qui-quadrado de Pearson) tem distribuição assintótica <span class="math inline">\(\chi^2_?\)</span> sob <span class="math inline">\(H_0\)</span> (independência). Quantos <strong>graus de liberdade</strong> tem essa distribuição?</p>
-</p>]]></text>
-</questiontext>
-<generalfeedback format="html">
-<text><![CDATA[<p>
-<p>Os graus de liberdade para o teste qui-quadrado de independência em uma tabela <span class="math inline">\(r \times c\)</span> são:
-<span class="math display">\[\text{gl} = (r-1)(c-1).\]</span></p>
-<p>Para uma tabela <span class="math inline">\(2 \times 3\)</span>:
-<span class="math display">\[\text{gl} = (2 - 1)(3 - 1) = 1 \times 2 = 2.\]</span></p>
-<p><strong>Raciocínio:</strong> O modelo irrestrito (dependência) tem <span class="math inline">\(rc - 1 = 5\)</span> parâmetros livres (probabilidades de célula somando 1). O modelo restrito (independência) tem <span class="math inline">\((r-1) + (c-1) = 3\)</span> parâmetros livres (probabilidades marginais). A diferença é <span class="math inline">\(5 - 3 = 2\)</span> = <span class="math inline">\((r-1)(c-1)\)</span>.</p>
-</p>]]></text>
-</generalfeedback>
-<penalty>0</penalty>
-<defaultgrade>1</defaultgrade>
-<shuffleanswers>false</shuffleanswers>
-<single>true</single>
-<answernumbering>abc</answernumbering>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-5
-</p>]]></text>
-</answer>
-<answer fraction="100" format="html">
-<text><![CDATA[<p>
-2
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-4
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-6
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-3
-</p>]]></text>
-</answer>
-</question>
-
-
-<question type="multichoice">
-<name>
-<text> R2 Q15 : Cap7_Cap7S2Q5 </text>
 </name>
 <questiontext format="html">
 <text><![CDATA[
@@ -2339,7 +2265,17 @@ Sempre numericamente idênticos para qualquer tamanho amostral <span class="math
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-2
+5
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+4
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+1
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
@@ -2349,17 +2285,81 @@ Sempre numericamente idênticos para qualquer tamanho amostral <span class="math
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
+2
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q15 : Cap7_Cap7S2Q5 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Para testar <strong>independência</strong> em uma tabela de contingência <span class="math inline">\(3 \times 3\)</span> com <span class="math inline">\(n = 300\)</span> observações, a estatística do TRV (ou qui-quadrado de Pearson) tem distribuição assintótica <span class="math inline">\(\chi^2_?\)</span> sob <span class="math inline">\(H_0\)</span> (independência). Quantos <strong>graus de liberdade</strong> tem essa distribuição?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Os graus de liberdade para o teste qui-quadrado de independência em uma tabela <span class="math inline">\(r \times c\)</span> são:
+<span class="math display">\[\text{gl} = (r-1)(c-1).\]</span></p>
+<p>Para uma tabela <span class="math inline">\(3 \times 3\)</span>:
+<span class="math display">\[\text{gl} = (3 - 1)(3 - 1) = 2 \times 2 = 4.\]</span></p>
+<p><strong>Raciocínio:</strong> O modelo irrestrito (dependência) tem <span class="math inline">\(rc - 1 = 8\)</span> parâmetros livres (probabilidades de célula somando 1). O modelo restrito (independência) tem <span class="math inline">\((r-1) + (c-1) = 4\)</span> parâmetros livres (probabilidades marginais). A diferença é <span class="math inline">\(8 - 4 = 4\)</span> = <span class="math inline">\((r-1)(c-1)\)</span>.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+11
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+8
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+10
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
 4
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-5
-</p>]]></text>
-</answer>
-<answer fraction="100" format="html">
-<text><![CDATA[<p>
-1
+9
 </p>]]></text>
 </answer>
 </question>
@@ -2401,20 +2401,20 @@ Sempre numericamente idênticos para qualquer tamanho amostral <span class="math
 }
 </style>
 <p>
-<p>Para <span class="math inline">\(X_i \overset{\text{iid}}{\sim} N(\mu, \sigma^2)\)</span> com <span class="math inline">\(\sigma^2\)</span> <strong>desconhecido</strong>, testamos <span class="math inline">\(H_0: \mu = 6\)</span>.</p>
+<p>Para <span class="math inline">\(X_i \overset{\text{iid}}{\sim} N(\mu, \sigma^2)\)</span> com <span class="math inline">\(\sigma^2\)</span> <strong>desconhecido</strong>, testamos <span class="math inline">\(H_0: \mu = 8\)</span>.</p>
 <p>O TRV tem estatística:
 <span class="math display">\[-2\log\Lambda_n = n\log\!\left(1 + \frac{T^2}{n-1}\right) \xrightarrow{D} \chi^2_1,\]</span>
 onde <span class="math inline">\(T = \sqrt{n}(\bar{X} - \mu_0)/S\)</span> é a estatística <span class="math inline">\(t\)</span> de Student.</p>
-<p>Com <span class="math inline">\(\bar{X} = 6.93\)</span>, <span class="math inline">\(S^2 = 3.05\)</span>, <span class="math inline">\(n = 64\)</span> (portanto <span class="math inline">\(T = 4.2601\)</span>), qual é o valor observado de <span class="math inline">\(-2\log\Lambda_n\)</span>?</p>
+<p>Com <span class="math inline">\(\bar{X} = 9.5\)</span>, <span class="math inline">\(S^2 = 3.07\)</span>, <span class="math inline">\(n = 64\)</span> (portanto <span class="math inline">\(T = 6.8488\)</span>), qual é o valor observado de <span class="math inline">\(-2\log\Lambda_n\)</span>?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
 <p><strong>Passo 1:</strong> calcular <span class="math inline">\(T\)</span>:
-<span class="math display">\[T = \frac{\sqrt{64}\,(6.93 - 6)}{\sqrt{3.05}} = 4.2601.\]</span></p>
+<span class="math display">\[T = \frac{\sqrt{64}\,(9.5 - 8)}{\sqrt{3.07}} = 6.8488.\]</span></p>
 <p><strong>Passo 2:</strong> calcular <span class="math inline">\(-2\log\Lambda_n\)</span>:
-<span class="math display">\[-2\log\Lambda_n = 64 \times \log\!\left(1 + \frac{4.2601^2}{64 - 1}\right) = 64 \times \log\!\left(1 + \frac{18.1485}{63}\right) = 16.2013.\]</span></p>
-<p><strong>Nota:</strong> <span class="math inline">\(T^2 = 18.1485\)</span> seria a estatística do teste <span class="math inline">\(t\)</span> ao quadrado (para <span class="math inline">\(\alpha\)</span> dado, seria comparada com <span class="math inline">\(F_{1,n-1}\)</span>), mas <strong>não</strong> é o valor do TRV. O TRV usa o logaritmo conforme a fórmula acima.</p>
+<span class="math display">\[-2\log\Lambda_n = 64 \times \log\!\left(1 + \frac{6.8488^2}{64 - 1}\right) = 64 \times \log\!\left(1 + \frac{46.9061}{63}\right) = 35.6154.\]</span></p>
+<p><strong>Nota:</strong> <span class="math inline">\(T^2 = 46.9061\)</span> seria a estatística do teste <span class="math inline">\(t\)</span> ao quadrado (para <span class="math inline">\(\alpha\)</span> dado, seria comparada com <span class="math inline">\(F_{1,n-1}\)</span>), mas <strong>não</strong> é o valor do TRV. O TRV usa o logaritmo conforme a fórmula acima.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -2424,27 +2424,27 @@ onde <span class="math inline">\(T = \sqrt{n}(\bar{X} - \mu_0)/S\)</span> é a e
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-8.1006
+17.8077
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-8.3754
+35.1872
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-18.1485
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-15.9773
+13.2094
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-16.2013
+35.6154
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+46.9061
 </p>]]></text>
 </answer>
 </question>
@@ -2479,20 +2479,20 @@ onde <span class="math inline">\(T = \sqrt{n}(\bar{X} - \mu_0)/S\)</span> é a e
 }
 </style>
 <p>
-<p>Para <span class="math inline">\(X_i \overset{\text{iid}}{\sim} N(\mu, \sigma^2)\)</span> com <span class="math inline">\(\sigma^2\)</span> <strong>desconhecido</strong>, testamos <span class="math inline">\(H_0: \mu = 6\)</span>.</p>
+<p>Para <span class="math inline">\(X_i \overset{\text{iid}}{\sim} N(\mu, \sigma^2)\)</span> com <span class="math inline">\(\sigma^2\)</span> <strong>desconhecido</strong>, testamos <span class="math inline">\(H_0: \mu = 8\)</span>.</p>
 <p>O TRV tem estatística:
 <span class="math display">\[-2\log\Lambda_n = n\log\!\left(1 + \frac{T^2}{n-1}\right) \xrightarrow{D} \chi^2_1,\]</span>
 onde <span class="math inline">\(T = \sqrt{n}(\bar{X} - \mu_0)/S\)</span> é a estatística <span class="math inline">\(t\)</span> de Student.</p>
-<p>Com <span class="math inline">\(\bar{X} = 5.42\)</span>, <span class="math inline">\(S^2 = 5.81\)</span>, <span class="math inline">\(n = 64\)</span> (portanto <span class="math inline">\(T = -1.925\)</span>), qual é o valor observado de <span class="math inline">\(-2\log\Lambda_n\)</span>?</p>
+<p>Com <span class="math inline">\(\bar{X} = 9.01\)</span>, <span class="math inline">\(S^2 = 2.98\)</span>, <span class="math inline">\(n = 36\)</span> (portanto <span class="math inline">\(T = 3.5105\)</span>), qual é o valor observado de <span class="math inline">\(-2\log\Lambda_n\)</span>?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
 <p><strong>Passo 1:</strong> calcular <span class="math inline">\(T\)</span>:
-<span class="math display">\[T = \frac{\sqrt{64}\,(5.42 - 6)}{\sqrt{5.81}} = -1.925.\]</span></p>
+<span class="math display">\[T = \frac{\sqrt{36}\,(9.01 - 8)}{\sqrt{2.98}} = 3.5105.\]</span></p>
 <p><strong>Passo 2:</strong> calcular <span class="math inline">\(-2\log\Lambda_n\)</span>:
-<span class="math display">\[-2\log\Lambda_n = 64 \times \log\!\left(1 + \frac{-1.925^2}{64 - 1}\right) = 64 \times \log\!\left(1 + \frac{3.7056}{63}\right) = 3.6579.\]</span></p>
-<p><strong>Nota:</strong> <span class="math inline">\(T^2 = 3.7056\)</span> seria a estatística do teste <span class="math inline">\(t\)</span> ao quadrado (para <span class="math inline">\(\alpha\)</span> dado, seria comparada com <span class="math inline">\(F_{1,n-1}\)</span>), mas <strong>não</strong> é o valor do TRV. O TRV usa o logaritmo conforme a fórmula acima.</p>
+<span class="math display">\[-2\log\Lambda_n = 36 \times \log\!\left(1 + \frac{3.5105^2}{36 - 1}\right) = 36 \times \log\!\left(1 + \frac{12.3236}{35}\right) = 10.8598.\]</span></p>
+<p><strong>Nota:</strong> <span class="math inline">\(T^2 = 12.3236\)</span> seria a estatística do teste <span class="math inline">\(t\)</span> ao quadrado (para <span class="math inline">\(\alpha\)</span> dado, seria comparada com <span class="math inline">\(F_{1,n-1}\)</span>), mas <strong>não</strong> é o valor do TRV. O TRV usa o logaritmo conforme a fórmula acima.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -2500,29 +2500,29 @@ onde <span class="math inline">\(T = \sqrt{n}(\bar{X} - \mu_0)/S\)</span> é a e
 <shuffleanswers>false</shuffleanswers>
 <single>true</single>
 <answernumbering>abc</answernumbering>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-3.6023
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-3.8525
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-1.829
-</p>]]></text>
-</answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-3.6579
+10.8598
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-3.7056
+10.5984
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+6.882
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+5.4299
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+12.3236
 </p>]]></text>
 </answer>
 </question>
@@ -2564,20 +2564,20 @@ onde <span class="math inline">\(T = \sqrt{n}(\bar{X} - \mu_0)/S\)</span> é a e
 }
 </style>
 <p>
-<p>Na <strong>regressão linear múltipla</strong> com <span class="math inline">\(k = 2\)</span> preditores e <span class="math inline">\(n = 49\)</span> observações, o <strong>Teste F</strong> para <span class="math inline">\(H_0: \beta_1 = \cdots = \beta_k = 0\)</span> usa a estatística:
+<p>Na <strong>regressão linear múltipla</strong> com <span class="math inline">\(k = 4\)</span> preditores e <span class="math inline">\(n = 25\)</span> observações, o <strong>Teste F</strong> para <span class="math inline">\(H_0: \beta_1 = \cdots = \beta_k = 0\)</span> usa a estatística:
 <span class="math display">\[F = \frac{SSR/k}{SSE/(n-k-1)} \sim F_{k,\,n-k-1} \text{ sob } H_0.\]</span></p>
-<p>Com <span class="math inline">\(SSR = 39\)</span>, <span class="math inline">\(SSE = 33.49\)</span>, <span class="math inline">\(k = 2\)</span>, <span class="math inline">\(n = 49\)</span>, qual é o valor observado de <span class="math inline">\(F\)</span>?</p>
+<p>Com <span class="math inline">\(SSR = 36.01\)</span>, <span class="math inline">\(SSE = 10.79\)</span>, <span class="math inline">\(k = 4\)</span>, <span class="math inline">\(n = 25\)</span>, qual é o valor observado de <span class="math inline">\(F\)</span>?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
 <p><strong>Cálculo:</strong>
-<span class="math display">\[F = \frac{SSR/k}{SSE/(n-k-1)} = \frac{39/2}{33.49/(49-2-1)} = \frac{19.5}{0.728} = 26.7841.\]</span></p>
-<p><strong>Graus de liberdade:</strong> <span class="math inline">\(F \sim F_{2,\,46}\)</span> sob <span class="math inline">\(H_0\)</span>.</p>
+<span class="math display">\[F = \frac{SSR/k}{SSE/(n-k-1)} = \frac{36.01/4}{10.79/(25-4-1)} = \frac{9.0025}{0.5395} = 16.6867.\]</span></p>
+<p><strong>Graus de liberdade:</strong> <span class="math inline">\(F \sim F_{4,\,20}\)</span> sob <span class="math inline">\(H_0\)</span>.</p>
 <p><strong>Erros comuns:</strong>
-- Usar <span class="math inline">\(n-k\)</span> em vez de <span class="math inline">\(n-k-1\)</span> no denominador (esquece do intercepto): produziria <span class="math inline">\(F = 27.3664\)</span>.
-- Usar <span class="math inline">\(k+1\)</span> no numerador: incorreto, pois não se testa o intercepto, produziria <span class="math inline">\(F = 17.8561\)</span>.
-- Razão direta <span class="math inline">\(SSR/SSE = 1.1645\)</span>: ignora os graus de liberdade.</p>
+- Usar <span class="math inline">\(n-k\)</span> em vez de <span class="math inline">\(n-k-1\)</span> no denominador (esquece do intercepto): produziria <span class="math inline">\(F = 17.5211\)</span>.
+- Usar <span class="math inline">\(k+1\)</span> no numerador: incorreto, pois não se testa o intercepto, produziria <span class="math inline">\(F = 13.3494\)</span>.
+- Razão direta <span class="math inline">\(SSR/SSE = 3.3373\)</span>: ignora os graus de liberdade.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -2587,27 +2587,27 @@ onde <span class="math inline">\(T = \sqrt{n}(\bar{X} - \mu_0)/S\)</span> é a e
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-1.1645
+13.3494
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+17.5211
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+3.3373
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+266.988
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-26.7841
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-17.8561
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-107.1365
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-27.3664
+16.6867
 </p>]]></text>
 </answer>
 </question>
@@ -2642,20 +2642,20 @@ onde <span class="math inline">\(T = \sqrt{n}(\bar{X} - \mu_0)/S\)</span> é a e
 }
 </style>
 <p>
-<p>Na <strong>regressão linear múltipla</strong> com <span class="math inline">\(k = 3\)</span> preditores e <span class="math inline">\(n = 36\)</span> observações, o <strong>Teste F</strong> para <span class="math inline">\(H_0: \beta_1 = \cdots = \beta_k = 0\)</span> usa a estatística:
+<p>Na <strong>regressão linear múltipla</strong> com <span class="math inline">\(k = 2\)</span> preditores e <span class="math inline">\(n = 25\)</span> observações, o <strong>Teste F</strong> para <span class="math inline">\(H_0: \beta_1 = \cdots = \beta_k = 0\)</span> usa a estatística:
 <span class="math display">\[F = \frac{SSR/k}{SSE/(n-k-1)} \sim F_{k,\,n-k-1} \text{ sob } H_0.\]</span></p>
-<p>Com <span class="math inline">\(SSR = 67\)</span>, <span class="math inline">\(SSE = 38.51\)</span>, <span class="math inline">\(k = 3\)</span>, <span class="math inline">\(n = 36\)</span>, qual é o valor observado de <span class="math inline">\(F\)</span>?</p>
+<p>Com <span class="math inline">\(SSR = 32.72\)</span>, <span class="math inline">\(SSE = 21.24\)</span>, <span class="math inline">\(k = 2\)</span>, <span class="math inline">\(n = 25\)</span>, qual é o valor observado de <span class="math inline">\(F\)</span>?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
 <p><strong>Cálculo:</strong>
-<span class="math display">\[F = \frac{SSR/k}{SSE/(n-k-1)} = \frac{67/3}{38.51/(36-3-1)} = \frac{22.3333}{1.2034} = 18.558.\]</span></p>
-<p><strong>Graus de liberdade:</strong> <span class="math inline">\(F \sim F_{3,\,32}\)</span> sob <span class="math inline">\(H_0\)</span>.</p>
+<span class="math display">\[F = \frac{SSR/k}{SSE/(n-k-1)} = \frac{32.72/2}{21.24/(25-2-1)} = \frac{16.36}{0.9655} = 16.9454.\]</span></p>
+<p><strong>Graus de liberdade:</strong> <span class="math inline">\(F \sim F_{2,\,22}\)</span> sob <span class="math inline">\(H_0\)</span>.</p>
 <p><strong>Erros comuns:</strong>
-- Usar <span class="math inline">\(n-k\)</span> em vez de <span class="math inline">\(n-k-1\)</span> no denominador (esquece do intercepto): produziria <span class="math inline">\(F = 19.1379\)</span>.
-- Usar <span class="math inline">\(k+1\)</span> no numerador: incorreto, pois não se testa o intercepto, produziria <span class="math inline">\(F = 13.9185\)</span>.
-- Razão direta <span class="math inline">\(SSR/SSE = 1.7398\)</span>: ignora os graus de liberdade.</p>
+- Usar <span class="math inline">\(n-k\)</span> em vez de <span class="math inline">\(n-k-1\)</span> no denominador (esquece do intercepto): produziria <span class="math inline">\(F = 17.7156\)</span>.
+- Usar <span class="math inline">\(k+1\)</span> no numerador: incorreto, pois não se testa o intercepto, produziria <span class="math inline">\(F = 11.2969\)</span>.
+- Razão direta <span class="math inline">\(SSR/SSE = 1.5405\)</span>: ignora os graus de liberdade.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -2665,27 +2665,27 @@ onde <span class="math inline">\(T = \sqrt{n}(\bar{X} - \mu_0)/S\)</span> é a e
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-1.7398
+1.5405
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-18.558
+16.9454
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-167.0216
+67.7815
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-13.9185
+11.2969
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-19.1379
+17.7156
 </p>]]></text>
 </answer>
 </question>
@@ -2701,6 +2701,87 @@ onde <span class="math inline">\(T = \sqrt{n}(\bar{X} - \mu_0)/S\)</span> é a e
 <question type="multichoice">
 <name>
 <text> R1 Q18 : Cap7_Cap7S2Q8 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>O <strong>teste qui-quadrado de bondade de ajuste</strong> verifica se <span class="math inline">\(K = 4\)</span> categorias seguem probabilidades especificadas <span class="math inline">\(p_j = p_{0j}\)</span>. A estatística é:
+<span class="math display">\[\chi^2 = \sum_{j=1}^{K} \frac{(O_j - E_j)^2}{E_j} \xrightarrow{D} \chi^2_{K-1}.\]</span></p>
+<p>Com <span class="math inline">\(n = 100\)</span> observações e hipótese de <strong>equiprobabilidade</strong> (<span class="math inline">\(p_j = 1/4\)</span>), as frequências esperadas são <span class="math inline">\(E_j = n/K = 25\)</span>.</p>
+<p>Para <span class="math inline">\(\alpha = 0.05\)</span>, qual é o <strong>valor crítico</strong> <span class="math inline">\(\chi^2_{3,\,0.95}\)</span> para rejeitar <span class="math inline">\(H_0\)</span>?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Os graus de liberdade são <span class="math inline">\(K - 1 = 4 - 1 = 3\)</span> (estimamos <span class="math inline">\(K-1\)</span> probabilidades livres sob <span class="math inline">\(H_0\)</span>, pois <span class="math inline">\(\sum p_j = 1\)</span>).</p>
+<p>O valor crítico para <span class="math inline">\(\alpha = 0.05\)</span> é:
+<span class="math display">\[\chi^2_{3,\,0.95} = \texttt{qchisq(0.95, 3)} = 7.8147.\]</span></p>
+<p><strong>Regra de decisão:</strong> rejeitar <span class="math inline">\(H_0\)</span> se <span class="math inline">\(\chi^2_{\text{obs}} &gt; 7.8147\)</span>.</p>
+<p><strong>Erros comuns:</strong>
+- <span class="math inline">\(\chi^2_{4,\,0.95} = 9.4877\)</span>: usa <span class="math inline">\(K\)</span> em vez de <span class="math inline">\(K-1\)</span> graus de liberdade.
+- <span class="math inline">\(\chi^2_{2,\,0.95} = 5.9915\)</span>: usa <span class="math inline">\(K-2\)</span> (muito poucos graus de liberdade).
+- <span class="math inline">\(\chi^2_{3,\,0.90} = 6.2514\)</span>: nível <span class="math inline">\(\alpha = 0.10\)</span> em vez de <span class="math inline">\(\alpha = 0.05\)</span>.
+- <span class="math inline">\(\chi^2_{3,\,0.975} = 9.3484\)</span>: nível <span class="math inline">\(\alpha = 0.025\)</span> em vez de <span class="math inline">\(\alpha = 0.05\)</span>.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+7.8147
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+5.9915
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+6.2514
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+9.4877
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+9.3484
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q18 : Cap7_Cap7S2Q8 </text>
 </name>
 <questiontext format="html">
 <text><![CDATA[
@@ -2756,6 +2837,11 @@ onde <span class="math inline">\(T = \sqrt{n}(\bar{X} - \mu_0)/S\)</span> é a e
 7.8147
 </p>]]></text>
 </answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+11.1433
+</p>]]></text>
+</answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
 9.4877
@@ -2768,93 +2854,7 @@ onde <span class="math inline">\(T = \sqrt{n}(\bar{X} - \mu_0)/S\)</span> é a e
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-11.1433
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
 11.0705
-</p>]]></text>
-</answer>
-</question>
-
-
-<question type="multichoice">
-<name>
-<text> R2 Q18 : Cap7_Cap7S2Q8 </text>
-</name>
-<questiontext format="html">
-<text><![CDATA[
-<style type="text/css" rel="stylesheet">
-/* tables with alternating shading */
-.table_shade {
-    border-collapse: collapse;
-    border-spacing: 0;
-    border:1px solid #FFFFFF;
-    background-color: #FFFFFF;
-}
-.table_shade th {
-    border:1px solid #FFFFFF;
-    background: #D5D5D5;
-}
-.table_shade td {
-    border:1px solid #FFFFFF;
-}
-.table_shade .odd {
-    background: #EEEEEE;
-}
-.table_shade .even {
-    background: #FBFBFB;
-}
-</style>
-<p>
-<p>O <strong>teste qui-quadrado de bondade de ajuste</strong> verifica se <span class="math inline">\(K = 4\)</span> categorias seguem probabilidades especificadas <span class="math inline">\(p_j = p_{0j}\)</span>. A estatística é:
-<span class="math display">\[\chi^2 = \sum_{j=1}^{K} \frac{(O_j - E_j)^2}{E_j} \xrightarrow{D} \chi^2_{K-1}.\]</span></p>
-<p>Com <span class="math inline">\(n = 100\)</span> observações e hipótese de <strong>equiprobabilidade</strong> (<span class="math inline">\(p_j = 1/4\)</span>), as frequências esperadas são <span class="math inline">\(E_j = n/K = 25\)</span>.</p>
-<p>Para <span class="math inline">\(\alpha = 0.05\)</span>, qual é o <strong>valor crítico</strong> <span class="math inline">\(\chi^2_{3,\,0.95}\)</span> para rejeitar <span class="math inline">\(H_0\)</span>?</p>
-</p>]]></text>
-</questiontext>
-<generalfeedback format="html">
-<text><![CDATA[<p>
-<p>Os graus de liberdade são <span class="math inline">\(K - 1 = 4 - 1 = 3\)</span> (estimamos <span class="math inline">\(K-1\)</span> probabilidades livres sob <span class="math inline">\(H_0\)</span>, pois <span class="math inline">\(\sum p_j = 1\)</span>).</p>
-<p>O valor crítico para <span class="math inline">\(\alpha = 0.05\)</span> é:
-<span class="math display">\[\chi^2_{3,\,0.95} = \texttt{qchisq(0.95, 3)} = 7.8147.\]</span></p>
-<p><strong>Regra de decisão:</strong> rejeitar <span class="math inline">\(H_0\)</span> se <span class="math inline">\(\chi^2_{\text{obs}} &gt; 7.8147\)</span>.</p>
-<p><strong>Erros comuns:</strong>
-- <span class="math inline">\(\chi^2_{4,\,0.95} = 9.4877\)</span>: usa <span class="math inline">\(K\)</span> em vez de <span class="math inline">\(K-1\)</span> graus de liberdade.
-- <span class="math inline">\(\chi^2_{2,\,0.95} = 5.9915\)</span>: usa <span class="math inline">\(K-2\)</span> (muito poucos graus de liberdade).
-- <span class="math inline">\(\chi^2_{3,\,0.90} = 6.2514\)</span>: nível <span class="math inline">\(\alpha = 0.10\)</span> em vez de <span class="math inline">\(\alpha = 0.05\)</span>.
-- <span class="math inline">\(\chi^2_{3,\,0.975} = 9.3484\)</span>: nível <span class="math inline">\(\alpha = 0.025\)</span> em vez de <span class="math inline">\(\alpha = 0.05\)</span>.</p>
-</p>]]></text>
-</generalfeedback>
-<penalty>0</penalty>
-<defaultgrade>1</defaultgrade>
-<shuffleanswers>false</shuffleanswers>
-<single>true</single>
-<answernumbering>abc</answernumbering>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-6.2514
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-5.9915
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-9.4877
-</p>]]></text>
-</answer>
-<answer fraction="100" format="html">
-<text><![CDATA[<p>
-7.8147
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-9.3484
 </p>]]></text>
 </answer>
 </question>
@@ -2913,14 +2913,14 @@ onde <span class="math inline">\(T = \sqrt{n}(\bar{X} - \mu_0)/S\)</span> é a e
 <shuffleanswers>false</shuffleanswers>
 <single>true</single>
 <answernumbering>abc</answernumbering>
-<answer fraction="100" format="html">
+<answer fraction="0" format="html">
 <text><![CDATA[<p>
-Usa a verossimilhança perfilada <span class="math inline">\(L_P(\theta_1) = \sup_{\boldsymbol{\lambda}} L(\theta_1, \boldsymbol{\lambda})\)</span>; a estatística <span class="math inline">\(-2\log\Lambda_P\)</span> tem distribuição <span class="math inline">\(\chi^2_1\)</span> assintoticamente, eliminando <span class="math inline">\(\boldsymbol{\lambda}\)</span> do teste.
+A presença de <span class="math inline">\(\boldsymbol{\lambda}\)</span> invalida o Teorema de Wilks para o teste de <span class="math inline">\(\theta_1\)</span>, exigindo simulação ou bootstrap.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-Exige estimar <span class="math inline">\(\boldsymbol{\lambda}\)</span> separadamente por outro método (ex: momentos) antes de testar <span class="math inline">\(\theta_1\)</span>, introduzindo duas etapas distintas.
+Tem distribuição <span class="math inline">\(\chi^2_{1+\dim(\boldsymbol{\lambda})}\)</span> para acomodar a incerteza adicional em <span class="math inline">\(\boldsymbol{\lambda}\)</span>.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
@@ -2930,12 +2930,12 @@ Não pode ser aplicado na presença de parâmetros de perturbação sem hipótes
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-A presença de <span class="math inline">\(\boldsymbol{\lambda}\)</span> invalida o Teorema de Wilks para o teste de <span class="math inline">\(\theta_1\)</span>, exigindo simulação ou bootstrap.
+Exige estimar <span class="math inline">\(\boldsymbol{\lambda}\)</span> separadamente por outro método (ex: momentos) antes de testar <span class="math inline">\(\theta_1\)</span>, introduzindo duas etapas distintas.
 </p>]]></text>
 </answer>
-<answer fraction="0" format="html">
+<answer fraction="100" format="html">
 <text><![CDATA[<p>
-Tem distribuição <span class="math inline">\(\chi^2_{1+\dim(\boldsymbol{\lambda})}\)</span> para acomodar a incerteza adicional em <span class="math inline">\(\boldsymbol{\lambda}\)</span>.
+Usa a verossimilhança perfilada <span class="math inline">\(L_P(\theta_1) = \sup_{\boldsymbol{\lambda}} L(\theta_1, \boldsymbol{\lambda})\)</span>; a estatística <span class="math inline">\(-2\log\Lambda_P\)</span> tem distribuição <span class="math inline">\(\chi^2_1\)</span> assintoticamente, eliminando <span class="math inline">\(\boldsymbol{\lambda}\)</span> do teste.
 </p>]]></text>
 </answer>
 </question>
@@ -2992,6 +2992,11 @@ Tem distribuição <span class="math inline">\(\chi^2_{1+\dim(\boldsymbol{\lambd
 A presença de <span class="math inline">\(\boldsymbol{\lambda}\)</span> invalida o Teorema de Wilks para o teste de <span class="math inline">\(\theta_1\)</span>, exigindo simulação ou bootstrap.
 </p>]]></text>
 </answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+Usa a verossimilhança perfilada <span class="math inline">\(L_P(\theta_1) = \sup_{\boldsymbol{\lambda}} L(\theta_1, \boldsymbol{\lambda})\)</span>; a estatística <span class="math inline">\(-2\log\Lambda_P\)</span> tem distribuição <span class="math inline">\(\chi^2_1\)</span> assintoticamente, eliminando <span class="math inline">\(\boldsymbol{\lambda}\)</span> do teste.
+</p>]]></text>
+</answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
 Tem distribuição <span class="math inline">\(\chi^2_{1+\dim(\boldsymbol{\lambda})}\)</span> para acomodar a incerteza adicional em <span class="math inline">\(\boldsymbol{\lambda}\)</span>.
@@ -2999,17 +3004,12 @@ Tem distribuição <span class="math inline">\(\chi^2_{1+\dim(\boldsymbol{\lambd
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-Exige estimar <span class="math inline">\(\boldsymbol{\lambda}\)</span> separadamente por outro método (ex: momentos) antes de testar <span class="math inline">\(\theta_1\)</span>, introduzindo duas etapas distintas.
+Não pode ser aplicado na presença de parâmetros de perturbação sem hipóteses adicionais de ortogonalidade entre <span class="math inline">\(\theta_1\)</span> e <span class="math inline">\(\boldsymbol{\lambda}\)</span>.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-Não pode ser aplicado na presença de parâmetros de perturbação sem hipóteses adicionais de ortogonalidade entre <span class="math inline">\(\theta_1\)</span> e <span class="math inline">\(\boldsymbol{\lambda}\)</span>.
-</p>]]></text>
-</answer>
-<answer fraction="100" format="html">
-<text><![CDATA[<p>
-Usa a verossimilhança perfilada <span class="math inline">\(L_P(\theta_1) = \sup_{\boldsymbol{\lambda}} L(\theta_1, \boldsymbol{\lambda})\)</span>; a estatística <span class="math inline">\(-2\log\Lambda_P\)</span> tem distribuição <span class="math inline">\(\chi^2_1\)</span> assintoticamente, eliminando <span class="math inline">\(\boldsymbol{\lambda}\)</span> do teste.
+Exige estimar <span class="math inline">\(\boldsymbol{\lambda}\)</span> separadamente por outro método (ex: momentos) antes de testar <span class="math inline">\(\theta_1\)</span>, introduzindo duas etapas distintas.
 </p>]]></text>
 </answer>
 </question>
@@ -3072,12 +3072,12 @@ Usa a verossimilhança perfilada <span class="math inline">\(L_P(\theta_1) = \su
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-Nível <span class="math inline">\(\alpha^* = \alpha/\sqrt{m}\)</span>, que é a correção de Šidák para testes correlacionados positivamente.
+Rejeitar <span class="math inline">\(H_{0j}\)</span> quando o p-valor<span class="math inline">\(_j \leq \alpha\)</span> para <strong>todos</strong> os <span class="math inline">\(j\)</span> simultaneamente — exige consenso entre todos os testes.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-Rejeitar <span class="math inline">\(H_{0j}\)</span> quando o p-valor<span class="math inline">\(_j \leq \alpha\)</span> para <strong>todos</strong> os <span class="math inline">\(j\)</span> simultaneamente — exige consenso entre todos os testes.
+Nível <span class="math inline">\(\alpha^* = \alpha/\sqrt{m}\)</span>, que é a correção de Šidák para testes correlacionados positivamente.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
@@ -3148,7 +3148,7 @@ Nível <span class="math inline">\(\alpha^* = \alpha/m\)</span> para cada teste 
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-Nível <span class="math inline">\(\alpha^* = \alpha/\sqrt{m}\)</span>, que é a correção de Šidák para testes correlacionados positivamente.
+Nível <span class="math inline">\(\alpha^* = 1-(1-\alpha)^m\)</span>, que é a probabilidade de ao menos uma rejeição quando todos os <span class="math inline">\(H_{0j}\)</span> são verdadeiros.
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
@@ -3163,12 +3163,12 @@ Nível <span class="math inline">\(\alpha^* = \alpha \cdot m\)</span> para cada 
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-Nível <span class="math inline">\(\alpha^* = 1-(1-\alpha)^m\)</span>, que é a probabilidade de ao menos uma rejeição quando todos os <span class="math inline">\(H_{0j}\)</span> são verdadeiros.
+Rejeitar <span class="math inline">\(H_{0j}\)</span> quando o p-valor<span class="math inline">\(_j \leq \alpha\)</span> para <strong>todos</strong> os <span class="math inline">\(j\)</span> simultaneamente — exige consenso entre todos os testes.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-Rejeitar <span class="math inline">\(H_{0j}\)</span> quando o p-valor<span class="math inline">\(_j \leq \alpha\)</span> para <strong>todos</strong> os <span class="math inline">\(j\)</span> simultaneamente — exige consenso entre todos os testes.
+Nível <span class="math inline">\(\alpha^* = \alpha/\sqrt{m}\)</span>, que é a correção de Šidák para testes correlacionados positivamente.
 </p>]]></text>
 </answer>
 </question>

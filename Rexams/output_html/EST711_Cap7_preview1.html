@@ -20,19 +20,19 @@ body{font-family: Arial, Helvetica, Sans;}
 <br/>
 <ol type="a">
 <li>
-<span class="math inline">\(n(\hat{\boldsymbol{\theta}}_n - \boldsymbol{\theta}) \xrightarrow{D} N_k(\mathbf{0}, I(\boldsymbol{\theta})^{-1})\)</span>, com fator <span class="math inline">\(n\)</span> em vez de <span class="math inline">\(\sqrt{n}\)</span>.
-</li>
-<li>
 <span class="math inline">\(\sqrt{n}(\hat{\boldsymbol{\theta}}_n - \boldsymbol{\theta}) \xrightarrow{D} N_k(\mathbf{0}, I(\boldsymbol{\theta}))\)</span>, sem inversão da matriz de informação.
 </li>
 <li>
-<span class="math inline">\(\sqrt{n}(\hat{\boldsymbol{\theta}}_n - \boldsymbol{\theta}) \xrightarrow{D} N_k(\mathbf{0}, I(\boldsymbol{\theta})^{-1})\)</span>, onde <span class="math inline">\(I(\boldsymbol{\theta})\)</span> é a matriz de informação de Fisher.
+<span class="math inline">\(n(\hat{\boldsymbol{\theta}}_n - \boldsymbol{\theta}) \xrightarrow{D} N_k(\mathbf{0}, I(\boldsymbol{\theta})^{-1})\)</span>, com fator <span class="math inline">\(n\)</span> em vez de <span class="math inline">\(\sqrt{n}\)</span>.
 </li>
 <li>
 <span class="math inline">\(\sqrt{n}\hat{\boldsymbol{\theta}}_n \xrightarrow{D} N_k(\boldsymbol{\theta}, I(\boldsymbol{\theta})^{-1})\)</span>, centrando em <span class="math inline">\(\boldsymbol{\theta}\)</span> e não em zero.
 </li>
 <li>
 O EMV multivariado não tem distribuição assintótica conhecida no caso geral.
+</li>
+<li>
+<span class="math inline">\(\sqrt{n}(\hat{\boldsymbol{\theta}}_n - \boldsymbol{\theta}) \xrightarrow{D} N_k(\mathbf{0}, I(\boldsymbol{\theta})^{-1})\)</span>, onde <span class="math inline">\(I(\boldsymbol{\theta})\)</span> é a matriz de informação de Fisher.
 </li>
 </ol>
 <br/>
@@ -44,33 +44,33 @@ onde <span class="math inline">\(I(\boldsymbol{\theta})\)</span> é a matriz de 
 </li>
 <li>
 <h4>Question</h4>
-<p>No <strong>Teste da Razão de Verossimilhanças (TRV)</strong>, testamos <span class="math inline">\(H_0: \boldsymbol{\theta} \in \Omega_0\)</span> versus <span class="math inline">\(H_1: \boldsymbol{\theta} \in \Omega\)</span>, onde <span class="math inline">\(\Omega_0 \subset \Omega\)</span>, com <span class="math inline">\(\dim(\Omega_0) = 2\)</span> e <span class="math inline">\(\dim(\Omega) = 5\)</span>.</p>
+<p>No <strong>Teste da Razão de Verossimilhanças (TRV)</strong>, testamos <span class="math inline">\(H_0: \boldsymbol{\theta} \in \Omega_0\)</span> versus <span class="math inline">\(H_1: \boldsymbol{\theta} \in \Omega\)</span>, onde <span class="math inline">\(\Omega_0 \subset \Omega\)</span>, com <span class="math inline">\(\dim(\Omega_0) = 1\)</span> e <span class="math inline">\(\dim(\Omega) = 6\)</span>.</p>
 <p>Pelo <strong>Teorema de Wilks</strong>, sob <span class="math inline">\(H_0\)</span>:
 <span class="math display">\[-2\log\Lambda_n \xrightarrow{D} \chi^2_r.\]</span></p>
 <p>Quantos <strong>graus de liberdade</strong> <span class="math inline">\(r\)</span> tem essa distribuição assintótica?</p>
 <br/>
 <ol type="a">
 <li>
-3
+12
 </li>
 <li>
-2
+11
+</li>
+<li>
+6
 </li>
 <li>
 5
 </li>
 <li>
-4
-</li>
-<li>
-8
+1
 </li>
 </ol>
 <br/>
 <h4>Solution</h4>
 <p>Pelo Teorema de Wilks, os graus de liberdade do TRV são a <strong>diferença de dimensão</strong> entre o espaço paramétrico irrestrito e o espaço sob <span class="math inline">\(H_0\)</span>:
-<span class="math display">\[r = \dim(\Omega) - \dim(\Omega_0) = 5 - 2 = 3.\]</span></p>
-<p>Intuitivamente, <span class="math inline">\(r\)</span> é o número de restrições impostas por <span class="math inline">\(H_0\)</span> sobre <span class="math inline">\(\boldsymbol{\theta}\)</span>. Os outros valores (<span class="math inline">\(5\)</span>, <span class="math inline">\(2\)</span>, <span class="math inline">\(8\)</span>, <span class="math inline">\(4\)</span>) correspondem a erros comuns: usar a dimensão total do modelo (<span class="math inline">\(5\)</span>), a dimensão do modelo restrito (<span class="math inline">\(2\)</span>), a soma (<span class="math inline">\(8\)</span>) ou <span class="math inline">\(p-1\)</span> (<span class="math inline">\(4\)</span>).</p>
+<span class="math display">\[r = \dim(\Omega) - \dim(\Omega_0) = 6 - 1 = 5.\]</span></p>
+<p>Intuitivamente, <span class="math inline">\(r\)</span> é o número de restrições impostas por <span class="math inline">\(H_0\)</span> sobre <span class="math inline">\(\boldsymbol{\theta}\)</span>. Os outros valores (<span class="math inline">\(6\)</span>, <span class="math inline">\(1\)</span>, <span class="math inline">\(11\)</span>, <span class="math inline">\(5\)</span>) correspondem a erros comuns: usar a dimensão total do modelo (<span class="math inline">\(6\)</span>), a dimensão do modelo restrito (<span class="math inline">\(1\)</span>), a soma (<span class="math inline">\(11\)</span>) ou <span class="math inline">\(p-1\)</span> (<span class="math inline">\(5\)</span>).</p>
 <br/>
 </li>
 </ol>

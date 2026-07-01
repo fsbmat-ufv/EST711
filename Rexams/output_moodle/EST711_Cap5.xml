@@ -38,12 +38,12 @@
 }
 </style>
 <p>
-<p>Seja <span class="math inline">\(X_i \overset{\text{iid}}{\sim}\)</span> uma distribuição com desvio padrão <span class="math inline">\(\sigma = 4\)</span> conhecido. Com <span class="math inline">\(n = 100\)</span> observações e média amostral <span class="math inline">\(\bar{X} = 4.5\)</span>, o intervalo de confiança 95% para <span class="math inline">\(\mu\)</span> via Teorema Central do Limite é <span class="math inline">\(\bar{X} \pm 1{,}96\,\sigma/\sqrt{n}\)</span>. A margem de erro desse intervalo é:</p>
+<p>Seja <span class="math inline">\(X_i \overset{\text{iid}}{\sim}\)</span> uma distribuição com desvio padrão <span class="math inline">\(\sigma = 2\)</span> conhecido. Com <span class="math inline">\(n = 36\)</span> observações e média amostral <span class="math inline">\(\bar{X} = 4.82\)</span>, o intervalo de confiança 95% para <span class="math inline">\(\mu\)</span> via Teorema Central do Limite é <span class="math inline">\(\bar{X} \pm 1{,}96\,\sigma/\sqrt{n}\)</span>. A margem de erro desse intervalo é:</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>A margem de erro do IC 95% via TCL com <span class="math inline">\(\sigma\)</span> conhecido é <span class="math inline">\(z_{0{,}975}\,\sigma/\sqrt{n} = 1{,}96 \times 4 / \sqrt{100} = 0.784\)</span>.</p>
+<p>A margem de erro do IC 95% via TCL com <span class="math inline">\(\sigma\)</span> conhecido é <span class="math inline">\(z_{0{,}975}\,\sigma/\sqrt{n} = 1{,}96 \times 2 / \sqrt{36} = 0.6533\)</span>.</p>
 <p>Os erros comuns são: usar <span class="math inline">\(z_{0{,}95}=1{,}645\)</span> em vez de <span class="math inline">\(1{,}96\)</span>; usar <span class="math inline">\(\sigma^2\)</span> em vez de <span class="math inline">\(\sigma\)</span>; dividir por <span class="math inline">\(n\)</span> em vez de <span class="math inline">\(\sqrt{n}\)</span>; ou multiplicar por <span class="math inline">\(\sqrt{n}\)</span> em vez de dividir.</p>
 </p>]]></text>
 </generalfeedback>
@@ -54,27 +54,27 @@
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-0.658
+0.5483
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.1089
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+1.3067
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-0.784
+0.6533
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-0.0784
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-3.136
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-78.4
+23.52
 </p>]]></text>
 </answer>
 </question>
@@ -109,12 +109,12 @@
 }
 </style>
 <p>
-<p>Seja <span class="math inline">\(X_i \overset{\text{iid}}{\sim}\)</span> uma distribuição com desvio padrão <span class="math inline">\(\sigma = 4\)</span> conhecido. Com <span class="math inline">\(n = 64\)</span> observações e média amostral <span class="math inline">\(\bar{X} = 7.3\)</span>, o intervalo de confiança 95% para <span class="math inline">\(\mu\)</span> via Teorema Central do Limite é <span class="math inline">\(\bar{X} \pm 1{,}96\,\sigma/\sqrt{n}\)</span>. A margem de erro desse intervalo é:</p>
+<p>Seja <span class="math inline">\(X_i \overset{\text{iid}}{\sim}\)</span> uma distribuição com desvio padrão <span class="math inline">\(\sigma = 4\)</span> conhecido. Com <span class="math inline">\(n = 100\)</span> observações e média amostral <span class="math inline">\(\bar{X} = 6.66\)</span>, o intervalo de confiança 95% para <span class="math inline">\(\mu\)</span> via Teorema Central do Limite é <span class="math inline">\(\bar{X} \pm 1{,}96\,\sigma/\sqrt{n}\)</span>. A margem de erro desse intervalo é:</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>A margem de erro do IC 95% via TCL com <span class="math inline">\(\sigma\)</span> conhecido é <span class="math inline">\(z_{0{,}975}\,\sigma/\sqrt{n} = 1{,}96 \times 4 / \sqrt{64} = 0.98\)</span>.</p>
+<p>A margem de erro do IC 95% via TCL com <span class="math inline">\(\sigma\)</span> conhecido é <span class="math inline">\(z_{0{,}975}\,\sigma/\sqrt{n} = 1{,}96 \times 4 / \sqrt{100} = 0.784\)</span>.</p>
 <p>Os erros comuns são: usar <span class="math inline">\(z_{0{,}95}=1{,}645\)</span> em vez de <span class="math inline">\(1{,}96\)</span>; usar <span class="math inline">\(\sigma^2\)</span> em vez de <span class="math inline">\(\sigma\)</span>; dividir por <span class="math inline">\(n\)</span> em vez de <span class="math inline">\(\sqrt{n}\)</span>; ou multiplicar por <span class="math inline">\(\sqrt{n}\)</span> em vez de dividir.</p>
 </p>]]></text>
 </generalfeedback>
@@ -125,27 +125,27 @@
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-3.92
+0.0784
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-62.72
+0.658
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-0.8225
+3.136
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-0.98
+0.784
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-0.1225
+78.4
 </p>]]></text>
 </answer>
 </question>
@@ -187,12 +187,12 @@
 }
 </style>
 <p>
-<p>O intervalo de confiança 99% para <span class="math inline">\(\mu\)</span> utiliza o quantil <span class="math inline">\(z_{0{,}995} = 2{,}576\)</span>. Com <span class="math inline">\(\sigma = 3\)</span> conhecido e <span class="math inline">\(n = 25\)</span> observacoes, a margem de erro do IC 99% para <span class="math inline">\(\mu\)</span> via TCL e:</p>
+<p>O intervalo de confiança 99% para <span class="math inline">\(\mu\)</span> utiliza o quantil <span class="math inline">\(z_{0{,}995} = 2{,}576\)</span>. Com <span class="math inline">\(\sigma = 2\)</span> conhecido e <span class="math inline">\(n = 64\)</span> observacoes, a margem de erro do IC 99% para <span class="math inline">\(\mu\)</span> via TCL e:</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>A margem de erro do IC 99% e <span class="math inline">\(z_{0{,}995}\,\sigma/\sqrt{n} = 2{,}576 \times 3 / \sqrt{25} = 1.5456\)</span>.</p>
+<p>A margem de erro do IC 99% e <span class="math inline">\(z_{0{,}995}\,\sigma/\sqrt{n} = 2{,}576 \times 2 / \sqrt{64} = 0.644\)</span>.</p>
 <p>Erros comuns: usar <span class="math inline">\(z_{0{,}975}=1{,}96\)</span> (IC 95%); dividir por <span class="math inline">\(n\)</span> em vez de <span class="math inline">\(\sqrt{n}\)</span>; multiplicar por <span class="math inline">\(\sqrt{n}\)</span>; ou usar <span class="math inline">\(z_{0{,}99}=2{,}326\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
@@ -201,29 +201,29 @@
 <shuffleanswers>false</shuffleanswers>
 <single>true</single>
 <answernumbering>abc</answernumbering>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-1.3956
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-1.176
-</p>]]></text>
-</answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-1.5456
+0.644
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-0.3091
+0.5815
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-38.64
+0.0805
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+41.216
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.49
 </p>]]></text>
 </answer>
 </question>
@@ -258,12 +258,12 @@
 }
 </style>
 <p>
-<p>O intervalo de confiança 99% para <span class="math inline">\(\mu\)</span> utiliza o quantil <span class="math inline">\(z_{0{,}995} = 2{,}576\)</span>. Com <span class="math inline">\(\sigma = 2\)</span> conhecido e <span class="math inline">\(n = 36\)</span> observacoes, a margem de erro do IC 99% para <span class="math inline">\(\mu\)</span> via TCL e:</p>
+<p>O intervalo de confiança 99% para <span class="math inline">\(\mu\)</span> utiliza o quantil <span class="math inline">\(z_{0{,}995} = 2{,}576\)</span>. Com <span class="math inline">\(\sigma = 3\)</span> conhecido e <span class="math inline">\(n = 144\)</span> observacoes, a margem de erro do IC 99% para <span class="math inline">\(\mu\)</span> via TCL e:</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>A margem de erro do IC 99% e <span class="math inline">\(z_{0{,}995}\,\sigma/\sqrt{n} = 2{,}576 \times 2 / \sqrt{36} = 0.8587\)</span>.</p>
+<p>A margem de erro do IC 99% e <span class="math inline">\(z_{0{,}995}\,\sigma/\sqrt{n} = 2{,}576 \times 3 / \sqrt{144} = 0.644\)</span>.</p>
 <p>Erros comuns: usar <span class="math inline">\(z_{0{,}975}=1{,}96\)</span> (IC 95%); dividir por <span class="math inline">\(n\)</span> em vez de <span class="math inline">\(\sqrt{n}\)</span>; multiplicar por <span class="math inline">\(\sqrt{n}\)</span>; ou usar <span class="math inline">\(z_{0{,}99}=2{,}326\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
@@ -274,27 +274,27 @@
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-0.1431
+0.49
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-30.912
+0.0537
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-0.7753
+92.736
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.5815
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-0.8587
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-0.6533
+0.644
 </p>]]></text>
 </answer>
 </question>
@@ -336,12 +336,12 @@
 }
 </style>
 <p>
-<p>Para estimar <span class="math inline">\(\mu\)</span> com margem de erro maxima <span class="math inline">\(E = 1\)</span> e confianca 95% (<span class="math inline">\(z_{0{,}975} = 1{,}96\)</span>), com desvio padrao <span class="math inline">\(\sigma = 3\)</span> conhecido, o tamanho amostral minimo necessario e <span class="math inline">\(n \geq \left(\frac{1{,}96\,\sigma}{E}\right)^2\)</span>. O valor de <span class="math inline">\(n\)</span> e:</p>
+<p>Para estimar <span class="math inline">\(\mu\)</span> com margem de erro maxima <span class="math inline">\(E = 0.2\)</span> e confianca 95% (<span class="math inline">\(z_{0{,}975} = 1{,}96\)</span>), com desvio padrao <span class="math inline">\(\sigma = 3\)</span> conhecido, o tamanho amostral minimo necessario e <span class="math inline">\(n \geq \left(\frac{1{,}96\,\sigma}{E}\right)^2\)</span>. O valor de <span class="math inline">\(n\)</span> e:</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p><span class="math inline">\(n \geq \left(\frac{1{,}96 \times 3}{1}\right)^2 = 34.5744\)</span>, logo <span class="math inline">\(n = 35\)</span> (teto da expressao).</p>
+<p><span class="math inline">\(n \geq \left(\frac{1{,}96 \times 3}{0.2}\right)^2 = 864.36\)</span>, logo <span class="math inline">\(n = 865\)</span> (teto da expressao).</p>
 <p>Erros comuns: nao elevar ao quadrado; usar <span class="math inline">\(z_{0{,}95}=1{,}645\)</span>; inverter <span class="math inline">\(E\)</span> e <span class="math inline">\(\sigma\)</span>; ou usar o piso em vez do teto.</p>
 </p>]]></text>
 </generalfeedback>
@@ -350,9 +350,9 @@
 <shuffleanswers>false</shuffleanswers>
 <single>true</single>
 <answernumbering>abc</answernumbering>
-<answer fraction="0" format="html">
+<answer fraction="100" format="html">
 <text><![CDATA[<p>
-25
+865
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
@@ -362,17 +362,17 @@
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-6
-</p>]]></text>
-</answer>
-<answer fraction="100" format="html">
-<text><![CDATA[<p>
-35
+30
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-34
+864
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+609
 </p>]]></text>
 </answer>
 </question>
@@ -407,12 +407,12 @@
 }
 </style>
 <p>
-<p>Para estimar <span class="math inline">\(\mu\)</span> com margem de erro maxima <span class="math inline">\(E = 1\)</span> e confianca 95% (<span class="math inline">\(z_{0{,}975} = 1{,}96\)</span>), com desvio padrao <span class="math inline">\(\sigma = 4\)</span> conhecido, o tamanho amostral minimo necessario e <span class="math inline">\(n \geq \left(\frac{1{,}96\,\sigma}{E}\right)^2\)</span>. O valor de <span class="math inline">\(n\)</span> e:</p>
+<p>Para estimar <span class="math inline">\(\mu\)</span> com margem de erro maxima <span class="math inline">\(E = 0.2\)</span> e confianca 95% (<span class="math inline">\(z_{0{,}975} = 1{,}96\)</span>), com desvio padrao <span class="math inline">\(\sigma = 3\)</span> conhecido, o tamanho amostral minimo necessario e <span class="math inline">\(n \geq \left(\frac{1{,}96\,\sigma}{E}\right)^2\)</span>. O valor de <span class="math inline">\(n\)</span> e:</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p><span class="math inline">\(n \geq \left(\frac{1{,}96 \times 4}{1}\right)^2 = 61.4656\)</span>, logo <span class="math inline">\(n = 62\)</span> (teto da expressao).</p>
+<p><span class="math inline">\(n \geq \left(\frac{1{,}96 \times 3}{0.2}\right)^2 = 864.36\)</span>, logo <span class="math inline">\(n = 865\)</span> (teto da expressao).</p>
 <p>Erros comuns: nao elevar ao quadrado; usar <span class="math inline">\(z_{0{,}95}=1{,}645\)</span>; inverter <span class="math inline">\(E\)</span> e <span class="math inline">\(\sigma\)</span>; ou usar o piso em vez do teto.</p>
 </p>]]></text>
 </generalfeedback>
@@ -423,22 +423,22 @@
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-44
+30
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-62
+865
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-8
+609
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-61
+864
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
@@ -485,12 +485,12 @@
 }
 </style>
 <p>
-<p>Dado <span class="math inline">\(\hat{p} = 0.7\)</span> e <span class="math inline">\(n = 100\)</span>, o intervalo de confianca 95% para a proporcao populacional <span class="math inline">\(p\)</span> e <span class="math inline">\(\hat{p} \pm 1{,}96\sqrt{\hat{p}(1-\hat{p})/n}\)</span>. A margem de erro desse intervalo e:</p>
+<p>Dado <span class="math inline">\(\hat{p} = 0.3\)</span> e <span class="math inline">\(n = 400\)</span>, o intervalo de confianca 95% para a proporcao populacional <span class="math inline">\(p\)</span> e <span class="math inline">\(\hat{p} \pm 1{,}96\sqrt{\hat{p}(1-\hat{p})/n}\)</span>. A margem de erro desse intervalo e:</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>A margem de erro e <span class="math inline">\(1{,}96\sqrt{\hat{p}(1-\hat{p})/n} = 1{,}96\sqrt{0.7 \times 0.3 / 100} = 0.0898\)</span>.</p>
+<p>A margem de erro e <span class="math inline">\(1{,}96\sqrt{\hat{p}(1-\hat{p})/n} = 1{,}96\sqrt{0.3 \times 0.7 / 400} = 0.0449\)</span>.</p>
 <p>Erros comuns: nao tirar a raiz quadrada; usar apenas <span class="math inline">\(\hat{p}\)</span> no numerador; usar a formula conservadora <span class="math inline">\(1{,}96/(2\sqrt{n})\)</span>; ou multiplicar por <span class="math inline">\(n\)</span> em vez de dividir.</p>
 </p>]]></text>
 </generalfeedback>
@@ -501,27 +501,27 @@
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-0.0041
+0.049
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.0537
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+17.9637
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.001
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-0.0898
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-8.9818
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-0.098
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-0.164
+0.0449
 </p>]]></text>
 </answer>
 </question>
@@ -556,12 +556,12 @@
 }
 </style>
 <p>
-<p>Dado <span class="math inline">\(\hat{p} = 0.4\)</span> e <span class="math inline">\(n = 500\)</span>, o intervalo de confianca 95% para a proporcao populacional <span class="math inline">\(p\)</span> e <span class="math inline">\(\hat{p} \pm 1{,}96\sqrt{\hat{p}(1-\hat{p})/n}\)</span>. A margem de erro desse intervalo e:</p>
+<p>Dado <span class="math inline">\(\hat{p} = 0.6\)</span> e <span class="math inline">\(n = 100\)</span>, o intervalo de confianca 95% para a proporcao populacional <span class="math inline">\(p\)</span> e <span class="math inline">\(\hat{p} \pm 1{,}96\sqrt{\hat{p}(1-\hat{p})/n}\)</span>. A margem de erro desse intervalo e:</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>A margem de erro e <span class="math inline">\(1{,}96\sqrt{\hat{p}(1-\hat{p})/n} = 1{,}96\sqrt{0.4 \times 0.6 / 500} = 0.0429\)</span>.</p>
+<p>A margem de erro e <span class="math inline">\(1{,}96\sqrt{\hat{p}(1-\hat{p})/n} = 1{,}96\sqrt{0.6 \times 0.4 / 100} = 0.096\)</span>.</p>
 <p>Erros comuns: nao tirar a raiz quadrada; usar apenas <span class="math inline">\(\hat{p}\)</span> no numerador; usar a formula conservadora <span class="math inline">\(1{,}96/(2\sqrt{n})\)</span>; ou multiplicar por <span class="math inline">\(n\)</span> em vez de dividir.</p>
 </p>]]></text>
 </generalfeedback>
@@ -572,27 +572,27 @@
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-9 × 10<sup>-4</sup>
+0.098
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-0.0438
+9.602
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.1518
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.0047
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-0.0429
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-21.4707
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-0.0554
+0.096
 </p>]]></text>
 </answer>
 </question>
@@ -647,14 +647,14 @@
 <shuffleanswers>false</shuffleanswers>
 <single>true</single>
 <answernumbering>abc</answernumbering>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-O verdadeiro valor de <span class="math inline">\(\mu\)</span> esta no intervalo com probabilidade 95%.
-</p>]]></text>
-</answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
 Se o procedimento fosse repetido muitas vezes com amostras diferentes, 95% dos intervalos construidos conteriam o verdadeiro valor de <span class="math inline">\(\mu\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+95% das observacoes da amostra estao dentro do intervalo.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
@@ -669,7 +669,7 @@ O intervalo captura <span class="math inline">\(\mu\)</span> em exatamente 95% d
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-95% das observacoes da amostra estao dentro do intervalo.
+O verdadeiro valor de <span class="math inline">\(\mu\)</span> esta no intervalo com probabilidade 95%.
 </p>]]></text>
 </answer>
 </question>
@@ -719,17 +719,12 @@ O intervalo captura <span class="math inline">\(\mu\)</span> em exatamente 95% d
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-O verdadeiro valor de <span class="math inline">\(\mu\)</span> esta no intervalo com probabilidade 95%.
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
 95% das observacoes da amostra estao dentro do intervalo.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-O intervalo captura <span class="math inline">\(\mu\)</span> em exatamente 95% das amostras de qualquer tamanho <span class="math inline">\(n\)</span>.
+O verdadeiro valor de <span class="math inline">\(\mu\)</span> esta no intervalo com probabilidade 95%.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
@@ -740,6 +735,11 @@ O IC 95% e sempre mais estreito que o IC 90% para a mesma amostra.
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
 Se o procedimento fosse repetido muitas vezes com amostras diferentes, 95% dos intervalos construidos conteriam o verdadeiro valor de <span class="math inline">\(\mu\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+O intervalo captura <span class="math inline">\(\mu\)</span> em exatamente 95% das amostras de qualquer tamanho <span class="math inline">\(n\)</span>.
 </p>]]></text>
 </answer>
 </question>
@@ -798,12 +798,7 @@ Se o procedimento fosse repetido muitas vezes com amostras diferentes, 95% dos i
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-1.3863
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-4
+0.25
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
@@ -813,12 +808,17 @@ Se o procedimento fosse repetido muitas vezes com amostras diferentes, 95% dos i
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-0.25
+4
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
 2
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+1.3863
 </p>]]></text>
 </answer>
 </question>
@@ -853,7 +853,7 @@ Se o procedimento fosse repetido muitas vezes com amostras diferentes, 95% dos i
 }
 </style>
 <p>
-<p>Duas amostras independentes provem de populacoes com <span class="math inline">\(\sigma = 4\)</span>. A primeira tem <span class="math inline">\(n_1 = 25\)</span> e a segunda tem <span class="math inline">\(n_2 = 100\)</span>. A largura do IC 95% e proporcional a <span class="math inline">\(1/\sqrt{n}\)</span>. Qual e a razao entre a largura do IC obtido com <span class="math inline">\(n_1\)</span> e a largura do IC obtido com <span class="math inline">\(n_2\)</span>?</p>
+<p>Duas amostras independentes provem de populacoes com <span class="math inline">\(\sigma = 1\)</span>. A primeira tem <span class="math inline">\(n_1 = 25\)</span> e a segunda tem <span class="math inline">\(n_2 = 100\)</span>. A largura do IC 95% e proporcional a <span class="math inline">\(1/\sqrt{n}\)</span>. Qual e a razao entre a largura do IC obtido com <span class="math inline">\(n_1\)</span> e a largura do IC obtido com <span class="math inline">\(n_2\)</span>?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
@@ -870,12 +870,7 @@ Se o procedimento fosse repetido muitas vezes com amostras diferentes, 95% dos i
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-0.25
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-1.3863
+4
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
@@ -885,12 +880,17 @@ Se o procedimento fosse repetido muitas vezes com amostras diferentes, 95% dos i
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-4
+1.3863
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
 0.5
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.25
 </p>]]></text>
 </answer>
 </question>
@@ -932,13 +932,13 @@ Se o procedimento fosse repetido muitas vezes com amostras diferentes, 95% dos i
 }
 </style>
 <p>
-<p>Duas populacoes independentes tem desvios padrao conhecidos. Dados: <span class="math inline">\(\bar{X}_1 = 4.44\)</span>, <span class="math inline">\(\sigma_1 = 3\)</span>, <span class="math inline">\(n_1 = 64\)</span>; <span class="math inline">\(\bar{X}_2 = 1.7\)</span>, <span class="math inline">\(\sigma_2 = 3\)</span>, <span class="math inline">\(n_2 = 64\)</span>. O erro padrao de <span class="math inline">\(\bar{X}_1 - \bar{X}_2\)</span> e:</p>
+<p>Duas populacoes independentes tem desvios padrao conhecidos. Dados: <span class="math inline">\(\bar{X}_1 = 3.2\)</span>, <span class="math inline">\(\sigma_1 = 3\)</span>, <span class="math inline">\(n_1 = 49\)</span>; <span class="math inline">\(\bar{X}_2 = 3.68\)</span>, <span class="math inline">\(\sigma_2 = 2\)</span>, <span class="math inline">\(n_2 = 49\)</span>. O erro padrao de <span class="math inline">\(\bar{X}_1 - \bar{X}_2\)</span> e:</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
 <p>Para amostras independentes, <span class="math inline">\(\text{Var}(\bar{X}_1 - \bar{X}_2) = \sigma_1^2/n_1 + \sigma_2^2/n_2\)</span>, portanto o erro padrao e:
-<span class="math display">\[\sqrt{\frac{3^2}{64} + \frac{3^2}{64}} = 0.5303.\]</span></p>
+<span class="math display">\[\sqrt{\frac{3^2}{49} + \frac{2^2}{49}} = 0.5151.\]</span></p>
 <p>Erros comuns: subtrair as variancias; somar os desvios antes de dividir; dividir pela soma dos tamanhos.</p>
 </p>]]></text>
 </generalfeedback>
@@ -947,29 +947,29 @@ Se o procedimento fosse repetido muitas vezes com amostras diferentes, 95% dos i
 <shuffleanswers>false</shuffleanswers>
 <single>true</single>
 <answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.3642
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.1429
+</p>]]></text>
+</answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-0.5303
+0.5151
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-34.280511
+25.2389
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-0.375
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-0
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-33.9411
+0.5051
 </p>]]></text>
 </answer>
 </question>
@@ -1004,13 +1004,13 @@ Se o procedimento fosse repetido muitas vezes com amostras diferentes, 95% dos i
 }
 </style>
 <p>
-<p>Duas populacoes independentes tem desvios padrao conhecidos. Dados: <span class="math inline">\(\bar{X}_1 = 6.08\)</span>, <span class="math inline">\(\sigma_1 = 1\)</span>, <span class="math inline">\(n_1 = 64\)</span>; <span class="math inline">\(\bar{X}_2 = 2.53\)</span>, <span class="math inline">\(\sigma_2 = 3\)</span>, <span class="math inline">\(n_2 = 64\)</span>. O erro padrao de <span class="math inline">\(\bar{X}_1 - \bar{X}_2\)</span> e:</p>
+<p>Duas populacoes independentes tem desvios padrao conhecidos. Dados: <span class="math inline">\(\bar{X}_1 = 5.06\)</span>, <span class="math inline">\(\sigma_1 = 2\)</span>, <span class="math inline">\(n_1 = 36\)</span>; <span class="math inline">\(\bar{X}_2 = 2.2\)</span>, <span class="math inline">\(\sigma_2 = 1\)</span>, <span class="math inline">\(n_2 = 64\)</span>. O erro padrao de <span class="math inline">\(\bar{X}_1 - \bar{X}_2\)</span> e:</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
 <p>Para amostras independentes, <span class="math inline">\(\text{Var}(\bar{X}_1 - \bar{X}_2) = \sigma_1^2/n_1 + \sigma_2^2/n_2\)</span>, portanto o erro padrao e:
-<span class="math display">\[\sqrt{\frac{1^2}{64} + \frac{3^2}{64}} = 0.3953.\]</span></p>
+<span class="math display">\[\sqrt{\frac{2^2}{36} + \frac{1^2}{64}} = 0.356.\]</span></p>
 <p>Erros comuns: subtrair as variancias; somar os desvios antes de dividir; dividir pela soma dos tamanhos.</p>
 </p>]]></text>
 </generalfeedback>
@@ -1021,27 +1021,27 @@ Se o procedimento fosse repetido muitas vezes com amostras diferentes, 95% dos i
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-0.2795
+0.2236
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-0.25
+0.3
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+14.4222
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.2083
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-0.3953
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-0.3536
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-25.2982
+0.356
 </p>]]></text>
 </answer>
 </question>
@@ -1083,12 +1083,12 @@ Se o procedimento fosse repetido muitas vezes com amostras diferentes, 95% dos i
 }
 </style>
 <p>
-<p>O limite inferior do intervalo de confianca unilateral 95% para <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\bar{X} - z_{0{,}95}\,\sigma/\sqrt{n}\)</span>, com <span class="math inline">\(z_{0{,}95} = 1{,}645\)</span>. Com <span class="math inline">\(\bar{X} = 3.72\)</span>, <span class="math inline">\(\sigma = 2\)</span> e <span class="math inline">\(n = 64\)</span>, o limite inferior e:</p>
+<p>O limite inferior do intervalo de confianca unilateral 95% para <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\bar{X} - z_{0{,}95}\,\sigma/\sqrt{n}\)</span>, com <span class="math inline">\(z_{0{,}95} = 1{,}645\)</span>. Com <span class="math inline">\(\bar{X} = 7.03\)</span>, <span class="math inline">\(\sigma = 2\)</span> e <span class="math inline">\(n = 36\)</span>, o limite inferior e:</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>O limite inferior e <span class="math inline">\(\bar{X} - 1{,}645\,\sigma/\sqrt{n} = 3.72 - 1{,}645 \times 2 / \sqrt{64} = 3.3088\)</span>.</p>
+<p>O limite inferior e <span class="math inline">\(\bar{X} - 1{,}645\,\sigma/\sqrt{n} = 7.03 - 1{,}645 \times 2 / \sqrt{36} = 6.4817\)</span>.</p>
 <p>Erros comuns: usar <span class="math inline">\(z_{0{,}975}=1{,}96\)</span> (bilateral); somar em vez de subtrair (limite superior); dividir por <span class="math inline">\(n\)</span> em vez de <span class="math inline">\(\sqrt{n}\)</span>; usar <span class="math inline">\(z_{0{,}90}=1{,}282\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
@@ -1099,27 +1099,27 @@ Se o procedimento fosse repetido muitas vezes com amostras diferentes, 95% dos i
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-3.6686
+6.3767
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-3.23
+7.5783
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-4.1313
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-3.3995
+6.9386
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-3.3088
+6.4817
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+6.6027
 </p>]]></text>
 </answer>
 </question>
@@ -1154,12 +1154,12 @@ Se o procedimento fosse repetido muitas vezes com amostras diferentes, 95% dos i
 }
 </style>
 <p>
-<p>O limite inferior do intervalo de confianca unilateral 95% para <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\bar{X} - z_{0{,}95}\,\sigma/\sqrt{n}\)</span>, com <span class="math inline">\(z_{0{,}95} = 1{,}645\)</span>. Com <span class="math inline">\(\bar{X} = 6.57\)</span>, <span class="math inline">\(\sigma = 1\)</span> e <span class="math inline">\(n = 49\)</span>, o limite inferior e:</p>
+<p>O limite inferior do intervalo de confianca unilateral 95% para <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\bar{X} - z_{0{,}95}\,\sigma/\sqrt{n}\)</span>, com <span class="math inline">\(z_{0{,}95} = 1{,}645\)</span>. Com <span class="math inline">\(\bar{X} = 6.21\)</span>, <span class="math inline">\(\sigma = 3\)</span> e <span class="math inline">\(n = 64\)</span>, o limite inferior e:</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>O limite inferior e <span class="math inline">\(\bar{X} - 1{,}645\,\sigma/\sqrt{n} = 6.57 - 1{,}645 \times 1 / \sqrt{49} = 6.335\)</span>.</p>
+<p>O limite inferior e <span class="math inline">\(\bar{X} - 1{,}645\,\sigma/\sqrt{n} = 6.21 - 1{,}645 \times 3 / \sqrt{64} = 5.5931\)</span>.</p>
 <p>Erros comuns: usar <span class="math inline">\(z_{0{,}975}=1{,}96\)</span> (bilateral); somar em vez de subtrair (limite superior); dividir por <span class="math inline">\(n\)</span> em vez de <span class="math inline">\(\sqrt{n}\)</span>; usar <span class="math inline">\(z_{0{,}90}=1{,}282\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
@@ -1168,29 +1168,29 @@ Se o procedimento fosse repetido muitas vezes com amostras diferentes, 95% dos i
 <shuffleanswers>false</shuffleanswers>
 <single>true</single>
 <answernumbering>abc</answernumbering>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-6.29
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-6.3869
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-6.5364
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-6.805
-</p>]]></text>
-</answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-6.335
+5.5931
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+6.1329
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+5.475
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+6.8269
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+5.7293
 </p>]]></text>
 </answer>
 </question>
@@ -1248,6 +1248,11 @@ Se o procedimento fosse repetido muitas vezes com amostras diferentes, 95% dos i
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
+395
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
 96
 </p>]]></text>
 </answer>
@@ -1256,19 +1261,14 @@ Se o procedimento fosse repetido muitas vezes com amostras diferentes, 95% dos i
 100
 </p>]]></text>
 </answer>
-<answer fraction="0" format="html">
+<answer fraction="100" format="html">
 <text><![CDATA[<p>
-395
+385
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
 435
-</p>]]></text>
-</answer>
-<answer fraction="100" format="html">
-<text><![CDATA[<p>
-385
 </p>]]></text>
 </answer>
 </question>
@@ -1319,7 +1319,7 @@ Se o procedimento fosse repetido muitas vezes com amostras diferentes, 95% dos i
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-96
+100
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
@@ -1332,14 +1332,14 @@ Se o procedimento fosse repetido muitas vezes com amostras diferentes, 95% dos i
 435
 </p>]]></text>
 </answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-100
-</p>]]></text>
-</answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
 385
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+96
 </p>]]></text>
 </answer>
 </question>
@@ -1381,12 +1381,12 @@ Se o procedimento fosse repetido muitas vezes com amostras diferentes, 95% dos i
 }
 </style>
 <p>
-<p>Para <span class="math inline">\(X_i \overset{\text{iid}}{\sim} \text{Poisson}(\lambda)\)</span>, pelo TCL temos <span class="math inline">\(\bar{X} \approx N(\lambda,\, \lambda/n)\)</span> para <span class="math inline">\(n\)</span> grande. Com <span class="math inline">\(\hat{\lambda} = \bar{X} = 8\)</span> e <span class="math inline">\(n = 100\)</span>, a margem de erro do IC 95% e <span class="math inline">\(1{,}96\sqrt{\hat{\lambda}/n}\)</span>. Esse valor e:</p>
+<p>Para <span class="math inline">\(X_i \overset{\text{iid}}{\sim} \text{Poisson}(\lambda)\)</span>, pelo TCL temos <span class="math inline">\(\bar{X} \approx N(\lambda,\, \lambda/n)\)</span> para <span class="math inline">\(n\)</span> grande. Com <span class="math inline">\(\hat{\lambda} = \bar{X} = 3\)</span> e <span class="math inline">\(n = 100\)</span>, a margem de erro do IC 95% e <span class="math inline">\(1{,}96\sqrt{\hat{\lambda}/n}\)</span>. Esse valor e:</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>A margem de erro e <span class="math inline">\(1{,}96\sqrt{\hat{\lambda}/n} = 1{,}96\sqrt{8/100} = 0.5544\)</span>.</p>
+<p>A margem de erro e <span class="math inline">\(1{,}96\sqrt{\hat{\lambda}/n} = 1{,}96\sqrt{3/100} = 0.3395\)</span>.</p>
 <p>Erros comuns: usar <span class="math inline">\(\hat{\lambda}/\sqrt{n}\)</span> sem a raiz exterior; multiplicar <span class="math inline">\(\hat{\lambda}\)</span> por <span class="math inline">\(n\)</span>; dividir <span class="math inline">\(\hat{\lambda}\)</span> por <span class="math inline">\(n\)</span> sem raiz; usar <span class="math inline">\(\sqrt{\hat{\lambda}}/n\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
@@ -1395,29 +1395,29 @@ Se o procedimento fosse repetido muitas vezes com amostras diferentes, 95% dos i
 <shuffleanswers>false</shuffleanswers>
 <single>true</single>
 <answernumbering>abc</answernumbering>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-0.1568
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-0.0554
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-55.4372
-</p>]]></text>
-</answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-0.5544
+0.3395
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-1.568
+0.0588
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+33.9482
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.0339
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.588
 </p>]]></text>
 </answer>
 </question>
@@ -1452,12 +1452,12 @@ Se o procedimento fosse repetido muitas vezes com amostras diferentes, 95% dos i
 }
 </style>
 <p>
-<p>Para <span class="math inline">\(X_i \overset{\text{iid}}{\sim} \text{Poisson}(\lambda)\)</span>, pelo TCL temos <span class="math inline">\(\bar{X} \approx N(\lambda,\, \lambda/n)\)</span> para <span class="math inline">\(n\)</span> grande. Com <span class="math inline">\(\hat{\lambda} = \bar{X} = 6\)</span> e <span class="math inline">\(n = 200\)</span>, a margem de erro do IC 95% e <span class="math inline">\(1{,}96\sqrt{\hat{\lambda}/n}\)</span>. Esse valor e:</p>
+<p>Para <span class="math inline">\(X_i \overset{\text{iid}}{\sim} \text{Poisson}(\lambda)\)</span>, pelo TCL temos <span class="math inline">\(\bar{X} \approx N(\lambda,\, \lambda/n)\)</span> para <span class="math inline">\(n\)</span> grande. Com <span class="math inline">\(\hat{\lambda} = \bar{X} = 6\)</span> e <span class="math inline">\(n = 50\)</span>, a margem de erro do IC 95% e <span class="math inline">\(1{,}96\sqrt{\hat{\lambda}/n}\)</span>. Esse valor e:</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>A margem de erro e <span class="math inline">\(1{,}96\sqrt{\hat{\lambda}/n} = 1{,}96\sqrt{6/200} = 0.3395\)</span>.</p>
+<p>A margem de erro e <span class="math inline">\(1{,}96\sqrt{\hat{\lambda}/n} = 1{,}96\sqrt{6/50} = 0.679\)</span>.</p>
 <p>Erros comuns: usar <span class="math inline">\(\hat{\lambda}/\sqrt{n}\)</span> sem a raiz exterior; multiplicar <span class="math inline">\(\hat{\lambda}\)</span> por <span class="math inline">\(n\)</span>; dividir <span class="math inline">\(\hat{\lambda}\)</span> por <span class="math inline">\(n\)</span> sem raiz; usar <span class="math inline">\(\sqrt{\hat{\lambda}}/n\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
@@ -1468,27 +1468,27 @@ Se o procedimento fosse repetido muitas vezes com amostras diferentes, 95% dos i
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-0.8316
+0.2352
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-0.024
+33.9482
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-67.8964
+0.096
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+1.6631
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-0.3395
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-0.0588
+0.679
 </p>]]></text>
 </answer>
 </question>
@@ -1546,7 +1546,7 @@ Se o procedimento fosse repetido muitas vezes com amostras diferentes, 95% dos i
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-Uma estatistica anciliar que e independente do parametro <span class="math inline">\(\theta\)</span>.
+Uma estatistica suficiente minima para <span class="math inline">\(\theta\)</span>.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
@@ -1554,9 +1554,9 @@ Uma estatistica anciliar que e independente do parametro <span class="math inlin
 Qualquer estatistica com distribuicao conhecida, independente da amostra e do parametro.
 </p>]]></text>
 </answer>
-<answer fraction="0" format="html">
+<answer fraction="100" format="html">
 <text><![CDATA[<p>
-Uma estatistica suficiente minima para <span class="math inline">\(\theta\)</span>.
+Uma funcao da amostra e do parametro cuja distribuicao nao depende de <span class="math inline">\(\theta\)</span>.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
@@ -1564,9 +1564,9 @@ Uma estatistica suficiente minima para <span class="math inline">\(\theta\)</spa
 O estimador de maxima verossimilhanca de <span class="math inline">\(\theta\)</span> padronizado pela informacao de Fisher.
 </p>]]></text>
 </answer>
-<answer fraction="100" format="html">
+<answer fraction="0" format="html">
 <text><![CDATA[<p>
-Uma funcao da amostra e do parametro cuja distribuicao nao depende de <span class="math inline">\(\theta\)</span>.
+Uma estatistica anciliar que e independente do parametro <span class="math inline">\(\theta\)</span>.
 </p>]]></text>
 </answer>
 </question>
@@ -1617,7 +1617,7 @@ Uma funcao da amostra e do parametro cuja distribuicao nao depende de <span clas
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-Uma estatistica anciliar que e independente do parametro <span class="math inline">\(\theta\)</span>.
+O estimador de maxima verossimilhanca de <span class="math inline">\(\theta\)</span> padronizado pela informacao de Fisher.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
@@ -1625,9 +1625,9 @@ Uma estatistica anciliar que e independente do parametro <span class="math inlin
 Uma estatistica suficiente minima para <span class="math inline">\(\theta\)</span>.
 </p>]]></text>
 </answer>
-<answer fraction="100" format="html">
+<answer fraction="0" format="html">
 <text><![CDATA[<p>
-Uma funcao da amostra e do parametro cuja distribuicao nao depende de <span class="math inline">\(\theta\)</span>.
+Uma estatistica anciliar que e independente do parametro <span class="math inline">\(\theta\)</span>.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
@@ -1635,9 +1635,9 @@ Uma funcao da amostra e do parametro cuja distribuicao nao depende de <span clas
 Qualquer estatistica com distribuicao conhecida, independente da amostra e do parametro.
 </p>]]></text>
 </answer>
-<answer fraction="0" format="html">
+<answer fraction="100" format="html">
 <text><![CDATA[<p>
-O estimador de maxima verossimilhanca de <span class="math inline">\(\theta\)</span> padronizado pela informacao de Fisher.
+Uma funcao da amostra e do parametro cuja distribuicao nao depende de <span class="math inline">\(\theta\)</span>.
 </p>]]></text>
 </answer>
 </question>
@@ -1679,12 +1679,12 @@ O estimador de maxima verossimilhanca de <span class="math inline">\(\theta\)</s
 }
 </style>
 <p>
-<p>Para <span class="math inline">\(X_i \overset{\text{iid}}{\sim} N(\mu,\sigma^2)\)</span> com <span class="math inline">\(\sigma^2\)</span> desconhecido, o IC 95% para <span class="math inline">\(\mu\)</span> usa o pivo <span class="math inline">\(T = (\bar{X}-\mu)/(S/\sqrt{n}) \sim t_{n-1}\)</span>. Com <span class="math inline">\(\bar{X} = 4.64\)</span>, <span class="math inline">\(S = 1.05\)</span> e <span class="math inline">\(n = 20\)</span>, o IC e <span class="math inline">\(\bar{X} \pm t_{19,\,0{,}975} \cdot S/\sqrt{n}\)</span>. Usando <span class="math inline">\(t_{19,\,0{,}975} = 2.093\)</span>, a margem de erro e:</p>
+<p>Para <span class="math inline">\(X_i \overset{\text{iid}}{\sim} N(\mu,\sigma^2)\)</span> com <span class="math inline">\(\sigma^2\)</span> desconhecido, o IC 95% para <span class="math inline">\(\mu\)</span> usa o pivo <span class="math inline">\(T = (\bar{X}-\mu)/(S/\sqrt{n}) \sim t_{n-1}\)</span>. Com <span class="math inline">\(\bar{X} = 5.96\)</span>, <span class="math inline">\(S = 1\)</span> e <span class="math inline">\(n = 15\)</span>, o IC e <span class="math inline">\(\bar{X} \pm t_{14,\,0{,}975} \cdot S/\sqrt{n}\)</span>. Usando <span class="math inline">\(t_{14,\,0{,}975} = 2.1448\)</span>, a margem de erro e:</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>A margem de erro e <span class="math inline">\(t_{19,\,0{,}975} \times S/\sqrt{n} = 2.093 \times 1.05 / \sqrt{20} = 0.4914\)</span>.</p>
+<p>A margem de erro e <span class="math inline">\(t_{14,\,0{,}975} \times S/\sqrt{n} = 2.1448 \times 1 / \sqrt{15} = 0.5538\)</span>.</p>
 <p>Erros comuns: usar <span class="math inline">\(z_{0{,}975}=1{,}96\)</span> (ignorar <span class="math inline">\(\sigma^2\)</span> desconhecido); dividir por <span class="math inline">\(n\)</span> em vez de <span class="math inline">\(\sqrt{n}\)</span>; usar <span class="math inline">\(t_{n,\,0{,}975}\)</span> com <span class="math inline">\(n\)</span> graus (em vez de <span class="math inline">\(n-1\)</span>); multiplicar por <span class="math inline">\(\sqrt{n}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
@@ -1693,29 +1693,29 @@ O estimador de maxima verossimilhanca de <span class="math inline">\(\theta\)</s
 <shuffleanswers>false</shuffleanswers>
 <single>true</single>
 <answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.5503
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.143
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+8.3067
+</p>]]></text>
+</answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-0.4914
+0.5538
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-0.4602
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-0.1099
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-9.8283
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-0.4898
+0.5061
 </p>]]></text>
 </answer>
 </question>
@@ -1750,12 +1750,12 @@ O estimador de maxima verossimilhanca de <span class="math inline">\(\theta\)</s
 }
 </style>
 <p>
-<p>Para <span class="math inline">\(X_i \overset{\text{iid}}{\sim} N(\mu,\sigma^2)\)</span> com <span class="math inline">\(\sigma^2\)</span> desconhecido, o IC 95% para <span class="math inline">\(\mu\)</span> usa o pivo <span class="math inline">\(T = (\bar{X}-\mu)/(S/\sqrt{n}) \sim t_{n-1}\)</span>. Com <span class="math inline">\(\bar{X} = 5\)</span>, <span class="math inline">\(S = 2.34\)</span> e <span class="math inline">\(n = 20\)</span>, o IC e <span class="math inline">\(\bar{X} \pm t_{19,\,0{,}975} \cdot S/\sqrt{n}\)</span>. Usando <span class="math inline">\(t_{19,\,0{,}975} = 2.093\)</span>, a margem de erro e:</p>
+<p>Para <span class="math inline">\(X_i \overset{\text{iid}}{\sim} N(\mu,\sigma^2)\)</span> com <span class="math inline">\(\sigma^2\)</span> desconhecido, o IC 95% para <span class="math inline">\(\mu\)</span> usa o pivo <span class="math inline">\(T = (\bar{X}-\mu)/(S/\sqrt{n}) \sim t_{n-1}\)</span>. Com <span class="math inline">\(\bar{X} = 3.98\)</span>, <span class="math inline">\(S = 1.91\)</span> e <span class="math inline">\(n = 15\)</span>, o IC e <span class="math inline">\(\bar{X} \pm t_{14,\,0{,}975} \cdot S/\sqrt{n}\)</span>. Usando <span class="math inline">\(t_{14,\,0{,}975} = 2.1448\)</span>, a margem de erro e:</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>A margem de erro e <span class="math inline">\(t_{19,\,0{,}975} \times S/\sqrt{n} = 2.093 \times 2.34 / \sqrt{20} = 1.0952\)</span>.</p>
+<p>A margem de erro e <span class="math inline">\(t_{14,\,0{,}975} \times S/\sqrt{n} = 2.1448 \times 1.91 / \sqrt{15} = 1.0577\)</span>.</p>
 <p>Erros comuns: usar <span class="math inline">\(z_{0{,}975}=1{,}96\)</span> (ignorar <span class="math inline">\(\sigma^2\)</span> desconhecido); dividir por <span class="math inline">\(n\)</span> em vez de <span class="math inline">\(\sqrt{n}\)</span>; usar <span class="math inline">\(t_{n,\,0{,}975}\)</span> com <span class="math inline">\(n\)</span> graus (em vez de <span class="math inline">\(n-1\)</span>); multiplicar por <span class="math inline">\(\sqrt{n}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
@@ -1766,27 +1766,27 @@ O estimador de maxima verossimilhanca de <span class="math inline">\(\theta\)</s
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-1.0256
+0.9666
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-1.0915
+1.0511
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-0.2449
+15.8658
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.2731
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-1.0952
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-21.9031
+1.0577
 </p>]]></text>
 </answer>
 </question>
@@ -1828,12 +1828,12 @@ O estimador de maxima verossimilhanca de <span class="math inline">\(\theta\)</s
 }
 </style>
 <p>
-<p>Para <span class="math inline">\(X_i \overset{\text{iid}}{\sim} N(\mu,\sigma^2)\)</span>, o pivo <span class="math inline">\((n-1)S^2/\sigma^2 \sim \chi^2_{n-1}\)</span>. Com <span class="math inline">\(n = 10\)</span> e <span class="math inline">\(S^2 = 9\)</span>, os quantis relevantes sao <span class="math inline">\(\chi^2_{9,\,0{,}025} = 2.7004\)</span> e <span class="math inline">\(\chi^2_{9,\,0{,}975} = 19.0228\)</span>. O IC 95% para <span class="math inline">\(\sigma^2\)</span> e <span class="math inline">\(\left(\frac{(n-1)S^2}{\chi^2_{n-1,\,0{,}975}},\; \frac{(n-1)S^2}{\chi^2_{n-1,\,0{,}025}}\right)\)</span>. O limite inferior e:</p>
+<p>Para <span class="math inline">\(X_i \overset{\text{iid}}{\sim} N(\mu,\sigma^2)\)</span>, o pivo <span class="math inline">\((n-1)S^2/\sigma^2 \sim \chi^2_{n-1}\)</span>. Com <span class="math inline">\(n = 20\)</span> e <span class="math inline">\(S^2 = 1\)</span>, os quantis relevantes sao <span class="math inline">\(\chi^2_{19,\,0{,}025} = 8.9065\)</span> e <span class="math inline">\(\chi^2_{19,\,0{,}975} = 32.8523\)</span>. O IC 95% para <span class="math inline">\(\sigma^2\)</span> e <span class="math inline">\(\left(\frac{(n-1)S^2}{\chi^2_{n-1,\,0{,}975}},\; \frac{(n-1)S^2}{\chi^2_{n-1,\,0{,}025}}\right)\)</span>. O limite inferior e:</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>O limite inferior e <span class="math inline">\(\frac{(n-1)S^2}{\chi^2_{n-1,\,0{,}975}} = \frac{9 \times 9}{19.0228} = 4.258\)</span>.</p>
+<p>O limite inferior e <span class="math inline">\(\frac{(n-1)S^2}{\chi^2_{n-1,\,0{,}975}} = \frac{19 \times 1}{32.8523} = 0.5783\)</span>.</p>
 <p>Nota: dividimos pelo quantil SUPERIOR <span class="math inline">\(\chi^2_{0{,}975}\)</span> para obter o limite INFERIOR (inversao caracteristica do IC qui-quadrado). Erros comuns: dividir pelo quantil inferior; usar <span class="math inline">\(n\)</span> em vez de <span class="math inline">\(n-1\)</span>; usar <span class="math inline">\(S^2\)</span> sem multiplicar por <span class="math inline">\((n-1)\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
@@ -1844,27 +1844,27 @@ O estimador de maxima verossimilhanca de <span class="math inline">\(\theta\)</s
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-4.7312
+0.95
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-29.9956
+0.6088
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-0.4731
+0.0304
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-4.258
+0.5783
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-8.1
+2.1333
 </p>]]></text>
 </answer>
 </question>
@@ -1899,12 +1899,12 @@ O estimador de maxima verossimilhanca de <span class="math inline">\(\theta\)</s
 }
 </style>
 <p>
-<p>Para <span class="math inline">\(X_i \overset{\text{iid}}{\sim} N(\mu,\sigma^2)\)</span>, o pivo <span class="math inline">\((n-1)S^2/\sigma^2 \sim \chi^2_{n-1}\)</span>. Com <span class="math inline">\(n = 25\)</span> e <span class="math inline">\(S^2 = 16\)</span>, os quantis relevantes sao <span class="math inline">\(\chi^2_{24,\,0{,}025} = 12.4012\)</span> e <span class="math inline">\(\chi^2_{24,\,0{,}975} = 39.3641\)</span>. O IC 95% para <span class="math inline">\(\sigma^2\)</span> e <span class="math inline">\(\left(\frac{(n-1)S^2}{\chi^2_{n-1,\,0{,}975}},\; \frac{(n-1)S^2}{\chi^2_{n-1,\,0{,}025}}\right)\)</span>. O limite inferior e:</p>
+<p>Para <span class="math inline">\(X_i \overset{\text{iid}}{\sim} N(\mu,\sigma^2)\)</span>, o pivo <span class="math inline">\((n-1)S^2/\sigma^2 \sim \chi^2_{n-1}\)</span>. Com <span class="math inline">\(n = 10\)</span> e <span class="math inline">\(S^2 = 16\)</span>, os quantis relevantes sao <span class="math inline">\(\chi^2_{9,\,0{,}025} = 2.7004\)</span> e <span class="math inline">\(\chi^2_{9,\,0{,}975} = 19.0228\)</span>. O IC 95% para <span class="math inline">\(\sigma^2\)</span> e <span class="math inline">\(\left(\frac{(n-1)S^2}{\chi^2_{n-1,\,0{,}975}},\; \frac{(n-1)S^2}{\chi^2_{n-1,\,0{,}025}}\right)\)</span>. O limite inferior e:</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>O limite inferior e <span class="math inline">\(\frac{(n-1)S^2}{\chi^2_{n-1,\,0{,}975}} = \frac{24 \times 16}{39.3641} = 9.7551\)</span>.</p>
+<p>O limite inferior e <span class="math inline">\(\frac{(n-1)S^2}{\chi^2_{n-1,\,0{,}975}} = \frac{9 \times 16}{19.0228} = 7.5699\)</span>.</p>
 <p>Nota: dividimos pelo quantil SUPERIOR <span class="math inline">\(\chi^2_{0{,}975}\)</span> para obter o limite INFERIOR (inversao caracteristica do IC qui-quadrado). Erros comuns: dividir pelo quantil inferior; usar <span class="math inline">\(n\)</span> em vez de <span class="math inline">\(n-1\)</span>; usar <span class="math inline">\(S^2\)</span> sem multiplicar por <span class="math inline">\((n-1)\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
@@ -1915,27 +1915,27 @@ O estimador de maxima verossimilhanca de <span class="math inline">\(\theta\)</s
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-0.4065
+0.8411
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-15.36
+53.3254
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-10.1615
+14.4
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-30.9647
+8.411
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-9.7551
+7.5699
 </p>]]></text>
 </answer>
 </question>
@@ -1951,77 +1951,6 @@ O estimador de maxima verossimilhanca de <span class="math inline">\(\theta\)</s
 <question type="multichoice">
 <name>
 <text> R1 Q14 : Cap5_Cap5S2Q4 </text>
-</name>
-<questiontext format="html">
-<text><![CDATA[
-<style type="text/css" rel="stylesheet">
-/* tables with alternating shading */
-.table_shade {
-    border-collapse: collapse;
-    border-spacing: 0;
-    border:1px solid #FFFFFF;
-    background-color: #FFFFFF;
-}
-.table_shade th {
-    border:1px solid #FFFFFF;
-    background: #D5D5D5;
-}
-.table_shade td {
-    border:1px solid #FFFFFF;
-}
-.table_shade .odd {
-    background: #EEEEEE;
-}
-.table_shade .even {
-    background: #FBFBFB;
-}
-</style>
-<p>
-<p>Para <span class="math inline">\(X_i \overset{\text{iid}}{\sim} N(\mu,\sigma^2)\)</span> com <span class="math inline">\(\sigma^2 = 1\)</span> conhecido e <span class="math inline">\(n = 49\)</span>, qual e o pivo EXATO para construir um IC para <span class="math inline">\(\mu\)</span>?</p>
-</p>]]></text>
-</questiontext>
-<generalfeedback format="html">
-<text><![CDATA[<p>
-<p>Quando <span class="math inline">\(X_i \sim N(\mu,\sigma^2)\)</span> com <span class="math inline">\(\sigma^2\)</span> conhecido, a media amostral tem distribuicao <span class="math inline">\(\bar{X} \sim N(\mu, \sigma^2/n)\)</span> EXATAMENTE para qualquer <span class="math inline">\(n\)</span>. Portanto <span class="math inline">\(Z = \sqrt{n}(\bar{X}-\mu)/\sigma \sim N(0,1)\)</span> e um pivo exato.</p>
-<p>A opcao com <span class="math inline">\(S\)</span> (variancia amostral) segue <span class="math inline">\(t_{n-1}\)</span>, nao <span class="math inline">\(N(0,1)\)</span>. A afirmacao “apenas assintoticamente” e errada para Normal. As opcoes com <span class="math inline">\(\chi^2_n\)</span> e <span class="math inline">\(F_{1,n-1}\)</span> tem graus de liberdade incorretos.</p>
-</p>]]></text>
-</generalfeedback>
-<penalty>0</penalty>
-<defaultgrade>1</defaultgrade>
-<shuffleanswers>false</shuffleanswers>
-<single>true</single>
-<answernumbering>abc</answernumbering>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(\chi^2 = \frac{n(\bar{X}-\mu)^2}{\sigma^2} \sim \chi^2_n\)</span> exatamente.
-</p>]]></text>
-</answer>
-<answer fraction="100" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(Z = \frac{\sqrt{n}(\bar{X}-\mu)}{\sigma} \sim N(0,1)\)</span> exatamente (para qualquer <span class="math inline">\(n\)</span>).
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(T = \frac{\sqrt{n}(\bar{X}-\mu)}{S} \sim N(0,1)\)</span> exatamente para qualquer <span class="math inline">\(n\)</span>.
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(Z = \frac{\sqrt{n}(\bar{X}-\mu)}{\sigma} \sim N(0,1)\)</span> apenas assintoticamente, nao para <span class="math inline">\(n\)</span> finito.
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(F = \frac{n(\bar{X}-\mu)^2}{\sigma^2} \sim F_{1,\,n-1}\)</span> exatamente.
-</p>]]></text>
-</answer>
-</question>
-
-
-<question type="multichoice">
-<name>
-<text> R2 Q14 : Cap5_Cap5S2Q4 </text>
 </name>
 <questiontext format="html">
 <text><![CDATA[
@@ -2064,7 +1993,83 @@ O estimador de maxima verossimilhanca de <span class="math inline">\(\theta\)</s
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
+<span class="math inline">\(T = \frac{\sqrt{n}(\bar{X}-\mu)}{S} \sim N(0,1)\)</span> exatamente para qualquer <span class="math inline">\(n\)</span>.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(Z = \frac{\sqrt{n}(\bar{X}-\mu)}{\sigma} \sim N(0,1)\)</span> apenas assintoticamente, nao para <span class="math inline">\(n\)</span> finito.
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(Z = \frac{\sqrt{n}(\bar{X}-\mu)}{\sigma} \sim N(0,1)\)</span> exatamente (para qualquer <span class="math inline">\(n\)</span>).
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
 <span class="math inline">\(F = \frac{n(\bar{X}-\mu)^2}{\sigma^2} \sim F_{1,\,n-1}\)</span> exatamente.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(\chi^2 = \frac{n(\bar{X}-\mu)^2}{\sigma^2} \sim \chi^2_n\)</span> exatamente.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q14 : Cap5_Cap5S2Q4 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Para <span class="math inline">\(X_i \overset{\text{iid}}{\sim} N(\mu,\sigma^2)\)</span> com <span class="math inline">\(\sigma^2 = 1\)</span> conhecido e <span class="math inline">\(n = 25\)</span>, qual e o pivo EXATO para construir um IC para <span class="math inline">\(\mu\)</span>?</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Quando <span class="math inline">\(X_i \sim N(\mu,\sigma^2)\)</span> com <span class="math inline">\(\sigma^2\)</span> conhecido, a media amostral tem distribuicao <span class="math inline">\(\bar{X} \sim N(\mu, \sigma^2/n)\)</span> EXATAMENTE para qualquer <span class="math inline">\(n\)</span>. Portanto <span class="math inline">\(Z = \sqrt{n}(\bar{X}-\mu)/\sigma \sim N(0,1)\)</span> e um pivo exato.</p>
+<p>A opcao com <span class="math inline">\(S\)</span> (variancia amostral) segue <span class="math inline">\(t_{n-1}\)</span>, nao <span class="math inline">\(N(0,1)\)</span>. A afirmacao “apenas assintoticamente” e errada para Normal. As opcoes com <span class="math inline">\(\chi^2_n\)</span> e <span class="math inline">\(F_{1,n-1}\)</span> tem graus de liberdade incorretos.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(Z = \frac{\sqrt{n}(\bar{X}-\mu)}{\sigma} \sim N(0,1)\)</span> apenas assintoticamente, nao para <span class="math inline">\(n\)</span> finito.
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(Z = \frac{\sqrt{n}(\bar{X}-\mu)}{\sigma} \sim N(0,1)\)</span> exatamente (para qualquer <span class="math inline">\(n\)</span>).
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
@@ -2074,17 +2079,12 @@ O estimador de maxima verossimilhanca de <span class="math inline">\(\theta\)</s
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-<span class="math inline">\(Z = \frac{\sqrt{n}(\bar{X}-\mu)}{\sigma} \sim N(0,1)\)</span> apenas assintoticamente, nao para <span class="math inline">\(n\)</span> finito.
+<span class="math inline">\(F = \frac{n(\bar{X}-\mu)^2}{\sigma^2} \sim F_{1,\,n-1}\)</span> exatamente.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
 <span class="math inline">\(\chi^2 = \frac{n(\bar{X}-\mu)^2}{\sigma^2} \sim \chi^2_n\)</span> exatamente.
-</p>]]></text>
-</answer>
-<answer fraction="100" format="html">
-<text><![CDATA[<p>
-<span class="math inline">\(Z = \frac{\sqrt{n}(\bar{X}-\mu)}{\sigma} \sim N(0,1)\)</span> exatamente (para qualquer <span class="math inline">\(n\)</span>).
 </p>]]></text>
 </answer>
 </question>
@@ -2126,13 +2126,13 @@ O estimador de maxima verossimilhanca de <span class="math inline">\(\theta\)</s
 }
 </style>
 <p>
-<p>Para <span class="math inline">\(X_i \overset{\text{iid}}{\sim} \text{Exp}(\theta)\)</span> (com media <span class="math inline">\(1/\theta\)</span>), o pivo exato e <span class="math inline">\(2\theta\sum_{i=1}^n X_i \sim \chi^2_{2n}\)</span>. Com <span class="math inline">\(n = 20\)</span> e <span class="math inline">\(\sum X_i = 7.89\)</span>, o limite inferior do IC 95% para <span class="math inline">\(\theta\)</span> e:</p>
+<p>Para <span class="math inline">\(X_i \overset{\text{iid}}{\sim} \text{Exp}(\theta)\)</span> (com media <span class="math inline">\(1/\theta\)</span>), o pivo exato e <span class="math inline">\(2\theta\sum_{i=1}^n X_i \sim \chi^2_{2n}\)</span>. Com <span class="math inline">\(n = 25\)</span> e <span class="math inline">\(\sum X_i = 4.27\)</span>, o limite inferior do IC 95% para <span class="math inline">\(\theta\)</span> e:</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
 <p>Invertendo o pivo: <span class="math inline">\(P\!\left(\frac{\chi^2_{2n,\,0{,}025}}{2\sum X_i} \leq \theta \leq \frac{\chi^2_{2n,\,0{,}975}}{2\sum X_i}\right) = 0{,}95\)</span>.</p>
-<p>O limite inferior e <span class="math inline">\(\chi^2_{40,\,0{,}025}/(2\sum X_i) = 24.4330392/(2 \times 7.89) = 1.5484\)</span>.</p>
+<p>O limite inferior e <span class="math inline">\(\chi^2_{50,\,0{,}025}/(2\sum X_i) = 32.3573637/(2 \times 4.27) = 3.7889\)</span>.</p>
 <p>Erros comuns: usar o quantil 0,975 (que da o limite superior); dividir por <span class="math inline">\(\sum X_i\)</span> sem o fator 2; usar <span class="math inline">\(\chi^2_n\)</span> em vez de <span class="math inline">\(\chi^2_{2n}\)</span>; multiplicar em vez de dividir.</p>
 </p>]]></text>
 </generalfeedback>
@@ -2141,29 +2141,29 @@ O estimador de maxima verossimilhanca de <span class="math inline">\(\theta\)</s
 <shuffleanswers>false</shuffleanswers>
 <single>true</single>
 <answernumbering>abc</answernumbering>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-3.7606
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-0.6078
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-3.0967
-</p>]]></text>
-</answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-1.5484
+3.7889
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-96.3883
+7.5778
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+8.363
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+69.083
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+1.5363
 </p>]]></text>
 </answer>
 </question>
@@ -2198,13 +2198,13 @@ O estimador de maxima verossimilhanca de <span class="math inline">\(\theta\)</s
 }
 </style>
 <p>
-<p>Para <span class="math inline">\(X_i \overset{\text{iid}}{\sim} \text{Exp}(\theta)\)</span> (com media <span class="math inline">\(1/\theta\)</span>), o pivo exato e <span class="math inline">\(2\theta\sum_{i=1}^n X_i \sim \chi^2_{2n}\)</span>. Com <span class="math inline">\(n = 20\)</span> e <span class="math inline">\(\sum X_i = 20.17\)</span>, o limite inferior do IC 95% para <span class="math inline">\(\theta\)</span> e:</p>
+<p>Para <span class="math inline">\(X_i \overset{\text{iid}}{\sim} \text{Exp}(\theta)\)</span> (com media <span class="math inline">\(1/\theta\)</span>), o pivo exato e <span class="math inline">\(2\theta\sum_{i=1}^n X_i \sim \chi^2_{2n}\)</span>. Com <span class="math inline">\(n = 10\)</span> e <span class="math inline">\(\sum X_i = 8.07\)</span>, o limite inferior do IC 95% para <span class="math inline">\(\theta\)</span> e:</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
 <p>Invertendo o pivo: <span class="math inline">\(P\!\left(\frac{\chi^2_{2n,\,0{,}025}}{2\sum X_i} \leq \theta \leq \frac{\chi^2_{2n,\,0{,}975}}{2\sum X_i}\right) = 0{,}95\)</span>.</p>
-<p>O limite inferior e <span class="math inline">\(\chi^2_{40,\,0{,}025}/(2\sum X_i) = 24.4330392/(2 \times 20.17) = 0.6057\)</span>.</p>
+<p>O limite inferior e <span class="math inline">\(\chi^2_{20,\,0{,}025}/(2\sum X_i) = 9.5907774/(2 \times 8.07) = 0.5942\)</span>.</p>
 <p>Erros comuns: usar o quantil 0,975 (que da o limite superior); dividir por <span class="math inline">\(\sum X_i\)</span> sem o fator 2; usar <span class="math inline">\(\chi^2_n\)</span> em vez de <span class="math inline">\(\chi^2_{2n}\)</span>; multiplicar em vez de dividir.</p>
 </p>]]></text>
 </generalfeedback>
@@ -2215,27 +2215,27 @@ O estimador de maxima verossimilhanca de <span class="math inline">\(\theta\)</s
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-246.4072
+0.2012
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-0.2377
+1.1884
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+2.1171
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+38.6988
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-0.6057
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-1.2114
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-1.471
+0.5942
 </p>]]></text>
 </answer>
 </question>
@@ -2277,13 +2277,13 @@ O estimador de maxima verossimilhanca de <span class="math inline">\(\theta\)</s
 }
 </style>
 <p>
-<p>Para <span class="math inline">\(X_i \overset{\text{iid}}{\sim} U(0,\theta)\)</span>, o maximo <span class="math inline">\(X_{(n)} = 6.3853\)</span> e suficiente para <span class="math inline">\(\theta\)</span>. Sabe-se que <span class="math inline">\(Y_n = X_{(n)}/\theta \sim \text{Beta}(n,1)\)</span>, com <span class="math inline">\(F_{Y_n}(y) = y^n\)</span>. Um IC 95% para <span class="math inline">\(\theta\)</span> baseado em <span class="math inline">\(X_{(n)}\)</span> (com <span class="math inline">\(n = 25\)</span>) tem limite superior:</p>
+<p>Para <span class="math inline">\(X_i \overset{\text{iid}}{\sim} U(0,\theta)\)</span>, o maximo <span class="math inline">\(X_{(n)} = 2.6035\)</span> e suficiente para <span class="math inline">\(\theta\)</span>. Sabe-se que <span class="math inline">\(Y_n = X_{(n)}/\theta \sim \text{Beta}(n,1)\)</span>, com <span class="math inline">\(F_{Y_n}(y) = y^n\)</span>. Um IC 95% para <span class="math inline">\(\theta\)</span> baseado em <span class="math inline">\(X_{(n)}\)</span> (com <span class="math inline">\(n = 20\)</span>) tem limite superior:</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
 <p><span class="math inline">\(P(X_{(n)}/\theta \geq c) = 1 - c^n = 0{,}05 \Rightarrow c = (0{,}05)^{1/n}\)</span>.</p>
-<p>O IC 95% e <span class="math inline">\(\left(X_{(n)},\; X_{(n)}/(0{,}05)^{1/n}\right)\)</span>. O limite superior e <span class="math inline">\(6.3853 / (0{,}05)^{1/25} = 7.1982\)</span>.</p>
+<p>O IC 95% e <span class="math inline">\(\left(X_{(n)},\; X_{(n)}/(0{,}05)^{1/n}\right)\)</span>. O limite superior e <span class="math inline">\(2.6035 / (0{,}05)^{1/20} = 3.0242\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -2291,29 +2291,29 @@ O estimador de maxima verossimilhanca de <span class="math inline">\(\theta\)</s
 <shuffleanswers>false</shuffleanswers>
 <single>true</single>
 <answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+2.7405
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+1016.4447
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+2.6535
+</p>]]></text>
+</answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-7.1982
+3.0242
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-3115.3452
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-6.6514
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-6.4253
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-6.3981
+2.61
 </p>]]></text>
 </answer>
 </question>
@@ -2348,13 +2348,13 @@ O estimador de maxima verossimilhanca de <span class="math inline">\(\theta\)</s
 }
 </style>
 <p>
-<p>Para <span class="math inline">\(X_i \overset{\text{iid}}{\sim} U(0,\theta)\)</span>, o maximo <span class="math inline">\(X_{(n)} = 4.7284\)</span> e suficiente para <span class="math inline">\(\theta\)</span>. Sabe-se que <span class="math inline">\(Y_n = X_{(n)}/\theta \sim \text{Beta}(n,1)\)</span>, com <span class="math inline">\(F_{Y_n}(y) = y^n\)</span>. Um IC 95% para <span class="math inline">\(\theta\)</span> baseado em <span class="math inline">\(X_{(n)}\)</span> (com <span class="math inline">\(n = 25\)</span>) tem limite superior:</p>
+<p>Para <span class="math inline">\(X_i \overset{\text{iid}}{\sim} U(0,\theta)\)</span>, o maximo <span class="math inline">\(X_{(n)} = 3.9786\)</span> e suficiente para <span class="math inline">\(\theta\)</span>. Sabe-se que <span class="math inline">\(Y_n = X_{(n)}/\theta \sim \text{Beta}(n,1)\)</span>, com <span class="math inline">\(F_{Y_n}(y) = y^n\)</span>. Um IC 95% para <span class="math inline">\(\theta\)</span> baseado em <span class="math inline">\(X_{(n)}\)</span> (com <span class="math inline">\(n = 10\)</span>) tem limite superior:</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
 <p><span class="math inline">\(P(X_{(n)}/\theta \geq c) = 1 - c^n = 0{,}05 \Rightarrow c = (0{,}05)^{1/n}\)</span>.</p>
-<p>O IC 95% e <span class="math inline">\(\left(X_{(n)},\; X_{(n)}/(0{,}05)^{1/n}\right)\)</span>. O limite superior e <span class="math inline">\(4.7284 / (0{,}05)^{1/25} = 5.3303\)</span>.</p>
+<p>O IC 95% e <span class="math inline">\(\left(X_{(n)},\; X_{(n)}/(0{,}05)^{1/n}\right)\)</span>. O limite superior e <span class="math inline">\(3.9786 / (0{,}05)^{1/10} = 5.3683\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -2364,27 +2364,27 @@ O estimador de maxima verossimilhanca de <span class="math inline">\(\theta\)</s
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-4.9254
+4.4207
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+777.6479
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-5.3303
+5.3683
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-2306.9547
+3.9985
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-4.7684
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-4.7379
+4.0786
 </p>]]></text>
 </answer>
 </question>
@@ -2400,6 +2400,77 @@ O estimador de maxima verossimilhanca de <span class="math inline">\(\theta\)</s
 <question type="multichoice">
 <name>
 <text> R1 Q17 : Cap5_Cap5S2Q7 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Para <span class="math inline">\(X_i \sim N(\mu,\sigma^2)\)</span> com <span class="math inline">\(\sigma^2\)</span> desconhecido, o IC 95% baseado em <span class="math inline">\(t_{n-1}\)</span> tem comprimento <span class="math inline">\(2\,t_{n-1,\,0{,}975}\,S/\sqrt{n}\)</span>, enquanto o IC baseado na normal (com <span class="math inline">\(\sigma\)</span> conhecido) teria comprimento <span class="math inline">\(2 \times 1{,}96\,\sigma/\sqrt{n}\)</span>. Com <span class="math inline">\(n = 30\)</span>, a razao <span class="math inline">\(t_{n-1,\,0{,}975}/1{,}96\)</span> (que mede o quanto o IC <span class="math inline">\(t\)</span> e mais largo) e:</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><span class="math inline">\(t_{29,\,0{,}975}/1{,}96 = 2.0452296/1{,}96 = 1.0435\)</span>.</p>
+<p>Para <span class="math inline">\(n\)</span> grande, <span class="math inline">\(t_{n-1,\,0{,}975} \to 1{,}96\)</span> e a razao tende a 1. Para <span class="math inline">\(n = 30\)</span>, o IC <span class="math inline">\(t\)</span> e 4.4% mais largo.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+1.042
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.0852
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+1.0435
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.9583
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+2.0452
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R2 Q17 : Cap5_Cap5S2Q7 </text>
 </name>
 <questiontext format="html">
 <text><![CDATA[
@@ -2442,17 +2513,12 @@ O estimador de maxima verossimilhanca de <span class="math inline">\(\theta\)</s
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-1.0643
-</p>]]></text>
-</answer>
-<answer fraction="100" format="html">
-<text><![CDATA[<p>
-1.0679
+2.093
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-0.133
+1.0643
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
@@ -2462,78 +2528,12 @@ O estimador de maxima verossimilhanca de <span class="math inline">\(\theta\)</s
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-2.093
-</p>]]></text>
-</answer>
-</question>
-
-
-<question type="multichoice">
-<name>
-<text> R2 Q17 : Cap5_Cap5S2Q7 </text>
-</name>
-<questiontext format="html">
-<text><![CDATA[
-<style type="text/css" rel="stylesheet">
-/* tables with alternating shading */
-.table_shade {
-    border-collapse: collapse;
-    border-spacing: 0;
-    border:1px solid #FFFFFF;
-    background-color: #FFFFFF;
-}
-.table_shade th {
-    border:1px solid #FFFFFF;
-    background: #D5D5D5;
-}
-.table_shade td {
-    border:1px solid #FFFFFF;
-}
-.table_shade .odd {
-    background: #EEEEEE;
-}
-.table_shade .even {
-    background: #FBFBFB;
-}
-</style>
-<p>
-<p>Para <span class="math inline">\(X_i \sim N(\mu,\sigma^2)\)</span> com <span class="math inline">\(\sigma^2\)</span> desconhecido, o IC 95% baseado em <span class="math inline">\(t_{n-1}\)</span> tem comprimento <span class="math inline">\(2\,t_{n-1,\,0{,}975}\,S/\sqrt{n}\)</span>, enquanto o IC baseado na normal (com <span class="math inline">\(\sigma\)</span> conhecido) teria comprimento <span class="math inline">\(2 \times 1{,}96\,\sigma/\sqrt{n}\)</span>. Com <span class="math inline">\(n = 50\)</span>, a razao <span class="math inline">\(t_{n-1,\,0{,}975}/1{,}96\)</span> (que mede o quanto o IC <span class="math inline">\(t\)</span> e mais largo) e:</p>
-</p>]]></text>
-</questiontext>
-<generalfeedback format="html">
-<text><![CDATA[<p>
-<p><span class="math inline">\(t_{49,\,0{,}975}/1{,}96 = 2.0095752/1{,}96 = 1.0253\)</span>.</p>
-<p>Para <span class="math inline">\(n\)</span> grande, <span class="math inline">\(t_{n-1,\,0{,}975} \to 1{,}96\)</span> e a razao tende a 1. Para <span class="math inline">\(n = 50\)</span>, o IC <span class="math inline">\(t\)</span> e 2.5% mais largo.</p>
-</p>]]></text>
-</generalfeedback>
-<penalty>0</penalty>
-<defaultgrade>1</defaultgrade>
-<shuffleanswers>false</shuffleanswers>
-<single>true</single>
-<answernumbering>abc</answernumbering>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-1.0248
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-0.0496
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-0.9753
+0.133
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-1.0253
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-2.0096
+1.0679
 </p>]]></text>
 </answer>
 </question>
@@ -2575,13 +2575,13 @@ O estimador de maxima verossimilhanca de <span class="math inline">\(\theta\)</s
 }
 </style>
 <p>
-<p>Para amostras normais independentes, <span class="math inline">\(F = (S_1^2/S_2^2)\cdot(\sigma_2^2/\sigma_1^2) \sim F_{n_1-1,\,n_2-1}\)</span>. Com <span class="math inline">\(n_1 = 20\)</span>, <span class="math inline">\(n_2 = 20\)</span>, <span class="math inline">\(S_1^2 = 2\)</span>, <span class="math inline">\(S_2^2 = 2\)</span>, temos <span class="math inline">\(F_{\text{obs}} = S_1^2/S_2^2 = 1\)</span>, <span class="math inline">\(F_{19,19,\,0{,}025} = 0.3958\)</span> e <span class="math inline">\(F_{19,19,\,0{,}975} = 2.5265\)</span>. O limite inferior do IC 95% para <span class="math inline">\(\sigma_1^2/\sigma_2^2\)</span> e:</p>
+<p>Para amostras normais independentes, <span class="math inline">\(F = (S_1^2/S_2^2)\cdot(\sigma_2^2/\sigma_1^2) \sim F_{n_1-1,\,n_2-1}\)</span>. Com <span class="math inline">\(n_1 = 15\)</span>, <span class="math inline">\(n_2 = 15\)</span>, <span class="math inline">\(S_1^2 = 2\)</span>, <span class="math inline">\(S_2^2 = 2\)</span>, temos <span class="math inline">\(F_{\text{obs}} = S_1^2/S_2^2 = 1\)</span>, <span class="math inline">\(F_{14,14,\,0{,}025} = 0.3357\)</span> e <span class="math inline">\(F_{14,14,\,0{,}975} = 2.9786\)</span>. O limite inferior do IC 95% para <span class="math inline">\(\sigma_1^2/\sigma_2^2\)</span> e:</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
 <p>O IC 95% para <span class="math inline">\(\sigma_1^2/\sigma_2^2\)</span> e <span class="math inline">\(\left(F_{\text{obs}}/F_{0{,}975},\; F_{\text{obs}}/F_{0{,}025}\right)\)</span>.</p>
-<p>O limite inferior e <span class="math inline">\(F_{\text{obs}}/f_{\text{upper}} = 1/2.5265 = 0.3958\)</span>.</p>
+<p>O limite inferior e <span class="math inline">\(F_{\text{obs}}/f_{\text{upper}} = 1/2.9786 = 0.3357\)</span>.</p>
 <p>Nota: divide-se pelo quantil SUPERIOR para obter o limite INFERIOR, analogamente ao IC qui-quadrado.</p>
 </p>]]></text>
 </generalfeedback>
@@ -2592,27 +2592,27 @@ O estimador de maxima verossimilhanca de <span class="math inline">\(\theta\)</s
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-2.57703
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-2.551765
+2.9789
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-0.3958
+0.3357
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-2.602295
+3.008689
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-2.5265
+2.9786
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+3.038478
 </p>]]></text>
 </answer>
 </question>
@@ -2647,13 +2647,13 @@ O estimador de maxima verossimilhanca de <span class="math inline">\(\theta\)</s
 }
 </style>
 <p>
-<p>Para amostras normais independentes, <span class="math inline">\(F = (S_1^2/S_2^2)\cdot(\sigma_2^2/\sigma_1^2) \sim F_{n_1-1,\,n_2-1}\)</span>. Com <span class="math inline">\(n_1 = 15\)</span>, <span class="math inline">\(n_2 = 20\)</span>, <span class="math inline">\(S_1^2 = 4\)</span>, <span class="math inline">\(S_2^2 = 2\)</span>, temos <span class="math inline">\(F_{\text{obs}} = S_1^2/S_2^2 = 2\)</span>, <span class="math inline">\(F_{14,19,\,0{,}025} = 0.3496\)</span> e <span class="math inline">\(F_{14,19,\,0{,}975} = 2.6469\)</span>. O limite inferior do IC 95% para <span class="math inline">\(\sigma_1^2/\sigma_2^2\)</span> e:</p>
+<p>Para amostras normais independentes, <span class="math inline">\(F = (S_1^2/S_2^2)\cdot(\sigma_2^2/\sigma_1^2) \sim F_{n_1-1,\,n_2-1}\)</span>. Com <span class="math inline">\(n_1 = 20\)</span>, <span class="math inline">\(n_2 = 20\)</span>, <span class="math inline">\(S_1^2 = 1\)</span>, <span class="math inline">\(S_2^2 = 1\)</span>, temos <span class="math inline">\(F_{\text{obs}} = S_1^2/S_2^2 = 1\)</span>, <span class="math inline">\(F_{19,19,\,0{,}025} = 0.3958\)</span> e <span class="math inline">\(F_{19,19,\,0{,}975} = 2.5265\)</span>. O limite inferior do IC 95% para <span class="math inline">\(\sigma_1^2/\sigma_2^2\)</span> e:</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
 <p>O IC 95% para <span class="math inline">\(\sigma_1^2/\sigma_2^2\)</span> e <span class="math inline">\(\left(F_{\text{obs}}/F_{0{,}975},\; F_{\text{obs}}/F_{0{,}025}\right)\)</span>.</p>
-<p>O limite inferior e <span class="math inline">\(F_{\text{obs}}/f_{\text{upper}} = 2/2.6469 = 0.7556\)</span>.</p>
+<p>O limite inferior e <span class="math inline">\(F_{\text{obs}}/f_{\text{upper}} = 1/2.5265 = 0.3958\)</span>.</p>
 <p>Nota: divide-se pelo quantil SUPERIOR para obter o limite INFERIOR, analogamente ao IC qui-quadrado.</p>
 </p>]]></text>
 </generalfeedback>
@@ -2662,29 +2662,29 @@ O estimador de maxima verossimilhanca de <span class="math inline">\(\theta\)</s
 <shuffleanswers>false</shuffleanswers>
 <single>true</single>
 <answernumbering>abc</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+2.551765
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+2.57703
+</p>]]></text>
+</answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-0.7556
+0.3958
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-0.1889
+2.5265
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-5.7208
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-0.6992
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-5.2938
+2.602295
 </p>]]></text>
 </answer>
 </question>
@@ -2726,12 +2726,12 @@ O estimador de maxima verossimilhanca de <span class="math inline">\(\theta\)</s
 }
 </style>
 <p>
-<p>A transformacao estabilizadora de variancia <span class="math inline">\(g(\hat{p}) = \arcsin(\sqrt{\hat{p}})\)</span> tem variancia assintótica <span class="math inline">\(1/(4n)\)</span>, independente de <span class="math inline">\(p\)</span>. Com <span class="math inline">\(\hat{p} = 0.2\)</span> e <span class="math inline">\(n = 200\)</span>, o erro padrao de <span class="math inline">\(g(\hat{p})\)</span> e:</p>
+<p>A transformacao estabilizadora de variancia <span class="math inline">\(g(\hat{p}) = \arcsin(\sqrt{\hat{p}})\)</span> tem variancia assintótica <span class="math inline">\(1/(4n)\)</span>, independente de <span class="math inline">\(p\)</span>. Com <span class="math inline">\(\hat{p} = 0.2\)</span> e <span class="math inline">\(n = 400\)</span>, o erro padrao de <span class="math inline">\(g(\hat{p})\)</span> e:</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p><span class="math inline">\(\text{EP}(g(\hat{p})) = \sqrt{1/(4n)} = 1/(2\sqrt{n}) = 1/(2\sqrt{200}) = 0.0354\)</span>.</p>
+<p><span class="math inline">\(\text{EP}(g(\hat{p})) = \sqrt{1/(4n)} = 1/(2\sqrt{n}) = 1/(2\sqrt{400}) = 0.025\)</span>.</p>
 <p>Note que o erro padrao nao depende de <span class="math inline">\(\hat{p}\)</span> (esta e justamente a propriedade da transformacao estabilizadora): ao contrario do EP original <span class="math inline">\(\sqrt{\hat{p}(1-\hat{p})/n}\)</span>, que depende de <span class="math inline">\(\hat{p}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
@@ -2742,27 +2742,27 @@ O estimador de maxima verossimilhanca de <span class="math inline">\(\theta\)</s
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-0.0013
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-0.0707
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-0.0328
+6 × 10<sup>-4</sup>
 </p>]]></text>
 </answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
-0.0354
+0.025
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-0.0283
+0.05
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.02
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.0232
 </p>]]></text>
 </answer>
 </question>
@@ -2797,7 +2797,7 @@ O estimador de maxima verossimilhanca de <span class="math inline">\(\theta\)</s
 }
 </style>
 <p>
-<p>A transformacao estabilizadora de variancia <span class="math inline">\(g(\hat{p}) = \arcsin(\sqrt{\hat{p}})\)</span> tem variancia assintótica <span class="math inline">\(1/(4n)\)</span>, independente de <span class="math inline">\(p\)</span>. Com <span class="math inline">\(\hat{p} = 0.7\)</span> e <span class="math inline">\(n = 100\)</span>, o erro padrao de <span class="math inline">\(g(\hat{p})\)</span> e:</p>
+<p>A transformacao estabilizadora de variancia <span class="math inline">\(g(\hat{p}) = \arcsin(\sqrt{\hat{p}})\)</span> tem variancia assintótica <span class="math inline">\(1/(4n)\)</span>, independente de <span class="math inline">\(p\)</span>. Com <span class="math inline">\(\hat{p} = 0.5\)</span> e <span class="math inline">\(n = 100\)</span>, o erro padrao de <span class="math inline">\(g(\hat{p})\)</span> e:</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
@@ -2811,11 +2811,6 @@ O estimador de maxima verossimilhanca de <span class="math inline">\(\theta\)</s
 <shuffleanswers>false</shuffleanswers>
 <single>true</single>
 <answernumbering>abc</answernumbering>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-0.0991
-</p>]]></text>
-</answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
 0.05
@@ -2823,7 +2818,12 @@ O estimador de maxima verossimilhanca de <span class="math inline">\(\theta\)</s
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-0.0458
+0.0025
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+0.101
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
@@ -2833,7 +2833,7 @@ O estimador de maxima verossimilhanca de <span class="math inline">\(\theta\)</s
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-0.0025
+0.0785
 </p>]]></text>
 </answer>
 </question>
@@ -2888,9 +2888,9 @@ O estimador de maxima verossimilhanca de <span class="math inline">\(\theta\)</s
 <shuffleanswers>false</shuffleanswers>
 <single>true</single>
 <answernumbering>abc</answernumbering>
-<answer fraction="100" format="html">
+<answer fraction="0" format="html">
 <text><![CDATA[<p>
-O IC baseado na distribuicao <span class="math inline">\(t\)</span> de Student com <span class="math inline">\(n-1\)</span> graus de liberdade, pois e exato sob normalidade.
+O IC baseado em <span class="math inline">\(\chi^2_{n-1}\)</span>, pois esta distribuicao e adequada para medias e variancias.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
@@ -2905,12 +2905,12 @@ O IC via TCL com <span class="math inline">\(z = 1{,}96\)</span>, pois o TCL e v
 </answer>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-O IC baseado em <span class="math inline">\(\chi^2_{n-1}\)</span>, pois esta distribuicao e adequada para medias e variancias.
+O IC de Wilson para proporcoes, adaptado para medias.
 </p>]]></text>
 </answer>
-<answer fraction="0" format="html">
+<answer fraction="100" format="html">
 <text><![CDATA[<p>
-O IC de Wilson para proporcoes, adaptado para medias.
+O IC baseado na distribuicao <span class="math inline">\(t\)</span> de Student com <span class="math inline">\(n-1\)</span> graus de liberdade, pois e exato sob normalidade.
 </p>]]></text>
 </answer>
 </question>
@@ -2960,7 +2960,7 @@ O IC de Wilson para proporcoes, adaptado para medias.
 <answernumbering>abc</answernumbering>
 <answer fraction="0" format="html">
 <text><![CDATA[<p>
-O IC baseado em <span class="math inline">\(\chi^2_{n-1}\)</span>, pois esta distribuicao e adequada para medias e variancias.
+O IC de bootstrap parametrico, pois e sempre mais preciso que o <span class="math inline">\(t\)</span> para amostras pequenas.
 </p>]]></text>
 </answer>
 <answer fraction="0" format="html">
@@ -2968,19 +2968,19 @@ O IC baseado em <span class="math inline">\(\chi^2_{n-1}\)</span>, pois esta dis
 O IC via TCL com <span class="math inline">\(z = 1{,}96\)</span>, pois o TCL e valido para qualquer <span class="math inline">\(n\)</span>.
 </p>]]></text>
 </answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-O IC de Wilson para proporcoes, adaptado para medias.
-</p>]]></text>
-</answer>
-<answer fraction="0" format="html">
-<text><![CDATA[<p>
-O IC de bootstrap parametrico, pois e sempre mais preciso que o <span class="math inline">\(t\)</span> para amostras pequenas.
-</p>]]></text>
-</answer>
 <answer fraction="100" format="html">
 <text><![CDATA[<p>
 O IC baseado na distribuicao <span class="math inline">\(t\)</span> de Student com <span class="math inline">\(n-1\)</span> graus de liberdade, pois e exato sob normalidade.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+O IC baseado em <span class="math inline">\(\chi^2_{n-1}\)</span>, pois esta distribuicao e adequada para medias e variancias.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+O IC de Wilson para proporcoes, adaptado para medias.
 </p>]]></text>
 </answer>
 </question>

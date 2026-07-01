@@ -16,23 +16,23 @@ body{font-family: Arial, Helvetica, Sans;}
 <ol>
 <li>
 <h4>Question</h4>
-<p>Ao ajustar um modelo com dados censurados pelo algoritmo EM, usa-se tolerância 1e-04 e cada passo M maximiza a função construída no passo E. Qual propriedade descreve corretamente a sequência de log-verossimilhanças observadas produzida pelo EM?</p>
+<p>Ao ajustar uma mistura de duas Normais pelo algoritmo EM, usa-se tolerância 1e-06 e cada passo M maximiza a função construída no passo E. Qual propriedade descreve corretamente a sequência de log-verossimilhanças observadas produzida pelo EM?</p>
 <br/>
 <ol type="a">
 <li>
-Ela permanece constante desde a primeira iteração, independentemente dos valores iniciais.
-</li>
-<li>
-Ela aumenta estritamente em toda iteração e, por isso, sempre converge ao máximo global.
-</li>
-<li>
-Ela é monotônica somente quando não há variáveis latentes no modelo.
+Ela não diminui a cada iteração, embora isso não garanta convergência ao máximo global.
 </li>
 <li>
 Ela pode diminuir livremente, pois apenas a verossimilhança dos dados completos é relevante.
 </li>
 <li>
-Ela não diminui a cada iteração, embora isso não garanta convergência ao máximo global.
+Ela é monotônica somente quando não há variáveis latentes no modelo.
+</li>
+<li>
+Ela aumenta estritamente em toda iteração e, por isso, sempre converge ao máximo global.
+</li>
+<li>
+Ela permanece constante desde a primeira iteração, independentemente dos valores iniciais.
 </li>
 </ol>
 <br/>
@@ -47,23 +47,23 @@ A monotonicidade não elimina máximos locais nem pontos de sela; por isso, dife
 </li>
 <li>
 <h4>Question</h4>
-<p>Uma amostra provém de <span class="math inline">\(N(\theta,1)\)</span>. Foram observados 13 valores, com média 0.6, e outros 3 valores sofreram censura à direita em <span class="math inline">\(a=1.5\)</span> (para cada um deles, sabe-se apenas que <span class="math inline">\(Z&gt;a\)</span>). Se <span class="math inline">\(\theta^{(t)}=0.1\)</span>, qual é a atualização <span class="math inline">\(\theta^{(t+1)}\)</span> do algoritmo EM?</p>
+<p>Uma amostra provém de <span class="math inline">\(N(\theta,1)\)</span>. Foram observados 17 valores, com média 0.7, e outros 6 valores sofreram censura à direita em <span class="math inline">\(a=1.3\)</span> (para cada um deles, sabe-se apenas que <span class="math inline">\(Z&gt;a\)</span>). Se <span class="math inline">\(\theta^{(t)}=0.3\)</span>, qual é a atualização <span class="math inline">\(\theta^{(t+1)}\)</span> do algoritmo EM?</p>
 <br/>
 <ol type="a">
 <li>
-<span class="math inline">\(0.769\)</span>
+<span class="math inline">\(0.596\)</span>
 </li>
 <li>
-<span class="math inline">\(0.854\)</span>
+<span class="math inline">\(0.994\)</span>
 </li>
 <li>
-<span class="math inline">\(2.454\)</span>
+<span class="math inline">\(2.225\)</span>
 </li>
 <li>
-<span class="math inline">\(0.506\)</span>
+<span class="math inline">\(0.198\)</span>
 </li>
 <li>
-<span class="math inline">\(0.159\)</span>
+<span class="math inline">\(0.857\)</span>
 </li>
 </ol>
 <br/>
@@ -76,18 +76,18 @@ E(Z\mid Z&gt;a,\theta^{(t)})=\theta^{(t)}+
 O passo M calcula a média dos valores observados e dos valores censurados imputados por suas esperanças condicionais. Assim,
 <span class="math display">\[
 \theta^{(t+1)}=
-\frac{13(0.6)+3\left[0.1+
-\dfrac{\phi(1.4)}{1-\Phi(1.4)}\right]}
-{16}=0.854.
+\frac{17(0.7)+6\left[0.3+
+\dfrac{\phi(1.0)}{1-\Phi(1.0)}\right]}
+{23}=0.994.
 \]</span></p>
 <br/>
 </li>
 <li>
 <h4>Question</h4>
-<p>Na iteração 11 do ajuste de um modelo de classes latentes, um algoritmo generalizado EM (GEM) não maximiza exatamente <span class="math inline">\(Q(\theta\mid\theta^{(t)})\)</span>, mas encontra <span class="math inline">\(\theta^{(t+1)}\)</span> tal que
+<p>Na iteração 5 do ajuste de uma mistura finita, um algoritmo generalizado EM (GEM) não maximiza exatamente <span class="math inline">\(Q(\theta\mid\theta^{(t)})\)</span>, mas encontra <span class="math inline">\(\theta^{(t+1)}\)</span> tal que
 <span class="math display">\[
 Q(\theta^{(t+1)}\mid\theta^{(t)})-
-Q(\theta^{(t)}\mid\theta^{(t)})=0.008&gt;0.
+Q(\theta^{(t)}\mid\theta^{(t)})=0.015&gt;0.
 \]</span>
 Qual conclusão é justificada pela definição de GEM?</p>
 <br/>
@@ -99,13 +99,13 @@ O novo parâmetro é necessariamente o máximo global da verossimilhança observ
 O algoritmo deixa de ser EM porque somente a maximização exata de <span class="math inline">\(Q\)</span> preserva a monotonicidade.
 </li>
 <li>
+A log-verossimilhança observada aumenta exatamente 0.015, pois seu incremento coincide com o incremento de <span class="math inline">\(Q\)</span>.
+</li>
+<li>
 O aumento de <span class="math inline">\(Q\)</span> garante que todas as coordenadas do parâmetro mudem na mesma direção.
 </li>
 <li>
 A log-verossimilhança observada não diminui, embora o passo M não tenha encontrado necessariamente o máximo global de <span class="math inline">\(Q\)</span>.
-</li>
-<li>
-A log-verossimilhança observada aumenta exatamente 0.008, pois seu incremento coincide com o incremento de <span class="math inline">\(Q\)</span>.
 </li>
 </ol>
 <br/>

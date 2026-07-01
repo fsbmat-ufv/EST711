@@ -16,34 +16,34 @@ body{font-family: Arial, Helvetica, Sans;}
 <ol>
 <li>
 <h4>Question</h4>
-<p>Seja <span class="math inline">\(X_1, X_2, \ldots, X_n\)</span> uma amostra aleatória de uma distribuição com média <span class="math inline">\(\mu\)</span> e <span class="math inline">\(n = 25\)</span>. Considere o estimador <span class="math inline">\(T_n = 1.5 \cdot \bar{X}_n\)</span> para estimar <span class="math inline">\(\mu\)</span>, onde <span class="math inline">\(\bar{X}_n\)</span> é a média amostral.</p>
+<p>Seja <span class="math inline">\(X_1, X_2, \ldots, X_n\)</span> uma amostra aleatória de uma distribuição com média <span class="math inline">\(\mu\)</span> e <span class="math inline">\(n = 10\)</span>. Considere o estimador <span class="math inline">\(T_n = 1.5 \cdot \bar{X}_n\)</span> para estimar <span class="math inline">\(\mu\)</span>, onde <span class="math inline">\(\bar{X}_n\)</span> é a média amostral.</p>
 <p>O <strong>vício</strong> (viés) de <span class="math inline">\(T_n\)</span> é definido como <span class="math inline">\(B(T_n) = E(T_n) - \mu\)</span>. Como <span class="math inline">\(E(\bar{X}_n) = \mu\)</span>, temos <span class="math inline">\(E(T_n) = 1.5 \mu\)</span>, e portanto:</p>
 <p><span class="math display">\[B(T_n) = 1.5\,\mu - \mu = (1.5 - 1)\mu.\]</span></p>
-<p>Para <span class="math inline">\(\mu = 2\)</span>, o vício de <span class="math inline">\(T_n\)</span> é:</p>
+<p>Para <span class="math inline">\(\mu = 8\)</span>, o vício de <span class="math inline">\(T_n\)</span> é:</p>
 <br/>
 <ol type="a">
 <li>
--1
+12
 </li>
 <li>
-1
+-4
 </li>
 <li>
-3.03
+-52
 </li>
 <li>
-0.251
+4
 </li>
 <li>
-3
+0.0625
 </li>
 </ol>
 <br/>
 <h4>Solution</h4>
 <p>O vício de <span class="math inline">\(T_n = 1.5\bar{X}_n\)</span> como estimador de <span class="math inline">\(\mu\)</span> é:
 <span class="math display">\[B(T_n) = E(T_n) - \mu = 1.5\mu - \mu = (1.5 - 1)\mu.\]</span>
-Para <span class="math inline">\(\mu = 2\)</span>:
-<span class="math display">\[B(T_n) = (1.5 - 1) \times 2 = 1.\]</span></p>
+Para <span class="math inline">\(\mu = 8\)</span>:
+<span class="math display">\[B(T_n) = (1.5 - 1) \times 8 = 4.\]</span></p>
 <br/>
 </li>
 <li>
@@ -52,23 +52,23 @@ Para <span class="math inline">\(\mu = 2\)</span>:
 <span class="math display">\[P(X = x; p) = p^x(1-p)^{1-x}, \quad x \in \{0, 1\}.\]</span></p>
 <p>A <strong>informacao de Fisher</strong> sobre o parametro <span class="math inline">\(p\)</span> e definida como:
 <span class="math display">\[I(p) = E\!\left[\left(\frac{\partial}{\partial p}\log f(X; p)\right)^2\right] = \frac{1}{p(1-p)}.\]</span></p>
-<p>Para <span class="math inline">\(p = 0.8\)</span>, qual e o valor de <span class="math inline">\(I(p)\)</span>?</p>
+<p>Para <span class="math inline">\(p = 0.6\)</span>, qual e o valor de <span class="math inline">\(I(p)\)</span>?</p>
 <br/>
 <ol type="a">
 <li>
-39.453125
+17.534711
 </li>
 <li>
-39.0625
+4.1667
 </li>
 <li>
-26.5625
+9.0278
 </li>
 <li>
-6.25
+0.2401
 </li>
 <li>
-0.1601
+17.3611
 </li>
 </ol>
 <br/>
@@ -77,8 +77,8 @@ Para <span class="math inline">\(\mu = 2\)</span>:
 <span class="math display">\[\log f(x; p) = x\log p + (1-x)\log(1-p).\]</span>
 <span class="math display">\[\frac{\partial}{\partial p}\log f = \frac{x}{p} - \frac{1-x}{1-p}.\]</span>
 <span class="math display">\[I(p) = -E\!\left[\frac{\partial^2}{\partial p^2}\log f\right] = \frac{1}{p} + \frac{1}{1-p} = \frac{1}{p(1-p)}.\]</span></p>
-<p>Para <span class="math inline">\(p = 0.8\)</span>:
-<span class="math display">\[I(0.8) = \frac{1}{0.8 \times 0.2} = \frac{1}{0.16} = 6.25.\]</span></p>
+<p>Para <span class="math inline">\(p = 0.6\)</span>:
+<span class="math display">\[I(0.6) = \frac{1}{0.6 \times 0.4} = \frac{1}{0.24} = 4.1667.\]</span></p>
 <br/>
 </li>
 <li>
@@ -90,19 +90,19 @@ onde o suporte de <span class="math inline">\(X\)</span> deve ser independente d
 <br/>
 <ol type="a">
 <li>
-<span class="math inline">\(\text{Exponencial}(\theta)\)</span> — pertence a familia exponencial com parametro natural <span class="math inline">\(\eta = -\theta\)</span>.
+<span class="math inline">\(\text{Bernoulli}(p)\)</span> — pertence a familia exponencial com parametro natural <span class="math inline">\(\eta = \log(p/(1-p))\)</span> (logito de <span class="math inline">\(p\)</span>).
 </li>
 <li>
 <span class="math inline">\(U(0,\theta)\)</span> — pois o suporte depende de <span class="math inline">\(\theta\)</span> e a funcao nao tem a forma fatoravel <span class="math inline">\(\exp\{c(\theta)T(x) - d(\theta)\}h(x)\)</span> com suporte fixo.
 </li>
 <li>
-<span class="math inline">\(\text{Bernoulli}(p)\)</span> — pertence a familia exponencial com parametro natural <span class="math inline">\(\eta = \log(p/(1-p))\)</span> (logito de <span class="math inline">\(p\)</span>).
+<span class="math inline">\(\text{Poisson}(\lambda)\)</span> — pertence a familia exponencial com parametro natural <span class="math inline">\(\eta = \log\lambda\)</span>.
 </li>
 <li>
 <span class="math inline">\(N(\mu, \sigma^2)\)</span> com <span class="math inline">\(\sigma^2\)</span> fixo — pertence a familia exponencial com parametro natural <span class="math inline">\(\eta = \mu/\sigma^2\)</span>.
 </li>
 <li>
-<span class="math inline">\(\text{Poisson}(\lambda)\)</span> — pertence a familia exponencial com parametro natural <span class="math inline">\(\eta = \log\lambda\)</span>.
+<span class="math inline">\(\text{Exponencial}(\theta)\)</span> — pertence a familia exponencial com parametro natural <span class="math inline">\(\eta = -\theta\)</span>.
 </li>
 </ol>
 <br/>
@@ -125,19 +125,19 @@ onde o suporte de <span class="math inline">\(X\)</span> deve ser independente d
 <br/>
 <ol type="a">
 <li>
-A distribuicao de <span class="math inline">\(T\)</span> e da forma <span class="math inline">\(N(\theta, \sigma^2/n)\)</span> assintoticamente, pelo Teorema Central do Limite.
-</li>
-<li>
-A variancia de <span class="math inline">\(T\)</span> e minima entre todos os estimadores de <span class="math inline">\(\theta\)</span>.
+<span class="math inline">\(T\)</span> e nao-viesada para <span class="math inline">\(\theta\)</span>, isto e, <span class="math inline">\(E_\theta(T) = \theta\)</span> para todo <span class="math inline">\(\theta\)</span>.
 </li>
 <li>
 <span class="math inline">\(T\)</span> e suficiente se e somente se <span class="math inline">\(T = (X_{(1)}, X_{(n)})\)</span> (estatisticas de ordem extremas).
 </li>
 <li>
-<span class="math inline">\(T\)</span> e nao-viesada para <span class="math inline">\(\theta\)</span>, isto e, <span class="math inline">\(E_\theta(T) = \theta\)</span> para todo <span class="math inline">\(\theta\)</span>.
+A variancia de <span class="math inline">\(T\)</span> e minima entre todos os estimadores de <span class="math inline">\(\theta\)</span>.
 </li>
 <li>
 A distribuicao condicional <span class="math inline">\((X_1,\ldots,X_n) \mid T = t\)</span> nao depende de <span class="math inline">\(\theta\)</span>.
+</li>
+<li>
+A distribuicao de <span class="math inline">\(T\)</span> e da forma <span class="math inline">\(N(\theta, \sigma^2/n)\)</span> assintoticamente, pelo Teorema Central do Limite.
 </li>
 </ol>
 <br/>
